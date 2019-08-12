@@ -1,0 +1,11 @@
+module.exports=[
+    title:'关于我们'
+    subtitle:'test'
+    content:'test'
+    row:10
+,
+    title:'场地地址'
+    subtitle:'test2'
+    content:'test'
+    row:9
+]

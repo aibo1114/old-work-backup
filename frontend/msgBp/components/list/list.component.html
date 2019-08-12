@@ -1,0 +1,47 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" ng-bind="$ctrl.title"></div>
+    <form ng-if="$ctrl.search" class="navbar-form navbar-left" ng-submit="$ctrl.searchItems($ctrl.pstn);">
+        <div class="form-group" ng-repeat="control in $ctrl.search">
+            <input ng-if="control.type=='text' " type="text" class="form-control" ng-required="control.required" ng-init="$ctrl.initSerControl(control);" ng-model="$ctrl.searchObj[control.code].val" placeholder="{{control.label}}" />
+            <select class="form-control" ng-if="control.type=='select' " ng-init="$ctrl.initSerControl(control);" ng-model="$ctrl.searchObj[control.code].val">
+                <option value="">---{{control.nonsense}}---</option>
+                <option ng-repeat="it in control.option" ng-value="it.v" ng-bind="it.n"></option>
+            </select>
+            <datetime-picker ng-if="control.type =='date' " ng-init="$ctrl.initSerControl(control);" ctx="control" model="$ctrl.searchObj[control.code].val"></datetime-picker>
+        </div>
+        <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+    </form>
+    <table class="table table-bordered ">
+        <tr the-id="widthBox" class="info">
+            <th ng-repeat="(k, v) in $ctrl.dictionary" ng-bind="v.label" set-width="{{v.col}}"></th>
+            <th ng-if="$ctrl.btns" set-width="{{$ctrl.btns.col}}">操作</th>
+        </tr>
+        <tr ng-repeat="it in $ctrl.entities" ng-class-even=" 'active'">
+            <td ng-repeat="(k, v) in $ctrl.dictionary" ng-bind-html="$ctrl.bindText(it,k); " ng-class="{'content':k=='content'}"></td>
+            <td ng-if="$ctrl.btns">
+                <div class="btn-group btn-group-sm">
+                    <a ng-repeat="(k, btn) in $ctrl.btns.btn" ng-if="k=='edit' " ng-href="#!/{{btn.pstn}}/{{it[$ctrl.pstn.unique]}}" class="btn btn-default"><span class="glyphicon glyphicon-{{btn.icon}}"></span></a>
+                    <button ng-repeat="(k, btn) in $ctrl.btns.btn" ng-if="k=='delete'" data-toggle="modal" data-target="#deleteModal" ng-click="$ctrl.setId(it[$ctrl.pstn.unique]);" class="btn btn-default"><span class="glyphicon glyphicon-{{btn.icon}}"></span></button>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h6 class="modal-title">系统提示</h6>
+            </div>
+            <div class="modal-body"><p>确认删除？</p></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" ng-click="$ctrl.removeItem($ctrl.pstn);">确定</button>
+                <!--ng-click="$ctrl.removeItem($ctrl.pstn);"-->
+            </div>
+        </div>
+    </div>
+</div>

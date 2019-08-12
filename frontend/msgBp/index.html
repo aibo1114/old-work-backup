@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>消息后台</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css" />
+        <link rel="stylesheet" href="css/app.css" />
+    </head>
+    <body ng-app="msgBp">
+        <div class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-th-large"></span>&nbsp;&nbsp;消息后台</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="javascript:void(0);">退出&nbsp;&nbsp;<span class="glyphicon glyphicon-log-out"></span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-2" ng-controller="menu">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading"><h2 class="panel-title">菜单</h2></div>
+                        <h3 class="popover-title">模板</h3>
+                        <div class="list-group">
+                            <a href="#!/tpls" class="list-group-item" ng-class="{'active':cur=='tpls'}">模板列表</a>
+                            <a href="#!/tpl" class="list-group-item" ng-class="{'active':cur=='tpl'}">新增模板</a>
+                        </div>
+                        <h3 class="popover-title">消息</h3>
+                        <div class="list-group">
+                            <a href="#!/msgs" class="list-group-item" ng-class="{'active':cur=='msgs'}">消息列表</a>
+                            <a href="#!/msg" class="list-group-item" ng-class="{'active':cur=='msg'}">发送消息</a>
+                        </div>
+                        <h3 class="popover-title">用户组</h3>
+                        <div class="list-group">
+                            <a href="#!/groups" class="list-group-item" ng-class="{'active':cur=='groups'}">用户组列表</a>
+                            <a href="#!/group" class="list-group-item" ng-class="{'active':cur=='group'}">新增用户组</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10" ng-view=""></div>
+            </div>
+        </div>
+        <!--lib-->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+        <script src="lib/bootstrap-datetimepicker/bootstrap-datetimepicker.zh-CN.js"></script>
+        <!--main-->
+        <script src="app.js"></script>
+        <script src="config.js"></script>
+        <script src="services/communicate.js"></script>
+        <script src="directives/ui.js"></script>
+        <script src="components/list/list.component.js"></script>
+        <script src="components/item/item.component.js"></script>
+        <script src="widgets/bootstrap-datetimepicker/bootstrap-datetimepicker.directive.js"></script>
+    </body>
+</html>

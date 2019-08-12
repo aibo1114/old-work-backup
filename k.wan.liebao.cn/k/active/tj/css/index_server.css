@@ -1,0 +1,65 @@
+/*以下为常用css样式，考虑加入base层*/
+.index_server_bd_underline{
+	border-bottom:1px solid #595757;
+}
+.anqu_fr{
+	float:right;
+}
+.anqu_fl{
+	float:left;
+}
+.anqu_inline_block{
+	display:inline-block;
+}
+.anqu_pd12{
+	padding:12px 0;
+}
+.anqu_cb{
+	clear:both;
+}
+/*以下为首页左下角服务器列表css*/
+.anqu_index_server_list{
+	/*width:296px;*/
+	/*height:382px;*/
+	min-height:244px;
+	background:#3f3e3e;
+}
+.anqu_title{
+	height:59px;
+	width:100%;
+	background:red;
+}
+.anqu_servers_content{
+	width:100%;
+}
+.index_game_server_list{
+	width:90%;
+	margin:0 auto;
+	color:#ffffff;
+}
+.index_game_server_list a{
+	color:#ffffff;
+	font-size:14px;
+}
+.anqu_server_arrow{
+	width:7px;
+	height:8px;
+	margin-right:10px;
+	background-image:url(http://static.web.anqu.com/resource/1000/images/index_server_list_arrow.png);
+	background-repeat:no-repeat;
+}
+.more_servers_btn{
+	width:80%;
+	margin:0 auto;
+	text-align:center;
+	font-size:16px;
+	padding:5px 0;
+	background:#804040;
+}
+.index_more_servers_btn{
+	display:inline-block;
+	color:#ffffff;
+	width:100%;
+	height:100%;
+	text-decoration:none;
+}

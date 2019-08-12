@@ -1,0 +1,21 @@
+if cat == 'post'
+    != content
+else if cat == 'task'
+    if trans
+        blockquote.blockquote
+            p.text-faded= content
+            p= trans
+            footer.blockquote-footer= tt
+        .lead.bg-faded.p-y-1.clearfix
+            .col-xs-1
+                span.yh “
+            .col-xs-11
+                = why
+    //else
+    //.alert.alert-info.m-t-1
+    //    strong= content
+    //    if trans
+    //        br
+    //        = trans
+    //if why
+    //    .alert.alert-success= why

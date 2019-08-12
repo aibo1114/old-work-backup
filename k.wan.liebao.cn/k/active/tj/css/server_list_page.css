@@ -1,0 +1,116 @@
+.container {
+	margin-top:40px;
+}
+.server_page_middle{
+	margin:0 auto;
+}
+.server_page_ft_24{
+	font-size:24px;
+}
+.server_page_ft_22{
+	font-size:22px;
+}
+.server_page_ft_16{
+	font-size:16px;
+}
+.tx_center{
+	text-align:center;
+}
+.server_page_inline_block{
+	display:inline-block;
+}
+.server_page_ft_wt_color{
+	color:#ffffff;
+}
+.server_page_btn_mg_rt_22{
+	margin-right:22px;
+}
+.server_page_btn_mg_tp_20{
+	margin-top:20px
+}
+/*以下为服务器列表页面css*/
+.server_list_page_container{
+	width:862px;
+	height:1181px;
+	background:url(http://static.web.anqu.com/resource/1000/images/bg_sv_03.png);
+	/*opacity:0.7;*/
+	/*filter:alpha(opacity=70);*/
+	float:left;
+}
+.server_list_content{
+	width:90%;
+}
+.select_banner_left{
+	width:10px;
+	height:9px;
+	background-image:url(http://static.web.anqu.com/resource/1000/images/server_list_page_recommend_icons.png);
+	background-position:0 0;
+	background-repeat:no-repeat;
+}
+.select_banner_right{
+	width:10px;
+	height:9px;
+	background-image:url(http://static.web.anqu.com/resource/1000/images/server_list_page_recommend_icons.png);
+	background-position:-10px 0;
+	background-repeat:no-repeat;
+}
+.select_servers_border{
+	border:2px solid #adadad;
+}
+/*以下为推荐服务器样式*/
+.server_page_server_btn{
+	width:236px;
+	height:48px;
+}
+.server_page_server_btn a{
+	width:100%;
+	height:100%;
+	text-decoration:none;
+	background-image:url(http://static.web.anqu.com/resource/1000/images/server_list_page_server_icons.png);
+	background-position:0 0;
+	background-repeat:no-repeat;
+}
+.server_page_server_btn a:hover{
+	background-position:0 -48px;
+}
+.server_page_server_btn a:active{
+	background-position:0 0;
+}
+.server_name,.server_game_name{
+	color:#441100;
+}
+.server_name,.server_game_name,.server_status{
+	line-height:47px;
+	margin-left:15px;
+	font-weight:bold;
+}
+.server_title{
+	margin-top:50px;
+}
+/*以下为选择服务器样式*/
+.server_page_choose_server{
+	width:236px;
+	height:48px;
+}
+.server_page_choose_server a{
+	width:100%;
+	height:100%;
+	text-decoration:none;
+	background-image:url(http://static.web.anqu.com/resource/1000/images/server_list_page_server_icons.png);
+	background-position:0 -96px;
+	background-repeat:no-repeat;
+}
+.server_page_choose_server a:hover{
+	background-position:0 -144px;
+}
+.server_page_choose_server a:active{
+	background-position:0 -96px;
+}
+.server_list_logo{
+	width:294px;
+	height:173px;
+	background-image:url(http://static.web.anqu.com/resource/1000/images/server_list_logo.png);
+	background-repeat:no-repeat;
+	background-position:0 0;
+	display:inline-block;
+}

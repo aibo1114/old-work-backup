@@ -1,0 +1,15 @@
+extends ../../main
+include ../../_inc/mixin
+
+append script
+    - title = '快来帮忙评选暖暖2015年度最美套装，还有新春大礼包领取哦~'
+
+block ctn
+    body(class=index + '_')
+        if c.refFile && c.refFile.wtShare.length
+            div(style='display:none')
+                img(src=f.resPath(c, c.refFile.wtShare[0]))
+        .container
+            #content.row
+            #static.row(class=index)
+                block content

@@ -1,0 +1,55 @@
+.row
+    != f.imgItem(locals, c)
+
++title(title,'<br/>'+subTitle)
+
+if idea
+    .brief!= idea
+
+if content
+    .article-content
+        != content.toMd().replaceAll('_cImg" src', '_cImg" bb-src')
+
+if task
+    h3 分享打卡
+    .article-content
+        != taskIntro.toMd()
+    .list-group
+        each it in task
+            .list-group-item
+                h4(style='margin-top:0')
+                    strong= it.title
+                    if +it.price > 0
+                        span(style='margin-top:-2px').pull-right.btn.btn-xs.btn-primary !{f.icon('yen')} #{it.price}元
+                p= it.description
+                h4
+                    !=f.label(f.icon('time') + ' ' + it.timeRule)
+if terms
+    .article-content!= terms.toMd()
+
+if user
+    hr
+    h3 小组发起人
+    +userInfo(user)
+
+if ref
+    h3 #{ii(ref._e)}简介
+    if ref.refFile
+        != f.imgItem(ref, c)
+
+    h4= ref.title
+        br
+        small!= ref.author
+    p= ref.description
+
+.member.m-b-1(style='display:none')
+    h3 小伙伴
+    .clearfix
+
+if applyForm
+    .regBtn.mt
+        if applyEnd
+            != f.btn('申请已截止', 'disabled applyEnd', null, null, 1)
+
+//h3 评论
+script!= f.jsp('_gd', locals, '_id', 'title', 'applyForm', 'totalNumber', 'price', 'refFile', 'pWt')

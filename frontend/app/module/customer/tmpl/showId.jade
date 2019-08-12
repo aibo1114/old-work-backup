@@ -1,0 +1,25 @@
+.panel.panel-default.showIdBox
+    .panel-body
+        .col-xs-9.p0
+            p 上传的图片或扫描件，内容务必清晰可辨，避免无法识别
+            p.small (仅支持jpg/jpeg/png/gif格式的图片，大小不超过3M)
+            .imgBox
+        .col-xs-3
+            if isIE(8)
+                p
+                    iframe#_iframe(name='_iframe' style='display:none' src='')
+
+                    form#_form(target='_iframe',action='http://zhaohui.liebao.cn/upd/v3.2?_token=#{_token}', method='POST', enctype='multipart/form-data',encoding='multipart/form-data')
+                        input(name='type', value='card' type='hidden')
+                        .uploadBtn.btn.btn-default.uploadImg
+                            input(name='img', type='file',accept='image/*')
+                            | 选择照片
+            else
+                p
+                    .uploadBtn.btn.btn-default
+                        input(name='img',type='file',accept='image/*')
+                        | 选择照片
+                p
+                    a.btn.btn-default.upload(style='width:105px') 上传
+
+

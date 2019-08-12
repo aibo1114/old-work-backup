@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="auth" content="YuLi"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link href="../css/share.css?v=201612021653" rel="stylesheet"/>
+    <link href="../css/video-js.min.css" rel="stylesheet">
+    <title>问答分享页</title>
+</head>
+<body>
+    <div id="J_answer_temp">
+        <script id="Y_answer_temp" type="text/x-dot-template">
+            <div class="answer_detail">
+                <h1>{{=it.title}}</h1>
+                <h2>{{=it.content}}</h2>
+                <h3>已有<span>{{=it.num_answers}}</span>个回答</h3>
+                <ul class="down_btn">
+                    <li><a href="http://dl.cm.ksmobile.com/static/res/fixed/59/autogeek_official.apk" target="_blank"  onclick="_hmt.push(['_trackEvent', '下载', 'click', ''])" class="down_btn_left">邀请回答</a></li>
+                    <li><a href="http://dl.cm.ksmobile.com/static/res/fixed/59/autogeek_official.apk" target="_blank"  onclick="_hmt.push(['_trackEvent', '下载', 'click', ''])" class="down_btn_right">我要回答</a></li>
+                    <div class="clear"></div>
+                </ul> 
+            </div>
+        </script>
+    </div>
+
+<div class="bg-color"></div>
+<div class="answer_footer">
+    <script id="Y_answerComment_temp" type="text/x-dot-template">
+         {{~it :obj}}
+            <div class="section">
+                <img class="avatar" src="{{=obj.avatar_url}}"/>
+                {{? obj.professional_certification }}
+                <img class="title" src="../img/v.png"/>
+                {{?}}
+                <div class="auth">
+                    <h3>{{=obj.publish_nick_name}}</h3>
+                    {{? obj.professional_certification }}
+                    <h4>· {{=obj.professional_certification.description}}</h4>
+                    {{?? obj.personal_certification}}
+                    <h4>· {{=obj.personal_certification.model}} {{=obj.personal_certification.model_subname}}</h4>
+                    {{??}}
+                    {{?}}
+                </div>
+                <div class="s_content">{{=obj.content}}</div>
+                <p class="time">{{=obj.publish_time}}</p>
+                <div ><a href="http://dl.cm.ksmobile.com/static/res/fixed/59/autogeek_official.apk" target="_blank"  onclick="_hmt.push(['_trackEvent', '下载', 'click', ''])" class="keep">支持{{=obj.num_supports}}</a></div>
+                <span class="line"></span>
+            </div>
+            {{~}}
+    </script>
+</div>
+<!--下载按钮-->
+<a href="http://dl.cm.ksmobile.com/static/res/fixed/59/autogeek_official.apk" target="_blank" class="download" onclick="_hmt.push(['_trackEvent', '下载', 'click', ''])" >
+    <div class="download-container">
+        <img src="../img/logo1.png" width="50" height="50"/>
+        <h1>汽车达人</h1>
+        <h2>电动汽车车主必备的资讯app</h2>
+        <span>立即下载</span>
+        <b></b>
+    </div>
+</a>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/video.min.js"></script>
+<script src="../js/doT.min.js"></script>
+<script src="../js/infoc.min.js"></script>
+<script src="../js/aShare.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3d2082698c1ac7637c3c64dc82857e9f";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

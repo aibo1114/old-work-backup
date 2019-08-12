@@ -1,0 +1,356 @@
+body {
+    font-size:16px;
+}
+body:after {
+    content:'';
+    display:block;
+    height:0;
+    overflow:hidden;
+    clear:both;
+}
+img {
+    width:100%;
+}
+ul,li {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+#containerBox {
+    position:absolute;
+    height:300%;
+    width:100%;
+}
+.js-screen {
+    position:relative;
+    height:33.333%;
+    background:url(../images/bg.jpg) no-repeat 0 0;
+    background-size:100% auto;
+}
+.js-screen .arrow {
+    display:block;
+    width:20px;
+    height:15px;
+    position:absolute;
+    z-index:3;
+    bottom:6%;
+    left:50%;
+    margin-left:-10px;
+    background:url(../images/arrow_down_02.png) no-repeat 0 0;
+    background-size:100% auto;
+    box-shadow:none;
+    animation:arrowLight 1.5s linear infinite alternate;
+}
+.js-screen:nth-child(2) .arrow {
+    background:url(../images/arrow_up_02.png) no-repeat 0 0;
+    background-size:100% auto;
+    box-shadow:none;
+    animation:arrowLight 1.5s linear infinite alternate;
+}
+
+.content {
+    position:absolute;
+    z-index:2;
+    top:0;
+    left:0;
+    height:100%;
+}
+
+.logo {
+    padding-top:50px;
+}
+.mod-video {
+    margin-top:32px;
+}
+.bt-video,.bb-video {
+    display:block;
+    height:5px;
+}
+.content-video {
+    background:url(../images/bg_vido_06.png) repeat-y 0 0;
+    background-size:100% auto;
+    margin:5px 0 8px;
+}
+.bt-video {
+    background:url(../images/bdr_vido_03.png) no-repeat 0 0;
+    background-size:100% auto;
+}
+.bb-video {
+    background:url(../images/bdr_vido_06.png) no-repeat 0 0;
+    background-size:100% auto;
+}
+
+.mod-intro {
+    margin-top:38px;
+    background:url(../images/bg_intro_16.png) 0 0;
+    background-size:12% auto;
+}
+.bt-intro,.bb-intro {
+    display:block;
+}
+.content-intro {
+    padding:0 10px;
+    border-left:1px solid #0f7a6a;
+    border-right:1px solid #0f7a6a;
+}
+.title-intro {
+    width:80%;
+    margin:auto;
+    padding-top:10px;
+}
+.text-intro {
+    width:90%;
+    margin:20px auto 0;
+}
+
+.aside-ft,.staff-ft,.compass-ft {
+    position:absolute;
+    bottom:6%;
+}
+.aside-ft {
+    left:10%;
+    width:12%;
+}
+.staff-ft {
+    left:25%;
+    width:50%;
+}
+.compass-ft {
+    right:10%;
+    width:10%;
+}
+
+
+.content-carousel:after {
+    content:'';
+    display:block;
+    height:0;
+    overflow:hidden;
+    clear:both;
+}
+.bl-content-carousel,.br-content-carousel {
+    display: block;
+    width:5.5%;
+    float:left;
+}
+.l-content-carousel {
+    width:89%;
+    float:left;
+    overflow:hidden;
+    padding:0 5px;
+}
+.li-content-carousel {
+    float:left;
+    display:none;
+}
+.li-content-carousel img {
+    display:block;
+    width:94%;
+    margin:5px auto 0;
+}
+.li-content-carousel:nth-child(1) {
+    display:block;
+}
+
+.bt-caption-carousel,.bb-caption-carousel {
+    display:block;
+}
+.content-caption-carousel {
+    border-left:1px solid rgba(0,215,192,.45);
+    border-right:1px solid rgba(0,215,192,.45);
+    overflow:hidden;
+    color:#00d7c0;
+    padding:0 12px;
+}
+
+.li-words-carousel {
+    display:none;
+}
+.li-words-carousel:nth-child(1){
+    display:block;
+}
+.title-caption-carousel {
+    font-size:.6em;
+}
+.text-caption-carousel {
+    font-size:.6em;
+}
+.l-btn-carousel:after {
+    content:'';
+    display:block;
+    height:0;
+    overflow:hidden;
+    clear:both;
+}
+.li-btn-carousel {
+    width:20%;
+    float:left;
+    padding:10px;
+    position:relative;
+    z-index:99;
+}
+.li-btn-carousel .img-active {
+    display:none;
+}
+.li-btn-carousel:nth-child(1) .img {
+    display:none;
+}
+.li-btn-carousel:nth-child(1) .img-active {
+    display:block;
+}
+
+.carousel {
+    margin-top:40px;
+}
+.caption-carousel {
+    margin-top:20px;
+}
+.btns-carousel {
+    margin-top:15px;
+}
+
+.intro-active img {
+    width:90%;
+    display:block;
+    margin:10px auto 0;
+}
+
+.l-btn-active {
+    margin-top:20px;
+}
+.l-btn-active:after {
+    content:'';
+    display:block;
+    height:0;
+    overflow:hidden;
+    clear:both;
+}
+.li-btn-active {
+    width:50%;
+    float:left;
+    padding:0 5px;
+}
+
+/*dialog*/
+.mask-dialog {
+    position:absolute;
+    z-index:999;
+    left:0;
+    top:0;
+    /*top:200%;*/
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity:.7;
+    display:none;
+}
+.dialog-tcode {
+    position:absolute;
+    z-index:1000;
+    /*top:220%;*/
+    top:20%;
+    left:0;
+    display:none;
+}
+.dialog-share {
+    position:absolute;
+    z-index:1000;
+    width:55%;
+    top:5%;
+    right:10%;
+    display:none;
+}
+.dialog-tcode .tcode {
+    display:block;
+    width:70%;
+    margin:auto;
+}
+.dialog-tcode .words {
+    display:block;
+    width:62%;
+    margin:30px auto 0;
+}
+.dialog-tcode img {
+    width:100%;
+}
+
+/*video*/
+.videoBox {
+    position:absolute;
+    z-index:999999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    display:none;
+}
+.videoBox .close {
+    display:block;
+    position:absolute;
+    z-index:9999999;
+    top:0;
+    left:0;
+    width:100%;
+    padding-left:15px;
+    background:#fff;
+    font-size:1.2em;
+    color:#000;
+    line-height:2.6em;
+    box-shadow:2px 2px 12px #fff;
+}
+
+/*animation*/
+@keyframes arrowLight {
+    0% {
+        box-shadow:none;
+    }
+    100% {
+        box-shadow:1px 1px 10px #66d1c6;
+    }
+}
+
+
+@media screen and (max-width:320px) {
+    .carousel {
+        margin-top:20px;
+    }
+    .caption-carousel {
+        margin-top:10px;
+    }
+    .btns-carousel {
+        margin-top:8px;
+    }
+    .title-caption-carousel,.text-caption-carousel {
+        width:125%;
+        transform:scale(.8);
+        transform-origin:0;
+        padding:0;
+
+    }
+    .text-caption-carousel {
+        margin-top:-10px;
+    }
+}
+@media screen and (width:411px) and (device-height:731px) {
+    .aside-ft,.staff-ft,.compass-ft {
+        bottom:2%;
+    }
+}
+@media screen and (min-height:1024px) {
+    .logo {
+        padding-top:100px;
+    }
+    .aside-ft,.staff-ft,.compass-ft {
+        bottom:-25%;
+    }
+    .mod-intro {
+        margin-top:50px;
+    }
+    .title-intro {
+        padding-top:20px;
+    }
+    .text-intro {
+        padding-top:30px;
+    }
+}

@@ -1,0 +1,30 @@
+extends charge
+
+block style_charge
+    link(rel='stylesheet',type='text/css',href='http://static.web.anqu.com/resource/999/css/charge_suc.css')
+
+block script_charge
+
+block content_charge
+    .charge_title
+        span 充值成功！
+    .charge_info
+        .charge_account
+            span.charge_name 充值账号：
+            span.charge_user_info johnney
+        .charge_game
+            span.charge_name 充值游戏：
+            span.charge_user_info 大天使之间（7区）
+        .charge_money
+            span.charge_name 充值金额：
+            span.charge_user_info 100元
+        .contact
+            a(href='#',class='contact_service',target='_blank') 联系客服
+    .charge_bottom_info
+        .charge_btn
+            .keep_charging
+                a(href='#',target='_self') 继续充值
+            .back_index
+                a(href='#',target='_self') 返回首页
+        include inc/charge_claimation
+

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>11月活动</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/window.css"/>
+    <style>
+        .container {
+            width:100%;
+            background:#ffcd61;
+        }
+        .header {
+            width:100%;
+            height:789px;
+            background:url(images/banner_01.jpg) no-repeat 0 0;
+            background-position: center;
+        }
+        .main {
+            width:100%;
+            margin:auto;
+            position:relative;
+        }
+        .lottery {
+            width:1096px;
+            margin:auto;
+            padding-top:184px;
+            position:relative;
+        }
+        .lottery .panel {
+            width:1096px;
+            height:107px;
+            background:url(images/panel_04.png) no-repeat 0 0;
+        }
+        .l-lottery {
+            position:absolute;
+            z-index:2;
+            left:68px;
+            top:16px;
+        }
+        .l-lottery:after {
+            content:'';
+            display:block;
+            height:0;
+            overflow:hidden;
+            clear:both;
+        }
+        .lottery .turkey {
+            width:253px;
+            height:181px;
+            float:left;
+            margin:0 28px;
+            cursor:pointer;
+            position:relative;
+        }
+        .lottery .turkey_1 {
+            background:url(images/turkey_03.png) no-repeat 0 0;
+        }
+        .lottery .turkey_2 {
+            background:url(images/turkey_06.png) no-repeat 0 0;
+        }
+        .lottery .turkey_3 {
+            background:url(images/turkey_08.png) no-repeat 0 0;
+        }
+        .lottery .fork {
+            display:block;
+            width:236px;
+            height:150px;
+            background:url(images/fork_03.png) no-repeat 0 0;
+            position:absolute;
+            z-index:3;
+            left:270px;
+            top:-50px;
+            display:none;
+        }
+        #txtMarquee {
+            width:1001px;
+            height:25px;
+            line-height:25px;
+            overflow:hidden;
+            position:absolute;
+            z-index:2;
+            bottom:30px;
+            left:30px;
+        }
+        #txtMarquee li {
+            float:left;
+            padding-left:35px;
+            font-size:14px;
+            color:#61100c;
+        }
+        .record {
+            width:100%;
+            position:absolute;
+            z-index:2;
+            top:-111px;
+            left:0;
+        }
+        .record .content {
+            width:1000px;
+            margin:auto;
+            height:35px;
+            padding:14px 0;
+            line-height:35px;
+            background:#e74b28;
+            color:#ffcd61;
+            border-radius:8px;
+        }
+        .record h3 {
+            display:inline-block;
+            float:left;
+            margin-left:40px;
+            font-size:24px;
+        }
+        .record h3 span {
+            padding:0 16px;
+        }
+        .record .regis {
+            display:inline-block;
+            float:left;
+            margin-left:20px;
+            font-size:14px;
+        }
+        .regis a {
+            text-decoration:none;
+            color:#ffcd61;
+        }
+        .record .regis span {
+            padding:0 12px;
+        }
+        .record .regis .user {
+            display:inline-block;
+            float:left;
+            display:none;
+        }
+        .record .regis .login {
+            cursor:pointer;
+        }
+        .record .btn {
+            display:inline-block;
+            float:left;
+            margin-left:32px;
+            width:119px;
+            height:35px;
+            text-indent:-9999px;
+            background:url(images/btn-rechange_22.png) no-repeat 0 0;
+            cursor:pointer;
+        }
+        .record .check {
+            display:inline-block;
+            float:right;
+            margin-right:18px;
+            font-size:18px;
+            /*color:#61100c;*/
+            cursor: pointer;
+        }
+        .ranker {
+
+        }
+        .ranker .hd {
+            width:1000px;
+            margin:auto;
+            padding:25px 0 20px;
+        }
+        .ranker .content {
+            padding:38px 0 46px;
+            background:#fed781;
+            width:100%;
+        }
+        .ranker .title {
+            width:145px;
+            height:33px;
+            margin-left:40px;
+            text-indent: -9999px;
+            background: url(images/title-show_03.jpg) no-repeat 0 0;
+        }
+         #marquee{
+             width:1000px;
+             height:167px;
+             overflow:hidden;
+             margin:auto;
+         }
+        #marquee li {
+            float:left;
+        }
+        #marquee li img {
+            margin:0 12px;
+        }
+        .notice {
+            width:1000px;
+            margin:auto;
+            padding:40px 28px 75px;
+        }
+        .notice .title {
+            width:234px;
+            height:46px;
+            margin-bottom:25px;
+            background:url(images/title-notice_30.jpg) no-repeat 0 0;
+            text-indent: -99999px;
+        }
+        .notice .txt {
+            line-height:34px;
+            letter-spacing:1px;
+            font-size:18px;
+            color:#620f08;
+        }
+        .notice .marked {
+            color:#e44020;
+        }
+        .notice .subtxt {
+            text-indent:2em;
+            line-height:36px;
+            font-size:14px;
+            color:#95520b;
+        }
+        .notice .no-padding {
+            text-indent: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <div class="main">
+            <div class="record">
+                <div class="content">
+                    <h3>您的抽奖次数为<span the-id="scount">0</span>次</h3>
+                    <div class="regis">
+                        <p class="user">亲爱的：<span the-id="username"></span></p>
+                        <a href="http://wan.liebao.cn/action/logout.php?bu=http%3A%2F%2Fk.wan.liebao.cn%2Fk%2Factive/201511/index.html" class="login" the-id="logStatus">退出</a>
+                    </div>
+                    <a href="http://wan.liebao.cn/pay/" target="_blank" class="btn">我要充值</a>
+                    <span class="check" the-id="check_prize">查看获奖记录</span>
+                </div>
+            </div>
+            <div class="lottery">
+                <span class="fork"></span>
+                <ul class="l-lottery">
+                    <li class="turkey turkey_1"></li>
+                    <li class="turkey turkey_2"></li>
+                    <li class="turkey turkey_3"></li>
+                </ul>
+                <div class="panel"></div>
+                <div id="txtMarquee">
+                    <ul class="l-record-prize">
+                        <li class="li-record-prize">ks***872410755 获得了5倍积分加速券</li>
+                        <li class="li-record-prize">di***6  获得了5倍积分加速券</li>
+                        <li class="li-record-prize">su***qing  获得了U盘</li>
+                        <li class="li-record-prize">qi***ei 获得了2倍积分加速卷</li>
+                        <li class="li-record-prize">wo***jy1 获得了3倍积分加速卷</li>
+                        <li class="li-record-prize">72***m0601 获得了5倍积分加速券</li>
+                        <li class="li-record-prize">ks***2312312252 获得了20元充值卡</li>
+                        <li class="li-record-prize">zx***aa 获得了20元充值卡</li>
+                        <li class="li-record-prize">an***nan 获得了10元充值卡</li>
+                        <li class="li-record-prize">ta***xixi 获得了5倍积分加速券</li>
+                        <li class="li-record-prize">ab***g1983 获得了2倍积分加速券</li>
+                        <li class="li-record-prize">li***na11 获得了3倍积分加速券</li>
+                        <li class="li-record-prize">wa***ng09 获得了3倍积分加速券</li>
+                        <li class="li-record-prize">bi***an 获得了2倍积分加速券</li>
+                        <li class="li-record-prize">cy***008 获得了2倍积分加速券</li>
+                        <li class="li-record-prize">ch***y601 获得了2倍积分加速券</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ranker">
+                <div class="hd">
+                    <h3 class="title">奖品展示</h3>
+                </div>
+                <div class="content">
+                    <div class="marquee" id="marquee">
+                        <ul>
+                            <li><img src="images/prize_11.jpg" alt=""/></li>
+                            <li><img src="images/prize_13.jpg" alt=""/></li>
+                            <li><img src="images/prize_15.jpg" alt=""/></li>
+                            <li><img src="images/prize_17.jpg" alt=""/></li>
+                            <li><img src="images/prize_19.jpg" alt=""/></li>
+                            <li><img src="images/prize_04.jpg" alt=""/></li>
+                            <li><img src="images/prize_06.jpg" alt=""/></li>
+                            <li><img src="images/prize_08.jpg" alt=""/></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="notice">
+                <h3 class="title">活动规则</h3>
+                <p class="txt">1、活动期间使用微信方式累计充值每满100元可获得一次撕火鸡资格，超过100元未满200元按照100元计算，即每次累<br />充总额达到100元的倍数时会获得撕火鸡资格，活动期间撕火鸡资格累计没有上限。</p>
+                <p class="subtxt no-padding">PS： 例如玩家A活动第一天使用微信充值200元，将获得2次撕火鸡资格；</p>
+                <p class="subtxt">活动第二天使用微信充值100元，将获得1次撕火鸡资格；</p>
+                <p class="subtxt">活动第三天使用微信充值200元，将获得2次撕火鸡资格，活动期间共计获得5次撕火鸡资格。</p>
+                <p class="subtxt">玩家B活动第一天使用微信充值1020元，将获得10次撕火鸡资格；</p>
+                <p class="subtxt">活动第二天使用微信充值310元，将获得3次撕火鸡资格；</p>
+                <p class="subtxt">活动第三天使用微信充值560元，将获得5次撕火鸡资格，活动期间共计获得18次撕火鸡资格。</p>
+                <p class="txt">2、获得实物奖励的玩家，请于12月3日前联系官方客服，进行奖品领取。</p>
+                <p class="txt">3、活动结束后，撕火鸡功能将停止，请玩家务必在活动结束前消耗完撕火鸡机会，过期机会作废。</p>
+                <p class="txt">4、积分加速券于<span class="marked">12月15日23时59分59秒</span>过期，请尽快使用。</p>
+                <p class="txt">5、积分加速券可在充值中心内的网银及支付宝充值渠道进行使用。使用时，选择“<span class="marked">使用礼券激活码</span>”，<br />在下方粘贴您所获得的积分加速券卡码即可。</p>
+                <p class="txt">6、<span class="marked"> 本次活动最终解释权归金山猎豹游戏中心所有。</span></p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js?t=201410311102"></script>
+    <script type="text/javascript" src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/lucky/Helper/Login/1.0.1/Login.min.js?t=201410311102"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/header/1.0.0/header_login.js?t=201410311102"></script>
+    <script type="text/javascript" src="js/helper.js"></script>
+    <script type="text/javascript" src="js/widget.js"></script>
+    <script type="text/javascript" src="js/window.js"></script>
+    <script type="text/javascript" src="js/jquery.kxbdmarquee.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){
+            $("#marquee").kxbdMarquee({
+                direction:"right",
+                isEqual:true,
+                loop:0
+            });
+            $("#txtMarquee").kxbdMarquee({
+                isEqual:false
+            });
+            $('.turkey').mouseenter(function(){
+                if(!$(this).is(':animated')){
+                    $(this).animate({
+                        'left':'-30px'
+                    });
+                }
+            }).mouseout(function(){
+                $(this).animate({
+                    'left':'0'
+                });
+            }).click(function(){
+                if(!helper.data || helper.data.length==0){
+                    Login.show();
+                }else {
+                    if (!$(this).is(':animated')) {
+                        var $this = $(this);
+                        var ndx = $(this).index();
+                        var left = ndx * 310 + 260;
+                        var toLeft = left - 30;
+
+                        $('.fork').css({
+                            'top': '-50px',
+                            'left': left
+                        }).show().animate({
+                            'top': 0,
+                            'left': toLeft
+                        }, 300, function () {
+                            $this.animate({
+                                'top': '-15px'
+                            }, 200, function () {
+                                $(this).animate({
+                                    'top': '0'
+                                }, 200, function () {
+                                    $('.fork').hide();
+                                    helper.prize(ndx);
+                                })
+                            });
+                        });
+                    }
+                }
+            });
+            //
+            $('[the-id=check_prize]').click(function(){
+                helper.userinfo(function(){
+                    var judge=helper.recordRet,
+                            arr=helper.record,
+                            itemPerPage=4,
+                            count=arr.length,
+                            chapter=Math.ceil(count/itemPerPage),
+                            curC=0;
+                    var content=$('<div></div>'),
+                            time,
+                            title,
+                            prizeCode,
+                            prizeId,
+                            ft='<div class="pagination">'+
+                                    '<span class="window_pageUp">上一页</span>'+
+                                    '<span class="window_pageDown">下一页</span>'+
+                                    '</div>',
+                            bd='<div class="box-record">';
+                    for (var x=0;x<chapter;x++){
+                        bd+='<ul class="l-record">';
+                        for (var i=0;i<itemPerPage;i++){
+                            var ndx=i+curC*itemPerPage;
+                            if(ndx>=count){
+                                break;
+                            }
+                            time=arr[ndx].ctime;
+                            prizeCode=arr[ndx].prize_code;
+                            prizeId=arr[ndx].prize_id;
+                            if( prizeCode=='' ){
+                                switch(prizeId){
+                                    case '1' :
+                                        title='博朗(BRAUN电动剃须刀)'
+                                        break;
+                                    case '2' :
+                                        title='U盘'
+                                        break;
+                                    case '3' :
+                                        title='30元移动充值卡'
+                                        break;
+                                    case '4' :
+                                        title='20元联通充值卡'
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }else{
+                                switch(prizeId){
+                                    case '1' :
+                                        title='2倍积分加速券&nbsp;&nbsp;'+prizeCode
+                                        break;
+                                    case '2' :
+                                        title='3倍积分加速券&nbsp;&nbsp;'+prizeCode
+                                        break;
+                                    case '3' :
+                                        title='5倍积分加速券&nbsp;&nbsp;'+prizeCode
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                            bd+='<li>';
+                            bd+='<span class="time">'+time+'</span>';
+                            bd+='<span class="title">'+title+'</span>';
+                            bd+='</li>';
+                        }
+                        bd+='</ul>';
+                        curC++;
+                    }
+                    bd+='</div>';
+
+                    $(bd).appendTo(content);
+                    $(ft).appendTo(content);
+
+                    switch(judge){
+                        case 1 :
+                            new Window().record({
+                                y:100,
+                                content4record:content[0],
+                                handler4PageDown:function(){
+                                    var ndx=$('.l-record:visible').index();
+                                    if(ndx<(chapter-1)){
+                                        ndx++
+                                        $('.l-record').hide();
+                                        $('.l-record:eq('+ndx+')').show();
+                                    }
+                                },
+                                handler4PageUp:function(){
+                                    var ndx=$('.l-record:visible').index();
+                                    if(ndx>0){
+                                        ndx--
+                                        $('.l-record').hide();
+                                        $('.l-record:eq('+ndx+')').show();
+                                    }
+                                }
+                            });
+                            $('.l-record:eq(0)').show();
+                            break;
+                        case 0 :
+                            new Window().norecord({
+                                y:100
+                            });
+                            break;
+                        default:
+                            alert('服务器繁忙')
+                            break;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,277 @@
+@code: 'nn';
+
+@import "../../../../res/js/bootstrap/less/bootstrap.less";
+
+@import "../../../../lib/style/lib/lib";
+@import "../../../../lib/style/lib/widget";
+@import '../../../../lib/style/mobVar';
+@import '../../../../lib/style/mob';
+
+//@imgBase: 'http://127.0.0.1:8088/images/';
+//html, body {
+//  overflow-x: hidden;
+//  overflow-y: hidden;
+//}
+
+body {
+  color: white;
+  position: relative;
+  min-height: 100%;
+  background: #f7f4ff;
+}
+
+#static {
+  margin-top: 0;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+//
+.container {
+  //height: 100%;
+}
+
+.index {
+  background: #594374;
+  .imgBtn {
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -75px;
+    img {
+      width: 150px;
+      //height: 50px;
+    }
+  }
+}
+
+#content {
+  display: block;
+  margin-top: 0;
+  //height: 100%;
+  //overflow: hidden;
+}
+
+.voteItem {
+  border: 4px solid #b6accb;
+  position: relative;
+  margin-bottom: 10px;
+  image {
+    height: 80px;
+  }
+  .cover {
+    position: absolute;
+    bottom: 0;
+    height: 65px;
+    background: transparent;
+    width: 100%;
+  }
+  .sub {
+    z-index: 100;
+    position: absolute;
+    bottom: 0;
+    background: #b6accb;
+    padding: 6px 10px;
+    width: 100%;
+    font-weight: bold;
+    color: black;
+
+  }
+  .checkbox {
+    width: 35px;
+    height: 35px;
+    border: 4px solid #7c54d1;
+    float: right;
+    margin-top: -25px;
+    background: white;
+    margin-right: 3px;
+    img {
+      display: none;
+    }
+    &.checked {
+      img {
+        display: block;
+      }
+    }
+  }
+}
+
+.refresh {
+  .clearfix();
+}
+
+.btm {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  .submit {
+    width: 280px;
+  }
+}
+
+.vote {
+  background: #764bb0;
+  .main {
+    background: #f8f5ff;
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+  .pink {
+    color: #dc7c70;
+  }
+  .intro {
+    background: #4e2e79;
+    padding: 10px;
+    text-align: center;
+    ul {
+      width: 250px;
+      padding: 0;
+      margin: auto;
+      li {
+        text-align: left;
+        background: url("@{imgDir}star_11.png") no-repeat left top transparent;
+        padding-left: 25px;
+        height: 19px;
+        line-height: 19px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.rdb {
+  .modal-content {
+    background: #1c1c1c;
+    text-align: center;
+    padding-top: 120px;
+    h3 {
+      color: white;
+      margin-bottom: 40px;
+    }
+    .btn {
+      color: white;
+      border-radius: 15px;
+      padding: 10px 20px;
+    }
+    .btn-wzd {
+      background: #ff4c7f;
+    }
+    .btn-jg {
+      background: #4cc6ff;
+    }
+  }
+}
+
+.done {
+  //height: 100%;
+  background: url("@{imgDir}bg_01.jpg") no-repeat left top;
+  background-size: cover;
+  text-align: center;
+  height: 100%;
+  .wtShare {
+    background: #11e2a0;
+    color: white;
+    border-radius: 0;
+    margin: 25px auto 30px;
+    width: 140px
+  }
+  .cat {
+    width: 50%;
+    margin: 40px auto 20px;
+  }
+  .res {
+    text-decoration: underline;
+    color: white;
+    float: right;
+    position: absolute;
+    width: 100px;
+    right: 20px;
+    top: 50px;
+  }
+  .inBtn {
+    width: 320px;
+    margin: auto;
+    margin-bottom: 15px;
+    position: relative;
+    input {
+      height: 35px;
+      line-height: 35px;
+      width: 200px;
+      margin-right: 20px;
+      padding-left: 60px;
+      color: #222;
+    }
+    span {
+      position: absolute;
+      color: #999;
+      top: 7px;
+      left: 8px;
+    }
+    .btn {
+      background: #2bb7ff;
+      width: 100px;
+      color: white;
+    }
+  }
+  .boxText {
+    text-align: left;
+    margin: auto;
+    width: 320px;
+    background: #2f78cd;
+    padding: 10px;
+    font-size: 12px;
+    p {
+      margin-bottom: 5px;
+    }
+  }
+  .qrcode {
+    border: 4px solid #836bfd;
+    width: 140px;
+    margin: auto;
+    img {
+      width: 100%;
+    }
+    background: #836bfd;
+  }
+}
+
+.result {
+  background: url("@{imgDir}bg_01.jpg") no-repeat left top transparent;
+  background-size: cover;
+  height: 100%;
+  h4 {
+    font-size: 1.2em;
+    color: #836bfd;;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .mediaItem {
+    text-align: right;
+  }
+  .media-text {
+    font-size: 2.5em;
+    color: red;
+  }
+  .panel, .panel-heading, .panel-body, .list-group {
+    background: transparent;
+  }
+  .list-group-item {
+    background: rgba(255, 255, 255, 0.6);
+  }
+}
+
+body.modal-open {
+  position: absolute;
+  //overflow: visible;
+  //height: 100%;
+}
+
+//
+//.bsb {
+//  position: fixed;
+//  height: 150px;
+//  width: 100%;
+//  bottom: 0;
+//}

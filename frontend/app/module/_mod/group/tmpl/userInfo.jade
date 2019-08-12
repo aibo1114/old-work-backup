@@ -1,0 +1,21 @@
+mixin viewItem(key,prop)
+    if prop
+        .list-group-item
+            .list-group-item-heading.text-danger.font-weight-bold= ii(key)
+            .list-group-item-text=prop
+
+
+.lead.text-xs-center.m-b-1= ii('generalInfo')
++viewItem('phone',phone)
++viewItem('wid',wid)
++viewItem('email',email)
+if industry && jobTitle && company
+    +viewItem('careerInfo', [industry, jobTitle, company].join(', '))
++viewItem('introduction', introduction)
+
+if info
+    .lead.text-xs-center.m-y-1= ii('applicationInfo')
+    each it in info
+        .list-group-item
+            .list-group-item-heading.text-danger.font-weight-bold=it.title
+            .list-group-item-text=it.val

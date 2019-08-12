@@ -1,0 +1,67 @@
+@brand-info: #5bc0de;
+
+.tree {
+  > ul {
+    border: 0 !important;
+    ul {
+      display: none;
+    }
+  }
+  .glyphicon {
+    color: brown;
+    cursor: pointer;
+  }
+  .tg, .add, .del {
+    cursor: pointer;
+  }
+  ul {
+    margin-left: 5px;
+    border-left: dashed 1px @brand-info;
+    i {
+      margin-left: 5px;
+      margin-right: 0px;
+      border: 1px dashed @brand-info;
+      border-top: 0;
+      border-right: 0;
+      display: inline-block;
+      width: 16px;
+      height: 25px;
+      position: relative;
+      top: -4px;
+    }
+    //> li {
+    //  padding-left: 21px;
+    //}
+  }
+  li {
+    padding: 2px 0;
+    margin-top: -9px;
+    margin-left: -18px;
+    position: relative;
+    a, b,label {
+      margin-left: 5px;
+    }
+    .glyphicon-folder-close, .glyphicon-folder-open {
+      position: relative;
+      z-index: 100;
+    }
+    .ckb{
+      margin-left: 5px;
+      width: 15px;
+      height: 15px;
+      cursor: pointer;
+    }
+  }
+  .active {
+    font-weight: bold;
+    color: darken(@brand-info, 30%);
+    ul {
+      li {
+        font-weight: normal;
+        a {
+          color: @brand-info;
+        }
+      }
+    }
+  }
+}

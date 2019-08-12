@@ -1,0 +1,20 @@
+
+.container.m-t-2
+    footer#footer.text-xs-center.row
+        .col-xs-2
+        .col-xs-4.p-l-0
+            != f.img(f.resPath(c,'images/logo.jpg'))
+        .col-xs-4.p-r-0
+            != f.imgItem(c, c, 'qrcode')
+        .col-xs-2
+
+
+    blockquote.blockquote
+        p.m-b-0
+            include ./idea.jade
+
+    .row.m-b-2
+        .col-xs-3
+        .col-xs-6
+            != f.img(f.resPath(c, 'images/cm.png'))
+        .col-xs-3

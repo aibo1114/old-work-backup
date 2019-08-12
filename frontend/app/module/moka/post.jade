@@ -1,0 +1,37 @@
+extends ./inc/main
+
+mixin postMod(hasVideo)
+    .mod-post
+        .hd-post
+            h3.title= title
+            .desc-hd-post
+                label.cat= label
+                span.author= author
+                span.time= time
+        .bd-post
+            p.brief!= brief
+            if video && video.length
+                +videoBox(video[0].vCode)
+            p.content!= content
+
+mixin videoBox(sourceCode)
+    .bg-video
+        != sourceCode
+
+
+
+block style
+    :less(minify=true)
+
+block content
+    .row
+        .col-md-8
+            .post-app
+                +postMod
+        .col-md-4
+            +appBlock('同类文章推荐')
+                each it in similar
+                    +simlarPost(it)(class='postList')
+
+block st
+    :coffee(bare=true,minify=true)

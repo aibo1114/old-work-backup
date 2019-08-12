@@ -1,0 +1,52 @@
+body {
+    background:#fefefe;
+}
+td {
+    max-width:346px;
+}
+.panel {
+    box-shadow: 1px 1px 3px #ccc;
+}
+.list-group {
+    box-shadow: 1px 1px 3px #ccc;
+}
+.glyphicon {
+    top:0;
+    font-weight:bold;
+}
+.check {
+    font-size:18px;
+    padding:0 12px;
+    top:4px;
+}
+.panel-heading {
+    position:relative;
+}
+.add {
+    position:absolute;
+    z-index:2;
+    right:15px;
+    top:3px;
+    font-size:12px;
+}
+.add .glyphicon {
+    font-weight:normal;
+    top:1px;
+}
+table {
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+}
+
+.js-content {
+    display: none;
+}
+.js-content.active {
+    display: block;
+}
+
+
+
+.edui-default {
+    z-index:999999 !important;
+}

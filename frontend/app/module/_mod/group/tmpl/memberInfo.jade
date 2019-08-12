@@ -1,0 +1,31 @@
+.card.pageEditor
+    if backBtn
+        a.glyphicon.glyphicon-chevron-left.fBackBtn(onclick="cf.slider.slidePage()")
+
+    .uup(style="height: 16rem;overflow:hidden;background:url('#{f.resPath(null, 'userBg.jpg')}');background-size: cover;")
+        .upBox(style='height:12.5rem')
+            .text-xs-center.userAvatar
+                != f.userPic(null, user._id)
+                != f.label("Lv " + (level || 1), 'danger')
+                .cat.m-b-h
+                    strong= user.username
+                div= statement || cf._statement
+                if app.myGroup.get('price')>0
+                    div
+                        if stat && stat.length
+                            - ern = stat[0].earn
+                        else
+                            - ern = 0
+                        .label.label-success 读书奖金 #{ern}/#{fee} 元
+
+        .text-xs-center.userMark.clearfix.m-b-1.bg-inverse(style='opacity: 0.7;padding-top: 0.2rem;padding-bottom: 0.3rem;')
+            if stat && stat.length
+                each it in cf._marks.slice(1)
+                    .col-xs-3
+                        .gray.cat.lead.text-warning.font-weight-bold= stat[0][it.key]
+                        .gray.small= it.title
+
+    .text-xs-center.m-b-h.m-t-1
+        != f.tmpl('crBtn', {btns: btns, type: btnType})
+    .ctns
+

@@ -1,0 +1,178 @@
+<!Doctype html>
+<html xmlns=http://www.w3.org/1999/xhtml>
+<head>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml;charset=utf-8" />
+    <title>豪华礼包任你领</title>
+    <link type="text/css" rel="stylesheet" href="http://image.wan.liebao.cn/www/css/base.css" />
+    <link type="text/css" rel="stylesheet" href="http://k.wan.liebao.cn/k/active/xyxy_sw/assets/css/toast_login.css" />
+
+    <link type="text/css" rel="stylesheet" href="css/base.css" />
+    <link type="text/css" rel="stylesheet" href="css/page.css" />
+    <link type="text/css" rel="stylesheet" href="http://k.wan.liebao.cn/k/active/verifiedNormal/verified.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <div class="content"><span class="dec-1">装饰</span><span class="dec-2">装饰</span><span class="img-banner">帐号绑定手机，豪华礼包任您领。</span></div>
+        </div><span class="partline"></span>
+        <div class="main">
+            <div class="content">
+                <div class="get-main">
+                    <ul class="l-get-main">
+                        <li class="li-get-main">选择您要领取礼包的游戏<a id="games" href="javascript:void(0);">选择游戏</a></li>
+                        <!-- <li class="li-get-main">选择您的服务器<a id="servers" href="javascript:void(0);">选择服务器</a></li> -->
+                    </ul>
+                    <ul class="l-v">
+                        <li class="li-v first-li-v">
+                            <div class="lft-li-v">
+                                <h4 class="title-lft-v">任务一：<span class="yellow">绑定手机</span></h4>
+                            </div>
+                            <div id="mobState" class="rgt-li-v"></div>
+                        </li>
+                        <li class="li-v second-li-v">
+                            <div class="lft-li-v">
+                                <h4 class="title-lft-v">任务二：<span class="yellow">实名认证</span></h4>
+                            </div>
+                            <div id="idState" class="rgt-li-v"></div>
+                        </li>
+                    </ul>
+                    <span id="getCard" class="btn-get-main">马上领取</span></div>
+                <ul class="l-intro-main">
+                    <li class="li-intro-main package">豪华礼包</li>
+                    <li class="li-intro-main insurance">双保险</li>
+                </ul>
+                <a href="http://wan.liebao.cn/service" target="_blank" class="btn-contact-main"></a>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="content">
+                <ul class="l-ft">
+                    <li class="li-ft">抵制不良游戏</li>
+                    <li class="li-ft">拒绝盗版游戏</li>
+                    <li class="li-ft">注意自我保护</li>
+                    <li class="li-ft">谨防上当受骗</li>
+                    <li class="li-ft">适度游戏益脑</li>
+                    <li class="li-ft">沉迷游戏伤身</li>
+                    <li class="li-ft">合理安排时间</li>
+                    <li class="li-ft">享受健康生活</li>
+                </ul>
+                <div class="clear"></div>
+                <ul class="l-ft">
+                    <li class="li-ft">京文网[2016]0672-054号</li>
+                    <li class="li-ft">京IP证120823</li>
+                </ul>
+                <p class="txt-ft">COPYRIGHT 2012&nbsp;WAN.LIEBAO.CN.&nbsp;ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </div>
+    <div class="dialog" id="gameDialog">
+        <div class="hd-dialog">
+            <h3>请选择游戏</h3><span class="fork">X</span></div>
+        <div class="bd-dialog">
+            <div class="mod-ct-dialog">
+                <div class="hd-ct-dialog">网页游戏</div>
+                <div class="bd-ct-dialog"></div>
+            </div>
+        </div>
+    </div>
+    <div class="dialog" id="serverDialog">
+        <div class="hd-dialog">
+            <h3>请选择大区</h3><span class="fork">X</span></div>
+        <div class="bd-dialog">
+            <div class="mod-ct-dialog">
+                <div class="hd-ct-dialog">选择大区</div>
+                <div class="bd-ct-dialog"></div>
+            </div>
+        </div>
+    </div>
+    <div class="tip" id="unbind">
+        <div class="hd-tip"><span class="fork">X</span>
+            <h3>温馨提示</h3></div>
+        <div class="bd-tip">
+            <div class="text-bd-tip">您还没有绑定手机</div><span class="btn-tip bind-btn-tip" id="bindBtn">马上免费绑定手机</span>
+        </div>
+    </div>
+    <div class="tip" id="phoneNum">
+        <div class="hd-tip"><span class="fork">X</span>
+            <p>请输入要为金山网络帐号<span class="hot" the-id="username"></span>绑定的手机号码</p>
+        </div>
+        <div class="bd-tip">
+            <ul class="l-form-tip">
+                <li class="li-form-tip">
+                    <label>手机号码：</label><span id="mobError" class="error-tip">*请输入正确的手机号</span>
+                    <input id="mobVal" type="text" name="" class="itxt-long-tip" />
+                </li>
+                <li class="li-form-tip">
+                    <label>验证码：</label><span id="codeError" class="error-tip"></span><span id="imgValidate" class="valid-short-tip"></span>
+                    <input id="validVal" type="text" name="" class="itxt-short-tip" />
+                </li>
+
+
+            </ul><span class="btn-tip next-btn-tip" id="sendMsgBtn">下一步</span></div>
+    </div>
+    <div class="tip" id="bindPhone">
+        <div class="hd-tip"><span class="fork">X</span>
+            <h3>绑定手机</h3></div>
+        <div class="bd-tip">
+            <div class="text-bd-tip">已将短信发送至您的手机：<span id="msgPhone" class="hot"></span>(<span id="changePhone" class="notice">更改号码</span>)</div>
+            <ul class="l-form-tip">
+                <li class="li-form-tip">
+                    <label>短信验证码：</label><span id="msgError" class="error-tip"></span>
+                    <input id="msgCode" type="text" name="" class="itxt-short-tip" /><span id="resendMsg" class="resend-short-tip">重新发送</span></li>
+            </ul><span class="btn-tip next-btn-tip" id="bindNumBtn">下一步</span></div>
+    </div>
+    <div class="tip" id="bindName">
+        <div class="hd-tip"><span class="fork">X</span>
+            <p>请输入要为金山网络帐号<span class="hot" the-id="username"></span>绑定的身份认证</p>
+        </div>
+        <div class="bd-tip">
+            <ul class="l-form-tip">
+                <li class="li-form-tip">
+                    <label>姓名：</label><span id="nameError" class="error-tip">*请输入中文</span>
+                    <input id="nameVal" type="text" name="" class="itxt-long-tip" />
+                </li>
+                <li class="li-form-tip">
+                    <label>身份证号：</label><span id="identError" class="error-tip"></span>
+                    <input id="identVal" type="text" name="" class="itxt-long-tip" />
+                </li>
+            </ul>
+            <span class="btn-tip next-btn-tip" id="sendIdentBtn">下一步</span></div>
+    </div>
+    <div class="tip" id="bindSuc">
+        <div class="hd-tip"><span class="fork">X</span>
+            <h3 class="hot">恭喜您的手机绑定成功</h3></div>
+        <div class="bd-tip">
+            <div class="text-bd-tip">绑定成功，马上去领取礼包吧!</div>
+            <span class="btn-tip confirm-btn-tip">确定</span>
+        </div>
+    </div>
+    <div class="tip" id="getSuc">
+        <div class="hd-tip"><span class="fork">X</span>
+            <h3 class="hot">领取礼包码成功</h3></div>
+        <div class="bd-tip">
+            <div class="text-bd-tip">
+                <div class="box">
+                    <p id="pkgStatus"></p>
+                    <p id="pkageCode" class="pkage"></p>
+                </div>
+            </div><span class="btn-tip confirm-btn-tip">确定</span></div>
+    </div>
+    <div class="mask-win"></div>
+    <!--script(type='text/javascript',src='#{libPath}/js/jquery-1.12.4.min.js')-->
+    <!--script(type='text/javascript',src='#{libPath}/js/belatedPNG.js')-->
+    <!--script(type='text/javascript',src='lib.js')-->
+</body>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js?t=201410311102"></script>
+<script type="text/javascript" src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+<!--<script type="text/javascript" src="http://image.wan.liebao.cn/www/js/lb.platform.base.js"></script>-->
+<script src="http://k.wan.liebao.cn/k/active/xyxy_sw/assets/js/lb.platform.base.js"></script>
+<!--[if lt IE 7 ]>
+<script type="text/javascript" src="js/belatedPNG.js"></script>
+<script type="text/javascript" >
+DD_belatedPNG.fix('.btn-get-main,.img-banner,.btn-contact-main,.dec-1,.dec-2');
+</script>
+<![endif]-->
+<script type="text/javascript" src="http://k.wan.liebao.cn/k/active/verifiedNormal/index.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>

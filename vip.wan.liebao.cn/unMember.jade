@@ -1,0 +1,74 @@
+extends ./inc/main
+include ./inc/mixin
+block css
+    link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/member.css?v=20170310')
+block js
+    script(type='text/javascript').
+        (function(){
+            $.ajax({
+                url: 'http://vip.wan.liebao.cn/vip/user/api/info',
+                type: 'get',
+                dataType:'jsonp',
+                async: false,
+                success: function (res) {
+                    var ret=res.ret;
+                    if(ret==1){
+                        if(res.data.status==1){
+                            window.location.href='/member.html';
+                        }
+                    }
+                }
+            });
+
+            var h = Math.max($('body').height(), $(document).height()),
+                fH=$('.footer').height(),
+                fT=$('.footer').offset().top,
+                fMt=parseInt( $('.footer').css('margin-top') );
+                mb=h-(fH+fT);
+            $('.top-m').css('margin-bottom',mb+'px');
+
+            if(!ks_user || ks_user.length==0 ){
+                $('#unV').remove();
+                $('#unLogin').show();
+                $('.tip-userlogin').text('您还没登录，登录后享受更多服务');
+            }else{
+                $('#unV').show();
+                $('#unLogin').remove();
+                $('.tip-userlogin').text('您还没有开通“豹会员”，开通后享受更多特权服务');
+                fillUinfo(ks_user.showname);
+            }
+            $('#loginBtn').click(function(){
+                toLogin();
+            });
+
+            function fillUinfo (username){
+                $('#username').text(username);
+            }
+            if(isIe6){
+                DD_belatedPNG.fix('.png_bg');
+            }
+        })();
+block variable
+    -var curPage='member'
+block content
+    .main
+        .top-m
+            .left-unm
+                .mod-banner
+                    .hd-banner.tip-userlogin
+                    .bd-banner
+                        .img-bd-banner: img(src='http://img.wan.ijinshan.com/vip/images/umBanner_03.jpg')
+                        ul.l-bd-banner
+                            +memberItem('游戏特权','会员专享游戏')(class='game')
+                            +memberItem('平台特权','优惠劵拿不停')(class='plant')
+                            +memberItem('活动特权','大奖礼包快来领')(class='active')
+            .right-unm
+                //class=none
+                +mUnlogin(id='unLogin',class='none')
+                +mLogin(id='unV',class='none pb20')
+                    .notice-bd-login
+                        p.pretxt-notice-login 您好：
+                        p.txt-notice-login 您还未开通<span class="orange">“豹会员”</span>服务，现在开通最高附赠700成长值。享受丰富特权服务，更有大奖等你来拿！
+                    a.btn-access-login(href='/payOpen.html') 立即开通
+            .clear
+block dialog

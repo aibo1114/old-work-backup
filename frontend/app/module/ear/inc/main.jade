@@ -1,0 +1,135 @@
+extends ../../main
+include ../../_inc/mixin
+
+block ctn
+    body(data-wid= wt.appId data-wcode= wt.code class=index + '_')
+        .container.topLogo
+            #header
+                .row
+                    .col-md-8.logo
+                        h1
+                            a(href='/'): img.img-responsive(src='#{resPath}images/logo_03.png', alt='')
+                        p #{i18.si('siteName') || ii('abbr')}-#{ii('slogan')}
+                            small(style='font-size: 16px;')  &nbsp; #{c.bizPhone}
+                    .col-md-4
+                        ul#topBar.list-inline.pull-right
+                        form.block-search-hder
+                            input#bdcsMain.q.form-control(name='q', type='text', placeholder='站内搜索')
+                            .btn-search
+
+        .navbar.navbar-default
+            .container
+                .navbar-header
+                    +mobBtn('#navBox')
+                    .searchBox
+                        a.btn.btn-danger.showBtn
+                            != f.icon('search')
+                            | 听力搜索专家
+                        #searchPanel.list-group.l-search
+                            h3.list-group-item 助听器行业搜索神器
+                            a.list-group-item(stag="#sProduct" )
+                                != f.icon('th')
+                                | 查找助听器品牌
+                                != f.icon('chevron-right')
+                            a.list-group-item(stag="#sShop" )
+                                != f.icon('home')
+                                | 查找助听器中心
+                                != f.icon('chevron-right')
+                            a.list-group-item(stag="#sConsultant" )
+                                != f.icon('user')
+                                | 查找专业验配师
+                                != f.icon('chevron-right')
+                            a.list-group-item(stag="#sSchool" )
+                                != f.icon('education')
+                                | 查找语训康复学校
+                                != f.icon('chevron-right')
+                            .block-panel-search
+                                #sConsultant
+                                #sShop
+                                #sProduct
+                                #sSchool
+                #navBox.collapse.navbar-collapse
+                    +nav(c.nav)#nav.nav.navbar-nav
+        .container
+            #content.row
+            #static.row(class=index)
+                block content
+        .container
+            #footer.row.mt
+                .col-md-6.intro
+                    p
+                        | 免费咨询电话
+                        br
+                        | 400-0688-153
+                        br
+                        a(target='_blank', href='http://www.lingtingonline.com') www.lingtingonline.com
+                        br
+                        | 备案号 #{c.record}
+                .col-md-2.attention
+                    p
+                    +nav(c.foot).l-attention
+                .col-md-2.share
+                    h5 关注我们
+                    ul.l-share
+                        li
+                            a(title=c.qq)
+                                img.img-responsive(src='#{resPath}images/icon-share_27.png')
+                        li
+                            a(href=c.weibo)
+                                img.img-responsive(src='#{resPath}images/icon-share_29.png')
+                .col-md-2.qrcode.text-center
+                    != f.imgItem(c, c, 'qrcode')
+    script.
+        (function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));var bdcs = document.createElement('script');bdcs.type = 'text/javascript';bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=10976501516737175360' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+block commonjs
+    if mob
+        :coffee(bare=true,minify=true)
+            cf.loadJS "#{cf.modPath}search.js"
+
+            ls = $('.l-search')
+            bps = $('.block-panel-search')
+
+            $('.searchBox').prepend $('h1 img')
+            nav = $('#navBox')
+            nav.prepend $('.block-search-hder')
+            nav.prepend '<hr/>'
+            nav.prepend $('.logo p')
+
+            $('.showBtn').attr
+                'data-toggle': 'collapse'
+                'data-target': '#searchPanel'
+
+            ls.find('a').click (e)->
+                util.setActive(e)
+                $('.showBtn').trigger 'click'
+                cf[$(this).attr('stag').substr(1)]()
+    else
+        :coffee(bare=true,minify=true)
+            ls = $('.l-search')
+            bps = $('.block-panel-search')
+
+            $('.searchBox').hover ->
+                if cf._sbTimer
+                    clearTimeout cf._sbTimer
+                ls.show()
+            , ->
+                cf._sbTimer = setTimeout ->
+                    ls.hide()
+                , 1000
+
+            ls.hover ->
+                if cf._bpTimer
+                    clearTimeout cf._bpTimer
+                $(this).find('.block-panel-search').show()
+            , ->
+                cf._bpTimer = setTimeout =>
+                    $(this).find('.block-panel-search').hide()
+                , 1000
+
+
+            ls.find('a').hover (e)->
+                util.setActive(e)
+                ls.find("#{$(this).attr('stag')}").show().siblings().hide()
+            , ->
+                log 'left'
+

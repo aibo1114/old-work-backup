@@ -1,0 +1,92 @@
+form {
+  //.panel-footer {
+  //  .btnCtn {
+  //    text-align: left;
+  //    .btn {
+  //      &:last-child {
+  //        float: right;
+  //      }
+  //    }
+  //  }
+  //}
+  .has-error {
+    position: relative;
+    .tooltip-inner {
+      max-width: 500px;
+      background: rgba(255, 0, 0, 0.6);
+      font-weight: bold;
+      padding: 4px 8px
+    }
+    .tooltip-arrow {
+      border-top-color: rgba(255, 0, 0, 0.6) !important;
+    }
+  }
+  .form-group {
+    label.col-xs-12 {
+      text-align: left !important;
+    }
+    > [data-cid] {
+      position: relative;
+    }
+
+    p.form-control-static {
+      text-align: left;
+
+    }
+    .checkbox, .radio {
+      label {
+        display: block;
+      }
+      .radio-inline, .checkbox-inline {
+        display: inline-block;
+        margin-right: 12px;
+        padding-top: 3px;
+        margin-left: 0 !important;
+      }
+    }
+  }
+}
+
+form {
+  .rightBox {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    border-left: 1px solid #EFEFEF;
+    padding: 10px 0 10px 40px;
+    height: 100%;
+    width: 220px;
+  }
+  .asterisk {
+    width: 0;
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    top: 0.5em;
+    right: 10px;
+  }
+
+  .tooltip-inner {
+    box-shadow: 0 1px 5px #999999;
+
+  }
+
+  .panel {
+    margin-bottom: 0;
+  }
+}
+
+.form-inline {
+  .form-group {
+    margin-right: 20px;
+    label {
+      margin-top: 6px;
+    }
+    > * {
+      float: left;
+    }
+  }
+  .btnCtn {
+    float: right;
+  }
+}

@@ -1,0 +1,89 @@
+.window_boundingBox {
+    position:fixed;
+    *position:absolute;
+    z-index:999;
+    background:#f8e8ff;
+    border:5px solid #701d8b;
+}
+.window_mask {
+    position:fixed;
+    *position:absolute;
+    z-index:998;
+    background:#333;
+    opacity:.8;
+    filter:alpha(opacity=80);
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+}
+
+.window_body {
+    width:100%;
+}
+.window_forkBtn {
+    position:absolute;
+    top:9px;
+    right:9px;
+    display:block;
+    width:16px;
+    height:14px;
+    cursor:pointer;
+    background:url(../images/fork_03.jpg) no-repeat 0 0;
+    text-indent:-9999px;
+}
+
+.window_boundingBox .title-record {
+    margin-top:30px;
+    line-height: 36px;
+    text-align: center;
+    font-size:25px;
+    color:#701d8b;
+}
+.window_boundingBox .l-record {
+    margin:18px 0 82px;
+    padding:0 30px;
+}
+.window_boundingBox .l-record li {
+    height:38px;
+    line-height:38px;
+    color:#701d8b;
+    font-size:14px;
+    border-bottom: 1px solid #e9d1f4;
+}
+.window_boundingBox .l-record span {
+    padding:0 20px;
+}
+
+.window_boundingBox .poster {
+    display: block;
+    width:149px;
+    margin:26px auto 0;
+}
+.window_boundingBox .poster img {
+    width:100%;
+}
+.window_boundingBox .text {
+    margin-top:18px;
+    padding-bottom:45px;
+    height:42px;
+    line-height: 42px;
+    text-align: center;
+    font-size:25px;
+    color:#701d8b;
+}
+.window_boundingBox .title-fail {
+    height:58px;
+    line-height:58px;
+    font-size:36px;
+    color:#701d8b;
+    text-align: center;
+}
+
+
+
+
+
+
+
+

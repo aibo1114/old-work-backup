@@ -1,0 +1,62 @@
+<?php
+$data = array(
+	'banner'=>array(),
+	'bg'=>array(),
+	'side'=>array(),
+);
+$ids = array(
+	'banner'=>854,
+	'bg'=>855,
+	'side'=>856,
+	'pop'=>893,
+	'sign'=>895,
+	'yylist'=>924,
+);
+foreach ($ids as $name=>$id) {
+	$temp = array();
+	foreach ($cates[$id] as $article) {
+		$a = array(
+			'game_id'=>$article['field1'],
+			'game_name'=>$article['field2'],
+			'url'=>$article['field3'],
+			'game_alias'=>$article['field4'],
+			'server_id'=>$article['field5'],
+			'sid'=>$article['field6'],
+			'img_url'=>$article['field7'],
+		);
+		if ($id == 854 || $id == 924) {
+			$a['thumb_url'] = $article['field8'];
+		}
+		$temp[] = $a;
+	}
+	$data[$name] = $temp;
+}
+$temp = array();
+foreach ($cates[925] as $article) {
+	$a = array(
+		'title'=>$article['field1'],
+		'url'=>$article['field2'],
+	);
+	$temp[] = $a;
+}
+$data['syhd'] = $temp;
+$temp = array();
+foreach ($cates[926] as $article) {
+	$a = array(
+		'game_id'=>$article['field1'],
+		'game_name'=>$article['field2'],
+		'url'=>$article['field3'],
+		'game_alias'=>$article['field4'],
+		'server_id'=>$article['field5'],
+		'sid'=>$article['field6'],
+	);
+	$temp[] = $a;
+}
+$data['ssgjz'] = $temp;
+$data = array(
+	'code'=>1,
+	'msg'=>'ok',
+	'data'=>$data,
+);
+echo json_encode($data);
+?>

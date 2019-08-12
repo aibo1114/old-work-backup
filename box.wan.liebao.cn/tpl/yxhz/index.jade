@@ -1,0 +1,46 @@
+include ./inc/mixins
+div(ng-controller='home')
+    //.row(ng-controller='focus',ng-if='!serResult')
+    //    .col-xs-12
+    div(ng-controller='focus',ng-if='!serResult')
+        .banner(ng-mouseenter='stopFight()',ng-mouseleave='fight();')
+            ul.l-banner
+                li.li-banner(ng-repeat='it in focus',ng-if='$index==ndx'): a(ng-href='{{it.url}}',target='_blank'): img(ng-src='{{it.img_url}}')
+            ul.btns-banner
+                li.btn-banner(ng-repeat='it in focus',ng-class='{"active-btn-banner": $index==ndx }', ng-click='setNdx($index);')
+    //.row(ng-controller='notice',ng-if='!serResult')
+    //    .col-xs-12
+    div(ng-controller='notice',ng-if='!serResult')
+        .notice-pushys
+            h4.title-notice-pushys 公告栏
+            ul.l-notice-pushys
+                li.li-notice-pushys(ng-repeat="it in notices",ng-if='$index==ndx'): a.link-notice-pushys(ng-href="{{it.url}}",target="_blank",ng-mouseenter='stopFight()',ng-mouseleave='fight();') {{it.title}}
+                //<li ng-repeat="it in dataset" class="li-notice-pushys"><a class="link-notice-pushys" ng-href="{{it.url}}" target="_blank">{{it.title}}</a></li>
+                //div(slide-follow, dataset ='notices', speed='speed',id ='asdW')
+    +mod('热门游戏','fire')(ng-controller='hotGames',ng-if='!serResult',class='plr0')
+        //.row.reverse-plr18
+        //    .col-md-4.col-lg-3(ng-repeat='it in hotgame')
+        .item-hotgame(hover-class='hvr-hotgame',ng-repeat='it in hotgame',ng-class='{"row-last":($index+1)%3 == 0}')
+            span.media-hotgame: img(ng-src='{{it.img_url}}')
+            .caption-hotgame
+                button.btn-hotgame( ng-disabled='pickerShow',ng-class="{'pickerShow':pickerShow}",ng-click="pickServer(it.gid);") 开始游戏
+                //a.btn-hotgame(ng-href='http://i.wan.liebao.cn/game/play_in_box?gid={{it.gid}}',target='_blank') 开始游戏
+                h4.title-hotgame {{it.title}}
+                p.text-hotgame {{it.subject}}
+    +mod('游戏大全','th-large')(ng-controller='allGames',id='agms',class='pl2')
+        .panel-search.abs
+            form.form-search(ng-submit='mainSearch();')
+                .input-group
+                    input.form-control(type='text',id='mainSer', ng-model='kw', ng-keyup='autoGames($event);', ng-focus='auto=true;', focus-class='focus-ipt-search', placeholder='搜索游戏',autocomplete="off",ng-disabled="pickerShow")
+                    //input.form-control(type='text',id='mainSer', ng-model='kw', ng-keyup='autoGames($event);', ng-focus='auto=true;', focus-class='focus-ipt-search', placeholder='搜索游戏',autocomplete="off",ng-disabled="pickerShow || !isLogin")
+                    .input-group-btn
+                        //span.btn.btn-default(ng-click='clear();')
+                            i.glyphicon.glyphicon-remove-circle
+                        button.btn.btn-default(type='submit',ng-disabled="pickerShow")
+                            span.glyphicon.glyphicon-search
+                ul.l-search(ng-if='autoItems', ng-show='auto')
+                    li.li-search(ng-repeat='it in autoItems', ng-click='mainSearch(it.gname);', hover-class='hover-search') {{it.gname}}
+        //.row.reverse-plr18
+        div
+            div(all-games)
+        div(pik-server,ng-if='pickerShow', ng-controller='pikServer', all='all', servers='servers', lately='lately', evts='evts', gid='{{gid}}', status='{{status}}')

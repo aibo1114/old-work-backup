@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="zh" class="ie6"><![endif]-->
+<!--[if IE 7 ]><html lang="zh" class="ie7"><![endif]-->
+<!--[if IE 8 ]><html lang="zh" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html lang="zh" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>cms</title>
+	<style>
+	button{
+		height: 40px;
+	    width: 100px;
+	    background-color: rebeccapurple;
+	    color: #fff;
+	    cursor: pointer;
+	}
+		label{
+			width: 66px;
+		    text-align: right;
+		    display: inline-block;
+		}
+	    input[type="text"]{
+	    	width: 250px;
+		    height: 30px;
+		    padding: 0 5px;
+	    }
+		.yl-record{
+		    width: 1170px;
+		    margin: 30px auto;
+		}
+		.record-tb{
+		    width: 1170px;
+		    margin: auto;
+		    background-color: #f4f4f4;
+		}
+		.record-tb th,.record-tb td{
+		    text-align: center;
+		}
+		.record-tb caption{
+		    height: 90px;
+		    line-height: 90px;
+		    font-size: 18px;
+		    font-weight: 900;
+		    color: #474849;
+		    border: 1px solid #d4d4d4;
+		    border-bottom: none;
+		    background-color: #f4f4f4;
+		}
+		.record-tb thead{
+		    height: 50px;
+		    line-height: 50px;
+		    font-size: 14px;
+		    font-weight: bold;
+		    /* border: 1px solid #ccc; */
+		    border-top: 1px solid #e8e8e8;
+		}
+		.record-tb thead tr{
+		    border: 1px solid #d4d4d4;
+		    border-top: none;
+		    /*border-right: none;*/
+		}
+		.record-tb thead tr th{
+		    border-left: 1px solid #e8e8e8;
+		}
+		.record-tb tbody{
+		    border: 1px solid #d4d4d4;
+		}
+		.record-tb tbody tr{
+		    height: 40px;
+		    line-height: 40px;
+		    font-size: 14px;
+		    color: #474849;
+		    border-bottom: 1px solid #d4d4d4;
+		}
+		.record-tb tbody tr td{
+		    border-left: 1px solid #e8e8e8;
+		}
+	</style>
+</head>
+
+<body >
+<div id="cms-index">
+	<p>
+		<label for="">游戏ID</label>
+		<input type="text" placeholder="输入游戏ID" id="gid">
+	</p>
+	<p>
+		<label for="">文件夹id</label>
+		<input type="text" placeholder="输入文件夹id" id="did">
+	</p>
+	
+	<button id="seachList">搜索</button>
+	<p>
+		<label for="">游戏ID</label>
+		<input type="text" placeholder="输入游戏ID" class="gid">
+	</p>
+	<p>
+		<label for="">文件夹id</label>
+		<input type="text" placeholder="输入文件夹id" id="fdid">
+	</p>
+	<p>
+		<label for="">文件夹名字</label>
+		<input type="text" placeholder="输入文件夹id" id="dname">
+	</p>
+	<button id="upLaodList">上传</button>
+</div>
+<div class="yl-record">
+  <table class="record-tb " id="dir">
+    <caption>文件夹</caption>
+    <thead>
+      <tr>
+      	<th>父文件夹id</th>
+        <th>游戏ID</th>
+        <th>文件夹id</th>
+        <th>文件夹路径</th>
+        <th>文件夹名称</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+    </tbody>
+  </table>
+</div>
+<div class="yl-record">
+  <table class="record-tb" id="file">
+    <caption>文件</caption>
+    <thead>
+      <tr>
+        <th>父文件夹id</th>
+        <th>游戏ID</th>
+        <th>文件夹id</th>
+        <th>标题</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+    </tbody>
+  </table>
+</div>
+</body>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js?t=201608101929"></script>
+<script type="text/javascript">
+	
+	//searchFile();
+	function searchGame(){
+		var gid=$('#gid').val();
+		var did=$('#did').val();
+		$.ajax({
+	        url:'http://cms.cmcm.com/api/dir/list',
+	        data:{
+	        	'gid':gid,
+	        	'did':did
+	        },
+	        type:'post',
+	        dataType:"jsonp",
+	        success:function(res){
+	            if(res.ret=='1'){
+	                var dirStr='';
+	                var fileStr='';
+	                if(res.data.dir!=null){
+	                	for(var i=0;i<res.data.dir.length;i++){
+		                    dirStr+='<tr><td>'+res.data.dir[i].fdid+'</td>'+
+		                         '<td> '+res.data.dir[i].gid+'</td>'+
+		                         '<td>'+res.data.dir[i].id+'</td>'+
+		                    	 '<td>'+res.data.dir[i].path+'</td>'+
+		                         '<td >'+res.data.dir[i].dname+'</td>'
+		                         '</tr>'
+		                }
+		                $('#dir').append(dirStr);
+	                }
+	                if(res.data.file!=null){
+	                	for(var i=0;i<res.data.file.length;i++){
+		                    fileStr+='<tr><td>'+res.data.file[i].fdid+'</td>'+
+		                         '<td> '+res.data.file[i].gid+'</td>'+
+		                         '<td>'+res.data.file[i].id+'</td>'+
+		                         '<td >'+res.data.file[i].title+'</td>'
+		                         '</tr>'
+		                }
+		                $('#file').append(fileStr);
+	                }
+	                 
+	            }else{
+	                alert(data.msg);
+	            }
+	        }
+	    });
+	}
+	$('#seachList').click(function(){
+		searchGame();
+	})
+	function upLoad(){
+		var gid=$('.gid').val();
+		var did=$('#fdid').val();
+		var dname=$('#dname').val();
+		$.ajax({
+	        url:'http://cms.cmcm.com/api/dir/add',
+	        data:{
+	        	'gid':gid,
+	        	'did':did,
+	        	'dname':dname
+	        },
+	        type:'post',
+	        dataType:"jsonp",
+	        success:function(res){
+	            if(res.ret=='1'){
+	               window.location.reload();
+	            }else{
+	                alert(data.msg);
+	            }
+	        }
+	    });
+	}
+	$('#upLaodList').click(function(){
+		upLoad();
+	})
+</script>
+</html>

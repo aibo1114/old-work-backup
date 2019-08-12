@@ -1,0 +1,178 @@
+@import "pc";
+
+/*reset*/
+a {
+  text-decoration:none;
+}
+/*layout*/
+#topline {
+  .bBanner(40px,#333);
+}
+.topline {
+  .bCenter();
+}
+.link-tools {
+  font-size: 12px;
+  color: #e5e5e5;
+  padding-left: 2px;
+}
+#header {
+  .bBanner(@c:#fff);
+  border-bottom:1px solid #eee;
+}
+.header {
+  .bCenter();
+}
+
+#footer {
+  .bBanner(142px,#f5f5f5);
+}
+.footer {
+  .bCenter();
+  text-align:center;
+}
+.container {
+  .bBanner();
+  position:relative;
+}
+.content {
+  //.bCenter();
+  background:#fff;
+  .abs(@b:20px,@l:50%);
+  margin-left:-585px;
+}
+
+.main {
+  .bFl(834px);
+}
+.sidebar {
+  .bFl(326px);
+  padding-left:10px;
+}
+/*mod*/
+//1
+.l-tools {
+  .bFr(300px);
+  .clear();
+}
+.li-tools {
+  .ibFl(@h:40px);
+  .font(12px,#e5e5e5);
+  margin-left:30px;
+  cursor:pointer;
+}
+.li-tools.setIndex {
+  .bg('toolIcon_03.png',0,12px,20px);
+}
+.li-tools.collect {
+  .bg('toolIcon_05.png',0,12px,20px);
+}
+.li-tools.desktop {
+  .bg('toolIcon_07.png',0,12px,20px);
+}
+
+//2
+.logo {
+  .bWh(107px,46px);
+  margin-top:18px;
+  float:left;
+  a {
+    .bWh(107px,46px);
+    .bgNof('logo_13.png',0,0);
+  }
+}
+
+//3
+.l-nav {
+  .ibFl();
+  .clear();
+  padding-left:20px;
+}
+.li-nav {
+  .ibFl(133px,86px,@tlc:true);
+}
+.link-nav {
+  .ib();
+  .font(16px,#333);
+  &:hover {
+    .font(@c:#3d9fed);
+  }
+  &.grey {
+    .font(16px,#999);
+    &:hover {
+      .font(@c:#999);
+    }
+  }
+}
+
+//4
+.user {
+  .ibFr(@h:86px);
+  .font(14px,#333);
+}
+.name-user {
+  .font(14px,#f0641e);
+  margin-left:4px;
+}
+.logout-user {
+  .font(14px,#999);
+  margin-left:24px;
+}
+.logout-user:hover {
+  color: #3d9fed;
+}
+//5
+.l-footer {
+  .bCenter(1000px);
+  height:38px;
+  padding-top:23px;
+  text-align:center;
+  border-bottom:2px solid #2d7cff;
+}
+.li-footer {
+  .ib(@h:38px,@tlc:true);
+}
+
+.link-footer {
+  .ib(@h:12px);
+  .font(12px,#333);
+  padding:0 30px;
+  border-left:1px solid #333;
+  &.first {
+    border:none;
+  }
+  &:hover {
+    .font(@c:#000);
+  }
+}
+.text-footer {
+  margin-top:12px;
+  .font(12px,#333);
+  .part {
+    padding:0 36px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

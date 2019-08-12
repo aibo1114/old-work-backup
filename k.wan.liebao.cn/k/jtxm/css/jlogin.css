@@ -1,0 +1,24 @@
+html,body,div,span,ul,ol,li,h1,h2,h3,h4,h5,h6,input,p,table,tr,th,td,form{margin:0; padding:0;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+ol,ul{list-style:none;}
+em,strong{font-style:normal; font-weight:normal}
+img{border:0;}
+table{border-collapse:collapse; border-spacing:0;}
+input,select,button{vertical-align:middle;}
+html{width:100%; height:100%;}
+body{font-size:12px; color:#333; background:#fff; font-family:Arial, Verdana, Tahoma, 'Microsoft YaHei'; *font-family:'Microsoft YaHei'; line-height:1;}
+a{color:#333; text-decoration:none;}
+a:hover{color:#333; text-decoration:underline;}
+.clearfix:after{visibility:hidden; display:block; font-size:0; content:"."; clear:both; height:0;}
+*html .clearfix{zoom:1;}
+*:first-child+html .clearfix{zoom:1;}
+.clear{clear:both;}
+.hide{display:none;}
+
+.login{background:url(../images/bg_login.jpg) top center no-repeat;}
+.wrap{width:955px; height:1086px; margin:0 auto;padding-top:380px;padding-left:5px;}
+.wrap .wraplabel{width:55px; height:180px;float:left;padding-top:15px;}
+.wrap .wraplabel p{font-size:14px;color:rgb(73,69,66);text-align:right;line-height:30px;padding-bottom:8px;}
+.wrap .wrapleft{width:190px; height:195px;float:left;}
+.wrap .wrapright{width:193px; height:126px;float:left;padding-left:20px;padding-top:50px;}
+.wrap .wrapright .btn{display:block; border:none; width:193px; height:51px; background:url(../images/btn_reg.png) no-repeat; cursor:pointer;text-indent:-999999px;}

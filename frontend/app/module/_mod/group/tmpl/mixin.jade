@@ -1,0 +1,7 @@
+mixin h4(text,icon)
+    h4.m-t-3.m-b-h.text-xs-center
+        .bkfff(style='padding:2px;border:1px solid red;width:10rem;margin:auto')
+            .btn.btn-primary.noRadius.wf
+                if icon
+                    != f.icon(icon)+' '
+                = text

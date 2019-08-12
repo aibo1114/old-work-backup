@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="css/base.css" />
+		<link rel="stylesheet" href="css/main.css" />
+		<script type='text/javascript' src='js/jquery.js'></script>
+		<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+		<!--[if IE 6]>
+		<script type="text/javascript" src="js/DD_belatedPNG.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<div class="nav box-shadow1" role="navigation">
+					<div class="f-wd1000 nav-c">
+						<div class="f-fl logo">
+							<a href="http://wan.liebao.cn/" target='_blank' class="f-block" title='金山猎豹游戏中心' >金山猎豹游戏中心</a>
+						</div>
+						<ul class="f-fl nav-ul">
+							<li class="nav-item">
+								<a href="javascript:void(0);" class="nav-item-a" title="支付平台">支付平台</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="container-pay-wc">
+				<div class="mod-pay-wc">
+					<div class="hd-pay-wc">
+						<h3 class="title-hd-pwc">微信支付</h3>
+						<span class="tip-hd-pwc">扫一扫，轻松支付</span>
+					</div>
+					<div class="bd-pay-wc">
+						<div class="left-bd-pwc">
+							<div class="sweep-mod-pwc">
+								<div class="hd-sweep-pwc">
+									<h5 class="title-sweep-pwc png_ie6">请使用微信“扫一扫”<br />扫描游戏二维码完成支付</h5>
+								</div>
+								<div class="bd-sweep-pwc">
+									<ul class="l-sweep-pwc">
+										<li class="li-sweep-pwc">
+											<h5 class="title-li-sweep">充值账号</h5>
+											<p class="text-li-sweep"></p>
+										</li>
+										<li class="li-sweep-pwc">
+											<h5 class="title-li-sweep">支付游戏</h5>
+											<p class="text-li-sweep"></p>
+										</li>
+										<li class="li-sweep-pwc">
+											<h5 class="title-li-sweep">支付金额</h5>
+											<p class="text-li-sweep">10元</p>
+										</li>
+										<li class="li-sweep-pwc">
+											<h5 class="title-li-sweep">交易好</h5>
+											<p class="text-li-sweep"></p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="right-bd-pwc">
+							<div id="code" class="box-code-pwc"></div>
+						</div>
+					</div>
+					<div class="ft-pay-wc">
+						<p class="tip-ft-pwc">微信支付说明：&nbsp;&nbsp;需开通微信支付，开通后用微信的“扫一扫”功能扫描二维码即可进行支付</p>
+						<a href="javascript:void(0);" class="help-ft-pwc">更多充值帮助</a>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+			    <div class="footer-c">
+			        <p class="footer-link-wrap">
+			            <a class="footer-link" target="_blank" href="http://wan.liebao.cn/game_list.html" data-position='{"e2":"sydb","e3":"sydb-1"}'>游戏中心</a>|
+			            <a class="footer-link" target="_blank" href="/user/?kstag=changeuserinfo" data-position='{"e2":"sydb","e3":"sydb-2"}'>帐号安全</a>|
+			            <a class="footer-link" target="_blank" href="http://wan.liebao.cn/action/redirect_kf.php?gid=1001" data-position='{"e2":"sydb","e3":"sydb-3"}'>客服中心</a>|
+			            <a class="footer-link" target="_blank" href="http://i.wan.liebao.cn/jz/jiazhang.htm" rel="nofollow" data-position='{"e2":"sydb","e3":"sydb-4"}'>家长监控</a>
+			        </p>
+			        <p>抵制不良游戏&#12288;拒绝盗版游戏&#12288;注意自我保护&#12288;谨防受骗上当&#12288;适度游戏益脑&#12288;沉迷游戏伤身&#12288;合理安排时间&#12288;享受健康生活</p>
+			        <p class="p3"><a href="http://image.wan.liebao.cn/game/static/images/www.jpg" title="京网文[2012]0653-210号" target="_blank">京网文[2012]0653-210号</a>&#12288;<a href="http://image.wan.liebao.cn/game/static/images/icp.jpg" title="京ICP证120823" target="_blank">京ICP证120823</a></p>
+
+			        <p class="footer-dline">
+			            <span>COPYRIGHT &copy;2012 <a class="footer-link" href="http://wan.liebao.cn/" target="_blank">WAN.LIEBAO.CN</a> . ALL RIGHTS RESERVED.</span>
+			        </p>
+			    </div>
+			</div>
+		</div>
+		<script type='text/javascript'>
+			$('.li-sweep-pwc:last').css('border-bottom','none');
+			$(function(){
+				$("#code").qrcode({
+					render: "table",
+					width: 230,
+					height:230,
+					text:'http://www.baidu.com'
+				});
+			});
+		</script>
+		<!--[if IE 6]>
+		<script type="text/javascript">
+		  $(function() {
+		    DD_belatedPNG.fix('.title-hd-pwc,.title-sweep-pwc');
+		  });
+		</script>
+		<![endif]-->
+	</body>
+</html>

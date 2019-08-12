@@ -1,0 +1,265 @@
+body, h1, h2, h3, h4, h5, p, ul, li {
+    margin: 0;
+    padding: 0;
+    color: #656565;
+    font: normal 12px/16px "SimSun", sans-serif;
+}
+a {
+    color: #0099cc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.placeholder {
+    color: #aaa;
+}
+.mainbox {
+    width: 968px;
+    height: 384px;
+    margin: 0 auto;
+    padding: 0; 
+    background: url(../images/m_bg.png) 0 28px no-repeat;
+}
+.mainbox h2.regist {
+    width: 150px;
+    height: 30px;
+    text-indent: -999999px;
+    background: url(../images/title.png) 0 0 no-repeat;
+}
+.mainbox .registpad {
+    width: 968px;
+    height: 354px;
+    margin: 0;
+}
+.mainbox .registpad .registinfo {
+    width: 550px;
+    height: 274px;
+    float: left;
+    padding: 46px 40px 40px 40px;
+}
+.mainbox .registpad .registinfo p {
+    height: 38px;
+    width: 550px;
+    padding-bottom: 10px;
+    position: relative;
+    vertical-align: middle;
+    line-height: 48px;
+}
+.mainbox .registpad .registinfo span.notice {
+    width: 260px;
+    height: 37px;
+    line-height: 37px;
+    display: block;
+    float: left;
+    padding-left: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.mainbox .registpad .registinfo span.notice.alerm {
+    color: #cc3300;
+}
+.mainbox .registpad .registinfo span.notice.normal {
+    color: #b8b8b8;
+}
+.mainbox .registpad .registinfo span.notice.success {
+    color: #22C101;
+}
+.mainbox .registpad .registinfo p a.clear {
+    width: 16px;
+    height: 16px;
+    display: none;
+    position: absolute;
+    left: 247px;
+    top: 11px;
+    text-indent: -999999px;
+    background: url(../images/icon.png) -40px -31px no-repeat;
+}
+.mainbox .registpad .registinfo p a.clear.code {
+    left: 170px;
+}
+.mainbox .registpad .registinfo div.agree {
+    width: 433px;
+    _width: 443px;
+    height: 35px;
+    padding-left: 62px;
+    _padding-left: 52px;
+}
+.mainbox .registpad .registinfo p.regbtnrow {
+    width: 410px;
+    padding-left: 70px;
+}
+.mainbox .registpad .registinfo div.agree .checkbox-frame {
+    float: left;
+    border: 1px solid #c6c6c6;
+    border: 1px solid rgba(136, 136, 136, .3);
+    border-radius: 2px;
+    cursor: pointer;
+    width: 11px;
+    height: 11px;
+    white-space: nowrap;
+    margin: 10px 8px 12px 8px;
+    outline: 0;
+    vertical-align: text-bottom;
+}
+.mainbox .registpad .registinfo div.agree .checkbox {
+    width: 15px;
+    height: 15px;
+    outline: 0;
+    left: 0;
+    top: -3px;
+    _top: 0;
+    _left: 0;
+    position: relative;
+    text-align: center;
+}
+.mainbox .registpad .registinfo div.agree .checkbox.checkmark {
+    background: url(../images/icon.png) no-repeat -5px -3px;
+}
+.mainbox .registpad .registinfo .agreeinfo {
+    line-height: 35px;
+}
+.mainbox .registpad .registinfo p label {
+    padding: 0 5px;
+    display: block;
+    width: 60px;
+    height: 37px;
+    float: left;
+    font: normal 14px/37px "SimSun", sans-serif;
+}
+.mainbox .registpad .registinfo p input.text,
+.mainbox .registpad .registinfo p input.password {
+    outline: none;
+    width: 160px;
+    height: 18px;
+    float: left;
+    line-height:18px;
+    padding: 8px 30px 9px 10px;
+    background: #f9f9f9;
+    border-left: 1px #c6c6c6 solid;
+    border-top: 1px #c6c6c6 solid;
+    border-right: 1px #eeeeee solid;
+    border-bottom: 1px #eeeeee solid;
+    vertical-align: middle;
+    -webkit-transition: all 0.1s linear;
+    -moz-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.mainbox .registpad .registinfo p input.text.error,
+.mainbox .registpad .registinfo p input.password.error {
+    border: 1px #cc3300 solid;
+}
+.mainbox .registpad .registinfo p input.text.code {
+    width: 80px;
+}
+.mainbox .registpad .registinfo p img.code {
+    width: 74px;
+    height: 37px;
+    cursor: pointer;
+    display: block;
+    float: left;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+.mainbox .registpad .registinfo p a.codechange {
+    display: block;
+    float: left;
+    padding-left: 5px;
+    line-height: 37px;
+    height: 37px;
+}
+.mainbox .registpad .registinfo p input.text:hover,
+.mainbox .registpad .registinfo p input.password:hover {
+    background: #fff;
+}
+.mainbox .registpad .registinfo p input.text.focus,
+.mainbox .registpad .registinfo p input.password.focus {
+    background: #fff;
+    border: 1px #4d90fe solid;
+}
+.mainbox .registpad a.btn {
+    display: block;
+    width: 105px;
+    height: 38px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font: normal 14px/38px "SimSun", sans-serif;
+}
+.mainbox .registpad .registinfo a.btn.regist {
+    background: url(../images/btn.png) 0 0 no-repeat;
+}
+.mainbox .registpad .registinfo a.btn.regist.disable {
+    cursor: default;
+    background: url(../images/btn.png) 0 -76px no-repeat;
+}
+.mainbox .registpad .registlogin {
+    width: 338px;
+    height: 230px;
+    float: left;
+    text-align: center;
+    padding-top: 130px;
+    position: relative;
+}
+.mainbox .registpad .registlogin a.btn.login {
+    background: url(../images/btn.png) 0 -38px no-repeat;
+    margin: 10px auto;
+}
+.mainbox .registpad .registlogin p.logintip {
+    font: normal 14px/20px "microsoft yahei", "SimSun", sans-serif;
+}
+.mainbox .registpad .registlogin p.qqlogin {
+    position: absolute;
+    right: 10px;
+    bottom: 25px;
+    height: 16px;
+}
+.mainbox .registpad .registlogin p.qqlogin a.qqlogin {
+    padding: 2px 18px;
+    background: url(../images/icon.png) -26px -1px no-repeat;
+}
+.mask {
+    top: 0;
+    left: 0;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    background: #000;
+}
+.win {
+    width: 580px;
+    height: 330px;
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    margin: -165px 0 0 -290px;
+    z-index: 200;
+}
+.win h2.login {
+    width: 150px;
+    height: 30px;
+    text-indent: -999999px;
+    background: url(../images/title.png) 0 -30px no-repeat;
+}
+.win .loginpad {
+    width: 542px;
+    height: 288px;
+    padding-left: 35px;
+    background: url(../images/l_bg.png) 0 10px no-repeat;
+}
+.win a.closewin {
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-indent: -999999px;
+    background: url(../images/icon.png) 0 -29px no-repeat;
+    -webkit-transition: all 0.3s ease-in-out;
+}
+.win a.closewin:hover {
+    -webkit-transform: rotate(180deg);
+}

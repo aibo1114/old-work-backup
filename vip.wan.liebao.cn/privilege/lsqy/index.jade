@@ -1,0 +1,22 @@
+extends ../main
+block variable
+    -var gname='龙神契约';
+    -var alias='lsqy';
+    -var nav= [{t:'游戏豪礼',id:'gifts'}, {t:'更多特权',id:'lead'}];
+    -var game=[{tt:'v1',content:['天将资质丹','天将经验丹','百年玄铁','复活石','绑定铜钱']},{tt:'v2',content:['天将资质丹','天将经验丹','生命之泉','白银宝箱','绑定铜钱']},{tt:'v3',content:['天将资质丹','天将经验丹','乾坤葫碎片','山河图碎片','绑定铜钱']},{tt:'v4',content:['天将资质丹','天将经验丹','乾坤葫碎片','山河图碎片','绑定铜钱']},{tt:'v5',content:['天将资质丹','天将经验丹','乾坤葫碎片','山河图碎片','绑定铜钱']}];
+    -var daily=[{tt:'v1',content:['天将资质丹','攻击丹（2级）','护甲丹（2级）','生命丹（2级）','绑定元宝']},{tt:'v2',content:['天将资质丹','攻击丹（2级）','护甲丹（2级）','生命丹（2级）','绑定元宝']},{tt:'v3',content:['天将资质丹','攻击丹（2级）','护甲丹（2级）','生命丹（2级）','绑定元宝']},{tt:'v4',content:['天将资质丹','攻击丹（2级）','护甲丹（2级）','生命丹（2级）','绑定元宝']},{tt:'v5',content:['天将资质丹','攻击丹（2级）','护甲丹（2级）','生命丹（2级）','绑定元宝']}];
+
+block content
+    +fixNav(nav)
+
+    +panel('游戏豪礼','豹会员每日领取多种礼包奖励','1')(class='first-panel-gp',id='gifts')
+        +gifts('特权礼包')(class='first-gifts-gp')
+            +tab(game,'game' )
+        +gifts('每日礼包')
+            +tab(daily,'daily')
+
+    +panel('更多特权','豹会员平为您提供更多特权，助您乘风破浪','2')(id='lead')
+        +moreList
+    +panel('如何获得特权？','只需三步，即可开通','3')(class='six-panel-gp')
+        +leadList
+        +openBtn

@@ -1,0 +1,44 @@
+.anqu_middle{
+	margin:0 auto;
+}
+.anqu_inline_block{
+	display:inline-block;
+}
+.anqu_fl_rt{
+	float:right;
+}
+/*以下为安趣list页面css*/
+.anqu_news_list_content{
+	margin-bottom:100px;
+}
+.anqu_news_border{
+	border-bottom:1px dashed #b2b2b2;
+}
+.anqu_news_style{
+	width:100%;
+	color:#808080;
+	padding:16px 0;
+	clear:both;
+}
+.anqu_news_icon{
+	width:7px;
+	height:8px;
+	margin-left:5px;
+	background-image:url(http://static.web.anqu.com/resource/999/images/anqu_news_list/anqu_list_icon.png);
+	background-repeat:no-repeat;
+	background-position:-7px 0;
+}
+.anqu_news_title{
+	margin-left:7px;
+}
+.anqu_news_time{
+	float:right;
+	margin-right:3px;
+}
+.li_anqu_content a:hover{
+	background-image:url(http://static.web.anqu.com/resource/999/images/anqu_news_list/li_hover_after.png);
+	background-repeat:no-repeat;
+	background-position:0 3px;
+	border-bottom:none;
+	color:#3d9fed;
+}

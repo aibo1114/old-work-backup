@@ -1,0 +1,277 @@
+.container-pay-wc {
+	width:600px;
+	margin:auto;
+}
+
+.mod-pay-wc {
+	font-family:'微软雅黑','黑体','宋体';
+	color:#494949;
+	margin-top:20px;
+}
+.hd-pay-wc {
+	padding-bottom:20px;
+	*height:40px;
+	_height:40px;
+}
+.hd-pay-wc:after {
+	content:'.';
+	display:block;
+	height:0;
+	overflow:hidden;
+	clear:both;
+}
+.bd-pay-wc {
+	*height:242px;
+	_height:242px;
+}
+.bd-pay-wc:after {
+	content:'.';
+	display:block;
+	height:0;
+	overflow:hidden;
+	clear:both;
+}
+.ft-pay-wc {
+	margin-top:55px;
+	padding:20px 0;
+	text-align:center;
+}
+.ft-pay-wc:after {
+	content:'.';
+	display:block;
+	height:0;
+	overflow:hidden;
+	clear:both;
+}
+
+.title-hd-pwc {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	float:left;
+	height:40px;
+	line-height:40px;
+	padding-left:60px;
+	font-size:20px;
+	font-weight:normal;
+	background:url(../images/icon-wc_03.png) no-repeat 0 0;
+}
+.tip-hd-pwc {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	float:right;
+	height:40px;
+	line-height:40px;
+	font-size:14px;
+}
+.left-bd-pwc {
+	width:350px;
+	float:left;
+}
+.right-bd-pwc {
+	width:230px;
+	float:right;
+}
+
+.sweep-mod-pwc {
+
+}
+.hd-sweep-pwc {
+	padding:18px 0;
+	background:#455f84;
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+}
+.bd-sweep-pwc {
+	border:1px solid #dfdfdf;
+	border-bottom-left-radius:6px;
+	border-bottom-right-radius:6px;
+}
+
+
+.title-sweep-pwc {
+	padding-left:136px;
+	line-height:24px;
+	color:#fff;
+	font-size:14px;
+	font-weight:normal;
+	letter-spacing:1px;
+	background:url(../images/icon-sweep_07.png) no-repeat 40px 4px;
+}
+.li-sweep-pwc {
+	padding:0 22px;
+	line-height:38px;
+	font-size:14px;
+	color:#6e6e6e;
+	border-bottom:1px solid #dfdfdf;
+}
+.li-sweep-pwc:after {
+	content:'.';
+	display:block;
+	height:0;
+	overflow:hidden;
+	clear:both;
+}
+.title-li-sweep {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	float:left;
+	width:90px;
+	height:38px;
+	overflow:hidden;
+}
+.text-li-sweep {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	float:left;
+	height:38px;
+	overflow:hidden;
+}
+.tip-ft-pwc {
+	line-height:28px;
+	font-size:14px;
+	color:#33322e;
+}
+.help-ft-pwc {
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	float:right;
+	line-height:28px;
+	font-size:12px;
+	color:#f0641e;
+	text-decoration:underline;
+	padding-right:16px;
+}
+
+.success-sweep-pwc .hd-sweep-pwc {
+	background:#439057;
+}
+.success-sweep-pwc .title-sweep-pwc {
+	padding-left:100px;
+	line-height:48px;
+	font-size:20px;
+	background:url(../images/checkmark_07.png) no-repeat 40px 4px;
+}
+
+
+
+/*footer*/
+a, .link {
+    text-decoration: none;
+    transition: color .2s;
+    cursor: pointer;
+    color: #474849;
+}
+.footer {
+    min-width: 1000px;
+    background: #ececec;
+    padding-top: 58px;
+    box-shadow: 0 2px 4px #666;
+    position:fixed;
+    *position:absolute;
+    _position:absolute;
+    width:100%;
+    bottom:0;
+}
+.footer-c {
+    width: 1000px;
+    margin: 0 auto;
+    color: #999;
+    text-align: center;
+    font: normal 12px/26px 'SimSun';
+}
+.footer-link-wrap {
+    border-bottom: 2px solid #f90;
+}
+.footer-link {
+    margin: 0 15px;
+    color: #999;
+    text-decoration: none;
+}
+.footer-link:hover {
+	color:#333;
+}
+.footer-dline {
+    font-family: 'Arial';
+}
+/*header*/
+.nav {
+    background: #081037;
+    height: 57px;
+    border-bottom: 1px solid #393f5e;
+    border-top: 1px solid #081037;
+    box-shadow: 0 3px 5px -3px rgba(0,0,0,.4);
+}
+.nav-c {
+    height: 100%;
+    overflow: hidden;
+}
+.f-wd1000 {
+    width: 1000px;
+    margin: 0 auto;
+}
+.logo {
+    width: 159px;
+    height: 100%;
+    text-indent: -9999px;
+    margin: 0 25px 0 4px;
+    display: block;
+    background: url(../images/logo_03.png) center no-repeat;
+}
+.f-fl {
+    float: left;
+    _display: inline;
+}
+.logo .f-block {
+    height: 100%;
+}
+.f-block {
+    display: block;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+
+.nav-ul {
+    width: 812px;
+    height: 100%;
+    _width: 800px;
+}
+.nav-item {
+    width: 90px;
+    height: 100%;
+    float: left;
+    font: 15px/57px "Microsoft Yahei";
+    font-weight: 700;
+    text-align: center;
+    position: relative;
+    _width: 87px;
+}
+.nav-home .nav-item-a, .nav-home .nav-item-a:hover {
+    background: #f0641e;
+    color: #fbfbfb;
+}
+.nav-item-a {
+    height: 100%;
+    display: block;
+    color: #fbfbfb;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "community.js",
+  "sourceRoot": "",
+  "sources": [
+    "community.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;;AAAA"
+}

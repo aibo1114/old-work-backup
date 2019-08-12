@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Import Page</title>
+    <script type="text/javascript">
+        document.domain = 'wan.liebao.cn';
+    </script>
+</head>
+<body>
+    <!-- test -->
+    <!--#include virtual="/regtest.html"-->
+
+    <!-- jQuery库 建议用工程里同个文件，避免加载两次jquery -->
+    <script type="text/javascript" src="http://i.wan.liebao.cn/script/lib/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        // reg & login dom
+        var $regIframe = '<iframe src="./reg_demo.html" height="200"></iframe>';
+        var $loginIframe = '<iframe src="https://login.ijinshan.com/?lp=https%3A%2F%2Flogin.ijinshan.com%2Fwebgame%2Fw%2Floginpanel.html%3Fstyle%3Dloginpanel%26btn%3Dstyle%252Fimages%252Floginpanel.png&if=1&service=http%3A%2F%2Fi.wan.liebao.cn%2Flogin%3Fgo%3Dhttp%253A%252F%252Fk.wan.liebao.cn%252Fr%252Fdemo%252Findex.html" height="200"></iframe>';
+
+        $('body').append($regIframe);
+
+        // login status
+        var url = 'http://i.wan.liebao.cn/user/i';
+        $.ajax({
+            url: url,
+            data: null,
+            type: 'GET',
+            dataType: 'jsonp',
+            success: function(json) {
+                switch (json.code) {
+                    case 1: // logined
+                        var $info = '';
+                        for (var k in json.data) {
+                            $info += '<p>' + k + ' : ' + json.data[k] + '</p>';
+                        }
+                        $info += '<a href="http://i.wan.liebao.cn/logout?go=http%3A%2F%2Fk.wan.liebao.cn%2Fr%2Fdemo%2Findex.html">Logout</a>'
+                        $('body').append($info);
+                        break;
+                    case 2: // unlogin
+                        $('body').append($loginIframe);
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

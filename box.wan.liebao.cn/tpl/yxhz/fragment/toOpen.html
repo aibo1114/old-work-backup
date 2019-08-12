@@ -1,0 +1,12 @@
+<div class="main-servers">
+    <ul class="l-main-servers" ng-if="toOpen">
+        <li class="li-main-servers" ng-repeat="it in toOpen | offset: currentPage*perPage | limitTo: perPage" ng-class="{'hover-main-servers': $index==0 && currentPage==0}">
+            <div ng-if="it.isClock!=1" ng-click="addClock(it);" class="btn-main-servers glyphicon-main-servers"><span class="glyphicon glyphicon-time"></span>提醒</div>
+            <div ng-if="it.isClock==1" class="btn-main-servers grey-main-servers">已提醒</div>
+            <h4 class="gname-main-servers">{{it.GAME_NAME}}</h4>
+            <p class="sname-main-servers">{{it.LINE_NAME}}</p>
+            <p class="time-main-servers">{{it.uiTime}}</p>
+        </li>
+    </ul>
+    <div pagination items="toOpen" per-page="perPage" current-page="currentPage"></div>
+</div>

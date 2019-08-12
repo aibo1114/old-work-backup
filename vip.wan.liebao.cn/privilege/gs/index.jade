@@ -1,0 +1,30 @@
+extends ../main
+block variable
+    -var gname='攻沙';
+    -var alias='gs';
+    -var nav= [{t:'游戏豪礼',id:'gifts'}, {t:'专属称号',id:'title'}, {t:'属性光环',id:'halo'}, {t:'更多特权',id:'lead'}];
+    -var grade=[  {  tt:'v1',content:['装备精华（小）', '金砖（中）', '中级成就令牌', '双倍宝典（4小时）']}, {  tt:'v2',content:['装备精华（小）', '金砖（中）', '中级成就令牌', '双倍宝典（4小时）']},{  tt:'v3',content:['装备精华（小）', '金砖（中）', '中级成就令牌', '双倍宝典（8小时）']},{  tt:'v4',content:['装备精华（小）', '金砖（中）', '中级成就令牌', '三倍宝典（2小时）']},{  tt:'v5',content:['装备精华（小）', '金砖（中）', '中级成就令牌', '三倍宝典（2小时）']}];
+    -var daily=[ '金砖（小）', '副本卷轴', '弓箭手令牌'];
+block content
+    +fixNav(nav)
+
+    +panel('游戏豪礼','豹会员每日领取多种礼包奖励','1')(class='first-panel-gp',id='gifts')
+        +gifts('等级礼包')(class='first-gifts-gp')
+            +tab(grade,'grade')
+        +gifts('每日礼包')
+            +table(daily,'daily')
+
+    +panel('专属称号','成为猎豹游戏会员 领取平台炫酷称号','2')(id='title')
+        img.img-panel-gp(src='images/img-1.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('属性光环','所有区服展示您的属性光环','3')(id='halo')
+        img.img-panel-gp(src='images/img-2.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('更多特权','豹会员平为您提供更多特权，助您乘风破浪','4')(id='lead')
+        +moreList
+
+    +panel('如何获得特权？','只需三步，即可开通','5')(class='six-panel-gp')
+        +leadList
+        +openBtn

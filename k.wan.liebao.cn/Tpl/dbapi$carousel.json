@@ -1,0 +1,18 @@
+<?php
+$data = array(
+	'code'=>1,
+	'msg'=>'ok',
+	'data'=>array(),
+);
+$id = 805;
+$temp = array();
+foreach ($cates[$id] as $article) {
+	$temp[] = array(
+		'gid'=>$article['field1'],
+		'game_name'=>$article['field2'],
+		'url'=>$article['field3'],
+		'img_url'=>$article['field4'],
+	);
+}
+$data['data'] = $temp;
+echo json_encode($data);

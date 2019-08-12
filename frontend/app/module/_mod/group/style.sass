@@ -1,0 +1,92 @@
+
+//$gray-dark: #373a3c !default
+//$gray: #55595c !default
+//$gray-light: #818a91 !default
+//$gray-lighter: #eceeef !default
+//$gray-lightest: #f7f7f9 !default
+
+.arrowRight, .arrowLeft, .arrowRightBorder, .arrowLeftBorder
+  position: absolute
+  top: 15px
+  width: 0
+  height: 0
+  font-size: 0
+  border: solid 8px
+
+.arrowRightBorder
+  right: -16px
+  border-color: transparent transparent transparent $alert-success-border
+
+.arrowLeftBorder
+  left: -16px
+  border-color: transparent $alert-info-border transparent transparent
+
+.arrowRight
+  right: -15px
+  z-index: 100
+  border-color: transparent transparent transparent $alert-success-bg
+
+.arrowLeft
+  left: -15px
+  z-index: 100
+  border-color: transparent $alert-info-bg transparent transparent
+
+.items
+  .p-y-h
+    img
+      margin-top: 0.3rem
+
+.fellow
+  .col-xs-2, .col-xs-1
+    padding-top: 0.4rem
+
+.contacts
+  .list-group-item
+    border-radius: 0
+    border-left: 0
+    border-right: 0
+
+.maxLen
+  &::after
+    content: attr(max)
+    font-size: 2rem
+    color: $gray-light
+    float: right
+    margin-top: -3rem
+    margin-right: 0.5rem
+
+.iTop2
+  i
+    top: 2px
+    margin-left: 0.7rem
+    margin-right: 0.2rem
+
+.timeTable
+  position: relative
+  .ls
+    position: relative
+    margin-bottom: 1.4rem
+    height: 12rem
+    span
+      left: 0
+      text-align: center
+      position: absolute
+  .timeHub
+    width: 11%
+    display: inline-block
+    margin-right: 1%
+    .label-mark
+      color: $gray-light
+    .lenBar
+      position: relative
+      width: 90%
+      height: 12rem
+      > .label
+        height: 0.8rem
+        display: inline-block
+        position: absolute
+        width: 100%
+        left: 0
+        opacity: 0.5
+    .label-faded
+      background: $gray-lighter

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="EmulateIE9" />
+    <meta name="renderer" content="ie-stand" />
+    <title>致命狙击</title>
+    <link rel="stylesheet" href="css/base.css" />
+    <style>
+        /*voiceControl*/
+        #audioControl {
+            display:block;
+            width:25px;
+            height:25px;
+            position:absolute;
+            z-index:4;
+            top:38px;
+            left:80px;
+            cursor:pointer;
+        }
+        .audioOpen {
+            background:url(images/closeVoice.png) no-repeat 0 0;
+            background-size:100% auto;
+
+        }
+        .audioClose {
+            background:url(images/openVoice.png) no-repeat 0 0;
+            background-size:100% auto;
+        }
+        /*loading*/
+        .mask-loading {
+            position:absolute;
+            z-index:9999;
+            background:#fff;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+        }
+        .loading {
+            display:block;
+            width:150px;
+            height:150px;
+            margin:200px auto 0;
+        }
+        body {
+            /*background:#1c1c28;*/
+            background:url(images/bg.jpg) 0 0;
+        }
+        .container {
+            width:1280px;
+            height:630px;
+            margin:auto;
+            background:url(images/bg.png) no-repeat 0 0;
+            position:relative;
+            cursor:url('http://k.wan.liebao.cn/k/active/killShot/images/goal_14.cur'),default;
+            overflow:hidden;
+            /*filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);*/
+        }
+        a {
+            cursor:url('http://k.wan.liebao.cn/k/active/killShot/images/goalToAction.cur'),default;
+            /*filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);*/
+        }
+        .route-1,.route-2 {
+            position:absolute;
+            z-index:2;
+            display:block;
+            left:20px;
+        }
+        .route-1 {
+            top:107px;
+            width:611px;
+            height:78px;
+            background:url(images/route_03.png) no-repeat 0 0;
+        }
+        .route-2 {
+            top:190px;
+            width:1239px;
+            height:250px;
+            background:url(images/route_07.png) no-repeat 0 0;
+        }
+        .main {
+            width:1190px;
+            height:630px;
+            margin:auto;
+            /*padding-top:72px;*/
+            background:url(images/border_03.png) no-repeat 0 -2px;
+            position:relative;
+            z-index:3;
+        }
+        .cloud-1,.cloud-2,.cloud-3,.cloud-4,.cloud-5,.cloud-6 {
+            position:absolute;
+            display:block;
+            z-index:2;
+        }
+        .cloud-1 {
+            top:0;
+            left:233px;
+            background:url(images/cloud_02.png) no-repeat 0 0;
+            width:156px;
+            height:90px;
+            opacity:1;
+            transform:scale(1);
+            /*animation:cloudMove 16s linear infinite alternate;*/
+            animation:cloudMove 32s ease-in-out infinite alternate;
+        }
+        .cloud-2 {
+            top:0;
+            right:193px;
+            background:url(images/cloud_04.png) no-repeat 0 0;
+            width:275px;
+            height:273px;
+            opacity:1;
+            transform-origin:50%;
+            transform:scale(1);
+            animation:cloudDespair 32s ease-in-out 1.2s infinite alternate;
+        }
+        .cloud-3 {
+            top:174px;
+            left:317px;
+            background:url(images/cloud_08.png) no-repeat 0 0;
+            width:496px;
+            height:293px;
+            transform-origin:50%;
+            transform:scale(1);
+            animation:cloudEnlarge 41s linear infinite alternate;
+
+        }
+        .cloud-4 {
+            top:365px;
+            right:0;
+            background:url(images/cloud_09.png) no-repeat -48px 0;
+            width:262px;
+            height:243px;
+            animation:cloudOpacity 32s linear infinite alternate;
+            opacity:1;
+        }
+        .cloud-5 {
+            left:196px;
+            top:466px;
+            background:url(images/cloud_11.png) no-repeat 0 0;
+            width:290px;
+            height:174px;
+            opacity:1;
+            animation:cloudSkew 32s linear infinite alternate;
+            /*cloudOpacity*/
+        }
+        .cloud-6 {
+            right:140px;
+            bottom:-40px;
+            background:url(images/cloud_20.png) no-repeat 0 0;
+            width:161px;
+            height:122px;
+        }
+
+
+        .hd-main {
+            background:url(images/topline_03.png) no-repeat 43px 30px;
+            /*margin-top:25px;*/
+            height:45px;
+            position:relative;
+            padding:40px 26px 0 50px;
+        }
+        .hd-main .title,.time,.subtitle {
+            text-indent:-9999px;
+        }
+        .hd-main .subtitle {
+            position:absolute;
+            z-index:2;
+            width:125px;
+            height:9px;
+            background:url(images/stitle_10.png) no-repeat 0 0;
+            right:33px;
+            bottom:-10px;
+        }
+        .hd-main .title {
+            width:152px;
+            height:17px;
+            float:left;
+            background:url(images/word-tl_03.png) no-repeat 0 0;
+        }
+        .hd-main .time {
+            width:138px;
+            height:17px;
+            float:right;
+            background:url(images/time_05.png) no-repeat 0 0;
+            display:none;
+        }
+
+        .main .goal-center {
+            display:block;
+            width:43px;
+            height:44px;
+            background:url(images/goal_14.png) no-repeat 0 0;
+            position:absolute;
+            z-index:2;
+            top:359px;
+            left:588px;
+        }
+        .main .goal-circle {
+            width:216px;
+            height:216px;
+            border-radius:50%;
+            border:1px dashed rgba(4,208,186,.4);
+            position:absolute;
+            z-index:2;
+            top:180px;
+            left:502px;
+        }
+        .goal-circle .goal-1,.goal-2,.goal-3 {
+            position:absolute;
+            z-index:3;
+            background:url(images/hexagon_29.png) no-repeat 0 0;
+            width:38px;
+            height:35px;
+        }
+        .goal-circle .goal-1 {
+            top:-14px;
+            left:62px;
+        }
+        .goal-circle .goal-2 {
+            top:112px;
+            left:-17px;
+        }
+        .goal-circle .goal-3 {
+            top:180px;
+            left:147px;
+        }
+
+
+        .goal-circle .title,.bar,.video-box {
+            position:absolute;
+            z-index:3;
+            display:block;
+        }
+        .goal-circle .title {
+            text-indent: -9999px;
+            z-index:4;
+        }
+        .goal-circle .bar,.video-box {
+            display:none;
+        }
+
+        .goal-1 .bar {
+            width:101px;
+            height:64px;
+            top:-39px;
+            left:14px;
+            background:url(images/bar_19.png) no-repeat 0 0;
+        }
+        .goal-2 .bar {
+            width:101px;
+            height:64px;
+            top:14px;
+            left:-76px;
+            background:url(images/bar_33.png) no-repeat 0 0;
+        }
+        .goal-3 .bar {
+            width:123px;
+            height:100px;
+            top:-75px;
+            left:14px;
+            background:url(images/bar_18.png) no-repeat 0 0;
+        }
+        .goal-1 .video-box {
+            width:185px;
+            height:122px;
+            left:118px;
+            top:-31px;
+            background:url(images/video_17.png) no-repeat 0 0;
+        }
+        .goal-2 .video-box {
+            left:-299px;
+            top:-35px;
+            width:218px;
+            height:174px;
+            background:url(images/video_18.png) no-repeat 0 0;
+        }
+        .goal-3 .video-box {
+            left:144px;
+            top:-71px;
+            width:232px;
+            height:138px;
+            background:url(images/video_28.png) no-repeat 0 0;
+        }
+
+        .goal-1 .title {
+            width:98px;
+            height:19px;
+            left:53px;
+            top:7px;
+            background:url(images/title_03.png) no-repeat 0 0;
+        }
+        .goal-2 .title {
+            width:97px;
+            height:19px;
+            left:-112px;
+            top:8px;
+            background:url(images/title_07.png) no-repeat 0 0;
+        }
+        .goal-3 .title {
+            width:145px;
+            height:19px;
+            left:51px;
+            top:7px;
+            background:url(images/title_11.png) no-repeat 0 0;
+        }
+
+        .bd-main {
+            padding-top:382px;
+        }
+        .btn-group {
+            width:354px;
+            height:53px;
+            margin:auto;
+        }
+        .btn-main {
+            display:block;
+            float:right;
+            width:163px;
+            height:53px;
+            background:url(images/btn_15.png) no-repeat 0 0;
+            text-indent:-9999px;
+        }
+        .btn-official {
+            display:block;
+            float:left;
+            width:163px;
+            height:53px;
+            background:url(images/btn_official_03.png) no-repeat 0 0;
+            text-indent:-9999px;
+        }
+        .ft-main {
+            margin-top:46px;
+            position:relative;
+        }
+        .ft-main .staff {
+            width:845px;
+            height:45px;
+            margin:auto;
+            background:url(images/btmLine_19.png) no-repeat 0 0;
+            position:relative;
+        }
+        .ft-main .target {
+            position:absolute;
+            z-index:3;
+            top:-250px;
+            left:36px;
+            width:106px;
+            height:292px;
+            background:url(images/sideLine_10.png) no-repeat 0 0;
+            padding:13px 0 0 10px;
+            box-sizing: border-box;
+        }
+        .ft-main .compass {
+            position:absolute;
+            z-index:3;
+            top:-70px;
+            right:38px;
+            width:124px;
+            height:124px;
+            background:url(images/compass_21.png) no-repeat 0 0;
+        }
+
+        .ft-main .staff .arrow-top {
+            display:block;
+            position:absolute;
+            z-index:4;
+            width:13px;
+            height:10px;
+            left:89px;
+            background:url(images/arrow_25.png) no-repeat 0 0;
+            top:5px;
+        }
+        .ft-main .staff .arrow-btm {
+            display:block;
+            position:absolute;
+            z-index:4;
+            width:13px;
+            height:10px;
+            left:89px;
+            background:url(images/arrow_28.png) no-repeat 0 0;
+            top:35px;
+        }
+
+        /*js class*/
+        .trigger-goal {
+            display:block;
+            position:absolute;
+            z-index:5;
+            display:none;
+
+        }
+        .goal-1 .trigger-goal {
+            width: 304px;
+            height: 132px;
+            top: -40px;
+            left:0;
+        }
+        .goal-2 .trigger-goal {
+            width:338px;
+            height:175px;
+            left:-300px;
+            top:-37px;
+            text-indent:-9999px;
+        }
+        .goal-3 .trigger-goal {
+            width:376px;
+            height:142px;
+            bottom:-34px;
+            left:0;
+            text-indent:-9999px;
+        }
+
+        /*tCode*/
+        .mask-tip {
+            position:absolute;
+            z-index:99999;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:#000;
+            opacity:.8;
+            display:none;
+        }
+        .tcode-tip {
+            position:absolute;
+            z-index:999991;
+            top:120px;
+            width:640px;
+            height:360px;
+            background:url(images/tCodeD_05.png) no-repeat 0 0;
+            text-indent:-9999px;
+            left:50%;
+            margin-left:-320px;
+            display:none;
+        }
+        .videoBox {
+            position:absolute;
+            z-index:999991;
+            top:120px;
+            width:640px;
+            height:360px;
+            background:#fff;
+            text-indent:-9999px;
+            left:50%;
+            margin-left:-320px;
+            box-shadow:3px 3px 40px #666;
+            display:none;
+        }
+
+        /*animation*/
+        .goal .circle {
+            display:block;
+            position:absolute;
+            z-index:4;
+            left:0;
+            top:0;
+            border-radius:50%;
+            width:34px;
+            height:34px;
+            border:1px solid rgba(0,215,192,.7);
+        }
+        
+        .goal .circle-1 {
+            animation:diffusion 6s linear infinite;
+        }
+        .goal .circle-2 {
+            animation:diffusion 6s linear 1s infinite;
+        }
+        .goal .circle-3 {
+            animation:diffusion 6s linear 2s infinite;
+        }
+        .goal .circle-4 {
+            animation:diffusion 6s linear 3s infinite;
+        }
+        .goal .circle-5 {
+            animation:diffusion 6s linear 4s infinite;
+        }
+        
+        .arrow-top {
+            animation:arrowMove 8s ease-in-out infinite alternate;
+        }
+        .arrow-btm {
+            animation:arrowMove 11s 1.2s ease-in infinite alternate;
+        }
+
+        .text-target {
+            font-size:12px;
+            transform-origin:0;
+            line-height:4px;
+            position:relative;
+            opacity:1;
+            transform:scale(.2);
+            color:#00d7c0;
+            text-shadow:none;
+        }
+
+        .text-target:nth-child(1){
+            animation:txtLight 2s linear infinite alternate;
+        }
+        .text-target:nth-child(2){
+            animation:txtLight 1.5s linear infinite alternate;
+        }
+        .text-target:nth-child(3){
+            animation:txtLight 3s linear infinite alternate;
+        }
+        .text-target:nth-child(4){
+            animation:txtLight 4s linear infinite alternate;
+        }
+        .text-target:nth-child(5){
+            animation:txtLight 1s linear infinite alternate;
+        }
+        .text-target:nth-child(6){
+            animation:txtLight 3s linear infinite alternate;
+        }
+        .text-target:nth-child(7){
+            animation:txtLight 3.2s linear infinite alternate;
+        }
+        .text-target:nth-child(8){
+            animation:txtLight 4.6s linear infinite alternate;
+        }
+        .text-target:nth-child(9){
+            animation:txtLight 1.2s linear infinite alternate;
+        }
+        .text-target:nth-child(10){
+            animation:txtLight 4.5s linear infinite alternate;
+        }
+        .text-target:nth-child(11){
+            animation:txtLight 5.6s linear infinite alternate;
+        }
+        .text-target:nth-child(12){
+            animation:txtLight 1.7s linear infinite alternate;
+        }
+        .text-target:nth-child(13){
+            animation:txtLight 3s linear infinite alternate;
+        }
+        .text-target:nth-child(14){
+            animation:txtLight 3.8s linear infinite alternate;
+        }
+
+        @keyframes diffusion {
+            0% {
+                transform:scale(1);
+                border:1px solid rgba(0,215,192,.7);
+            }
+            25% {
+                transform-origin: 50%;
+                transform:scale(1.4);
+                border:1px solid rgba(0,215,192,.5);
+            }
+            50% {
+                transform-origin: 50%;
+                transform:scale(1.8);
+                border:1px solid rgba(0,215,192,.4);
+            }
+            75% {
+                transform-origin: 50%;
+                transform:scale(2.2);
+                border:1px solid rgba(0,215,192,.3);
+            }
+            100% {
+                transform-origin: 50%;
+                transform:scale(2.6);
+                border:1px solid rgba(0,215,192,.1);
+            }
+
+        }
+
+        @keyframes arrowMove {
+            0% {
+                left:89px;
+            }
+            100% {
+                left:801px;
+            }
+        }
+        @-ms-keyframes arrowMove {
+            0% {
+                left:89px;
+            }
+            100% {
+                left:801px;
+            }
+        }
+
+        @keyframes txtLight {
+            0% {
+                opacity:0;
+                transform:scale(1.2);
+                color:#00d7c0;
+                text-shadow:none;
+            }
+            70% {
+                opacity:1;
+                transform:scale(.2);
+                color:#00d7c0;
+                text-shadow:none;
+            }
+            85% {
+                opacity:1;
+                transform:scale(.2);
+                color:#fff;
+                text-shadow:2px 2px 12px #00d7c0;
+            }
+            100% {
+                opacity:1;
+                transform:scale(.2);
+                color:#00d7c0;
+                text-shadow:none;
+            }
+        }
+
+        @keyframes txtShadow {
+            0% {
+                text-shadow:none;
+            }
+            50% {
+                text-shadow:2px 2px 12px #00d7c0;
+            }
+            100%{
+                text-shadow:none;
+            }
+        }
+
+        @keyframes cloudMove {
+            0% {
+                left:233px;
+                opacity:1;
+                transform:scale(1);
+                top:0;
+            }
+            100% {
+                left:1300px;
+                opacity:0;
+                transform:scale(0);
+                top:-20px;
+            }
+        }
+        @keyframes cloudDespair {
+            0% {
+                transform:scale(1) matrix(0);
+                transform-origin:50%;
+                opacity:1;
+            }
+            100% {
+                transform:scale(2.2) matrix(0.866,0.5,-0.5,0.866,0,0);
+                transform-origin:50%;
+                opacity:.08;
+            }
+        }
+        @keyframes cloudEnlarge {
+            0% {
+                transform:scale(1);
+                transform-origin:50%;
+            }
+            100% {
+                transform:scale(2);
+                transform-origin:50%;
+            }
+        }
+        @keyframes cloudSkew {
+            0% {
+                transform:matrix(0) scale(1) skew(0deg);
+                opacity:1;
+            }
+            100% {
+                transform:matrix(0.866,0.2,-0.01,1.866,0,0) scale(1.6) skew(1deg,4deg);
+                opacity:.21;
+            }
+        }
+        @keyframes cloudOpacity {
+            0% {
+                opacity:1;
+            }
+            100% {
+                opacity:0.01;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <audio id="audio" loop autoplay hidden="true" height="100" width="100">
+        <source src="source/LevelA_01.mp3" type="audio/mpeg">
+        <source src="source/LevelA_01.ogg" type="audio/ogg">
+        <embed height="50" width="100" loop="true" Repeat="true" playcount="true" autostart="true" src="source/LevelA_01.mp3">
+    </audio>
+    <div class="mask-loading">
+        <span class="loading">
+            <img src="images/spinner-loading-lrg.gif" alt="" />
+        </span>
+    </div>
+    <div class="container">
+        <span id="audioControl" class="audioOpen"></span>
+        <span class="route-1"></span>
+        <span class="route-2"></span>
+        <div class="main">
+            <div class="hd-main">
+                <h3 class="title">nltanry map</h3>
+                <h4 class="time">2016.01.19</h4>
+                <h4 class="subtitle">kill shot brand</h4>
+                <div class="countdown"></div>
+            </div>
+            <div class="bd-main">
+                <!--<span class="goal-center"></span>-->
+                <div class="goal-circle">
+                    <div class="goal goal-1">
+                        <a href="javascript:void(0);" id="videoObj" class="trigger-goal"></a>
+                        <span class="circle circle-1"></span>
+                        <span class="circle circle-2"></span>
+                        <span class="circle circle-3"></span>
+                        <span class="circle circle-4"></span>
+                        <span class="circle circle-5"></span>
+                        <h4 class="title">机密视频</h4>
+                        <span class="bar"></span>
+                        <a href="javascript:void(0);" class="video-box"></a>
+                    </div>
+                    <div class="goal goal-2">
+                        <a href="file.html" class="trigger-goal"></a>
+                        <span class="circle circle-1"></span>
+                        <span class="circle circle-2"></span>
+                        <span class="circle circle-3"></span>
+                        <span class="circle circle-4"></span>
+                        <span class="circle circle-5"></span>
+                        <h4 class="title">行动档案</h4>
+                        <span class="bar"></span>
+                        <div class="video-box"></div>
+                    </div>
+                    <div class="goal goal-3">
+                        <a target="_blank" href="lifeline.html" class="trigger-goal"></a>
+                        <span class="circle circle-1"></span>
+                        <span class="circle circle-2"></span>
+                        <span class="circle circle-3"></span>
+                        <span class="circle circle-4"></span>
+                        <span class="circle circle-5"></span>
+                        <h4 class="title">狙击手生命线</h4>
+                        <span class="bar"></span>
+                        <div class="video-box"></div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <a href="http://ks.wan.liebao.cn/p/index.html" class="btn-official">进入官网</a>
+                    <a href="javascript:void(0);" class="btn-main js-join">加入行动</a>
+                </div>
+            </div>
+            <div class="ft-main">
+                <div class="staff">
+                    <span class="arrow-top"></span>
+                    <span class="arrow-btm"></span>
+                </div>
+                <div class="target">
+                    <p class="text-target">I WUMNMUC</p>
+                    <p class="text-target">MUCNEKIG</p>
+                    <p class="text-target">SUNGIN</p>
+                    <p class="text-target">MING</p>
+                    <p class="text-target">IUMI</p>
+                    <p class="text-target">LOUJIGHTR</p>
+                    <p class="text-target">MOUYITER</p>
+                    <p class="text-target">LUMANGRTH</p>
+                    <p class="text-target">IUCHIHJING</p>
+                    <p class="text-target">LIUHCHINGLHINGKIS</p>
+                    <p class="text-target">NUTINGHIK</p>
+                    <p class="text-target">HIJIGHUNG</p>
+                    <p class="text-target">LIUTINHIG</p>
+                    <p class="text-target">HOUJINGLEDSN</p>
+                </div>
+                <div class="compass"></div>
+            </div>
+        </div>
+        <span class="cloud-1"></span>
+        <span class="cloud-2"></span>
+        <span class="cloud-3"></span>
+        <span class="cloud-4"></span>
+        <span class="cloud-5"></span>
+        <!--<span class="cloud-6"></span>-->
+    </div>
+    <div class="mask-tip"></div>
+    <div class="videoBox"></div>
+    <div class="tcode-tip">扫描二维码</div>
+    <script src="js/jquery.js"></script>
+    <script>
+        var helper={};
+        helper.maskH=function(){
+            var h=Math.max($(document).height(),$('body').height())
+            $('.mask-tip').height(h);
+        };
+        $('.goal').mouseenter(function(){
+            $(this).children('.circle').hide().siblings('.title').hide().siblings('.trigger-goal').show().siblings('.bar').show().siblings('.video-box').show();
+        });
+        $('.trigger-goal').mouseleave(function(){
+            $(this).hide().siblings('.video-box').hide().siblings('.bar').hide().siblings('.title').show().siblings('.circle').show();
+        });
+        $('.js-join').click(function(){
+            $('.mask-tip').show();
+            $('.tcode-tip').show();
+            helper.maskH();
+        });
+        $('.mask-tip').click(function(){
+            var audio=document.getElementById('audio');
+
+            $('.videoBox').html('');
+
+            $(this).hide();
+            $('.tcode-tip').hide();
+            $('.videoBox').hide();
+
+            if( $('#audioControl').hasClass('audioOpen') ) {
+                audio.currentTime = 0;
+                audio.play();
+            }
+        });
+        $('.tcode-tip').click(function(){
+            $(this).hide();
+            $('.mask-tip').hide();
+        });
+        $('#videoObj').click(function(){
+            var audio=document.getElementById('audio');
+            var video='<embed style="position:absolute; left:0; top:0; z-index:999992;" id="video" src="http://download.wan.liebao.cn/media/header.swf" width="640" height="360" type="application/x-shockwave-flash" wmode="transparent" quality="high" controls="controls"></embed>';
+
+            $('.videoBox').append(video).show();
+            $('.mask-tip').show();
+            helper.maskH();
+
+            if( $('#audioControl').hasClass('audioOpen') ){
+                console.log(111);
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        });
+        $('#audioControl').click(function(){
+            var opened=$(this).hasClass('audioOpen');
+            var audio=document.getElementById('audio');
+            if(opened){
+                $(this).removeClass('audioOpen').addClass('audioClose');
+                audio.pause();
+                audio.currentTime=0;
+                return;
+            }
+            $(this).removeClass('audioClose').addClass('audioOpen');
+            audio.currentTime=0;
+            audio.play();
+
+        });
+        window.onload=function(){
+            var h=Math.max($('body').height(),$(document).height());
+            var conH=$('.container').height();
+            var mt=(h-conH)/2;
+            $('.container').css({
+                'margin-top':mt
+            });
+            setTimeout("$('.mask-loading').remove();",2000);
+        };
+
+    </script>
+</body>
+</html>

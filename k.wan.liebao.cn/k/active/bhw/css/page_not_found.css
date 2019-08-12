@@ -1,0 +1,44 @@
+/*以下为404页面的css*/
+.page_404_explanation,.page_404{
+	text-align:center;
+	
+}
+.page_404{
+	margin-top:172px;
+	font-size:40px;
+}
+.page_404_explanation{
+	font-size:20px;
+	margin-top:34px;
+}
+.recommend_games{
+	margin-top:68px;
+}
+.recommend_games li{
+	display:inline-block;
+	position:relative;
+}
+.recommend_games_margin{
+	margin-right:8px;
+}
+.recommend_games_title{
+	position:absolute;
+	background:#000000;
+	width:100%;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	font-size:16px;
+	color:#ffffff;
+	bottom:0;
+	opacity:0.4;
+	filter:alpha(opacity=40)
+}
+.recommended_gaame{
+	width:320px;
+	height:200px;
+}
+.recommended_gaame img{
+	width:100%;
+	height:100%;
+}

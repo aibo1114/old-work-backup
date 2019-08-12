@@ -1,0 +1,7 @@
+.nav
+    ul.pager
+        | 共 #{_max}篇
+        if _skip != 0
+            li.pull-left: a(href='/#{_e}List?skip=#{_skip - _limit}') 上一页
+        if _skip + _limit < _max
+            li.pull-right: a(href='/#{_e}List?skip=#{_skip + _limit}') 下一页

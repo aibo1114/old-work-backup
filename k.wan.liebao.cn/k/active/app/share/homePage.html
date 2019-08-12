@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="auth" content="WuSong"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link href="../css/share.css?v=20161202" rel="stylesheet"/>
+    <link href="../css/video-js.min.css" rel="stylesheet">
+    <title>文章分享页</title>
+</head>
+<body>
+<!-- <div class="cover">
+    <img id="J_cover" src=""/>
+</div> -->
+<div class="circle_warp">
+    <div class="circle_top">
+        <div class="section"> 
+            <img class="avatar" src="">
+            <div class="auth"> <h3>试车手MIX</h3>  <h4>现代 索纳塔九 hybrid 混动</h4></div>
+        </div>
+        <div class="circle_content">
+           <!--  <p>性能提升明显 迈凯伦发布570S轻量化套件</p>
+            <img src="https://cmauto.ks3-cn-beijing.ksyun.com/e8b4f93e48e8e0079fb4bbfb42316950.jpg@base@tag=imgScale&w=1080" alt="">
+            <video id="really-cool-video" preload="" controls="" class="video-js vjs-default-skin vjs-big-play-centered" width="" height="" poster="https://cmauto.ks3-cn-beijing.ksyun.com/91d58823fa4712534c9f452bf5e76132.png@base@tag=imgScale&amp;w=1080" style="width: 100%;height: 250px"> <source src="https://cmauto.ks3-cn-beijing.ksyun.com/8744fab9a76e725a33fe732f4b264587.mp4" type="video/mp4"> </video> -->
+        </div>
+        <div class="circle_footer">
+            <span class="time"></span>
+            <span class="circle"></span>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="circle_zan">
+        <div class="circle_zan_top">
+            <span></span>
+            <p>共<strong>532</strong>人点过赞</p>
+            <span></span>
+        </div>
+        <div class="circle_zan_list">
+            <ul>
+                <!-- <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"><img class="title" src="../img/v.png"/></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"><img class="title" src="../img/v.png"/></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li>
+                <li><img class="avatar" src="https://cmauto.ks3-cn-beijing.ksyun.com/avatar/b053/b0536bd8ca2ff59d1846bc3f71ffece0@base@tag=imgScale&w=256"></li> -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="J_container">
+   
+    <div class="footer">
+        <!-- <h1>评论</h1> -->
+
+        <script id="J_hotComment_temp" type="text/x-dot-template">
+            <h2 id="J_hot_comment">热门评论</h2>
+            {{~it :obj}}
+            <div class="section">
+                <img class="avatar" src="{{=obj.avatar}}"/>
+                {{? obj.professional_certification }}
+                <img class="title" src="../img/v.png"/>
+                {{?}}
+                <div class="auth">
+                    <h3>{{=obj.nickname}}</h3>
+                    {{? obj.personal_certification }}
+                    <h4>· {{=obj.personal_certification.model_name}} {{=obj.personal_certification.model_subname}}</h4>
+                    {{?}}
+                </div>
+                <div class="like"><img src="../img/like.png" width="15"/><i>{{=obj.num_like || 0}}</i></div>
+                
+                <p>{{=obj.content}}</p>
+            </div>
+            {{~}}
+        </script>
+
+        <script id="J_newComment_temp" type="text/x-dot-template">
+            <h2 id="J_new_comment">精彩评论</h2>
+            {{~it :obj}}
+            <div class="section">
+                <img class="avatar" src="{{=obj.avatar}}"/>
+                {{? obj.professional_certification }}
+                <img class="title" src="../img/v.png"/>
+                {{?}}
+                <div class="auth">
+                    <h3>{{=obj.nickname}}</h3>
+                    {{? obj.professional_certification }}
+                    <h4>· {{=obj.professional_certification.description}}</h4>
+                    {{?? obj.personal_certification}}
+                    <h4>· {{=obj.personal_certification.model}} {{=obj.personal_certification.model_subname}}</h4>
+                    {{??}}
+                    {{?}}
+                </div>
+                <div class="like"><img src="../img/like.png" width="15"/><i>{{=obj.num_like || 0}}</i></div>
+                
+                <p>{{=obj.content}}</p>
+            </div>
+            {{~}}
+        </script>
+    </div>
+</div>
+
+<!--下载按钮-->
+<a href="http://dl.cm.ksmobile.com/static/res/fixed/59/autogeek_official.apk" target="_blank" class="download" onclick="_hmt.push(['_trackEvent', '下载', 'click', ''])" >
+    <div class="download-container">
+        <img src="../img/logo1.png" width="50" height="50"/>
+        <h1>汽车达人</h1>
+        <h2>电动汽车车主必备的资讯app</h2>
+        <span>立即下载</span>
+        <b></b>
+    </div>
+</a>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/video.min.js"></script>
+<script src="../js/doT.min.js"></script>
+<script src="../js/infoc.min.js"></script>
+<script src="../js/circleShare.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3d2082698c1ac7637c3c64dc82857e9f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

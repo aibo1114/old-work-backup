@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>猎豹游戏盒子</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="ie8/jquery.scrollbar.css" />
+        <link rel="stylesheet" href="modules/yxhz/css/common.css" />
+        <link rel="stylesheet" href="modules/yxhz/css/index.css" />
+        <link rel="stylesheet" href="modules/yxhz/css/integral.css" />
+        <link rel="stylesheet" href="modules/yxhz/css/package.css" />
+        <link rel="stylesheet" href="modules/yxhz/css/dialog.css" />
+        <link rel="stylesheet" href="modules/yxhz/css/pick.css" />
+
+        <!--[if IE 8 | IE 9]>
+            <style type="text/css">
+                .picker {
+                    border:1px solid #ddd;
+                }
+                button[disabled='disabled'] {
+                    border-color: #ddd !important;
+                }
+            </style>
+        <![endif]-->
+
+        <!--4 css media-->
+        <script src="ie8/respond.js"></script>
+    </head>
+    <body ng-app="yxhz">
+        <div class="box-layout" ng-controller="loginController" >
+            <div class="sidebar" ng-cloak="">
+                <div class="panel-search" ng-controller="allGames">
+                    <form class="form-search" ng-submit="sideSearch();">
+                        <div class="input-group">
+                            <!--ng-blur='auto=false;'-->
+                            <input id="sideSer" type="text" ng-model="kw" ng-keyup="autoGames($event);" ng-focus="auto=true;" focus-class="focus-ipt-search" class="form-control" placeholder="搜索游戏" autocomplete="off" ng-disabled="pickerShow" />
+                            <!--<input id="sideSer" type="text" ng-model="kw" ng-keyup="autoGames($event);" ng-focus="auto=true;" focus-class="focus-ipt-search" class="form-control" placeholder="搜索游戏" autocomplete="off" ng-disabled="pickerShow || !isLogin" />-->
+                            <div class="input-group-btn">
+                                <!--<span class="btn btn-default" ng-click="clear();"> <i class="glyphicon glyphicon-remove-circle"></i></span>-->
+                                <button class="btn btn-default" type="submit" id="serBtn" ng-disabled="pickerShow"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                        </div>
+                        <div ng-if="autoItems" ng-show='auto' ng-cloak="">
+                            <ul class="l-search">
+                                <li class="li-search" ng-repeat="it in autoItems" ng-click="sideSearch(it.gname);" hover-class="hover-search" ng-bind="it.gname"></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div ng-controller="games">
+                    <div class="mod-content hd-pl18" ng-cloak="">
+                        <div class="hd-content">
+                            <h3 class="title-hd-content"><span class="glyphicon glyphicon-star-empty"></span>我玩过的游戏</h3>
+                        </div>
+                        <div class="bd-content" ng-if="played">
+                            <ul class="l-played">
+                                <!--ng-click="gotoGame(it.gid,it.sid);"-->
+                                <li class="li-played" ng-repeat="it in played" ng-class-even="'even-played'" hover-class="hover-played" >
+                                    <a ng-href="http://i.wan.liebao.cn/game/play_in_box?gid={{it.gid}}&sid={{it.sid}}" target="_blank" class="link-played">
+                                    <!--<a ng-href="http://wan.liebao.cn/game_frame/wd_play_{{it.gid}}.php?sid={{it.sid}}&wd_entergame=1" target="_blank" class="link-played">-->
+                                        <span class="icon-li-played"><img ng-src="{{it.icon}}" onerror="javascript:this.src='http://box.wan.liebao.cn/modules/yxhz/images/played/dft.png'" /></span>
+                                        <h4 class="gname-li-played" ng-bind="it.game_name"></h4>
+                                        <!--<p class="sname-li-played">{{it.server_name}}</p>-->
+                                        <p class="lname-li-played" ng-bind="it.line_name"></p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div ng-cloak="" ng-if="!played || played.length==0">
+                            <div class="bd-content nodata">
+                                <h4 class="tip-nodata-content" ng-bind=" '您还没有玩过任何游戏' "></h4>
+                                <p class="text-nodata-content" ng-bind=" '--&nbsp;&nbsp;玩玩下列推荐的游戏&nbsp;&nbsp;--'"></p>
+                                <ul class="l-nodata-content ng-cloak"  ng-cloak="">
+                                    <li class="li-nodata-content" ng-repeat="game in recommend" ng-class="{'lst-nodata-content':$index==recommend.length-1}">
+                                        <a ng-href="http://i.wan.liebao.cn/game/play_in_box?gid={{game.gid}}" target="_blank" class="link-nodata-content">
+                                            <span class="poster-nodata-content" ng-class="{'blk':!played || played.length==0}"><img ng-src="{{game.icon}}" /></span>
+                                            <h5 class="name-nodata-content" ng-bind="game.gname"></h5>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mod-content hd-pl18" ng-cloak="">
+                        <div class="hd-content">
+                            <h3 class="title-hd-content"><span class="glyphicon glyphicon-th-list"></span>游戏开服表</h3>
+                        </div>
+                        <div class="bd-content">
+                            <ul class="l-tab-servers">
+                                <li class="li-tab-servers" ng-repeat="it in tabs" ng-cloak="" ng-click="switchTab(it.url);" ng-class="{'current-tab-servers':isCurrent(it.url)}" ng-bind="it.title"></li>
+                            </ul>
+                            <div class="content-servers">
+                                <div ng-include="tabUrl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div ng-cloak="" class="adv-sidebar">
+                    <div class="item-adv-sidebar item-adv-1"><a href="http://wan.liebao.cn/jzcq/server_list.html" target="_blank"><img src="modules/yxhz/images/adv/adv_sidebar_1.png" alt=""></a></div>
+                    <div class="item-adv-sidebar item-adv-2"><a href="http://wan.liebao.cn/lycq/server_list.html?frm=yxhz-zxt2" target="_blank"><img src="modules/yxhz/images/adv/adv_sidebar_2.png" alt=""></a></div>
+                </div>
+            </div>
+            <div class="content" ng-view=""></div>
+            <div class="adv-right" ng-cloak="">
+                <div><a href="http://wan.liebao.cn/jianling/server_list.html" target="_blank"><img src="modules/yxhz/images/adv/adv_r.png" alt="" /></a></div>
+            </div>
+            <div dialog></div>
+            <!--<div ng-if="isLogin" class="sidebar">-->
+            <!--<div ng-if="isLogin" class="conrtainer-fluid" ng-view=""></div>-->
+            <!--<div ng-if="isLogin" dialog></div>-->
+        </div>
+        <script src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+        <script src="bower_components/jquery/jquery.min.js"></script>
+        <!--<script src="bower_components/angular/angular.min.js"></script>-->
+        <script src="ie8/angular.min.js"></script>
+        <script src="ie8/jquery.scrollbar.min.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+        <!--[if IE 8]><![endif]-->
+        <script type="text/javascript">
+            function setAdv (){
+                var wH=document.documentElement.clientHeight;
+                wH>780 ? $('.item-adv-1').show() : $('.item-adv-1').hide();
+                wH>930 ? $('.item-adv-2').show() : $('.item-adv-2').hide();
+            }
+            setAdv();
+            if(!Array.indexOf) {
+                Array.prototype.indexOf = function(obj) {
+                    for(var i=0; i<this.length; i++){
+                        if(this[i]==obj) return i;
+                    }
+                    return -1;
+                };
+            }
+
+            $(window).resize(function(){
+                setAdv();
+            });
+        </script>
+        <script src="ie8/angular-route.min.js"></script>
+        <script src="bower_components/moment/min/moment.min.js"></script>
+        <script src="modules/yxhz/app.js"></script>
+        <script src="services/yxhz/fetchData.js"></script>
+        <script src="services/yxhz/tools.js"></script>
+        <script src="widgets/widgets.js"></script>
+        <script src="widgets/pagination.js"></script>
+        <script src="widgets/lottery.js"></script>
+        <script src="widgets/dialog.js"></script>
+        <script src="widgets/slide.js"></script>
+        <script src="widgets/allGame.js"></script>
+        <script src="widgets/pikServer.js"></script>
+        <script src="widgets/giftRecord.js"></script>
+        <script src="modules/yxhz/games.js"></script>
+        <script src="modules/yxhz/home.js"></script>
+        <script src="modules/yxhz/integral.js"></script>
+        <script src="modules/yxhz/package.js"></script>
+        <script src="modules/yxhz/config.js"></script>
+    </body>
+</html>

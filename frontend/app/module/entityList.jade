@@ -1,0 +1,17 @@
+extends /inc/main
+block content
+    .col-md-8.m3
+        +panel('全部' + i18.ii(_e)).panel-primary
+            include /../_inc/crumb
+            - var v = _cd[_e]
+            if v
+                .list-group(class=_e)
+                    +media(items,{func: v.func, text: v.text})
+                .panel-footer
+                    include /../_inc/nextEntPage
+    .col-md-4
+        +panel(i18.ii(_e) + '分类').panel-info
+            .list-group
+                a.list-group-item(href='/entityList?entity=' + _e) 全部
+                each it in cats
+                    != f.a(it.title,'/entityList?entity=post&cat='+it.code,'list-group-item')

@@ -1,0 +1,14 @@
+{
+  "name": "presentLight",
+  "description": "bower for public fe install",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "moment": "^2.18.1",
+    "angular": "1.2.32",
+    "bootstrap": "^3.3.7",
+    "jquery": "1.9.1",
+    "angular-animate": "1.2.x"
+  }
+}

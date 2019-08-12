@@ -1,0 +1,78 @@
+mixin toolList(txt,cls)
+    ul.l-tools
+        //li.li-tools.setIndex a.link-tools(href='#',onclick="SetHome(this,'http://k.wan.liebao.cn/k/active/tj/index.html')设为首页
+        //li.li-tools.collect 收藏本站
+        //li.li-tools.desktop 放到桌面
+        li.li-tools.setIndex: a.link-tools(href='#',onclick="SetHome(this,'http://k.wan.liebao.cn/k/active/tj/index.html');") 设为首页
+        li.li-tools.collect: a.link-tools(href='javascript:void(0);') 收藏本站
+        li.li-tools.desktop: a.link-tools#wan_setdesk(href='/shortcut.php',rel="nofollow" target="_self",data-position="{&quot;e2&quot;:&quot;ptdbdh&quot;,&quot;e3&quot;:&quot;ptdbdh-3&quot;}") 放到桌面
+
+
+mixin navList()
+    ul.l-nav
+        li.li-nav: a.link-nav(href='javascript:void(0);') 平台首页
+        li.li-nav: a.link-nav(href='javascript:void(0);') 游戏中心
+        li.li-nav: a.link-nav(href='javascript:void(0);') 充值中心
+        li.li-nav.grey: a.link-nav(href='javascript:void(0);') 游戏论坛
+mixin footerList()
+    ul.l-footer
+        //li.li-footer: a.link-footer.first(href='javascript:void(0);') 官方微博
+        //li.li-footer: a.link-footer(href='javascript:void(0);') 权利声明
+        li.li-footer: a.link-footer.first(href='javascript:void(0);') 游戏中心
+        //li.li-footer: a.link-footer(href='javascript:void(0);') 申请收录
+        li.li-footer: a.link-footer(href='javascript:void(0);') 商务合作
+        li.li-footer: a.link-footer(href='javascript:void(0);') 客服中心
+        //li.li-footer: a.link-footer(href='javascript:void(0);') 非法反馈
+
+doctype html
+html
+    head
+        meta(charset='utf-8',http-equiv='Content-type',content='text/html')
+        meta(http-equiv='X-UA-Compatible',content='IE=edge')
+        title 安趣
+        link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/999/css/base.css')
+        link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/999/css/common.css')
+        link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/999/css/login.css')
+        block style
+        //block style_charge_general
+    body
+        #topline
+            .topline
+                +toolList
+        #header
+            .header
+                h1.logo: a(href='javascript:void(0)') 安趣
+                +navList
+                p.user
+                    img#anquLogin(src='images/logoL.png')
+                    //
+                        |欢迎您：
+                        span.name-user#usernmae janjiao0128
+                        a.logout-user#logout(href='javascript:void(0);') [退出]
+        block content
+        //block content_charge_general
+
+        #footer
+            .footer
+                +footerList()
+                p.text-footer 抵制不良游戏　拒绝盗版游戏　注意自我保护　谨防受骗上当　适度游戏益脑　沉迷游戏伤身　合理安排时间　享受健康生活
+
+                p.text-footer
+                    span.part 软著登字第1172119号
+                    span.part 新广出审[2016]1341号
+                    span.part 文网游备字
+                p.text-footer Copyright 2012-2016 anqu.com All rights reserved 北京安趣科技股份有限公司
+        block sub
+        script(type='text/javascript',src='http://static.web.anqu.com/resource/999/js/jquery-1.8.0.min.js')
+        script(type='text/javascript',src='http://static.web.anqu.com/resource/999/js/md5.js')
+        script(type='text/javascript',src='http://static.web.anqu.com/resource/999/js/user.js')
+        script(type='text/javascript',src='http://static.web.anqu.com/resource/999/js/index.js')
+        script(type='text/javascript').
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "//hm.baidu.com/hm.js?47daa93cb0ec88fca1eb5a272fe0be49";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        block script

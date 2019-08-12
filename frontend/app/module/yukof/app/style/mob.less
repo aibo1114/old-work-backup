@@ -1,0 +1,68 @@
+@code: 'yukof';
+
+@import "../../../../res/js/bootstrap/less/bootstrap.less";
+
+@import "../../../../lib/style/lib/lib";
+@import "../../../../lib/style/lib/widget";
+
+@import '../../../../lib/style/mobVar';
+@import '../../../../lib/style/mob';
+@import '../../../../lib/style/mob/article';
+
+@import 'inc';
+
+.container {
+  padding: 0;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.navigation {
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: #f8f8f8;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  .navbar-brand {
+    width: 42%;
+  }
+  .navbar-toggle {
+    margin: 10px 15px 0 0;
+  }
+  .navbar-right {
+    border-top: 2px solid #fff;
+    padding-top: 10px;
+  }
+  .label {
+    margin: 5px 0;
+  }
+}
+
+.topline {
+  margin-bottom: 0;
+  text-align: center;
+  .navbar-brand {
+    display: inline-block;
+    float: none !important;
+  }
+}
+
+.subnav {
+  .navbar-nav {
+    li {
+      display: inline-block;
+      line-height: 2em;
+    }
+    a {
+      display: inline;
+      padding: 0 14px;
+      color: @link-color !important;
+      &:hover {
+        color: @link-hover-color !important;
+      }
+    }
+  }
+}

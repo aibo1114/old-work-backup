@@ -1,0 +1,558 @@
+a {
+  text-decoration: none;
+}
+.fullscreen {
+  width: 100%;
+  overflow: hidden;
+}
+.fullscreen:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.fullscreen.hd {
+  height: 40px;
+  background: #333;
+}
+.fullscreen.ct {
+  background: url('http://static.web.anqu.com/resource/1000/images/bg_01.jpg') no-repeat 0 0;
+  background-position: center top;
+  background-color: #1a1a1a;
+}
+.fullscreen.ft {
+  height: 158px;
+  background: #000;
+}
+.header,
+.footer,
+.container {
+  width: 1180px;
+  margin: auto;
+}
+.container {
+  margin-top: 412px;
+}
+.content {
+  padding-bottom: 32px;
+}
+.content:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.left {
+  width: 294px;
+  float: left;
+  margin-right: 1px;
+}
+.right {
+  width: 296px;
+  float: left;
+}
+.center {
+  width: 586px;
+  float: left;
+  margin-right: 1px;
+}
+.main {
+  width: 885px;
+  float: left;
+}
+.logo {
+  display: block;
+  width: 94px;
+  height: 40px;
+  float: left;
+  margin-left: 5px;
+  background: url('http://static.web.anqu.com/resource/1000/images/logo_02.png') no-repeat 0 0;
+  text-indent: -9999px;
+}
+.logo a {
+  display: block;
+  width: 94px;
+  height: 40px;
+}
+.l-tools {
+  float: right;
+}
+.l-tools:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-tools {
+  display: inline-block;
+  margin-left: 30px;
+  height: 40px;
+  line-height: 40px;
+}
+.li-tools.setIndex {
+  background: url('http://static.web.anqu.com/resource/1000/images/icon-tools_05.png') no-repeat 0 12px;
+}
+.li-tools.collection {
+  background: url('http://static.web.anqu.com/resource/1000/images/icon-tools_07.png') no-repeat 0 12px;
+}
+.li-tools.desktop {
+  background: url('http://static.web.anqu.com/resource/1000/images/icon-tools_09.png') no-repeat 0 12px;
+}
+.link-tools {
+  font-size: 12px;
+  color: #e5e5e5;
+  padding-left: 20px;
+}
+.l-nav {
+  display: block;
+  width: 810px;
+  height: 48px;
+  margin: 32px auto 0;
+  padding: 0 40px;
+  background: url('http://static.web.anqu.com/resource/1000/images/bg_nav_19.png') no-repeat 0 0;
+  background-repeat: repeat;
+  position: relative;
+}
+.l-nav:after {
+  content: '';
+  display: block;
+  width: 168px;
+  height: 102px;
+  position: absolute;
+  z-index: 2;
+  top: -30px;
+  bottom: auto;
+  left: 350px;
+  right: auto;
+  background: url('http://static.web.anqu.com/resource/1000/images/nav_dec_16.png') no-repeat 0 0;
+}
+.li-nav {
+  display: inline-block;
+  padding: 0 20px;
+  height: 48px;
+  line-height: 48px;
+}
+.li-nav.force {
+  margin-left: 150px;
+}
+.link-nav {
+  font-size: 16px;
+  color: #fff;
+}
+.link-nav.grey {
+  font-size: 16px;
+  color: #999;
+}
+.l-footer {
+  margin-top: 15px;
+  padding: 15px 0;
+  height: 12px;
+  line-height: 12px;
+  border-bottom: 2px solid #bc6a4a;
+  text-align: center;
+}
+.li-footer {
+  display: inline-block;
+  padding: 0 30px;
+}
+.li-footer.second {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+}
+.link-footer {
+  font-size: 12px;
+  color: #fff;
+}
+.txt-footer {
+  height: 28px;
+  line-height: 28px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+}
+.txt-footer.first {
+  margin-top: 8px;
+}
+.txt-footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+.notice {
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+.main .notice {
+  text-align: left;
+  padding-left: 2px;
+}
+.btn-star {
+  display: block;
+  width: 294px;
+  height: 115px;
+  background: url('http://static.web.anqu.com/resource/1000/images/btn_star_20.png') no-repeat 0 0;
+  text-indent: -9999px;
+}
+.mod-tj {
+  background: #3e3e3e;
+  margin-top: 1px;
+}
+.hd-tj {
+  position: relative;
+}
+.bd-tj.large {
+  padding: 30px;
+}
+.title-hd-tj {
+  height: 60px;
+  line-height: 60px;
+  font-size: 24px;
+  color: #fff;
+  background: #333;
+  padding-left: 12px;
+}
+.subtitle-hd-tj {
+  position: absolute;
+  z-index: 2;
+  top: 24px;
+  bottom: auto;
+  left: auto;
+  right: 12px;
+  letter-spacing: 1px;
+  font-size: 12px;
+  color: #fff;
+}
+.subtitle-hd-tj a {
+  font-size: 12px;
+  color: #fff;
+}
+.large .title-hd-tj {
+  padding-left: 30px;
+  height: 90px;
+  line-height: 90px;
+  font-size: 24px;
+  color: #fff;
+}
+.large .subtitle-hd-tj {
+  position: absolute;
+  z-index: 2;
+  top: 38px;
+  bottom: auto;
+  left: auto;
+  right: 15px;
+}
+.l-hd-tj:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-hd-tj {
+  width: 145px;
+  margin: 0 1px;
+  height: 48px;
+  line-height: 48px;
+  float: left;
+  text-align: center;
+}
+.li-hd-tj.charge {
+  background: url('http://static.web.anqu.com/resource/1000/images/icon_recharge_27.png') no-repeat 35px 8px;
+  background-color: #111;
+}
+.li-hd-tj.regis {
+  background: url('http://static.web.anqu.com/resource/1000/images/icon_regis_29.png') no-repeat 35px 8px;
+  background-color: #111;
+}
+.link-hd-tj {
+  padding-left: 40px;
+  display: block;
+  width: 105px;
+  height: 48px;
+  font-size: 16px;
+  color: #fff;
+}
+.li-package {
+  display: block;
+  width: 296px;
+  height: 168px;
+  text-indent: -9999px;
+}
+.li-package.fresh {
+  background: url('http://static.web.anqu.com/resource/1000/images/package_23.jpg') no-repeat 0 0;
+  margin-bottom: 1px;
+}
+.li-package.platform {
+  background: url('http://static.web.anqu.com/resource/1000/images/package_34.jpg') no-repeat 0 0;
+}
+.item-btns-tj {
+  display: block;
+  width: 296px;
+  height: 107px;
+  margin-bottom: 2px;
+  overflow: hidden;
+}
+.item-btns-tj.recruit {
+  background: url('http://static.web.anqu.com/resource/1000/images/img_raider_38.jpg') no-repeat 0 0;
+}
+.item-btns-tj.mall {
+  background: url('http://static.web.anqu.com/resource/1000/images/img_raider_48.jpg') no-repeat 0 0;
+}
+.item-btns-tj.befall {
+  background: url('http://static.web.anqu.com/resource/1000/images/img_raider_50.jpg') no-repeat 0 0;
+}
+.title-btns-tj {
+  margin-top: 25px;
+  padding-left: 18px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  color: #fff;
+}
+.subtitle-btns-tj {
+  padding-left: 18px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #fff;
+}
+#banner {
+  display: block;
+  width: 586px;
+  height: 336px;
+  overflow: hidden;
+  position: relative;
+}
+.bannerItem {
+  display: none;
+}
+.bannerItem.active {
+  display: block;
+}
+#bannerBtns {
+  position: absolute;
+  z-index: 2;
+  top: 300px;
+  bottom: auto;
+  left: 0;
+  right: auto;
+  width: 586px;
+  height: 20px;
+  text-align: center;
+}
+.bannerBtn {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url('http://static.web.anqu.com/resource/1000/images/btn_banner_36.png') no-repeat 0 0;
+  margin: 0 15px;
+  cursor: pointer;
+}
+.bannerBtn.active {
+  background: url('http://static.web.anqu.com/resource/1000/images/btn_banner_38.png') no-repeat 0 0;
+}
+.l-tab {
+  padding: 12px 0 6px;
+}
+.l-tab:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-tab {
+  display: block;
+  width: 110px;
+  height: 40px;
+  margin: 0 8px;
+  float: left;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+.li-tab.active {
+  font-size: 18px;
+  color: #ff9b00;
+  border-bottom: 4px solid #ff9b00;
+}
+.hd-tab {
+  position: relative;
+}
+.more-tab {
+  display: block;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  z-index: 2;
+  top: 25px;
+  bottom: auto;
+  left: auto;
+  right: 20px;
+  border: 1px solid #fff;
+  line-height: 18px;
+  text-align: center;
+  font-size: 18px;
+  color: #fff;
+  display: none;
+}
+.more-tab.active {
+  display: block;
+}
+.l-tj {
+  padding: 6px 4px;
+}
+.li-tj {
+  padding: 0 12px;
+  height: 35px;
+  line-height: 35px;
+  border-bottom: 1px solid #666;
+}
+.li-tj:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-tj.last {
+  border: none;
+}
+.title-li-tj {
+  font-size: 14px;
+  color: #fff;
+  float: left;
+}
+.title-li-tj:hover {
+  color: #ee9305;
+}
+.time-li-tj {
+  font-size: 14px;
+  color: #fff;
+  float: right;
+}
+.box-tab {
+  display: none;
+}
+.box-tab.active {
+  display: block;
+}
+.top-news {
+  margin: 0 4px;
+  padding-left: 30px;
+  background: url('http://static.web.anqu.com/resource/1000/images/dotted_44.png') no-repeat 10px 30px;
+  background-color: #666;
+  height: 72px;
+  line-height: 72px;
+  font-size: 20px;
+  color: #fff;
+}
+.icon-top-news {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  border: 1px solid #e60000;
+  text-align: center;
+  font-size: 14px;
+  color: #e60000;
+  margin-left: 6px;
+}
+.menu-tj {
+  padding: 12px;
+}
+.menu-tj:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.item-menu-tj {
+  display: block;
+  width: 85px;
+  height: 34px;
+  float: left;
+  line-height: 34px;
+  margin: 0 2px;
+  font-size: 14px;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item-menu-tj:hover {
+  color: #ff9f0a;
+}
+.article {
+  padding: 0 15px;
+}
+.hd-article {
+  padding-bottom: 18px;
+  text-align: center;
+  border-bottom: 1px solid #666;
+}
+.bd-article {
+  padding: 22px 0 102px 0;
+}
+.bd-article img {
+  width: 100%;
+}
+.title-article {
+  height: 32px;
+  line-height: 32px;
+  font-size: 20px;
+  color: #fea00f;
+}
+.subtitle-article {
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  color: #fff;
+}
+.subtitle-article .part {
+  margin: 0 10px;
+}
+.subtitle-article a {
+  color: #fff;
+}
+.subtitle-article a:hover {
+  text-decoration: underline;
+}
+.text-article {
+  line-height: 23px;
+  font-size: 12px;
+  color: #fff;
+}
+.text-article a {
+  color: #fff;
+}
+.text-article a:hover {
+  text-decoration: underline;
+}
+.media-article {
+  display: block;
+  width: 500px;
+  margin: 20px auto 60px;
+}

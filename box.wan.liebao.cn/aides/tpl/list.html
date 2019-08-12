@@ -1,0 +1,10 @@
+<div ng-controller="listController">
+    <ul class="l-games-aides">
+        <li class="li-games-aides" ng-repeat="it in games">
+            <a class="link-games-aides" ng-href="/aides/#!/services?gid={{it.gid}}">
+                <div class="media-games-aides"><img ng-src="/modules/yxhz/images/aides/{{it.gid}}.png" /></div>
+                <p class="name-games-aides" ng-bind="it.gname"></p>
+            </a>
+        </li>
+    </ul>
+</div>

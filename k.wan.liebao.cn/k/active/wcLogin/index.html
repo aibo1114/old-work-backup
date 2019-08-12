@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>微信登录转换</title>
+        <!--<link rel="stylesheet" href="main.css" />-->
+    </head>
+    <body>
+        <div style="height:2001px;">
+            <h1>test 211 host</h1>
+        </div>
+        <!--<script type="text/javascript" src="tools.js"></script>-->
+        <!--<script type="text/javascript" src="md5.js"></script>-->
+        <!--<script type="text/javascript" src="main.js"></script>-->
+        <script type="text/javascript" src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+        <script type="text/javascript" src="dist/main.js" ></script>
+        <script type="text/javascript">
+            if (ks_user && ks_user.length!=0){
+                if (ks_user.input_type=='W'){
+                    var wLogin=new WLogin(true );
+                    wLogin.renderLogin();
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+.headerWrapper
+    #header.navbar.navbar-inverse.navbar-fixed-top
+        .navbar-header
+            h1#logo
+                a.navbar-brand= name
+        nav#ubb.navbar-right
+.container-fluid
+    #content.row
+        #side.col-md-3
+        #main.col-md-9
+.footerWrapper
+    #footer.text-center
+        a(onclick= 'user.logout()') &nbsp;
+#loading

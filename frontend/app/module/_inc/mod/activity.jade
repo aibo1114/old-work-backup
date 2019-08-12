@@ -1,0 +1,125 @@
+if venue
+    - v = venue
+
++title(title, subTitle).hidden-xs
+.row
+    != f.imgItem(locals, c)
++title(title, subTitle).hidden-sm.hidden-md.hidden-lg
+
+//if _cat && _cat[cat]
+//    span.cat.pull-right 【#{_cat[cat].title}】
+hr
+.venue.well-sm.well.clearfix
+    .col-xs-2
+        != f.icon('time')
+    .col-xs-10.startedDate(sd= startedDate.pattern())
+        if startedDate
+            = startedDate.pattern()
+            | &nbsp;[#{endDate.getHours() - startedDate.getHours()}小时]
+    if v
+        .col-xs-2
+            != f.icon('glass')
+        .col-xs-10
+            div.feeStrr= v.fee
+            if v.langsTable && v.langsTable.findBy('key', 'fee')
+                div= v.langsTable.findBy('key', 'fee').value
+
+    if v && v.phone
+        .col-xs-2
+            != f.icon('phone-alt')
+        .col-xs-10
+            div= v.phone
+    if v
+        .col-xs-2
+            != f.icon('home')
+        .col-xs-10
+            div= v.address
+            if v.langsTable && v.langsTable.findBy('key', 'address')
+                div= v.langsTable.findBy('key', 'address').value
+    if v && v.route
+        .col-xs-2
+            != f.icon('road')
+        .col-xs-10
+            div= v.route
+            if v.langsTable && v.langsTable.findBy('key', 'route')
+                div= v.langsTable.findBy('key', 'route').value
+
+
+
+h3 主题介绍
+
+!= content.replaceAll('_cImg" src', '_cImg" bb-src')
+
+if itemTable
+    each it in itemTable
+        if it.title
+            h3= it.title
+        if it.content
+            != it.content
+
+if master && master.length
+    h3 主持人介绍
+    .author
+        each v in master
+            - _user = v;
+            - _user._e = 'user'
+            - _uClass = 'host'
+            include userInfo
+
+if feeTable
+    h3 活动费用
+    each it in feeTable
+        .well.well-sm
+            p
+                span 【#{it.amount}人】
+                strong= it.title
+                span.btn.btn-danger.pull-right #{it.price}元
+            if true
+                p
+                    small
+                        strong 【消费说明】
+                        span= it.description
+if applyForm
+    .applyBox(style='display:none')
+        h3 活动报名
+        .regBtn.mt
+            a(href=f.navUrl("exForm/#{applyForm.code}")).btn.btn-lg.btn-info.btn-block 我要报名
+
+if feedbackForm
+    .feedbackBox(style='display:none')
+        h3 活动反馈
+        .regBtn.mt
+            a(href=f.navUrl('exForm/#{feedbackForm.code}')).btn.btn-lg.btn-success.btn-block 我要反馈
+
+if participant
+    hr
+    p
+    .ptps.clearfix
+        each it,i in participant
+            if i.length > 5
+                - it._id = i
+            -href = '/user/' + it._id
+            -imgPath = f.resPath(c, 'portrait/' + it._id + '.jpg')
+            a.col-xs-2.pl0(href= href,title= it.username)
+                != f.img(imgPath, 'square')
+
+
+if partner
+    h3 主办方介绍
+    != f.imgItem(partner, c, 'logo')
+    h4= partner.title
+    small= partner.slogon
+    div!= partner.introduction
+    //!= f.imgItem(partner, c, 'qrcode')
+
+
+if v
+    h3 场地介绍
+    figure.text-center
+        != f.imgItem(v, c)
+    h4= v.title
+    != v.content
+    != f.imgItem(v, c, 'qrcode')
+
+
+

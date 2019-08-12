@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "mgm.js",
+  "sourceRoot": "",
+  "sources": [
+    "mgm.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,OAAA,CAAQ,yBAAR;AAAA"
+}

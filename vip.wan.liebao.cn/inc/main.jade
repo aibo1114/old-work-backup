@@ -1,0 +1,107 @@
+doctype html
+html(lang='zh')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv="X-UA-Compatible",content="IE=EDGE,chrome=1")
+        title 豹会员
+        link(href="http://wan.liebao.cn/favicon.ico",type="image/x-icon" rel="icon")
+        link(type='text/css',rel='stylesheet',href='http://image.wan.liebao.cn/www/css/base.css')
+        link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/base.css')
+        link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/common.css?v=2017090804')
+        block css
+    body
+        block variable
+        -var nCls='li-nav'
+        -var mCls='li-nav'
+        -var pCls='li-nav'
+        -var sCls='li-nav'
+        -var hCls='li-nav'
+        case curPage
+            when 'index' : -nCls+=' current'
+            when 'member' : -mCls+=' current'
+            when 'privilege' : -pCls+=' current'
+            when 'system' : -sCls+=' current'
+            when 'helper' : -hCls+=' current'
+
+        mixin navItem(cls,title,hf)
+            li(class='#{cls}')&attributes(attributes)
+                a.link-nav(href='#{hf}')= title
+
+        .container
+            .topline
+                .content-topline
+                    ul.l-tools-topline
+                        li.li-tools-topline.collection 收藏本站
+                        li.li-tools-topline.setindex 设为首页
+                        li.li-tools-topline.desktop 放到本地
+                    .box-login-topline
+                        p.user-login-topline 欢迎您：<a href="http://wan.liebao.cn/user/" target="_blank" class="name-login-topline"></a><a class="out-login-topline" the-id="logout">[退出]</a>
+                        ul.l-login-topline
+                            li.li-login-topline: a.link-login-topline(href='javascript:void(0);',id='topLogin') 登录
+                            li.line-login-topline |
+                            li.li-login-topline: a.link-login-topline(target='_blank',href='http://wan.liebao.cn/user/register.html?bu=http%3A%2F%2Fvip.wan.liebao.cn%2F%2Findex.html') 注册
+                    a.back-login-topline(href='http://wan.liebao.cn') 返回平台
+            .header.png_bg
+                .content-header
+                    h1.logo
+                        a(href='/'): img(src='http://img.wan.ijinshan.com/vip/images/logo_02.png')
+                    ul.l-nav
+                        +navItem(nCls,'首页','/')
+                        +navItem(mCls,'我的豹会员','/member.html')(the-id='memberNav')
+                        +navItem(pCls,'特权服务','/privilege.html')
+                        +navItem(sCls,'成长体系','/system.html')
+                        +navItem(hCls,'帮助中心','/helpCenter.html')
+                        //li.li-nav-back
+                            a.link-nav-back(href='http://wan.liebao.cn') 返回平台
+            block content
+            .footer
+                .content-footer
+                    a.safecheck-footer(href='https://v.pinpaibao.com.cn/cert/site/?site=wan.liebao.cn&at=business', target='_blank') 行业认证
+                    ul.l-tp-footer
+                        li.li-tp-footer
+                            a.link-tp-footer(href='http://wan.liebao.cn/game/',target='_blank') 游戏中心
+                        li.li-tp-footer
+                            a.link-tp-footer(href='http://wan.liebao.cn/user/?kstag=changeuserinfo',target='_blank') 账号安全
+                        li.li-tp-footer
+                            a.link-tp-footer(href='http://wan.liebao.cn/action/redirect_kf.php',target='_blank') 客服中心
+                        li.li-tp-footer
+                            a.link-tp-footer(href='http://i.wan.liebao.cn/jz/jiazhang.htm',target='_blank') 家长监控
+                    .clear
+                    ul.l-btm-footer
+                        li.li-btm-footer
+                            span.link-btm-footer 抵制不良游戏
+                        li.li-btm-footer
+                            span.link-btm-footer 拒绝盗版游戏
+                        li.li-btm-footer
+                            span.link-btm-footer 注意自我保护
+                        li.li-btm-footer
+                            span.link-btm-footer 谨防受骗上当
+                        li.li-btm-footer
+                            span.link-btm-footer 适度游戏益脑
+                        li.li-btm-footer
+                            span.link-btm-footer 沉迷游戏伤身
+                        li.li-btm-footer
+                            span.link-btm-footer 合理安排时间
+                        li.li-btm-footer
+                            span.link-btm-footer 享受健康生活
+                    .clear
+                    p.txt-cp <a target='_blank' href='http://image.wan.liebao.cn/game/static/images/www.jpg'>京网文[2016]0672-054号</a>　<a target='_blank' href='http://image.wan.liebao.cn/game/static/images/icp.jpg'>京ICP证120823</a>
+                    ul.l-cp
+                        li.li-cp
+                            span.link-cp COPYRIGHT ©2012
+                        li.li-cp
+                            a.link-cp.hot(href='http://wan.liebao.cn',target='_blank') WAN.LIEBAO.CN
+                        li.li-cp
+                            span.link-cp . ALL RIGHTS RESERVED.
+        block dialog
+        script(type='text/javascript',src='http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js?t=201410311102')
+        script(type='text/javascript',src='http://wan.liebao.cn/action/user_info.php?rt=5')
+        script(type='text/javascript',src='http://image.wan.liebao.cn/www/js/lb.platform.base.js?v=20170828')
+        script(type='text/javascript',src='http://img.wan.ijinshan.com/vip/js/common.js?v=2')
+        <!--[if IE 6]>
+        script(type='text/javascript',src='http://img.wan.ijinshan.com/vip/js/DD_belatedPNG_0.0.8a-min.js')
+        <![endif]-->
+        script(type='text/javascript').
+
+        block js
+

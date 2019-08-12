@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "dTime.js",
+  "sourceRoot": "",
+  "sources": [
+    "dTime.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,OAAA,CAAQ,sFAAR;;EACA,OAAA,CAAQ,oFAAR;;EACA,OAAA,CAAQ,8FAAR;;EAEA,OAAA,CAAQ,kCAAR;AAJA"
+}

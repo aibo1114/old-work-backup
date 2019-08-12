@@ -1,0 +1,37 @@
+extends ../main
+block variable
+    -var gname='传奇霸业';
+    -var alias='cqby';
+    -var nav= [{t:'游戏豪礼',id:'gifts'}, {t:'专属称号',id:'title'}, {t:'属性光环',id:'halo'}, {t:'特权礼包',id:'privi'}, {t:'更多特权',id:'lead'}];
+    -var game=[ {tt:'v1',content:['猎豹传奇至尊称号' , '豹会员神力' , '祝福油' , '双倍经验' , '天山雪莲']}, {tt:'v2',content:['羽毛', '双倍经验', '副本卷轴', '成就令牌', '弓箭手令牌']},{tt:'v3', content:['500绑定元宝', '成就令牌', '转生神殿券', '金砖（大）', 'HP强化药水']}, {tt:'v4',content:['500绑定元宝' , '成就令牌' , '转生神殿券', '金砖（大）', '玛雅卷轴']},{tt:'v5',content:['500绑定元宝' , '成就令牌', '三倍经验', '法神令牌', '副本卷轴']}   ]
+    -var daily=[ {tt:'v1',content:['金砖（小）' , '双倍经验' , '100绑定元宝' , '副本卷轴']}, {tt:'v2',content:['金砖（中）', '双倍经验（4小时）', '100绑定元宝', '副本卷轴']}, {tt:'v3',content:['金砖（中）', '双倍经验（8小时）', '100绑定元宝', '副本卷轴']}, {tt:'v4',content:['金砖（大）', '双倍经验（8小时）', '100绑定元宝', '副本卷轴']}, {tt:'v5',content:['金砖（大）', '双倍经验（8小时）', '100绑定元宝', '副本卷轴']}  ];
+
+    -var priList=[{tt:'V1-V2',img:'pri-1',content:['金砖（小）*2','双倍经验卷轴（4小时）*1','转生神殿卷轴*1','成就令牌*1']}, {tt:'V3-V4',img:'pri-2',content:['金砖（中）*3','双倍经验卷轴（8小时）*1','卷轴功勋*2','玛雅卷轴*2','法神令牌*3']}, {tt:'V5',img:'pri-3',content:['金砖（大）*10','玛雅卷轴*10','羽毛*20','副本卷轴*10','成就令牌*10','BOSS积分精魄*10']}];
+block content
+    +fixNav(nav)
+
+    +panel('游戏豪礼','豹会员每日领取多种礼包奖励','1')(class='first-panel-gp',id='gifts')
+        +gifts('特权礼包')(class='first-gifts-gp')
+            +tab(game,'game')
+        +gifts('每日礼包')
+            +tab(daily,'daily')
+
+    +panel('专属称号','豹会员为您提供游戏内独特显示','2')(id='title')
+        img.img-panel-gp(src='images/img-1.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('属性光环','所有区服展示您的属性光环','3')(id='halo')
+        img.img-panel-gp(src='images/img-2.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('特权礼包','豹会员平台豪华大礼包','4')(id='privi')
+        +priList(priList)
+        +receiveBtn(the-id='receiveBtn',the-role='pri')
+
+    +panel('更多特权','豹会员平为您提供更多特权，助您乘风破浪','5')(id='lead')
+        +moreList
+
+    +panel('如何获得特权？','只需三步，即可开通','6')(class='six-panel-gp')
+        +leadList
+        +openBtn
+

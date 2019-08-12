@@ -1,0 +1,739 @@
+html{color:#000;background:#FFF; -webkit-text-size-adjust:none;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;box-sizing:content-box;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+input:focus{
+    outline: none;
+}
+/*20160718*/
+.login-warp{
+    display: none;
+    width:440px;
+    height: 440px;
+    position: absolute;
+    left: 50%;
+    margin-left: -220px;
+    top:50%;
+    margin-top: -220px;
+    font-family: "微软雅黑";
+}
+.login-warp .login-top{
+    text-indent: -999px;
+    overflow: hidden;
+    background: url(http://image.wan.liebao.cn/static/images/dialog/login_dialog_h.jpg) no-repeat;
+    height: 140px;
+    border-bottom: 0;
+    z-index: auto;
+}
+.login-warp .login-top .login-close{
+    position: absolute;
+    top: 10px;
+    right: 11px;
+    display: block;
+    width: 22px;
+    height: 21px;
+}
+.login-warp .login-top .login-close .ico-close{
+   display: block;
+   background: url(http://image.wan.liebao.cn/static/images/dialog/close2.png) no-repeat;
+    _background: url(http://image.wan.liebao.cn/static/images/dialog/close2-p8.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+
+}
+/*tab切换*/
+.login-detail {
+    margin: 0px auto;
+    width: 440px;
+    height: auto;
+}
+  
+.login-detail .caption {
+    position: relative;
+    background-color: #f7f7f7;
+    margin: auto;
+    height: 30px;
+    width: 280px;
+    margin-top: -30px;
+}
+  
+.login-detail .caption ul {
+    position: absolute;
+    width: 440px;
+    left: -1px;
+
+}
+  
+.login-detail .caption li {
+    
+    text-align: center;
+   
+    line-height: 30px;
+    background-color: #afd4ec;
+    padding-left: 1px;
+    width: 140px;
+    padding-right: 1px;
+    float: left;
+    height: 30px;
+    overflow: hidden;
+    padding-top: 0px;
+    cursor: pointer;
+}
+  
+.login-detail .caption li.select {
+    
+    background-color: #ebf0fc;
+
+}
+  
+.login-detail .caption li a {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+.login-detail .caption .select a {
+    color: #0060ff;
+   
+}  
+.login-detail #content {
+    position: absolute;
+    background-color: #ebf0fc;
+    margin: auto;
+    width: 440px;
+    height: 280px;
+}
+#content .common-input{
+    width: 283px;
+    margin: 0 auto;
+    height: 30px;
+    border: 1px solid #d3d3d3;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+.loginInput .login_icon_user{
+    background: url(../images/name.jpg) no-repeat;
+    width: 15px;
+    height: 16px;
+    margin-top: 7px;
+    /* margin-bottom: 7px; */
+    display: inline-block;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+.fl{
+    float: left;
+}
+#keymail{
+    border: 0;
+    /* padding: 7px 0; */
+    font-size: 14px;
+    width: 243px;
+    border-left: 1px solid #e9e9e9;
+    padding-left: 5px;
+    margin: 6px 0;
+}
+.loginInputPwd .login_icon_password{
+    background: url(../images/mima.jpg) no-repeat;
+    width: 16px;
+    height: 20px;
+    margin-top: 7px;
+    /* margin-bottom: 7px; */
+    display: inline-block;
+    margin-left: 9px;
+    margin-right: 9px;
+}
+#content #yl-login{
+   margin-right: 7px;
+   background-color: #ccc;
+}
+#password{
+    border: 0;
+    /* padding: 7px 0; */
+    font-size: 14px;
+    width: 243px;
+    border-left: 1px solid #e9e9e9;
+    padding-left: 5px;
+    margin: 6px 0;
+}
+.common-input-code{
+    width: 211px;
+    /* margin: 0 auto; */
+    margin-left: 78px;
+    height: 30px;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #d3d3d3;
+}
+#content .loginInput{
+    margin-top: 30px;
+}
+.loginInputCode .login_icon_code{
+    background: url(../images/yanzhengma.jpg) no-repeat;
+    width: 18px;
+    height: 15px;
+    margin-top: 4px;
+    /**margin-top: 0px;*/
+    /* margin-bottom: 7px; */
+    *position: relative;
+    *top:-4px;
+    *left:2px;
+    *right: 4px;
+    display: inline-block;
+    margin-left: 9px;
+    margin-right: 4px;
+    *padding-right: 4px;
+}
+#identifyingcode{
+    border: 0;
+    /* padding: 7px 0; */
+    font-size: 14px;
+    width: 170px;
+    border-left: 1px solid #e9e9e9;
+    padding-left: 5px;
+    margin: 6px 0;
+}
+.login-error{
+    color: #ff740d;
+    font-size: 12px;
+    margin-bottom: -25px;
+    margin-left: 117px;
+    margin-top: 10px;
+    display: none;
+}
+.codebyImg{
+    position: absolute;
+    left: 59%;
+    top: 50%;
+    margin-top: -27px;
+    display: inline-block;
+    height: 40px;
+    margin-left: 39px;
+    cursor: pointer;
+}
+#content .rmline{
+    width: 280px;
+    margin: 0 auto;
+    _width:290px;
+}
+#content .rmline label{
+    color: #8f8f8f;
+    font-size: 12px;
+    vertical-align: 2px;
+    *vertical-align: 0px;
+    _vertical-align: 0px;
+}
+#content .rmline a{
+    color: #0060ff;
+    text-decoration: none;
+    font-size: 12px;
+    float: right;
+    *position:relative;
+    *top:-18px;
+     _position:relative;
+    _top:-10px;
+
+}
+#content .login-line{
+    width: 400px;
+    margin: 0 auto;
+    border: 1px dashed #d3d8e2;
+    margin-top: 10px;
+    _height:1px;
+    *height:1px;
+
+}
+#content .login-btn{
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#content .login-btn a,.regist-inner .qqlogin{
+    display: inline-block;
+    width: 136px;
+    text-align: center;
+    height: 33px;
+    line-height: 33px;
+    background: #ff740d;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+.regist-inner{
+    width: 338px;
+    margin: 0 auto;
+    color: #808080;
+    font-size: 14px;
+    margin-top: 12px;
+    *margin-top:5px;
+    _margin-top:8px;
+}
+.regist-inner .txt{
+    width: 245px;
+    *width: 215px;
+    _width:215px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d3d3d3;
+    padding-left: 5px;
+    margin-left: 8px;
+    /*margin-top: 5px;*/
+    /*margin: 6px 0;*/
+}
+.regist-inner .not{
+    font-size: 12px;
+    color: #cccccc;
+    margin-left: 70px;
+
+}
+..regist-inner .not.hasError{
+    color: #ff740d;
+}
+.regist-inner .code-regist{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+    border: 1px solid #d3d3d3;
+    width: 180px;
+    *width: 145px;
+    _width:145px;
+   margin-left: 8px;
+}
+.regist-inner .code-regist.re-error{
+    border: 1px solid red;
+}
+.regist-inner .regist-img{
+    height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 7px;
+    *vertical-align: -5px;
+
+}
+.regist-inner .zhuce{
+    display: inline-block;
+    width: 136px;
+    text-align: center;
+    height: 33px;
+    line-height: 33px;
+    background: #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none
+}
+.regist-inner .bts{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+.regist-inner .rmline-reg{
+    width: 213px;
+    *width:220px;
+    _width:230px;
+    margin: 0 auto;
+    color: #8f8f8f;
+    font-size: 12px;
+    /*vertical-align: 2px;*/
+}
+.regist-inner .rmline-reg label{
+    vertical-align: 2px;
+    /**vertical-align: 0px;*/
+    _vertical-align: 0px;
+}
+.regist-inner .rmline-reg a{
+    text-decoration: none;
+    vertical-align: 2px;
+}
+.regist-inner label{
+    *vertical-align: 7px;
+}
+.regist-inner .qqlogin{
+    margin-left: 5px;
+}
+/*错误样式*/
+#content .yl-error{
+    border: 1px solid red;
+}
+.regist-inner{
+    *width: 346px;
+}
+#content #yl-login.ableColor{
+    background-color: #ff740d;
+}
+a{
+			text-decoration:none;
+		}
+		.banner{
+			width:985px;
+			margin:0 auto;
+		}
+		.navs{
+			width:100%;
+			background-color:#2877c6;
+			border-bottom:3px solid #52bcff;
+			height:100px;
+			clear:both;
+		}
+		.navs_img{
+			width:985px;
+			margin:0 auto;
+		}
+		.form_width{
+			width:985px;
+			margin:0 auto;
+		}
+		.title_recommend{
+			width:100%;
+			margin-top:20px;
+			margin-bottom:10px;
+		}
+		.recommend_content{
+			width:100%;
+		}
+		.hot_info{
+			float:left;
+			width:34%;		
+		}
+		.pub_games{
+			float:left;
+			width:66%;	
+		}
+		.pub_content li{
+			display:inline;
+		}
+		.pub_content img{
+			margin-bottom:5px;
+		}
+		.infos{
+			width:308px;
+			height:151px;
+			border:6px solid #3092e9;
+			margin-top:4px;
+		}
+		.infos li{
+			margin-left:17px;
+		}
+		.info_title,.pub_title,.global_title,.more_title,.contact_us{
+			margin-top:15px;
+			margin-bottom:10px;
+		}
+		.platform_title{
+			margin-top:15px;
+			margin-bottom:15px;
+			float:left;
+		}
+		.other_products{
+			clear:both;
+		}
+		.blue_strip{
+			width:100%;
+			height:6px;
+			background-color:#2877c6;
+		}
+		.more_partner{
+			border-top:6px solid #2877c6;	
+			border:1px solid #d4d4d4;
+		}
+		.more_partner li{
+			padding:4px 0 5px 20px;
+			display:inline-block;
+			font-family:Microsoft YaHei, sans-serif;
+			font-size:14px;
+		}
+		.more_partner a{
+			color:#949494;
+		}
+		.more_partner a:hover{
+			color:#6cabee;
+		}
+		.href_wrapper{
+			width:984px;
+			height:171px;
+			position:absolute;
+			top:0px;
+			display:inline;
+			z-index:2;
+		}
+		.game_left,.game_center,.game_right{
+			width:318px;
+			height:165px;
+			display:inline-block;
+			background-color:#ffffff;
+			margin-left:3px;
+			margin-top:3px;
+		}
+		.main_title{
+			font-family:Microsoft YaHei, sans-serif;
+			font-size:18px;
+			font-weight:bold;
+			display:block;
+			margin:0 auto;
+		}
+		.main_title a{
+			color:#949494;
+			display:inline-block;
+			margin:10px 0 10px 10px;
+
+		}
+		.main_title a:hover{
+			color:#6cabee;
+		}
+		.small_titles{
+			font-size:12px;
+			font-weight:bold;
+			color:#949494;
+		}
+		a.small_titles:hover{
+			color:#6cabee;
+		}
+		.lines{
+			color:#6cabee;
+			font-family:Microsoft YaHei, sans-serif;
+			font-size:12px;
+		}
+		.main_title_bottom{
+			height:2px;
+			background-color:#3092e9;
+			width:95%;
+			margin:0 auto;
+		}
+		.spot{
+			width:10px;
+			height:10px;
+			border-radius:5px;
+			display:inline-block;
+			background-color:#ff6131;
+			margin-right:3px;
+		}
+		.products_list{
+			background-color:#f5f5f5;
+		}
+		.products_list li{
+			display:inline-block;
+			margin-left:12px;
+			margin-top:6px;
+			margin-bottom:3px;
+		}
+		.partner_content{
+			border:1px solid #d4d4d4;
+		}
+		.partner_content li{
+			display:inline-block;
+			margin-left:7px;
+			vertical-align:middle;
+		}
+		.recommend_games{
+			width:984px;
+			height:171px;
+			background-color:#f5f5f5;
+		}
+		.recommend_words{
+			float:left;
+			margin-top:5px;
+			margin-bottom:5px;
+			font-family:Microsoft YaHei, sans-serif;
+			color:#d0570f;
+			font-size:15px;
+		}
+
+		/*轮播*/
+		.flexslider {
+			position: relative;
+		    height: 319px;
+		    zoom: 1;
+		    left: 50%;
+		    margin-left: -492px;
+			width:980px;
+		}
+
+		.flexslider .slides li {
+			width: 984px;
+			height: 319px;
+		}
+		
+		.flex-direction-nav{
+			position: relative;
+		}
+		.flex-direction-nav .flex-next {
+			position: absolute;
+		    left: 23px;
+    		top: 209px;
+		    background: url(imgs/lastIco.png) no-repeat;
+		    width: 38px;
+		    height: 38px;
+		    display: inline-block;
+		}
+
+		.flex-direction-nav .flex-prev {
+			position: absolute;
+		    left: 926px;
+		    top: 209px;
+		    background: url(imgs/nextIco.png) no-repeat;
+		    width: 38px;
+		    height: 38px;
+		    display: inline-block;
+		}
+
+		.flexslider:hover .flex-next {
+			opacity: 0.8;
+			filter: alpha(opacity=25);
+		}
+
+		.flexslider:hover .flex-prev {
+			opacity: 0.8;
+			filter: alpha(opacity=25);
+		}
+
+		.flexslider:hover .flex-next:hover,
+		.flexslider:hover .flex-prev:hover {
+			opacity: 1;
+			filter: alpha(opacity=50);
+		}
+
+		.flex-control-nav {
+			width: 100%;
+			position: absolute;
+			bottom: 10px;
+			text-align: center;
+		}
+
+		.flex-control-nav li {
+			margin: 0 2px;
+			display: inline-block;
+			zoom: 1;
+			*display: inline;
+		}
+
+		.flex-control-paging li a {
+			background: url(imgs/dot.png) no-repeat 0 -16px;
+			display: block;
+			height: 16px;
+			overflow: hidden;
+			text-indent: -99em;
+			width: 16px;
+			cursor: pointer;
+		}
+
+		.flex-control-paging li a.flex-active,
+		.flex-control-paging li.active a {
+			background-position: 0 0;
+		}
+
+		.flexslider .slides a img {
+			width: 984px;
+			height: 319px;
+			display: block;
+			margin: 0 auto;
+		}
+		.footero {
+		  min-width: 1000px;
+		  background-color: #f0f0f0;
+		}
+		.footero .footer {
+		  width: 1000px;
+		  margin: 0 auto;
+		  color: #999;
+		  padding-top: 20px;
+		}
+		.footero .footer p {
+		  text-align: center;
+		  font: normal 12px/26px 'SimSun';
+		}
+		.footero .footer .lin {
+		  border-bottom: 2px solid #4a4278;
+		}
+		.footero .footer .lin a {
+		  margin: 0 15px;
+		  color: #999;
+		  -webkit-transition: color 0.1s ease-in-out;
+		  -moz-transition: color 0.1s ease-in-out;
+		  -o-transition: color 0.1s ease-in-out;
+		  transition: color 0.1s ease-in-out;
+		}
+		.footero .footer .lin a:hover {
+		  color: #666;
+		}
+		.footero .footer .dline {
+		  font-family: 'Arial';
+		}
+		.footero .footer .dline a {
+		  color: #f90;
+		}
+		a{text-decoration: none}
+		.cz{
+			position: absolute;
+		    display: inline-block;
+		    height: 64px;
+		    width: 174px;
+		    /*background-color: red;*/
+		    top: 50%;
+		    left: 50%;
+		    margin-top: -145px;
+		    margin-left: -66px;
+		    cursor: pointer;
+		}
+		.pb-warp{position: relative;width:100%;}
+		.playgame{
+			position: absolute;
+		    display: inline-block;
+		    height: 64px;
+		    width: 174px;
+		    /*background-color: green;*/
+		    top: 50%;
+		    left: 50%;
+		    margin-top: -145px;
+		    margin-left: 133px;
+		    cursor: pointer;
+		}
+		.qrcodes_sniper,.qrcodes_piano,.qrcodes_disease{
+			position:relative;
+			top:-154px;
+			float:left;
+		}
+		.close_btn{
+			float:right;
+			top:-156px;
+			position:relative;
+			cursor:pointer;
+		}
+		.banner_locator{
+			float:right;
+		}
+		.banner li{
+			display:inline-block;
+			padding-right:10px;
+			padding-left:4px;
+			margin:12px 0;
+		}
+		.banner li a,#add_me,#set_front{
+			font-size:13px;
+			font-family:Microsoft YaHei, sans-serif;
+			color:#bcbcbc;
+		}
+		.banner li a:hover{
+			color:#2877c6;
+		}
+		.border_right{
+			border-right:1px solid #bcbcbc;
+		}
+		#add_me:hover{
+			color:#2877c6;
+			cursor:pointer;
+		}
+		#set_front:hover{
+			color:#2877c6;
+			cursor:pointer;
+		}

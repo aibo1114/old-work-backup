@@ -1,0 +1,241 @@
+/*common*/
+.dialog {
+    position:fixed;
+    background: #fff;
+    top:120px;
+    left:50%;
+    z-index:99;
+    border-radius: 3px;
+    box-shadow: 0 0 6px #999;
+
+    /*overflow-y:scroll;*/
+}
+.hd-dialog {
+    height:30px;
+    background:#f5f5f5;
+}
+.bd-dialog {
+}
+.title-hd-dialog {
+    line-height:30px;
+    font-size:14px;
+    color:#4d4d4d;
+}
+.hd-dialog .glyphicon {
+    font-size:18px;
+    margin:0 4px 0 10px;
+    color:#fe8c6d;
+    top:4px;
+}
+.tip-bd-dialog {
+    text-align: center;
+    font-weight:bold;
+    font-size:18px;
+    color:#fe8a6b;
+}
+/*tip*/
+.tip-bd-dialog.grey {
+    color:#6b6b6b;
+}
+.btn-bd-dialog {
+    display:block;
+    background:#fe8a6b;
+    border-radius:3px;
+    text-align: center;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+}
+.btn-lg-dialog {
+    width:136px;
+    height:34px;
+    line-height:34px;
+    font-size:18px;
+    margin:35px auto 0;
+}
+.btn-sm-dialog {
+    width:110px;
+    height:28px;
+    border-radius: 2px;
+    line-height:28px;
+    font-size:12px;
+    letter-spacing:6px;
+    margin:40px auto 0;
+}
+.fork-dialog {
+    display:block;
+    width:14px;
+    height:14px;
+    font-size:14px;
+    color:#ccc;
+    line-height:1em;
+    position:absolute;
+    z-index:101;
+    top:8px;
+    right:9px;
+    cursor: pointer;
+}
+
+.text-bd-dialog {
+    line-height: 26px;
+    font-size: 12px;
+    color:#707070;
+    padding:18px 28px 0;
+}
+/*ft*/
+.ft-dialog {
+    position:absolute;
+    z-index:100;
+    bottom:0;
+    left:0;
+    width: 100%;
+}
+.tip-dialog .ft-dialog {
+    padding:0 0 24px 18px;
+    letter-spacing: 1px;
+    font-size:12px;
+    color:#999;
+}
+
+/*icons*/
+.title-hd-dialog {
+    padding-left:42px;
+}
+.dicon-blackboard {
+    background: url(../images/icons_43.png) no-repeat 15px 5px;
+}
+.dicon-gift {
+    background: url(../images/icons_33.png) no-repeat 15px 5px;
+}
+.dicon-bell {
+    background: url(../images/icons_47.png) no-repeat 15px 5px;
+}
+.dicon-list {
+    background: url(../images/icons_41.png) no-repeat 15px 5px;
+}
+
+/*package dialog img icon*/
+.left-li-pgetted {
+    text-align: center;
+}
+.left-li-pgetted .glyphicon-gift {
+    display: inline-block;
+    width:28px;
+    height:28px;
+    position:relative;
+    font-size:28px;
+    color:#fff;
+    background:none;
+    top:4px;
+}
+
+/*pkg*/
+.title-bd-dialog {
+    padding-top:45px;
+    text-align: center;
+    font-size:18px;
+    font-weight:bold;
+    color:#fe8a6b;
+}
+.copy-bd-dialog {
+    padding:38px 50px 0;
+    position:relative;
+}
+.copy-bd-dialog:after {
+    content:'.';
+    display: block;
+    height:0;
+    overflow:hidden;
+    clear:both;
+}
+
+
+.media-pkg-dialog {
+    width:50px;
+    height:50px;
+    float:left;
+    line-height: 50px;
+    text-align: center;
+    background: #4bc8a9;
+    border-radius: 2px;
+}
+.cptn-pkg-dialog {
+    display: inline-block;
+    float: left;
+    margin-left:12px;
+}
+.copy-pkg-dialog {
+    position:absolute;
+    top:65px;
+    right:50px;
+    display:block;
+    width:68px;
+    height:20px;
+    text-align: center;
+    line-height: 100%;
+    border:1px solid #fcc1b1;
+    background:#fff;
+    border-radius: 2px;
+    font-size:12px;
+    color:#fe8a6b;
+}
+.hvr-pkg-dialog {
+    background:#fe8a6b;
+    color:#fff;
+}
+
+.ctxt-pkg-dialog {
+    line-height:24px;
+    font-size:12px;
+    color:#4c4c4c;
+}
+.ctip-pkg-dialog {
+    line-height:28px;
+    font-size:12px;
+    color:#808080;
+}
+
+.media-pkg-dialog .glyphicon-gift {
+    display: inline-block;
+    width:28px;
+    height:28px;
+    position:relative;
+    font-size:28px;
+    color:#fff;
+    background:none;
+    top:9px;
+}
+
+.goback-aides {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

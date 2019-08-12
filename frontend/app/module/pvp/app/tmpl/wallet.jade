@@ -1,0 +1,33 @@
+include ./../../../../lib/tmpl/mixin
+
+include ./userPic
+.row
+    .text-center.userAllInfo
+        .row
+            .col-xs-6.gold.pr0
+                .gray
+                    !=f.icon('user')
+                    = 0
+            .col-xs-6.diamond.pl0
+                .gray
+                    !=f.icon('user')
+                    = 0
+    .list-group.m0
+        .list-group-item
+            !=f.icon('user')
+            | 购买金币
+            !=f.icon('chevron-right pull-right')
+        .list-group-item
+            !=f.icon('user')
+            | 兑换钻石
+            !=f.icon('chevron-right pull-right')
+
+    h4.text-left 开通服务
+    .text-center.clearfix
+        each it in links
+            .col-xs-4
+                != f.icon(it.icon)
+                br
+                a(href=it.href)=it.title
+
+

@@ -1,0 +1,32 @@
+extends ../main
+block variable
+    -var gname='魔域永恒';
+    -var alias='myyh';
+    -var nav= [{t:'游戏豪礼',id:'gifts'}, {t:'专属称号',id:'title'}, {t:'属性光环',id:'halo'}, {t:'更多特权',id:'lead'}];
+    -var game=[{tt:'v1',content:['XO型奇异兽 · 1星','帝龙宝珠(中)','1小时双倍经验','生命源泉(中)','勇者通行证']},{tt:'v2',content:['XO型奇异兽 · 1星','战魂晶石(小)','中型财富包','幻化幸运草','勇者通行证']},{tt:'v3',content:['XO型奇异兽 · 1星','符文精华(小)','4小时双倍经验','魔魂晶石','圣歌通行证']},{tt:'v4',content:['XO型奇异兽 · 1星','成就令(小)','大型财富包','生命源泉(大)','魔窟通行证']},{tt:'v5',content:['XO型奇异兽 · 5星','功勋任命书(小)','3级宝石礼包','幻化幸运草','魔窟通行证']}];
+    -var daily=[{tt:'v1',content:['XO型奇异兽 · 1星','幻化幸运草','小型财富包','188礼券','勇者通行证']},{tt:'v2',content:['XO型奇异兽 · 1星','幻化幸运草','小型财富包','188礼券','勇者通行证']},{tt:'v3',content:['XO型奇异兽 · 1星','幻化幸运草','中型财富包','388礼券','勇者通行证']},{tt:'v4',content:['XO型奇异兽 · 1星','幻化幸运草','中型财富包','388礼券','勇者通行证']},{tt:'v5',content:['XO型奇异兽 · 1星','幻化幸运草','中型财富包','588礼券','勇者通行证']}];
+
+
+block content
+    +fixNav(nav)
+
+    +panel('游戏豪礼','豹会员每日领取多种礼包奖励','1')(class='first-panel-gp',id='gifts')
+        +gifts('特权礼包')(class='first-gifts-gp')
+            +tab(game,'game' )
+        +gifts('每日礼包')
+            +tab(daily,'daily')
+
+    +panel('专属称号','成为猎豹游戏会员 领取平台炫酷称号 ','2')(id='title')
+        img.img-panel-gp(src='images/img-1.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('属性光环','所有区服展示您的属性光环','3')(id='halo')
+        img.img-panel-gp(src='images/img-2.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('更多特权','豹会员平为您提供更多特权，助您乘风破浪','4')(id='lead')
+        +moreList
+
+    +panel('如何获得特权？','只需三步，即可开通','5')(class='six-panel-gp')
+        +leadList
+        +openBtn

@@ -1,0 +1,192 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-1 {
+  background-image: url(/images/sprite.png);
+  background-position: -640px -420px;
+  width: 50px;
+  height: 40px;
+}
+.icon-2 {
+  background-image: url(/images/sprite.png);
+  background-position: -540px -420px;
+  width: 50px;
+  height: 40px;
+}
+.icon-3 {
+  background-image: url(/images/sprite.png);
+  background-position: -590px -420px;
+  width: 50px;
+  height: 40px;
+}
+.icon-bd {
+  background-image: url(/images/sprite.png);
+  background-position: -180px 0px;
+  width: 180px;
+  height: 162px;
+}
+.icon-bd2 {
+  background-image: url(/images/sprite.png);
+  background-position: 0px -162px;
+  width: 180px;
+  height: 162px;
+}
+.icon-bd3 {
+  background-image: url(/images/sprite.png);
+  background-position: -180px -162px;
+  width: 180px;
+  height: 162px;
+}
+.icon-bd4 {
+  background-image: url(/images/sprite.png);
+  background-position: -360px 0px;
+  width: 180px;
+  height: 162px;
+}
+.icon-bd5 {
+  background-image: url(/images/sprite.png);
+  background-position: -360px -162px;
+  width: 180px;
+  height: 162px;
+}
+.icon-bz {
+  background-image: url(/images/sprite.png);
+  background-position: 0px -324px;
+  width: 180px;
+  height: 162px;
+}
+.icon-bz2 {
+  background-image: url(/images/sprite.png);
+  background-position: 0px 0px;
+  width: 180px;
+  height: 162px;
+}
+.icon-bz3 {
+  background-image: url(/images/sprite.png);
+  background-position: -180px -324px;
+  width: 180px;
+  height: 162px;
+}
+.icon-bz4 {
+  background-image: url(/images/sprite.png);
+  background-position: -360px -324px;
+  width: 180px;
+  height: 162px;
+}
+.icon-bz5 {
+  background-image: url(/images/sprite.png);
+  background-position: -540px 0px;
+  width: 180px;
+  height: 162px;
+}
+.icon-djsd {
+  background-image: url(/images/sprite.png);
+  background-position: -540px -248px;
+  width: 86px;
+  height: 86px;
+}
+.icon-enterRoom {
+  background-image: url(/images/sprite.png);
+  background-position: -246px -486px;
+  width: 80px;
+  height: 80px;
+}
+.icon-friend {
+  background-image: url(/images/sprite.png);
+  background-position: -486px -486px;
+  width: 80px;
+  height: 80px;
+}
+.icon-friendHover {
+  background-image: url(/images/sprite.png);
+  background-position: -80px -572px;
+  width: 80px;
+  height: 80px;
+}
+.icon-home {
+  background-image: url(/images/sprite.png);
+  background-position: -86px -486px;
+  width: 80px;
+  height: 80px;
+}
+.icon-homeHover {
+  background-image: url(/images/sprite.png);
+  background-position: -166px -486px;
+  width: 80px;
+  height: 80px;
+}
+.icon-lbhy {
+  background-image: url(/images/sprite.png);
+  background-position: -540px -334px;
+  width: 86px;
+  height: 86px;
+}
+.icon-room {
+  background-image: url(/images/sprite.png);
+  background-position: -326px -486px;
+  width: 80px;
+  height: 80px;
+}
+.icon-roomHover {
+  background-image: url(/images/sprite.png);
+  background-position: -406px -486px;
+  width: 80px;
+  height: 80px;
+}
+.icon-rwzx {
+  background-image: url(/images/sprite.png);
+  background-position: -626px -334px;
+  width: 86px;
+  height: 86px;
+}
+.icon-user {
+  background-image: url(/images/sprite.png);
+  background-position: -566px -486px;
+  width: 80px;
+  height: 80px;
+}
+.icon-userHover {
+  background-image: url(/images/sprite.png);
+  background-position: 0px -572px;
+  width: 80px;
+  height: 80px;
+}
+.icon-wdqb {
+  background-image: url(/images/sprite.png);
+  background-position: 0px -486px;
+  width: 86px;
+  height: 86px;
+}
+.icon-wdyx {
+  background-image: url(/images/sprite.png);
+  background-position: -626px -248px;
+  width: 86px;
+  height: 86px;
+}
+.icon-yxq {
+  background-image: url(/images/sprite.png);
+  background-position: -540px -162px;
+  width: 86px;
+  height: 86px;
+}
+.icon-yxry {
+  background-image: url(/images/sprite.png);
+  background-position: -626px -162px;
+  width: 86px;
+  height: 86px;
+}

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "userMsg.js",
+  "sourceRoot": "",
+  "sources": [
+    "userMsg.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,IAAI,CAAC,OAAL,GACI;IAAA,IAAA,EAAM,EAAN;;AADJ"
+}

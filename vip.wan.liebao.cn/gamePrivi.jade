@@ -1,0 +1,659 @@
+extends ./inc/main
+include ./inc/mixin
+
+
+block css
+    link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/member.css?v=053103')
+    //link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/gamePrivi.css?v=053101')
+    style(type='text/css').
+        body {
+            background:#fafafa;
+            font-family: "Microsoft YaHei" !important;
+        }
+        .pt30 {
+            padding-top:30px;
+        }
+        .content-nav-gamepri {
+            border:1px solid #ebebeb;
+            background: #fff;
+            padding:12px;
+        }
+        .mod-nav-gamepri {}
+        .mod-nav-gamepri:after {
+            content: '';
+            display: block;
+            height: 0;
+            overflow: hidden;
+            clear: both;
+        }
+        .hd-nav-gamepri {
+            width:134px;
+            height:55px;
+            float: left;
+            padding-left:58px;
+            line-height:55px;
+            font-size:16px;
+            color:#4c4c4c;
+        }
+        .mod-nav-pri {
+            margin-bottom:6px;
+            border-bottom: 1px dashed #c7c7c7;
+        }
+        .mod-nav-pri .hd-nav-gamepri {
+            background:url('http://img.wan.ijinshan.com/vip/images/icon_pritab_03.png') no-repeat 25px 19px;
+        }
+        .mod-nav-name .hd-nav-gamepri {
+            background:url('http://img.wan.ijinshan.com/vip/images/icon_pritab_06.png') no-repeat 25px 19px;
+        }
+        .bd-nav-gamepri {
+            width:942px;
+            float: left;
+            text-align: center;
+        }
+        .l-tab-gamepri {
+            padding-top:8px;
+            text-align: left;
+        }
+        .li-tab-gamepri {
+            display: inline-block;
+            *display : inline;
+            *zoom : 1;
+            padding:0 20px;
+            margin:8px 0;
+            position:relative;
+        }
+        .l-tab-pri .li-tab-gamepri {
+            padding:0 30px;
+        }
+        .first-tab-gamepri {
+            padding-left: 0 !important;
+        }
+        .text-tab-gamepri {
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            height: 23px;
+            padding:0 10px;
+            line-height: 23px;
+            text-align: center;
+            color: #4c4c4c;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .line-tab-gamepri {
+            position:absolute;
+            z-index:2;
+            right:0;
+            top:0;
+            color:#ccc;
+            font-size:12px;
+        }
+        .l-tab-gname {
+            position:relative;
+        }
+        .thumb-tab-gamepri {
+            max-height: 78px;
+            _height:78px;
+            overflow: hidden;
+        }
+        .all-tab-gamepri {
+            max-height: 1000px;
+            height: auto;
+        }
+        .l-tab-pri .current-tab-gamepri {
+            background:#ff9a72;
+            color:#fff;
+        }
+        .l-tab-gname .current-tab-gamepri {
+            background: #7cbfff;
+            color: #fff;
+        }
+        .hot-tab-gamepri {
+            color:#f00;
+        }
+        .visible-tag-last .line-tab-gamepri {
+            display: none;
+        }
+        .more-tab-gameori {
+            display: inline-block;
+            *display:inline;
+            *zoom:1;
+            cursor: pointer;
+            margin:18px 64px 0 0;
+            font-size:14px;
+            color:#999;
+            text-decoration: underline;
+            display: none;
+        }
+
+        .l-games-gamepri {
+            min-height: 470px;
+            _height:470px;
+            width:1182px;
+            _width:1190px;
+            position:relative;
+            left:-22px;
+            top:0;
+            padding:45px 0 0 22px;
+        }
+        .li-game-gamepri {
+            width:370px;
+            height:308px;
+            float:left;
+            margin:0 22px 22px 0;
+            background:#fff;
+            border:1px solid #f0f0f0;
+        }
+        .res-game-gamepri {
+            border:1px solid #ff6d33 !important;
+            box-shadow: 0 0 8px #ff9a72;
+        }
+        .media-game-gamepri {
+            height:158px;
+            border-bottom:1px solid #f0f0f0;
+            overflow: hidden;
+        }
+        .media-game-gamepri img {
+            margin:-1px 0 0 -1px;
+        }
+        .main-game-gamepri {
+            height:52px;
+            border-bottom:1px dotted #d9d9d9;
+            position:relative;
+        }
+        .caption-game-gamepri {
+            height:96px;
+        }
+
+        .lg-game-gamepri {
+            width:1160px;
+            height:auto;
+            float: none;
+            border:none;
+        }
+        .lg-game-gamepri .media-game-gamepri {
+            height:175px;
+            border:1px solid #f0f0f0;
+        }
+        .lg-game-gamepri .media-game-gamepri img {
+            margin: 0;
+        }
+        .lg-game-gamepri .caption-game-gamepri {
+            height:95px;
+            border:1px solid #f0f0f0;
+            border-top:none;
+        }
+        .lg-game-gamepri .title-caption-gamepri {
+            width:150px;
+            float: left;
+            padding:0;
+            margin:0;
+            line-height:95px;
+            text-align: center;
+            font-size: 16px;
+            color:#333;
+        }
+        .lg-game-gamepri .main-caption-gamepri {
+            width:817px;
+            height:96px;
+            border-left:1px solid #f0f0f0;
+            border-right:1px solid #f0f0f0;
+            float: left;
+        }
+        .lg-game-gamepri .btngrp-caption-gamepri {
+            width:189px;
+            padding-top:16px;
+            float: left;
+        }
+        .l-lg-caption {}
+        .li-lg-caption {
+            width:122px;
+            float:left;
+            padding: 20px 0 0 63px;
+        }
+        .li-lsqy-caption {
+            width:200px;
+        }
+        .title-lg-li {
+            line-height:28px;
+            font-size:16px;
+            color:#4c4c4c;
+        }
+        .text-lg-li {
+            line-height: 26px;
+            font-size:14px;
+            color:#808080;
+        }
+
+        .name-game-gamepri {
+            height:52px;
+            line-height:52px;
+            padding-left:21px;
+            font-size:16px;
+            color:#333;
+        }
+        .btn-game-gamepri {
+            display: inline-block;
+            *display: inline;
+            *zoom:1;
+            /*background:#ff6d33;*/
+            font-size:14px;
+            font-weight: bold;
+            color:#ff6d33;
+            text-decoration: underline;
+            position:absolute;
+            z-index:2;
+            top:15px;
+            right:32px;
+            cursor: pointer;
+        }
+        .title-caption-gamepri,.subtitle-caption-gamepri,.txt-caption-gamepri {
+            padding-left:21px;
+        }
+        .title-caption-gamepri {
+            height:34px;
+            margin-top:8px;
+            line-height:34px;
+            font-size:14px;
+            color:#4c4c4c;
+        }
+        .subtitle-caption-gamepri {
+            height:20px;
+            line-height:20px;
+            font-size:12px;
+            color:#4c4c4c;
+        }
+        .txt-caption-gamepri {
+            height: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            color: #808080;
+        }
+
+        .btn-caption-gamepri {
+            display: block;
+            height:28px;
+            line-height: 28px;
+            text-align: center;
+            font-size:14px;
+        }
+        .open-caption-gamepri,.detail-caption-gamepri {
+            cursor:pointer;
+            font-family: 'SimHei';
+            letter-spacing: 1px;
+            text-decoration: underline;
+
+        }
+        .open-caption-gamepri {
+            color: #ff6d33;
+        }
+        .detail-caption-gamepri {
+            color:#329afe;
+        }
+        .detail-caption-gamepri:hover {
+            color:#329afe;
+            text-decoration: underline;
+        }
+
+        .l-caption-gamepri {}
+        .li-caption-gamepri {
+            width:33.333%;
+            float:left;
+        }
+        .l-sm {
+            padding-left:21px;
+        }
+        .li-sm {
+            width:auto;
+            display: inline-block;
+            *display: inline;
+            *zoom:1;
+            overflow: hidden;
+            margin-right:10px;
+        }
+        .title-li-caption,.text-li-caption {
+            height:20px;
+            line-height:20px;
+            font-size:12px;
+            padding-left:22px;
+        }
+        .li-sm .title-li-caption {
+            padding-left:0;
+        }
+        .li-sm .text-li-caption {
+            padding-left:0;
+        }
+        .title-li-caption {
+            color:#4c4c4c;
+        }
+        .text-li-caption {
+            color:#808080;
+        }
+
+block js
+    script(type='text/javascript',src='http://img.wan.ijinshan.com/vip/js/json2.js')
+    script(type='text/javascript').
+        (function(){
+            var g=location.hash;
+
+            if (!Array.indexOf) {
+                Array.prototype.indexOf = function (obj) {
+                    for (var i = 0; i < this.length; i++) {
+                        if (this[i] == obj) return i;
+                    }
+                    return -1;
+                }
+            }
+
+            if (g) {
+                $(g).addClass('res-game-gamepri');
+            }
+
+        })();
+
+        $().ready(function () {
+            setNavStyle();
+        });
+
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return null;
+        }
+
+        function newWin(url, id) {
+            var a = document.createElement('a');
+            a.setAttribute('href',url);
+            a.setAttribute('target', '_blank');
+            a.setAttribute('id',id);
+            // 防止反复添加
+            if (!document.getElementById(id)) {
+                document.body.appendChild(a);
+                a.click();
+            } else {
+                window.open(url);
+            }
+        }
+
+        function restoreBtn () {
+            $('.more-tab-gameori').text('查看全部');
+            $('.box-tab-gname').removeClass('all-tab-gamepri').addClass('thumb-tab-gamepri');
+        }
+
+        function unfoldBtn (){
+            $('.more-tab-gameori').text('收起');
+            $('.box-tab-gname').removeClass('thumb-tab-gamepri').addClass('all-tab-gamepri');
+        }
+
+        function setNavStyle() {
+            $('[the-id=gameAnchor]:visible').removeClass('visible-tag-last').each(function (ndx) {
+                var pl = $(this).position().left;
+                var isLst = ndx == $('[the-id=gameAnchor]:visible').length - 1;
+                if (pl==0) $(this).addClass('first-tab-gamepri');
+                if (pl > 760 || isLst) $(this).addClass('visible-tag-last');
+            });
+
+            restoreBtn();
+            if ($('.l-tab-gname').height() > $('.box-tab-gname').height()) {
+                $('.more-tab-gameori').css({
+                    'display': 'inline-block',
+                    '*display': 'inline',
+                    '*zoom': 1
+                });
+            } else {
+                $('.more-tab-gameori').hide();
+            }
+        }
+
+        $('.js-tab-gamepri .text-tab-gamepri').click(function () {
+            var hocker = $(this).attr('id');
+            var $reladms = $('[the-id=gameItem],[the-id=gameAnchor]');
+
+            $('.text-tab-gamepri').removeClass('current-tab-gamepri');
+            $('.li-game-gamepri').removeClass('res-game-gamepri');
+            $(this).addClass('current-tab-gamepri');
+            if (hocker == 'all') {
+                $reladms.show();
+                setNavStyle();
+                return false;
+            }
+            $('[the-id=gameItem]').each(function () {
+                var arr = JSON.parse($(this).attr('the-hock'));
+                if (arr.indexOf(hocker) != -1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+            $('[the-id=gameAnchor]').each(function () {
+                var arr = JSON.parse($(this).attr('the-hock'));
+                if (arr.indexOf(hocker) != -1) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+            setNavStyle();
+        });
+
+        $('.l-tab-gname .text-tab-gamepri').click(function () {
+            $('.l-tab-gname .text-tab-gamepri').removeClass('current-tab-gamepri');
+            $('.li-game-gamepri').removeClass('res-game-gamepri');
+            $(this).addClass('current-tab-gamepri');
+        });
+
+        $('[the-id=gameAnchor] .text-tab-gamepri').click(function () {
+            var gname = $(this).parent('[the-id=gameAnchor]').attr('game');
+            $('[the-id=gameItem]').hide();
+            $('#' + gname).show();
+        });
+
+        $('.more-tab-gameori').click(function () {
+            var toUnfold = $('.box-tab-gname').hasClass('thumb-tab-gamepri');
+            toUnfold ? unfoldBtn() : restoreBtn();
+        });
+
+        $('.js-btn-open').click(function () {
+            if (!ks_user || ks_user.length == 0) {
+                toLogin();
+            } else {
+                $.ajax({
+                    url: 'http://vip.wan.liebao.cn/vip/user/api/info',
+                    type: 'get',
+                    dataType: 'jsonp',
+                    success: function (res) {
+                        var status = res.data.status,
+                            hrf;
+                        status == 0 ? hrf = '/payOpen.html' : hrf = '/payRe.html';
+                        newWin(hrf, 'hideBtn4open');
+                        //$('#hideBtn4open').attr('href', hrf);
+                        //$('#hideBtn4open').get(0).click();
+                    }
+                });
+            }
+        });
+
+mixin item(name,imgSrc,alias,lg)
+    li.li-game-gamepri&attributes(attributes)
+        .media-game-gamepri
+            if lg
+                img(src='http://img.wan.ijinshan.com/vip/images/pryGame/#{imgSrc}.png?v=09081',alt='#{name}')
+            else
+                a(href='http://wan.liebao.cn/#{alias}',target='_blank'): img(src='http://img.wan.ijinshan.com/vip/images/pryGame/#{imgSrc}.png?v=09081',alt='#{name}')
+        if !lg
+            .main-game-gamepri
+                .name-game-gamepri= name
+                span.btn-game-gamepri.js-btn-open 立即开通
+        .caption-game-gamepri
+            if lg
+                h4.title-caption-gamepri 游戏特权
+                .main-caption-gamepri
+                    if block
+                        block
+                .btngrp-caption-gamepri
+                    .btn-caption-gamepri.js-btn-open
+                        span.open-caption-gamepri 立即开通
+                    .btn-caption-gamepri
+                        a.detail-caption-gamepri(href='http://vip.wan.liebao.cn/privilege/#{alias}', target='_blank') 查看详情
+            else
+                h4.title-caption-gamepri 游戏特权：
+                if block
+                    block
+mixin subItme(txt)
+    h4.subtitle-caption-gamepri 特权礼包
+    p.txt-caption-gamepri= txt
+
+block content
+    .main.pt30
+        a(href='',target='_blank',id='hideBtn4open', style='display:block; height:0; overflow:hidden;') link
+        a(href='',id='anchorPoint', style='display:block; height:0; overflow:hidden;') link
+        //+mMod('游戏特权')
+        .content-gamepri
+            .content-nav-gamepri
+                +navMod('游戏特权')(class='mod-nav-pri')
+                    ul.l-tab-gamepri.l-tab-pri
+                        li.li-tab-gamepri.js-tab-gamepri.first-tab-gamepri <span id="all" class="text-tab-gamepri current-tab-gamepri">全部特权</span><span class="line-tab-gamepri">|</span>
+                        li.li-tab-gamepri.js-tab-gamepri <span id="pkg" class="text-tab-gamepri">特权礼包</span><span class="line-tab-gamepri">|</span>
+                        li.li-tab-gamepri.js-tab-gamepri <span id="gft" class="text-tab-gamepri">游戏豪礼</span><span class="line-tab-gamepri">|</span>
+                        li.li-tab-gamepri.js-tab-gamepri <span id="selfTitle" class="text-tab-gamepri">专属称号</span><span class="line-tab-gamepri">|</span>
+                        li.li-tab-gamepri.js-tab-gamepri <span id="halo" class="text-tab-gamepri">属性光环</span>
+                +navMod('游戏名称')(class='mod-nav-name')
+                    .box-tab-gname.thumb-tab-gamepri
+                        ul.l-tab-gamepri.l-tab-gname
+                            li.li-tab-gamepri.first-tab-gamepri(the-id='gameAnchor',the-hock='["gft","selfTitle","halo"]',game='sxj') <span class="text-tab-gamepri hot-tab-gamepri">神仙劫</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["gft","selfTitle","halo"]',game='myyh') <span class="text-tab-gamepri hot-tab-gamepri">魔域永恒</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg","gft","selfTitle","halo"]',game='cqby') <span class="text-tab-gamepri hot-tab-gamepri">传奇霸业</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["gft","selfTitle","halo"]',game='gs') <span class="text-tab-gamepri hot-tab-gamepri">攻沙</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["gft","selfTitle","halo"]',game='cqz') <span class="text-tab-gamepri hot-tab-gamepri">楚乔传</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["gft","selfTitle","halo"]',game='jtfs') <span class="text-tab-gamepri hot-tab-gamepri">九天封神</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["gft","selfTitle","halo"]',game='ssss') <span class="text-tab-gamepri hot-tab-gamepri">三生三世十里桃花</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["gft","selfTitle","halo"]',game='lsqy') <span class="text-tab-gamepri hot-tab-gamepri">龙神契约</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='jyjx') <span class="text-tab-gamepri">九阴绝学</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='jyjh') <span class="text-tab-gamepri">剑雨江湖</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='wszzl') <span class="text-tab-gamepri">武神赵子龙</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='lyb') <span class="text-tab-gamepri">琅琊榜</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='snqxz') <span class="text-tab-gamepri">少年群侠传</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='qyz') <span class="text-tab-gamepri">青云志</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='hdzy') <span class="text-tab-gamepri">混沌战域</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='dmbj') <span class="text-tab-gamepri">盗墓笔记</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='lycq') <span class="text-tab-gamepri">蓝月传奇</span><span class="line-tab-gamepri">|</span>
+                            li.li-tab-gamepri(the-id='gameAnchor',the-hock='["pkg"]',game='dtszj') <span class="text-tab-gamepri">大天使之剑</span><span class="line-tab-gamepri">|</span>
+                    span.more-tab-gameori 查看全部
+            ul.l-games-gamepri
+                +item('神仙劫','sxj','sxj',true)(class='lg-game-gamepri',id='sxj',the-id='gameItem',the-hock='["gft","selfTitle","halo"]')
+                    ul.l-lg-caption
+                        //li.li-lg-caption
+                            h4.title-lg-li 特权礼包
+                            p.text-lg-li 3类礼包超值放松
+                        li.li-lg-caption
+                            h4.title-lg-li 游戏豪礼
+                            p.text-lg-li 每日领取多种奖励
+                        li.li-lg-caption
+                            h4.title-lg-li 专属称号
+                            p.text-lg-li 游戏内独特显示
+                        li.li-lg-caption
+                            h4.title-lg-li 属性光环
+                            p.text-lg-li 所有区服光芒万丈
+                +item('魔域永恒','myyh','myyh',true)(class='lg-game-gamepri',id='myyh',the-id='gameItem',the-hock='["gft","selfTitle","halo"]')
+                    ul.l-lg-caption
+                        //li.li-lg-caption
+                            h4.title-lg-li 特权礼包
+                            p.text-lg-li 3类礼包超值放松
+                        li.li-lg-caption
+                            h4.title-lg-li 游戏豪礼
+                            p.text-lg-li 每日领取多种奖励
+                        li.li-lg-caption
+                            h4.title-lg-li 专属称号
+                            p.text-lg-li 游戏内独特显示
+                        li.li-lg-caption
+                            h4.title-lg-li 属性光环
+                            p.text-lg-li 所有区服光芒万丈
+                +item('传奇霸业','cqby','cqby',true)(class='lg-game-gamepri',id='cqby',the-id='gameItem',the-hock='["pkg","gft","selfTitle","halo"]')
+                    ul.l-lg-caption
+                        li.li-lg-caption
+                            h4.title-lg-li 特权礼包
+                            p.text-lg-li 3类礼包超值放松
+                        li.li-lg-caption
+                            h4.title-lg-li 游戏豪礼
+                            p.text-lg-li 每日领取多种奖励
+                        li.li-lg-caption
+                            h4.title-lg-li 专属称号
+                            p.text-lg-li 游戏内独特显示
+                        li.li-lg-caption
+                            h4.title-lg-li 属性光环
+                            p.text-lg-li 所有区服光芒万丈
+                +item('攻沙','gs','gs',true)(class='lg-game-gamepri',id='gs',the-id='gameItem',the-hock='["gft","selfTitle","halo"]')
+                    ul.l-lg-caption
+                        li.li-lg-caption
+                            h4.title-lg-li 游戏豪礼
+                            p.text-lg-li 每日领取多种奖励
+                        li.li-lg-caption
+                            h4.title-lg-li 专属称号
+                            p.text-lg-li 游戏内独特显示
+                        li.li-lg-caption
+                            h4.title-lg-li 属性光环
+                            p.text-lg-li 所有区服光芒万丈
+                +item('楚乔传','cqz','cqz',true)(class='lg-game-gamepri',id='cqz',the-id='gameItem',the-hock='["gft","selfTitle","halo"]')
+                    ul.l-lg-caption
+                        li.li-lg-caption
+                            h4.title-lg-li 游戏豪礼
+                            p.text-lg-li 每日领取多种奖励
+                        li.li-lg-caption
+                            h4.title-lg-li 专属称号
+                            p.text-lg-li 游戏内独特显示
+                        li.li-lg-caption
+                            h4.title-lg-li 属性光环
+                            p.text-lg-li 所有区服光芒万丈
+                +item('九天封神','jtfs','jtfs',true)(class='lg-game-gamepri',id='jtfs',the-id='gameItem',the-hock='["gft","selfTitle","halo"]')
+                    ul.l-lg-caption
+                        li.li-lg-caption
+                            h4.title-lg-li 游戏豪礼
+                            p.text-lg-li 每日领取多种奖励
+                        li.li-lg-caption
+                            h4.title-lg-li 专属称号
+                            p.text-lg-li 游戏内独特显示
+                        li.li-lg-caption
+                            h4.title-lg-li 属性光环
+                            p.text-lg-li 所有区服光芒万丈
+                +item('三生三世十里桃花','ssss','ssss',true)(class='lg-game-gamepri',id='ssss',the-id='gameItem',the-hock='["gft","selfTitle","halo"]')
+                    ul.l-lg-caption
+                        li.li-lg-caption
+                            h4.title-lg-li 游戏豪礼
+                            p.text-lg-li 每日领取多种奖励
+                        li.li-lg-caption
+                            h4.title-lg-li 专属称号
+                            p.text-lg-li 游戏内独特显示
+                        li.li-lg-caption
+                            h4.title-lg-li 属性光环
+                            p.text-lg-li 所有区服光芒万丈
+                +item('龙神契约','lsqy','lsqy',true)(class='lg-game-gamepri',id='lsqy',the-id='gameItem',the-hock='["gft","selfTitle","halo"]')
+                    ul.l-lg-caption
+                        li.li-lg-caption.li-lsqy-caption
+                            h4.title-lg-li 特权礼包
+                            p.text-lg-li 不同等级可领取不同价值礼包
+                        li.li-lg-caption.li-lsqy-caption
+                            h4.title-lg-li 每日礼包
+                            p.text-lg-li 每日领取多种奖励
+                +item('蓝月传奇','lycq','lycq')(id='lycq',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('3类礼包超值放送')
+                +item('大天使之剑','dts','dts')(id='dtszj',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('不同等级不同豪华礼包')
+                +item('盗墓笔记','dmbj','dmbj')(id='dmbj',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('不同等级不同豪华礼包')
+                +item('少年群侠传','snqxz','qxz')(id='snqxz',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('不同等级不同豪华礼包')
+                +item('武神赵子龙','wszzl','zzl')(id='wszzl',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('不同等级不同豪华礼包')
+                +item('剑雨江湖','jyjh','jyjh')(id='jyjh',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('不同等级不同豪华礼包')
+                +item('青云志','qyz','qyz')(id='qyz',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('不同等级不同豪华礼包')
+                +item('混沌战域','hdzy','hdzy')(id='hdzy',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('不同等级不同豪华礼包')
+                +item('琅琊榜','lyb','lyb')(id='lyb',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('不同等级不同豪华礼包')
+                +item('九阴绝学','jy','jyjx')(id='jyjx',the-id='gameItem',the-hock='["pkg"]')
+                    +subItme('不同等级不同豪华礼包')
+                li.clear
+block dialog

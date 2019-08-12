@@ -1,0 +1,38 @@
+.chatPanel
+  .arrowRight, .arrowLeft, .arrowRightBorder, .arrowLeftBorder
+    position: absolute
+    top: 8px
+    width: 0
+    height: 0
+    font-size: 0
+    border: solid 8px
+
+  .arrowRightBorder
+    right: -16px
+    border-color: transparent transparent transparent $alert-success-border
+
+  .arrowLeftBorder
+    left: -16px
+    border-color: transparent $alert-info-border transparent transparent
+
+  .arrowRight
+    right: -15px
+    z-index: 100
+    border-color: transparent transparent transparent $alert-success-bg
+
+  .arrowLeft
+    left: -15px
+    z-index: 100
+    border-color: transparent $alert-info-bg transparent transparent
+
+  .modal-body,.card-block
+    padding-bottom: 4rem
+    overflow-y: scroll
+    overflow-x: hidden
+
+  .inputBox
+    width: 100%
+    position: absolute
+    bottom: 0
+    padding: 0.5rem 0
+    border-top: 1px solid $gray-lighter

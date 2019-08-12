@@ -1,0 +1,9 @@
+.msItem
+    .btnCtn.text-center
+        != f.icon('chevron-left', null, null, 'pull-left mLeft')
+        != f.icon('edit', null, null, 'edit')
+        != f.icon('trash', null, null, 'del')
+        != f.icon('chevron-right', null, null, 'pull-right right')
+
+    img.img-thumbnail(style='width:#{width};min-height:#{height}', src= img)
+    p= username || title

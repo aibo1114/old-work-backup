@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "strict_telephone.js",
+  "sourceRoot": "",
+  "sources": [
+    "strict_telephone.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,OAAP,GAAiB,SAAC,CAAD,EAAI,CAAJ;WACb,CAAC,kDAAkD,CAAC,IAAnD,CAAwD,CAAxD;EADY;AAAjB"
+}

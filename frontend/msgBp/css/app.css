@@ -1,0 +1,90 @@
+body {
+    background:url(../images/bg_01.jpg) repeat 0 0;
+}
+/*reset bs css*/
+/*nav*/
+.navbar-inverse {
+    border-radius: 0;
+    box-shadow: 0 0 10px #101010;
+    background: #000;
+}
+.navbar-inverse .navbar-brand {
+    color:#e0e0e0;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color:#e0e0e0;
+}
+/*menu*/
+.popover-title {
+    background:#eee;
+    padding:10px 15px;
+    font-weight: bold;
+}
+.list-group-item {
+    font-size:12px;
+    padding:8px 15px;
+}
+.list-group-item:focus {
+    background-color: #fff !important;
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+    color: #005eac;
+    background-color: #fff;
+    border-color: #ddd;
+}
+/*list*/
+.panel {
+    box-shadow: 0 0 15px #000;
+}
+
+.table tr>td,.table tr>th {
+    text-align: center;
+    vertical-align: middle !important;
+}
+.table tr>td.content {
+    text-align:left;
+    padding-left:20px;
+    padding-right:15px;
+    word-break:break-all;
+}
+.navbar-form {
+    margin-right:0;
+}
+.navbar-form .form-group {
+    margin-right:5px;
+}
+/*item*/
+.form-horizontal {
+    padding:10px 25px 0 0;
+}
+.form-inline {
+    padding-top:2px;
+    margin-bottom:8px;
+}
+.form-inline .form-group {
+    margin-left: 0;
+    margin-right: 10px;
+}
+.mt10 {
+    margin-top:10px;
+}
+
+/*modal*/
+#deleteModal .modal-dialog {
+    margin:180px auto 0 !important;
+}
+#deleteModal .modal-header {
+    padding:8px 15px;
+}
+#deleteModal .modal-body {
+    padding-top:45px;
+    text-align: center;
+}
+#deleteModal .modal-body p {
+    font-size: 14px;
+    font-weight: bold;
+}
+#deleteModal .modal-footer {
+    /*border-top:none;*/
+    text-align: center;
+}

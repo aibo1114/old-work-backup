@@ -1,0 +1,15 @@
+extends /inc/main
+block content
+    .article
+        .col-md-8.main
+            include /../_inc/crumb
+            include /../_inc/mod/post
+        .col-md-4.side
+            if postList
+                +panel('相关文章')
+                    .list-group
+                        +media(postList,{})
+
+block st
+    :coffee(bare=true,minify=true)
+        cf.noCopy?()

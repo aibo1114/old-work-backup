@@ -1,0 +1,35 @@
+.detail_text_content{
+	margin-bottom:10px;
+}
+.detail_ft_12{
+	font-size:12px;
+}
+.text_ft_color_default{
+	color:#808080;
+}
+.detail_ft_enlarge{
+	font-weight:bold;
+}
+.text_title{
+	text-align:center;
+	font-size:18px;
+	color:#f0641e;
+}
+.text_info{
+	margin-top:10px;
+	text-align:center;
+	color:#999999;
+}
+.text_content p{
+	font-size:14px;
+	line-height:35px;
+}
+.text_indent{
+	text-indent:2em;
+}
+.text_end{
+	text-align:right;
+}
+.text_middle{
+	text-align:center;
+}

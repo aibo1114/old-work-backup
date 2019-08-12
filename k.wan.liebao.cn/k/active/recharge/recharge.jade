@@ -1,0 +1,47 @@
+mixin menu(title)
+    li.li-pay&attributes(attributes)
+        h5 #{title}:
+        block
+mixin sumLst
+    ul.l-sum
+        each it in [10,20,50,100,200,500,1000,2000]
+            li.li-sum #{it}元
+
+doctype html
+html(lang="en")
+    head
+        title 充值平台币
+        meta(charset="utf-8")
+        link(type="text/css",rel="stylesheet",href="http://image.wan.liebao.cn/www/css/base.css?v=2")
+        link(type="text/css",rel="stylesheet",href="css/main.css")
+        //link(type="text/css",rel="stylesheet",href="http://img.wan.ijinshan.com/pay2/online/css/default.css?t=20150921")
+    body
+        .mod-pay
+            .hd-pay
+                h4 充值平台币
+            .bd-pay
+                ul.l-pay
+                    +menu('充值账号')(class="first-item")
+                        p.txt
+                            span sxj0425
+                            //a(href="javascript:void(0);") 更改
+                    +menu('充值金额')
+                        +sumLst
+                        .piece-sum
+                            input.input-sum(type="text",placeholder="其他金额")
+                            span.tip-sum 请输入10-10000之间的整数
+                    +menu('支付方式')(class="last-item")
+                        span.icon-way: img(src="images/aliPay_03.jpg",alt="")
+            .ft-pay
+                span.btn-pay 立即充值
+        script(type='text/javascript',src='js/jquery-2.2.3.min.js')
+        script.
+            $.ajax({
+                url:'http://pay1.wan.liebao.cn/index.php/platform/consume',
+                type:'get',
+                success:function(data){
+                    console.log(data);
+                }
+            });
+
+

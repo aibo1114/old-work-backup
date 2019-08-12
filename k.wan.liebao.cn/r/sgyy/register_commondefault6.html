@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="http://img.wan.ijinshan.com/global/reg/css/loginreg1.2.css" type="text/css" rel="stylesheet">
+<script type="text/javascript">
+	document.domain='wan.liebao.cn';
+</script>
+<style>
+.regcon label,.regcon span{color:#fff;}
+.usrinpt{background:#fff;border:1px solid #691f84;}
+</style>
+</head>
+<body> 
+	<div class="form regcon">
+		<!--  用户注册内容  -->
+		<div class="item">
+			<label class="title">帐&emsp;&emsp;号:</label>
+			<input type="text" id="passport" tabindex="1" name="unm" class="usrinpt">
+			<span class="notice" id="aName">帐号由5-18位字母、数字或下划线组成</span>
+		</div>
+		<div class="item">
+			<label class="title">密&emsp;&emsp;码:</label>
+			<input type="password" id="password" tabindex="2" name="pwd" class="usrinpt">
+			<span class="notice" id="aPsd">密码由8-32位字符组成（区分大小写）</span>
+		</div>	
+		<div class="item">
+			<label lass="title">确认密码:</label>
+			<input type="password" id="repassword" tabindex="2" name="pwd" class="usrinpt">
+			<span class="notice" id="aRePsd">再次输入登录密码</span>
+		</div>
+		<!--  用户登录按钮  -->
+		<div class="userbtn">
+			 <a tabindex="4" class="regbtn __trace__"  id="reg_btn" onclick="datatrace(2);" href="javascript: void(0)" data-trace="151010,900,,,gamename:common_default5|w:regbtn"></a>
+			 <div class="qqLogin">
+				<a data-trace="151010,900,,,gamename:common_default5|w:regqqlogin"  id="qqlogin" onclick="datatrace(1);"  href="javascript:qqLogin('webgameqq','http://wan.ijinshan.com/u.php?a=dologin&amp;redirect_info=aHR0cDovL3dhbi5pamluc2hhbi5jb20vdi8/YT1sb2dpbndlYmdhbWUmZz00JnM9NDI');" class="qqLoginBtnLong __trace__" title="使用QQ帐号登录" tabindex="-1"></a>
+			 </div>
+		</div>
+	</div>
+
+<!-- 回调地址 -->	
+    <input type="hidden" name="service" id="service" />
+<script type="text/javascript">
+	var gameId=4;//游戏id
+	var sId=19;//区服id
+	var ourl='http://i.wan.liebao.cn/game/play?gid='+gameId+'&sid='+sId;
+	var serviceValue='http://i.wan.liebao.cn/login?go='+encodeURIComponent(ourl);
+	document.getElementById('service').value=serviceValue;
+</script>	
+	
+<script type="text/javascript" src="http://i.wan.liebao.cn/script/lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://i.wan.liebao.cn/reg/script/register_jq.min.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/common.js"></script>
+<script type="text/javascript">
+$(function(){
+//文本输入框焦点和失去焦点效果
+	$(":input").focus(function(){
+	  if($(this).val() ==this.defaultValue){  
+		$(this).val("");           
+	  } 
+	}).blur(function(){
+	 if ($(this).val() == '') {
+		$(this).val(this.defaultValue);
+		}
+	});
+	datatrace();
+});
+var vk = window.location.search;
+var vklen=vk.lastIndexOf("vkgamename");
+function datatrace(n){
+	var usrval = $("#passport").val();
+	//错误提示对象与个数
+	var errArr=$('.notice.error');
+	var errNum=errArr.length;
+	
+	//错误对象编号
+	var whicherr=null;
+	for(var i=0;i<errNum;i++){                    
+		var errStatus=errArr.eq(i).attr('id');
+		var errObjname=errArr.eq(i).attr('name');
+
+		if((errStatus=='aName')&&(errObjname=='err')){
+			if(whicherr==null){
+				whicherr='102';
+			}else{
+				whicherr=whicherr+'_102';
+			}
+		}
+		
+		if((errStatus=='aPsd')&&(errObjname=='err')){
+			if(whicherr==null){
+				whicherr='110';
+			}else{
+				whicherr=whicherr+'_110';
+			}
+		}
+		
+		if((errStatus=='aRePsd')&&(errObjname=='err')){
+			if(whicherr==null){
+				whicherr='111';
+			}else{
+				whicherr=whicherr+'_111';
+			}
+		}
+	}       
+	if(vklen>0){
+		var vkgamename = vk.substr(vklen+11);
+		if(n==1){
+			var vkstr=$("#regqqlogin").attr("data-trace");
+			var strstart = vkstr.substring(0,vkstr.lastIndexOf("gamename")+9);
+			var strend = "|w:regqqlogin";
+			$("#regqqlogin").attr("data-trace",strstart+vkgamename+strend);
+		}
+		else{
+			var vkstr=$("#registbtn").attr("data-trace");
+			var strstart = vkstr.substring(0,vkstr.lastIndexOf("gamename")+9);
+			var strend = "|w:regbtn_" ;
+			$("#registbtn").attr("data-trace",strstart+vkgamename+strend+usrval);
+		}
+	}
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>金山游戏中心 - 赤月传说</title>
+<link href="http://wan.duba.net/images/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://wan.duba.net/js/01.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function AddFavorite(sURL, sTitle)
+{
+    try
+    {
+        window.external.addFavorite(sURL, sTitle);
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel(sTitle, sURL, "");
+        }
+        catch (e)
+        {
+            alert("加入收藏失败，请使用Ctrl+D进行添加");
+        }
+    }
+}
+function SetHome(obj,vrl){
+        try{
+                obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+                if(window.netscape) {
+                        try {
+                                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                        }
+                        catch (e) {
+                                alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                        }
+                        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                        prefs.setCharPref('browser.startup.homepage',vrl);
+                 }
+        }
+}
+//-->
+</SCRIPT>
+</head>
+
+<body>
+<div class="hz-top">
+	<div class="hz-top1">
+		<div class="hzt1"><a href="http://wan.liebao.cn" target="_blank"><img src="http://wan.duba.net/images/hz01.jpg" border="0" /></a></div>
+		<div class="beta"></div>
+		<div class="hzt2">
+			<p class="hzt21"><span id="toptxt"><strong>新老用户</strong>请点击下图进行游戏</span></p>
+			<p class="hzt22" id="topbutton1"><a href="#" onClick="javascript:pageTracker._trackPageview('/top_button1');tbutton1()"></a></p>
+			<p class="hzt22" id="topbutton2" style="display:none"><a href="#" onClick="javascript:pageTracker._trackPageview('/top_button2');tbutton2()"><img src="http://wan.duba.net/images/hz02_2.gif" /></a></p>
+			
+		</div>
+		<div class="hzt3 blu">
+		<a href="http://wan.liebao.cn" onClick="javascript: pageTracker._trackPageview('/top_wan');" target="_blank">金山猎豹游戏中心</a> 
+		</div>
+	</div>
+</div>
+<div>
+<iframe style="background-color:#fff;margin-top:40px" id="iframeGUI" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="auto" allowtransparency="yes" src="http://t.xydhl.com/?eid=df66U0U9gHt82o0vyzCXACKBlYNlj%2B6B4ijSmHWeqybQ" width="100% "></iframe>
+<script>
+(function(){
+	resize();
+})()
+window.onload = function(){
+	(!+"\v1" && !document.querySelector) ? document.body.onresize = resize : window.onresize = resize;
+}
+function resize(){
+	var height = window.innerHeight || self.innerHeight || (document.documentElement&&document.documentElement.clientHeight) || document.body.clientHeight;
+	document.getElementById('iframeGUI').style['height'] = height - 40+ 'px';
+}
+</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-18569907-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

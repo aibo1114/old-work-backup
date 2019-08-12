@@ -1,0 +1,105 @@
+/*以下为成功支付页面css*/
+.charge_title{
+	width:100%;
+	height:112px;
+	border-bottom:1px solid #e4e4e4;
+	font-size:30px;
+	font-weight:bold;
+	text-align:center;
+	line-height:112px;
+	color:#f0641e;
+}
+.charge_info{
+	font-size:14px;
+	width:750px;
+	border-bottom:1px solid #e4e4e4;
+}
+.charge_name,.charge_user_info{
+	width:50%;
+}
+.charge_name,.charge_user_info{
+	display:inline-block;
+}
+.charge_name{
+	font-weight:bold;
+	text-align:right;
+}
+.contact{
+	text-align:center;
+}
+.charge_account{
+	margin:20px 0 10px 0;
+}
+.charge_game,.charge_money{
+	margin:10px 0;
+}
+.contact{
+	margin:25px 0;
+}
+.contact_service{
+	color:#f0641e;
+}
+.charge_bottom_info{
+	width:100%;
+}
+.charge_claimation{
+	width:764px;
+	height:196px;
+	border:1px solid #e6e6e6;
+	margin:34px auto 10px auto;
+	overflow-y:scroll;
+}
+.charge_btn{
+	text-align:center;
+}
+.charge_btn a{
+	display:block;
+	padding:11px 25px;
+	text-decoration:none;
+	color:#ffffff;
+	font-weight:bold;
+	font-size:16px;
+}
+.keep_charging,.back_index{
+	display:inline-block;
+}
+.keep_charging{
+	background:#f0641e;
+	margin-top:34px;
+	margin-right:39px;
+}
+.back_index{
+	background:#3d9fed;
+	margin-top:34px;
+	margin-left:39px;
+}
+/*以下为支付失败页面css*/
+.failure_report{
+	margin:65px 0;
+	text-align:center;
+}
+/*以下为声明的css*/
+.claimation_title{
+	width:90%;
+	margin:0 auto;
+	border-bottom:1px dashed #e8e8e8;
+	text-align:center;
+	font-size:24px;
+	font-weight:bold;
+	padding-top:30px;
+}
+.claimation_title a{
+	color:#f0641e;
+	font-size:12px;
+	display:block;
+	text-align:right;
+	margin-bottom:10px;
+}
+.claimation_content{
+	height:195px;
+	line-height:30px;
+	margin-top:30px;
+}
+.claimation_content p{
+	text-indent:2em;
+}

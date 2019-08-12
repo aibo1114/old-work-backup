@@ -1,0 +1,21 @@
+.row.p-b-h
+    .col-xs-3(style='max-height: 105px;overflow:hidden')
+        != f.imgItem(ref||locals, c)
+    .col-xs-9.p-l-0
+        a(href='/group/#{_id}')
+            h5(style='margin-bottom:0.3rem')= title
+                br
+                small= subTitle
+        strong.text-faded= ii('m_timeStr',cf.curWeek-1, week, startedDate.dStr(10))
+        br
+        div
+            != f.label(ii('m_member'))
+            != f.label(ii('m_post',0),null,'m-l-h')
+            if price > 0
+                != f.label(ii('m_fee'),null,'m-l-h')
+            //!= f.label('等级 D',null,'m-l-h')
+
+.row.dCtn
+
+
+

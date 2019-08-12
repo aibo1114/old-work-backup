@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册 Demo</title>
+    <style type="text/css">
+        /* input状态 (#passport, #password, #repassword) */
+        input.st_err {
+            border: 1px solid red;
+        }
+        input.st_ready {
+            border: 1px solid green;
+        }
+        /* message状态 (#passport_msg, #password_msg, #repassword_msg) */
+        span.st_err {
+            color: red;
+        }
+        span.st_ready {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- Notice -->
+    <!-- 注册脚本通过id来操作，所以DOM元素的id需按照Demo来写 -->
+
+    <!-- passport 帐号 -->
+    <input type="text" name="passport" id="passport" tabindex="1" placeholder="帐号/邮箱/手机号" />
+    <span id="passport_msg"></span>
+
+    <br />
+
+    <!-- password 密码 -->
+    <input type="password" name="password" id="password" tabindex="2" placeholder="请输入密码" />
+    <span id="password_msg"></span>
+
+    <br />
+
+    <!-- repassword 再次输入密码 -->
+    <input type="password" name="repassword" id="repassword" tabindex="3" placeholder="再次输入密码" />
+    <span id="repassword_msg"></span>
+
+    <br />
+
+    <!-- agree 已阅读且同意 -->
+    <!-- 此DOM可选，去掉勾时#reg_btn会加上一个disable类 -->
+    <input type="checkbox" name="agree" id="agree" tabindex="4" />
+
+    <br />
+
+    <!-- 注册按钮 -->
+    <a href="javascript:void(0);" id="reg_btn" tabindex="5">注册</a>
+    <!-- QQ登录按钮 -->
+    <a href="javascript:void(0);" id="qqlogin" tabindex="-1">QQ登录</a>
+
+    <!-- 回调地址 -->
+    <input type="hidden" name="service" id="service" value="http://i.wan.liebao.cn/login?go=http%3A%2F%2Fk.wan.liebao.cn%2Fr%2Fdemo%2Findex.html" />
+
+    <!-- jQuery库 建议用工程里同个文件，避免加载两次jquery -->
+    <script type="text/javascript" src="http://i.wan.liebao.cn/script/lib/jquery.min.js"></script>
+
+    <!-- 注册脚本 -->
+    <script type="text/javascript" src="http://i.wan.liebao.cn/reg/script/register_jq.min.js"></script>
+</body>
+</html>

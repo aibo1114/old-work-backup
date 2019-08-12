@@ -1,0 +1,12 @@
+{
+  "name": "msgBp",
+  "description": "bower for public fe install",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.5",
+    "bootstrap": "^3.3.7",
+    "angular-route": "^1.6.5"
+  }
+}

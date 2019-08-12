@@ -1,0 +1,32 @@
+mixin menuItem(it)
+    if it.cls
+        -attributes.class = it.cls
+    if it.func
+        -attributes.onclick = it.func
+    else
+        -attributes.href = it.href || f.navUrl(it.key)
+    li: a&attributes(attributes)
+        if it.icon
+            != f.icon(it.icon)
+        = it.label || ii(it.key)
+
+
+nav(id=id class=navStyle)
+    ul(class=ulStyle)
+        //li: a(href= f.navUrl('home'))
+        //    != f.icon('home')
+        //    = ii('home')
+        each it in menus
+            +menuItem(it)
+        if !cf.mob
+            li
+                a(data-toggle='dropdown', href='#')
+                    != f.icon('th')
+                    = i18.iin('prop')
+                ul.dropdown-menu
+                    each it in func
+                        if it == 'hr'
+                            li.divider
+                        else
+                            +menuItem(it)
+

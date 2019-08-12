@@ -1,0 +1,13 @@
+ul.nav.nav-tabs
+    each it in locals
+        li(class= (it.selected ? 'active' : '')+' '+it.tabClass)
+            if it.href
+                a(href=it.href)= it.title
+            else
+                a(data-toggle='tab', href='##{it.code}')= it.title
+
+.tab-content
+    each it in locals
+        if !it.href
+            .tab-pane(id= it.code, class= it.selected ? 'active' : '')
+                != it.content

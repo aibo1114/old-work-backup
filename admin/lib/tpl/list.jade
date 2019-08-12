@@ -1,0 +1,70 @@
+//p(style='color:#fff') 123123
+.panel.panel-primary(the-p='width')
+    .panel-heading(ng-bind="$ctrl.title")
+
+    form.navbar-form.navbar-left(ng-if='$ctrl.search', ng-submit='$ctrl.searchForm();')
+        .form-group(ng-repeat='it in $ctrl.search')
+            input.form-control(type='text', ng-if='it.type=="text" ', ng-model='$ctrl.searchParm[it.code]', placeholder='{{it.label}}')
+            input.form-control(type='text', ng-if='it.type=="number" ', ng-model='$ctrl.searchParm[it.code]', placeholder='{{it.label}}')
+            input.form-control(type='email', ng-if='it.type=="email" ', ng-model='$ctrl.searchParm[it.code]', placeholder='{{it.label}}')
+            input.form-control(type='mobile', ng-if='it.type=="mobile" ', ng-model='$ctrl.searchParm[it.code]', placeholder='{{it.label}}')
+            select.form-control(ng-if='it.type=="xselect" ', ng-init='$ctrl.initXselect(it)', ng-model='$ctrl.xsV[it.code]')
+                option(ng-bind='"---"+it.label+"---"', value='')
+                option(ng-repeat='obj in $ctrl.xselect[it.code]', ng-bind='obj.n', ng-value='obj.v')
+            bootstrap-datetimepicker(ng-if='it.type=="date"', model='$ctrl.searchParm[it.code]', ctx='it', timestamp='{{it.timestamp}}')
+
+            input.form-control(type='text', ng-if='it.type=="cg-text" ', ng-model='$ctrl.changeParm[it.code]', placeholder='{{it.label}}')
+
+        button.btn.btn-default(type='submit', title='搜索'): span.glyphicon.glyphicon-search
+
+    .top-handler(ng-if='$ctrl.btn.top && $ctrl.editRight')
+        .btn-group.btn-group-sm
+            a.btn.btn-warning(ng-repeat='(k, it) in $ctrl.btn.top', ng-if='k=="add" ', title="{{it.label}}", ng-href='#!/{{it.pstn}}')
+                span.glyphicon(class='glyphicon-{{it.icon}}')
+
+    table.table.table-bordered
+        tr.info
+            th(ng-repeat='(k,v) in $ctrl.dictionary')
+                div(ng-bind='v.label', split-width='{{v.col}}')
+            th(ng-if='$ctrl.btn.item && $ctrl.editRight')
+                .center-block(split-width='{{$ctrl.btn.col}}') 操作
+
+        tr(ng-repeat='it in $ctrl.entities', ng-class-even="'active'")
+
+            td(ng-repeat='(k,v) in $ctrl.dictionary')
+                .center-block(ng-bind-html='$ctrl.bindText(it,k)', split-width='{{v.col}}')
+
+            td(ng-if='$ctrl.btn.item && $ctrl.editRight')
+                .center-block(split-width='{{$ctrl.btn.col}}')
+                    .btn-group.btn-group-sm
+                        a.btn.btn-default(ng-repeat='(k, b) in $ctrl.btn.item', ng-if="k=='edit' ", title="{{b.label}}", ng-href='#!/{{b.pstn}}/{{it[$ctrl.pstn.unique]}}')
+                            span.glyphicon(class='glyphicon-{{b.icon}}')
+                        button.btn(ng-repeat='(k, b) in $ctrl.btn.item', ng-if="k=='up' || k=='center' || k=='btm'", ng-class='{"btn-success":k=="up", "btn-primary":k=="center", "btn-info":k=="btm"}', title="{{b.label}}", ng-click='$ctrl.putItem(it[$ctrl.pstn.unique],b.v)')
+                            span.glyphicon(class='glyphicon-{{b.icon}}')
+                        button.btn.btn-danger(ng-repeat='(k, b) in $ctrl.btn.item', ng-if="k=='delete'", title="{{b.label}}", ng-click='$ctrl.deleteItem(it[$ctrl.pstn.unique])')
+                            span.glyphicon(class='glyphicon-{{b.icon}}')
+
+    pagination(ng-if='$ctrl.pageOpt.curSection', pageopt="$ctrl.pageOpt", entities="$ctrl.entities", pstn="$ctrl.pstn", num="$ctrl.pageOpt.num")
+
+
+
+.modal.fade(tabindex='-1', role='dialog', id='alert')
+    .modal-dialog.modal-sm(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal')
+                    span ×
+                h5.modal-title.text-primary h5后台
+            .modal-body
+
+.modal.fade(tabindex='-1', role='dialog', id='confirm')
+    .modal-dialog.modal-sm(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal')
+                    span ×
+                h5.modal-title.text-primary h5后台
+            .modal-body
+            .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') 取消
+                button.btn.btn-primary#confirmBtn(type='button', data-dismiss='modal', btn-role='delete') 确定

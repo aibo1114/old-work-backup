@@ -1,0 +1,277 @@
+body,h1,h2,h3,h4,h5,h6,p,blockquote,dl,dt,dd,ul,ol,li,pre,code,form,fieldset,legend,button,input,textarea,th,td {
+    margin: 0;
+    padding: 0
+}
+
+body,button,input,select,textarea {
+    font: 12px/1 Helvetica, Tahoma, Arial, 'SimSun', sans-serif
+}
+
+input,select,button,textarea {
+    font-size: 100%
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 100%;
+    font-weight: normal
+}
+
+ol,ul {
+    list-style: none
+}
+
+em,strong {
+    font-style: normal;
+    font-weight: normal
+}
+
+fieldset,img {
+    border: 0
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+html,body {
+    width: 100%;
+    height: 100%
+}
+
+a {
+    text-decoration: none
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+.clearfix:after {
+    display: block;
+    clear: both;
+    height: 0;
+    content: '\200B'
+}
+.clearfix {
+    *zoom: 1
+}
+
+.main_part {
+    width: 734px
+}
+
+.org_star {
+    color: #FD6708
+}
+
+.tit {
+    position: relative;
+    height: 50px;
+}
+
+.tit_nm {
+    width: 100%;
+    position: absolute;
+    left: 2px;
+    top: 4px;
+    padding: 10px 0;
+    border-top: 1px solid #E6E6E6;
+    color: #474849;
+    font: normal 18px/26px 'Microsoft YaHei'
+}
+
+.tit_sp {
+    float: left;
+    width: 74px;
+    height: 29px;
+    border-top: 5px solid #FD6708
+}
+
+.info {
+    border: 1px solid #d2d2d2;
+    padding: 20px
+}
+.article {
+    border-top: 1px dashed #d2d2d2;
+    padding: 20px
+}
+.info_tip {
+    color: #474849;
+    font: normal 12px/26px 'SimSun'
+}
+
+.form_detail {
+    margin: 20px 0
+}
+
+.form_lb,.form_input_box,.form_msg {
+    _display: inline;
+    float: left;
+    height: 36px;
+    margin-bottom: 10px
+}
+
+.form_lb {
+    width: 96px;
+    padding: 0 5px;
+    color: #664B2F;
+    font: 14px/36px 'Microsoft YaHei';
+    clear: both;
+    text-align: right
+}
+.form_lb .org_star {
+    font: normal 12px/36px 'SimSun'
+}
+
+.form_input_box {
+    position: relative;
+    width: 275px;
+    color: #666;
+    font: normal 14px/36px 'SimSun'
+}
+
+.form_input_box .bind_link,.form_input_box .change {
+    margin-left: 10px;
+    color: #37A;
+    font: normal 12px/36px 'SimSun';
+    text-decoration: underline
+}
+
+.form_input_box .txt {
+    float: left;
+    width: 260px;
+    height: 12px;
+    margin-top: 4px;
+    padding: 7px 5px;
+    border: 1px solid #d2d2d2;
+    background: #fff;
+    color: #666;
+    font: normal 12px/12px 'SimSun';
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+    outline: none
+}
+
+.form_input_box .txt:hover {
+    background: #FDFDF1
+}
+
+.form_input_box .txt:focus {
+    border: 1px solid #FC0;
+    background: #FFF
+}
+
+.form_msg {
+    width: 308px;
+    color: #B7B7B7;
+    font: normal 12px/36px 'SimSun'
+}
+
+.btn_ok {
+    float: left;
+    clear: both;
+    width: 145px;
+    height: 50px;
+    margin-left: 100px;
+    background: url(images/uc/btn.jpg) 0 0 no-repeat;
+    text-indent: -99999px
+}
+
+.succ_info {
+    float: left;
+    padding-left: 20px;
+    color: #3A7E34;
+    font: normal 12px/47px 'SimSun'
+}
+
+.btn_ok:hover {
+    opacity: .85
+}
+
+.btn_hide {
+    visibility: hidden
+}
+
+.st_err {
+    width: 272px;
+    padding-left: 36px;
+    background: url(images/uc/spr.png) 0 0 no-repeat;
+    color: red
+}
+
+.st_ready {
+    width: 272px;
+    padding-left: 36px;
+    background: url(images/uc/spr.png) 0 -36px no-repeat;
+    color: #3A7E34
+}
+
+.article h2 {
+    font: normal 18px/52px 'Microsoft YaHei';
+    text-align: center
+}
+
+.article h5 {
+    font: bold 12px/22px 'SimSun'
+}
+
+.article p {
+    padding: 5px 0;
+    color: #666;
+    font: normal 12px/22px 'SimSun';
+    text-indent: 2em
+}
+
+.article a {
+    color: #37A
+}
+
+.articlelist {
+    padding: 5px 0;
+    color: #666
+}
+
+.articlelist li {
+    padding-left: 44px;
+    line-height: 22px
+}
+
+.article .red {
+    display: block;
+    color: #f0641e;
+    font-weight: bold
+}
+
+.suc_tip {
+    position: absolute;
+    top: 13px;
+    padding-left: 15px;
+    color: #3A7E34;
+    font: normal 12px/12px 'SimSun';
+    -webkit-animation: suctip_jump .8s 2
+}
+
+@-webkit-keyframes suctip_jump {
+    0% {
+        top: 13px
+    }
+
+    20% {
+        top: 13px
+    }
+
+    50% {
+        top: 8px
+    }
+
+    80% {
+        top: 13px
+    }
+
+    100% {
+        top: 13px
+    }
+}

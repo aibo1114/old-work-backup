@@ -1,0 +1,230 @@
+extends inc/main
+
+mixin item(text)
+    li
+        a(href="javascript:void(0);")= text
+mixin indicatorsItem(id,i)
+    -var cls=''
+    if i == 0
+        -cls='active'
+    li(class="#{cls}",data-target="##{id}",data-slide-to="#{i}")
+mixin innerItem(imgSrc,text,active)
+    -var cls='item'
+    if active
+        -cls+=' active'
+    div(class="#{cls}")
+        img(src="#{imgSrc}")
+        .carousel-caption= text
+
+mixin ttItem(tt,txt,i)
+    li
+        if i != 0
+            span |
+        h4= tt
+        | :
+        p= txt
+
+mixin typeItem(obj)
+    .item-forum
+        .media
+            .media-left
+                a(href="forumType/#{obj._id}")!=f.imgItem(obj, c, 'head', 'img-object')
+            .media-body
+                h4.media-heading= obj.title
+                    a(href="forumType/#{obj._id}") (#{obj.newlyNum})
+                p 主题:#{obj.subjectNum},帖数:#{obj.postNum}
+                if obj.secret
+                    p 私密版块
+                else
+                    p: a(href="forumType/#{obj._id}")= obj.brief
+                    p #{obj.pubTime}&nbsp;&nbsp;#{obj.author}
+
+block style
+    :less(minify=true)
+        body {
+            line-height: 1;
+        }
+
+        .glyphicon {
+            top: 0;
+        }
+
+        .alert-default {
+            background: #f9f9f9;
+            border: 1px solid #dfdfdf;
+            border-radius: 0;
+            line-height: 1.6em;
+            color: #666;
+            .glyphicon-volume-up {
+                font-size: 26px;
+                color: #f53b3c;
+                padding-right: 10px;
+                top: 7px;
+            }
+            .input-group {
+                display: table;
+                width: 24%;
+                float: right;
+
+            }
+        }
+
+        .alert-normal {
+            margin: 0;
+            padding: 35px 15px;
+            .list-inline {
+                li {
+                    padding: 0 3px;
+                }
+                h4, p, span {
+                    display: inline-block;
+                    float: left;
+                    margin: 0;
+                    font-size: 14px;
+                    color: #999;
+                }
+                p {
+                    padding-left: 2px;
+                    color: #666;
+                }
+                span {
+                    padding-right: 6px;
+                }
+            }
+        }
+
+        .carousel {
+            .carousel-indicators {
+                left: auto;
+                right: 20px;
+                bottom: 5px;
+                width: auto;
+                margin-left: 0;
+                li {
+                    &.active {
+                        background: #f73b3c;
+                    }
+                    width: 20px;
+                    height: 20px;
+                    background: #d2d2d2;
+                    border: none;
+                    border-radius: 0;
+                }
+            }
+            .carousel-inner {
+                .item {
+                    .carousel-caption {
+                        width: 100%;
+                        background: rgba(0, 0, 0, .6);
+                        bottom: 0;
+                        left: 0;
+                        padding: 20px;
+                        text-align: left;
+                        font-size: 18px;
+                        letter-spacing: 1px;
+                    }
+                }
+            }
+        }
+
+        .top-right {
+            .row {
+                margin-left: -5px;
+                margin-right: -5px;
+            }
+            .col-md-6 {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+            .adv {
+                display: block;
+                margin-top: 10px;
+            }
+            .btn-danger {
+                width: 100%;
+                line-height: 1.8em;
+                background: #f53b3c;
+                font-size: 18px;
+                padding-left: 20px;
+                text-align: left;
+                border-radius: 0;
+                position: relative;
+                .glyphicon {
+                    font-size: 18px;
+                    margin-right: 5px;
+                    top: 2px;
+                }
+                .note {
+                    width: 68px;
+                    padding: 5px 0;
+                    text-align: center;
+                    position: absolute;
+                    top: 1px;
+                    right: 1px;
+                    background: #fefefe;
+                    color: #666;
+                    font-size: 14px;
+                    line-height: 1.2;
+                }
+            }
+        }
+
+        .item-forum {
+            margin: 10px 0;
+            .media {
+                height: 96px;
+            }
+            ._img {
+                max-width: none;
+            }
+        }
+
+block content
+    .alert.alert-default
+        span.glyphicon.glyphicon-volume-up
+        if forumNotify && forumNotify.headItem
+            != f.link(forumNotify.headItem[0])
+        .input-group
+            span.input-group-addon.glyphicon.glyphicon-search
+            input.form-control
+            .input-group-btn
+                button.btn.btn-default.dropdown-toggle(data-toggle="dropdown",aria-haspopup="true",aria-expanded="false")
+                    | 帖子
+    .row
+        .col-md-8
+            if forum && forum.headItem
+                +slide(c,forum.headItem)#carousel-news
+
+        .col-md-4.top-right
+            .row
+                .col-md-6
+                    a.btn.btn-danger(href="javascript:void(0);")
+                        span.glyphicon.glyphicon-edit
+                        | 发表主题
+                .col-md-6
+                    a.btn.btn-danger(href="javascript:void(0);")
+                        span.glyphicon.glyphicon-calendar
+                        span.note 今日签到<br />6328人
+                        | 签到
+            if forumSide && forumSide.headItem
+                each it in forumSide.headItem
+                    a.adv(href=it.href)
+                        !=f.imgItem(it, c)
+    .alert.alert-normal
+        ul.list-inline
+            -for (var i=0;i<5;i++)
+                +ttItem('今日',1895,i)
+
+    .alert.alert-default 公告动态
+    .row
+        each it in normalS
+            .col-md-4
+                +typeItem(it)
+
+    .alert.alert-default VIP专区
+    .row
+        each it in vipS
+            .col-md-4
+                +typeItem(it)
+block st
+    :coffee(bare=true,minify=true)

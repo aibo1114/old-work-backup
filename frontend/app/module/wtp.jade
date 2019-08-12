@@ -1,0 +1,48 @@
+doctype html
+meta(charset='UTF-8')
+script(src="http://s.postenglishtime.com/upload/pet/lib/lib.js?#{+new Date()}")
+script
+    :coffee(bare=true, minify=true)
+        if lstr = util.readLocal '_pay'
+            opt = JSON.parse(lstr)
+            util.cleanLocal '_pay'
+
+            fee = opt.fee
+            wCode = opt.wCode
+            woid = opt.woid
+
+            body = opt.body
+            detail = opt.detail
+
+            if opt.wCode
+                $.post util.actUrl('wt/wxPay'), {fee,wCode,body,detail,woid}, (ro)->
+                    if typeof WeixinJSBridge is "undefined"
+                        if document.addEventListener
+                            document.addEventListener 'WeixinJSBridgeReady', ->
+                                onBridgeReady(ro)
+                            , false
+                        else
+                            alert '浏览器不支持,请重试!'
+                    else
+                        onBridgeReady(ro)
+
+            onBridgeReady = (ro)->
+                WeixinJSBridge.invoke "getBrandWCPayRequest", ro, (res)->
+                    if res.err_msg == "get_brand_wcpay_request:ok"
+                        if opt.detail and opt.data
+                            $.ajax
+                                type: 'put'
+                                url: util.restUrl.apply(this, opt.detail.split('-'))
+                                data: opt.data
+                                success: ->
+                                    if opt.success
+                                        location.href = opt.success
+                                    return
+                    else
+                        if opt.error
+                            location.href = opt.error
+                    return
+                return
+        else
+            alert '页面过期,请重新支付!'
+            history.go(-1)

@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">厂商</h4>
+        <div class="panel-heading-right">
+            <a href="#!/provider/new" type="button" class="btn btn-primary btn-sm">
+                <span class="glyphicon glyphicon-plus"></span>新增
+            </a>
+        </div>
+    </div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th nowrap="nowrap">厂商名</th>
+            <th nowrap="nowrap">厂商密钥</th>
+            <th nowrap="nowrap">厂商ID</th>
+            <th nowrap="nowrap" width="128"></th>
+        </tr>
+        <tr ng-repeat="it in $ctrl.providers">
+            <td>{{it.SupplierName}}</td>
+            <td>{{it.SupplierSecret}}</td>
+            <td>{{it.SupplierID}}</td>
+            <td width="128">
+                <a href="#!/provider/{{it.SupplierID}}" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit"></span></a>
+                <button ng-click="$ctrl.stash(it)" data-toggle="modal" data-target="#deleteModal" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-trash"></span></button>
+            </td>
+        </tr>
+    </table>
+    <div class="panel-footer">
+        <page-nation></page-nation>
+    </div>
+</div>
+
+<div class="modal fade" id="deleteModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">安趣后台</h5>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">确认删除?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="$ctrl.del($ctrl.stashData)">删除</button>
+            </div>
+        </div>
+    </div>
+</div>

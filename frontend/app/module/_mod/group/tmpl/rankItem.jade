@@ -1,0 +1,12 @@
+.col-xs-2.p-l-0.p-t-h
+    h2.text-danger.text-xs-center.m-b-0= ctx._idx+1
+.col-xs-2.p-l-0
+    if ctx._idx > 2 && window.user.username != user.username
+        |...
+    else
+        != f.userPic(null,user)
+.col-xs-8.p-t-h
+    .media-title
+        if ctx._idx < 3 || window.user.username == user.username
+            != user.username
+        != f.btn((curScore||0)+'分','pull-xs-right','info','sm')

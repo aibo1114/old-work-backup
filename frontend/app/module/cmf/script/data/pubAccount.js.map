@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "pubAccount.js",
+  "sourceRoot": "",
+  "sources": [
+    "pubAccount.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,OAAP,GAAiB;IACb;MAAA,OAAA,EAAS,oBAAT;MACA,MAAA,EAAQ,QADR;MAEA,QAAA,EAAU,kCAFV;MAGA,KAAA,EAAO,iBAHP;MAIA,QAAA,EAAU,CAJV;MAKA,OAAA,EAAS,OALT;KADa;;AAAjB"
+}

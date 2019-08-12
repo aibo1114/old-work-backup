@@ -1,0 +1,18 @@
+.hostInfo.media
+    .media-body
+        .media-left(style='float:left;width:25%;margin-right:15px')!= f.img(f.resPath(c, 'portrait/' + _id + '.jpg'))
+        .media-heading
+            strong
+                if true
+                    != username
+                else
+                    != f.link(locals, 'username')
+            br
+            != _.pluck(user.roles,'label').join(',')
+
+        small(style='float:right')=title
+        if industry
+            span &nbsp;-&nbsp;
+            if i18.iCat('industry')
+                span= i18.iCat('industry')[industry]
+        != introduction

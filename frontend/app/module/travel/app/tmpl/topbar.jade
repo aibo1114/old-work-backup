@@ -1,0 +1,21 @@
+.topbar
+    .hoverShow.btn-group
+        a.dropdown-toggle
+            != f.icon('shopping-cart')
+            | Shopping Cart
+            span.badge 0
+        .dropdown-menu.panel
+            .panel-heading
+                .panel-title Newest Service Items
+            .panel-body
+
+            .panel-footer.clearfix
+                .row
+                    .col-md-6
+                        span.totalQty 0
+                        |&nbsp;Items, &nbsp;
+                        |Totally: $
+                        span.totalFee 0
+
+                    .col-md-6.text-right
+                        a.btn.btn-success(onclick='cf.checkForm()' style='margin:0') Pay Now

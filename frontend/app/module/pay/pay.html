@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>金山猎豹游戏中心 - 充值中心</title>
+    <link rel="stylesheet" href="http://img.wan.ijinshan.com/pay2/online/css/default.css?_t=20160627"/>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/belatedPNG/0.0.8a/belatedPNG.js"></script>
+    <![endif]-->
+    <!--<script type="text/javascript">-->
+        <!--document.domain = 'wan.liebao.cn';-->
+        <!--__is_finish = true;-->
+    <!--</script>-->
+    <style>
+        #sbox-tit.wg1052 li {
+            width: 33%;
+        }
+
+        .wg1052 {
+            display: none;
+        }
+
+        .wg1052sxf {
+            max-height: 200px;
+            _height: 200px;
+            overflow: scroll;
+            overflow-x: visible;
+            /*margin: 0 -10px;*/
+        }
+
+        .wg1052zyf {
+            max-height: 200px;
+            _height: 200px;
+            overflow: scroll;
+            overflow-x: visible;
+        }
+    </style>
+
+</head>
+<body>
+<div class="wrap">
+    <ul class="nav" id="nav"></ul>
+    <div class="box">
+        <!-- select button -->
+        <div class="box-tbtnbox">
+            <a class="gamebtn gamebtn-left" href="javascript:;" id="g-select-btn">选择充值游戏</a>
+            <a class="gamebtn gamebtn-right" href="javascript:;" id="s-select-btn">选择游戏服务器</a>
+        </div>
+        <!-- game box -->
+        <div class="box-coverbox" id="g-cbox">
+            <i class="box-coverbox-tip2 box-coverbox-tip-left">◆</i>
+            <i class="box-coverbox-tip box-coverbox-tip-left">◆</i>
+            <ul class="box-coverbox-tit clearfix" id="gbox-tit">
+                <li><a class="box-coverbox-tit-a box-coverbox-tit-a-select" href="javascript:;" id="gbox-history-sbtn"
+                       hidefocus="true">最近玩过的游戏</a></li>
+                <li><a class="box-coverbox-tit-a" href="javascript:;" id="gbox-allgames-sbtn" hidefocus="true">全部游戏</a>
+                </li>
+            </ul>
+            <div class="box-cover">
+                <div class="box-covermain clearfix" id="gbox-main">
+                    <div class="box-covermain-sub" id="gbox-history-subbox"><p class="box-coverbox-p">数据加载中...</p></div>
+                    <div class="box-covermain-sub" id="gbox-allgames-subbox">
+                        <div class="mscrollbar" id="scrollbar14673535410002529">
+                            <div class="scrollbar" >
+                                <div class="track" >
+                                    <div class="thumb" >
+                                        <div class="end"></div>
+                                        <div class="bom" ></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="viewport">
+                                <div class="overview">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- server box -->
+        <div class="box-coverbox" id="s-cbox" style="width: 558px;">
+            <i class="box-coverbox-tip2 box-coverbox-tip-right">◆</i>
+            <i class="box-coverbox-tip box-coverbox-tip-right">◆</i>
+            <ul class="box-coverbox-tit clearfix" id="sbox-tit">
+                <li><a class="box-coverbox-tit-a box-coverbox-tit-a-select" href="javascript:;" id="sbox-history-sbtn"
+                       hidefocus="true">最近玩过的服务器</a></li>
+                <li><a class="box-coverbox-tit-a" href="javascript:;" id="sbox-allsvrs-sbtn" hidefocus="true">全部服务器</a>
+                </li>
+            </ul>
+            <ul class="box-coverbox-tit clearfix wg1052 new" id="sbox-tit">
+                <li><a class="box-coverbox-tit-a box-coverbox-tit-a-select" href="javascript:;" id="sbox-history-sbtn"
+                       hidefocus="true">最近玩过的服务器</a></li>
+                <li><a class="box-coverbox-tit-a" href="javascript:;" id="sbox-sxf-sbtn" hidefocus="true">双线服</a></li>
+                <li><a class="box-coverbox-tit-a" href="javascript:;" id="sbox-zyf-sbtn" hidefocus="true">阵营服</a></li>
+            </ul>
+            <div class="box-cover">
+                <div class="box-covermain clearfix" id="sbox-main">
+                    <div class="box-covermain-sub" id="sbox-history-subbox">
+                        <p class="box-coverbox-p">没有最近玩过的服务器</p>
+                    </div>
+                    <div class="box-covermain-sub" id="sbox-allsvrs-subbox">
+                        <div class="mscrollbar" id="scrollbar14673535410002538">
+                            <div class="scrollbar" >
+                                <div class="track" >
+                                    <div class="thumb" >
+                                        <div class="end"></div>
+                                        <div class="bom" ></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="viewport">
+                                <div class="overview">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-covermain clearfix wg1052 new" id="sbox-main">
+                    <div class="box-covermain-sub" id="sbox-history-subbox">
+                        <p class="box-coverbox-p">没有最近玩过的服务器</p>
+                    </div>
+                    <div class="box-covermain-sub" id="sbox-sxf-subbox" style="display:none;"></div>
+                    <div class="box-covermain-sub" id="sbox-zyf-subbox" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main">
+            <!-- cost list -->
+            <h4 class="pay-stit">请选择充值金额</h4>
+            <ul class="pay-list clearfix" id="costlist">
+                <li class="pay-list-li w100" id="costlist-custom-li" style="display:none">
+                    <input type="radio" name="cost" class="pay-list-radio cost-radio" id="cost-custom" data-cost="0"/>
+                    <!-- no space --><label for="cost-custom" class="cost-a">其它</label>
+                    <input type="text" name="cost-custom-text" id="cost-custom-text" class="pay-list-text" value=""/>
+                    <label class="cost-a" for="cost-custom-text">元（请输入10至100000之间的任意整数）</label>
+                </li>
+            </ul>
+
+
+            <!-- pay tip  -->
+            <p class="pay-tip" id="pay_tip">
+            </p>
+
+            <!-- bonuse -->
+            <div class="fanli" id="fanli">
+
+                <!--
+                <div class="fanli-tip" id="fanli-tip">
+                    <span class="fanli-tip-in" id="fanli-tip-in" style="display:none"></span>
+                </div>
+                <div class="fanli-select fanli-param" id="fanli-select">
+                    <p>
+                        <input type="radio" class="fanli-radio sel pay-list-radio" name="fanli-radio" id="fanli-sel-radio" />
+                        <label for="fanli-sel-radio" class="cost-a">使用已有优惠券</label>
+                    </p>
+                    <select name="fanli-bonuse" id="fanli-bonuse"></select>
+                    <p class="fanli-select-tip" id="fanli-select-tip">
+                        提示：使用此券可额外获赠
+                        <span class="red">
+                            <span id="fanli-data-value"></span>
+                        </span>
+                        游戏币。（充值<span id="fanli-data-minvalue"></span>以上可使用）
+                        <br />
+                        下单后优惠券将被绑定，仅能用于当次提交的订单充值使用。如需帮助，请联系
+                        <a href="http://wan.liebao.cn/action/redirect_kf.php" target="_blank">在线客服&gt;&gt;</a>
+                    </p>
+                </div>
+                <div class="fanli-input fanli-param" id="fanli-input">
+                    <p>
+                        <input type="radio" id="fanli-input-radio" name="fanli-radio" class="fanli-radio ipt pay-list-radio">
+                        <label class="cost-a" for="fanli-input-radio">使用优惠券激活码</label>
+                    </p>
+                    <input type="text" class="fanli-ipt-txt" id="fanli-code-ipt" placeholder="使用优惠券激活码" />
+                    <span class="bonuse-tips-msg" id="fanli-code-tip"></span>
+                </div>
+
+
+                <div class="fanli-tip" id="fanli-tip">
+                    <span class="fanli-tip-in" id="fanli-tip-in" style="display:none"></span>
+                </div>
+                <div class="fanli-select" id="fanli-select">
+                    <select name="fanli-bonuse" id="fanli-bonuse"></select>
+                    <p class="fanli-select-tip" id="fanli-select-tip">
+                        提示：使用此券可额外获赠
+                        <span class="red">
+                            <span id="fanli-data-value"></span>
+                        </span>
+                        游戏币。（充值<span id="fanli-data-minvalue"></span>以上可使用）
+                        <br />
+                        下单后优惠券将被绑定，仅能用于当次提交的订单充值使用。如需帮助，请联系
+                        <a href="http://wan.liebao.cn/action/redirect_kf.php" target="_blank">在线客服&gt;&gt;</a>
+                    </p>
+                </div>
+
+                -->
+                <div class="fanli-tip" id="fanli-tip">
+                    <span class="fanli-tip-in" id="fanli-tip-in" style="display:none"></span>
+                </div>
+                <div class="fanli-disable fanli-param" id="fanli-disable">
+                    <p>
+                        <input type="radio" id="fanli-ipt-disable" name="fanli-radio" data-type="fanli-disable"
+                               class="fanli-radio pay-list-radio">
+                        <label class="cost-a" for="fanli-ipt-disable">不使用礼券</label>
+                    </p>
+                </div>
+                <div class="fanli-select fanli-param " id="fanli-select">
+                    <p>
+                        <input type="radio" class="fanli-radio sel pay-list-radio" data-type="fanli-select"
+                               name="fanli-radio" id="fanli-sel-radio"/>
+                        <label for="fanli-sel-radio" class="cost-a">使用已有礼券</label>
+                    </p>
+                    <p class="fanli-enter"><select class="ex-part" name="fanli-bonuse" id="fanli-bonuse"></select></p>
+                    <p class="fanli-select-tip" id="fanli-select-tip">
+                        提示：使用此券可额外获赠
+                            <span class="red">
+                                <span class="fanli-data-value"></span>
+                            </span>。（充值<span class="fanli-data-minvalue"></span>以上可使用） <br/>下单后礼券将被绑定，仅能用于当次提交的订单充值使用。如需帮助，请联系
+                        <a href="http://wan.liebao.cn/action/redirect_kf.php" target="_blank">在线客服&gt;&gt;</a>
+                    </p>
+                </div>
+                <div class="fanli-input fanli-param" id="fanli-input">
+                    <p>
+                        <input type="radio" id="fanli-ipt-radio" name="fanli-radio" data-type="fanli-input"
+                               class="fanli-radio ipt pay-list-radio">
+                        <label class="cost-a" for="fanli-ipt-radio">使用礼券激活码</label>
+                        <a target="top" style="color:red;text-decoration:underline;margin-left: 10px;"
+                           href="http://my.wan.liebao.cn/shoplist.html#virtual&type=0&order=addtime.DESC?source=czzx_liquan">获取积分券&gt;&gt;</a>
+                    </p>
+                    <p class="fanli-enter"><input type="text" class="fanli-ipt-txt ex-part" id="fanli-code-ipt"
+                                                  placeholder="使用优惠券激活码"/>
+                        <span class="bonuse-tips-msg ex-part" id="fanli-code-tip"></span></p>
+                    <p class="fanli-select-tip">
+                        提示：使用此券可额外获赠
+                            <span class="red">
+                                <span class="fanli-data-value"></span>
+                            </span>。 （充值 10元 以上可使用）<br/>
+                        下单后礼券将被绑定，仅能用于当次提交的订单充值使用。如需帮助，请联系
+                        <a href="http://wan.liebao.cn/action/redirect_kf.php" target="_blank">在线客服&gt;&gt;</a>
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- bank list -->
+            <h4 class="pay-stit" id="banklisttit" style="display:none">请选择银行</h4>
+            <ul class="pay-list ie-width clearfix" id="banklist" style="display:none"></ul>
+
+            <!-- pay button -->
+            <a class="paybtn" href="javascript:;" id="paybtn">立即支付</a>
+
+            <div class="pay-tip" id="bottom_tip">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- dialog -->
+<div class="dialog-mask" id="dialog-mask" style="display:none"></div>
+<div class="dialog" id="dialog" style="display:none">
+    <h5 class="dialog-tit">
+        充值订单确认
+        <a class="dialog-close closebtn" href="javascript:;">×</a>
+    </h5>
+    <div class="dialog-main clearfix" id="dialog-main"></div>
+    <div class="dialog-footer" id="dialog-footer"></div>
+</div>
+
+<!-- form -->
+<form target="_blank" action="/index.php/pay/index/" id="payform" method="post">
+    <input type="hidden" name="passport_mainname" id="form_passport_mainname" value=""/>
+
+    <input type="hidden" name="webgame_id" id="form_webgame_id" value=""/>
+    <input type="hidden" name="webgame_name" id="form_webgame_name" value=""/>
+
+    <input type="hidden" name="webgame_serverid" id="form_webgame_serverid" value=""/>
+    <input type="hidden" name="webgame_servername" id="form_webgame_servername" value=""/>
+
+    <input type="hidden" name="platform_name" id="form_platform_name" value="网上银行(易宝)"/>
+    <input type="hidden" name="platform_sub_id" id="form_platform_sub_id" value=""/>
+
+    <input type="hidden" name="pay_amount" id="form_pay_amount" value=""/>
+
+    <input type="hidden" name="bonus_no" id="form_bonus_no" value=""/>
+    <input type="hidden" name="pay_source" id="form_pay_source" value=""/>
+</form>
+<script src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+<script src="http://127.0.0.1:8088/lib.js"></script>
+<script src="http://127.0.0.1:8088/main.js"></script>
+</body>
+</html>

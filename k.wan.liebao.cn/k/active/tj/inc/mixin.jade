@@ -1,0 +1,75 @@
+mixin mod(title,subtitle,large,tabHd)
+    -var cls=''
+    if large
+        -cls='large'
+    .mod-tj
+        .hd-tj(class='#{cls}')
+            if tabHd
+                ul.l-hd-tj
+                    li.li-hd-tj.charge: a.link-hd-tj(href='javascript:void(0);') 充值
+                    li.li-hd-tj.regis: a.link-hd-tj(href='javascript:void(0);') 注册
+            else
+                h3.title-hd-tj= title
+                if subtitle
+                    h4.subtitle-hd-tj!=subtitle
+        .bd-tj(class='#{cls}')&attributes(attributes)
+            if block
+                block
+
+mixin list(arr)
+    ul.l-tj
+        each it in arr
+            li.li-tj
+                a.title-li-tj(href='#{it.href}',alt='#{it.title}')= it.title
+                span.time-li-tj= it.time
+mixin menu(arr)
+    .menu-tj
+        each it in arr
+            a.item-menu-tj(href='#{it.href}')= it.title
+mixin btnGroup()
+    .btns-tj
+        a(href='javascript:void(0);').item-btns-tj.recruit
+            h3.title-btns-tj 招募伙伴
+            h4.subtitle-btns-tj 桃园结义三顾茅庐
+        a(href='javascript:void(0);').item-btns-tj.mall
+            h3.title-btns-tj 商城柜台
+            h4.subtitle-btns-tj 限时折扣抢到手软
+        a(href='javascript:void(0);').item-btns-tj.befall
+            h3.title-btns-tj 神兵天降
+            h4.subtitle-btns-tj 变幻莫测收放自如
+mixin article(obj)
+    .article
+        .hd-article
+            h3.title-article= obj.title
+            h4.subtitle-article
+                span.part 作者：#{obj.author}
+                span.part 时间：#{obj.time}
+        .bd-article
+            each it in obj.text
+                p.text-article!= it
+            each it in obj.media
+                img.media-article(src='#{uploadP}/#{it.url}')
+            each it in obj.subtxt
+                p.text-article!= it
+
+mixin banner(imgs)
+    -var len=imgs.length
+    #banner
+        ul#bannerList
+            each it,i in imgs
+                -var cls=''
+                if i==0
+                    -cls='active'
+
+                if it.title
+                    li.bannerItem(class='#{cls}'): img(src='#{uploadP}/#{it.imgSrc}',title='#{it.title}')
+                else
+                    li.bannerItem(class='#{cls}'): img(src='#{uploadP}/#{it.imgSrc}')
+        ul#bannerBtns
+            -var n=0
+            while n<len
+                -var cls=''
+                if n==0
+                    -cls='active'
+                li.bannerBtn(class='#{cls}')
+                -n++

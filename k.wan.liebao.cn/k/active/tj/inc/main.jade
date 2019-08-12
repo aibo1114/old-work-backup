@@ -1,0 +1,67 @@
+doctype html
+html
+    head
+        title 安趣-天降传
+        meta(charset='utf-8')
+        link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/1000/css/base.css?t=201608301636')
+        link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/1000/css/common.css?t=201608301636')
+        link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/1000/css/regbase.css?t=201608301636')
+        link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/1000/css/nqbase.css?t=201608301636')
+        block style
+    body
+        .fullscreen.hd
+            .header
+                h1.logo: a(href='/') 安趣
+                ul.l-tools
+                    li.li-tools.setIndex: a.link-tools(href='#',onclick="SetHome(this,'http://k.wan.liebao.cn/k/active/tj/index.html');") 设为首页
+                    li.li-tools.collection: a.link-tools(href='javascript:void(0);') 收藏本站
+                    li.li-tools.desktop: a.link-tools#wan_setdesk(href='/shortcut.php',rel="nofollow" target="_self",data-position="{&quot;e2&quot;:&quot;ptdbdh&quot;,&quot;e3&quot;:&quot;ptdbdh-3&quot;}") 放到桌面
+        .fullscreen.ct
+            ul.l-nav
+                li.li-nav: a.link-nav(href='http://web.anqu.com') 官网首页
+                li.li-nav: a.link-nav(href='javascript:void(0);') 新闻中心
+                li.li-nav: a.link-nav(href='javascript:void(0);') 游戏资料
+                li.li-nav: a.link-nav(href='http://web.anqu.com/pay/') 充值中心
+                li.li-nav: a.link-nav(href='http://tb.53kf.com/webCompany.php?arg=10141545&style=1') 客服中心
+                li.li-nav.grey: a.link-nav(href='javascript:void(0);') 玩家互动
+            .container
+                -var uploadP='images/upload'
+                include data
+                include mixin
+                block content
+        .fullscreen.ft
+            .footer
+                ul.l-footer
+                    li.li-footer
+                        a.link-footer(href='javascript:void(0);') 游戏中心
+                        | |
+                    li.li-footer.second
+                        a.link-footer(href='javascript:void(0);') 商务合作
+                        | |
+                    li.li-footer
+                        a.link-footer(href='http://tb.53kf.com/webCompany.php?arg=10141545&style=1') 客服中心
+                p.txt-footer.first
+                    span 抵制不良游戏
+                    span 拒绝盗版游戏
+                    span 注意自我保护
+                    span 谨防上当受骗
+                    span 适度游戏益脑
+                    span 沉迷游戏伤身
+                    span 合理安排事件
+                    span 享受健康生活
+                p.txt-footer 软著登字第1172119号 | 新出场审[2106]1341号 | 文网游备字
+                p.txt-footer Copyright 2012-2016 anqu.com All rights reserved 北京安趣科技股份有限公司
+    script(type='text/javascript',src='http://static.web.anqu.com/resource/1000/js/jquery-1.8.0.min.js')
+    script(type='text/javascript',src='http://static.web.anqu.com/resource/1000/js/md5.js')
+    script(type='text/javascript',src='http://static.web.anqu.com/resource/1000/js/user.js')
+    script(type='text/javascript',src='http://static.web.anqu.com/resource/1000/js/registerUser.js')
+    script(type='text/javascript',src='http://static.web.anqu.com/resource/1000/js/common.js')
+    script(type='text/javascript').
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?47daa93cb0ec88fca1eb5a272fe0be49";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    block script

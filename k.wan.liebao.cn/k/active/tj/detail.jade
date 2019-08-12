@@ -1,0 +1,17 @@
+extends inc/main
+block style
+
+block script
+
+block content
+    .content
+        .left
+            a.btn-star(href='javascript:void(0);') 开始游戏
+            +mod('','',false,true)
+                #aq-login.aqLogin-detail
+            +mod('游戏资料')
+                +menu(gameMaterial)
+        .main
+            p.notice 本游戏适合18岁以上玩家进入
+            +mod('活动资讯','当前位置：青云志 -> 活动资讯',true)
+                +article(article)

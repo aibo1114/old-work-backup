@@ -1,0 +1,9 @@
+<!--<div class="col-md-4 col-lg-3"ng-repeat='it in displayGames'>-->
+
+<!--</div>-->
+<div ng-repeat='it in displayGames' class="item-allgames" hover-class="hvr-allgames" ng-class="{ 'row-last':($index+1)%4==0 }">
+    <div class="img-allgames"><img ng-src="{{it.img_url}}" alt="" onerror="javascript:this.src='http://box.wan.liebao.cn/modules/yxhz/images/games/dft.png'" /></div>
+    <!--<div class="img-allgames"><img ng-src="http://box.wan.liebao.cn/modules/yxhz/images/games/{{it.gid}}.png" alt="" onerror="javascript:this.src='http://box.wan.liebao.cn/modules/yxhz/images/games/dft.png'" /></div>-->
+    <h4 class="title-allgames">{{it.gname}}</h4>
+    <button ng-disabled="pickerShow" ng-class="{'pickerShow':pickerShow}" class="btn-allgames" ng-click="pickServer(it.gid);">选择区服</button>
+</div>

@@ -1,0 +1,12 @@
+//文章单页
+//传参：tid=1086
+{
+  "data":{
+    "title":"文章标题",
+    "content":"<a href='http://www.baidu.com'>test</a>文章内容文章内容文章内容<P>html标签</p>",
+    "tid":1086,
+    "tname":"充值问题",
+    "type":2
+  },
+  "code":1
+}

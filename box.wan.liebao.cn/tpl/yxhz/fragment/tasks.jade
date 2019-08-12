@@ -1,0 +1,33 @@
+include ../inc/mixins
+
++mod('签到','calendar')(ng-controller='sign',class='pl3')
+    //.row.row-space
+        .col-md-6.col-lg-4
+    div(calendar)
+        //.col-md-6.col-lg-4
+    .mod-checkin.rule-checkin
+        .hd-checkin
+            h4.title-hd-checkin 玩家签到
+        .bd-checkin
+            h4.title-rule-checkin <span class="seal-rule-checkin">已签到</span>{{dateUI.format('YYYY年MM月D日')}}
+            h5.subtitle-rule-checkin --------&nbsp;&nbsp;已连续签到&nbsp;<span class="continuous">{{signed.continuousnum}}</span>&nbsp;天&nbsp;&nbsp;--------
+            .bd-rule-checkin
+                h5.title-bd-rule 签到积分规则
+                p.text-bd-rule 若连续每天签到：<br />签到<span class="remind">1</span>天获得<span class="remind">2积分</span>；<br />从第<span class="remind">3</span>天开始每天签到获得<span class="remind">4积分</span>；<br />从第<span class="remind">7</span>天开始每天签到获得<span class="remind">6积分</span>；<br />从第<span class="remind">15</span>天开始每天签到获得<span class="remind">8积分</span>；<br />从第<span class="remind">30</span>天开始每天签到获得<span class="remind">10积分</span>。
++mod('游戏任务','list-alt')(ng-controller='tasks',class='pl18')
+    //.row.row-space
+        .col-md-6.col-lg-4(ng-repeat='it in tasks | orderBy:"order" ')
+    .item-task(ng-repeat='it in tasks | orderBy:"order" ', ng-class='{"row-last":($index+1)%2==0}')
+        .poster-item-task: img(ng-src='{{it.img_url}}')
+        .title-item-task
+            h4.name-item-task {{it.name}}
+            p.integral-item-task 积分奖励：<span class="remind">+{{it.credit}}</span>
+        p.desc-item-task {{it.short_desc}}
+        a.btn-item-task.undo-item-task(ng-if='it.userStatus=="0"',ng-href='{{it.url}}',target='_blank') 做任务
+        span.btn-item-task.toget-item-task(ng-if='it.userStatus==1',ng-click='notifyScore(it);') 领取奖励
+        span.btn-item-task.getted-item-task(ng-if='it.userStatus==2') 已领取
+        //a.btn-item-task.undo-item-task(ng-class='{"":it.userStatus=="0","toget-item-task":it.userStatus==1,"getted-item-task":it.userStatus==2}',hover-class='hover')
+
+
+
+//div(calendar,signed='signed',action='isSigned')

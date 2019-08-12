@@ -1,0 +1,45 @@
+extends inc/main
+block style
+    link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/1000/css/index_server.css')
+block script
+    script(type='text/javascript',src='http://static.web.anqu.com/resource/1000/js/get_servers_list.js')
+block content
+    -var imgs=[{imgSrc:'banner_22.jpg'},{imgSrc:'banner_22.jpg'},{imgSrc:'banner_22.jpg'}]
+    p.notice 本游戏适合18岁以上玩家进入
+    .content
+        .left
+            a.btn-star(href='javascript:void(0);') 开始游戏
+            +mod('','',false,true)
+                #aq-login.aqLogin-detail
+            +mod('服务器列表')
+                include index_server_block
+        .center
+            +banner(imgs)
+            +mod('最新资讯')
+                .hd-tab
+                    ul.l-tab
+                        li.li-tab.active 综合
+                        li.li-tab 新闻1
+                        li.li-tab 活动
+                    a.more-tab.active(href='javascript:void(0);') +
+                    a.more-tab(href='javascript:void(0);') +
+                    a.more-tab(href='javascript:void(0);') +
+                .box-tab.active
+                    p.top-news= complexHot.title
+                        span.icon-top-news N
+                    +list(complex)
+                .box-tab
+                    p.top-news= newsHot.title
+                        span.icon-top-news N
+                    +list(news)
+                .box-tab
+                    p.top-news= activeHot.title
+                        span.icon-top-news N
+                    +list(active)
+        .right
+            ul.l-package
+                li.li-package.fresh 新手礼包
+                li.li-package.platform 平台专属礼包
+            +mod('游戏攻略','<a href="javascript:void(0);">更多></a>')
+                +btnGroup(raiders)
+

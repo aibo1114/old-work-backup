@@ -1,0 +1,14 @@
+.navbar.navbar-inverse
+    .container-fluid
+        .navbar-header
+            a.navbar-brand(href='#')
+                span.glyphicon.glyphicon-th-large
+                |   h5后台
+        ul.nav.navbar-nav.navbar-right
+            li
+                a.dropdown-toggle(href='javascript:void(0);', data-toggle='dropdown', ng-bind-html='username')
+                ul.dropdown-menu
+                    li
+                        a(href='http://h5back.kisops.com/back/login/quit')
+                            | 退出&nbsp;&nbsp;
+                            span.glyphicon.glyphicon-log-out

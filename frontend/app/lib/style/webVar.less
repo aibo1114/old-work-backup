@@ -1,0 +1,187 @@
+#content{
+  padding-top: 10px;
+}
+
+#main .tabBtn {
+  margin-bottom: 5px !important;
+  a {
+    border-radius: 10px !important;
+    padding: 5px !important;
+  }
+}
+
+.hoverShow {
+  &:hover {
+    ul {
+      display: block;
+    }
+  }
+  .dropdown-menu {
+    top: 95%;
+    box-shadow: 2px 2px 6px #000;
+    right: 0px;
+    left: auto;
+    span {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+  }
+  #cartBox {
+    width: 450px;
+    padding: 0;
+    .panel-title {
+      padding: 15px 10px;
+    }
+    .panel-body {
+      padding: 0;
+      > div {
+        clear: both;
+      }
+    }
+    .media {
+      margin-bottom: 10px;
+      .clearfix();
+      a {
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+a[href*="http://tongji"] {
+  display: none;
+}
+
+#go-top {
+  bottom: 20px;
+  left: 50%;
+  margin-left: @container-lg/2-20;
+}
+
+.pagination {
+  a, span {
+    border: solid 1px #999;
+    border-radius: 4px;
+    color: #333;
+    background: #eee;
+    font: bold 14px arial, "Verdana", "Arial", "Helvetica";
+    display: block;
+    float: left;
+    padding: 2px 6px;
+    margin-right: 6px;
+  }
+  a:hover {
+    background: #D5E1ED;
+  }
+  .current {
+    background: #E8F2E0;
+    border: 1px solid #cccccc;
+    color: #cc6600;
+    &.prev, &.next {
+      background: #f5f5f5;
+      font-weight: normal;
+    }
+  }
+}
+
+.callout {
+  padding: 20px;
+  border-left: 3px solid #eee;
+  p:last-child {
+    margin-bottom: 0;
+  }
+  h3 {
+    margin-top: 10px;
+  }
+  code {
+    background-color: #fff;
+    border-radius: 3px;
+  }
+}
+
+.callout-danger {
+  background-color: #fdf7f7;
+  border-color: #d9534f;
+  h3 {
+    color: #d9534f;
+  }
+}
+
+.callout-warning {
+  background-color: #fcf8f2;
+  border-color: #f0ad4e;
+  h3 {
+    color: #f0ad4e;
+  }
+}
+
+.callout-info {
+  background-color: #f4f8fa;
+  border-color: #5bc0de;
+  h3 {
+    color: #5bc0de;
+  }
+}
+
+.closeBox {
+  float: right;
+  margin: -10px;
+}
+
+
+.b-angle {
+  position: relative;
+  //  top: 6px;
+  text-align: left;
+  em, span {
+    font-size: 25px;
+    overflow: hidden;
+    position: absolute;
+    font-style: normal;
+    font-weight: normal;
+    width: 25px;
+    height: 25px;
+    font-family: simsun;
+  }
+  em {
+    color: @gray-lighter;
+    z-index: 99;
+    top: 0;
+    left: 0;
+  }
+  span {
+    color: #fff;
+    top: 0;
+    z-index: 999;
+  }
+}
+
+.u-angle span {
+  top: 2px;
+}
+
+.l-angle span {
+  left: 2px;
+}
+
+.r-angle span {
+  left: -2px;
+}
+
+.d-angle span {
+  top: -2px;
+}
+
+.sp-left-quote, .sp-right-quote {
+  width: 25px;
+  height: 18px;
+  display: inline-block;
+}
+
+.sp-left-quote {
+  background: url("@{imgBase}left-quote.png") no-repeat;
+}
+
+.sp-right-quote {
+  background: url("@{imgBase}right-quote.png") no-repeat;
+}

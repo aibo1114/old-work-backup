@@ -1,0 +1,16 @@
+.container-fluid
+    .row
+        .col-md-2(ng-controller='menuControl')
+            .panel.panel-primary
+                .panel-heading
+                    h2.panel-title 菜单
+                .list-group
+                    a.list-group-item.popover-title(href='#!/cps', ng-class='{"active": cur=="cps" || cur=="cp"}') cp管理
+                    a.list-group-item.popover-title(href='#!/games', ng-class='{"active": cur=="games" || cur=="game"}') 游戏管理
+                    a.list-group-item.popover-title(href='#!/users', ng-class='{"active": cur=="users" || cur=="user"}' ng-if='roleId==1') 用户管理
+                    a.list-group-item.popover-title(href='#!/plants', ng-class='{"active": cur=="plants"}') 平台概况
+                    a.list-group-item.popover-title(href='#!/regis', ng-class='{"active": cur=="regis"}') 用户注册
+                    a.list-group-item.popover-title(href='#!/sheets', ng-class='{"active": cur=="sheets"}') 总数据表
+                    a.list-group-item.popover-title(href='#!/behaviors', ng-class='{"active": cur=="behaviors"}') 用户行为表
+                    a.list-group-item.popover-title(href='#!/orders', ng-class='{"active": cur=="orders"}') 充值明细
+        .col-md-10(ng-view='')

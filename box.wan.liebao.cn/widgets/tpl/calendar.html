@@ -1,0 +1,38 @@
+<div class="mod-checkin calendar-checkin">
+    <div class="hd-checkin">
+        <h4 class="title-hd-checkin">{{date.format('YYYY年MM月')}}</h4>
+    </div>
+    <div class="bd-checkin">
+        <table class="table-checkin" align="center">
+            <tr class="table-header">
+                <td height="40">日</td>
+                <td height="40">一</td>
+                <td height="40">二</td>
+                <td height="40">三</td>
+                <td height="40">四</td>
+                <td height="40">五</td>
+                <td height="40">六</td>
+            </tr>
+            <tr ng-repeat='week in calendar'>
+                <td height="40" ng-repeat='day in week'>
+                    <div class="content-td" ng-class='{"istoday":toaday==day.format("YYYY-MM-DD"), "signed":isSigned(day.format("D"),signed.days), "grey":day.format("YYYY-MM")!=date.format("YYYY-MM")}'>{{day.format('D')}}</div>
+                    <!--<span class="num-integral-today" ng-if="toaday==day.format('YYYY-MM-DD') && !disappear" ng-bind=" '+'+signed.credit "></span>-->
+                    <span class="num-integral-today" ng-if="toaday==day.format('YYYY-MM-DD') && todaySigned!='userSigned' && !disappear" ng-bind=" '+'+signed.credit "></span>
+                 </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+
+<!--<td ng-repeat='day in week' ng-click='click({tasks: plan[day.format("YYYY-MM-DD")]})' ng-class='{hastasks:plan[day.format("YYYY-MM-DD")], istoday:toaday==day.format("YYYY-MM-DD"), noTasks:15<day.format("DD"), grey:day.format("YYYY-MM")!=date.format("YYYY-MM")}'>{{day.format('D')}}</td>-->
+<!--<div class="child-box" >-->
+<!--<b class="money" ng-if="plan[day.format('YYYY-MM-DD')]">¥</b>-->
+<!--<span>{{day.format('D')}}</span>-->
+<!--<span>{{day.format('YYYY-MM')==date.format('YYYY-MM') ? day.format('D') : day.format('D')}} </span>-->
+<!--tip-->
+<!--<div ng-if="plan[day.format('YYYY-MM-DD')]['showTasks']" class="calendar-tip" ng-bind="plan[day.format('YYYY-MM-DD')]['desc']"></div>-->
+<!--</div>-->
+<!--</td>-->

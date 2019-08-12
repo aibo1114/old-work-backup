@@ -1,0 +1,21 @@
+extends inc/main
+
+block style
+    link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/999/css/charge.css')
+    block style_charge
+block script
+    script(type='text/javascript',src='http://static.web.anqu.com/resource/999/js/recharge.js')
+    block script_charge
+
+//block content_charge_general
+block content
+    .charge_container_general
+        a.chongzhijlv(href="http://web.anqu.com/pay/rechargeRecord.html")充值记录>
+        .left_tabs
+            .tab_blocks
+                a(href='javascript:void(0);',class='tab tab_arrow',pType='22') 微信扫一扫
+                a(href='javascript:void(0);',class='tab',pType='4') 支付宝扫一扫
+        .right_main_contents
+            .charge_container
+                block content_charge
+            //block content_charge_failure

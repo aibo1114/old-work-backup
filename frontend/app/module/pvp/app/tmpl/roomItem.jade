@@ -1,0 +1,13 @@
+.col-xs-3
+    img.ml5(src='#{game.icon}')
+.col-xs-6
+    h2= rname
+    p ID:#{rid}
+    ul.lst-label
+        li= game.tname
+        li= game.gname
+.col-xs-3
+    if true
+        a(href=f.navUrl('room', rid)).btn.btn-primary 进入房间
+    else
+        a.btn.btn-danger.disabled 房间已满

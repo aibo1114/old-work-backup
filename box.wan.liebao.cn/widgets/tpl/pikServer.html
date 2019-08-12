@@ -1,0 +1,45 @@
+<div class="dialog content-dialog picker" style="width:450px; margin-left: -225px;">
+    <a href="/aides" class="goback-aides">返回列表></a>
+    <span class="fork-dialog" ng-click="evts.closePick();">X</span>
+    <div class="hd-dialog">
+        <h4 class="title-hd-dialog dicon-list">选择区服</h4>
+    </div>
+    <div class="bd-dialog bd-picker">
+        <ul class="l-tab-pikserver">
+            <li class="li-tab-pikserver" ng-class="{'active':status=='history'}" ng-click="evts.switchStatus('history');">我玩过的区服</li>
+            <li class="li-tab-pikserver" ng-class="{'active':status=='all'}" ng-click="evts.switchStatus('all');">全部区服</li>
+        </ul>
+        <div class="content-tab-pikserver" ng-show="status=='history'">
+            <p class="tip-lately-pikserver" ng-if="!lately || lately.length==0">没有最近玩过的区服</p>
+            <ul class="l-lately-pikserver" ng-if="lately && lately.length!=0">
+                <li ng-repeat="it in lately" class="li-lately-pikserver">
+                    <a class="link-lately-pikserver" ng-class="{'link-server-aides': aides}" ng-href="http://i.wan.liebao.cn/game/play_in_box?gid={{gid}}&sid={{it.sid}}" gid="{{gid}}" sid="{{it.sid}}" target="_blank">{{it.line_name}}</a>
+                    <!--<a class="link-lately-pikserver" ng-href="http://wan.liebao.cn/game_frame/wd_play_{{gid}}.php?sid={{it.sid}}&wd_entergame=1" target="_blank">{{it.line_name}}</a>-->
+                </li>
+            </ul>
+        </div>
+        <div class="content-tab-pikserver" ng-show="status=='all'">
+            <ul class="l-tab-area">
+                <li ng-repeat="it in all" ng-click="evts.switchArea(it);" class="li-tab-area" ng-class="{'active':$index==0}">{{it.area}}</li>
+            </ul>
+            <div class="content-tab-area">
+                <ul class="l-content-area scrollbar-inner" jquery-scrollbar>
+                    <li ng-repeat="it in servers" class="li-content-area">
+                        <a class="link-content-area" ng-class="{'link-server-aides': aides}" ng-href="http://i.wan.liebao.cn/game/play_in_box?gid={{gid}}&sid={{it.sid}}" gid="{{gid}}" sid="{{it.sid}}" target="_blank">{{it.line_name}}</a>
+                    </li>
+                </ul>
+            </div>
+            <!--
+            <div ng-repeat="it in all" class="content-tab-area" ng-class="{'active':$index==0}">
+                <ul class="l-content-area scrollbar-inner" jquery-scrollbar>
+                    <li ng-repeat="item in it.servers" class="li-content-area">
+                        <a class="link-content-area" ng-href="http://i.wan.liebao.cn/game/play_in_box?gid={{gid}}&sid={{item.sid}}" target="_blank">{{item.line_name}}</a>
+                    </li>
+                </ul>
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+<span class="ieshadow-dialog ieshadow-picker" style="width:450px; margin-left: -225px;"></span>
+

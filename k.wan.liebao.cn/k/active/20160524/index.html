@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="zh" class="ie6"><![endif]-->
+<!--[if IE 7 ]><html lang="zh" class="ie7"><![endif]-->
+<!--[if IE 8 ]><html lang="zh" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html lang="zh" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/base.css?t=201606081953">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<style type="text/css">
+		/*.wrap{width:490px; margin:100px auto 0;}*/
+		.t_slide{width:206px; height:236px; position:relative; z-index:9999;}
+		.t_slide *{margin:0; padding:0;}
+		.t_slide ul{list-style:none;}
+		.t_slide img{border:none;}
+		.t_slide_con{width:100%; height:100%; position:relative; overflow:hidden;}
+		.t_slide_con ul{width:618px; overflow:hidden; position:absolute; top:0; left:0;}
+		.t_slide_con ul li{float:left; width:206px; height:236px;}
+		.t_slide_con ul li img{display:block;}
+		.t_slide_mask{position:absolute; width:100%; height:25px; left:0; bottom:0; background:#000;}
+		.t_slide_nav{position:absolute; width:100%; height:25px; left:0; bottom:0; overflow:hidden;}
+		.t_slide_title{float:left; padding-left:10px;}
+		.t_slide_title li{font:normal 12px/25px 'SimSun'; color:#fff; display:none;}
+		.t_slide_title li.current{display:block;}
+		.t_slide_page{
+
+			position: absolute;
+		/*+position:fixed;*/
+			right: 5px;
+		}
+		.t_slide_page li{
+			/*display: inline-block;*/
+			width: 12px;
+			height: 0;
+			padding-top: 12px;
+			margin: 7px 0 9px 0px;
+			overflow: hidden;
+			background: url(images/boral.png) -12px 0 no-repeat;
+			_background: url(images/boral-ie6.png) -12px 0 no-repeat;
+			cursor: pointer;
+			/*margin-left: -3px;*/
+			margin-left: 5px;
+			float: left;
+		}
+		/*.t_slide_page li{-moz-border-radius:8px; -webkit-border-radius:8px; border-radius:8px;}*/
+		.t_slide_page li.current{background-position: 0 0;}
+	</style>
+	<title>demo</title>
+</head>
+<!-- <body ondragstart="window.event.returnValue=false" oncontextmenu="window.event.returnValue=false" onselectstart="event.returnValue=false" > -->
+<body oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
+	<div class="wrap" id="J_warp">
+ 		<div class="newsPanel template5  templatenew J_panel" style="display: block;" id="templatenew">
+		   <div class="main clearfix game">
+		    <div class="main-left">
+		     <div class="banner">
+		     	
+				<!--  <div class="t_slide" id="tSlide">
+					 <div class="t_slide_con">
+						 <ul>
+							 <li><a href="http://ac.wan.liebao.cn/s/1/1242/3277.html?frm=mini-yxcs-dt" title="大蛇与小女孩" target="_black"><img src="images/lunbo1.jpg"></a></li>
+							 <li><a href="http://news.shouyou.com/news/06062016/132950022_1.shtml" title="高考结束玩这些! 多款手游等你来" target="_black"><img src="images/lunbo2.jpg"></a></li>
+							 <li><a href="http://games.qq.com/a/20160525/001872.htm#p=5" title="守望先锋最特殊英雄曝光" target="_black"><img src="images/lunbo3.jpg"></a></li>
+						 </ul>
+					 </div>
+					 <div class="t_slide_mask"></div>
+					 <div class="t_slide_nav">
+						 <ul class="t_slide_title">
+							
+							  <li>大蛇与小女孩</li>
+							 <li>高考结束玩这些! 多款手游等你来</li>
+							 <li>守望先锋最特殊英雄曝光</li>
+						 </ul>
+						 <ul class="t_slide_page">
+							 <li></li>
+							 <li></li>
+							 <li></li>
+						 </ul>
+					 </div>
+				 </div> -->
+		     <div class="bannerImg">
+			  <ul class="imgList">
+			     <li><a href="http://ac.wan.liebao.cn/s/1/1242/3277.html?frm=mini-yxcs-dt" title="大蛇与小女孩" target="_black"><img src="images/lunbo1.jpg"></a></li>
+				 <li><a href="http://news.shouyou.com/news/06062016/132950022_1.shtml" title="高考结束玩这些!" target="_black"><img src="images/lunbo2.jpg"></a></li>
+				 <li><a href="http://games.qq.com/a/20160525/001872.htm#p=5" title="守望先锋最特殊英雄曝光" target="_black"><img src="images/lunbo3.jpg"></a></li>
+			  </ul>
+			</div>
+			<div class="mask">
+			  <div class="titlebg"></div>
+			  <ul class="titleList">
+			    <li class="cur">
+			      <a href="http://ac.wan.liebao.cn/s/1/1242/3277.html?frm=mini-yxcs-dt" target="_black" class="title" itemid="2105" title="大蛇与小女孩" type="1" from="0" hidefocus="true">大蛇与小女孩</a></li>
+			    <li >
+			      <a href="http://news.shouyou.com/news/06062016/132950022_1.shtml" target="_black" class="title" itemid="2107" title="高考结束玩这些! 多款手游等你来" type="1" from="2" hidefocus="true">高考结束玩这些!</a></li>
+			    <li class="">
+			      <a href="http://games.qq.com/a/20160525/001872.htm#p=5" target="_black" class="title" itemid="2109" title="守望先锋最特殊英雄曝光" type="1" from="0" hidefocus="true">守望先锋最特殊英雄曝光</a></li>
+			  </ul>
+			  <div class="titleCircle">
+			    <span class="cur"></span>
+			    <span class=""></span>
+			    <span class=""></span>
+			  </div>
+			</div>
+		     </div>
+		    </div>
+		    <div class="main-middle">
+		     <div class="caption">
+		      <ul class="firstHtml">
+		       
+
+		      </ul>
+		      <ul class="topBor sedHtml">
+		     
+		      </ul>
+		     </div>
+		    </div>
+		    <div class="main-bottom bottom clearfix">
+		     <div class="smallImg clearfix">
+				 <div class="yl-game-top">
+					 <span><a href="http://wan.liebao.cn/?frm=mini-bq&referer=jsdb" target="_black" hidefocus="true">小编推荐</a></span>
+					 <!-- href="javascript:void(0);" -->
+					 
+					  <!-- <a href="" class="changeASet"></a> -->
+					  <!-- <a href class="changeASet"><img src="images/huan.png" alt="" class="change ">
+					 	换一组
+					 </a> -->
+					 <span class="changeASet"><img src="images/change.jpg" alt="" class="change ">换一组</span>
+					 <a href="http://wan.liebao.cn/?frm=mini-bq&referer=jsdb" target="_black" class="getmOr" hidefocus="true">更多试玩 ></a>
+
+					
+					 
+					 <div class="clear"></div>
+				 </div>
+
+		      <ul class="Excellent_game">
+		     
+				<div class="clear"></div>
+		      </ul>
+		      <ul class="Excellent_game1">
+		     
+				<div class="clear"></div>
+		      </ul>
+		     </div>
+		    </div>
+			<div class="yl-main-right">
+				<div class="yl-login">
+					<img src="images/login.jpg">
+					<div class="login-right">
+						<p class="nickname">您好，<span>♡你若天长i</span></p>
+						<p class="integral">积分：<span>0</span></p>
+						<a class="sign" target="_black" hidefocus="true">签到</a>
+						<a href="" target="_blank" class="exchange" hidefocus="true">换购</a>
+						
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="yl-mygame">
+					<h4>我的游戏</h4>
+					<ul class="y-mygame">
+						
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="yl-recommondgame">
+					<a href="" target="_blank" target="_black" hidefocus="true"><h4>推荐游戏</h4></a>
+					<ul class="y-recommondgame">
+						
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="yl-host-rank"> 
+					<h4><a href="http://wan.liebao.cn/?frm=mini-bq&referer=jsdb" target="_black" hidefocus="true">热门排名</a></h4>
+					<ul class="topRank">
+						
+					</ul>
+				</div>
+				
+				<div class="yl-Latest-open-service">
+					<h4><a href="http://wan.liebao.cn/?frm=mini-bq&referer=jsdb" target="_black" hidefocus="true">最新开服</a><span>（今日共 <span class="color-all">0</span> 组）</span></h4>
+					<ul class="opening">
+						
+					</ul>
+				</div>
+			</div>
+		   </div>
+	  </div>
+ 	</div>
+ 	<script src="http://hotnews.duba.com/minisite/public/js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+	<script type="text/javascript" src="http://wan.liebao.cn/action/api/kf_list_for_jsdb.php"></script>
+	<script type="text/javascript" src="http://act.cmcmcdn.com/js/k/infoc.min.js"></script>
+	<script src="js/index.js"></script>
+	<script type="text/javascript" src="js/jquery.tslide.js?t=201606081953"></script>
+	
+	<script type="text/javascript">
+	var b=new Banner($('.banner'));
+	b.start();
+	 function clickIE4(){  
+         if (event.button==2){  
+                 return false;  
+         }  
+	 }  
+	    
+	 function clickNS4(e){  
+	         if (document.layers||document.getElementById&&!document.all){  
+	                 if (e.which==2||e.which==3){  
+	                         return false;  
+	                 }  
+	         }  
+	 }  
+	    
+	 function OnDeny(){  
+	         if(event.ctrlKey || event.keyCode==78 && event.ctrlKey || event.altKey || event.altKey && event.keyCode==115){  
+	                 return false;  
+	         }  
+	 }  
+	    
+	 if (document.layers){  
+	         document.captureEvents(Event.MOUSEDOWN);  
+	         document.onmousedown=clickNS4;  
+	         document.onkeydown=OnDeny();  
+	 }else if (document.all&&!document.getElementById){  
+	         document.onmousedown=clickIE4;  
+	         document.onkeydown=OnDeny();  
+	 }  
+	    
+	 document.oncontextmenu=new Function("return false");  
+	</script>
+</body>
+</html>

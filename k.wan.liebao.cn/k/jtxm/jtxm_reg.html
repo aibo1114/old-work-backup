@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>九天仙梦</title>
+    <link rel="stylesheet" type="text/css" href="css/jreg.css" media="all" />
+<!-- Google Analytics -->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-33994817-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</head>
+<body class="reg">
+	<div class="wrap">
+        <div class="header"></div>
+        <div class="main">
+            <div class="regbox">
+                <h2></h2>
+                <form action="" method="POST">
+                    <p class="clearfix">
+                        <label for="passport">账号：</label>
+                        <input type="text" name="passport" id="passport" class="txt" />
+                        <span class="tip">由5-18位字母、数字或下划线组成</span>
+                        <span class="notice"></span>
+                    </p>
+                    <p class="clearfix">
+                        <label for="password">密码：</label>
+                        <input type="password" name="password" id="password" class="txt" />
+                        <span class="tip">由8-32位字符组成（区分大小写）</span>
+                        <span class="notice"></span>
+                    </p>
+                    <p class="clearfix">
+                        <label for="repassword">确认密码：</label>
+                        <input type="password" name="repassword" id="repassword" class="txt" />
+                        <span class="tip">再次输入登陆密码</span>
+                        <span class="notice"></span>
+                    </p>
+                    <p class="clearfix">
+                        <label for="code">验证码：</label>
+                        <input type="text" name="c" id="c" class="txt" maxlength="5" style="width:76px" />
+                        <img src="/service/?a=captcha" id="code" alt="code" width="64" height="30" style="float:left;padding-left:10px;" />
+                        <span class="tip">请输入图片中的验证码</span>
+                        <span class="notice"></span>
+                    </p>
+                    <p class="ac ag mb clearfix">
+                        <input type="checkbox" name="agree" id="agree" checked="checked" />
+                        <label for="agreement">我已阅读且同意<a href="http://www.duba.net/protocol/serverUse.shtml" target="_blank">《金山网络服务使用协议》</a></label>
+                    </p>
+                    <p class="btm">
+                    <input type="hidden" value="http%3A%2F%2Fwan.xoyo.com%2Fv%2F%3Fa%3Dloginwebgame%26webgame_serverid%3D1" name="service" />
+                    <a href="#" class="btn" id="registbtn">立即注册</a> 
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jtxm_reg.js"></script>
+
+    <div style="display:none;">
+        <!-- Tencent Analysis -->
+        <script type="text/javascript" src="http://tajs.qq.com/stats?sId=13745215" charset="UTF-8"></script>
+    </div>
+</body>
+</html>

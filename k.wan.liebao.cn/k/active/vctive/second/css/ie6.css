@@ -1,0 +1,11 @@
+a,button {text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
+.l-navfix {
+    _top:expression(offsetParent.scrollTop+128) !important;
+    _left:expression(offsetParent.scrollRight+50) !important;
+}
+.dialog {
+    _top:expression(offsetParent.scrollTop+120);
+}
+.d-1-lg {
+    _top:expression(offsetParent.scrollTop+10);
+}

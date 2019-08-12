@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "dancer.js",
+  "sourceRoot": "",
+  "sources": [
+    "dancer.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,CAAC,CAAC,MAAF,GACI;IAAA,IAAA,EAAK,CACD,GAAA,CAAI,UAAJ,CADC,EAGD,GAAA,CAAI,MAAJ,CAHC,EAKD,GAAA,CAAI,iBAAJ,CALC,EAOD,CAAC,CAAC,IAAF,CAAO,MAAP,CAPC,CAAL;;AADJ"
+}

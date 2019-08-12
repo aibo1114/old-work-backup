@@ -1,0 +1,21 @@
+img.cat(src=f.resPath(c, 'images/vote_03.png'))
+a.res(href=f.navUrl('result')) 查看投票结果
+.col-xs-12(style='margin-bottom: 40px;')
+    .inBtn.clearfix
+        span 礼包码:
+        input(value=$('#giftCode').val()).form-controller
+        .btn 复 制
+    .boxText
+        p 温馨提示：
+        p 复制礼包码，游戏内兑换可获得礼品
+        p (20钻石+16体力）哦~
+        p 礼包码使用方法：复制后先进入游戏《暖暖环游世界》，
+        p 【每日活动】中点击“兑换码”海报填写兑换码领取礼包，每个账号仅能激活一次。
+        p 请在2月2日前使用礼包码，否则将会失效。
+
+    .text-center
+        .btn.btn-lg.wtShare 分享给好友
+
+        .qrcode
+            != f.imgItem(c, c, 'qrcode')
+            span 请关注暖暖官方微信

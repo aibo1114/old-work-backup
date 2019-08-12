@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>王朝霸业</title>
+    <link rel="stylesheet" type="text/css" href="http://img.wan.ijinshan.com/website/activity/css/reset.css?t=20140430">
+    <link rel="stylesheet" type="text/css" href="http://img.wan.ijinshan.com/website/wcby/activity/css/ldy.css?t=20140430">
+    <script type="text/javascript">
+        document.domain="wan.liebao.cn";
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div id="flash">
+            
+        </div>
+        <div class="showpop">
+            <div class="tabs">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="tabcon">
+                <div id="regsiter"></div>
+                <div id="login"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/flashimport/1.4/flashimport.js"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/lucky/Helper/Login/1.0.0/Login.min.js"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/website/wcby/activity/js/ldy.js?{{$time}}"></script>
+    <script type="text/javascript"> 
+        //游戏背景flash
+        var gameBgFla = new SWFObject("http://img.wan.ijinshan.com/website/wcby/activity/swf/index_wcby.swf", "", "1000px", "600px", "9.0.28", "#FFFFFF"); 
+        gameBgFla.addParam("allowNetworking", "all"); 
+        gameBgFla.addParam("allowScriptAccess", "always"); 
+        gameBgFla.addParam("allowFullScreen", "true"); 
+        gameBgFla.addParam("scale", "noscale");
+        gameBgFla.addParam("wmode", "transparent");
+        gameBgFla.write("flash");     
+        function openDiv() {
+            $(".showpop").show();
+        }
+    </script>
+    <script type="text/javascript" src="http://i.wan.liebao.cn/script/lib/traceks.min.js"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/js/frm.js"></script>
+    <input type="hidden" id="sid" data-sid="1" />
+    <div style="display:none;">
+        <script type="text/javascript">
+            var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+            document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F3648c4594085f633045336c8a592e0fa' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </div>
+</body>
+</html>

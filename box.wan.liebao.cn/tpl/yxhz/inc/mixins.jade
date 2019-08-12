@@ -1,0 +1,8 @@
+mixin mod(title,icon)
+    .mod-content.pb10&attributes(attributes)
+        .hd-content
+            h3.title-hd-content <span class="glyphicon glyphicon-#{icon}"></span>#{title}
+        .bd-content
+            if block
+                block
+        //.bd-content.plr18

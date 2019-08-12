@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>千万食客玩家的选择！极品套装，超爽PK！！</title>
+<meta content="金山网络，金山，页游，网页游戏" name="Keywords">
+<meta name="description" content="金山网络(http://wan.ijinshan.com/)是免费安全游戏平台，为亿万用户提供各种最新最好 玩的网页游戏！" />
+
+<link href="http://img.wan.ijinshan.com/global/reg/css/basecss1.2.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+	document.domain='wan.liebao.cn';
+</script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/jquery.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/analytics.min.js"></script>
+<script type="text/javascript">
+	WebApp.analytics.trace('151010', '900', '', '', 'gamename:sgyy_default3_pv_page_start|w:pv_start'); 
+</script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/reg/js/reg_base/guidecommon3.10.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/reg/js/reg_base/flashimport.js"></script>
+<script type="text/javascript">
+function openDiv(){
+	$('#openDiv').show();
+	$('#regBox').show();
+}
+
+</script>
+<style type="text/css">
+/*登录和注册的位置和宽高*/
+#openDiv{ position: absolute; z-index: 999;left: 318px;top: 205px; width: 410px; height: 344px; }
+/*注册框容器样式&&登陆框容器样式*/
+#regWrapper,.iframeBefore,.tabcon{ width: 430px; height: 304px;}
+.tabcon{ padding-top: 10px; }
+.info .infoTxt{ background-position: center 6px;}
+.website{ z-index: 12;}
+.regBtn{ position:absolute; width: 1000px; height: 600px; left: 0; top:0; cursor: pointer; z-index: 12; cursor:pointer;}
+#flashBox1{ z-index: 99;}
+
+/*页卡背景*/
+.tabs,.loginon{	background-image:url("http://img.wan.ijinshan.com/topic/sgyy/import/default/images/tab.png");background-position:  0 -42px;}
+.tabs{height:36px;width:432px;}
+.loginon{background-position:0 0 ;}
+.tabs li{height:36px;width:215px;}
+/*注册页卡和登录页面直接的距离*/
+.regtab{ margin-right:0;}
+.ver img{ padding-left: 175px;}
+</style>
+</head>
+<body>
+<div class="headInfo"><h1>千万食客玩家的选择！极品套装，超爽PK！！</h1></div>
+<!-- 头部导航start -->
+<!--#include virtual="/k/common/commpage/header.html"-->
+<!-- 头部导航end -->
+<!--  注册页主要内容  -->
+<div class="main">
+	<!--注册登录弹出层-->
+  	<div id="openDiv" style="display: none">
+		<div class="userbg" style="z-index:11">
+			<!--  登录、注册切换  -->
+			<ul class="tabs" id="tabNav">
+				<li class="__trace__" data-trace="151010,900,,,gamename:sgyy_default3|w:regtab"></li>
+				<li class="__trace__" data-trace="151010,900,,,gamename:sgyy_default3|w:logintab"></li>
+			</ul>
+			<div class="tabcon">
+				<!-- 用户注册  -->
+				<div class="regcon" id="regsiter"></div>
+				<!--  用户登录  -->
+				<div class="logcon" id="login" style="display:none;">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="flashcon" id="regBox" style="display:none;z-index:2;"></div>
+    <!--背景大flash-->
+	<div class="flashcon" id="flashBox"  data-trace="151010,900,,,gamename:sgyy_default3|w:lgnBtn"></div>
+</div>
+<script type="text/javascript">
+	//初始化
+	kingsoft.init();	
+	//判定用户是否登录,参数说明（游戏名，游戏id,区服，注册页url，登录源key(regsource_key),登录模板文件夹名，登录模板起始页名）
+	kingsoft.whetherlgn('sgyy_default3',13,9,'model/style1b.html','sgyy_default3','commondefault3','login');
+	
+	//显示隐藏容器
+	//kingsoft.showBox('openDiv');
+</script>
+<script> 
+	//游戏背景flash
+	var gameBgFla = new SWFObject("http://img.wan.ijinshan.com/topic/sgyy/import/default/swf/wrapper.swf", "gameGFla", "1000px", "600px", "9.0.28", "#FFFFFF"); 
+	 gameBgFla.addParam("allowNetworking", "all"); 
+	 gameBgFla.addParam("allowScriptAccess", "always"); 
+	 gameBgFla.addParam("allowFullScreen", "true"); 
+	 gameBgFla.addParam("scale", "noscale");
+	 gameBgFla.addParam("wmode", "transparent");
+	 gameBgFla.write("flashBox"); 
+	 var gameBgFla = new SWFObject("http://img.wan.ijinshan.com/topic/sgyy/import/default/swf/reg1.swf", "gameGFla", "1000px", "600px", "9.0.28", "#FFFFFF"); 
+	 gameBgFla.addParam("allowNetworking", "all"); 
+	 gameBgFla.addParam("allowScriptAccess", "always"); 
+	 gameBgFla.addParam("allowFullScreen", "true"); 
+	 gameBgFla.addParam("scale", "noscale");
+	 gameBgFla.addParam("wmode", "transparent");
+	 gameBgFla.write("regBox"); 
+	 
+</script>
+<div style="display:none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=21900979" charset="UTF-8"></script></div>
+<script type="text/javascript">
+WebApp.analytics.trace('151010', '900', '', '', 'gamename:sgyy_default3_pv_page_end|w:pv_end'); 
+</script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+extends ./inc/main
+include ./inc/mixin
+block css
+    link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/member.css?v=20170605')
+block js
+    script(id='insertMark' type='text/javascript',src='http://img.wan.ijinshan.com/vip/js/user.js?v=20170526')
+    script(type='text/javascript',src='http://img.wan.ijinshan.com/vip/js/member.js?v=20170809')
+    script(type='text/javascript',src='http://img.wan.ijinshan.com/vip/js/birthday.js?v=2017060203')
+    script(type='text/javascript',src='http://img.wan.ijinshan.com/vip/js/lowIEclipboard.js?v=20170526')
+    script(type='text/javascript').
+        var ieMode = document.documentMode;
+        var isIE = !!window.ActiveXObject;
+        var isIE6 = isIE && !window.XMLHttpRequest;
+        var isIE7 = isIE && !isIE6 && !ieMode || ieMode == 7;
+        var isIE8 = isIE && ieMode == 8;
+        var dynamicScript;
+        var clipboard;
+
+        if( !(isIE6) && !(isIE7) && !(isIE8) ){
+            dynamicScript = document.createElement("script");
+            dynamicScript.type = "text/javascript";
+            dynamicScript.src = "http://img.wan.ijinshan.com/vip/js/clipboard.min.js";
+            document.getElementsByTagName("head")[0].appendChild(dynamicScript)
+        }
+
+        if( isIE6 || isIE7 || isIE8 ){
+            $(document).on('click','.btn-copy',function(){
+                var txt=$('#gCode').text();
+                copy2Clipboard(txt);
+                $('.dialog,.mask-dialog').hide();
+            });
+        }
+
+        if (isIe6) {
+            DD_belatedPNG.fix('.png_bg');
+        }
+
+block variable
+    -var curPage='member'
+block content
+    .main
+        .top-m
+            .left-m
+                +mMod('我的“豹会员”成长')
+                    .banner-m
+                        p.abs-banner-m.top 还有<span class="orange"><span id="nextLday"></span>天</span><br />可以升级<span class="orange">V<span id="nextL"></span></span>
+                        p.abs-banner-m.btm 当前成长值：<span the-id="grouth" class="orange"></span>
+            .right-m
+                +mLogin(id='vUser')
+                    .txt-bd-login
+                        p V等级：<span id="level"></span>（<span id="process"></span>）
+                    .pbar-bd-login
+                        span.process-pbar-login
+                    .txt-bd-login
+                        p 成长速度：<span the-id="speed"></span>点/天
+                    .txt-bd-login
+                        p 服务到期：<span id="endTime"></span>
+                    a.btn-obtn-login(href='/payOpen.html') 开通豹会员
+                    .box-rebtn-login
+                        p.tip-btn-disabled.none 您当前无剩余续费时长
+                        a.btn-re-login(href='/payRe.html') 续费会员服务
+
+            .clear
+        .btm-m
+            .center-m
+                +mMod('我的“豹会员”奖励')
+                    .tab-m
+                        .nav-tab-m
+                            ul.l-nav-mtab
+                                li.li-nav-mtab.nav-coupon.current-nav-mtab(the-target='coupon') 优惠劵奖励
+                                li.li-nav-mtab.nav-package(the-target='package') 生日礼包
+                                li.li-nav-mtab.nav-privi(the-target='privi') 特权礼包
+                        .content-tab-m
+                            .main-tab-m#coupon
+                                p.tip-tab-m 本月<span the-id="vTypeTxt"></span>优惠券大放送
+                                .cards-tab-m
+                                    +cardItem
+                                    +cardItem
+                                    +cardItem
+                                    +cardItem
+                                    +cardItem(class='lastv-card-m')
+                                    .clear
+                                a.btn-get-m#getCoupones(href='javascript:void(0);') 一键领取
+                                p.tip-get-m 领取奖励为当前会员等级对应奖品
+                                p.tip-remark-m <span class="orange">小豹提醒：</span>每月可领取一次，领取后需当月使用，为保障您的特权服务，请每月尽快领取和使用
+                            .main-tab-m#package.none
+                                .cards-tab-m
+                                    +cardMod('游戏礼包')
+                                        ul.l-game-m
+                                    +cardMod('平台礼包')
+                                        ul.l-platform-m
+                                            +platformItem(class='gm')
+                                            +platformItem(class='gy')
+                                            //+platformItem(class='pm')
+                                            //+platformItem(class='py')
+                                            li.clear
+                                a.btn-get-m#getPpackages(href='javascript:void(0);') 一键领取
+                                p.tip-get-m 领取奖励为当前会员身份对应奖品
+                                p.tip-remark-m <span class="orange">小豹提醒：</span>豹会员用户可在生日当月凭生日信息在此领取生日礼包，为保障您的特权服务，请在生日当月尽快领取。
+                            .main-tab-m#privi.none
+                                ul.l-privi-m
+block dialog
+    .mask-dialog.none
+    .dialog.bind-phone.none
+        .hd-dialog
+            .title-hd-dialog 提示
+            .fork-hd-dialog
+        .bd-dialog
+            .text-bd-dialog 请绑定手机，以便及时提醒您享受豹会员特权服务。
+        .ft-dialog
+            a(href='javascript:void(0);',the-id='getCouponesBtn',has-next='1').btn-cancel-dialog.close-dialog 下次再说
+            a(href='javascript:void(0);',the-id='getCouponesBtn',the-href='http://wan.liebao.cn/user/?kstag=changeuserinfo',has-next='1').btn-confirm-dialog.close-dialog 立刻绑定
+    .dialog.getted.none
+        .hd-dialog
+            .title-hd-dialog 提示
+            .fork-hd-dialog
+        .bd-dialog
+            .text-bd-dialog 当月已领取，下月再来吧！
+        .ft-dialog
+            .btn-cancel-dialog.close-dialog.btn-single 知道了
+    .dialog.lowlevel.none
+        .hd-dialog
+            .title-hd-dialog 提示
+            .fork-hd-dialog
+        .bd-dialog
+            .text-bd-dialog 等级还不够哦~
+        .ft-dialog
+            .btn-cancel-dialog.close-dialog.btn-single 知道了
+    .dialog.success.none
+        .hd-dialog
+            .title-hd-dialog 提示
+            .fork-hd-dialog
+        .bd-dialog
+            .text-bd-dialog 相应等级的优惠劵已领取，您可以在充值中心使用和查看！
+        .ft-dialog
+            .btn-cancel-dialog.close-dialog 知道了
+            .btn-confirm-dialog.close-dialog(the-href='http://wan.liebao.cn/pay/') 去使用
+    .dialog.birthday.none
+        .hd-dialog
+            .title-hd-dialog 完善生日信息
+            .fork-hd-dialog
+        .bd-dialog
+            .birthday-dialog#birthday_container
+                h4.title-birthday 出生日期：
+                select.select-birthday(name='year',the-id='year')
+                span.unit-option-dialog 年
+                select.select-birthday(name='month',the-id='month')
+                span.unit-option-dialog 月
+                select.select-birthday(name='day',the-id='day')
+                span.unit-option-dialog 日
+            .tip-bd-dialog.orange 提示：生日信息完善后不可更改！
+        .ft-dialog.ft-dialog-birthday
+            .btn-confirm-dialog.btn-single.close-dialog(id='sendBirthday') 确定
+    .dialog.success-package.none
+        .hd-dialog
+            .title-hd-dialog 提示
+            .fork-hd-dialog
+        .bd-dialog.radius
+            h4.title-bd-dialog 已成功领取礼包！
+            ul.l-package-dialog
+                li.li-package-dialog
+                    h5.title 礼包码：
+                    p.code#gCode
+                    span.btn-copy(data-clipboard-action="copy",data-clipboard-target="#gCode") 复制
+                    .clear
+                li.li-package-dialog
+                    h5.title 激活方式：
+                    p.text 进入游戏后点击右上角“<span class="orange">奖励大厅</span>”图标，<br />然后选择激活码兑换，粘贴激活码即可领取到礼包。
+                    .clear
+    .dialog.fail-package.none
+        .hd-dialog
+            .title-hd-dialog 提示
+            .fork-hd-dialog
+        .bd-dialog
+            .text-bd-dialog 您填写的生日信息为<span the-id="birthdayTxt" class="orange"></span><br />请在您绑定生日信息月份内领取
+        .ft-dialog
+            .btn-cancel-dialog.btn-single.close-dialog 知道了

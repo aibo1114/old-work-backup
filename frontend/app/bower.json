@@ -1,0 +1,31 @@
+{
+  "name": "web",
+  "version": "0.0.1",
+  "dependencies": {
+    "underscore": "~1",
+    "backbone": "~1.3",
+    "codemirror": "3.x",
+    "zepto": "~1",
+    "font-awesome": "~4",
+    "jquery": "~2",
+    "bootstrap": "~3",
+    "jquery.finger": "~0.1",
+    "excellentexport": "*",
+    "summernote": "~0.8",
+    "smalot-bootstrap-datetimepicker": "*",
+    "jquery.countdown": "~2",
+    "fullpage.js": "~2",
+    "bootstrap-markdown": "~2",
+    "socket.io-client": "~1",
+    "PageSlider": "*",
+    "jsSHA": "*",
+    "marked": "*",
+    "fastclick": "*",
+    "jquery-timeago": "*",
+    "simplecalendar": "simpleeventcalendar#*"
+  },
+  "devDependencies": {
+    "html5shiv": "~3.7.3",
+    "respond": "~1.4.2"
+  }
+}

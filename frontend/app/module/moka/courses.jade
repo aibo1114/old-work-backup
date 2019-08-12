@@ -1,0 +1,33 @@
+extends ./inc/main
+
+block style
+    :less(minify=true)
+
+block content
+    .row
+        .col-md-4
+            .panel-app
+                .list-group
+                    a.list-group-item.active 全部内容
+                    each it in cat
+                        a.list-group-item= it.title
+        .col-md-8
+            .panel-app.block
+                .panel-body
+                    ol.breadcrumb
+                        li: a(href='/')= siteName
+                        li.active= c.nav.findBy('code',index).label
+                    ul.l-app
+                        each it in course
+                            li.li-app
+                                .media
+                                    .media-left: a(href='')
+                                        !=f.imgItem(it,c,'head','media-object')
+                                    .media-body
+                                        h4.media-heading= it.title
+                                        p.media-text
+                                            span= it.author
+                                            span= it.time
+                                        p.media-text= it.brief
+block st
+    :coffee(bare=true,minify=true)

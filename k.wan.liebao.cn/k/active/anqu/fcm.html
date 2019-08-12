@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" http-equiv="Content-type" content="text/html">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>安趣</title>
+    <link type="text/css" rel="stylesheet" href="http://static.web.anqu.com/resource/999/css/base.css">
+    <link type="text/css" rel="stylesheet" href="http://static.web.anqu.com/resource/999/css/common.css">
+    <link type="text/css" rel="stylesheet" href="http://static.web.anqu.com/resource/999/css/login.css">
+    <link rel="stylesheet" type="text/css" href="http://static.web.anqu.com/resource/999/css/index.css">
+    <link rel="stylesheet" type="text/css" href="http://static.web.anqu.com/resource/999/css/fcm.css">
+    <!--block style_charge_general-->
+  </head>
+  <body>
+   <div id="topline">
+            <div class="topline">
+                <ul class="l-tools">
+                    <!--li.li-tools.collect 收藏本站-->
+                    <!--li.li-tools.desktop 放到桌面-->
+                    <li class="li-tools setIndex">
+                        <a href="#" onclick="SetHome(this,'http://web.anqu.com');"
+                        class="link-tools">
+                            设为首页
+                        </a>
+                    </li>
+                    <li class="li-tools collect">
+                        <a href="javascript:void(0);" class="link-tools">
+                            收藏本站
+                        </a>
+                    </li>
+                    <!--<li class="li-tools desktop">
+                        <a href="javascript:void(0);" class="link-tools">
+                            放到桌面
+                        </a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+        <div id="header">
+            <div class="header">
+                <h1 class="logo">
+                    <a href="http://web.anqu.com">
+                        安趣
+                    </a>
+                </h1>
+                <ul class="l-nav">
+                    <li class="li-nav">
+                        <a href="http://web.anqu.com" class="link-nav">
+                            平台首页
+                        </a>
+                    </li>
+                    <!--<li class="li-nav">
+                        <a href="javascript:void(0);" class="link-nav">
+                            游戏中心
+                        </a>
+                    </li>-->
+                    <li class="li-nav">
+                        <a href="http://web.anqu.com/pay/" class="link-nav">
+                            充值中心
+                        </a>
+                    </li>
+                    <!--<li class="li-nav grey">
+                        <a href="javascript:void(0);" class="link-nav">
+                            游戏论坛
+                        </a>
+                    </li>-->
+                </ul>
+                <p class="user">
+                    <img id="anquLogin" src="http://static.web.anqu.com/resource/999/images/logoL.png">
+                    <!-- |欢迎您： span.name-user#usernmae janjiao0128 a.logout-user#logout(href='javascript:void(0);')
+                    [退出] -->
+                </p>
+            </div>
+        </div>
+    <!-- <div class="yl-record">
+      <table class="record-tb">
+        <caption>我的充值记录</caption>
+        <thead>
+          <tr>
+            <th>帐号</th>
+            <th>充值游戏</th>
+            <th>充值金额</th>
+            <th>充值订单号</th>
+            <th>充值状态</th>
+            <th>充值时间</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div> -->
+    <div class="main_part">
+    <h5 class="tit">
+      <span class="tit_nm">防沉迷认证</span>
+      <span style="line-height:51px;color:#808080;" class="anqu_inline_block anqu_fl_rt">
+          当前位置：平台首页&gt;公告
+      </span>
+      <span class="tit_sp"></span>
+    </h5>
+    <div class="info">
+      <p class="info_tip">您已经可以进入游戏，但是我们建议您填写如下的身份资料以免受到防沉迷系统的限制。</p>
+      <p class="info_tip org_star">友情提示：* 为必填项，请认真填写！</p>
+      <div class="form_detail clearfix">
+        <label for="" class="form_lb">
+          <span class="org_star">*</span>真实姓名：</label>
+        <div class="form_input_box">
+          <input type="text" name="tname" id="tname" class="txt st_err"></div>
+        <div class="form_msg st_err" id="tname_msg">姓名不能为空</div>
+        <label for="" class="form_lb">
+          <span class="org_star">*</span>身份证号：</label>
+        <div class="form_input_box">
+          <input type="text" name="idcard" id="idcard" class="txt st_err"></div>
+        <div class="form_msg st_err" id="idcard_msg">身份证号码位数不对</div>
+        <a href="javascript:void(0);" class="btn_ok " id="fcminfo_btn">确定</a></div>
+      <div class="article">
+        <h2>网络游戏防沉迷系统及用户隐私说明</h2>
+        <h5>按照新闻出版总署《网络游戏未成年人防沉迷系统》要求</h5>
+        <p>为预防青少年过度游戏，未满18岁的用户和身份信息不完整的用户将受到防沉迷系统的限制，安趣游戏中心积极响应国家新闻出版总署防沉迷政策要求，开发出网页游戏防沉迷系统。</p>
+        <p>年龄已满18周岁的玩家，在填写身份证资料后，可以不受防沉迷系统影响，自由进行游戏，
+          <span class="red">否则游戏每日在线3小时后即打怪经验减半,超过5小时则无经验。</span></p>
+        <p>说明：系统只支持输入18位的中国身份证号码，持有其他证件（如：外国护照，军人证，等）者，请与客服GM联系处理。 填写身份信息将使我们可以对您的年龄做出判断，以确定您的游戏时间是否需要按照国家新闻出版总署的要求纳入防沉迷系统的管理。</p>
+        <p>隐私说明：用户填写的身份信息属于用户的隐私。安趣游戏中心绝对尊重用户个人隐私权。所以，安趣游戏中心绝不会公开，编辑或透露用户的信息内容，除非有法律许可及公安管理规定 。</p>
+      </div>
+    </div>
+</div>
+    <!--block content_charge_general-->
+            <div id="footer">
+            <div class="footer">
+                <ul class="l-footer">
+                    <!--li.li-footer: a.link-footer.first(href='javascript:void(0);') 官方微博-->
+                    <!--li.li-footer: a.link-footer(href='javascript:void(0);') 权利声明-->
+                    <li class="li-footer">
+                        <a href="http://web.anqu.com" target="_blank" class="link-footer first">
+                            游戏中心
+                        </a>
+                    </li>
+                    <!--li.li-footer: a.link-footer(href='javascript:void(0);') 申请收录-->
+                    <li class="li-footer">
+                        <a href="http://web.anqu.com/13/f34.html" target="_blank" class="link-footer">
+                            商务合作
+                        </a>
+                    </li>
+                    <li class="li-footer">
+                        <a href="http://api.web.anqu.com/account/api/1/webqq" target="_blank" class="link-footer">
+                            客服中心
+                        </a>
+                    </li>
+                    <!--li.li-footer: a.link-footer(href='javascript:void(0);') 非法反馈-->
+                </ul>
+                <p class="text-footer">
+                    抵制不良游戏　拒绝盗版游戏　注意自我保护　谨防受骗上当　适度游戏益脑　沉迷游戏伤身　合理安排时间　享受健康生活
+                </p>
+                <p class="text-footer">
+                    <span class="part">
+                        京ICP备14002920号-3 <a href="http://www.anqu.com/about_us/images/icp.jpg?2" target="_blank">电信与信息服务业务经营许可证</a>
+                    </span>
+                    <span class="part">
+                        京网文[2014]0498-148号 <a href="http://www.anqu.com/about_us/images/jingwangwen.jpg?1" target="_blank">京公网安备11010802021457号</a>
+                    </span>
+                    <span class="part">
+                        <a href="http://www.anqu.com/jiazhang/index.htm" target="_blank">家长监护</a>
+                    </span>
+                </p>
+                <p class="text-footer">
+                    Copyright 2012-2016 anqu.com All rights reserved 北京安趣科技股份有限公司
+                </p>
+            </div>
+        </div>
+    <script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/md5.js"></script>
+    <script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/user.js"></script>
+    <script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/fcm.js"></script>
+    <script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/index.js"></script>
+    <script type="text/javascript">
+      var _hmt = _hmt || [];
+      (function () {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?47daa93cb0ec88fca1eb5a272fe0be49";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+    <script type="text/javascript">
+      var baseUrl='http://api.web.anqu.com/';
+      $.ajax({
+          url: baseUrl + 'account/api/1/islogin',
+          type: 'get',
+          dataType: 'jsonp',
+          success: function (data) {
+              if (data.ret != '1') {
+                 // dlg.show();
+                 
+                  return;
+              }
+              getCarId();
+          }
+      });
+      
+    </script>
+    <!--script(type='text/javascript',src='js/index.js')-->
+  </body>
+</html>

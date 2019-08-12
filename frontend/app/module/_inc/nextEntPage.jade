@@ -1,0 +1,15 @@
+.nav
+    - ipp = ['entity='+_e]
+    if cat
+        -ipp.push('cat='+cat)
+    ul.pager
+        | 共 #{_max}篇
+        if _skip != 0
+            - p = ipp.slice(0)
+            if (_skip - _limit) > 0
+                -p.push('skip='+(_skip - _limit))
+            li.pull-left: a(href='/entityList?'+p.join('&')) 上一页
+        if _skip + _limit < _max
+            -p = ipp.slice(0)
+            -p.push('skip='+(_skip + _limit))
+            li.pull-right: a(href='/entityList?'+p.join('&')) 下一页

@@ -1,0 +1,100 @@
+<div class="panel panel-info">
+    <div class="panel-heading">{{$ctrl.title}}</div>
+    <form ng-submit="$ctrl.sendProvider()">
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="">厂商ID</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" ng-model="$ctrl.provider.SupplierID" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="">厂商名</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" ng-model="$ctrl.provider.SupplierName" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="">厂商秘钥</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" ng-model="$ctrl.provider.SupplierSecret" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="">厂商状态</label>
+                <div class="col-xs-10">
+                    <div ng-if="$ctrl.provider.SupplierState==1">
+                        <i class="mr10">可用</i>
+                        <span class="btn btn-danger" ng-click="$ctrl.stash({txt:'禁用',vlu:'0'})" data-toggle="modal" data-target="#stateModal">禁用</span>
+                    </div>
+                    <div ng-if="$ctrl.provider.SupplierState==0">
+                        <i class="mr10">不可用</i>
+                        <span class="btn btn-success" ng-click="$ctrl.stash({txt:'启用',vlu:'1'})" data-toggle="modal" data-target="#stateModal">启用</span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="">备注</label>
+                <div class="col-xs-10">
+                    <textarea class="form-control" type="text" ng-model="$ctrl.provider.Remark"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="">来源</label>
+                <div class="col-xs-10">
+                    <div class="row mb10" ng-repeat="it in $ctrl.provider.Sources">
+                        <div class="col-xs-6">
+                            <div class="input-group">
+                                <span class="input-group-addon">来源</span>
+                                <input class="form-control" ng-model="it.Source" />
+                            </div>
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="input-group">
+                                <span class="input-group-addon">备注</span>
+                                <input class="form-control" ng-model="it.Remark" />
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
+                            <div class="btn btn-default" ng-click="$ctrl.deleteItem(it)">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn btn-primary" ng-click="$ctrl.addItem()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div class="form-group">
+            <div class="col-xs-10 col-xs-push-2">
+                <button class="btn btn-primary btn-lg save">保存</button>
+                <span class="btn btn-default btn-lg cancel" ng-click="$ctrl.goBack()">返回</span>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>
+
+
+<div class="modal fade" id="stateModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h5 class="modal-title">安趣后台</h5>
+            </div>
+            <div class="modal-body">
+                <h4 class="text-center">确认{{$ctrl.stashData.txt}}?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="$ctrl.modifyState($ctrl.stashData.vlu)">{{$ctrl.stashData.txt}}</button>
+            </div>
+        </div>
+    </div>
+</div>

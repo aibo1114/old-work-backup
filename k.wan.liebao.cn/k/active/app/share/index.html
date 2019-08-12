@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="auth" content="WuSong"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <link href="../css/share.css?v=20161202" rel="stylesheet"/>
+    <link href="../css/video-js.min.css" rel="stylesheet">
+    <title>文章分享页</title>
+</head>
+<body>
+<div class="cover">
+    <img id="J_cover" src=""/>
+</div>
+
+
+
+<div id="J_container">
+    <script id="J_article_temp" type="text/x-dot-template">
+        <div class="header">
+            <h1>{{=it.title}}</h1>
+            <img src="{{=it.author_avatar}}"/>
+            <i class="auth">{{=it.author_name}}</i>
+            <i class="time">{{=it.publish_time}}</i>
+        </div>
+
+        <!--文章内容-->
+        <div class="content" id="J_article">
+            {{? it.cover_video_url != '' }}
+            <video id="really-cool-video" preload controls class="video-js vjs-default-skin vjs-big-play-centered" width="" height="" poster="{{=it.cover_url}}" style="width: 100%;height: 250px">
+                <source src="{{=it.cover_video_url}}" type="video/mp4">
+            </video>
+            {{?}}
+
+            {{=it.content}}
+        </div>
+    </script>
+    <div class="footer">
+        <h1>评论</h1>
+
+        <script id="J_hotComment_temp" type="text/x-dot-template">
+            <h2 id="J_hot_comment">热门评论</h2>
+            {{~it :obj}}
+            <div class="section">
+                <img class="avatar" src="{{=obj.avatar}}"/>
+                {{? obj.professional_certification }}
+                <img class="title" src="../img/v.png"/>
+                {{?}}
+                <div class="auth">
+                    <h3>{{=obj.nickname}}</h3>
+                    {{? obj.personal_certification }}
+                    <h4>· {{=obj.personal_certification.model_name}} {{=obj.personal_certification.model_subname}}</h4>
+                    {{?}}
+                </div>
+                <div class="like"><img src="../img/like.png" width="15"/><i>{{=obj.num_like || 0}}</i></div>
+                <i class="time">{{=obj.publish_time}}</i>
+                <p>{{=obj.content}}</p>
+            </div>
+            {{~}}
+        </script>
+
+        <script id="J_newComment_temp" type="text/x-dot-template">
+            <h2 id="J_new_comment">最新评论</h2>
+            {{~it :obj}}
+            <div class="section">
+                <img class="avatar" src="{{=obj.avatar}}"/>
+                {{? obj.professional_certification }}
+                <img class="title" src="../img/v.png"/>
+                {{?}}
+                <div class="auth">
+                    <h3>{{=obj.nickname}}</h3>
+                    {{? obj.professional_certification }}
+                    <h4>· {{=obj.professional_certification.description}}</h4>
+                    {{?? obj.personal_certification}}
+                    <h4>· {{=obj.personal_certification.model}} {{=obj.personal_certification.model_subname}}</h4>
+                    {{??}}
+                    {{?}}
+                </div>
+                <div class="like"><img src="../img/like.png" width="15"/><i>{{=obj.num_like || 0}}</i></div>
+                <i class="time">{{=obj.publish_time}}</i>
+                <p>{{=obj.content}}</p>
+            </div>
+            {{~}}
+        </script>
+    </div>
+</div>
+
+<!--下载按钮-->
+<a href="http://dl.cm.ksmobile.com/static/res/fixed/59/autogeek_official.apk" target="_blank" class="download" onclick="_hmt.push(['_trackEvent', '下载', 'click', ''])" >
+    <div class="download-container">
+        <img src="../img/logo1.png" width="50" height="50"/>
+        <h1>汽车达人</h1>
+        <h2>电动汽车车主必备的资讯app</h2>
+        <span>立即下载</span>
+        <b></b>
+    </div>
+</a>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/video.min.js"></script>
+<script src="../js/doT.min.js"></script>
+<script src="../js/infoc.min.js"></script>
+<script src="../js/share.js"></script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?3d2082698c1ac7637c3c64dc82857e9f";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

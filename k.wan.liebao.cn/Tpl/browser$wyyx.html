@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+    *{margin:0;padding:0;font:14px/15px Microsoft YaHei,Helvetica,Tahoma,Arial,SimSun,sans-serif}
+    ul{list-style:none}
+    a{text-decoration:none;outline:0}
+    img{border:0; }
+    body,html{height:100%;}
+    .clearfix:after{display:block;clear:both;height:0;font-size:0;content:'.';visibility:hidden}
+    html .clearfix{zoom:1}
+    .wrap{width:351px;height:520px;}
+    .wrap p .game-more{display: inline-block;margin-left: 210px;color:#666;}
+    .wrap p a.game-more:hover{color:#e18417;}
+    .wrap .game-hot .hot-title{padding:16px 14px 10px;}
+    .wrap .game-hot .hot-game-item{position:relative; display: inline-block;width:155px;height:100px;overflow: hidden;margin:0 0 13px 12px;_float:left;+float:left;}
+    .wrap .game-hot .hot-game-item .game-mask{width:155px;height:100px;position: absolute; left:0; padding:10px; width:135px;height:80px;background:rgba(0, 0, 0, 0.8) none repeat scroll 0 0 !important;filter:Alpha(opacity=80); background:#000;}
+    .wrap .game-hot .hot-game-item .game-mask .game-name{color:#fff;}
+    .wrap .game-hot .hot-game-item .game-mask a{font:12px/24px Microsoft YaHei,Helvetica,Tahoma,Arial,SimSun,sans-serif;}
+    .wrap .game-hot .hot-game-item .game-mask .game-enter{text-align: center; display: inline-block;width:60px;height:24px;background:#e18417;color:#fff; }
+    .wrap .game-hot .hot-game-item .game-mask .game-link-wrap{margin-top: 40px;padding-left:5px;}
+    .wrap .game-hot .hot-game-item .game-mask .game-link-wrap a.game-mask-link{display: inline-block;margin-right: 5px}
+    .wrap .game-hot .hot-game-item .game-mask .game-link-wrap a.game-mask-link:hover{color:#ffa800;}
+    .wrap .game-hot .hot-game-item .game-mask a.game-enter:hover{background:#ffa800; text-decoration: none;}
+    .wrap .game-cls{padding:0 14px 11px;height:170px;}
+    .wrap .game-cls .cls-title{padding:7px 0 8px 0;}
+    .wrap .game-cls .cls-game-item{width:75px;display: inline-block;padding:6px 0 6px 32px;overflow: hidden;}
+    .wrap .game-cls a:hover{color:#e18417;}
+    .wrap .game-btn{height:40px;padding:14px;background: #F4F4F4;}
+    .wrap .game-btn a{display: inline-block;height: 40px; width:155px;}
+    .wrap .game-btn .btn-list{margin-right:8px;background:url("http://img.wan.ijinshan.com/website/activity/image/activity/list.png") no-repeat 0 0;}
+    .wrap .game-btn .btn-more{background:url("http://img.wan.ijinshan.com/website/activity/image/activity/more.png") no-repeat 0 0;}
+    .orange{color:#e18417;}
+    .radius{border-radius: 3px;}
+    .inline-block{display: inline-block;}
+    .red{color:#F99F11;}
+    .black{color:#696969;font-weight: bold;}
+    .gray{color:#666;font:12px/14px Microsoft YaHei,Helvetica,Tahoma,Arial,SimSun,sans-serif}
+    .clear{float: none;clear: both;}
+    </style>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?60f09bb5d966e4cc5914dbe49209ece3";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="game-hot">
+            <p class="hot-title black">热门游戏<a class="game-more" href="javascript:external.OpenUrl('http://wan.liebao.cn/tuiguang/index.php?frm=yxzs-rm-more&referer=llqzy');">更多&gt;&gt;</a></p>
+
+            <ivolist name="cates['630']" id="vo">
+            <div class="hot-game-item">
+                <img class="hot-game-img radius" src="{{$vo.field1}}" alt="{{$vo.field2}}" width="155px" height="100px" />
+                <div class="game-mask radius" style="top:100px;">
+                    <div style="position:relative;">
+                        <span class="game-name">{{$vo.field2}}</span>
+                        <p class="game-link-wrap">
+                            <a href="javascript:external.OpenUrl('{{$vo.field3}}&t=201312290624');" class="game-mask-link orange">官网</a>
+                            <a href="javascript:external.OpenUrl('{{$vo.field4}}&t=2013121910624');" class="game-mask-link orange">礼包</a>
+                            <a href="javascript:external.OpenUrl('{{$vo.field5}}&t=2013120910624');" class="game-enter radius">进入游戏</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </ivolist>
+
+        </div>
+        <div class="game-cls">
+            <p class="cls-title black">经典游戏<a class="game-more" href="javascript:external.OpenUrl('http://wan.liebao.cn/tuiguang/index.php?frm=yxzs-jd-more&referer=llqzy');">更多&gt;&gt;</a></p>
+
+            <ivolist name="cates['689']" id="vo">
+            <a style="background:url('{{$vo.field1}}') no-repeat 8px 4px;" class="cls-game-item gray" href="javascript:external.OpenUrl('{{$vo.field3}}&t=2013120910619');">{{$vo.field2}}</a>
+            </ivolist>
+
+        </div>
+        <div class="game-btn">
+            <ivolist name="cates['690']" id="vo">
+            <a href="javascript:external.OpenUrl('{{$vo.field1}}');" class="btn-list radius"></a>
+            <a href="javascript:external.OpenUrl('{{$vo.field2}}');" class="btn-more radius"></a>
+            </ivolist>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function(){
+
+        var move = function(self, displace){
+            var $mask = $('div.game-mask', self);
+            $mask.stop().animate({top:displace},240);
+        };
+
+        $('div.hot-game-item').hover(function(){
+            move(this, 0);
+        }, function(){
+            move(this, 100);
+        });
+    });
+    </script>
+</body>
+</html>

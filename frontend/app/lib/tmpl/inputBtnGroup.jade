@@ -1,0 +1,7 @@
+.input-group-btn
+    each it in btns
+        button.btn.btn-default(type='button' class=it.cls || it.icon)
+            if it.icon
+                != f.icon(it.icon) + ' '
+            if it.text
+                = it.text

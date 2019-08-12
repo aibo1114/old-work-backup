@@ -1,0 +1,6 @@
+.div(data-toggle="buttons" class=cls||'btn-group')
+    for it in btns
+        label.btn(class=it.cls || "btn-sm btn-#{style||'primary-outline'} " key=it.key)
+            input(type=type||'checkbox' autocomplete="off")
+            != it.title
+

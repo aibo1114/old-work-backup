@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta property= "wb:webmaster" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 刮奖 -->
+    <title>七月刮刮乐</title>
+    <script type="text/javascript">
+    var startTime = (new Date()).getTime();
+    </script>
+    <link rel="stylesheet" type="text/css" href="http://img.wan.ijinshan.com/website/css/common_mobile.css">
+    <link rel="stylesheet" type="text/css" href="http://img.wan.ijinshan.com/website/activity/css/2014/scratch_tickets.css">
+    <style type="text/css">
+    .ud{font-size: 22px; font-weight: bold;color:#666; position:absolute;width:100%;height:100%;text-align: center;line-height:60px; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <img src="http://img.wan.ijinshan.com/website/activity/image/2014/scratch_tickets/head.jpg" class="head" />
+        </header>
+        <!-- 刮奖区 -->
+        <div class="scratch-area">
+            <p class="font-area">刮奖区</p>
+            <div id="wScratchPad2" class="prize" style="position:relative;">
+                <div id="prize_under" class="ud">谢谢参与</div>
+            </div>
+        </div>
+        <!-- 奖品展示区 -->
+
+        <div class="gift-show">
+            <img src="http://img.wan.ijinshan.com/website/activity/image/2014/scratch_tickets/gift.jpg" class="gift"/>
+        </div>
+
+        <!-- 活动规则 -->
+        <div class="act-rule">
+            <h3 class="title">活动规则</h3>
+            <p class="items">1.本次活动仅对收到活动通知的幸运玩家开放，活动时间为收到页面即刻至次日中午11：59。</p>
+            <p class="items">2.活动期间内，每成功充值1次即可获得1次刮奖机会，不限充值金额。最多可获得3次刮奖机会。</p>
+            <p class="items">3.获得实物奖品的玩家请在弹出窗中完善账号信息，会有客服主动联系安排发奖。</p>
+            <p class="items">4.奖品将于活动结束后的15个工作日内发放。</p>
+            <p style="font-size:14px!important;" class="tip">金山手机助手官方具有本次活动的最终解释权</p>
+        </div>
+
+        <!-- 弹出窗 -->
+        <style type="text/css">
+        .hide{display: none;}
+        </style>
+        <div class="mask m-win hide" style=""></div>
+        <div class="win m-win hide" style="">
+            <!--
+            <span id="win-close" class="close"></span>
+            -->
+            <h4 class="pop-tit">恭喜您获得<span id="prize_name"></span></h4>
+            <p class="font-tip">请填写有效手机号码，我们将于15个工作日内与您取得联系，发放奖品，祝您游戏愉快！</p>
+            <div class="infor">
+                <label for="phone_input">手机号</label>
+                <input type="text" value="" id="phone_input">
+            </div>
+            <button id="sub_phone" class="submit">提交信息</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+    window.toast_config = {height:50};
+
+    // analytics.js 中调用以下方法可以上报PV和点击
+    // Analytics.init(1801, 'hd'); 上报PV
+    // Analytics.trace('0_0_0_0_0|hd_六月刮刮乐_0_btn_0', '六月刮刮乐', 1801);
+
+    </script>
+
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/toast/1.0.1/toast-debug.js"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/website/activity/js/client_util.js"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/website/activity/js/analytics.js"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/website/activity/js/s.js"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/website/activity/js/scratch.js"></script>
+
+</body>
+</html>

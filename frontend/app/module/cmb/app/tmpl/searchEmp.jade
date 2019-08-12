@@ -1,0 +1,14 @@
+.searchBox.clearfix
+    .input-group.input-group-lg
+        .input-group-btn
+            button.btn.btn-default.dropdown-toggle(type='button' data-toggle="dropdown")
+                span.text-center(style='width:100px;display:inline-block') 工号
+                span.caret
+            ul.dropdown-menu
+                li: a._key(key='person_no') 工号
+                li: a._key(key='email') 邮箱
+                li: a._key(key='card_id') 卡号
+        input#q.form-control.input-sm(name= name||'q', type='text', placeholder= (label||'搜索') + '...')&attributes(attr||{})
+        .input-group-btn
+            //!= f.btn(ii('search'),'search','primary')
+            a.btn.btn-primary.search(class= btn)= ii('search')

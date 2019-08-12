@@ -1,0 +1,5 @@
+div(ng-controller='integral')
+    ul.l-tab-integral
+        li.li-tab-integral(ng-repeat='it in tabs', ng-if='!it.isHref', ng-click='switchTab(it.url);', ng-class='{"current-tab-integral" : isCurrent(it.url)}') {{it.title}}
+        li.li-tab-integral(ng-repeat='it in tabs', ng-if='it.isHref'): a.link-tab-integral(ng-href='{{it.isHref}}',target='_blank') {{it.title}}
+    .content-tab-integral(ng-include='tabUrl')

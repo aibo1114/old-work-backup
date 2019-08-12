@@ -1,0 +1,89 @@
+include ../_inc/mixin
+extends ../mob
+
+block style
+    :less
+       body {
+           background: black;
+           color: white;
+       }
+
+       .pic{
+           img{
+               width: 100%;
+           }
+       }
+       .tspForm {
+           .panel, .panel-body, .panel-footer,.form-group {
+               background: transparent !important;
+           }
+           .form-control{
+               color: white;
+           }
+       }
+
+block content
+    .pic
+        if exForm && exForm.refFile
+            -im = exForm
+        else
+            -im = locals
+        !=f.imgItem(im, c, null, 'img-responsive')
+    .exForm
+
+    .description.col-xs-12
+        h3 CDKEY 兑换说明
+
+        != exForm.description
+
+    script!=f.jsp('_pp', exForm, 'prop')
+    script!=f.jsp('_oa', locals, '_id')
+
+block st
+    :coffee(bare=true,minify=true)
+        po = util.parseUrl().wuCode
+        $.get "/a/zmzj/sncode/get?aid=#{_oa._id}&wuCode=#{po}", (res)->
+            if res.ret
+                app.dm.form '.exForm', 'common',
+                    urlRoot: util.actUrl "zmzj/sncode/update?aid=#{_oa._id}"
+                    style: ''
+                    className: 'tspForm'
+                    cols:'col-xs-4:col-xs-8'
+                    prop: [
+                        m._text 'cdkey',
+                            label: '请输入CDKEY'
+                            ph: '已领取到的CDKEY'
+                            valid:
+                                required: true
+
+                        m._text 'accountCode',
+                            label: '您的账号代码'
+                            ph: '您游戏的账号ID'
+                            valid:
+                                required: true
+                                minlength: 12
+                                maxlength: 12
+                                char:true
+
+                        m._hidden 'wuCode',
+                            val:-> po
+
+                        _ep 'captcha',
+                            ph: '必填'
+
+                    ]
+                    noTopAdd: true
+                    title: 'CDKEY兑换中心'
+                    btns:[
+                        label: '确认兑换'
+                        cls: _st.btn('danger', 'lg', 'block','save')
+                    ]
+                    _saveSuccess: (mo)->
+                        $('.exForm').mk 'div', class: 'text-center', "兑换码: #{tu.btn(mo.get('code'),null,'danger')}"
+            else if res.sncode
+                $('.exForm').mk 'div', class:'text-center','您的兑换码已经申请:'
+                $('.exForm').mk 'div', class:'text-center',"兑换码: #{tu.btn(res.sncode,null,'danger')}"
+            else
+                $('.exForm').mk 'div', class:'text-center', tu.btn('兑换码已经领取完毕',null,'danger')
+
+

@@ -1,0 +1,27 @@
+.panel.panel-primary
+    .panel-heading(ng-bind='$ctrl.title')
+    .panel-body
+        form.form-horizontal(ng-submit='$ctrl.submitForm()')
+            .form-group(ng-repeat='control in $ctrl.controls')
+                label.col-sm-2.control-label(for='{{control.code}}', ng-bind='control.label+"："')
+                .col-sm-10
+                    input.form-control(ng-if='control.type=="text"', type='text', id='{{control.code}}', name='{{control.code}}', ng-model='$ctrl.content[control.code]', ng-required='{{control.required}}')
+                    input.form-control(ng-if='control.type=="email"', type='email', id='{{control.code}}', name='{{control.code}}', ng-model='$ctrl.content[control.code]', ng-required='{{control.required}}')
+                    input.form-control(ng-if='control.type=="number"', type='number', id='{{control.code}}', name='{{control.code}}', ng-model='$ctrl.content[control.code]', ng-required='{{control.required}}')
+                    textarea.form-control(ng-if='control.type=="textarea"', id='{{control.code}}', name='{{control.code}}', ng-model='$ctrl.content[control.code]', ng-required='{{control.required}}')
+                    .btn-group(ng-if='control.type=="radio"', data-toggle='buttons')
+                        label.btn.btn-info.btn-sm(ng-repeat='r in control.radios', ng-bind='r.n', ng-init='$ctrl.initRadio(control)', ng-class='{"active": $index==0 && $ctrl.type=="add"}', ng-click='$ctrl.setRadio($event, control, r)', id='{{control.code}}{{$index}}')
+            .form-group
+                .col-sm-10.col-sm-push-2
+                    .btn-group
+                        button.btn.btn-primary 提交
+                        span.btn.btn-default(ng-click='$ctrl.goList()') 返回
+
+.modal.fade(tabindex='-1', role='dialog', id='alert')
+    .modal-dialog.modal-sm(role='document')
+        .modal-content
+            .modal-header
+                button.close(type='button', data-dismiss='modal')
+                    span ×
+                h5.modal-title.text-primary h5后台
+            .modal-body

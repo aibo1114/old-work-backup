@@ -1,0 +1,7 @@
+<div ng-controller="msgContent" class="mod-msg">
+    <ul class="l-tab-msg">
+        <li class="li-tab-msg cur-tab-msg" ng-click="switchUrl('tpl/sysNews.html','sys');" ng-class="{'cur-tab-msg':status=='sys'}"><span ng-if="sysNew" class="dotted"></span>系统消息</li>
+        <li class="li-tab-msg ml-1" ng-click="switchUrl('tpl/activeNews.html','active');" ng-class="{'cur-tab-msg':status=='active'}"><span ng-if="activeNew" class="dotted"></span>活动消息</li>
+    </ul>
+    <div ng-include="tabUrl"  class="content-tab-msg"></div>
+</div>

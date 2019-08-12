@@ -1,0 +1,139 @@
+{
+  "config": [
+    {
+      "score": 5,
+      "eWeight": 90,
+      "eTime": 2000,
+      "wWeight": 10,
+      "wTime": 1600,
+      "sTime": 1000,
+      "interval": 800,
+      "num": 1,
+      "speed": 10
+    },
+    {
+      "score": 10,
+      "eWeight": 85,
+      "eTime": 2000,
+      "wWeight": 15,
+      "wTime": 1600,
+      "sTime": 1000,
+      "interval": 800,
+      "num": 1,
+      "speed": 12
+    },
+    {
+      "score": 20,
+      "eWeight": 80,
+      "eTime": 1800,
+      "wWeight": 15,
+      "wTime": 1400,
+      "sTime": 800,
+      "interval": 800,
+      "num": 1,
+      "speed": 12
+    },
+    {
+      "score": 50,
+      "eWeight": 75,
+      "eTime": 1600,
+      "wWeight": 20,
+      "wTime": 1200,
+      "sTime": 800,
+      "interval": 800,
+      "num": 1,
+      "speed": 12
+    },
+    {
+       "score": 100,
+      "eWeight": 75,
+      "eTime": 1600,
+      "wWeight": 20,
+      "wTime": 1200,
+      "sTime": 500,
+      "interval": 800,
+      "num": 2,
+      "speed": 13
+    }, 
+    {
+      "score": 150,
+      "eWeight": 75,
+      "eTime": 1600,
+      "wWeight": 15,
+      "wTime": 1400,
+      "sTime": 500,
+      "interval": 800,
+      "num": 2,
+      "speed": 14
+    },
+    {
+      "score": 200,
+      "eWeight": 75,
+      "eTime": 1500,
+      "wWeight": 15,
+      "wTime": 1100,
+      "sTime": 500,
+      "interval": 800,
+      "num": 2,
+      "speed": 14
+    },
+    {
+       "score": 500,
+      "eWeight": 70,
+      "eTime": 1500,
+      "wWeight": 20,
+      "wTime": 1100,
+      "sTime": 500,
+      "interval": 750,
+      "num": 2,
+      "speed": 14
+    }, 
+	{
+       "score": 800,
+      "eWeight": 70,
+      "eTime": 1500,
+      "wWeight": 20,
+      "wTime": 1100,
+      "sTime": 500,
+      "interval": 900,
+      "num": 3,
+      "speed": 14
+    }
+	, 
+	{
+       "score": 1000,
+      "eWeight": 70,
+      "eTime": 1300,
+      "wWeight": 20,
+      "wTime": 900,
+      "sTime": 500,
+      "interval": 900,
+      "num": 3,
+      "speed": 15
+    }
+	, 
+	{
+       "score": 1500,
+      "eWeight": 70,
+      "eTime": 1100,
+      "wWeight": 20,
+      "wTime": 700,
+      "sTime": 500,
+      "interval": 750,
+      "num": 3,
+      "speed": 15
+    }
+	, 
+	{
+       "score": 2000,
+      "eWeight": 70,
+      "eTime": 1000,
+      "wWeight": 20,
+      "wTime": 500,
+      "sTime": 500,
+      "interval": 500,
+      "num": 3,
+      "speed": 16
+    }
+  ]
+}

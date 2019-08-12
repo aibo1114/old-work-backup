@@ -1,0 +1,311 @@
+body,div, h1, h2, h3, h4, h5, h6, ul, ol, li, a, span, p, img, form, input, textarea {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+ul, ol, li {list-style: none;}
+a {text-decoration: none;}
+
+body {
+    padding: 140px 0 360px;
+    position:relative;
+}
+#cmPlantHeader,#cmPlantFooter {
+    width:100%;
+    font-family: 'Microsoft Yahei';
+}
+#cmPlantHeader {
+    position: absolute;
+    top:0;
+    left:0;
+}
+#cmPlantFooter {
+    background: #f5f4f5;
+    padding:30px 0 20px;
+    box-shadow: 0 2px 4px #666;
+
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+
+
+.topline-plant-cm {
+    height:38px;
+    background:#292929;
+    overflow: hidden;
+}
+.header-plant-cm {
+    height:80px;
+    background: #fff;
+    border-bottom:1px solid #e6e6e6;
+    box-shadow: 1px 0 0 #f2f2f2;
+}
+
+
+.content-topline-plant,.content-header-plant,.content-footer-plant {
+    width:1200px;
+    /*width:1320px;*/
+    margin:auto;
+}
+.content-footer-plant {
+    position: relative;
+}
+
+/*topline*/
+.l-tools-topline {
+    width: 291px;
+    height:38px;
+    float:left;
+}
+.li-tools-topline {
+    width:74px;
+    height:38px;
+    float:left;
+    padding-left:23px;
+    line-height:38px;
+}
+.collection-tools-topline {
+    background:url(http://faq.wan.liebao.cn/dist/4271472123332b096a422037b2ea099f.png) no-repeat 0 13px;
+    /*background:url(../images/icons_01.png) no-repeat 0 13px;*/
+}
+.setindex-tools-topline {
+    background:url(http://faq.wan.liebao.cn/dist/84c878c7324613fa50dd4353a0fbae8e.png) no-repeat 0 13px;
+    /*background:url(../images/icons_03.png) no-repeat 0 13px;*/
+}
+.desktop-tools-topline {
+    background:url(http://faq.wan.liebao.cn/dist/69e43788bc53bf2a118a0f77ab058fda.png) no-repeat 0 13px;
+    /*background:url(../images/icons_05.png) no-repeat 0 13px;*/
+}
+.link-tools-topline {
+    display: block;
+    font-size:12px;
+    color:#999;
+}
+.link-tools-topline:hover {
+    color:#fff;
+}
+
+
+.notice-topline {
+    margin-left:48px;
+    width:210px;
+    height:38px;
+    float: left;
+    padding-left:28px;
+    background:url(http://faq.wan.liebao.cn/dist/c2609e6afcfbad15bd706417e0a8618f.png) no-repeat 0 14px;
+    /*background:url(../images/trumpet.png) no-repeat 0 14px;*/
+    line-height:38px;
+    overflow:hidden;
+}
+.notice-topline a {
+    font-size:12px;
+    color:#c8425e;
+}
+
+
+.l-login-topline {
+    width:230px;
+    text-align: right;
+    float: right;
+    height:38px;
+    line-height:38px;
+    font-size:12px;
+    display: none;
+}
+.li-login-topline,.line-login-topline {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    float: right;
+    color:#999;
+}
+.line-login-topline {
+    margin:0 4px;
+    line-height:38px;
+}
+.link-login-topline {
+    color:#999;
+}
+.link-login-topline:hover {
+    color:#ff7f40;
+}
+
+.user-topline {
+    width:230px;
+    text-align: right;
+    float: right;
+    font-size:12px;
+    color:#999;
+    height:38px;
+    line-height:38px;
+    display: none;
+}
+.link-username-topline {
+    color:#ff7f40;
+}
+.link-logout-topline {
+    color:#999;
+}
+.link-logout-topline:hover {
+    color:#ff7f40;
+}
+
+/*header*/
+.logo-header-plant {
+    width:158px;
+    height:43px;
+    background: url(http://faq.wan.liebao.cn/dist/009672d0e97cd8b0e63c2c85819148d8.png) no-repeat 0 0;
+    /*background: url(../images/logo.png) no-repeat 0 0;*/
+    text-indent: -9999px;
+    overflow: hidden;
+    float: left;
+    margin:22px 0 0 5px;
+}
+.logo-header-plant a {
+    display: block;
+}
+
+.l-nav-header {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    float: right;
+}
+.li-nav-header {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    float: left;
+    height:80px;
+    line-height:80px;
+    margin-left:25px;
+    padding-left:15px;
+}
+.cur-nav-header {
+    background:url(http://faq.wan.liebao.cn/dist/a1db8cae7fd7e9038afd0a5d15d46afc.png) no-repeat 0 35px;
+    /*background:url(../images/curicon_02.png) no-repeat 0 35px;*/
+}
+.link-nav-header {
+    width:68px;
+    display: block;
+    color:#333;
+    font-size:15px;
+}
+.cur-nav-header .link-nav-header {
+    color:#ff6615;
+}
+.hot-link-nav {
+    background: url(http://faq.wan.liebao.cn/dist/318653cc6253639e565666da441377e5.png) no-repeat 46px 20px;
+    /*background: url(../images/icon-h_03.png) no-repeat 46px 20px;*/
+}
+
+/* footer*/
+.l-top-footer {
+    height:114px;
+    padding-left:238px;
+    border-bottom:1px solid #d9d9d9;
+    color:#666;
+}
+.li-top-footer {
+    width:290px;
+    margin-right:30px;
+    padding-left:100px;
+    float: left;
+}
+.title-top-footer {
+    line-height:29px;
+    margin-top:6px;
+}
+.text-top-footer {
+    line-height:20px;
+}
+.link-service-footer {
+    background: url(http://faq.wan.liebao.cn/dist/2a28560626923ffbf3ce623246aeee72.png) no-repeat 0 0;
+    /*background: url(../images/btn-inservice.png) no-repeat 0 0;*/
+    width: 56px;
+    height: 18px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+    vertical-align: top;
+    margin: 0 0 0 8px;
+    text-align: center;
+    color: #f0f0f0;
+    line-height: 18px;
+}
+.link-service-footer:hover {
+    color:#fff;
+}
+.tutorship-top-footer {
+    background: url(http://faq.wan.liebao.cn/dist/468e68570cd86d0dc337bd4318cda185.png) no-repeat 0 0;
+    /*background: url(../images/ico-fcm.png) no-repeat 0 0;*/
+    height:64px;
+    padding-top:4px;
+    font-size:14px;
+}
+.service-top-footer {
+    background: url(http://faq.wan.liebao.cn/dist/9c651dab97ef7d8378dc90490f268eaa.png) no-repeat 0 0;
+    /*background: url(../images/ico-service.png) no-repeat 0 0;*/
+    height:62px;
+    padding-top:6px;
+    font-size:12px;
+}
+
+
+.wrap-links-footer {
+    margin-top:23px;
+}
+.wrap-links-footer,.text-btm-footer {
+    font-size:14px;
+    text-align: center;
+    color:#999;
+    height:28px;
+    line-height: 28px;
+}
+.link-links-footer {
+    color:#333;
+    margin:0 12px;
+}
+.part-btm-footer {
+    color:#333;
+    margin:0 7px;
+    font-size:12px;
+}
+
+
+.text-remark-footer,.copyright-footer {
+    text-align: center;
+    font-size:12px;
+    color:#666;
+}
+.text-remark-footer {
+    height:29px;
+    line-height: 29px;
+}
+.part-remark-footer {
+    margin:0 7px;
+}
+.link-remark-footer {
+    color:#666;
+}
+.link-remark-footer:hover {
+    color:#666;
+}
+
+
+.copyright-footer {
+    height:27px;
+    line-height: 27px;
+}
+.safe-check {
+    width: 83px;
+    height: 30px;
+    position: absolute;
+    top: 206px;
+    left: 920px;
+    background: url(http://faq.wan.liebao.cn/dist/f2f5a468a3058f3e69d477482c8804bb.png) no-repeat 0 0;
+    /*background: url(../images/safe-check.png) no-repeat 0 0;*/
+}

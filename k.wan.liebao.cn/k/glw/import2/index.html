@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>金山游戏中心 - 灌篮王</title>
+<link href="http://img.wan.ijinshan.com/topic/glw/import/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/topic/glw/import/js/function.js"></script>
+<!--[if lte IE 6]>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/belatedPNG.js"></script>
+<script type="text/javascript">
+  DD_belatedPNG.fix('.c_window');
+</script>
+<![endif]-->
+
+<!-- weikan trace -->
+<!-- 校验登录时会上报登录状态，so不能写到body结束之前 -->
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/analytics.min.js"></script>
+<script type="text/javascript">
+WebApp.analytics.trace('151010', '600', '', '', 'gamename:glwreg1|w:view');
+</script>
+<!-- weikan trace end -->
+</head>
+
+<body style="background: #000;">
+<!--页头代码-------------->
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global_v1/script/global.js?
+fWidth=100%&
+fHome=http://i.ijinshan.com/jump.php%3Fact%3Dforget%26source%3Dwebgame&
+fCs=http://cs&
+fPay=http://pay&
+fBbs=http://bbs&
+fReg=http://reg&
+fForget=http://forget&
+fSafe=http://safe&
+mode=header"></script>  
+<!--页头代码------end------>
+
+<div class="c_kuang">
+  <div class="c_flash"><script type="text/javascript">flashshow("http://img.wan.ijinshan.com/topic/glw/import/swf/features.swf" ,"1000" ,"600")</script></div>  
+  <div class="btn"><script type="text/javascript">flashshow("http://img.wan.ijinshan.com/topic/glw/import/swf/jrgh_btn.swf" ,"115" ,"90")</script></div>
+  <a href="javascript:void(0)" class="tanchuang" hidefocus="true"></a>
+</div>  
+ <div class="c_window mc" style="display:none">
+  <h2 class="title tc">金山游戏通行证</h2>
+  <div class="tab">
+    <ul class="mc clearfix register_bg">
+       <li class="fr">金山账号登录</li>
+       <li class="fl">新用户注册</li>
+    </ul>
+  </div>
+  <div id="register">
+   <iframe name="content_frame" allowtransparency="true" style="background-color=transparent" marginwidth="0" marginheight="0" width="540" height="220" scrolling="no" src="http://wan.ijinshan.com/u.php?a=reg&regtype=5&tpl=import1&style=import1&regsource_key=glw_import&redirect=http%3A%2F%2Fwan.ijinshan.com%2Fv%2F%3Fa%3Dloginwebgame%26webgame_serverid%3D67" frameborder="0"></iframe> 
+  </div>
+  <div id="login" style="display:none;"> 
+    <div class="login_after" id="login_after" style="display:none"><!--登录成功-->
+     <p class="yaHei welcome">欢迎您：<span id="pp"></span></p>
+     <p class="yaHei">推荐服务器:</p>
+       <ul class="clearfix">
+         <li><a href="http://wan.ijinshan.com/v/?a=loginwebgame&webgame_serverid=67" target="_blank">灌篮王1区</a></li>
+       </ul> 
+    </div>  
+  </div> 
+ </div> 
+</div>
+<div class="alert"></div>
+<script type="text/javascript">
+	var intfBase = 'http://wan.ijinshan.com/service/?jsoncallback=?';
+    $.getJSON(intfBase, {'do': 'u.panel_layout', "webgame_id": 14}, function (response) {
+		var userinfo = '';
+		var windowPanel = '';
+		switch (response.status) {
+            case '3':
+                $('#login_after').show();
+                $('#pp').html(response.data.userinfo.passport_mainname);
+                $('.tab ul li:eq(0)').click();
+                $('.tanchuang:eq(0)').click();
+                WebApp.analytics.trace('151010', '600', '', '', 'gamename:glwreg1|w:loginsuccess');
+			    break;
+            default:
+			    $('#login').html('<iframe name="content_frame" allowtransparency="true" style="background-color=transparent" marginwidth="0" marginheight="0" width="540" height="220" scrolling="no" src="https://login.ijinshan.com/?service=http://wan.ijinshan.com/u.php%3Fa%3Ddologin%26source%3Dwebgame%26redirect_info%3DaHR0cDovL3dhbi54b3lvLmNvbS90b3BpYy9nbHcvaW1wb3J0Lw&lp=https%3A%2F%2Flogin.ijinshan.com%2Fwebgame%2Flong2%2Findex.html&if=1" frameborder="0"></iframe>');
+			    break;
+		}
+	});
+</script>
+<div style="display:none">
+<script type="text/javascript" src="http://tajs.qq.com/stats?sId=20094265" charset="UTF-8"></script>
+</div>
+
+</body>
+</html>

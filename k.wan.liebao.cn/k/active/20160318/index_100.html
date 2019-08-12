@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>积分猎宝</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/base.css" />
+	<style>
+		html,body {
+			background:#febf2b;
+		}
+		.container {
+			width:100%;
+			background:url(images/bg.jpg) no-repeat 0 0 #febf2b;
+			background-position: center 0;
+		}
+		.content {
+			width:1000px;
+			margin:auto;
+			padding-top:70px;
+		}
+		.title-active {
+			width:1000px;
+			height:355px;
+			background:url(images/title_2_03.png) no-repeat 0 0;
+			text-indent:-99999px;
+		}
+		.mod-intro {
+			margin:93px auto 0;
+		}
+		.hd-intro {
+			width:395px;
+			height:80px;
+			margin:auto;
+			position:relative;
+			z-index:2;
+			text-indent:-9999px;
+			background: url(images/title-intro_07.png) no-repeat 0 0;
+		}
+		.bd-intro {
+			position:relative;
+			z-index:1;
+			top:-38px;
+			width:908px;
+			height:103px;
+			margin:auto;
+			padding:55px 32px 0;
+			line-height:25px;
+			font-size:16px;
+			text-indent:2em;
+			color: #311919;
+			background:url(images/bd-intro_07.png) no-repeat 0 0;
+		}
+		.mod-ticket {
+			box-sizing:border-box;
+			margin-top:32px;
+			padding:30px;
+			background: #f5f5f5;
+			border:6px solid #311919;
+			border-radius:20px;
+			position:relative;
+			z-index:9;
+		}
+		.mod-ticket:after {
+			content:'';
+			display:block;
+			height:0;
+			overflow:hidden;
+			clear:both;
+		}
+		.poster-ticket {
+			display:block;
+			width:390px;
+			height:390px;
+			float:left;
+		}
+		.bd-ticket {
+			width:492px;
+			margin-left:32px;
+			float:left;
+			position:relative;
+		}
+		.code-ticket {
+			box-sizing:border-box;
+			position:absolute;
+			z-index:3;
+			display:block;
+			width:134px;
+			height:46px;
+			padding-left:24px;
+			line-height:46px;
+			color:#fff;
+			text-decoration:underline;
+			font-size:16px;
+			right:-44px;
+			top:0;
+			/*background:url(images/ticketCode_14.png) no-repeat 0 0;*/
+			background:#fc324e;
+			border-top-left-radius:20px;
+			border-bottom-left-radius:20px;
+			cursor:pointer;
+		}
+		.history-ticket {
+			box-sizing:border-box;
+			position:absolute;
+			z-index:2;
+			display:block;
+			width:1000px;
+			padding:52px 15px 0;
+			text-align:center;
+			right:-44px;
+			top:0;
+			/*background:url(images/ticketCode_14.png) no-repeat 0 0;*/
+			background:#fff;
+			border-top-left-radius:20px;
+			border-bottom-left-radius:10px;
+			border:1px solid #999;
+			color:#311919;
+			display:none;
+		}
+		.title-history-ticket {
+			font-size:14px;
+			line-height:24px;
+		}
+		.l-history-ticket {
+			padding-bottom:15px;
+		}
+		.l-history-ticket li {
+			display:inline-block;
+			float:left;
+			line-height:30px;
+			font-size:16px;
+			padding:0 10px;
+		}
+		.progress {
+			background-color:#422d2d;
+			border-radius:10px;
+			width:492px;
+			height:18px;
+			margin-top:20px;
+		}
+		.progress-bar {
+			background-color:#fedd46;
+		}
+		.btn-ticket {
+			display:block;
+			width:260px;
+			height:80px;
+			line-height:80px;
+			text-align:center;
+			font-size:32px;
+			color:#fefefe;
+			background:#fc324e;
+			border:6px solid #fff;
+			border-radius:20px;
+			box-shadow:2px 2px 5px #e1e1e1;
+			box-sizing:content-box;
+			cursor:pointer;
+			margin:auto;
+		}
+		.bd-ticket h3 {
+			height:45px;
+			line-height:45px;
+			font-size:24px;
+			color:#422d2d;
+			letter-spacing:1px;
+		}
+		.bd-ticket h4 {
+			height:40px;
+			line-height:40px;
+			padding-left:12px;
+			font-size:18px;
+			color:#422d2d;
+			letter-spacing:1px;
+		}
+		.bd-ticket h4 span {
+			color:#fc324e;
+			padding-left:2px;
+		}
+
+		.l-ticket {
+			margin-top:5px;
+		}
+		.l-ticket:after {
+			content:'';
+			display:block;
+			height:0;
+			overflow:hidden;
+			clear:both;
+		}
+		.li-ticket {
+			float:left;
+		}
+		.li-ticket:nth-child(1) {
+			width:112px;
+		}
+		.li-ticket:nth-child(2) {
+			width:260px;
+		}
+		.li-ticket:nth-child(3) {
+			width:120px;
+		}
+		.li-ticket p {
+			line-height:22px;
+			font-size:16px;
+			color:#422d2d;
+			text-align: center;
+		}
+		.count-ticket {
+			width:260px;
+			height:26px;
+			margin:36px auto 40px;
+		}
+		.count-ticket .l {
+			display:block;
+			float:left;
+			width:64px;
+			line-height:26px;
+			padding-left:8px;
+			font-size:18px;
+			color:#422d2d;
+		}
+		.count-ticket .c {
+			border:1px solid #ccc;
+			float:left;
+		}
+		.count-ticket .c .itxt {
+			width:66px;
+			height:24px;
+			line-height:24px;
+			font-size:18px;
+			color:#422d2d;
+			font-size:16px;
+			color:#666;
+			text-align:center;
+			float:left;
+			border:none;
+		}
+		.count-ticket .c .glyphicon {
+			display:block;
+			width:24px;
+			height:24px;
+			background:#fff;
+			text-align:center;
+			top:0;
+			line-height:24px;
+			color:#333;
+			cursor:pointer;
+		}
+		.count-ticket .c .glyphicon-minus {
+			float:left;
+			border-right:1px solid #ccc;
+		}
+		.count-ticket .c .glyphicon-plus {
+			float:right;
+			border-left:1px solid #ccc;
+		}
+		.count-ticket .r {
+			width:64px;
+			line-height:26px;
+			float:right;
+			font-size:18px;
+			color:#422d2d;
+		}
+
+		.mod-get {
+			margin-top:10px;
+			width:1000px;
+		}
+		.hd-get {
+			width:239px;
+			height:80px;
+			margin:auto;
+			position:relative;
+			z-index:2;
+			text-indent:-9999px;
+			background:url(images/title-get_19.png) no-repeat 0 0;
+		}
+		.bd-get {
+			position:relative;
+			z-index:1;
+			top:-20px;
+			width:1000px;
+			margin:auto;
+		}
+		.bd-get table {
+			box-sizing:border-box;
+			border:2px solid #442f2d;
+		}
+		.bd-get table th {
+			width:100px;
+			background:#422d2d;
+			color:#f5f5f5;
+			font-size:16px;
+			height:60px;
+			border:1px solid #a0853a;
+			text-align:center;
+
+		}
+		.bd-get table td {
+			width:100px;
+			background:#fedd46;
+			height:65px;
+			color:#422d2d;
+			font-size:16px;
+			line-height:65px;
+			text-align:center;
+			border:1px solid #422d2d;
+		}
+		.bd-get table td .unopen {
+			color:#666;
+		}
+		.mod-explane {
+			margin-top:15px;
+		}
+		.hd-explane {
+			width:239px;
+			height:80px;
+			text-indent:-9999px;
+			margin:auto;
+			background:url(images/title-intro_22.png) no-repeat 0 0;
+			position:relative;
+			z-index:2;
+		}
+		.bd-explane {
+			width:940px;
+			height:382px;
+			margin:auto;
+			padding:54px 30px 0;
+			position:relative;
+			z-index:1;
+			top:-50px;
+			background:url(images/bg-explane_22.png) no-repeat 0 0;
+		}
+		.bd-explane p {
+			margin-bottom:20px;
+			line-height:26px;
+			font-size:16px;
+			color:#422d2d;
+		}
+		.bd-explane p a {
+			text-decoration:underline;
+		}
+
+		.dialog-mask {
+			width:100%;
+			height:100%;
+			background:#000;
+			opacity:.6;
+			position:absolute;
+			z-index:9999;
+			top:0;
+			left:0;
+			display:none;
+		}
+		.dialog {
+			position:fixed;
+			z-index:99999;
+			width:696px;
+			height:384px;
+			background:#f5f5f5;
+			border:4px solid #311919;
+			border-radius:16px;
+			left:50%;
+			top:100px;
+			margin-left:-348px;
+		}
+		.dialog-alert {
+			display:none;
+		}
+		.dialog-alert p {
+			margin-top:116px;
+			font-size:36px;
+			color:#311919;
+			text-align:center;
+		}
+		.dialog-alert .btn {
+			box-sizing:content-box;
+			display:block;
+			width:245px;
+			height:80px;
+			border:6px solid #fff;
+			border-radius:16px;
+			margin:80px auto 0;
+			background:#2cc356;
+			line-height:80px;
+			font-size:32px;
+			color:#fefefe;
+			text-align:center;
+			box-shadow:1px 1px 4px #ddd;
+			cursor:pointer;
+		}
+		.dailog-confirm {
+			display:none;
+		}
+		.dailog-confirm .l-btn {
+			width:558px;
+			margin:75px auto 0;
+		}
+		.dailog-confirm .l-btn:after {
+			content:'';
+			display:block;
+			height:0;
+			overflow:hidden;
+			clear:both;
+		}
+		.dailog-confirm .li-btn {
+			box-sizing:content-box;
+			display:block;
+			width:230px;
+			height:80px;
+			border:6px solid #fff;
+			border-radius:16px;
+			line-height:80px;
+			font-size:32px;
+			color:#fefefe;
+			text-align:center;
+			box-shadow:1px 1px 4px #ddd;
+			cursor:pointer;
+		}
+		.dailog-confirm .li-btn:nth-child(1) {
+			background:#fc324e;
+			float:left;
+		}
+		.dailog-confirm .li-btn:nth-child(2) {
+			background:#999;
+			float:right;
+		}
+		.dailog-confirm p {
+			margin-top:116px;
+			font-size:36px;
+			color:#311919;
+			text-align:center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<h3 class="title-active">积分猎宝</h3>
+			<div class="mod-intro">
+				<div class="hd-intro">云购开启，积分猎宝抢好礼</div>
+				<div class="bd-intro">活动期间内，官方为每张100元移动充值卡，准备了150个幸运码，玩家可消耗500积分获得一个幸运码。当150个幸运码发放完毕后，系统将根据规则，计算出中奖的幸运码，拥有此幸运码的用户，即可获得100元移动充值卡一张！</div>
+			</div>
+			<div class="mod-ticket">
+				<span class="poster-ticket"><img src="images/poster-ticket_03.png" alt="" /></span>
+				<div class="bd-ticket">
+					<span id="codeTicket" class="code-ticket">我的幸运码</span>
+					<div class="history-ticket">
+						<h6 class="title-history-ticket">目前为止您已拥有的猎宝码</h6>
+						<ul class="l-history-ticket"></ul>
+					</div>
+					<h3>［第<span id="installment">1</span>期］100元移动充值卡</h3>
+					<h4>价值：<span>75000</span></h4>
+					<div class="progress">
+						<div class="progress-bar" role="progressbar">
+							<span class="sr-only">20%</span>
+						</div>
+					</div>
+					<ul class="l-ticket">
+						<li class="li-ticket">
+							<p id="alreadyNum"></p>
+							<p>已参与人数</p>
+						</li>
+						<li class="li-ticket">
+							<p>150</p>
+							<p>总需人数</p>
+						</li>
+						<li class="li-ticket">
+							<p id="remainNum"></p>
+							<p>剩余人数</p>
+						</li>
+					</ul>
+					<div class="count-ticket">
+						<span class="l">猎宝：</span>
+						<div class="c">
+							<span class="glyphicon glyphicon-minus"></span>
+							<input id="perCount" class="itxt" type="text" value="1" readonly="true" />
+							<span class="glyphicon glyphicon-plus"></span>
+						</div>
+						<span class="r">人次</span>
+					</div>
+					<span id="buyResource" class="btn-ticket">立即猎宝</span>
+				</div>
+			</div>
+			<div class="mod-get">
+				<div class="hd-get">获奖幸运码</div>
+				<div class="bd-get">
+					<table>
+						<tr>
+							<th>第一期</th>
+							<th>第二期</th>
+							<th>第三期</th>
+							<th>第四期</th>
+							<th>第五期</th>
+							<th>第六期</th>
+							<th>第七期</th>
+							<th>第八期</th>
+							<th>第九期</th>
+							<th>第十期</th>
+						</tr>
+						<tr id="intallments">
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+							<td>
+								<span class="unopen">尚未开启</span>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="mod-explane">
+				<div class="hd-explane">活动说明</div>
+				<div class="bd-explane">
+					<p>1、积分是金山猎豹游戏中心积分商城中兑换物品的一种虚拟货币，每充值1元可自动获得1积分，人民币和积分的获得比例是1:1。</p>
+					<p>2、<a target="_blank" href="http://wan.liebao.cn/activity/">积分猎宝(点击了解详情）</a>活动期间内，移动100元充值卡将开启积分猎宝，将该充值卡平分成150份幸运码，每份为500积分。
+例：玩家A花费15000积分购买了30份，获得了30个幸运码，玩家B花费500积分购买了1份，获得了1个幸运码，玩家C花费25000购买了50份，获得了50个幸运码，玩家D花费34500积分购买了剩下的69份，获得了69个幸运码。此时该商品的所有等份（即150份）全部售出，那么系统会通过特定计算方式从4个玩家一共获得的150个幸运码中抽取一个作为幸运码，拥有此码的玩家便可获得这张100元充值卡。</p>
+					<p>3、获得积分商城的积分可在“积分商城-兑换记录”中查看明细。</p>
+					<p>4、如对活动有什么不明之处，请在参与前联系客服。如获得实物奖励的玩家可联系在线客服进行信息记录，我们会在核实信息后给小豹们发送奖励。</p>
+					<p>5、本活动最终解释权由金山猎豹游戏中心所有。</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="dialog-mask"></div>
+	<div class="dialog dialog-alert">
+		<p class="dialog-msg"></p>
+		<span class="btn btn-closeD">返回活动页面</span>
+	</div>
+	<div class="dialog dailog-confirm">
+		<p>您是否确定猎宝</p>
+		<ul class="l-btn">
+			<li id="confirmBuy" class="li-btn">确定</li>
+			<li class="li-btn btn-closeD">取消</li>
+		</ul>
+	</div>
+	<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js?t=201410311102"></script>
+    <script type="text/javascript" src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/lucky/Helper/Login/1.0.1/Login.min.js?t=201410311102"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/header/1.0.0/header_login.js?t=201410311102"></script>
+    <script type="text/javascript" src="js/help100.js"></script>
+</body>
+</html>

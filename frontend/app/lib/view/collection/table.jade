@@ -1,0 +1,19 @@
+table(id= tid || entity + 'tb', class= tbStyle)
+    if thead
+        thead
+            tr
+                each it in cols
+                    - var ww = it.w
+                    if it.code == '_btn' && !ww
+                        - ww = btnLength * btnWidth + 4 + 'px'
+
+                    else if it.code == '_ckb'
+                        - ww = '35px'
+
+                    th.labels(style="width:#{ww||'auto'}")
+                        if it.noLabel || it.code == '_btn'
+                        else if it.code == '_ckb'
+                            input.ckb.text-center(type='checkbox')
+                        else
+                            = it.label || i18.iie(entity,it.code)
+    tbody.refresh

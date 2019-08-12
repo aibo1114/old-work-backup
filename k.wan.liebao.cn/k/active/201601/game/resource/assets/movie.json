@@ -1,0 +1,41 @@
+﻿{
+"mc": {
+	"enemy": {
+		"frameRate":10,
+		"labels": [
+			{"name":"walk","frame":1},
+			{"name":"stand","frame":3},
+			{"name":"shoot","frame":4}
+		],
+		"frames": [
+			{"res":"enemy0000","x":0,"y":0},
+			{"res":"enemy0001","x":0,"y":0},
+			{"res":"enemy0002","x":0,"y":0},
+			{"res":"enemy0003","x":0,"y":0}
+		]
+	},
+	"woman": {
+		"frameRate":10,
+		"labels": [
+			{"name":"walk","frame":1},
+			{"name":"stand","frame":3}
+		],
+		"frames": [
+			{"res":"woman0000","x":0,"y":0},
+			{"res":"woman0001","x":0,"y":0},
+			{"res":"woman0002","x":0,"y":0},
+			{"res":"woman0003","x":0,"y":0}
+		]
+	}
+},
+"res": {
+	"enemy0000":{"x":0,"y":0,"w":131,"h":171},
+	"enemy0001":{"x":0,"y":171,"w":131,"h":171},
+	"enemy0002":{"x":131,"y":0,"w":131,"h":171},
+	"enemy0003":{"x":131,"y":171,"w":131,"h":171},
+	"woman0000":{"x":262,"y":0,"w":86,"h":175},
+	"woman0001":{"x":348,"y":0,"w":86,"h":175},
+	"woman0002":{"x":262,"y":175,"w":86,"h":175},
+	"woman0003":{"x":348,"y":175,"w":86,"h":175}
+}
+}

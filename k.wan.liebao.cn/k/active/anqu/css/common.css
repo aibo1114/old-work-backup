@@ -1,0 +1,262 @@
+/*reset*/
+a {
+  text-decoration: none;
+}
+/*layout*/
+#topline {
+  width: 100%;
+  height: 40px;
+  background: #333;
+}
+.topline {
+  width: 1170px;
+  margin: auto;
+}
+.topline:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.link-tools {
+  font-size: 12px;
+  color: #e5e5e5;
+  padding-left: 2px;
+}
+#header {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.header {
+  width: 1170px;
+  margin: auto;
+}
+.header:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+#footer {
+  width: 100%;
+  height: 142px;
+  background: #f5f5f5;
+}
+.footer {
+  width: 1170px;
+  margin: auto;
+  text-align: center;
+}
+.footer:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.container {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: relative;
+}
+.content {
+  background: #fff;
+  position: absolute;
+  z-index: 2;
+  top: auto;
+  bottom: 20px;
+  left: 50%;
+  right: auto;
+  margin-left: -585px;
+}
+.main {
+  display: block;
+  width: 834px;
+  float: left;
+}
+.sidebar {
+  display: block;
+  width: 326px;
+  float: left;
+  padding-left: 10px;
+}
+/*mod*/
+.l-tools {
+  display: block;
+  width: 300px;
+  float: right;
+}
+.l-tools:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-tools {
+  display: inline-block;
+  float: left;
+  width: auto;
+  height: 40px;
+  line-height: 40px;
+  font-size: 12px;
+  color: #e5e5e5;
+  margin-left: 30px;
+  cursor: pointer;
+}
+.li-tools.setIndex {
+  padding-left: 20px;
+  background: url('http://static.web.anqu.com/resource/999/images/toolIcon_03.png') no-repeat 0 12px;
+}
+.li-tools.collect {
+  padding-left: 20px;
+  background: url('http://static.web.anqu.com/resource/999/images/toolIcon_05.png') no-repeat 0 12px;
+}
+.li-tools.desktop {
+  padding-left: 20px;
+  background: url('http://static.web.anqu.com/resource/999/images/toolIcon_07.png') no-repeat 0 12px;
+}
+.logo {
+  display: block;
+  width: 107px;
+  height: 46px;
+  margin-top: 18px;
+  float: left;
+}
+.logo a {
+  display: block;
+  width: 107px;
+  height: 46px;
+  padding-left: 0;
+  background: url('http://static.web.anqu.com/resource/999/images/logo_13.png') no-repeat 0 0;
+  text-indent: -9999px;
+}
+.l-nav {
+  display: inline-block;
+  float: left;
+  width: auto;
+  height: auto;
+  line-height: auto;
+  padding-left: 20px;
+}
+.l-nav:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-nav {
+  display: inline-block;
+  float: left;
+  width: 133px;
+  height: 86px;
+  line-height: 86px;
+  text-align: center;
+}
+.link-nav {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  line-height: auto;
+  font-size: 16px;
+  color: #333;
+}
+.link-nav:hover {
+  font-size: auto;
+  color: #3d9fed;
+}
+.link-nav.grey {
+  font-size: 16px;
+  color: #999;
+}
+.link-nav.grey:hover {
+  font-size: auto;
+  color: #999;
+}
+.user {
+  display: inline-block;
+  float: right;
+  width: auto;
+  height: 86px;
+  line-height: 86px;
+  font-size: 14px;
+  color: #333;
+}
+.name-user {
+  font-size: 14px;
+  color: #f0641e;
+  margin-left: 4px;
+}
+.logout-user {
+  font-size: 14px;
+  color: #999;
+  margin-left: 24px;
+}
+.logout-user:hover {
+  color: #3d9fed;
+}
+.l-footer {
+  width: 1000px;
+  margin: auto;
+  height: 38px;
+  padding-top: 23px;
+  text-align: center;
+  border-bottom: 2px solid #2d7cff;
+}
+.l-footer:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-footer {
+  display: inline-block;
+  width: auto;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+}
+.link-footer {
+  display: inline-block;
+  width: auto;
+  height: 12px;
+  line-height: 12px;
+  font-size: 12px;
+  color: #333;
+  padding: 0 30px;
+  border-left: 1px solid #333;
+}
+.link-footer.first {
+  border: none;
+}
+.link-footer:hover {
+  font-size: auto;
+  color: #000;
+}
+.text-footer {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #333;
+}
+.text-footer .part {
+  padding: 0 36px;
+}

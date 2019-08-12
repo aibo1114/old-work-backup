@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="zh" class="ie6"><![endif]-->
+<!--[if IE 7 ]><html lang="zh" class="ie7"><![endif]-->
+<!--[if IE 8 ]><html lang="zh" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html lang="zh" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+
+<html lang="en">
+<!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/base.css?t=201606081953">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>手游首页</title>
+</head>
+
+<body>
+	<div class="mg-warp">
+		<div class="mg-nav">
+			<div class="banner">
+				<div class="banner_locator">
+					<ul>
+						<li class="border_right"><a href="http://wan.liebao.cn/" target="_blank">页游中心</a></li>
+						<li class="border_right"><a onclick="AddFavorite(window.location,document.title)" id="add_me">收藏本站</a></li>
+						<li class="border_right"><a onclick="setHome('http://k.wan.liebao.cn/k/active/20160725/index.html');" id="set_front">设为首页</a></li>
+						<li><a href="#" target="_self">放到桌面</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="navs">
+				<div class="navs_img">
+					<img src="./imgs/nav.jpg">
+				</div>
+			</div>
+		</div>
+		<div class="mg-inner">
+			<div class="mg-carousel">
+				<div id="banner_tabs" class="flexslider">
+					<ul class="slides">
+						<li>
+							<a title="" target="_blank" href="http://ks.wan.liebao.cn">
+								<img width="984" height="319" alt="" style="background: url(imgs/banner01.jpg) no-repeat center;" >
+							</a>
+						</li>
+						<li>
+							<a title="" target="_blank" href="https://itunes.apple.com/cn/app/gang-qin-kuai2-bie-cai-bai/id1027688889?mt=8">
+								<img width="984" height="319" alt="" style="background: url(imgs/banner02.jpg) no-repeat center;" >
+							</a>
+						</li>
+					</ul>
+					<ul class="flex-direction-nav">
+						<li><a class="flex-prev" href="javascript:;"></a></li>
+						<li><a class="flex-next" href="javascript:;"></a></li>
+					</ul>
+			</div>
+			<!--推荐游戏-->
+			<div class="mg-recommendedGames form_width">
+				<div class="title_recommend">
+					<img src="./imgs/recommend_title.jpg">
+				</div>
+				<div class="recommend_content">
+					<div class="recommend_games">
+						<div class="game_left" style="position:relative;">
+							<div class="logos">
+								<img src="./imgs/sniper.jpg" style="float:left;">
+							</div>
+							<div class="words">
+								<img src="./imgs/sniper_words.jpg" style="float:left;">
+							</div>
+							<a href="http://ks.wan.liebao.cn/" target="_blank" class="recommend_words">进入官网>></a>
+							<div class="downloads" id="sniper">
+								<img src="./imgs/download_btn.jpg" style="float:left;margin-right:25px;cursor:pointer;">
+							</div>
+							<img src="./imgs/iphone_android.jpg" style="float:right;margin-left:20px;">
+							<div class="qrcodes_sniper" style="display:none;">
+								<img src="./imgs/qrsniper.jpg">
+								<img src="./imgs/close.jpg" class="close_btn">
+							</div>
+						</div>
+						<div class="game_center" style="position:relative;">
+							<div class="logos">
+								<img src="./imgs/pianologo.jpg" style="float:left;">
+							</div>
+							<div class="words">
+								<img src="./imgs/piano_words.jpg" style="float:left;">
+							</div>
+							<div class="downloads" id="piano">
+								<img src="./imgs/download_btn.jpg" style="float:left;margin-right:25px;margin-top:30px;cursor:pointer;">
+							</div>
+							<img src="./imgs/iphone_android.jpg" style="float:right;margin-left:20px;">
+							<div class="qrcodes_piano" style="display:none;">
+								<img src="./imgs/qrpiano.jpg">
+								<img src="./imgs/close.jpg" class="close_btn">
+							</div>
+						</div>
+						<div class="game_right" style="position:relative;">
+							<div class="logos">
+								<img src="./imgs/pandemic.jpg" style="float:left;">
+							</div>
+							<div class="words">
+								<img src="./imgs/disease_words.jpg" style="float:left;">
+							</div>
+							<a href="http://wygs.wan.liebao.cn/" target="_blank" class="recommend_words">进入官网>></a>
+							<div class="downloads" id="disease">
+								<img src="./imgs/download_btn.jpg" style="float:left;margin-right:25px;cursor:pointer;">
+							</div>
+							<img src="./imgs/iphone_android.jpg" style="float:right;margin-left:20px;">
+							<div class="qrcodes_disease" style="display:none;">
+								<img src="./imgs/qrdisease.jpg">
+								<img src="./imgs/close.jpg" class="close_btn">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--热点资讯-->
+			<div class="mg-hotAndissue">
+				<div class="form_width">
+					<div class="hot_info">
+						<div class="info_title">
+							<img src="./imgs/info.jpg">
+						</div>
+						<div class="info_content">
+							<div class="info_pic">
+								<a href="http://ks.wan.liebao.cn/" target="_blank"><img src="./imgs/info_pic.jpg"></a>
+							</div>
+							<div class="infos">
+								<span class="main_title">
+									<a href="http://ks.wan.liebao.cn/p/a/6/6641.html" target="_blank">狙击竞技手游《致命狙击》今日公测</a>
+								</span>
+								<div class="main_title_bottom"></div>
+								<ul>
+									<li>
+										<span class="spot"></span><a href="http://ks.wan.liebao.cn/p/a/6/6640.html" target="_blank" class="small_titles">枪火玫瑰 《致命狙击》真人微电影今日公开</a>
+									</li>
+									<li>
+										<span class="lines">------------------------------------------------------</span>
+									</li>
+									<li>
+										<span class="spot"></span><a href="http://ks.wan.liebao.cn/p/a/6/6639.html" target="_blank" class="small_titles">国服首个大版本 《致命狙击》公测迎海量更新</a>
+									</li>
+									<li>
+										<span class="lines">------------------------------------------------------</span>
+									</li>
+									<li>
+										<span class="spot"></span><a href="http://ks.wan.liebao.cn/p/a/6/6638.html" target="_blank" class="small_titles">《致命狙击》研发大探秘 世界级FPS如何打造</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="pub_games">
+						<div class="pub_title">
+							<img src="./imgs/pub_title.jpg">
+						</div>
+						<div class="pub_content">
+							<ul>
+								<li>
+									<a href="http://nuan.wan.liebao.cn/p/index.html" target="_blank"><img src="./imgs/pub_nuannuan.jpg"></a>
+								</li>
+								<li>
+									<a href="http://tt.wan.liebao.cn/" target="_blank"><img src="./imgs/pub_xiyou.jpg"></a>
+								</li>
+								<li>
+									<a href="http://god.liebao.cn/" target="_blank"><img src="./imgs/pub_wargod.jpg"></a>
+								</li>
+								<li>
+									<a href="http://3d.wan.liebao.cn/" target="_blank"><img src="./imgs/pub_monkeyking.jpg"></a>
+								</li>
+								<li>
+									<a href="http://mx.wan.liebao.cn/" target="_blank"><img src="./imgs/pub_moegod.jpg"></a>
+								</li>
+								<li>
+									<a href="http://zx.wan.liebao.cn/" target="_blank"><img src="./imgs/pub_feixian.jpg"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--猎豹平台资源-->
+			<div class="mg-liebaoResource">
+				<div class="form_width">
+					<div class="platform_title">
+						<img src="./imgs/cheetah_platform.jpg">
+					</div>
+					<div class="other_products">
+						<div class="products_list">
+							<ul>
+								<li>
+									<a href="http://cn.cmcm.com/cleanmaster/?f=cmcn" target="_blank"><img src="./imgs/cm.jpg"></a>
+								</li>
+								<li>
+									<a href="http://cn.cmcm.com/cm-security/?f=www" target="_blank"><img src="./imgs/safety.jpg"></a>
+								</li>
+								<li>
+									<a href="http://v.cmcm.com/app/?f=cmcn" target="_blank"><img src="./imgs/toupai.jpg"></a>
+								</li>
+								<li>
+									<a href="http://m.liebao.cn/?f=cmcn" target="_blank"><img src="./imgs/browser.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.ishengdian.cn/?f=cmcn" target="_blank"><img src="./imgs/battery.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.cmcm.com/zh-cn/photo-grid/?f=cmcn" target="_blank"><img src="./imgs/grid.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.cmcm.com/zh-cn/cm-launcher/?f=cmcn" target="_blank"><img src="./imgs/launcher.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.cmcm.com/zh-cn/cm-locker/?f=cmcn" target="_blank"><img src="./imgs/locker.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.antutu.com/index.shtml?f=cmcn" target="_blank"><img src="./imgs/antutu.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.51wnl.com/?f=cmcn" target="_blank"><img src="./imgs/calendar.jpg"></a>
+								</li>
+								<li>
+									<a href="http://cn.cmcm.com/activity/push/bd/newsapp/1/" target="_blank"><img src="./imgs/news.jpg"></a>
+								</li>
+								<li>
+									<img src="./imgs/etc.jpg">
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--全球合作伙伴-->
+			<div class="mg-globalPartner">
+				<div class="form_width">
+					<div class="global_title">
+						<img src="./imgs/global_partner.jpg">
+					</div>
+					<div class="global_partner">
+						<div class="blue_strip"></div>
+						<div class="partner_content">
+							<ul>
+								<li>
+									<a href="https://www.facebook.com/" target="_blank"><img src="./imgs/facebook.jpg"></a>
+								</li>
+								<li>
+									<a href="https://www.google.com.hk/?gws_rd=ssl" target="_blank"><img src="./imgs/google.jpg"></a>
+								</li>
+								<li>
+									<a href="https://hk.yahoo.com/?p=us" target="_blank"><img src="./imgs/yahoo.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.mi.com/" target="_blank"><img src="./imgs/xiaomi.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.10086.cn" target="_blank"><img src="./imgs/chinamobile.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.189.cn" target="_blank"><img src="./imgs/telecom.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.10010.com" target="_blank"><img src="./imgs/unicom.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.xishanju.com/" target="_blank"><img src="./imgs/xishanju.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.ksyun.com/" target="_blank"><img src="./imgs/cloud.jpg"></a>
+								</li>
+								<li>
+									<a href="http://www.wps.cn/" target="_blank"><img src="./imgs/wps.jpg"></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--更多合作伙伴-->
+			<div class="mg-morePartner">
+				<div class="form_width">
+					<div class="more_title">
+						<img src="./imgs/more_partners.jpg">
+					</div>
+					<div class="blue_strip"></div>
+					<div class="more_partner">
+						<ul>
+							<li>
+								<a href="http://www.qq.com/" target="_blank">腾讯</a>
+							</li>
+							<li>
+								<a href="https://www.baidu.com/" target="_blank">百度</a>
+							</li>
+							<li>
+								<a href="https://www.1688.com/" target="_blank">阿里巴巴</a>
+							</li>
+							<li>
+								<a href="http://www.htc.com/cn/" target="_blank">HTC</a>
+							</li>
+							<li>
+								<a href="http://android.myapp.com/" target="_blank">应用宝</a>
+							</li>
+							<li>
+								<a href="http://mgame.baidu.com/" target="_blank">百度游戏</a>
+							</li>
+							<li>
+								<a href="http://www.aliplay.com/" target="_blank">阿里游戏</a>
+							</li>
+							<li>
+								<a href="http://www.9game.cn/" target="_blank">九游</a>
+							</li>
+							<li>
+								<a href="http://www.oppo.com" target="_blank">OPPO</a>
+							</li>
+							<li>
+								<a href="http://game.vmall.com/" target="_blank">华为游戏</a>
+							</li>
+							<li>
+								<a href="http://zs.vivo.com.cn/" target="_blank">vivo游戏</a>
+							</li>
+							<li>
+								<a href="http://bbs.lenovogame.com/" target="_blank">联想游戏</a>
+							</li>
+							<li>
+								<a href="http://game.gionee.com/Front/Index/index/?intersrc=mobileweb" target="_blank">金立游戏</a>
+							</li>
+							<li>
+								<a href="http://www.coolpad.com/?ozs=59011-2397" target="_blank">酷派</a>
+							</li>
+							<li>
+								<a href="http://www.meizu.com" target="_blank">魅族</a>
+							</li>
+							<li>
+								<a href="https://www.wandoujia.com/" target="_blank">豌豆荚</a>
+							</li>
+							<li>
+								<a href="http://www.4399.com/" target="_blank">4399</a>
+							</li>
+							<li>
+								<a href="http://www.appgame.com/" target="_blank">任玩堂</a>
+							</li>
+							<li>
+								<a href="http://www.18touch.com/" target="_blank">超好玩</a>
+							</li>
+							<li>
+								<a href="http://www.youxiduo.com/" target="_blank">游戏多</a>
+							</li>
+							<li>
+								<a href="http://www.gamedog.cn/" target="_blank">游戏狗</a>
+							</li>
+							<li>
+								<a href="http://www.mofang.com/" target="_blank">魔方网</a>
+							</li>
+							<li>
+								<a href="http://www.joyme.com/" target="_blank">着迷网</a>
+							</li>
+							<li>
+								<a href="http://www.ptbus.com/" target="_blank">口袋巴士</a>
+							</li>
+							<li>
+								<a href="http://www.18183.com/" target="_blank">18183</a>
+							</li>
+							<li>
+								<a href="http://games.sina.com.cn/" target="_blank">新浪游戏</a>
+							</li>
+							<li>
+								<a href="http://www.shouyou.com/" target="_blank">手游网</a>
+							</li>
+							<li>
+								<a href="http://youxiputao.com/" target="_blank">游戏葡萄</a>
+							</li>
+							<li>
+								<a href="http://games.qq.com/" target="_blank">腾讯游戏频道</a>
+							</li>
+							<li>
+								<a href="http://www.gao7.com/" target="_blank">搞趣</a>
+							</li>
+							<li>
+								<a href="http://www.uuu9.com/" target="_blank">游久</a>
+							</li>
+							<li>
+								<a href="http://www.5253.com/" target="_blank">5253</a>
+							</li>
+							<li>
+								<a href="http://www.72g.com/" target="_blank">72G</a>
+							</li>
+							<li>
+								<a href="http://www.pcgames.com.cn/" target="_blank">太平洋游戏网</a>
+							</li>
+							<li>
+								<a href="http://game.91.com/" target="_blank">91手游网</a>
+							</li>
+							<li>
+								<a href="http://www.sfw.cn/" target="_blank">上方网</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--联系我们-->
+			<div class="mg-connectUs">
+				<div class="form_width">
+					<div class="contact_us">
+						<img src="./imgs/contact_us.jpg">
+					</div>
+					<div class="contact_info">
+						<img src="./imgs/contact_info.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="footero">
+      <div class="footer">
+        <p class="lin"><a target="_blank" href="http://wan.liebao.cn/game_list.html">游戏中心 |</a><a target="_blank" href="http://wan.liebao.cn/user/?kstag=changeuserinfo">帐号安全 |</a><a target="_blank" href="http://wan.liebao.cn/action/redirect_kf.php?gid=1066">客服中心 |</a><a target="_blank" href="http://i.wan.liebao.cn/jz/jiazhang.htm">家长监控</a></p>
+        <p>抵制不良游戏　拒绝盗版游戏　注意自我保护　谨防受骗上当　适度游戏益脑　沉迷游戏伤身　合理安排时间　享受健康生活</p>
+        <p class="p3">软著登字第1123541号 | 新广出审[2016]383号</p>
+        <p class="dline"><span>COPYRIGHT 2012 <a href="http://wan.liebao.cn/" target="_blank">WAN.LIEBAO.CN</a> ALL RIGHTS RESERVED.</span></p>
+      </div>
+    </div>
+		</div>
+	</div>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript" src="./js/slider.js"></script>
+<script type="text/javascript">
+   $(function() {
+	var bannerSlider = new Slider($('#banner_tabs'), {
+		time: 5000,
+		delay: 400,
+		event: 'hover',
+		auto: true,
+		mode: 'fade',
+		controller: $('#bannerCtrl'),
+		activeControllerCls: 'active'
+	});
+	$('#banner_tabs .flex-prev').click(function() {
+		bannerSlider.prev()
+	});
+	$('#banner_tabs .flex-next').click(function() {
+		bannerSlider.next()
+	});
+})
+</script>
+<script type="text/javascript" src="./js/download.js"></script>
+<script type="text/javascript">
+function AddFavorite(sURL, sTitle)
+{
+    try
+    {
+        window.external.addFavorite(sURL, sTitle);
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel(sTitle, sURL, "");
+        }
+        catch (e)
+        {
+            alert("加入收藏失败，请使用Ctrl+D进行添加");
+        }
+    }
+}
+</script>
+<script type="text/javascript">
+function setHome(url) { 
+	
+	if (document.all){ 
+		document.body.style.behavior='url(#default#homepage)'; 
+		document.body.setHomePage(url); 
+		}
+	else if(window.sidebar){ 
+			if(window.netscape){ 
+				try{ 
+					netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect"); 
+			}catch (e){ 
+				alert("感谢您添加我们的网站！");
+			} 
+		} if(window.confirm("你确定要设置"+url+"为首页吗？")==1){ 
+			var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch); 
+			prefs.setCharPref('browser.startup.homepage',url); 
+		} 
+	}else{
+		alert('该操作被浏览器拒绝，请检查您的浏览器配置。');
+	}
+} 
+</script>
+</body>
+</html>

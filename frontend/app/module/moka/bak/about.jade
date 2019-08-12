@@ -1,0 +1,203 @@
+extends inc/main
+
+block style
+    :less(minify=true)
+        .intro {
+            margin:30px 0 80px;
+            height: 50px;
+            position: relative;
+            p {
+                padding-left:140px;
+                padding-top:4px;
+                line-height:25px;
+                font-size:14px;
+                color:#666;
+                letter-spacing:1px;
+            }
+            &:before {
+                content:'恋爱能量';
+                display:block;
+                top:0;
+                left:0;
+                position:absolute;
+                font-size:26px;
+                color:#f63c3c;
+                width:60px;
+                height:80px;
+                line-height:1.2em;
+            }
+            &:after {
+                content:'';
+                display:block;
+                position:absolute;
+                width:1px;
+                height:62px;
+                background:#ddd;
+                top:0;
+                left:96px;
+            }
+        }
+
+        .l-exper-about {
+            overflow:hidden;
+            padding:60px 0 100px;
+            position:relative;
+            border-top:1px solid #eee;
+            border-bottom:1px solid #eee;
+            &:before {
+                content:'';
+                display:block;
+                position:absolute;
+                bottom:20px;
+                left:50%;
+                margin-left:-0.5px;
+                width:1px;
+                height:100%;
+                background:#eee;
+            }
+            li {
+                position:relative;
+                &:before {
+                    content:'';
+                    display:block;
+                    position:absolute;
+                    top:6px;
+                    width:15px;
+                    height:15px;
+                    background:#aaa;
+                    border:2px solid #fff;
+                    border-radius: 50%;
+                    box-shadow:0 0 0 1px #eee;
+                }
+                &:nth-child(odd) {
+                    margin-left: 50%;
+                    padding-left: 54px;
+                    &:before {
+                        left:-8px;
+                    }
+                }
+                &:nth-child(even) {
+                    margin-right: 50%;
+                    padding-right: 54px;
+                    &:before {
+                        right: -8px;
+                    }
+                    h4 {
+                        text-align:right;
+                    }
+                }
+                h4 {
+                    color:#f63c3c;
+                    margin-top:0;
+                    line-height:1.6em;
+                }
+                p {
+                    color:#666;
+                }
+            }
+        }
+
+        .l-admin-about {
+            padding:25px 20px 40px;
+            margin:0;
+            li {
+                padding:0 60px;
+                h4 {
+                    font-size:22px;
+                    color:#333;
+                    margin:25px 0 6px;
+                    text-align:center;
+                }
+                p {
+                    text-align:center;
+                    font-size:14px;
+                    color:#999;
+                }
+            }
+        }
+        .mod-address-moka {
+            background: #352d2f;
+            border-bottom: 1px solid #938f90;
+            overflow:hidden;
+            .jumbotron {
+                width:41.1526%;
+                margin:90px auto;
+                background:#f63c3c;
+                border-radius:0 !important;
+                color:#fff;
+                text-align:center;
+                h4 {
+                    margin:5px 0;
+                    font-size:22px;
+                }
+                p {
+                    font-size:20px;
+                }
+
+                h5 {
+                    font-size: 12px;
+                    margin:10px 0 20px;
+                }
+                .glyphicon {
+                    font-size:28px;
+                }
+
+            }
+        }
+
+mixin hostInfo(obj)
+    .media
+        .media-left
+            !=f.imgItem(obj, c, name = 'head', 'media-object')
+        .media-body
+            h4= obj.username
+                span= obj.title
+            if block
+                block
+
+mixin subTitle(arr)
+    each it in arr
+        h5= it
+
+mixin exper(arr)
+    ul.l-exper-about
+        each it in arr
+            li
+                h4!= it.title
+                p!= it.text
+mixin admin(arr)
+    ul.l-admin-about.row
+        each it in arr
+            li.col-md-3
+                !=f.imgItem(it, c, name = 'head', 'poster')
+                h4= it.username
+                p= it.title
+
+block content
+    //-var exper=leader.exp
+    -var exper=leader.exper
+    -var subtitle=leader.subtitle
+    .row
+        .col-md-8.col-md-push-2
+            .intro
+                p 恋爱能量是一家专门服务新一代中国男士的互联网企业,致力于帮助男性获得情感自由和生活品质的提升.目前我们的服务包括恋爱教学,挽回狙击,形象改造,情感诊断.
+    .panel.panel-about-moka
+        .panel-heading
+            h4.title 我们的团队
+            .row
+                .col-md-6.col-md-push-3
+                    +hostInfo(leader)
+                        +subTitle(subtitle)
+        .panel-body
+            +exper(exper)
+        .panel-footer
+            +admin(admin)
+    .mod-address-moka
+        .jumbotron
+            span.glyphicon.glyphicon-map-marker
+            h5 北京市朝阳区
+            h4 水郡长安二号院三号楼
+            p 186&nbsp;&nbsp;8143&nbsp;&nbsp;8989
+
+block st
+    :coffee(bare=true,minify=true)

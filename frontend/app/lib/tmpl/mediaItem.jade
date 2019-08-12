@@ -1,0 +1,31 @@
+- m = left || 'col-xs-2 p-r-h p0'
+- p = right || 'col-xs-10'
+
+if refFile
+    if func == 'portrait'
+        -imgPath = +userPic(locals)
+    else if refFile[func]
+        - imgPath = f.resPath(c,refFile[func][0])
+
+if imgPath
+    div(class=m)
+        if imgPath.startsWith('<')
+            != imgPath
+        else
+            != f.img(imgPath, imgCls)
+else
+    - p = 'col-xs-12'
+
+div(class=p)
+    .media-title!= title
+        if subTitle
+            if subNewLine
+                br
+                small!= subTitle
+            else
+                small.pull-xs-right!= subTitle
+    if brief
+        .media-text!= brief
+
+if btn
+    .btnCtn.f-btn

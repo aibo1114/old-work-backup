@@ -1,0 +1,22 @@
+<div class="dialog content-dialog picker" ng-if="open" style="width:450px; margin-left: -225px;">
+    <span class="fork-dialog" ng-click="evts.close();">X</span>
+    <div class="hd-dialog">
+        <h4 class="title-hd-dialog dicon-gift">已领取礼包</h4>
+    </div>
+    <div class="bd-dialog bd-dialog-pkg scrollbar-inner" jquery-scrollbar>
+        <ul class="l-getted-package">
+            <li ng-repeat="it in list" ng-class="{'last-getted-packag':$index==list.length-1}" class="li-getted-package">
+                <div class="left-li-pgetted">
+                    <span class="glyphicon glyphicon-gift"></span>
+                </div>
+                <div class="right-li-pgetted" >
+                    <h4 class="name-li-pgetted">{{it.game_name}}</h4>
+                    <p class="code-li-pgetted">{{it.code}}</p>
+                    <button class="btn-li-pgetted" hover-class="hvr-li-pgetted" ng-click="evts.copyCode(it.code);">复制</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<span class="ieshadow-dialog ieshadow-picker" style="width:450px; margin-left: -225px;"></span>
+

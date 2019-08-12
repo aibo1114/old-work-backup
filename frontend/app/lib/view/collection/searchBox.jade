@@ -1,0 +1,8 @@
+.searchBox.clearfix
+    .has-feedback
+        input#q.form-control.input-sm(name= name||'q', type='text', placeholder= (label||'搜索') + '...')&attributes(attr||{})
+        if !btn
+            != f.icon('search', 'i', null, 'form-control-feedback search pt')
+
+    if btn
+        a.btn.search(class= btn)= ii('search')

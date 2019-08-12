@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "strict_email.js",
+  "sourceRoot": "",
+  "sources": [
+    "strict_email.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,OAAP,GAAiB,SAAC,CAAD,EAAI,CAAJ;WACb,CAAC,y4BAAy4B,CAAC,IAA14B,CAA+4B,CAA/4B;EADY;AAAjB"
+}

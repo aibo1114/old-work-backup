@@ -1,0 +1,6 @@
+extends ./inc/main
+
+block content
+    input#giftCode(type='hidden' value=c.giftCode)
+    if c.endDate
+        input#endDate(type='hidden' value=c.endDate.getTime())

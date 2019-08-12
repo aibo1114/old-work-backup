@@ -1,0 +1,18 @@
+each it in menus
+    if it.children
+        li
+            a(data-toggle='dropdown' onclick='app.userHome()')
+                if it.icon
+                    != f.icon(it.icon)
+                else if it.avatar
+                    img.img-circle.img-fluid(style="height:40px;margin:-11px 5px" src=f.resPath(null,'portrait/' + user.id + '.jpg'))
+                = it.label || ii(it.key)
+            ul.dropdown-menu
+                each t in it.children
+                    if !t.isShow || t.isShow()
+                        if t == 'hr'
+                            li.divider
+                        else
+                            != f.menuItem(t)
+    else
+        !=f.menuItem(it)

@@ -1,0 +1,13 @@
+<div class="main-servers">
+    <ul class="l-main-servers" ng-if="lately">
+        <li class="li-main-servers" ng-repeat="it in lately | offset: currentPage*perPage | limitTo: perPage" ng-class="{'hover-main-servers': $index==0 && currentPage==0}">
+            <!--ng-click="gotoGame(it.GAME_ID);"-->
+            <a class="btn-main-servers" ng-href="http://i.wan.liebao.cn/game/play_in_box?gid={{it.GAME_ID}}&sid={{it.SID}}" target="_blank">进入游戏</a>
+            <!--<a class="btn-main-servers" ng-href="http://wan.liebao.cn/game_frame/wd_play_{{it.GAME_ID}}.php?sid={{it.SID}}&wd_entergame=1" target="_blank">进入游戏</a>-->
+            <h4 class="gname-main-servers">{{it.GAME_NAME}}</h4>
+            <p class="sname-main-servers">{{it.LINE_NAME}}</p>
+            <p class="time-main-servers">{{it.START_TIME}}</p>
+        </li>
+    </ul>
+    <div pagination items="toOpen" per-page="perPage" current-page="currentPage"></div>
+</div>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>金山猎豹游戏中心</title>
+	<link rel="stylesheet" href="css/base.css" />
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/window.css">
+</head>
+<body>
+	<div class="container">
+		<div class="bg-header">
+			<div class="content">
+				<span class="dec-flag-l png_ie6"></span>
+				<span class="dec-flag-r png_ie6"></span>
+				<span class="dec-girl png_ie6"></span>
+				<a href="http://wan.liebao.cn" class="link-back png_ie6">返回游戏中心</a>
+				<h4 class="time-active png_ie6">2015年9月18日11:00至2015年9月20日23:59</h4>
+				<h2 class="title-active png_ie6">秋季狂欢日</h2>
+				<h3 class="subtitle-active png_ie6">100%中奖率砸到爽</h3>
+				<div class="rechange">
+					<span class="bl-rechange png_ie6"></span>
+					<p class="text-rechange">微信充值100元（含）以上即可获得一次砸金蛋机会，多充多送</p>
+					<span class="br-rechange png_ie6"></span>
+				</div>
+				<div class="mod-func">
+					<div class="info-mod-func">
+						<p class="user-info-func">
+							<span class="part">亲爱的：<span the-id="username"></span></span>
+							<!--
+							id="logout" data-position="{"e2":"sydlk","e3":"sydlk-tc"}" data-type="logout" 
+							-->
+							<a href="http://wan.liebao.cn/action/logout.php?bu=http%3A%2F%2Fk.wan.liebao.cn%2Fk%2Factive/201509/active/index.html" the-id="logStatus" class="part log_status"></a>
+							<span class="part">微信充值&nbsp;<span the-id="money"></span>&nbsp;元</span>
+						</p>
+						<p class="count-info-func">
+							<span class="part">总共&nbsp;<span the-id="acount"></span>&nbsp;机会</span>
+							<span class="part">使用&nbsp;<span the-id="ucount"></span>&nbsp;次机会</span>
+							<span class="part">剩余&nbsp;<span the-id="scount"></span>&nbsp;次机会</span>
+						</p>
+					</div>
+					<a href="http://wan.liebao.cn/pay/" target="_blank" class="rechange-mod-func png_ie6">我要充值</a>
+					<a href="javascript:void(0);" the-id="check_prize" class="check-mod-func">查看获奖记录</a>
+				</div>
+			</div>
+		</div>
+		<div class="bg-lottery">
+			<div class="content">
+				<div id="txtMarquee">
+					<ul class="l-record-prize">
+                        <li class="li-record-prize">ks***872410755 获得了10倍积分加速券</li>
+                        <li class="li-record-prize">di***6  获得了10倍积分加速券</li>
+                        <li class="li-record-prize">su***qing  获得了小米手环</li>
+                        <li class="li-record-prize">qi***ei 获得了鼠标垫</li>
+                        <li class="li-record-prize">wo***jy1 获得了罗技K400r无线键盘</li>
+                        <li class="li-record-prize">72***m0601 获得了10倍积分加速券</li>
+                        <li class="li-record-prize">ks***2312312252 获得了小米手环</li>
+                        <li class="li-record-prize">zx***aa 获得了罗技K400r无线键盘</li>
+                        <li class="li-record-prize">an***nan 获得了小米手环</li>
+                        <li class="li-record-prize">ta***xixi 获得了鼠标垫</li>
+                        <li class="li-record-prize">ab***g1983 获得了小米路由器</li>
+                        <li class="li-record-prize">li***na11 获得了5倍积分加速券</li>
+                        <li class="li-record-prize">wa***ng09 获得了鼠标垫</li>
+                        <li class="li-record-prize">bi***an 获得了10倍积分加速券</li>
+                        <li class="li-record-prize">cy***008 获得了罗技K400r无线键盘</li>
+                        <li class="li-record-prize">ch***y601 获得了小米路由器</li>
+					</ul>
+				</div>
+				<span class="hammer"></span>
+				<div class="panel-prize png_ie6">
+					<div class="egg-prize left-egg"></div>
+					<div class="egg-prize center-egg"></div>
+					<div class="egg-prize right-egg"></div>
+				</div>
+			</div>
+		</div>
+		<div class="bg-gallery">
+			<div class="content">
+				<span class="arrow-left-gallery png_ie6"></span>
+				<span class="arrow-right-gallery png_ie6"></span>
+				<h3 class="title-gallery">奖品展示</h3>
+				<div class="mod-marquee">
+					<span class="bl-marquee png_ie6"></span>
+					<div class="marquee" id="marquee">
+						<ul>
+							<li><img src="images/prize_38.jpg" alt=""></li>
+							<li><img src="images/prize_31.jpg" alt=""></li>
+							<li><img src="images/prize_32.jpg" alt=""></li>
+							<li><img src="images/prize_33.jpg" alt=""></li>
+							<li><img src="images/prize_34.jpg" alt=""></li>
+							<li><img src="images/prize_35.jpg" alt=""></li>
+							<li><img src="images/prize_36.jpg" alt=""></li>
+						</ul>
+					</div>
+					<span class="br-marquee png_ie6"></span>
+				</div>
+			</div>
+		</div>
+		<div class="bg-footer">
+			<div class="content">
+				<h4 class="title-footer">活动规则：</h4>
+				<p class="text-footer">1、活动期间累计微信充值每满100元可获得一次砸蛋资格，超过100元未满200元按照100元计算，即每次累充总额达到100元的倍数时会获得砸蛋资格，活动期间砸蛋资格累计没有上限。</p>
+				<p class="text-footer">例：玩家B活动第一天充值1020元，将获得10次砸蛋资格；活动第二天充值310元，将获得3次砸蛋资格；活动第三天充值560元，
+              将获得5次砸蛋资格，活动期间共计获得18次砸蛋资格。</p>
+				<p class="text-footer">2、获得实物奖励的玩家，请于9月25日前联系官方客服，进行奖品领取；</p>
+				<p class="text-footer">3、活动结束后，砸蛋功能将停止，请玩家务必在活动结束前消耗完砸蛋机会，过期机会作废；</p>
+				<p class="text-footer" style="color:#f00;">4、积分加速券于9月27日23时59分59秒过期，请尽快使用。</p>
+				<p class="text-footer">5、积分加速券可在充值中心内的网银及支付宝充值渠道进行使用。使用时，选择“使用礼券激活码”，在下方粘贴您所获得的积分加速券卡码即可。</p>
+				<p class="text-footer">本次活动最终解释权归金山猎豹游戏中心所有</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js?t=201410311102"></script>
+	<script type="text/javascript" src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+	<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/lucky/Helper/Login/1.0.1/Login.min.js?t=201410311102"></script>
+	<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/header/1.0.0/header_login.js?t=201410311102"></script>
+	<!--
+	<script type="text/javascript" src="http://img.wan.ijinshan.com/website/activity/common/js/contact.js?t=201410311102"></script>
+	-->
+	<!--[if IE 6]>
+	<script type="text/javascript" src="js/DD_belatedPNG.min.js"></script>
+	<![endif]-->
+	<!--<script type="text/javascript" src="js/helper.js"></script>-->
+	<!--<script type="text/javascript" src="js/widget.js"></script>-->
+	<!--<script type="text/javascript" src="js/window.js"></script>-->
+	<script type="text/javascript" src="js/jquery.kxbdmarquee.js"></script>
+	<!--[if IE 6]>
+	<script type="text/javascript">
+		$(function() {
+			DD_belatedPNG.fix('.png_ie6');
+		});
+	</script>
+	<![endif]-->
+	<script type="text/javascript" src="js/animation.js"></script>
+	<script type="text/javascript">
+//		alert(0);
+//		console.log(ks_user.length);
+		if(ks_user.length==0){
+			Login.show();
+		}
+	</script>
+</body>
+</html>

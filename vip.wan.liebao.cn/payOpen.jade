@@ -1,0 +1,129 @@
+extends ./inc/main
+
+include ./inc/mixin
+
+block css
+    link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/pay.css?v=20170629')
+block js
+    script(src='http://img.wan.ijinshan.com/vip/js/pay.js?v=20170310',type='text/javascript')
+    script(type='text/javascript').
+        var pay = new Pay();
+        pay.getUser();
+        pay.getInfo('1', pay.open);
+
+        $('.card-form-pay').click(function () {
+            var timeType = $(this).attr('t-type');
+            $(this).addClass('scard-form-pay').siblings('.card-form-pay').removeClass('scard-form-pay');
+            timeType == 'm' ? $('#month').val(1) : $('#month').val(12)
+            changeAmount();
+            if (pay.opType == '2') {
+                var validM=validMonth('开通');
+                if(validM){
+                    pay.sendOrder('1');
+                }
+            }
+        });
+
+        $('#month').blur(function () {
+            var validM=validMonth('开通');
+            $('.scard-form-pay').attr('t-type') == 'm' ? inputMonth(1, 24) : inputMonth(12, 24)
+            if (pay.opType == '2' && validM) {
+                setTimeout("pay.sendOrder('1');", 1500);
+            }
+        });
+
+        $('.btn-form-pay').click(function () {
+            if ($(this).hasClass('disabled')) {
+                return false;
+            }
+            var validM=validMonth('开通');
+            if (validM) {
+                pay.sendOrder('1');
+            }
+        });
+
+        $('.radio-form-pay').click(function () {
+            var pType;
+            $(this).addClass('selected').siblings('.radio-form-pay').removeClass('selected')
+            if ($(this).hasClass('alipay')) {
+                $(this).addClass('selected-alipay').siblings('.radio-form-pay').removeClass('selected-wcpay');
+            } else {
+                $(this).addClass('selected-wcpay').siblings('.radio-form-pay').removeClass('selected-alipay');
+            }
+            pType = $(this).attr('p-type');
+            $('[hock-type=' + pType + ']').show().siblings('.box-order-pay').hide();
+            maskH();
+            if (pType == 2) {
+                pay.opType = '2';
+                var validM=validMonth('开通');
+                if (validM) {
+                    pay.sendOrder('1');
+                }
+            } else {
+                pay.opType = '1';
+                for (var x = 0; x < payTimer.length; x++) {
+                    clearInterval(payTimer[x]);
+                }
+            }
+
+        });
+        if(isIe6){
+            DD_belatedPNG.fix('.png_bg');
+        }
+
+block content
+    #hideUrlBtn.none
+    .banner-pay
+        .icon-banner-pay
+    .main
+        .text-userinfo
+            h4.username#username
+            .icon.grey#icon
+            p.text V等级：<span id="vLevel">V0</span>(<span id="vProcess">0</span>/<span id="vLimit">0</span>)
+            p.text.pl20 （您还未开通“<span class="orange">豹会员</span>”服务，现在一次性开通12个月以上<span class="orange">附赠700成长值</span>。享受丰富特权服务，更有大奖等你来拿！)
+        ul.l-form-pay
+            +item('会员身份：')(class='cardLabel')
+                +card(id='cardGm',role-id='1',the-p='10',t-type='m',class='scard-form-pay')
+                //+card(id='cardPm',role-id='5',the-p='30',t-type='m')
+                //+card(id='cardGy',role-id='3',the-p='10',t-type='y')
+                //+card(id='cardPy',role-id='7',the-p='30',t-type='y')
+            +item('开通时长：')
+                input#month.itxt-form-pay(type='text',value='1')
+                span#unit.unit-form-pay 月
+                p.tip-form-pay （您剩余开通时长为24个月）
+            +item('支付方式：')
+                .radio-form-pay.alipay.selected.selected-alipay(p-type='1') 支付宝
+                .radio-form-pay.wcpay(p-type='2') 微信
+            +item('应付金额：')
+                p.txt-form-pay <span id="amount">10</span>元
+            li.li-form-pay
+                .error-tip
+        .box-order-pay(hock-type='1')
+            .btn-form-pay 立即支付
+            p.tip-agree-pay.mt16 已阅读并同意<a href="/agreement.html" target="_blank" class="orange">“豹会员”服务协议</a>
+        .box-order-pay.none(hock-type='2')
+            .tcode-wc-pay
+            p.tip-wc-pay 请使用微信扫描二维码以完成支付
+            p.tip-agree-pay.mb40 已阅读并同意<a href="/agreement.html" target="_blank" class="orange">“豹会员”服务协议</a>
+            .notice-wc-pay
+                h3.title-wc-pay 支付说明：
+                p.text-wc-pay 1. 您的手机需要先下载微信客户端：<a href="http://weixin.qq.com/" target="_blank">微信客户端官方下载</a><br />2. 下载后用微信的“扫一扫”功能扫描二维码即可进行支付;<br />3. 支付过程中，请不要刷新页面.<br />4. 如果对充值存在问题，请<a id="cService" target="_blank" href="javascript:void(0);">联系客服</a>。
+block dialog
+    .mask-dialog.none
+    .dialog#normal.none
+        .hd-dialog
+            a(href='javascript:void(0);').fork-hd-dialog.btn-gorefer
+            .title-hd-dialog 提示
+        .bd-dialog
+            p.text-bd-dialog 已成功为您<span class="orange">开通<span the-id="resMonths"></span>个月</span><span the-id="resName"></span><br />赠送您<span the-id="resGift"></span>点基础成长值，当前成长速度为<span the-id="resSpeed"></span>点/天
+            .btns-bd-dialog
+                a.btn-bd-dialog.close.single.btn-gorefer(href='javascript:void(0);') 知道了
+    .dialog#update.none
+        .hd-dialog
+            a(href='javascript:void(0);').fork-hd-dialog.btn-gorefer
+            .title-hd-dialog 提示
+        .bd-dialog
+            p.text-bd-dialog 已成功为您开通<span class="orange"><span the-id="resMonths"></span>个月</span><span the-id="resName"></span><br />您剩余服务时长为<span class="orange" the-id="resRemain"></span>，系统自动为您升级为<span class="orange" the-id="resUpName"></span><br />并赠送您<span the-id="resGift"></span>点基础成长值，当前成长速度为<span the-id="resSpeed"></span>点/天
+            .btns-bd-dialog
+                a.btn-bd-dialog.close.btn-gorefer(href='javascript:void(0);') 知道了
+                a.btn-bd-dialog.re(href='/payRe.html') 去续费

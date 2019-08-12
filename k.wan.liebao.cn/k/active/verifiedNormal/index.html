@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name='apple-touch-fullscreen' content='YES' />
+    <meta name='msapplication-tap-highlight' content='telephone=no' />
+    <meta name='apple-mobile-web-app-capable' content='yes' />
+    <meta name='apple-mobile-web-app-status-bar-style' content='black' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0,user-scalable=no' />
+    <meta name='format-detection' content='telephone=no' />
+    <meta name='format-detection' content='email=no' />
+
+    <title>实名认证</title>
+    <link rel="stylesheet" type="text/css" href="verifiedMob.css" />
+</head>
+<body>
+    <script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/jquery-1.8.0.min.js?_=20160923222754"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script>
+        var verified= new Verified(function () {/*cb();*/});
+//        verified.renderUI(1);
+        verified.renderUI(2);
+        //verified.renderUI();
+    </script>
+</body>
+</html>

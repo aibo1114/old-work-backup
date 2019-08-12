@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "meta.js",
+  "sourceRoot": "",
+  "sources": [
+    "meta.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,OAAA,CAAQ,6BAAR;;EAEA,OAAA,CAAQ,8BAAR;;EACA,OAAA,CAAQ,0BAAR;;EACA,OAAA,CAAQ,2BAAR;;EACA,OAAA,CAAQ,2BAAR;;EAEA,MAAM,CAAC,OAAP,GAAiB,CACb,IAAI,CAAC,GADQ,EAEb,IAAI,CAAC,OAFQ,EAGb,IAAI,CAAC,IAHQ,EAIb,IAAI,CAAC,IAJQ;AAPjB"
+}

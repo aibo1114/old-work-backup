@@ -1,0 +1,106 @@
+/*以下为美女囧图css布局*/
+.relativePos{
+    position:relative;
+	height:473px;
+	margin-top:10px;
+	*margin-top:70px;
+}
+.mod-bhw .bd-bhw{
+    margin-top:6px;
+}
+.girlspics_left_vertical,.girls_middle_overlay,.girls_middle_bulk,.girls_right_overlay,.middle_down_left,.middle_down_right,.girls_right_down{
+    position:absolute;
+    float:left;
+    z-index:1;
+}
+.girlspics_left_vertical{
+    left:0px;
+    top:0px;
+}
+.girls_middle_overlay{
+    left:202px;
+    top:0px;
+}
+.girls_middle_bulk{
+    left:494px;
+    top:0px;
+}
+.girls_right_overlay{
+    left:816px;
+    top:0px;
+}
+.middle_down_left{
+    /*top:141px;*/
+}
+.middle_down_right{
+    /*top:141px;*/
+    left:10px;
+}
+.girls_right_down{
+    /*top:140px;*/
+}
+.relativePos ul li{
+	margin-bottom:10px;
+}
+/*以下为美女囧图边框css*/
+.left_slim_vertical,.middle_up,.middle_down_left,.middle_down_right,.middle_bulk,.girls_right_down,.girls_right_up{
+	position:relative;
+	overflow:hidden;
+}
+.girls_words{
+	display:inline-block;
+	width:100%;
+	bottom:0;
+	left:0;
+	position:absolute;
+}
+/*以下为放大效果*/
+/*.girlspics_left_vertical img:hover{
+    width:110%;
+    margin-left:-5%;
+    margin-top:-5%;
+	*width:21%;
+	*margin-left:-1%;
+	*margin-top:-1%;
+}
+.girls_middle_overlay img:hover{
+    width:120%;
+    margin-left:-5%;
+    margin-top:-10%;
+}
+.middle_up img:hover{
+	*width:35%;
+	*margin-left:-2%;
+	*margin-top:-3%;
+}
+.middle_down_left img:hover{
+	*width:60%;
+	*margin-left:-2%;
+	*margin-top:-2%;
+}
+.middle_down_right img:hover{
+	*width:60%;
+	*margin-left:-2%;
+	*margin-top:-2%;
+}
+.girls_middle_bulk img:hover{
+    width:110%;
+    margin-left:-5%;
+    margin-top:-5%;
+	*width:35%;
+	*margin-top:-2%;
+	*margin-left:-2%;
+}
+.girls_right_up img:hover{
+    width:110%;
+    margin-left:-5%;
+    margin-top:-7%;
+	*width:25%;
+	*margin-top:-4%;
+	*margin-left:-2%;
+}
+.girls_right_down img:hover{
+    width:110%;
+    margin-left:-5%;
+    margin-top:-5%;
+}*/

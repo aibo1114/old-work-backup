@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "qa.js",
+  "sourceRoot": "",
+  "sources": [
+    "qa.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,CAAC,CAAC,EAAF,GACI;IAAA,IAAA,EAAM,CACF,CAAC,CAAC,SAAF,CAAY,UAAZ,CADE,EAGF,CAAC,CAAC,SAAF,CAAY,QAAZ,CAHE,CAAN;;AADJ"
+}

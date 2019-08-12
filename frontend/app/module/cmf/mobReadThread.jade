@@ -1,0 +1,32 @@
+extends inc/read
+
+block content
+    include ../_mod/group/tmpl/groupTaskView
+
+    if hasAdv
+        .container
+            +h4('线下英语角','home')
+            .row.m-b-h
+                .col-xs-10.col-xs-offset-1
+                    != f.imgItem(group.venue, c, null, 'img-thumbnail')
+            .text-xs-center.lead= group.venue.title
+            .text-xs-center= group.venue.schedule
+
+            include inc/footer.jade
+
+append ctn
+    script!= f.jsp('_ent', locals, '_id', '_e', 'content', 'moodTag', 'moodTags','reply')
+
+block st
+    :coffee(bare=true,minify=true)
+        cf.noReply = true
+        util.loadPic('.card-block')
+        wt.setWtJs(null,true) if wt
+        $.get util.restUrl("thread/#{_ent._id}"),(res)->
+            cf.userFunc($('.dBtns'), res.entity)
+            cf.addComment($('.reply'), res.entity)
+        cf.afterWxReady = ->
+            _.delay ->
+                url = wt.genWtUrl(location.pathname.substr(1)+location.search, null, null, 'snsapi_base')
+                wt.setShare $('h2 strong').text(), url, ($('img').attr('bb-src')||$('img').attr('src')),tu.adt(_ent.content, 50), "#{_ent._e}/_id/#{_ent._id}/share"
+            ,1000

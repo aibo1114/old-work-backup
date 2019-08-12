@@ -1,0 +1,46 @@
+.row.m-b-1
+    .col-xs-4
+        if idx > 1
+            a.btn.btn-sm.pull-xs-left.prev <<
+    .col-xs-4
+        span.btn.btn-sm.btn-danger 第 #{idx} 周
+    .col-xs-4
+        if idx < maxLen
+            a.btn.btn-sm.pull-xs-right.next >>
+
+.row.m-b-1
+    .col-xs-4
+        h3.text-primary.bb.m-b-0=cStat.earn+' '
+            small.er.text-faded 元
+        small.text-faded 打卡赚钱
+    .col-xs-4
+        h3.text-primary.bb.m-b-0=cStat.pcnDay+' '
+            small.er.text-faded 天
+        small.text-faded 拖延天数
+    .col-xs-4
+        h3.text-primary.bb.m-b-0=(cStat.thread?cStat.thread.length:0)+' '
+            small.er.text-faded 篇
+        small.text-faded 总共创作
+
+.clearfix.timeTable
+    .timeHub
+        .ls
+            - ln = 1.2
+            - nn = 1
+            each it,i in timeLen
+                span.label.label-mark(style='top:#{(i+nn)*ln}rem')=it
+                - nn++
+    each it in dates
+        .timeHub
+            != f.label(it.weekDay, 'mark')
+            span.label.label-faded.lenBar=' '
+                each t in (it.thread||[])
+                    if t.title
+                        -color='info'
+                    else
+                        -color='danger'
+                    span.label(style='top:#{t.top}rem' class='label-#{color}')=' '
+            != f.label(it.date, 'mark')
+
+p.m-t-1.text-xs-center
+    a.btn.btn-info.readNote(week=idx) 本周读书笔记

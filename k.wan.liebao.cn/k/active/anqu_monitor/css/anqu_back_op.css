@@ -1,0 +1,23 @@
+.container{
+	width:1920px;
+}
+.info_title{
+	font-weight:bold;
+	background:#FFE4E1;
+	padding:10px;
+}
+.info_table{
+	width:100%;
+	border:1px solid #aaa;
+	border-collapse:collapse;
+}
+.info_table thead td{
+	border:1px solid #aaa;
+	padding:10px;
+	background:#FFE4E1;
+	font-weight:bold;
+}
+.info_table tbody td{
+	border:1px solid #aaa;
+	padding:10px;
+}

@@ -1,0 +1,26 @@
+.row
+    span.label.label-success= type || '竞技'
+
+.row(style='margin-top: -10px')
+    .col-xs-3.col-xs-push-2
+        .thumbnail
+            if ready
+                span.arrow
+            img(src=user.avatar)
+            .caption
+                h4= user.nick
+    .col-xs-3.col-xs-push-4.infoBtn
+        if picked
+            if status == '1'
+                a.btn.btn-danger.disabled 已准备
+            else
+                a.btn.btn-danger.disabled 未准备
+            a.kickOut.btn.btn-danger 踢出
+        else if host
+            a.startGame.btn.btn-danger.disabled 开始游戏
+            a.leaveRoom.btn.btn-primary(href=f.navUrl('room')) 离开房间
+        else
+            .readyToStared
+                a.ready.btn.btn-primary 准备
+                a.unready.btn.btn-danger 取消准备
+                a.leaveRoom.btn.btn-primary(href=f.navUrl('room')) 离开房间

@@ -1,0 +1,47 @@
+
+if imgPath
+    img.img-responsive(style='margin:auto', src=imgPath)
+
+if refFile
+    !=f.imgItem(locals, c,null,null,null,null,false)
+
+.col-xs-12
+    if title
+        h3.text-center= title
+        if subTitle
+            small= subTitle
+
+    p
+
+    if brief
+        .well.well-sm!= brief
+
+    if content
+        != content
+
+    p
+
+    if href && href.length
+        .list-group
+            each it in href
+                if !it.href.startsWith('http') && !it.href.startsWith('#') && !it.href.startsWith('/')
+                    - it.href = f.navUrl(it.href)
+                a(class= it.cls || 'list-group-item', href= it.href)
+                    =  it.title
+                    if it.href
+                        != f.icon('chevron-right pull-right')
+
+    if memo
+        .well.well-sm!= memo
+
+    if btn
+        p
+            each it in btn
+                - var ps = {}
+                - ps.class = it.cls
+                if it.act
+                    - ps.onclick = it.act
+                .btn.btn-danger.btn-block&attributes(ps)
+                    if it.icon
+                        != f.icon(it.icon)
+                    = it.label

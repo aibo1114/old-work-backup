@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="edge" />
+        <meta name="renderer" content="ie-comp" />
+        <title>致命狙击-狙击手生命线</title>
+        <link type="text/css" rel="stylesheet" href="css/base.css" />
+        <style type="text/css">
+            body {
+                background:#1c1c28;
+            }
+            .container {
+                width:1280px;
+                margin:auto;
+                padding:0;
+                background:url(images/bg_lifeline.jpg) no-repeat 0 0;
+                position:relative;
+                box-shadow:5px 5px 10px #000;
+            }
+            .content {
+                width:928px;
+                margin:auto;
+                padding:23px 0 397px;
+            }
+            .logo {
+                width:148px;
+                height:45px;
+                position:relative;
+                z-index:3;
+            }
+            .title-lifeline {
+                width:613px;
+                height:119px;
+                margin:10px auto 0;
+                background:url(images/title_life_07.png) no-repeat 0 0;
+                text-indent:-9999px;
+            }
+            .time-lifeline {
+                width:205px;
+                height:11px;
+                margin:10px auto 0;
+                background:url(images/time_life_11.png) no-repeat 0 0;
+                background-size:100% auto;
+                text-indent:-9999px;
+            }
+            .mod-content {
+                width:926px;
+                height:679px;
+                margin:40px auto 0;
+                background:url(images/bg_book_03.jpg) no-repeat 0 0;
+                box-shadow:5px 5px 40px #000;
+                position:relative;
+            }
+            .smoke {
+                display:block;
+                position:absolute;
+                z-index:2;
+                left:87px;
+                top:-212px;
+                width:328px;
+                height:283px;
+                background:url(images/smoke_03.png) no-repeat;
+            }
+            .left-mod-content {
+                width:462px;
+                height:679px;
+                float:left;
+                position:relative;
+            }
+            .right-mod-content {
+                width:462px;
+                height:679px;
+                float:left;
+                position:relative;
+            }
+            .text-a-content,.text-b-content {
+                position:absolute;
+                width:418px;
+                height:638px;
+                display:block;
+                text-indent:-9999px;
+                top:19px;
+                left:22px;
+                cursor:pointer;
+            }
+            .text-a-content {
+                z-index:3;
+                background:url(images/paper_03.png) no-repeat 0 0;
+            }
+            .text-b-content {
+                z-index:2;
+                background:url(images/paper_b_03.png) no-repeat 0 0;
+            }
+            .l-sniper {
+                margin:54px 0 0 46px;
+            }
+            .fork-li-sniper {
+                display:block;
+                position:absolute;
+                z-index:4;
+                width:148px;
+                height:207px;
+                left:0;
+                top:0;
+                background:url(images/fork_03.png) no-repeat 0 0;
+            }
+            .li-sniper {
+                width:148px;
+                height:207px;
+                float:left;
+                margin-right:46px;
+                position:relative;
+            }
+            .li-sniper img {
+                width:148px;
+            }
+            .l-sniper:after {
+                content:'.';
+                display:block;
+                height:0;
+                overflow:hidden;
+                clear:both;
+            }
+            .countdown-die {
+                display:block;
+                position:absolute;
+                z-index:2;
+                bottom:97px;
+                left:216px;
+            }
+            /*dec*/
+            .bullet-a,.bullet-b,.brand,.flare,.pistol {
+                display:block;
+                position:absolute;
+                z-index:4;
+            }
+            .bullet-a {
+                width:211px;
+                height:199px;
+                background:url(images/bullet_03.png) no-repeat 0 0;
+                left:-120px;
+                top:-83px;
+            }
+            .bullet-b {
+                width:110px;
+                height:74px;
+                left:378px;
+                bottom:-27px;
+                background:url(images/bullet_07.png) no-repeat 0 0;
+            }
+            .brand {
+                width:163px;
+                height:267px;
+                top:-82px;
+                right:-90px;
+                background:url(images/brandofgo_06.png) no-repeat 0 0;
+            }
+            .rifle {
+                display:block;
+                position:absolute;
+                z-index:5;
+                width:296px;
+                height:830px;
+                right:-178px;
+                top:-257px;
+                background:url(images/rifle_02.png) no-repeat 0 0;
+            }
+            .flare {
+                width:192px;
+                height:175px;
+                left:46px;
+                bottom:-83px;
+                background:url(images/flare_05.png) no-repeat 0 0;
+            }
+            .pistol {
+                width:284px;
+                height:484px;
+                left:-176px;
+                top:302px;
+                background:url(images/pistol_02.png) no-repeat 0 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="content">
+                <h1 class="logo">
+                    <a href="index.html"><img src="images/logo_life_03.png" alt=""></a>
+                </h1>
+                <h2 class="title-lifeline">狙击手生命线,参与活动得豪华游戏礼包</h2>
+                <h3 class="time-lifeline">活动时间：2016年3月31日-2016年4月21日</h3>
+                <div class="mod-content">
+                    <span class="bullet-a"></span>
+                    <span class="bullet-b"></span>
+                    <span class="brand"></span>
+                    <span class="rifle"></span>
+                    <span class="flare"></span>
+                    <span class="pistol"></span>
+                    <span class="smoke"></span>
+                    <div class="left-mod-content">
+                        <p class="text-a-content js-paper">这是我拿起狙击枪的第五个年头，开镜、瞄准、扣下扳机这套动作我已记不清到底重复过多少次，我第一次杀人也是在这样一个寂静的夜晚，现在能记起的就只有紧张和恐惧。那个时候我心里只会想如何成功杀死目标，而现在我老了，却越来越害怕不知道自己会死在何时何处，但这个差事总得有人去做。刚刚，我又接到了新的命令，具体情况还未说明，我和我的小组需要做的是，秘密潜入并暗杀恐怖组织头目，这种行动我参加过无数次，从未失手，我对自己很有信心。现在是22:05，还有十分钟出发，回来的时候，希望早餐已经做好了。2016.4.23晚 晴</p>
+                        <p class="text-b-content js-paper">活动时间：2016年3月31日-2016年4月21日活动说明：凡完成微信活动“狙击手生命线”的玩家均可获得豪华游戏礼包一枚参与步骤：1、关注致命狙击官方微信公众平台2、完成持续四周的“狙击手生命线”任务即可获得礼包码3、在游戏中兑换礼包码领取活动奖励</p>
+                    </div>
+                    <div class="right-mod-content">
+                        <span class="countdown-die"><img src="images/countdown.gif" alt="" /></span>
+                        <ul class="l-sniper">
+                            <li class="li-sniper">
+                                <span class="fork-li-sniper"></span>
+                                <img src="images/pic_06.png" alt="" />
+                            </li>
+                            <li class="li-sniper">
+                                <span class="fork-li-sniper"></span>
+                                <img src="images/pic_08.png" alt="" />
+                                <!--<img src="images/pic_shadow_03.png" alt="" />-->
+                            </li>
+                            <li class="li-sniper">
+                                <span class="fork-li-sniper"></span>
+                                <img src="images/pic_13.png" alt="" />
+                                <!--<img src="images/pic_shadow_07.png" alt="" />-->
+                            </li>
+                            <li class="li-sniper">
+                                <!--<span class="fork-li-sniper"></span>-->
+                                <img src="images/pic_16.png" alt="" />
+                                <!--<img src="images/pic_shadow_10.png" alt="" />-->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript">
+            $('.js-paper').click(function(){
+                $(this).hide().siblings('.js-paper').show();
+            });
+        </script>
+    </body>
+</html>

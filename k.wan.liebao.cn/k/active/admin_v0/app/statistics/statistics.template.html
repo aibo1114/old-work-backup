@@ -1,0 +1,35 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">统计</h4>
+    </div>
+    <div class="panel-body">
+        <form ng-submit="$ctrl.sendStatistics()" class="form form-inline form-search">
+            <div class="form-group">
+                <label for="">厂商id:</label>
+                <input ng-model="$ctrl.parm.supplier_id" class="form-control" placeholder="请填写数字" required />
+            </div>
+            <div class="form-group">
+                <label for="">广告id:</label>
+                <input ng-model="$ctrl.parm.advertisement" class="form-control" placeholder="请填写数字" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-search">搜索</button>
+        </form>
+    </div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th nowrap="nowrap">级别</th>
+            <th nowrap="nowrap">价格</th>
+            <th nowrap="nowrap">人数</th>
+            <th nowrap="nowrap">消费金额</th>
+        </tr>
+        <tr ng-repeat="it in $ctrl.statistics">
+            <td>{{it.Level}}</td>
+            <td>{{it.Price}}</td>
+            <td>{{it.Count}}</td>
+            <td>{{it.Money}}</td>
+        </tr>
+    </table>
+    <div class="panel-footer" ng-if="$ctrl.sum">
+        <p>消费总计&nbsp;:&nbsp;&nbsp;<span class="text-primary">¥{{$ctrl.sum}}</span></p>
+    </div>
+</div>

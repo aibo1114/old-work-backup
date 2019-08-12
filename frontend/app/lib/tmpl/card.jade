@@ -1,0 +1,31 @@
+.card(class="card #{style}")
+    if head
+        .card-header
+            if backBtn
+                -str = backBtn
+                if backBtn == true
+                    -str = "onclick='history.back(-1)'"
+                else if backBtn.startsWith('#')
+                    -str = "href='"+backBtn+"'"
+                !=f.icon('chevron-left', 'a', '', 'backBtn', str)
+            if title
+                strong!= title
+
+            if toolbar
+                .toolbar.btnCtn
+    if imgPath
+        img.img-fluid.card-img-top(src=imgPath)
+
+    block ctn
+        if ctx && ctx._filter
+            .card-block.text-xs-center
+                != ctx._filter()
+        if bareCtn
+            != _content
+        else
+            #{tag || 'div'}(class= tagClass || 'card-block')
+                != _content
+
+
+    if foot
+        .card-footer

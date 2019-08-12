@@ -1,0 +1,99 @@
+.uploadBtn {
+  display: inline-block;
+  width: 105px;
+  padding: 7px 0;
+  text-align: center;
+  background: #880000;
+  border-bottom: 1px solid #DDD;
+  color: #FFF;
+  position: relative;
+  overflow: hidden;
+  margin-right: 20px;
+}
+.uploadBtn:hover {
+  background: #CC0000;
+}
+.uploadBtn input {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 100px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.uploader .qq-upload-button {
+  margin-right: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+}
+.media.active img {
+  border: 5px solid red !important;
+}
+.s-btn {
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.xFile.doc .media {
+  line-height: 30px;
+  margin: 10px 20px;
+  clear: both;
+  border-bottom: 1px dashed;
+  text-align: left;
+}
+.xFile.img .media {
+  display: inline-block;
+  min-height: 80px;
+}
+.xFile.img .media img {
+  width: 150px;
+}
+.xFile .media {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0.5em 0.5em 0;
+}
+.media .f-btn,
+.media .s-btn {
+  display: none;
+}
+.media:hover .f-btn,
+.media:hover .s-btn {
+  display: block;
+}
+.media:first-child .mLeft {
+  display: none;
+}
+.media:last-child .mRight {
+  display: none;
+}
+#filePick .modal-header,
+#_imgTab .modal-header {
+  position: relative;
+}
+.xImg {
+  padding-left: 10px;
+}
+.xImg .toolbar {
+  margin-top: 10px;
+}
+.xImg .toolbar .filter {
+  float: right;
+  margin-top: -40px;
+}
+.xImg .tabs {
+  padding: 10px 0;
+}
+.xImg .media {
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+}
+.xImg img {
+  width: 150px;
+  height: 100px;
+}

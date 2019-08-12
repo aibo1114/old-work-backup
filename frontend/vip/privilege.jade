@@ -1,0 +1,138 @@
+extends ./inc/main
+block css
+    link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/privilege.css')
+block js
+    script(type='text/javascript').
+        helper={};
+        if (ks_user && ks_user.length != 0) {
+            $.ajax({
+                url: 'http://vip.wan.liebao.cn/vip/user/api/info',
+                type: 'get',
+                // dataType:'jsonp',
+                //async: false,
+                success: function (res) {
+                    var ret = res.ret;
+                    var data = res.data;
+                    var obtainway=data.obtain_ways;
+                    var status=data.status;
+                    if (ret == 14014 || ret == 14003) {
+                        $('.link-btn-open').removeClass('none');
+                        $('.l-btn-upgrade').addClass('none');
+                    }else if(ret==1){
+                        if (status == 2 || status == 0) {
+                            $('.link-btn-open').removeClass('none');
+                            $('.l-btn-upgrade').addClass('none');
+                            return false;
+                        }
+                        if(obtainway==2){
+                            helper.isGive=1;
+                            $('.link-btn-open').removeClass('none');
+                            $('.l-btn-upgrade').addClass('none');
+                            return false;
+                        }
+                        helper.isGive=0;
+                        $('.l-btn-upgrade').removeClass('none');
+                        $('.link-btn-open').addClass('none');
+                    }
+                    if (data.is_max_role) {
+                        $('.link-btn-upgrade.up').parents('.li-btn-upgrade').addClass('disabled');
+                    }
+                    if (data.is_max_time) {
+                        $('.link-btn-upgrade.continue').parents('.li-btn-upgrade').addClass('disabled');
+                    }
+                }
+            });
+        }
+        $('.li-tab-all').click(function(){
+            var ndx=$(this).index();
+            $(this).css('background','url(http://img.wan.ijinshan.com/vip/images/tab_v1_06.png) no-repeat 0 0');
+            $('.li-tab-detail').css('background','url(http://img.wan.ijinshan.com/vip/images/tab_btn_1_04.png) no-repeat 0 0');
+            $('.content-tab-pri:eq('+ndx+')').show().siblings('.content-tab-pri').hide();
+            $('.img-banner-pri:eq('+ ndx+')').show().siblings('.img-banner-pri').hide();
+        });
+        $('.li-tab-detail').click(function(){
+            var ndx=$(this).index();
+            $(this).css('background','url(http://img.wan.ijinshan.com/vip/images/tab_btn_2_08.png) no-repeat 0 0');
+            $('.li-tab-all').css('background', 'url(http://img.wan.ijinshan.com/vip/images/tab_btn_2_07.png) no-repeat 0 0');
+            $('.content-tab-pri:eq(' + ndx + ')').show().siblings('.content-tab-pri').hide();
+            $('.img-banner-pri:eq(' + ndx + ')').show().siblings('.img-banner-pri').hide();
+        });
+        /*
+        $('.li-tab-all,.li-tab-detail ').click(function(){
+            var ndx=$(this).index();
+            $(this).addClass('li-tab-cur').siblings('li').removeClass('li-tab-cur');
+            if( $(this).hasClass('li-tab-cur') ){}
+            $('.content-tab-pri:eq('+ndx+')').show().siblings('.content-tab-pri').hide();
+            $('.img-banner-pri:eq('+ndx+')').show().siblings('.img-banner-pri').hide();
+        });
+        */
+        $('.link-tab-left').click(function(){
+            if( !$(this).hasClass('disabled') ){
+                $('.link-tab-left').removeClass('currentlink-tab-left');
+                $(this).addClass('currentlink-tab-left');
+                $('.l-subtab-left').hide();
+                $(this).siblings('.l-subtab-left').show().children('.li-subtab-left:eq(0)').trigger('click');
+            }
+
+        });
+        $('.li-subtab-left').click(function(){
+            var hock=$(this).attr('id');
+            $(this).removeClass('hover-subtab-left').addClass('current-subtab-left').siblings('.li-subtab-left').removeClass('current-subtab-left');
+            $('.box-pri').hide();
+            $('[the-hock='+hock+']').show();
+        });
+        $('.li-subtab-left').mouseover(function () {
+            if (!$(this).hasClass('current-subtab-left')) $(this).addClass('hover-subtab-left');
+        }).mouseout(function () {
+            $(this).removeClass('hover-subtab-left');
+        });
+
+        $('.li-btn-upgrade a,.link-btn-open').click(function(e){
+            if (!ks_user || ks_user.length == 0) {
+                e.preventDefault();
+                Login.show();
+            }
+            if($(this).parents('.li-btn-upgrade').hasClass('disabled')){
+                e.preventDefault();
+            }
+        });
+
+        $(document).on('click','[the-id=check-d]',function(){
+            $('.li-tab-detail').trigger('click');
+            if( $(this).hasClass('identy-check') ){
+                $('#identy').trigger('click');
+            }
+            if( $(this).hasClass('coupon-check') ){
+                $('#coupon').trigger('click');
+            }
+            if( $(this).hasClass('birPackage-check') ){
+                $('#birPackage').trigger('click');
+            }
+        });
+
+        $(document).on('mouseenter','.img-hover',function(){
+            $(this).children('img').attr('src','http://img.wan.ijinshan.com/vip/images/priA_2.png');
+        });
+        $(document).on('mouseleave','.img-hover',function(){
+            $(this).children('img').attr('src','http://img.wan.ijinshan.com/vip/images/pirA_3.png');
+        });
+
+        DD_belatedPNG.fix('.png_bg,.img-identy,.img-coupon,.img-birgame,.img-birplant');
+
+
+block variable
+    -var curPage='privilege'
+block content
+    .main
+        .banner-pri.imgBox
+            img.img-banner-pri(src='http://img.wan.ijinshan.com/vip/images/priA_1.png')
+            img.img-banner-pri.none(src='http://img.wan.ijinshan.com/vip/images/priD_1.png')
+        ul.l-tab-pri
+            li.li-tab-all 会员全部特权
+            li.li-tab-detail 会员特权详情
+        .content-tab-pri
+            include ./inc/priAll
+        .content-tab-pri.none
+            include ./inc/priDetail
+
+

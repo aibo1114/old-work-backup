@@ -1,0 +1,48 @@
+mixin alertSearch()
+    .input-group
+        span.input-group-addon.glyphicon.glyphicon-search
+        input.form-control
+        .input-group-btn
+            button.btn.btn-default.dropdown-toggle(data-toggle="dropdown",aria-haspopup="true",aria-expanded="false")
+                | 帖子
+
+mixin areaItem(it)
+    li.li-nav-ftype.col-md-4
+        .media
+            .media-left
+                a(href="forum/?cat=#{it.code}")
+                    !=f.imgItem(it, c, 'head', 'img-object')
+            .media-body
+                h4.media-heading
+                    a(class='link-nav-ftype',href='/forum?cat=#{it.code}')= it.title
+                    span= it.newlyNum
+                p 主题：#{it.postNum}
+                p= it.brief
+                p #{it.pubTime}&nbsp;&nbsp;#{it.author}
+
+extends ./inc/main
+block style
+    :less(minify=true)
+
+block content
+    .alert.alert-default
+        span.glyphicon.glyphicon-volume-up
+        +alertSearch()
+
+    .panel-app.panel-forum
+        .panel-heading-forum
+            h3 论坛版区
+        .panel-body-forum
+            ul.l-nav-ftype.row
+                each it in areas
+                    +areaItem(it)
+
+    //each it in cats
+    //    div= it.title
+    //
+        .panel-app
+            .l-forum-app
+                each it in a
+                    .li-forum-app
+block st
+    :coffee(bare=true,minify=true)

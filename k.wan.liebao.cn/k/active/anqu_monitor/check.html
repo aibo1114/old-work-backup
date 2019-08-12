@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+  <link type='text/css' rel='stylesheet' href='css/anqu_back_op.css' />
+  <title>页游端游信息查询</title>
+ </head>
+ <body>
+  <div class='container'>
+	<div class='quest_info'>
+		<form method='get'>
+			<p style='font-weight:bold;'>安趣用户信息查询:
+				<select id='select'>
+					<option value='pp'>安趣账号</option>
+					<option value='uid'>UID</option>
+				</select>
+				<input type='text' id='input_info'/>
+				<input type='button' value='查询' id='check'/> 
+			</p>
+		</form>
+	</div>
+	<div class='show_info'>
+		<!--<p class='info_title'>用户基本信息</p>-->
+		<table class='info_table'>
+			<thead>
+				<tr>
+					<td colspan='4'>用户基本信息</td>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+  </div>
+  <script type='text/javascript' src='js/anqu_input.js'></script>
+ </body>
+</html>

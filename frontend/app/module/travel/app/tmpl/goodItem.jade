@@ -1,0 +1,13 @@
+.media-body
+    h4
+        = title
+        small $#{price}
+    .media-text
+        if 'airport,spot'.indexOf(type) > -1
+            |[#{startedDate}] #{type}: #{from} to #{to}
+        else if type == 'tour'
+            | 'tour'
+        else
+            | 'ddd'
+
+        .btnCtn.pull-right

@@ -1,0 +1,26 @@
+#timerContent {
+	transform:scale(0.6);
+	/*-moz-transform:scale(0.55);*/
+	/*-webkit-transform:scale(0.55);*/
+	/*-o-transform:scale(0.55);*/
+	transform-origin:0 0;
+	margin-top:25px;
+	margin-left: -10px;
+}
+#timerContent * {
+	-webkit-box-sizing:content-box;
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+}
+#timerContent .label:empty {
+	transform:scale(1.55);
+	-moz-transform:scale(1.55);
+	-webkit-transform:scale(1.55);
+	-o-transform:scale(1.55);
+	transform-origin:50% 0;
+	display:block;
+}
+/*#timerContent .reflection {*/
+	/*display:none;*/
+/*}*/
+

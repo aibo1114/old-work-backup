@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>端午充值返利</title>
+<script type="text/javascript">
+	window.location.href = 'http://wan.liebao.cn';
+</script>
+<style type="text/css">
+body,div,ul,li,p{margin:0;padding:0;}
+ul,li{list-style:none;}
+body{background:#d9eecf url(images/dw_bg.jpg) center 31px no-repeat;text-align: center;}
+.wrapa{width:1000px;margin:0 auto;}
+.wrap{width:1000px;margin:0 auto;text-align: center;}
+.area1{background:url(images/dw_area.jpg) no-repeat;height:377px;}
+.area2{background:url(images/dw_area1.jpg) no-repeat;height:344px;padding:13px 0 0 731px;}
+.area3{background:url(images/dw_area2.jpg) no-repeat;height:468px;padding: 60px 0 0 256px;text-align:left;}
+.payLink{height:55px;width:223px;display:block;}
+img{border:0;}
+
+.area3 p{font: 14px/36px '微软雅黑';color:#646360;}
+.fred,p.fred{color:#f00;}
+.fgreen{color:#48b595;}
+.kefuLink{background: url("images/kefu.jpg") no-repeat; height:22px;width: 81px;display: inline-block;vertical-align: middle;}
+
+#pop_login{background: #fff;}
+.footero .footer{background:#d9eecf!important;}
+.header{display:none;}
+</style>
+<script src="http://img.wan.ijinshan.com/global/script/lib/jquery.js" type="text/javascript"></script>
+<script src="http://img.wan.ijinshan.com/global/script/lib/analytics.min.js" type="text/javascript"></script>
+<script src="http://i.wan.liebao.cn/script/lib/traceks.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+	WebApp.analytics.trace('151010', '900', '', '', 'gamename:dwchongzhi|w:page'); 
+</script>
+
+</head>
+<body>
+<!--/s 头部导航条 -->
+<link href="http://image.wan.liebao.cn/game/static/css/headertop.css" rel="stylesheet" type="text/css"/>
+<div id="head_top_bg">
+<div id="head_top_main">
+
+<div class="ht_frame" id="ht_frame1">
+<a href="http://wan.liebao.cn/" target="_blank" title="金山猎豹游戏中心"><img src="http://image.wan.liebao.cn/game/static/images/logo.jpg" alt="金山猎豹游戏中心"></a>
+</div>
+
+<div class="ht_frame" id="ht_frame2">
+<a href="http://wan.liebao.cn/game_list.html" target="_blank" class="hot">推荐游戏：</a>
+<a target="_blank" title="烈火战神" href="http://wan.liebao.cn/lhzs/">烈火战神</a><a target="_blank" title="龙将II" href="http://wan.liebao.cn/long2/">龙将II</a><a target="_blank" title="武尊" href="http://wan.liebao.cn/wz/">武尊</a><a target="_blank" title="斗破乾坤" href="http://wan.liebao.cn/dpqk/">斗破乾坤</a></div>
+
+<div class="ht_frame" id="ht_frame3">
+<a target="_blank" title="金山猎豹游戏中心" href="http://wan.liebao.cn/" id="wan_backindex"></a>
+<a href="javascript:addfavorite();" id="wan_addfavorite"></a>
+<a href="http://wan.liebao.cn/shortcut.php" target="_self" rel="nofollow" id="wan_setdesk"></a>
+</div>
+
+</div>
+</div>
+<!--/e 头部导航条 -->
+<div class="wrap">
+  	<div class="area1"></div>
+  	<div class="area2"><a class="payLink __trace__" href="http://wan.liebao.cn/pay" target="_blank" onclick="javascript:TraceKS.trans();"></a></div>
+  	<div class="area3">
+  		<p>1.单笔充值金额为<span class="fgreen">100元-999元</span>的用户，可获得充值金额<span class="fred">5%</span>的游戏币返利；</p>
+  		<p>2.单笔充值金额为<span class="fgreen">1000元</span>及以上的用户，可获得充值金额<span class="fred">10%</span>的游戏币返利；</p>
+  		<p class="fred">注：</p>
+  		<p>1、返利金额发生小于1元时，按四舍五入方式计算；<br/>
+  			例：单笔充值199元，可获得返利199*0.05=9.95元，按四舍五入计算，最终获得返利10元。</p>
+  		<p>2、返利方式为即充即送，充值后重新刷新游戏查看；</p>
+  		<p>3、本次活动按照单笔充值金额计算，不累计；</p>
+  		<p>4、活动期间发生任何问题，请及时联系 <a class="kefuLink __trace__" href="javascript:Login.show();" data-trace="151010,900,,,gamename:dwchongzhi|w:kefuLink"></a> 处理。</p>
+		<p>5、活动最终解释权归金山猎豹游戏中心所有。</p>
+  	</div>
+</div>
+<script type="text/javascript" src="http://cdn.popo.wan.ijinshan.com/static/com/header_liebao.js?t=201301251825" id="header" data-supplierid="4"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	var lgnPostUrl = 'http://i.wan.liebao.cn/user/i';
+	 $.ajax({
+			url: lgnPostUrl,
+			data: null,
+			type: 'GET',
+			dataType: 'jsonp',
+			success: function(json) {
+				if(json.code==1){
+					var username = json.data.passport;
+					var kefuurl='http://i.wan.liebao.cn/jump/im?uid='+username;
+	                $('.kefuLink').attr('href',kefuurl);
+	                $('.kefuLink').attr('target','_blank');
+					$('.payLink').attr('data-trace','151010,900,,,gamename:dwchongzhi|w:payLink_'+username);
+				}else{
+					$('.payLink').attr('data-trace','151010,900,,,gamename:dwchongzhi|w:payLink');
+				}
+
+			}
+		})
+});
+var addfavorite = function () {
+		var sURL = location.href;
+		var sTitle = document.title;
+		try {
+			window.external.addFavorite(sURL, sTitle);
+		} catch (e) {
+			try {
+				window.sidebar.addPanel(sTitle, sURL, "");
+			} catch (e) {
+				alert('请使用Ctrl+D进行添加');
+			}
+		}
+	};
+</script>
+</body>
+</html>
+

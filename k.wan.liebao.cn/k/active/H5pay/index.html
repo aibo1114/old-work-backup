@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta name="apple-itunes-app" content="app-id=903692043" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>金山猎豹游戏中心</title>
+    <link rel="stylesheet" type="text/css" href="http://img.wan.ijinshan.com/pay2/online/css/base.css">
+</head>
+<body>
+<div class="pay_warp">
+    <div class="pay_header">
+        金山猎豹游戏中心
+    </div>
+    <div class="pay_active"><img src="http://img.wan.ijinshan.com/pay2/online/images/zhanwei.png" alt="" id="active_img"><em></em></div>
+    <div class="pay_detailInfo" has_role="<?php echo $has_role;?>" moneyRate="10" moneyName="" >
+        <div class="payInfo">
+            <div class="pay_title">
+                <h2><?php echo sprintf('%s-%s', $game_name, $server_name);?></h2>
+                <h5>账号：<?php echo $username;?></h5>
+            </div>
+            <div class="payList">
+                <h3>选择充值金额</h3>
+                <ul>
+                    <li class="current">10元</li>
+                    <li class="middle">30元</li>
+                    <li>50元</li>
+                    <li>100元</li>
+                    <li class="middle">200元</li>
+                    <li>1000元</li>
+                    <li>2000元</li>
+                    <li class="middle">5000元</li>
+                    <li>10000元</li>
+                </ul>
+                <p class="paycustom"><input type="number" placeholder="自定义" id="paycustom_tab" min="2" max="6"> <span>(请输入10至100000之间的任意整数)</span></p>
+                <div class="pay_counpon">
+                    <div class="coupon_common">
+                        <img src="http://img.wan.ijinshan.com/pay2/online/images/coupon.png" alt="">
+                    </div>
+                    <em class="closeBtn"></em>
+                    
+                </div>
+                <h2>充值获得：<span class="getMoney">100</span>元宝</h2>
+                <h4>充值成功可获得<span class="jifen">10</span>积分</h4>
+                <!--payBtn-->
+                <button id="payBtn" class="payBtn">立即支付</button>
+                <p class="cred">您尚未在该区服创建角色</p>
+                <form action="http://pay1.wan.liebao.cn/index.php/signpay/navqr" id="payform" method="post">
+                    <input type="hidden" name="qr_token" id="qr_token" value="<?php echo $qr_token;?>">
+                    <input type="hidden" name="pay_amount" id="pay_amount" value="10">
+                    <input type="hidden" name="uid" id="uid" value="10">
+                    <input type="hidden" name="game_id" id="game_id" value="10">
+                    <input type="hidden" name="server_id" id="server_id" value="10">
+                    <input type="hidden" name="platform_name" id="platform_name" value="<?php echo $platform_name;?>">
+                    <input type="hidden" name="platform_sub_id" id="platform_sub_id" value="<?php echo $platform_sub_id;?>">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="mask"></div>
+    <img src="http://img.wan.ijinshan.com/pay2/online/images/mask.png" alt="" class="maskImg">
+    <!--活動規則-->
+    <div class="active_rule">
+      <em></em>
+      <h2>活动说明</h2>
+      <div class="active_rule_inner">
+        <h4>活动规则：</h4>
+        <p>活动时间内每日充值达到指定金额，即可领取 丰厚大礼哦 </p>
+        <h4>活动奖励：</h4>
+        <p> 1、充值100钻 绑定钻石*20、大喇叭*1、蜜汁 糖果*1 </p>
+        <p>2、充值200钻 绑定钻石*20、情侣大喇叭*1、 撒旦魅影礼盒</p>
+        <p>2、充值200钻 绑定钻石*20、情侣大喇叭*1、 撒旦魅影礼盒</p>
+        <p>2、充值200钻 绑定钻石*20、情侣大喇叭*1、 撒旦魅影礼盒</p>
+        <p>2、充值200钻 绑定钻石*20、情侣大喇叭*1、 撒旦魅影礼盒</p>
+        <p>2、充值200钻 绑定钻石*20、情侣大喇叭*1、 撒旦魅影礼盒</p>
+        <p>2、充值200钻 绑定钻石*20、情侣大喇叭*1、 撒旦魅影礼盒</p>
+      </div>
+    </div>
+    <!--優惠券列表-->
+    <div class="coupon_list">
+        <h2>优惠劵</h2>
+        <em class="close"></em>
+        <ul>
+        </ul>
+    </div>
+</div>
+<script src="http://static.web.anqu.com/resource/999/js/jquery-1.8.0.min.js?_=20160923222754"></script>
+<script>
+    var url=location.href;
+    var uid=getQueryStr(url,'uid');
+    var game_id=getQueryStr(url,'game_id');
+    var server_id=getQueryStr(url,'server_id');
+    $('#uid').val(uid);
+    $('#game_id').val(game_id);
+    $('#server_id').val(server_id);
+    var has_role=$('.pay_detailInfo').attr('has_role');
+    if(has_role=='0'){
+        $('#payBtn').removeClass('payBtn').addClass('canNot');
+        $('.cred').show();
+    }
+    function getGameInfo(){
+        $.ajax({
+            url: 'http://pay1.wan.liebao.cn/index.php/interface/gameapi/apiAllGame?webgame_id='+game_id+'&op_supplier_id=0&type=w&_=1476429840555',
+            type: 'get',
+            dataType: 'jsonp',
+            success: function (data) {
+                if (data && data.code == 1) {
+                   //gameInfo=data.data;
+                   console.log(data.data[0].money_rate);
+                   console.log(data.data[0].money_name);
+                   $('.pay_detailInfo').attr('moneyRate',data.data[0].money_rate);
+                   $('.pay_detailInfo').attr('moneyName',data.data[0].money_name);
+                   var radio=$('.pay_detailInfo').attr('moneyRate');
+                    var money_name=$('.pay_detailInfo').attr('moneyName');
+                    $('.payList h2').html('充值获得：<span>'+10*radio+'</span>'+money_name);
+                }else{
+                    alert(data.info);
+                }
+            }
+        });
+    }
+    getGameInfo();
+    function getCoupon(){
+        var uid='221759970';
+        // var ordermoney="1000";
+        var ordermoney=$('#pay_amount').val();
+        $.ajax({
+            url: 'http://api.wan.liebao.cn/coupons/1/api/coupon/getuse?uid='+uid+'&ordermoney='+ordermoney,
+            type: 'get',
+            dataType: 'jsonp',
+            success: function (data) {
+                if (data){
+                   if(data.count<=0){
+                        return false;
+                   }
+                   $('.pay_counpon .coupon_common').show();
+                   var str='';
+                   for(var i=0;i<data.entities.length;i++){
+                        str+='<li class="coupon_common can">'+
+                             '<p class="coupon_red">'+data.entities[i].money+'元</p>'+
+                             '<p class="coupon_detail">'+
+                             '<span class="span_top">充值满<b>'+data.entities[i].maxlimit+'</b>可用</span><br>'+
+                             '<span class="span_bot">'+data.entities[i].etime+'</span>'+
+                             '</p>'+
+                             '<div class="clear"></div>'+
+                             '<em></em>'+
+                             '</li>'
+                   }
+                   $('.coupon_list ul').html(str);
+                }else{
+                    //alert(data.info);
+                }
+            }
+        });
+    }
+    getCoupon();
+    $('.payList li').on('click',function(){
+        $(this).addClass('current').siblings().removeClass('current');
+        $('#paycustom_tab').val('');
+        var $Value=parseInt($(this).text());
+        $('#pay_amount').val($Value);
+        $('.jifen').text($Value);
+        var radio=$('.pay_detailInfo').attr('moneyRate');
+       // $('.payList .getMoney').text($Value*radio);
+        var money_name=$('.pay_detailInfo').attr('moneyName');
+        $('.payList h2').html('充值获得：<span>'+$Value*radio+'</span>'+money_name);
+        // $.ajax({
+        //     url: 'http://pay1.wan.liebao.cn/index.php/interface/gameapi/apiAllGame?webgame_id='+game_id+'&op_supplier_id=0&type=w&_=1476429840555',
+        //     type: 'get',
+        //     dataType: 'jsonp',
+        //     success: function (data) {
+        //         if (data && data.code == 1) {
+        //            var radio=parseInt(data.data[0].money_rate);
+        //            //var $Value=parseInt($(this).text());
+        //             $('.payList span').text($Value*radio);
+        //             $('.payList h2').html('充值获得：<span>'+$Value*radio+'</span>'+data.data.money_name);
+        //         }else{
+        //             alert(data.info);
+        //         }
+        //     }
+        // });
+        // var radio=gameInfo.money_rate;
+        // $('.payList span').text($Value*radio);
+        // $('.payList h2').html('充值获得：<span>'+$Value*radio+'</span>'+gameInfo.money_name);
+        getCoupon();
+    })
+    
+//  
+    $('#paycustom_tab').on('keyup',function(){
+      var $Value=parseInt($(this).val());
+        $('#pay_amount').val($Value);
+        var money_name=$('.pay_detailInfo').attr('moneyName');
+        var radio=$('.pay_detailInfo').attr('moneyRate');
+       // alert("1");
+       if($(this).val()==''){
+        $('.payList li').first().addClass('current');
+        $('.payList h2').html('充值获得：<span>'+10*radio+'</span>'+money_name);
+        $('#pay_amount').val('10');
+        $('.jifen').text(10*radio);
+        getCoupon();
+        return false;
+
+       }
+        $('.payList li').removeClass('current');
+        
+       // $('.payList .getMoney').text($Value*radio);
+        $('.jifen').text($Value*radio);
+        $('.payList h2').html('充值获得：<span>'+$Value*radio+'</span>'+money_name);
+        getCoupon();
+    })
+    $('#paycustom_tab').onchange=function(){
+      alert("1");
+      $('.payList li').removeClass('current');
+    }
+    $('.payBtn').on('click',function(){
+        var paycustom_tab=parseInt($('#paycustom_tab').val());
+        if(paycustom_tab!=''&&paycustom_tab<10&&paycustom_tab>100000){
+            alert("请输入10至100000之间的任意整数哦~");
+            return false;
+        }
+        $('#payform').submit();
+    })
+    function getQueryStr(url,str) {
+        var rs = new RegExp("(^|)" + str + "=([^\&]*)(\&|$)", "gi").exec(url), tmp;
+        if (tmp = rs) {
+            return tmp[2];
+        }
+        return "";
+    }
+    
+    //显示规则(二期)
+    $('#active_img').on('click',function  () {
+      // body...
+      $('.mask').show();
+      $('.active_rule').show();
+    })
+    $('.active_rule em').on('click',function  () {
+      // body...
+      $('.mask').hide();
+      $('.active_rule').hide();
+    })
+    $('.pay_active em').on('click',function  () {
+      // body...
+      $('#active_img').hide();
+      $(this).hide();
+    })
+    //显示优惠券列表
+    $('.pay_counpon .coupon_common').on('click',function  () {
+      // body...
+        $('.coupon_list').show();
+        $('.mask').show();
+    })
+    $('.coupon_list .close').on('click',function  () {
+      // body...
+      $('.mask').hide();
+      $('.coupon_list').hide();
+    })
+
+    $('.coupon_list .can').live('click',function(){
+        $('.payList h2 em').remove();
+        var money_name=$('.pay_detailInfo').attr('moneyName');
+        //var val=$('.pay_counpon .coupon_red').text().substr(0,$('.pay_counpon .coupon_red').text().length-1);
+        // var val=$(this).closest('.coupon_red').text();
+         var radio=$('.pay_detailInfo').attr('moneyRate');
+         //console.log(val+'======'+radio);
+        $(this).addClass('coupon_choose').siblings().removeClass('coupon_choose');
+        console.log($(this).html());
+        $('.mask').hide();
+        $('.coupon_list').hide();
+        $('.pay_counpon .coupon_common').html($(this).html());
+        $('.pay_counpon .closeBtn').show();
+        var val=$('.pay_counpon .coupon_red').text().substr(0,$('.pay_counpon .coupon_red').text().length-1);
+        $('.payList h2').append('<em>+'+val*radio+ money_name+'</em>');
+    })
+    $('.pay_counpon .closeBtn').on('click',function  () {
+      // body...
+      //$('#active_img').hide();
+        $(this).hide();
+        $('.payList h2 em').remove();
+        $('.coupon_list .can').removeClass('coupon_choose');
+        $('.pay_counpon .coupon_common').html('<img src="http://img.wan.ijinshan.com/pay2/online/images/coupon.png" alt="">');
+    })
+</script>
+</body>
+</html>

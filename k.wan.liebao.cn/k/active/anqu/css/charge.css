@@ -1,0 +1,54 @@
+.charge_container_general{
+	width:1170px;
+	margin:33px auto 10px auto;
+	position:relative;
+}
+.tab_blocks{
+	width:90%;
+	height:100%;
+	margin:0 auto;
+}
+.left_tabs,.right_main_contents{
+	display:inline-block;
+}
+.left_tabs{
+	width:227px;
+	border:1px solid #d5d5d5;
+	background:#f4f4f4;
+	height:99.7%;
+	position:absolute;
+	top:0;
+}
+.left_tabs a{
+	display:block;
+	text-align:right;
+	line-height:76px;
+	padding-right:20px;
+}
+.tab{
+	border-bottom:2px solid #d4d4d4;
+	color:#474849;
+}
+.tab_arrow{
+	background:url(http://static.web.anqu.com/resource/999/images/charge_tab_arrow.png) 0 34px;
+	background-repeat:no-repeat;
+	color:#f0641e;
+}
+.right_main_contents{
+	width:941px;
+	position:relative;
+	left:229px;
+}
+.charge_container{
+	width:832px;
+	border:1px solid #d5d5d5;
+	padding-bottom:160px;
+	min-height:800px;
+}
+.chongzhijlv{
+	position: absolute;
+	top: -21px;
+	right: 105px;
+	font-size: 14px;
+	color: #808080;
+}

@@ -1,0 +1,15 @@
+.panel(class= style)
+    if head
+        .panel-heading
+            if title
+                .panel-title
+                    strong!= title
+                if toolbar
+                    .toolbar.btnCtn
+
+
+    #{tag || 'div'}(class= tagClass || 'panel-body')
+        != _content
+
+    if foot
+        .panel-footer.clearfix

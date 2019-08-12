@@ -1,0 +1,13 @@
+extends ../../main
+include ../../_inc/mixin
+
+block append js
+    if mob
+    else
+        script(src='#{libPath}router.js')
+block ctn
+    body
+        .container
+            #content.row
+            #static.row(class=index)
+                block content

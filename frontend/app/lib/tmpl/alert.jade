@@ -1,0 +1,10 @@
+.alert(class="alert-#{type} #{closed?'alert-dismissable':''}")
+    if closed
+        button.close(type='button', data-dismiss='alert', aria-hidden='true') ×
+
+    .msg
+        if icon
+            != f.icon(icon) + ' '
+        if title
+            p: strong= title
+        != msg

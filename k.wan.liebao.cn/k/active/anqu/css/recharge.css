@@ -1,0 +1,403 @@
+/*layout*/
+.container {
+  width: 1170px;
+  margin: auto;
+}
+.container:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.content-tab-recharge {
+  padding: 0 38px;
+  display: none;
+}
+.content-tab-recharge.active {
+  display: block;
+}
+.content-recharge {
+  padding: 0 38px;
+  display: none;
+}
+.l-btn-recharge {
+  padding: 20px 0;
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
+}
+.l-btn-recharge:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-btn-recharge {
+  display: inline-block;
+  width: 220px;
+  height: 38px;
+  line-height: 38px;
+  text-align: left;
+  margin: 0 74px;
+  padding-left: 0;
+  background: url('http://static.web.anqu.com/resource/999/images/recharge/bg_btn_03.png') no-repeat 180px 6px;
+  background-color: #50a6ee;
+  border: 2px solid #50a6ee;
+  position: relative;
+}
+.li-btn-recharge.active {
+  border: 2px solid #4f77d6;
+}
+.link-btn-recharge {
+  display: block;
+  padding-left: 30px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+}
+.tip-btn-recharge {
+  position: absolute;
+  z-index: 2;
+  top: -30px;
+  bottom: auto;
+  left: 82px;
+  right: auto;
+  display: block;
+  width: 140px;
+  height: 27px;
+  background: #f0641e;
+  text-align: center;
+  line-height: 27px;
+  font-size: 12px;
+  color: #fff;
+  display: none;
+}
+.tip-btn-recharge:before {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  z-index: 3;
+  top: auto;
+  bottom: -9px;
+  left: 12px;
+  right: auto;
+  padding-left: 0;
+  background: url('http://static.web.anqu.com/resource/999/images/recharge/arrow_tip_03.png') no-repeat 0 0;
+}
+.box-btn-recharge {
+  display: block;
+  width: 565px;
+  height: 218px;
+  position: absolute;
+  z-index: 3;
+  top: 50px;
+  bottom: auto;
+  left: 0;
+  right: auto;
+  background: #fff;
+  border: 2px solid #4f77d6;
+}
+.box-btn-recharge:before {
+  content: '';
+  display: block;
+  width: 14px;
+  height: 7px;
+  position: absolute;
+  z-index: 4;
+  top: -7px;
+  bottom: auto;
+  left: 100px;
+  right: auto;
+  padding-left: 0;
+  background: url('http://static.web.anqu.com/resource/999/images/recharge/arrow_box_03.png') no-repeat 0 0;
+}
+.hd-box-recharge {
+  height: 43px;
+  line-height: 43px;
+  font-size: 14px;
+  color: #333;
+  padding-left: 80px;
+  background: #fafafa;
+}
+.bd-box-recharge {
+  height: 175px;
+  overflow-y: scroll;
+}
+.l-games:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.l-servers:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.l-games,
+.l-servers {
+  padding-top: 10px;
+}
+.li-games,
+.li-servers {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  height: 46px;
+  line-height: 46px;
+  font-size: 14px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.notice-recharge {
+  height: 52px;
+  line-height: 52px;
+  padding: 0 66px 0 40px;
+  font-size: 14px;
+  color: #333;
+}
+.notice-recharge span {
+  display: inline-block;
+  float: right;
+  width: auto;
+  height: auto;
+  line-height: auto;
+  font-size: 12px;
+  color: #f0641e;
+}
+.notice-btm-recharge {
+  padding: 38px 40px 120px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #666;
+}
+.notice-btm-recharge span,
+.notice-btm-recharge a {
+  color: #f0641e;
+}
+.notice-btm-recharge a {
+  text-decoration: underline;
+}
+.l-amount-recharge {
+  padding: 12px 0 0 25px;
+}
+.l-amount-recharge:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-amount-recharge {
+  display: inline-block;
+  float: left;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #f2d9b3;
+  margin: 0 8px 20px;
+  cursor: pointer;
+}
+.li-amount-recharge:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.li-amount-recharge.active {
+  padding-left: 0;
+  background: url('http://static.web.anqu.com/resource/999/images/recharge/bg_amount_10.jpg') no-repeat 68px 10px;
+  border: 3px solid #f0641e;
+  display: inline-block;
+  float: left;
+  width: 96px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+}
+.icon-ali-recahrge {
+  display: block;
+  width: 212px;
+  height: 202px;
+  margin: 60px auto 160px;
+  padding-left: 0;
+  background: url('http://static.web.anqu.com/resource/999/images/recharge/aliIcon_03.png') no-repeat 0 0;
+}
+.group-amount-recharge {
+  padding: 0 0 0 25px;
+}
+.group-amount-recharge:after {
+  content: '';
+  display: block;
+  font-size: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  clear: both;
+}
+.input-amount-recharge {
+  display: inline-block;
+  float: left;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin: 0 15px 0 8px;
+  border: 1px solid #ccc;
+}
+.tip-input-recharge {
+  display: inline-block;
+  float: left;
+  width: auto;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  color: #333;
+}
+.tip-amount-recharge {
+  margin-top: 12px;
+  padding-left: 40px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 12px;
+  color: #333;
+}
+.tip-amount-recharge span {
+  color: #f0641e;
+}
+.tip-amount-recharge.ali {
+  margin: 0;
+}
+.confirm-btn-recharge {
+  display: block;
+  width: 184px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 24px auto 0;
+  background: #f0641e;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+/*dialog*/
+.dialog {
+  position: fixed;
+  _position: absolute;
+  *position: absolute;
+  z-index: 999;
+  top: 200px;
+  bottom: auto;
+  left: 50%;
+  right: auto;
+  display: block;
+  width: 384px;
+  height: 270px;
+  margin-left: -192px;
+  background: #fff;
+  box-shadow: 1px 3px 9px #ccc;
+  display: none;
+}
+.mask-dialog {
+  position: absolute;
+  z-index: 998;
+  top: 0;
+  bottom: auto;
+  left: 0;
+  right: auto;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .6;
+  filter: alpha(opacity=60);
+  display: none;
+}
+.hd-dialog {
+  height: 46px;
+  line-height: 46px;
+  background: #3d9fed;
+  position: relative;
+}
+.bd-dialog {
+  text-align: center;
+}
+.title-dialog {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+}
+.fork-dialog {
+  display: block;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: #fff;
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  bottom: auto;
+  left: auto;
+  right: 12px;
+  cursor: pointer;
+}
+.title-bd-dialog {
+  height: 34px;
+  line-height: 34px;
+  font-size: 22px;
+  color: #f0641e;
+  padding: 30px 0 12px;
+}
+.text-bd-dialog {
+  height: 19px;
+  line-height: 19px;
+  font-size: 14px;
+  color: #666;
+}
+.btn-dialog {
+  margin: 35px auto 0;
+  background: #3d9fed;
+  display: block;
+  width: 180px;
+  height: 44px;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.gameBox {
+  display: none;
+}
+.serverBox {
+  display: none;
+}
+#tCodeBox {
+  text-align: center;
+}
+#tCodeBox img {
+  display: inline-block;
+}

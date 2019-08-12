@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>游戏辅助</title>
+    <link type="text/css" rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+    <div class="container-aide">
+        <ul id="tabList" class="l-tab-aide">
+            <li class="li-tab-aide current-tab-aide">使用说明</li>
+            <li class="li-tab-aide">功能设置</li>
+        </ul>
+        <div class="contents-tab-aide" id="tabContents">
+            <div class="content-tab-aide current-content-aide">
+                <p class="text-content-aide">1.注册插件（若未注册插件则无法绑定窗口）；</p>
+                <p class="text-content-aide mb0">2.使用窗口工具获取窗口并绑定窗口（若未绑定窗口则无法使用辅助工具），获取窗口说明如下：</p>
+                <p class="intro-text-aide">长按<img class="tar-text" src="images/tar_03.jpg" />拖拽至游戏窗口<img class="arrow-text" src="images/arrow_06.png" />窗口句柄显示窗口信息<br /><img class="arrow-text" src="images/arrow_06.png" />获取窗口成功</p>
+                <p class="text-content-aide">3.启动辅助工具。</p>
+                <button id="cfgBtn" class="btn-lg-aide">进入功能设置</button>
+            </div>
+            <div class="content-tab-aide">
+                <div class="mod-aide">
+                    <div class="hd-aide">
+                        <ul class="l-hd-aide">
+                            <li class="li-hd-aide">
+                                <input class="cbk-hd-aide" type="checkbox" id="mainMission" />
+                                <label for="mainMission">自动主线</label>
+                            </li>
+                            <li class="li-hd-aide">
+                                <input class="cbk-hd-aide" type="checkbox" id="viceMission" />
+                                <label for="viceMission">功勋除魔</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bd-aide">
+                        <ul class="l-bd-aide">
+                            <li class="li-bd-aide">
+                                <label class="lbl-bd-aide" for="prize">奖励倍数：</label>
+                                <select class="slc-bd-aide" name="prize" id="prize">
+                                    <option value="1">单倍奖励</option>
+                                    <option value="2">双倍奖励</option>
+                                    <option value="3">三倍奖励</option>
+                                </select>
+                            </li>
+                            <li class="li-bd-aide">
+                                <label class="lbl-bd-aide" for="star">星级数：</label>
+                                <select class="slc-bd-aide" name="star" id="star">
+                                    <option value="1">1星以上</option>
+                                    <option value="2">2星以上</option>
+                                    <option value="3">3星以上</option>
+                                    <option value="4">4星以上</option>
+                                    <option value="5">5星以上</option>
+                                    <option value="6">6星以上</option>
+                                    <option value="7">7星以上</option>
+                                    <option value="8">8星以上</option>
+                                    <option value="9">9星以上</option>
+                                    <option value="10">10星</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ft-aide">
+                        <button id="starBtn" class="btn-lg-aide">启动</button>
+                        <ul id="btnList" class="l-btn-aide">
+                            <li id="toggleBtn" class="li-btn-aide toggle-btn-aide">暂停</li>
+                            <li id="closeBtn" class="li-btn-aide close-btn-aide">停止</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="http://box.wan.liebao.cn/aides" class="link-games-aide">返回列表></a>
+    </div>
+    <script src="js/tools.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

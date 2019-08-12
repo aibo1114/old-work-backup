@@ -1,0 +1,44 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">充值详情</h4>
+    </div>
+    <div class="panel-body">
+        <form ng-submit="$ctrl.sendOrder()" class="form form-inline form-search">
+            <div class="form-group">
+                <label for="">厂商id:</label>
+                <input ng-model="$ctrl.parm.supplier_id" class="form-control" placeholder="请填写数字" required />
+            </div>
+            <div class="form-group">
+                <label for="">广告id:</label>
+                <input ng-model="$ctrl.parm.advertisement" class="form-control" placeholder="请填写数字" required />
+            </div>
+            <div class="form-group">
+                <label for="">开始时间:</label>
+                <input ng-model="$ctrl.parm.begin" class="form-control form-date" type="datetime-local" />
+            </div>
+            <div class="form-group">
+                <label for="">结束时间:</label>
+                <input ng-model="$ctrl.parm.end" class="form-control form-date" type="datetime-local" />
+            </div>
+            <button type="submit" class="btn btn-primary btn-search">搜索</button>
+        </form>
+    </div>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th nowrap="nowrap">用户ID</th>
+            <th nowrap="nowrap">服务器ID</th>
+            <th nowrap="nowrap">充值金额</th>
+            <th nowrap="nowrap">下单时间</th>
+        </tr>
+        <tr ng-repeat="it in $ctrl.orders">
+            <td>{{it.Uid}}</td>
+            <td>{{it.Sid}}</td>
+            <td>{{it.Money}}</td>
+            <td>{{it.OrderTime}}</td>
+        </tr>
+    </table>
+    <div class="panel-footer" ng-if="$ctrl.sum">
+        <p>总充金额&nbsp;:&nbsp;&nbsp;<span class="text-primary">¥{{$ctrl.sum}}</span></p>
+        <p class="pr-2">总金额20%&nbsp;:&nbsp;&nbsp;<span class="text-primary">¥{{$ctrl.sum*0.2}}</span></p>
+    </div>
+</div>

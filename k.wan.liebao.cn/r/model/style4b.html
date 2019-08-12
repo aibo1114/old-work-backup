@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="http://img.wan.ijinshan.com/global/reg/css/loginreg1.2.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="http://i.wan.liebao.cn/script/lib/jquery.min.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/analytics.min.js"></script>
+<script type="text/javascript">
+	document.domain='wan.liebao.cn';
+</script>
+<script language=javascript type="text/javascript">
+<!--
+document.oncontextmenu=new Function('event.returnValue=false;');
+document.onselectstart=new Function('event.returnValue=false;');
+-->
+</script>
+<style>
+.regcon label{height:25px;color:#fff;width:80px;}
+.usrinpt{background:#152320;border:1px solid #3B6D64;width:174px;left:90px;color:#fff;}
+.form .item{ height:44px; }
+.item span.notice{ clear: both;top:22px;left:90px;color:#fff;}
+.item span.line2br{ display: inline; position: static;}
+.regbtn{ background: none; width: 80px; height: 29px;position:relative;}
+
+        /* input状态 (#passport, #password, #repassword) */
+        input.st_err {
+            border: 1px solid white;
+        }
+        input.st_ready {
+            border: 1px solid green;
+        }
+        /* message状态 (#passport_msg, #password_msg, #repassword_msg) */
+        span.st_err {
+            color: white;
+        }
+        span.st_ready {
+            color: green;
+        }
+.regcon .usertxt{background:url("http://xy.wan.liebao.cn/client/images/usertxt.png") no-repeat;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://xy.wan.liebao.cn/client/images/usertxt.png');font-size:0;}
+.regcon .pwdtxt{background:url("http://xy.wan.liebao.cn/client/images/pwdtxt.png") no-repeat;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://xy.wan.liebao.cn/client/images/pwdtxt.png');font-size:0;}
+.regcon .repwdtxt{background:url("http://xy.wan.liebao.cn/client/images/repwdtxt.png") no-repeat;_background:none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://xy.wan.liebao.cn/client/images/repwdtxt.png');font-size:0;}
+.userbtn{background:url("http://xy.wan.liebao.cn/client/images/btnBg.png") no-repeat;_background:url("http://xy.wan.liebao.cn/client/images/btnBg_ie6.png") no-repeat;height:31px;padding-left:100px;margin-top:20px;}
+</style>
+</head>
+<body> 
+	<div class="form regcon">
+		<!--  用户注册内容  -->
+		<div class="item">
+			<label class="title usertxt">帐&emsp;&emsp;号:</label>
+			<input type="text" id="passport" tabindex="1" name="passport" class="usrinpt" placeholder="请输入帐号">
+			<span class="notice" id="passport_msg">帐号由5-18位字母、数字或下划线组成</span>
+		</div>
+		<div class="item">
+			<label class="title pwdtxt">密&emsp;&emsp;码:</label>
+			<input type="password" id="password" tabindex="2" name="password" class="usrinpt" placeholder="请输入密码">
+			<span class="notice" id="password_msg">密码由8-32位字符组成（区分大小写）</span>
+		</div>	
+		<div class="item">
+			<label class="title repwdtxt">确认密码:</label>
+			<input type="password" id="repassword" tabindex="3" name="repassword" class="usrinpt" placeholder="再次输入密码">
+			<span class="notice" id="repassword_msg">再次输入登录密码</span>
+		</div>
+		<!--  用户登录按钮  -->
+		<div class="userbtn">
+			 <a tabindex="4" class="regbtn __trace__"  id="reg_btn" onclick="datatrace(2);return false;" href="javascript: void(0)" data-trace="151010,900,,,gamename:xyclient|w:regbtn"><img src="http://img.wan.ijinshan.com/global/reg/images/regBtn.png" /></a>
+		</div>
+	</div>
+
+<!-- 回调地址 -->	
+    <input type="hidden" name="service" id="service" />
+<script type="text/javascript">
+
+	var Util = {
+    getQueryString: function(param) {
+        if (location.href.indexOf('?') === -1 || location.href.indexOf(param + '=' ) === -1) {
+            return '';
+        }
+
+        var queryString = location.href.substring(location.href.indexOf('?') + 1);
+        if (queryString.indexOf('#') !== -1) {
+            queryString = queryString.substring(0, queryString.indexOf('#'));
+        }
+
+        var parameters = queryString.split('&');
+
+        var pos, paraName, paraValue;
+        for (var i = 0; i < parameters.length; i++) {
+            pos = parameters[i].indexOf('=');
+            if (pos === -1) { continue; }
+
+            paraName = parameters[i].substring(0, pos);
+            paraValue = parameters[i].substring(pos + 1);
+
+            if (paraName === param) {
+                return paraValue.replace(/\+/g, ' ');
+            }
+        }
+        return '';
+    }
+};
+
+var service = Util.getQueryString('service');
+	service = decodeURIComponent(service);
+	document.getElementById('service').value=service;
+	var btnimg = Util.getQueryString('btnImage');
+if(btnimg!=''){
+	document.getElementById('reg_btn').innerHTML='<img src="'+btnimg+'" />';
+}
+</script>	
+	
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://i.wan.liebao.cn/reg/script/register_jq.min.js"></script>
+<script type="text/javascript">
+$(function(){
+//文本输入框焦点和失去焦点效果
+	$(":input").focus(function(){
+	  if($(this).val() ==this.defaultValue){  
+		$(this).val("");           
+	  } 
+	}).blur(function(){
+	 if ($(this).val() == '') {
+		$(this).val(this.defaultValue);
+		}
+	});
+	datatrace();
+});
+var vk = window.location.search;
+var vklen=vk.lastIndexOf("vkgamename");
+function datatrace(n){
+	var usrval = $("#passport").val();
+	//错误提示对象与个数
+	var errArr=$('.notice.error');
+	var errNum=errArr.length;
+	
+	//错误对象编号
+	var whicherr=null;
+	for(var i=0;i<errNum;i++){                    
+		var errStatus=errArr.eq(i).attr('id');
+		var errObjname=errArr.eq(i).attr('name');
+
+		if((errStatus=='aName')&&(errObjname=='err')){
+			if(whicherr==null){
+				whicherr='102';
+			}else{
+				whicherr=whicherr+'_102';
+			}
+		}
+		
+		if((errStatus=='aPsd')&&(errObjname=='err')){
+			if(whicherr==null){
+				whicherr='110';
+			}else{
+				whicherr=whicherr+'_110';
+			}
+		}
+		
+		if((errStatus=='aRePsd')&&(errObjname=='err')){
+			if(whicherr==null){
+				whicherr='111';
+			}else{
+				whicherr=whicherr+'_111';
+			}
+		}
+	}       
+	if(vklen>0){
+		var vkgamename = vk.substr(vklen+11);
+		if(n==1){
+			var vkstr=$("#regqqlogin").attr("data-trace");
+			var strstart = vkstr.substring(0,vkstr.lastIndexOf("gamename")+9);
+			var strend = "|w:regqqlogin";
+			$("#regqqlogin").attr("data-trace",strstart+vkgamename+strend);
+		}
+		else{
+			var vkstr=$("#registbtn").attr("data-trace");
+			var strstart = vkstr.substring(0,vkstr.lastIndexOf("gamename")+9);
+			var strend = "|w:regbtn_" ;
+			$("#registbtn").attr("data-trace",strstart+vkgamename+strend+usrval);
+		}
+	}
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "moodTag.js",
+  "sourceRoot": "",
+  "sources": [
+    "moodTag.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,OAAP,GAAiB,OAAA,CAAQ,yCAAR;AAAjB"
+}

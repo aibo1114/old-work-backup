@@ -1,0 +1,20 @@
+extends inc/main
+
+block style
+    link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/999/css/anqu_detail_temp.css')
+    block detail_style
+block script
+    block detail_script
+block content
+    mixin anqu_page_pos(subtitles)
+        span.anqu_inline_block.anqu_fl_rt(style='line-height:34px;color:#808080;')=subtitles
+
+    .anqu_container.anqu_middle
+        //.left_login_block.anqu_inline_block
+
+        .right_block.anqu_inline_block
+            .right_list_content_pos
+                .list_title
+                    span.list_title_words.anqu_inline_block 公告
+                    +anqu_page_pos('当前位置：平台首页>公告')
+                block detail_content

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        *{margin:0;padding:0;font:14px/20px Microsoft YaHei,Helvetica,Tahoma,Arial,SimSun,sans-serif}
+        ol,ul{list-style:none}
+        a{text-decoration:none;outline:0}
+        a:hover{text-decoration:underline;}
+        body,html{height:100%;}
+        .clearfix:after{display:block;clear:both;height:0;font-size:0;content:'.';visibility:hidden}
+        *html .clearfix{zoom:1}
+        #wrap{width:250px;background:#F4F4F4;height:auto;padding:0 10px 10px 10px;}
+        #wrap .head{height:40px;position:relative;}
+        #wrap .head a.more{position: absolute;right: 5px;top:6px;font-size: 14px;}
+        #wrap .head span{font: bold 14px/35px 'Microsoft YaHei';}
+
+        #wrap .body .recom-item{padding:0 0 10px 50px;height:40px;position: relative;}
+        #wrap .body .recom-item a.img-link, #wrap .body .recom-item a.img-link img{display: inline-block;height:40px;width:40px;outline:0;border: none;}
+        #wrap .body .recom-item a.img-link{overflow: hidden;border:1px solid #7b7879;position: absolute;top:0;left:0;padding:1px;-moz-border-radius: 5px;border-radius: 5px;}
+        #wrap .body .recom-item p{width: 200px;white-space: nowrap;text-overflow: ellipsis;-o-text-overflow: ellipsis;overflow: hidden;}
+
+        .black{color:#484848;font-weight: bold;}
+        .grey{color:#666;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- header start --> 
+        <div class="head">
+            <span class="black">编辑推荐</span>
+            <a class="more grey" href="javascript:external.OpenUrl('http://wan.liebao.cn/tuiguang/index.php?frm=lb-yxmsmore&referer=lb_yxms');">更多&gt;&gt;</a>
+        </div>
+        <!-- header end -->
+
+        <!-- body start -->
+        <div class="body">
+
+            <!-- ivolist start -->
+            <ivolist name="cates['563']" id="vo">
+               <div class="recom-item">
+                    <!-- image link -->
+                    <a class="img-link" href="javascript:external.OpenUrl('{{$vo.field4}}');" target="_blank">
+                        <img src="{{$vo.field1}}" alt="" width="40" height="40" />
+                    </a>
+
+                    <p class=""><a class="black" href="javascript:external.OpenUrl('{{$vo.field4}}');" target="_blank">{{$vo.field2}}</a></p>     
+                    <p class="grey">{{$vo.field3}}</p>               
+                </div>
+            </ivolist>
+
+        </div>
+        <!-- body end -->
+    </div>
+</body>
+</html>

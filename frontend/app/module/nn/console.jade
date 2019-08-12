@@ -1,0 +1,17 @@
+extends ../main
+
+block script
+    - main = 'server'
+    - mount = true
+    if mode
+        -libPath = 'http://127.0.0.1:8089/';
+
+block ctn
+    body(console=true)
+
+block st
+    :coffee(bare=true,minify=true)
+//        meta.community.giftCode = {}
+//        meta.community._.item[0].items.push 'giftCode'
+//        meta.community._.item[0].items.push 'endDate'
+//        meta.community._.item[1].items = ['qrcodePic', 'wtSharePic']

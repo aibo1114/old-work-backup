@@ -1,0 +1,220 @@
+@brand-primary: #0078ff;
+
+@font-family-base: 'Microsoft Yahei', 'Helvetica Neue', 'Luxi Sans', 'DejaVu Sans', Tahoma, 'Hiragino Sans GB', STHeiti;
+@grid-gutter-width: 10px;
+
+@navbar-margin-bottom: 0;
+@navbar-default-bg: #0078ff;
+@navbar-default-link-color: #fefefe;
+@navbar-default-link-hover-color: #fff;
+@navbar-default-link-active-color: #fff;
+@navbar-default-brand-hover-color: #fff;
+@navbar-default-toggle-border-color: #e1e1e1;
+@navbar-default-toggle-icon-bar-bg: #fff;
+@navbar-default-toggle-hover-bg: #0068de;
+@navbar-border-radius: 0;
+
+@dropdown-bg: rgba(255, 255, 255, .8);
+@dropdown-link-color: #0068de;
+@dropdown-link-hover-bg: #0068de;
+@dropdown-link-hover-color: #fff;
+
+@input-height-base: 40px;
+@input-color-placeholder: #d3d3d3;
+
+@panel-default-border: #e1e1e1;
+
+@gray-lightest: lighten(#000, 98%);
+@border-radius-base: 0;
+
+@import "../../../../lib/style/mod/article";
+
+.panel {
+  margin-bottom: 0;
+}
+
+.dl-horizontal {
+  .glyphicon{
+    margin-right: 10px;
+  }
+  margin-top: 10px;
+  dt {
+    text-align: left;
+    line-height: 30px;
+    margin-right: 10px;
+    width: auto;
+  }
+  dd {
+    line-height: 30px;
+    margin-left: auto;
+  }
+}
+.searchBox {
+  .btn-danger {
+    width: 200px;
+    margin-top: 10px;
+    margin-right: 10px;
+  }
+}
+
+.l-search {
+  width: 210px;
+  position: absolute;
+  z-index: 100;
+  top: 25px;
+  display: none;
+  .glyphicon-chevron-right {
+    float: right !important;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  .list-group-item {
+    i {
+      float: none;
+      margin-right: 5px;
+    }
+  }
+}
+
+.m3 {
+  .list-group-item {
+    min-height: 85px;
+    text-decoration: none;
+    padding: 8px;
+    h4 {
+      font-size: 13px;
+      color: @brand-primary;
+      margin-top: 0;
+    }
+    .small {
+      color: @gray-light;
+    }
+    color: @gray;
+  }
+}
+
+/*searchInput*/
+.block-search-hder {
+  clear: both;
+  .tip-search {
+    display: inline-block;
+    float: left;
+    font-size: 1.4em;
+    color: #4f4f4f;
+  }
+  .q {
+    display: inline-block;
+    float: left;
+    width: 180px;
+    margin: 0 15px;
+    padding: 0 15px;
+    height: 2.6em;
+    background: #ebebeb;
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
+    .box-shadow(3px 3px 9px #b5b5b5 inset);
+    -moz-box-shadow: 3px 3px 9px #b5b5b5 inset;
+    -webkit-box-shadow: 3px 3px 9px #b5b5b5 inset;
+    box-shadow: 1px 2px 6px #b5b5b5 inset;
+    letter-spacing: 1px;
+    color: #666;
+  }
+  .btn-search {
+    cursor: pointer;
+    display: inline-block;
+    float: left;
+    margin-top: 4px;
+    width: 27px;
+    height: 2em;
+    background: url("@{imgDir}icon-search_06.png") no-repeat 0 0;
+    background-size: 100% auto;
+    border: none;
+  }
+}
+
+#footer {
+  background: #2d3237;
+  &:after {
+    content: '.';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+  }
+  .intro {
+    p {
+      padding-top: 15px;
+      padding-left: 50px;
+      color: #eee;
+      font-size: 1em;
+      line-height: 1.8em;
+      a {
+        text-decoration: none;
+        color: #eee;
+      }
+      a:hover {
+        text-decoration: underline;
+        color: #eee;
+      }
+    }
+  }
+  .attention {
+    padding-bottom: 20px;
+    color: #fff;
+    border-left: 1px solid #bebebe;
+    border-right: 1px solid #bebebe;
+    text-align: center;
+    .l-attention {
+      margin-top: 15px;
+      padding: 0;
+      li {
+        list-style: none;
+        font-size: 1em;
+        line-height: 1.8em;
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+
+  }
+  .share {
+    padding-left: 15px;
+    .l-share {
+      margin: 0;
+      padding: 5px 0 0 0;
+      text-align: left;
+      &:after {
+        content: '';
+        display: block;
+        height: 0;
+        overflow: hidden;
+        clear: both;
+      }
+      li {
+        width: 33%;
+        display: inline-block;
+        float: left;
+        padding-right: 15px;
+        list-style: none;
+      }
+    }
+  }
+  h5 {
+    padding-top: 20px;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    color: #fff;
+  }
+}
+
+.tightening {
+  text-indent: 2em;
+  line-height: 22px;
+}
+
+.mod-tab {
+  margin: 10px 0;
+}

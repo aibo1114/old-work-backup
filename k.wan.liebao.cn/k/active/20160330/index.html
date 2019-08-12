@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>累充活动</title>
+	<link rel="stylesheet" href="css/base.css" />
+</head>
+<style>
+body,html{
+	height: auto;
+}
+	.lc_warp{
+		width:100%;
+		height: 100%;
+		background-color: #fabd26;
+	}
+	.lc_warp .lc_inner{
+		width: 90.5%;
+		height: auto;
+		margin: 0 auto;
+		position: relative;
+	}
+	.lc_warp .lc_inner img{
+		width: 100%;
+	}
+	.lc_activerul{
+		font-size: 14px;
+	    color: #fff;
+	    font-family: "微软雅黑";
+	    position: absolute;
+	    bottom: 6px;
+	    width: 72%;
+	    left: 50%;
+	    margin-left: -41%;
+	    padding: 10px 20px;
+	    background-color: #8eb900;
+	    border-radius: 5px;
+	    /*padding-top: 10px;*/
+	}
+	.lc_warp .lc_inner .lc_activerul img{
+		width: 8%;
+		margin: 0 auto;
+		display: block;
+	}
+	.lc_yiyuan{
+		position: absolute;
+	    top: 50.5%;
+	    background: url('images/2.png') no-repeat 0 0;
+	    background-color: white;
+	    width: 154px;
+	    height: 48px;
+	    border-radius: 5px;
+	    left: 50%;
+	    margin-left: -8%;
+	    background-size: 100%;
+	    cursor: pointer;
+	}
+	.lc_chongzhi{
+		    position: absolute;
+	    top: 72.5%;
+	    background: url('images/liji.png');
+	    background-color: white;
+	    width: 11%;
+	    height: 4.3%;
+	    border-radius: 5px;
+	    left: 50%;
+	    margin-left: -18.5%;
+	    background-size: 100%;
+	    cursor: pointer;
+	}
+	.lc_phone{
+	    position: absolute;
+	    top: 72.5%;
+	    background: url('images/phone.png');
+	    background-color: white;
+	    width: 11%;
+	    height: 4.3%;
+	    border-radius: 5px;
+	    left: 50%;
+	    margin-left: 1.3%;
+	    background-size: 100%;
+	    cursor: pointer;
+	}
+	.lc_mark{
+		width: 100%;
+	    height: 100%;
+	    position: fixed;
+	    background: #000;
+	    top: 0;
+	    left: 0;
+	    opacity: 0.3;
+	    filter:alpha(opacity=30);
+	    display: none;
+	}
+	.lc_banding{
+		width: 560px;
+    	height: 350px;
+	    background-color: #fff;
+	    position: fixed;
+	    left: 50%;
+	    margin-left: -280px;
+	    top: 100px;
+	    border-radius: 5px;
+	    border: 6px solid rgba(152,170,3,0.8);
+	    display: none;
+	}
+	.lc_banding .em {
+		display:block;
+		position: absolute;
+	    background: url(images/close.png) no-repeat 0 0;
+	    width: 74px;
+	    height: 74px;
+	    background-size: 100%;
+	    background-repeat: no-repeat;
+	    right: -20px;
+	    top: -20px;
+	    cursor: pointer;
+	}
+	.lc_info_tishi{
+		background:url(images/tianphone.png) no-repeat 0 0;
+	    width: 85%;
+	    height: 30px;
+	    margin:69px auto 0;
+	}
+	.lc_info{
+		/*display: block;*/
+	}
+	.lc_info input{
+		display:block;
+		height: 45px;
+		line-height:45px;
+	    width: 84%;
+	    margin: 0 auto;
+	    display: block;
+	    box-sizing: border-box;
+	    -webkit-box-sizing:border-box;
+	    padding-left: 10px;
+	    margin-top: 30px;
+	    color: #b2b2b2;
+	    font-family: "微软雅黑";
+	    border: 1px solid #b2b2b2;
+	}
+	.bangding{
+		width: 186px;
+	    height: 60px;
+	    background-image: url(images/lijibangding.png);
+	    background-repeat: no-repeat;
+	    margin: 0 auto;
+	    margin-top: 50px;
+	    cursor: pointer;
+	}
+	.lc_info_succ{
+		display: none;
+	}
+	.lc_info_succ .congzhi{
+		width: 186px;
+	    height: 60px;
+	    background-image: url(images/lijichongzhi.png);
+	    background-repeat: no-repeat;
+	    margin: 0 auto;
+	    margin-top: 50px;
+	    cursor: pointer;
+	}
+	.lc_info_tongzhi{
+		background-image: url(images/tongzhi.png);
+	    width: 69px;
+	    height: 32px;
+	    background-repeat: no-repeat;
+	    margin: 0 auto;
+	    margin-top: 69px;
+	}
+	.lc_succ{
+		font-size: 30px;
+	    color: #808080;
+	    text-align: center;
+	    margin-top: 64px;
+	}
+	.login{
+	position: absolute;
+    top: 0;
+    right: 20%;
+    width: 76px;
+    background-color: #97c302;
+    text-align: center;
+    height: 26px;
+    line-height: 26px;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    font-family: "微软雅黑";
+    margin-top: 23px;
+    cursor: pointer;
+	}
+	.lc_yiyuan a,.congzhi a,.lc_chongzhi a{
+		display: block;
+		height: 100%;
+		width:100%;
+	}
+	
+</style>
+<body style="height:auto">
+<div class="lc_warp">
+	<div class="lc_inner">
+		<div class="lc_inn_img">
+			<img src="images/bg.png" alt="">
+		</div>
+		<!-- <a href="http://wan.liebao.cn/action/logout.php?bu=http://k.wan.liebao.cn/k/active/20160330/index.html" class="login">登录</a> -->
+		<div class="lc_yiyuan">
+			<a href="http://1.jdd.com/?frm=hd_0331lc-liebao" target="_blank"></a>
+		</div>
+		<div class="lc_chongzhi">
+			<a href="http://wan.liebao.cn/pay/" target="_blank"></a>
+		</div>
+		<div class="lc_phone">
+		</div>
+		<!-- <div class="lc_activerul">
+			<img src="images/hudongguize.png" alt="">
+			<p>1、活动时间为3月31日12:00至4月5日12:00，每个账号只能获得一次奖励，活动奖励不可累积获得，充值有效时间以订单实际到账时间为准。</p>
+			<p>2、"猎宝币”为“一元猎宝官网”网站的唯一识别货币，猎宝币只能在一元猎宝官网（1.jdd.com）消费，不可交易、转赠和提现。</p>
+			<p>3、参与活动的玩家需要先通过页面上的“一元猎宝官网”入口进入一元猎宝首页注册成为一元猎宝用户。返回到本活动页面填写并提交在一元猎宝注册时使用的手机号码，每个金山猎豹游戏账号只能对应一个手机号，每个一元猎宝注册手机号只能对应一个金山猎豹游戏账号。</p>
+			<p>4、如对活动有不明之处，请在参与前联系客服。</p>
+			<p>5、活动奖励将在活动结束后3个工作日内发放，请玩家至一元猎宝官网（1.jdd.com）登录后，个人中心内查看。</p>
+			<p>6、金山猎豹游戏中心官方有权在必要时，通过在站内发出公告等合理方式修改本次活动规则，为保证您收到最新通知，建议您关注官网公告。</p>
+		</div> -->
+	</div>
+	<div class="lc_mark"></div>
+	<div class="lc_banding">
+		<span class="em close"></span>
+		<div class="lc_info">
+			<p class="lc_info_tishi"></p>
+			<input class="itxt_lc_info"  type="text" placeholder="输入手机号" />
+			<div class="bangding">
+			</div>
+		</div>
+		<div class="lc_info_succ">
+			<p class="lc_info_tongzhi"></p>
+			<p class="lc_succ">恭喜你,绑定成功</p>
+			<div class="congzhi">
+				<a href="http://wan.liebao.cn/pay/" target="_blank"></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!--<script src="http://s4.cnzz.com/z_stat.php?id=1258316121&web_id=1258316121" language="JavaScript"></script>-->
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1258316121'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1258316121%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js?t=201410311102"></script>
+<script type="text/javascript" src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/lucky/Helper/Login/1.0.1/Login.min.js?t=201410311102"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/header/1.0.0/header_login.js?t=201410311102"></script>
+<script>
+//$(function(){
+var helper={};
+helper.data=ks_user;
+
+helper.userLogin=function(){
+	var data=this.data;
+	if (!data || data.length==0){
+		Login.show();
+	}
+};
+helper.userLogin();
+//})
+$('.lc_banding .close').on('click',function(){
+	$(this).parent().hide();
+	$('.lc_mark').hide();
+})
+$('.lc_phone').on('click',function(e){
+	var uid=ks_user.uid;
+	$.ajax({
+		url:'http://api.wan.liebao.cn/activity/20160331/info?uid='+uid,
+		type:'GET',
+		dataType:'jsonp',
+		crossDomain: true,
+		success:function(res){
+			console.log(res);
+			var ret=res.ret;
+			var phoneNum=res.data.PhoneNumber;
+			if(ret!=1) return;
+			$('.lc_mark').show();
+			$('.lc_banding').show();
+			if(phoneNum){
+				$('.lc_info').hide();
+				$('.lc_info_succ').show();
+				$('.lc_succ').text('您已绑定，充值即可');
+			}else{
+				$('.lc_info').show();
+			}
+		}
+	});
+})
+
+
+$('.lc_info .bangding').on('click',function(){
+	var phone=$('.lc_info input').val();
+	if(!/^(13[0-9]|14[0-9]|15[0-9]|18[0-9])\d{8}$/i.test(phone))
+	{
+	  alert('请输入正确的手机号');
+	}else{
+		var uid=ks_user.uid;
+		if(uid==''||uid==undefined){
+			//alert("")
+			helper.userLogin();
+		}else{
+			var q_url="http://api.wan.liebao.cn/activity/20160331/bind_phone?uid="+uid+"&phone="+phone+"&returntype=jsonp&callback=?";
+	          $.getJSON(q_url,function(data){
+	          	if(data.ret=='1'){
+	          		$('.lc_info').hide();
+					$('.lc_info_succ').show();
+	          	}else if(data.ret=='2'){
+	          		$('.lc_info').hide();
+					$('.lc_info_succ').show();
+					$('.lc_succ').text('您已绑定，充值即可');
+	          	}else{
+	          		alert(data.msg);
+	          	}
+	          })
+			}
+	}
+})
+</script>
+</html>

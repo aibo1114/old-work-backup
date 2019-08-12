@@ -1,0 +1,51 @@
+<div class="dialog tip-dialog" ng-if="ui.tip" ng-show="ui.tip" ng-style="dStyle">
+    <span class="fork-dialog" ng-click="close();">X</span>
+    <div class="hd-dialog">
+        <h4 class="title-hd-dialog" ng-class="icon">{{title}}</h4>
+    </div>
+    <div class="bd-dialog">
+        <p class="tip-bd-dialog {{ui.tipCls}}" ng-style="tipStyle">{{text}}</p>
+        <button ng-if="ui.btn" class="btn-bd-dialog" ng-class="{'btn-lg-dialog':ui.btn.size=='lg','btn-sm-dialog':ui.btn.size=='sm'}" ng-click="close();">{{ui.btn.txt}}</button>
+    </div>
+    <div ng-if="ui.ft" class="ft-dialog">{{ui.ft.txt}}</div>
+</div>
+<span class="ieshadow-dialog" ng-if="ui.tip" ng-show="ui.tip" ng-style="dStyle"></span>
+
+
+<div class="dialog txt-dialog" ng-if="ui.text" ng-show="ui.text" ng-style="dStyle">
+    <span class="fork-dialog" ng-click="close();">X</span>
+    <div class="hd-dialog">
+        <h4 class="title-hd-dialog" ng-class="icon">{{title}}</h4>
+    </div>
+    <div class="bd-dialog">
+        <div class="text-bd-dialog">
+            <p ng-repeat="txt in text">{{txt}}</p>
+        </div>
+        <button ng-if="ui.btn" class="btn-bd-dialog" ng-class="{'btn-lg-dialog':ui.btn.size=='lg','btn-sm-dialog':ui.btn.size=='sm'}" ng-click="close();">{{ui.btn.txt}}</button>
+    </div>
+    <div ng-if="ui.ft" class="ft-dialog"></div>
+</div>
+<span class="ieshadow-dialog" ng-if="ui.text" ng-show="ui.text" ng-style="dStyle"></span>
+
+
+<div class="dialog content-dialog" ng-if="ui.content" ng-show="ui.content" ng-style="dStyle">
+    <span class="fork-dialog" ng-click="close();">X</span>
+    <div class="hd-dialog">
+        <h4 class="title-hd-dialog" ng-class="icon">{{title}}</h4>
+    </div>
+    <div class="bd-dialog" ng-bind-html="content"></div>
+
+    <div class="copy-bd-dialog" ng-if="ui.copycode">
+        <div class="media-pkg-dialog"><span class="glyphicon glyphicon-gift"></span></div>
+        <div class="cptn-pkg-dialog"><h5 id="copyCode" class="ctxt-pkg-dialog" ng-bind="ui.copycode"></h5><p class="ctip-pkg-dialog">请复制激活码并进入游戏兑换</p></div>
+        <button class="copy-pkg-dialog" hover-class="hvr-pkg-dialog" ng-click="copycode(ui.copycode);">复制</button>
+    </div>
+
+
+    <button ng-if="ui.btn" class="btn-bd-dialog" ng-class="{'btn-lg-dialog':ui.btn.size=='lg','btn-sm-dialog':ui.btn.size=='sm'}" ng-click="close();">{{ui.btn.txt}}</button>
+    <div ng-if="ui.ft" class="ft-dialog"></div>
+</div>
+<span class="ieshadow-dialog" ng-if="ui.content" ng-show="ui.content" ng-style="dStyle"></span>
+
+
+<!--!--span class="glyphicon" ng-class="icon"></span-->

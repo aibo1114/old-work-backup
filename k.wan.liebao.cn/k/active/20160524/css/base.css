@@ -1,0 +1,706 @@
+html{color:#000;background:#FFF; -webkit-text-size-adjust:none;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;box-sizing:content-box;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+.templatenew{
+    /*background-color: #f2f2f2;*/
+    /*//+background-color:#a200ff;/*IE6、7识别*/*/
+
+}
+.wrap {
+    width: 720px;
+    height: 448px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.newsPanel{
+	width: 700px;
+    height: 394px;
+    padding: 8px 10px;
+}
+.main {
+    width: 700px;
+    height: 394px;
+    overflow: hidden;
+}
+.template5 .game .main-left {
+    width: 206px;
+    height: 236px;
+}
+.main-left {
+    float: left;
+    width: 260px;
+    height: 394px;
+    overflow: hidden;
+}
+.game .banner {
+    position: relative;
+    width: 206px;
+    height: 236px;
+    overflow: hidden;
+}
+.game .bannerImg {
+    position: relative;
+    width: 206px;
+    height: 236px;
+    overflow: hidden;
+}
+
+.game .imgList li {
+    float: left;
+    position: relative;
+    width: 206px;
+    height: 236px;
+    overflow: hidden;
+}
+
+.game .bannerImg .img,.game .bannerImg img {
+    width: 206px;
+    height: 236px;
+}
+.img {
+    display: block;
+    background: url(images/def.png) center center no-repeat;
+}
+a {
+    text-decoration: none;
+    color: #333;
+    cursor: point;
+    cursor:hand;
+    +cursor: hand;
+    _cursor: hand;
+     cursor\0\9: hand;
+}
+
+.banner .mask {
+    z-index: 2;
+}
+.mask {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 31px;
+}
+.mask .titlebg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    background: transparent \9;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#99000000', endColorstr='#99000000') \9;
+}
+.game .titleList {
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+    width: 206px;
+    height: 30px;
+    z-index: 3;
+}
+.titleList li{
+    display: none;
+}
+.titleList li.active {
+    display: inline-block;
+}
+.titleList li.cur{
+    display: inline-block;
+}
+.game .titleCircle {
+    position: absolute;
+    right: 11px;
+    bottom: 0;
+    height: 30px;
+    z-index: 3;
+    _top:3px;
+}
+.game .titleCircle span.cur {
+    background-position: 0 0;
+}
+.game .titleCircle span {
+    display: inline-block;
+    width: 10px;
+    height: 10;
+    padding-top: 12px;
+    margin: 9px 0 9px 0px;
+    overflow: hidden;
+    background: url(../images/boral8px.png) -11px 0 no-repeat;
+    _background: url(../images/boral8px-ie6.png) -11px 0 no-repeat;
+    cursor: pointer;
+    cursor:hand;
+    +cursor: hand;
+    _cursor: hand;
+     cursor\0\9: hand;
+     margin-right: -3px;
+     +margin-right: 3px;
+     _margin-right: 3px;
+}
+.template5 .game .main-middle {
+    width: 265px;
+    height: 236px;
+    /*+height: 230px;*/
+}
+.main-middle {
+    float: left;
+    width: 260px;
+    height: 394px;
+    overflow: hidden;
+    padding-left: 15px;
+}
+.caption ul {
+    /*padding: 0 0 11px;*/
+}
+.game .caption li.big {
+    height: 25px;
+
+}
+.caption li {
+    height: 21px;
+    line-height: 21px;
+    overflow: hidden;
+    +line-height: 21px;
+}
+.game .caption li.big a,.game .caption .capTitle {
+    line-height: 32px;
+    font-size: 15px;
+    _font-size: 14px;
+    color: #3B63A9;
+    font-family: 'Microsoft Yahei';
+}
+
+.title {
+    font-size: 12px;
+    text-align: left;
+    overflow: hidden;
+}
+.caption ul.topBor {
+    /*border-top: #e3e3e3 1px solid;*/
+    /*padding-top: 5px;*/
+}
+.caption ul {
+    /*padding: 0 0 11px;*/
+}
+.caption li.big {
+    height: 32px;
+}
+/*.caption li {
+    height: 22px;
+    line-height: 22px;
+    overflow: hidden;
+}*/
+.caption li.big a, .caption .capTitle {
+    line-height: 32px;
+    font-size: 17px;
+    color: #3B63A9;
+    font-family: 'Microsoft Yahei';
+}
+.game .caption{
+    margin-top: -7px;
+}
+.title {
+    font-size: 12px;
+    text-align: left;
+    overflow: hidden;
+}
+.template5 .main-bottom.bottom {
+    width: 492px;
+    height: 150px;
+    overflow: hidden;
+}
+.game .smallImg {
+    height: 150px;
+    /*padding-top: 20px;*/
+}
+.smallImg .yl-game-top a{
+    display: inline;
+}
+.smallImg li {
+    float: left;
+    margin-right: 6px;
+    +margin-right: 6px;
+    _margin-right: 6px;
+}
+.template5 .game .smallImg li.item {
+    margin-left: 4px;
+}
+.template5 .game .smallImg .img, .template5 .game .smallImg img {
+    width: 112px;
+    height: 96px;
+}
+.template5 .game .smallImg a .change{
+    width: 14px;
+    height: 14px;
+    /* margin-top: 3px; */
+    vertical-align: middle;
+    /*margin-left: 259px;*/
+}
+.clear{
+    clear:both;
+}
+.smallImg a {
+    display: block;
+    position: relative;
+}
+.img {
+    display: block;
+    background: url(images/def.png) center center no-repeat;
+}
+a {
+    text-decoration: none;
+    color: #333;
+    cursor: point;
+    cursor:hand;
+    +cursor: hand;
+    _cursor: hand;
+     cursor\0\9: hand;
+}
+
+.template5 .game .smallImg .title {
+   /* width: 120px;*/
+    /*height: 40px;*/
+    /*line-height: 18px;*/
+    word-break: break-all;
+    word-wrap: break-word;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.smallImg a {
+    display: block;
+    position: relative;
+}
+.title {
+    font-size: 12px;
+    text-align: left;
+    overflow: hidden;
+}
+.clearfix:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.titleList .title {
+    display: inline-block;
+    text-indent: 0;
+}
+.game .titleList a:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+.mask .title {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-indent: 12px;
+    color: #fff;
+    height: 30px;
+    line-height: 31px;
+}
+.title {
+    font-size: 12px;
+    text-align: left;
+    overflow: hidden;
+}
+a {
+    text-decoration: none;
+    color: #333;
+    cursor: point;
+    cursor:hand;
+    +cursor: hand;
+    _cursor: hand;
+     cursor\0\9: hand;
+}
+.template2 .sideChart li .img img {
+    width: 150px;
+    height: 240px;
+}
+.img img {
+    display: block;
+}
+fieldset, img {
+    border: 0;
+}
+div.slideBox{ position:relative; width:670px; height:300px; overflow:hidden;}
+div.slideBox ul.items{ position:absolute; float:left; background:none; list-style:none; padding:0px; margin:0px;}
+div.slideBox ul.items li{ float:left; background:none; list-style:none; padding:0px; margin:0px;}
+div.slideBox ul.items li a{ float:left; line-height:normal !important; padding:0px !important; border:none/*For IE.ADD.JENA.201206300844*/;}
+div.slideBox ul.items li a img{ margin:0px !important; padding:0px !important; display:block; border:none/*For IE.ADD.JENA.201206300844*/;}
+/*div.slideBox div.tips{ position:relative;bottom:0px; width:100%; height:30px;line-height: 31px; background-color:#000; overflow:hidden;}*/
+div.slideBox div.tips {
+    position: relative;
+    /* bottom: -255px; */
+    width: 100%;
+    height: 30px;
+    line-height: 31px;
+    background-color: #000;
+    overflow: hidden;
+    top: 207px;
+    filter:alpha(opacity=60);
+    -moz-opacity:0.6;
+    -khtml-opacity: 0.6;
+    opacity: 0.6;
+
+}
+div.slideBox div.tips div.title{height:100%;}
+div.slideBox div.tips div.title a{ font-size: 12px;color: #fff;
+    text-align: left;
+    overflow: hidden;
+	margin-left:10px;}
+div.slideBox div.tips div.title a:hover{ text-decoration:underline !important;}
+div.slideBox div.tips div.nums {
+    float: right;
+    top: 0px;
+    height: 100%;
+    top: -30px;
+    margin-top: -30px;
+    margin-right: 5px;
+}
+div.slideBox div.tips div.nums a{
+ display: inline-block;
+    width: 12px;
+    height: 0;
+    padding-top: 12px;
+    margin: 9px 0 9px 6px;
+    overflow: hidden;
+    background: url(../images/boral.png) -12px 0 no-repeat;
+    _background: url(../images/boral-ie6.png) -12px 0 no-repeat;
+    cursor: pointer;
+    cursor:hand;
+    +cursor: hand;
+    _cursor: hand;
+     cursor\0\9: hand;
+    margin-left: 2px;
+    }
+div.slideBox div.tips div.nums a.active{ background-position: 0 0;}
+a:hover{text-decoration:none}li a:hover{text-decoration:underline;color:#bb1e2f}
+.yl-main-right{
+    float: right;
+    margin-top: -386px;
+    background-color: #fff;
+    height: 400px;
+    padding-left: 10px;
+    width: 197px;
+}
+.yl-host-rank{
+    margin-left: -5px;
+}
+.yl-main-right .yl-host-rank h4{
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    line-height: 24px;
+}
+.yl-main-right .yl-host-rank .yl-host-left{
+    float: left;
+}
+.yl-host-rank .yl-host-left p{
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    color: #fff;
+    background-color: #ff6519;
+    text-align: center;
+    line-height: 20px;
+    float: left;
+    margin-top: 12px;
+}
+.yl-host-rank li{
+    height: 50px;
+    padding: 5px 0;
+}
+.yl-host-rank img{
+    margin: 0 10px;
+}
+.yl-host-detail{
+    font-size: 12px;
+    color: #808080;
+    line-height: 17px;
+    padding: 7px;
+    padding-left: 0;
+}
+.yl-host-detail h6{
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+}
+.yl-host-rank{
+    margin-bottom: 1px;
+    border-bottom: 1px solid #d9d9d9;
+    display: none;
+}
+.yl-Latest-open-service{
+    font-size: 12px;
+    color: #4c4c4c;
+    padding-top: 6px;
+    margin-left: -5px;
+    /*font-weight: bold;*/
+    /*line-height: 24px;*/
+}
+.yl-Latest-open-service h4{
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    line-height: 20px;
+}
+.yl-Latest-open-service h4 span{
+    font-size: 12px;
+    color: #808080;
+    font-weight: normal;
+}
+.yl-Latest-open-service h4 .color-all{
+    color: #ff6519;
+}
+.yl-Latest-open-service li{
+    line-height: 31px;
+}
+.yl-Latest-open-service a{
+    background-color: #3885ce;
+    color: #fff;
+    text-decoration: none;
+    float: right;
+    width: 60px;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    margin-top: 6px;
+    margin-right: 5px;
+    +margin-top: -30px;
+}
+.yl-Latest-open-service h4 a{
+    font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  line-height: 20px;
+    float: none;
+  background-color: #fff;
+}
+.yl-game-top span{
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    line-height: 24px;
+}
+.yl-game-top a{
+    font-size: 12px;
+    color: #808080;
+    /*float: right;*/
+    margin-right: 10px;
+     cursor: pointer;
+    cursor:hand;
+    +cursor: hand;
+    _cursor: hand;
+     cursor\0\9: hand;
+}
+.yl-game-top span a{
+    font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  line-height: 24px;
+}
+.yl-game-top{
+    height: 33px;
+    line-height: 33px;
+    _margin-top:10px;
+}
+.yl-game-top .changeASet{
+    /*float: right;*/
+    margin-left: 275px;
+    margin-right: 0px;
+        font-size: 12px;
+    color: #808080;
+    font-weight: 100;
+    vertical-align: 2px;
+    cursor: pointer;
+    cursor:hand;
+    +cursor: hand;
+    _cursor: hand;
+     cursor\0\9: hand;
+    display: inline-block;
+    width: 50px;
+}
+.template5 .game  .yl-game-top .changeASet img{
+   width: 14px;
+    height: 14px;
+    vertical-align: -1.5px;
+    _vertical-align: -1px;
+     cursor: pointer;
+    cursor:hand;
+    +cursor: hand;
+    _cursor: hand;
+     cursor\0\9: hand;
+}
+.changeASet img{
+    vertical-align: -3px;
+}
+/*.yl-game-top .changeASet:before{
+    content: "";
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: url('../images/huan.png 0 0 no-repeat');
+}*/
+.changeASet span{
+    font-size: 12px;
+    color: #808080;
+    font-weight: 200;
+}
+.getmOr{
+   vertical-align: 2px;
+   _vertical-align: 1px;
+}
+/*denlu*/
+.login-right{
+    /*float: left;*/
+    /*margin-left: 65px;*/
+    margin-left: 69px;
+}
+.yl-login{
+    padding: 15px 0;
+    border-bottom: 1px solid #d9d9d9;
+    display: none;
+    color: #808080;
+    font-size: 13px;
+   /* margin-left: -5px;*/
+}
+.yl-login a{
+    float: right;
+    width: 58px;
+    height: 20px;
+    font-size: 14px;
+    border: 1px solid #fe7135;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    
+    margin-top: 6px;
+    margin-right: 7px;
+    cursor: pointer;
+    cursor:hand;
+    +cursor: hand;
+    _cursor: hand;
+     cursor\0\9: hand;
+    border-radius: 4px;
+    background-color: #ff9019;
+    +margin-top: 5px;
+}
+.yl-login a:hover{
+    background-color: #fe7135 !important;
+}
+.yl-login img{
+    float: left;
+    width: 65px;
+}
+.yl-login span{
+    font-size: 13px;
+    color: #808080;
+}
+.t_slide_title a{
+    color: #fff;
+}
+/*.yl-login div{
+    height: 36px;
+    line-height: 36px;
+}*/
+.yl-mygame,.yl-recommondgame,.yl-login{
+    margin-left: -8px;
+}
+.yl-mygame,.yl-recommondgame{
+    padding-bottom: 7px;
+    border-bottom: 1px solid #d9d9d9;
+    display: none;
+    height: 105px;
+    overflow: hidden;
+}                 
+.yl-mygame li,.yl-recommondgame li{
+    float: left;
+    width: 30%;
+    margin-right: 6px;
+    _margin-right: 2px;
+}
+.yl-mygame li a,.yl-recommondgame li a{
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+    display: block;
+    margin-top: 5px;
+   /* -webkit-text-size-adjust:none;
+    -webkit-text-size-adjust:none;*/
+    width: 61px;
+}
+.yl-mygame img,.yl-recommondgame img{
+    width: 56px;
+
+}
+.yl-mygame h4,.yl-recommondgame h4{
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+    line-height: 24px;
+}
+.opening .game_name{
+    margin: 0 5px;
+}
+.disnone .Excellent_game{
+    display: none;
+}
+.Excellent_game1{
+    display: none;
+}
+.disnone .Excellent_game1{
+    display: block;
+}
+.sedHtml{
+    margin-top: 4px;
+    _margin-top: 0px;
+}
+.nickname span{
+    color: #3885ce;
+
+}
+.integral span{
+    color: #ff6519;
+}
+.y-mygame{
+    height: 83px;
+    overflow: hidden;
+   /* margin-left: -1px;*/
+}
+.nickname{
+    margin-bottom: 5px;
+}
+.topRank a{
+    display: inline-block;
+}
+/*.oneLine{
+    position: relative;
+    top: -10px;
+}*/
+.yl-host-left img{
+    width: 46px;
+    height: 46px;
+    display: block;
+}
+.topRank a{
+    display: block;
+    position: relative;
+    float: left;
+}

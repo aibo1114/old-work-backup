@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "cat.js",
+  "sourceRoot": "",
+  "sources": [
+    "cat.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;;AAAA"
+}

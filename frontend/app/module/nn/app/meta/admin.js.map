@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "admin.js",
+  "sourceRoot": "",
+  "sources": [
+    "admin.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;;AAAA"
+}

@@ -1,0 +1,333 @@
+/*layout*/
+body {
+    font-family: 'Microsoft Yahei','simsun';
+}
+.container-qa {
+    width:1200px;
+    margin:auto;
+    padding-top:46px;
+}
+.title-qa {
+    height:42px;
+    line-height:42px;
+    text-align: center;
+    font-size:26px;
+    color:#333;
+}
+
+.search-qa {
+    width: 508px;
+    margin:26px auto 0;
+}
+
+.content-qa {
+    margin-top:58px;
+}
+.content-qa:after {
+    content:'';
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+.left-main-qa {
+    width:308px;
+    float: left;
+}
+.right-main-qa {
+    width:854px;
+    min-height:785px;
+    _height:805px;
+    float: right;
+    position:relative;
+    padding-bottom:90px;
+}
+
+/*search*/
+.ipt-search-qa {
+    width: 566px;
+    height:50px;
+    line-height: 50px;
+    border:1px solid #dbdbdb;
+    padding:0 30px;
+    font-size:16px;
+    display: block;
+    color:#4c4c4c;
+}
+.form-search-qa {
+    display: block;
+    width: 628px;
+    height:52px;
+    position:relative;
+    z-index:2;
+}
+.auto-qa {
+    position:absolute;
+    z-index:3;
+    top:52px;
+    *top:53px;
+    left:0;
+    background: #fff;
+    border:1px solid #dbdbdb;
+    border-top:none;
+    width:626px;
+}
+.l-auto-kup {
+    padding-bottom:8px;
+}
+.li-auto-kup {
+    height:36px;
+    line-height: 36px;
+    padding:0 30px;
+    font-size:16px;
+    color:#4c4c4c;
+    cursor: pointer;
+}
+.hover-auto-kup {
+    background:#f5f5f5;
+}
+.kw-auto-qa {
+    color:#f0641e;
+}
+
+
+/*menu*/
+.l-menu-qa {}
+.li-menu-qa {
+    width:308px;
+    height:50px;
+    margin-bottom:1px;
+    background:#f5f5f5;
+    line-height:50px;
+    text-align: center;
+}
+.li-menu-qa a {
+    display: block;
+    font-size:16px;
+    color:#808080;
+}
+.cur-menu-qa {
+    width:306px;
+    height:48px;
+    background: #fff;
+    /*background:url(http://faq.wan.liebao.cn/dist/3698bb28b89752d529fae185b8abbdef.png) no-repeat 104px 21px #fff;*/
+    /*background:url(../images/dotted_menu_03.png) no-repeat 104px 21px #fff;*/
+    border:1px solid #ebebeb;
+    line-height:48px;
+}
+.cur-menu-qa a {
+    color:#f0641e;
+}
+.dotted-menu-qa {
+    display: none;
+    background:url(http://faq.wan.liebao.cn/dist/3698bb28b89752d529fae185b8abbdef.png) no-repeat 0 0;
+    width:6px;
+    height:6px;
+    position:relative;
+    top:-2px;
+    *top:-6px;
+    left:-12px;
+}
+.cur-menu-qa .dotted-menu-qa {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;
+}
+
+/*main title*/
+.subtitle-qa {
+    margin:1px 0 12px;
+    height:25px;
+    padding-left:8px;
+    border-left:6px solid #f0641e;
+
+    line-height:25px;
+    font-size:20px;
+    color:#4c4c4c;
+}
+
+/*tags*/
+.content-tags-qa {
+    padding-top:20px;
+    border:1px solid #ebebeb;
+    font-size:14px;
+    color:#666;
+}
+.title-tags-qa {
+    width:124px;
+    height:26px;
+    float:left;
+    line-height:26px;
+    text-align: center;
+}
+.l-tags-qa {
+    margin-left:124px;
+    *height:123px;
+}
+.l-tags-qa:after {
+    content:'';
+    display: block;
+    height:0;
+    overflow: hidden;
+    clear:both;
+}
+.li-tags-qa {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+    height:26px;
+    margin:0 15px 15px;
+    padding:0 20px;
+    line-height:26px;
+    cursor:pointer;
+    float:left;
+}
+.cur-tags-qa {
+    border:1px solid #ff925d;
+    border-radius:5px;
+    height:24px;
+    line-height:24px;
+    padding:0 18px;
+    color:#ff925d;
+}
+
+
+/*list*/
+.l-questions-qa,.l-search-qa {
+    margin-top:25px;
+}
+.li-questions-qa,.li-search-qa {
+    border-bottom:1px solid #ebebeb;
+}
+.li-questions-qa {
+    padding-left:34px;
+    min-height:50px;
+    _height:50px;
+    line-height:50px;
+    font-size:16px;
+    color:#666;
+    background:url(http://faq.wan.liebao.cn/dist/fb8d001515290687a1e32320629f71c9.png) no-repeat 12px 23px;
+    /*background:url(../images/dotted_03.png) no-repeat 12px 23px;*/
+}
+.li-search-qa {
+    padding:15px 0 15px 34px;
+    background:url(http://faq.wan.liebao.cn/dist/fb8d001515290687a1e32320629f71c9.png) no-repeat 12px 28px;
+    /*background:url(../images/dotted_03.png) no-repeat 12px 28px;*/
+
+}
+.title-search-qa {
+    height:32px;
+    line-height:32px;
+    font-size:16px;
+    /*color:#666;*/
+}
+.text-search-qa {
+    padding-top: 8px;
+    min-height:24px;
+    _height:24px;
+    line-height:24px;
+    /*color:#999;*/
+}
+
+
+.title-res-qa {
+    padding-top:8px;
+    height:54px;
+    line-height:54px;
+    text-align: center;
+    font-size:22px;
+    color:#333;
+    letter-spacing: 1px;
+}
+.count-res-qa {
+    padding:0 8px;
+    color:#f0641e;
+}
+.title-search-qa a {color:#666 !important;}
+.title-search-qa a:hover {color:#000 !important;}
+.text-search-qa a {color:#999 !important;}
+.text-search-qa a:hover {text-decoration: underline;}
+
+.li-search-qa .kw-search-qa {
+    color:#ea0000 !important;
+}
+.lst-questions-qa,.lst-search-qa {border:none;}
+
+
+/*detail*/
+.title-article-qa {
+    min-height:30px;
+    _height:30px;
+    line-height:30px;
+    padding:43px 0 15px;
+    font-size:22px;
+    color:#333;
+    text-align: center;
+}
+.content-article-qa {
+    padding-top:28px;
+}
+.content-article-qa img {
+    margin-top:15px;
+}
+.feedback-article-qa {
+    margin-top:40px;
+    height:110px;
+    background:#fafafa;
+    font-size:14px;
+    color:#666;
+}
+.top-feedback-qa {
+    height:30px;
+    padding-top:23px;
+    line-height:30px;
+    position:relative;
+}
+.btm-feedback-qa {
+    margin-top:12px;
+    height:28px;
+    line-height:28px;
+    text-align: center;
+}
+
+.text-feedback-qa {
+    padding-left:306px;
+}
+.l-feedback-qa {
+    position:absolute;
+    top:23px;
+    left:520px;
+    width:164px;
+    height:30px;
+}
+.li-feedback-qa {
+    width:68px;
+    height:28px;
+    margin-right:12px;
+    background:#fff;
+    border:1px solid #ebebeb;
+    float:left;
+    line-height: 28px;
+    text-align: center;
+    cursor: pointer;
+}
+.clicked-feedback-qa {
+    background: #f0641e;
+    color:#fff;
+}
+.disable-feedback-qa {
+    cursor:default;
+}
+.customer-feedback-qa {
+    margin-left:6px;
+    color:#0d35ff;
+    text-decoration: underline;
+}
+
+
+.content-article-qa p {
+    padding:15px 0;
+    line-height:25px;
+    font-size: 14px;
+    color:#666;
+}

@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><title>充值平台币</title><meta charset="utf-8"><link type="text/css" rel="stylesheet" href="http://image.wan.liebao.cn/www/css/base.css?v=2"><link type="text/css" rel="stylesheet" href="css/main.css"><!--link(type="text/css",rel="stylesheet",href="http://img.wan.ijinshan.com/pay2/online/css/default.css?t=20150921")--></head><body><div class="mod-pay"><div class="hd-pay"><h4>充值平台币</h4></div><div class="bd-pay"><ul class="l-pay"><li class="li-pay first-item"><h5>充值账号:</h5><p class="txt"><span>sxj0425</span><!--a(href="javascript:void(0);") 更改--></p></li><li class="li-pay"><h5>充值金额:</h5><ul class="l-sum"><li class="li-sum">10元</li><li class="li-sum">20元</li><li class="li-sum">50元</li><li class="li-sum">100元</li><li class="li-sum">200元</li><li class="li-sum">500元</li><li class="li-sum">1000元</li><li class="li-sum">2000元</li></ul><div class="piece-sum"><input type="text" placeholder="其他金额" class="input-sum"><span class="tip-sum">请输入10-10000之间的整数</span></div></li><li class="li-pay last-item"><h5>支付方式:</h5><span class="icon-way"><img src="images/aliPay_03.jpg" alt=""></span></li></ul></div><div class="ft-pay"><span class="btn-pay">立即充值</span></div></div><script type="text/javascript" src="js/jquery-2.2.3.min.js"></script><script>$.ajax({
+    url:'http://pay1.wan.liebao.cn/index.php/platform/consume',
+    type:'get',
+    success:function(data){
+        console.log(data);
+    }
+});</script></body></html>

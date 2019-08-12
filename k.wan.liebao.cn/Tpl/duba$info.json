@@ -1,0 +1,47 @@
+<?php
+$data = array();
+$ids = array(
+	'ad'=>969,
+);
+foreach ($ids as $name=>$id) {
+	$temp = array();
+	foreach ($cates[$id] as $article) {
+		if ($article['field1'] == 0) {
+			continue;
+		}
+		$a = array(
+			'gid'=>$article['field6'],
+			'sid'=>$article['field7'],
+			'server_name'=>$article['field8'],
+			'game_name'=>$article['field2'],
+			'game_name_tiny'=>$article['field2'],
+			'play_url'=>$article['field3'],
+			'icon1'=>$article['field4'],
+			'official_url'=>$article['field5'],
+		);
+		if (empty($a['gid'])) {
+			unset($a['gid']);
+		}
+		if (empty($a['official_url'])) {
+			unset($a['official_url']);
+		}
+		$temp[] = $a;
+	}
+	$data[$name] = $temp;
+}
+$data['icon'] = isset($cates[970][0]) ? $cates[970][0]['field1'] : '';
+$temp = isset($cates[972][0]) ? $cates[972][0] : array();
+$data['links'][0] = array(
+	'text'=>isset($temp['field1']) ? $temp['field1'] : '',
+	'url'=>isset($temp['field2']) ? $temp['field2'] : '',
+);
+$data['links'][1] = array(
+	'text'=>isset($temp['field3']) ? $temp['field3'] : '',
+	'url'=>isset($temp['field4']) ? $temp['field4'] : '',
+);
+$data['links'][2] = array(
+	'text'=>isset($temp['field5']) ? $temp['field5'] : '',
+	'url'=>isset($temp['field6']) ? $temp['field6'] : '',
+);
+echo json_encode($data);
+?>

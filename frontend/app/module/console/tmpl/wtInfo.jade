@@ -1,0 +1,9 @@
+.col-md-10
+    .alert.alert-info
+        | 请将以下面的url与token复制到微信公众平台管理台的服务器配置中。URL:
+        span.label.label-success #{c.url}/a/wechat/#{c.code}
+
+        | Token:
+        span.label.label-success #{c.code}z2013h
+
+        a.pull-right(target='_blank', href='https://mp.weixin.qq.com') 微信公众平台

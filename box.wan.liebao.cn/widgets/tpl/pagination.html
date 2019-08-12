@@ -1,0 +1,5 @@
+<ul class="l-pagination">
+    <li class="li-pagination" ng-class="prevPageDisabled();" ng-click="prevPage();">&lt;</li>
+    <li class="li-pagination" ng-repeat="n in range()" ng-class="{'active-pagination': n == currentPage}" ng-click="setPage(n);">{{n+1}}</li>
+    <li class="li-pagination" ng-class="nextPageDisabled();"  ng-click="nextPage();">&gt;</li>
+</ul>

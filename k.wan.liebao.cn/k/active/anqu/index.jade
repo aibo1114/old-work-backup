@@ -1,0 +1,68 @@
+extends inc/main
+
+block style
+    link(rel='stylesheet',type='text/css',href='http://static.web.anqu.com/resource/999/css/index.css')
+block script
+    //script(type='text/javascript',src='js/index.js')
+block content
+    -var imgP='images/'
+    mixin mod(title,cls,more)
+        .mod-web(class='#{cls}')
+            .hd-web
+                h3.title-hd-web= title
+                if more
+                    a.more-hd-web(href='javascript:void(0);') 更多!{'&nbsp'}>
+            .bd-web
+                if block
+                    block
+    mixin banner()
+        .banner
+            ul.l-banner
+                -var x=0
+                while x < 3
+                    li.li-banner
+                        img(src='#{imgP}bg_02.jpg')
+                    -x++
+            ul.l-btn-banner
+                -var z=0
+                while z < 3
+                    if z==0
+                        li.li-btn-banner.active
+                    else
+                        li.li-btn-banner
+                    -z++
+    mixin media(objUrl,title,release)
+        .media-web&attributes(attributes)
+            .obj-media
+                if release
+                    .tip-obj-media
+                        a.link-tip-media(href='javascript:void(0);') 礼包
+                        a.link-tip-media(href='javascript:void(0);') 官网
+                img(src='#{imgP}#{objUrl}',alt='#{title}')
+            .hd-media
+                h4.title-hd-media= title
+                if release
+                    a.enter-hd-media(href='javascript:void(0);') 进入游戏!{'&nbsp'}>
+    mixin notice(title)
+        li.li-notice-web
+            a.link-notice-web(href='javascript:void(0);')= title
+    .container
+        +banner()
+        .content
+            .main
+                +mod('推荐游戏','game')
+                    -var i=0
+                    while i < 4
+                        if i==0
+                            +media('media_03.jpg','大天使之剑',true)(class='first')
+                        else
+                            +media('dft_03.jpg','')
+                        -i++
+            .sidebar
+                +mod('公告','notice',true)
+                    ul.l-notice-web
+                        -var n=0
+                        while n < 5
+                            +notice("《青云志》影视正版授权  8月4日火爆公测")
+                            -n++
+                    p.ft-notice-web: a(href='http://tb.53kf.com/webCompany.php?arg=10141545&amp;style=1',target='_blank') 在线客服：07:00~次日1:00

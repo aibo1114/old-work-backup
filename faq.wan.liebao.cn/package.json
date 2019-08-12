@@ -1,0 +1,30 @@
+{
+  "name": "qa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "es5-shim": "^4.5.9",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.7",
+    "es3ify-loader": "^0.2.0",
+    "file-loader": "^1.1.5",
+    "http-server": "^0.10.0",
+    "jade-loader": "^0.8.0",
+    "style-loader": "^0.19.0",
+    "webpack": "^2.6.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server ./ -a 0.0.0.0 -p 3000 c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.liebaopay.com:9090/gs/productsvr/webpub/faq.wan.liebao.cn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}

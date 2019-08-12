@@ -1,0 +1,5 @@
+ul.ticket
+    each it in items
+        li(price=it.price amount=it.amount).ticket-item
+            p.name= it.title
+            p.price #{it.price}￥

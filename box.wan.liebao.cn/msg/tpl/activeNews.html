@@ -1,0 +1,22 @@
+<div ng-controller="activeList">
+    <div ng-if="view=='list' && list">
+        <ul class="l-msg scrollbar-inner" jquery-scrollbar>
+            <li class="li-msg" ng-repeat="it in list" ng-class="{'readed-msg':it.is_read, 'last-msg':$index == list.length-1}" ng-click="goDetail(it);">
+                <h4 class="summary-li-msg" ng-bind="it.content | deTag | limitTo : 32 | addEllipses"></h4>
+                <p class="time-li-msg">{{it.uiTime}}</p>
+            </li>
+        </ul>
+        <button ng-if="!lstPage" class="btn-load-msg" ng-click="loadNext();">加载更多</button>
+        <p ng-if="lstPage" class="txt-noload-msg">没有更多消息了</p>
+    </div>
+    <div ng-if="view=='list' && !list">
+        <p class="tip-nodata-msg">您还没有消息哦！</p>
+    </div>
+    <div class="item-msg" ng-if="view=='detail'">
+        <div class="text-item-msg" ng-bind-html="item.content | trustHtml"></div>
+        <div class="sub-item-msg">
+            <p class="back-item-msg" ng-click="goList(item);">返回消息列表</p>
+            <p class="time-item-msg">{{item.uiTime}}</p>
+        </div>
+    </div>
+</div>

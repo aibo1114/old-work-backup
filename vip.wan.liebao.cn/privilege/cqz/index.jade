@@ -1,0 +1,30 @@
+extends ../main
+block variable
+    -var gname='楚乔传';
+    -var alias='cqz';
+    -var nav= [{t:'游戏豪礼',id:'gifts'}, {t:'专属称号',id:'title'}, {t:'属性光环',id:'halo'}, {t:'更多特权',id:'lead'}];
+    -var update=[  {  tt:'v45',content:['高级铜币卡' , '星儿进阶丹']}, {tt:'v50',content:['高级铜币卡', '坐骑技能残章', '护送令']}, {tt:'v55',content:['高级铜币卡', '星儿进阶丹', '护送令']}, {tt:'v60',content:['高级铜币卡', '坐骑技能残章', '坐骑成长丹']}, {tt:'v70',content:['高级铜币卡', '星儿进阶丹', '护送令', '骑兵成长丹']}, {tt:'v80',content:['高级铜币卡', '星儿进阶丹', '坐骑技能残章', '坐骑资质丹']}  ];
+    -var daily=[  {  tt:'v1',content:['高级铜币卡', '帮贡令']},{  tt:'v2',content:['高级铜币卡', '帮贡令', '1朵玫瑰']},{  tt:'v3',content:['高级铜币卡', '帮贡令', '1朵玫瑰']},{  tt:'v4',content:['高级铜币卡', '帮贡令', '星儿进阶丹', '1朵玫瑰']},{  tt:'v5',content:['高级铜币卡', '帮贡令', '星儿进阶丹', '1朵玫瑰']}];
+block content
+    +fixNav(nav)
+
+    +panel('游戏豪礼','豹会员每日领取多种礼包奖励','1')(class='first-panel-gp',id='gifts')
+        +gifts('升级礼包')(class='first-gifts-gp')
+            +tab(update,'update')
+        +gifts('每日礼包')
+            +tab(daily,'daily')
+
+    +panel('专属称号','成为猎豹游戏会员 领取平台炫酷称号','2')(id='title')
+        img.img-panel-gp(src='images/img-1.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('属性光环','所有区服展示您的属性光环','3')(id='halo')
+        img.img-panel-gp(src='images/img-2.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('更多特权','豹会员平为您提供更多特权，助您乘风破浪','4')(id='lead')
+        +moreList
+
+    +panel('如何获得特权？','只需三步，即可开通','5')(class='six-panel-gp')
+        +leadList
+        +openBtn

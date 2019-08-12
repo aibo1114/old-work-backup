@@ -1,0 +1,12 @@
+extends inc/main
+block style
+    link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/1000/css/server_list_page.css')
+block script
+    script(type='text/javascript',src='js/server_list_page.js')
+block content
+    .content
+        .left
+            a.server_list_logo(href='#',target='_blank')
+            +mod('','',false,true)
+                #aq-login.aqLogin-detail
+        include server_list_page

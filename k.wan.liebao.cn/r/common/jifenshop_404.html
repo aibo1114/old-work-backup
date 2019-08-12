@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>提示—金山猎豹游戏中心</title>
+   	<link href="http://img.wan.ijinshan.com/website/css/common.css" type="text/css" rel="stylesheet">
+   	<link href="http://img.wan.ijinshan.com/website/css/head-top.css" type="text/css" rel="stylesheet">
+   	<style type="text/css">
+   	body {background:#fff;}
+   	.wrap {margin: 0 auto;}
+   	.tip {height:290px;width:296px;position: absolute;top:50%;left:50%;margin:-145px 0 0 -142px;}
+   	.tip .tipPic {width:218px;height:208px;padding-left: 30px;}
+   	.tip .font {color:#747577;font-size: 16px;text-align: center;margin: 45px 0;}
+   	.tip .btn {width:296px;height:34px;margin:10px 0 0 86px;}
+   	.btn .goback, .btn .kefu {height:34px;width:106px;display: inline-block;}
+   	.btn .goback {background:url('http://img.wan.ijinshan.com/website/activity/image/lgn_fail_img/goback.jpg') no-repeat;}
+   	.btn .kefu {background:url('http://img.wan.ijinshan.com/website/activity/image/lgn_fail_img/kefu.jpg') no-repeat;_margin-left:3px;}
+   	.footero {position:absolute;bottom:0;}
+   	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="headertop">
+			<ul>
+				<li class="game-logo">
+					<a href="http://wan.liebao.cn/" target="_blank" title="金山猎豹游戏中心">
+						<img src="http://image.wan.liebao.cn/game/static/images/headertop-logo.jpg" alt="金山猎豹游戏中心">
+					</a>
+				</li>
+				<li class="game-keep">
+					<a id="wan_backindex" href="http://wan.liebao.cn/" title="金山猎豹游戏中心" target="_blank"></a>
+					<a id="wan_addfavorite" href="javascript:void(0);"></a>
+					<a id="wan_setdesk" rel="nofollow" target="_self" href="http://wan.liebao.cn/shortcut.php"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="tip">
+			<img src="http://img.wan.ijinshan.com/website/activity/image/lgn_fail_img/cry.jpg" class="tipPic"/>
+			<p class="font">小豹子闹脾气啦，不要跟她一般见识哦！</p>
+			<div class="btn">
+				<a href="http://wan.liebao.cn" target="_blank" class="goback"></a>
+				<!-- <a href="http://im.wan.liebao.cn/web/icc/chat/chat?c=1&s=3&st=1&depid=f2f0dd2244f831250145035774840049&userId=denglu&gid=0&sid=0" target="_blank" class="kefu"></a> -->
+			</div>
+		</div>
+		<div class="footero">
+			<div class="footer">
+				<p class="lin">
+					<a target="_blank" href="http://wan.liebao.cn">游戏中心</a>
+					|
+					<a target="_blank" href="http://wan.liebao.cn/user/">帐号安全</a>
+					|
+					<a target="_blank" href="http://i.ijinshan.com/forget?act=forget&source=webgame">找回密码</a>
+					|
+					<a target="_blank" href="http://i.wan.liebao.cn/jz/jiazhang.htm">家长监控</a>
+				</p>
+				<p>抵制不良游戏　拒绝盗版游戏　注意自我保护　谨防受骗上当　适度游戏益脑　沉迷游戏伤身　合理安排时间　享受健康生活</p>
+				<p class="p3">京网文[2012]0653-210号　京ICP证120823号</p>
+				<p class="dline"><span>COPYRIGHT©2012<a href="http://wan.liebao.cn">WAN.LIEBAO.CN</a>. ALL RIGHTS RESERVED.</span></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- JS -->
+<!-- <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js"></script> -->
+<script type="text/javascript">
+	function addfavorite() {
+        var sURL = location.href;
+        var sTitle = document.title;
+        try {
+            window.external.addFavorite(sURL, sTitle);
+        } catch (e) {
+            try {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            } catch (e) {
+                alert("请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    //$("#wan_addfavorite").click(addfavorite);
+    var wanAdd = document.getElementById('wan_addfavorite');
+    wanAdd.onclick = function(){
+    	addfavorite();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+.btmMenu
+    each it in menus
+        a(href=it.url class=it.code).col-xs-6
+            != it.icon
+            .text-center= it.label

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>killShot-activity</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/page.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+</head>
+<body>
+	<div class="bg">
+		<h1 class="logo"><img src="images/logo_03.png" alt="" /></h1>
+		<div class="txt"><img src="images/txt_07.png" alt="" /></div>
+		<span class="clear">...</span>
+		<div class="player btn-video"><img src="images/player_11.png" alt="" /></div>
+		<div class="btns">
+			<ul class="l-btn">
+				<li class="li-btn">
+					<a href="http://ks.wan.liebao.cn/m1/"><img src="images/btns_15.png" alt="" /></a>
+				</li>
+				<li class="li-btn btn-tcode">
+					<span class="tcode"><img src="images/tcode_11.png" alt="" /></span>
+					<img src="images/btns_17.png" alt="" />
+				</li>
+			</ul>
+			<div class="btn-download">
+				<a id="dlLink" href="javascript:void(0);"><img src="images/btns_22.png" alt="" /></a>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="ct-ft"><img src="images/ct-ft_26.jpg" alt="" /></div>
+		</div>
+	</div>
+	<div class="mask"></div>
+	<div class="videoBox">
+        <span id="closeVideo" class="close">完成</span>
+        <video controls id="video" src="http://download.wan.liebao.cn/media/test.mp4" width="100%" height="100%">
+            <source src="source/test.mp4" type="video/mp4">
+        </video>
+    </div>
+	<script src="js/jquery.js"></script>
+	<script>
+		(function(){
+			var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1;
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+
+			if(isiOS){
+				$('#dlLink').attr('href','https://itunes.apple.com/us/app/zhi-ming-ju-jikill-shot-bravo/id1099019563?l=zh&ls=1&mt=8');
+			}
+			if(isAndroid){
+				$('#dlLink').attr('href','http://dl.aliyun.game.youku.com/1462873146_20160506XXXXKillShotBravo.apk')
+			}
+
+			$('.btn-tcode').click(function(){
+				$('.tcode').toggle();
+			});
+
+			$('.btn-video')[0].addEventListener('touchstart',function(e){
+		        e.preventDefault();
+		        $('.videoBox').show();
+		        $('#video')[0].play();
+		    });
+
+		    $('#closeVideo')[0].addEventListener('touchstart',function(e){
+		        e.preventDefault();
+		        $('#video')[0].currentTime=0;
+		        $('#video')[0].pause();
+		        $('.videoBox').hide();
+		    });
+
+		})();
+	</script>
+</body>
+</html>

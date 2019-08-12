@@ -1,0 +1,26 @@
+<iphp>
+$data = array(
+	'recommand'=>array(),
+	'all'=>array(),
+);
+$ids = array(
+	'recommand'=>699,
+	'all'=>700,
+);
+foreach ($ids as $name=>$id) {
+	$temp = array();
+	foreach ($cates[$id] as $article) {
+		$temp[] = array(
+			'game_name'=>$article['field1'],
+			'img_url'=>$article['field2'],
+			'game_link'=>$article['field3'],
+			'home_link'=>$article['field4'],
+			'hot'=>$article['field5'],
+			'gid'=>$article['field6'],
+			'icon'=>$article['field7'],
+		);
+	}
+	$data[$name] = $temp;
+}
+echo json_encode($data);
+</iphp>

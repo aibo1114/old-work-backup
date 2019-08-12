@@ -1,0 +1,58 @@
+{
+  "ret":1,
+  "data":[
+    {
+      "ID":100,
+      "SupplierID":"20",
+      "SupplierName":"聚享游",
+      "SupplierSecret":"abcde",
+      "SupplierState":"1",
+      "Remark":"这是备注",
+      "Sources":[{
+          "ID":10000,
+          "Source":"jjwef-abcde",
+          "Remark":"this is a remark"
+        },{
+          "ID":10001,
+          "Source":"bbw-abcde",
+          "Remark":"this is a remark"}
+      ]
+    }
+  ,
+    {
+      "ID":101,
+      "SupplierID":"101",
+      "SupplierName":"聚享游",
+      "SupplierSecret":"abcde",
+      "SupplierState":"0",
+      "Remark":"这是备注",
+      "Sources":[{
+        "ID":10000,
+        "Source":"jjwef-abcde",
+        "Remark":"this is a remark"
+      },{
+        "ID":10001,
+        "Source":"bbw-abcde",
+        "Remark":"this is a remark"}
+      ]
+    }
+  ,
+    {
+      "ID":102,
+      "SupplierID":"102",
+      "SupplierName":"聚享游",
+      "SupplierSecret":"abcde",
+      "SupplierState":"0",
+      "Remark":"这是备注",
+      "Sources":[{
+        "ID":10000,
+        "Source":"jjwef-abcde",
+        "Remark":"this is a remark"
+      },{
+        "ID":10001,
+        "Source":"bbw-abcde",
+        "Remark":"this is a remark"}
+      ]
+    }
+  ]
+}

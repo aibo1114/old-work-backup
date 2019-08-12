@@ -1,0 +1,59 @@
+extends ./inc/main
+
+block style
+    :less(minify=true)
+
+mixin tabPane(arr,active)
+    -var cls='tab-pane'
+    -var type='post'
+    -if (active) cls+=' active'
+    -if (arr==course) type='course'
+
+    div(id='#{arr[0].cat}',class='#{cls}')
+        each it in arr
+            .media
+                .media-left: a(href='/#{type}/#{it._id}',target='_blank')
+                    !=f.imgItem(it,c,'head','media-object')
+                .media-body
+                    h4.media-heading: a(href='/#{type}/#{it._id}',target='_blank')= it.title
+                    p.media-text
+                        span= it.author
+                        span= it.time
+                    p.media-text: a(href='/#{type}/#{it._id}',target='_blank')= it.brief
+
+
+block content
+    .row
+        .col-md-8
+            if head && head.headItem
+                +slide(c,head.headItem)#carousel-moka
+            .panel-app
+                ul.nav.nav-tabs
+                    each it,i in cat
+                        -var cls=''
+                        -if(i==0){ cls+=' active' }
+                        li(class='#{cls}'): a(href='##{it.code}',data-toggle='tab')= it.title
+                .tab-content
+                    +tabPane(skill,true)
+                    +tabPane(redeem)
+                    +tabPane(reaching)
+                    +tabPane(course)
+                    +tabPane(movie)
+        .col-md-4.box-bar-fix
+            .qrcode-app
+                h4.title 微信公众号
+                button.btn.btn-primary
+                    span.glyphicon.glyphicon-qrcode
+            +appBlock('VIP课程')
+                +appThumb(vipCourse)
+            +appBlock('公开课信息')
+                +appThumb(pubCourse)
+            +appBlock('最新话题')(class='star-bar-fix')
+                each it in fPost
+                    +appThumbs(it.author, it.author.username, it.brief)
+            +appBlock('热门话题')
+                each it in topic
+                    +appThumbs(it, it.ref.author.username, it.ref.brief)
+
+block st
+    :coffee(bare=true,minify=true)

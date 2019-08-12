@@ -1,0 +1,364 @@
+extends ./inc/main
+block style
+    style(type='text/css').
+        body, div, p, span, a, ul, li, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .container {
+            margin:0 !important;
+            padding:0 !important;
+        }
+        .header,.container,.footer {
+            width:1000px;
+            margin:auto !important;
+        }
+        .header {
+            height:105px;
+            background:#000;
+        }
+        .header:after {
+            content:'';
+            display:block;
+            height:0;
+            overflow:hidden;
+            clear:both;
+        }
+        .logo {
+            width:379px;
+            height:62px;
+            float:left;
+            margin:17px 0 0 34px;
+        }
+        .tcode {
+            width:70px;
+            height:70px;
+            float:right;
+            margin:17px 21px 0 0;
+        }
+        .l-nav {
+            background:#fff;
+            height:47px;
+            text-align:center;
+        }
+        .li-nav {
+            display:inline-block;
+            height:47px;
+            line-height:47px;
+            padding:0 30px;
+        }
+        .link-nav {
+            font-size:16px;
+            color:#999;
+        }
+        .link-nav:hover {
+            color:#333;
+        }
+        .banner {
+            height:338px;
+            position:relative;
+        }
+        .abs-banner {
+            position:absolute;
+            z-index:2;
+            right:82px;
+            bottom:-50px;
+        }
+
+        .l-main {
+            background:#000;
+            padding:60px 0 20px;
+        }
+        .l-main:after {
+            content:'';
+            display:block;
+            height:0;
+            overflow:hidden;
+            clear:both;
+        }
+        .li-main {
+            width:332px;
+            /*height:218px;*/
+            padding:0 25px;
+            float:left;
+            color:#fff;
+        }
+
+        .li-main:after {
+            content: '';
+            display: block;
+            height: 0;
+            overflow: hidden;
+            clear: both;
+        }
+        .li-main:nth-child(2){
+            border-left:1px solid #fff;
+            border-right:1px solid #ececec;
+        }
+
+        .li-main:nth-child(3) {
+            padding-left:60px;
+        }
+        .li-main .red {
+            color:#b00c0c;
+        }
+        .li-main .origin {
+            color:#f9902a;
+        }
+        .li-main .pink {
+            color:#ad2e5e;
+        }
+        .title-li-main {
+            height:42px;
+            line-height:42px;
+            font-size:24px;
+        }
+        .title-li-main span {
+            color:#666;
+        }
+        .subtitle-li-main {
+            height:22px;
+            line-height:22px;
+            font-size:14px;
+        }
+        .text-li-main {
+            font-size:14px;
+        }
+        .media-li-main {
+            border:1px solid #e9e9e9;
+        }
+        .link-li-main {
+            display:inline-block;
+            height:32px;
+            line-height:32px;
+            font-size:12px;
+            color:#710000;
+            text-align:right;
+            float:right;
+        }
+        .link-li-main:hover {
+            color: #710000;
+            text-decoration:underline;
+        }
+
+        .mod-ss {
+            background:#131313;
+        }
+        .mod-ss.gallery {
+            background:#1f1f1f;
+        }
+        .hd-ss {
+            padding-left:26px;
+            height:60px;
+            line-height:60px;
+            color: #eee;
+            font-size:24px;
+        }
+        .hd-ss span {
+            color:#999;
+        }
+        .bd-ss {
+            padding:0 80px 20px 50px;
+        }
+        .bd-ss img {
+            width:100%;
+        }
+        .bd-ss .col-md-2 {
+            width:20%;
+            padding-left:2px;
+            padding-right:2px;
+            position:relative;
+            cursor:pointer;
+        }
+        .col-md-2 .playBtn {
+            display:block;
+            position:absolute;
+            z-index:2;
+            top:32px;
+            left:52px;
+            width:84px;
+            height:74px;
+            display:none;
+        }
+        .col-md-2 .playBtn img {
+            width:100%;
+        }
+        .bd-ss .col-md-6 {
+            margin:0 1%;
+            border:1px solid #590d13;
+            width:48%;
+            padding:6px !important;
+        }
+
+        .bd-ss .media-bd-ss {
+            float:left;
+            width:35%;
+        }
+
+        .bd-ss:after {
+            content: '';
+            display: block;
+            height: 0;
+            overflow: hidden;
+            clear: both;
+        }
+        .title-bd-ss {
+            line-height:35px;
+            margin-left:38%;
+            font-size:20px;
+            color:#999;
+            padding-top:5px;
+        }
+        .text-bd-ss {
+            margin-left: 38%;
+            color:#602a4e;
+            font-size:12px;
+            line-height:18px;
+        }
+        .more-bd-ss {
+            text-align:right;
+        }
+        .more-bd-ss a {
+            color:#999;
+            padding-right:15px;
+        }
+
+        .more-bd-ss a:hover {
+            color:#999;
+            text-decoration: underline;
+        }
+
+        .footer {
+            background:#1f1f1f;
+            text-align:center;
+            padding-bottom:45px;
+        }
+        .l-footer {
+            font-size:14px;
+        }
+        .l-footer a {
+            color:#ccc;
+        }
+        .l-footer a:hover {
+            color: #ccc;
+            text-decoration: underline;
+        }
+        .li-footer {
+            display:inline-block;
+            margin:45px 0 20px;
+            padding:0 14px;
+            line-height:14px;
+            border-right: 1px solid #eee;
+        }
+        .li-footer:last-child {
+            border:none;
+        }
+
+        .txt-footer {
+            color:#aaa;
+            font-size:12px;
+            line-height:18px;
+        }
+        .txt-footer a {
+            color:#ccc;
+        }
+
+        .txt-footer a:hover {
+            color: #aaa;
+            text-decoration: underline;
+        }
+block content
+    .banner
+        img(src='#{resPath}images/banner_09.jpg')
+        .abs-banner: img(src='#{resPath}images/poster_banner_10.png')
+    ul.l-main
+        li.li-main
+            h3.title-li-main Dance <span>Class</span>
+            h4.subtitle-li-main <span class="red">PHOENIX DANCE</span> classes are designed to
+            p.text-li-main help you become a better dancer in the club and/or performer on stage. The classes are divided in different levels according to previous experience. In the classes, we will focus on:
+            a.link-li-main(href='javascript:void(0);') click here for more info
+        li.li-main
+            h3.title-li-main Events
+            h4.subtitle-li-main <span class="origin">Latin Fever @ XIU Bar every Wednesday</span>
+            p.text-li-main 8 – 8:30pm Open Dance Class 8:30 – 11:30 Salsa Party Entrance Fee: FREE DRESS TO IMPRESS! This is one of Beijing’s premier clubs J Address: 6F, Park Life (Park Hyatt Hotel), Beijing Yintai Centre, 2 Jianguomenwai Stree, Chaoyang District, Beijing Phone - +86 10 85671838
+            a.link-li-main(href='javascript:void(0);') click here for more info
+        li.li-main
+            h3.title-li-main Dancer
+            h4.subtitle-li-main <span class="pink">"Mambo" Jack & Zhen Zhen</span>
+            img.media-li-main(src='#{resPath}images/img_dancer_12.jpg')
+            a.link-li-main(href='javascript:void(0);') click here for more info
+    .mod-ss.gallery
+        .hd-ss Studio <span>Gallery</span>
+        .bd-ss
+            .row
+                .col-md-2.js-video
+                    span.playBtn: img(src='#{resPath}images/btn_play_19.png')
+                    img(src='#{resPath}images/img_studio_16.jpg')
+                .col-md-2.js-video
+                    span.playBtn: img(src='#{resPath}images/btn_play_19.png')
+                    img(src='#{resPath}images/img_studio_16.jpg')
+                .col-md-2.js-video
+                    span.playBtn: img(src='#{resPath}images/btn_play_19.png')
+                    img(src='#{resPath}images/img_studio_16.jpg')
+                .col-md-2.js-video
+                    span.playBtn: img(src='#{resPath}images/btn_play_19.png')
+                    img(src='#{resPath}images/img_studio_16.jpg')
+                .col-md-2.js-video
+                    span.playBtn: img(src='#{resPath}images/btn_play_19.png')
+                    img(src='#{resPath}images/img_studio_16.jpg')
+    .mod-ss
+        .hd-ss Our <span>Team</span>
+        .bd-ss
+            .row
+                .col-md-6
+                    .media-bd-ss: img(src='#{resPath}images/img_team_24.jpg')
+                    h4.title-bd-ss Amy
+                    p.text-bd-ss Sex:  Male<br />Date of Birth:  Dec. 28th, 1989<br />Native Place:  Meishan Sichuan, P.R.China  Health:  Good<br />Marital Status:  Unmarried Preparation of nan<br />ometer titania via crystal aberration in high density ultrasonic<br />field and thermal  decomp<br />osition (Chinese Natural National Foundation,<br />50274056)
+                    .more-bd-ss: a(href='javascript:void(0);') more
+                .col-md-6
+                    .media-bd-ss: img(src='#{resPath}images/img_team_24.jpg')
+                    h4.title-bd-ss Sandy
+                    p.text-bd-ss Sex:  Male<br />Date of Birth:  Dec. 28th, 1989<br />Native Place:  Meishan Sichuan, P.R.China  Health:  Good<br />Marital Status:  Unmarried Preparation of nan<br />ometer titania via crystal aberration in high density ultrasonic<br />field and thermal  decomp<br />osition (Chinese Natural National Foundation,<br />50274056)
+                    .more-bd-ss: a(href='javascript:void(0);') more
+
+block st
+    :coffee(bare=true,minify=true)
+        $('.js-video').hover(
+            ()->
+                $(this).find('.playBtn').show()
+            ()->
+                $(this).find('.playBtn').hide()
+        )
+//#            alert(1)
+        //},function() {
+        //
+        });
+
+//
+    if head
+        +slide(c, head.headItem, null, true)#carousel-example-generic.slide.banner
+
+    .row.m-t-1
+        .col-xs-8
+            .lead.well
+                For the past ten year's Phoenix Dance has taught hunderds of people the joy of dancing Salsa! Come join us and learn the most innovative, beautiful and exciting styles of Salsa in a relaxed and friendly atmosphere. No matter if you are a beginner or an advanced dancer, if you want to learn Salsa for the club or be a professional performer, Phoenix Dance has the classes for you. Our experienced dance instructors will take you on a joyful journey of dancing and developing your skills to an ultimate level. With our unique focus on developing body movement, techniques, rythm and feeling for the music you will soon be a star on the dance floor!!!
+        .col-xs-4
+            .qrcode
+
+    if indexShow
+        .row
+            for it in indexShow.headItem
+                .col-md-4
+                    .thumbnail
+                        != f.imgItem(it,c)
+                        a.caption(href='')
+                            h3= it.title
+                                br
+                                small= it.subTitle
+                            p= it.brief
+
+    .row
+        .qa

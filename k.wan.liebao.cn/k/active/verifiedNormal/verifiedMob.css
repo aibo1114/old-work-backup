@@ -1,0 +1,223 @@
+/*reset*/
+body {
+    font-size:14px;
+    color:#808080;
+}
+div,span,ul,li,label,input,button,p {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Microsoft YaHei';
+}
+ul,li {
+    list-style: none;
+}
+input:focus{outline:none}
+/*main*/
+.mask-verified-gb {
+    width:100%;
+    height:100%;
+    background:#000;
+    opacity: .3;
+    filter:alpha(opacity=30);
+    position:fixed;
+    *position:absolute;
+    z-index:98;
+    top:0;
+    left:0;
+}
+.mod-verified-gb {
+    width:90%;
+    /*height:330px;*/
+    background:#fff;
+    box-shadow: 0 0 10px #dcdcdc;
+    border-radius:5px;
+    position:fixed;
+    *position:absolute;
+    z-index:99;
+    top:5rem;
+    left:50%;
+    margin-left:-45%;
+    padding-bottom:1.8rem;
+}
+.success-verified-gb {
+    width:90%;
+    background:#fff;
+    box-shadow: 0 0 10px #dcdcdc;
+    border-radius:5px;
+    position:fixed;
+    *position:absolute;
+    z-index:99;
+    top:5rem;
+    left:50%;
+    margin-left:-45%;
+}
+.content-versuc-gb {
+    padding-bottom:5rem;
+}
+.img-versuc-gb {
+    display: block;
+    width:40%;
+    margin:auto;
+    padding-top:3rem;
+}
+.txt-versuc-gb {
+    text-align: center;
+    line-height: 2.4rem;
+    font-size:1.1rem;
+}
+.btn-versuc-gb {
+    display: block;
+    width:45%;
+    margin:1.8rem auto 0;
+    text-align: center;
+    line-height:2.5em;
+    font-size:1.1rem;
+    border-radius: 5px;
+    background: #19c475;
+    color:#fff;
+}
+.hd-verified-gb {
+    height:44px;
+    border-bottom: 1px solid #f0f0f0;
+    position:relative;
+}
+.fork-verified-gb {
+    display: block;
+    width:1rem;
+    height:1rem;
+    position:absolute;
+    z-index:100;
+    top:.7rem;
+    right:1rem;
+    font-size:1rem;
+    color:#999;
+    cursor: pointer;
+}
+.title-verified-gb {
+    line-height: 44px;
+    text-align: center;
+    font-size:1.2rem;
+    color:#333;
+    font-weight: bold;
+}
+
+.tabs-verified-gb {
+    height:36px;
+}
+.tab-verified-gb {
+    float: left;
+    line-height:36px;
+    text-align: center;
+    font-size:14px;
+    color:#8f8f8f;
+    background:#fafafa;
+    border-bottom:1px solid #f2f2f2;
+    cursor: pointer;
+}
+.current-tab-verified {
+    background:#fff;
+    border-bottom: none;
+    height:37px;
+    font-size:14px;
+    color:#f0641e;
+}
+#phoneTab {width:269px;border-right:1px solid #f2f2f2;}
+#identTab {width:270px;}
+
+.content-verified-gb {
+    padding:.5rem 0 0;
+}
+
+.tip-verified-gb {
+    padding:0 1rem .5rem;
+    line-height: 1.5em;
+    font-size:14px;
+}
+.tip-verified-gb .orange {
+    color:#fa5c19;
+}
+.list-verified-gb {
+    padding:0 1rem;
+}
+.item-verified-gb {
+    padding-bottom:.8rem;
+    position:relative;
+}
+.errtip-verified-gb {
+    position:absolute;
+    z-index:100;
+    top:4.2rem;
+    left:0;
+    font-size:12px;
+    color:#f20000;
+}
+.rightip-verified-gb {
+    position:absolute;
+    z-index:101;
+    top:4.2rem;
+    left:0;
+    font-size:12px;
+    color:#13a465;
+}
+.label-verified-gb {
+    display: block;
+    line-height:2rem;
+}
+.ipt-verified-gb {
+    display: block;
+    width:100%;
+    line-height: 2rem;
+    padding:0 8px;
+    border:1px solid #ccc;
+}
+.mid-ipt-gb {
+    width:60%;
+}
+.err-verified-gb {
+    border:1px solid #f20000;
+}
+
+.codebtn-verified-gb,.picode-verified-gb {
+    display: block;
+    position:absolute;
+    right:0;
+    top:2rem;
+    z-index:99;
+    width:38%;
+    height:2rem;
+}
+.codebtn-verified-gb {
+    border:1px solid #f27d42;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    font-size:14px;
+    color:#f0641e;
+    text-decoration: none;
+}
+.codebtn-verified-gb:hover {
+    color:#fff;
+    background: #f27d42;
+}
+.picode-verified-gb {
+    border:1px solid #e6e6e6;
+    overflow: hidden;
+    cursor: pointer;
+}
+.picode-verified-gb img {
+    width:114px;
+    margin-top:-8px;
+}
+.btn-verified-gb {
+    display: block;
+    width:45%;
+    margin:1.6rem auto 0;
+    border:none;
+    border-radius: 5px;
+    line-height:2.4rem;
+    text-align: center;
+    background:#19c475;
+    color:#fff;
+    cursor: pointer;
+}

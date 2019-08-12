@@ -1,0 +1,254 @@
+html{color:#000;background:#FFF; -webkit-text-size-adjust:none;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;box-sizing:content-box;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit;}
+del,ins{text-decoration:none;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:baseline;}
+sub{vertical-align:baseline;}
+legend{color:#000;}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+input:focus{
+    outline: none;
+}
+/*20160822*/
+
+/*tab切换*/
+.aqLogin-detail {
+    width: 293px;
+    height: 253px;
+}
+  
+.aqLogin-detail .caption {
+    position: relative;
+    margin: auto;
+    height: 48px;
+    width: 280px;
+    margin-top: -30px;
+}
+  
+.aqLogin-detail .caption ul {
+    position: absolute;
+    width: 390px;
+    left: -1px;
+
+}
+  
+.aqLogin-detail .caption li {
+    
+    text-align: center;
+   
+    line-height: 40px;
+    /*background-color: #afd4ec;*/
+    padding-left: 1px;
+    width: 140px;
+    padding-right: 1px;
+    float: left;
+    height: 40px;
+    overflow: hidden;
+    padding-top: 0px;
+    cursor: pointer;
+}
+  
+.aqLogin-detail .caption li.select {
+  border-bottom: 5px solid #3d9fed;
+}
+  
+.aqLogin-detail .caption li a {
+    color: #b2b2b2;
+    font-size: 18px;
+    text-decoration: none;
+}
+.aqLogin-detail .caption .select a {
+    color: #4c4c4c;
+   
+}  
+.aqLogin-detail #content {
+    position: absolute;
+    background-color: #3f3e3e;
+    margin: auto;
+    width: 293px;
+    height: 280px;
+    color: #fff;
+    font-size: 14px;
+}
+.aqLogin-detail #content .common-input{
+    width: 226px;
+    margin: 0 auto;
+    height: 30px;
+    border: 1px solid #4d4b4b;
+    background-color: #fff;
+    margin-bottom: 10px;
+    background-color: #34302d;
+    border-radius: 7px;
+}
+.aqLogin-detail #content .common-input.hasFocus{
+    border: 1px solid #3d9fed;
+}
+.aqLogin-detail .loginInput .login_icon_user{
+    width: 47px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+    display: inline-block;
+}
+.fl{
+    float: left;
+}
+.aqLogin-detail #keymail{
+    border: 0;
+    font-size: 14px;
+    width: 156px;
+    padding: 0 6px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #34302d;
+    color: #fff;
+}
+.aqLogin-detail .loginInputPwd .login_icon_password{
+   width: 47px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    text-align: right;
+}
+.aqLogin-detail #content #yl-login{
+   /*margin-right: 7px;*/
+   /*background-color: #ccc;*/
+}
+.aqLogin-detail #password{
+    border: 0;
+    font-size: 14px;
+    width: 156px;
+    padding:0 7px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #34302d;
+    color: #fff;
+}
+.aqLogin-detail .common-input-code{
+    width: 152px;
+    /* margin: 0 auto; */
+    margin-left: 36px;
+    height: 30px;
+    background-color: #34302d;
+    margin-bottom: 10px;
+    border: 1px solid #4d4b4b;
+    border-radius: 7px;
+}
+.aqLogin-detail .common-input-code.hasFocus{
+   border: 1px solid #3d9fed; 
+}
+.aqLogin-detail #content .loginInput{
+    margin-top: 30px;
+}
+.aqLogin-detail .loginInputCode .login_icon_code{
+   width: 47px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    text-align: right;
+    font-size: 14px;
+}
+.aqLogin-detail #identifyingcode{
+    border: 0;
+    font-size: 14px;
+    width: 70px;
+    background-color: #34302d;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    padding: 0 6px;
+}
+.aqLogin-detail .login-error{
+    color: #ff740d;
+    font-size: 12px;
+    margin-bottom: -25px;
+    margin-left: 39px;
+    margin-top: 10px;
+    display: none;
+}
+.aqLogin-detail .login-error1{
+    color: #e78b02;
+    font-size: 12px;
+    margin-bottom: -25px;
+    margin-left: 39px;
+    margin-top: 10px;
+    display: none;
+}
+.aqLogin-detail .codebyImg{
+    position: absolute;
+    left: 53%;
+    top: 50%;
+    margin-top: -27px;
+    display: inline-block;
+    height: 40px;
+    margin-left: 39px;
+    cursor: pointer;
+}
+.aqLogin-detail #content .rmline{
+    width: 225px;
+    margin: 0 auto;
+}
+.aqLogin-detail #content .rmline label{
+    color: #fff;
+    font-size: 12px;
+    vertical-align: 3px;
+    margin-left: 5px;
+}
+.aqLogin-detail #content .rmline a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    float: right;
+}
+.aqLogin-detail #content .login-line{
+    width: 400px;
+    margin: 0 auto;
+    border: 1px dashed #d3d8e2;
+    margin-top: 10px;
+    height: 0;
+
+}
+.aqLogin-detail #content .login-btn{
+    width: 225px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.aqLogin-detail #content .login-btn a,.regist-inner .qqlogin{
+    display: inline-block;
+    width: 225px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background: #e78b02;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 auto;
+}
+#lgInfo{
+    color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+    padding-left: 30px;
+}
+#lgInfo span{
+    color: #ff9c01;
+}
+#lgInfo a{
+    color: #fff;
+    font-size: 14px;
+}
+#logOut{
+    text-align: right;
+    padding-right: 40px;
+    cursor: pointer;
+}
+

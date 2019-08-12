@@ -1,0 +1,35 @@
+<div ng-controller="clockList">
+    <div class="content-list" ng-if="!editService && !editCustom">
+        <div ng-if="!hasClock">
+            <span class="icon-clock-none"></span>
+            <p class="tip-clock-none">您还没有添加闹钟哦~</p>
+            <a class="btn-clock-none" href="/clock/#!/service">添加闹钟</a>
+        </div>
+        <div ng-if="hasClock">
+            <div class="scrollbar-inner scroll-box-clock" jquery-scrollbar>
+                <ul ng-if="list" class="l-clock" >
+                    <li ng-repeat="it in list" class="li-clock" ng-class="{'last': $index==list.length-1}">
+                        <div class="icon-item-clock"><img ng-src="{{it.icon}}" alt=""></div>
+                        <div ng-if="it.type==1" class="content-item-clock"><!--开服闹钟-->
+                            <h4 class="title-item-clock">{{it.game_name}}--{{it.server_name}}<span class="time-item-clock">提醒时间：{{it.uiTime}}</span></h4>
+                            <p class="text-item-clock">重复：{{it.date}}</p>
+                            <p class="desc-item-clock">备注：{{it.desc}}</p>
+                        </div>
+                        <div ng-if="it.type==2" class="content-item-clock"><!--自定义闹钟-->
+                            <h4 class="title-item-clock">{{it.title}}<span class="time-item-clock">提醒时间：{{it.uiTime}}</span></h4>
+                            <p class="text-item-clock">重复：{{it.date}}</p>
+                            <p class="desc-item-clock">备注：{{it.desc}}</p>
+                        </div>
+                        <div class="handler-item-clock">
+                            <span class="glyphicon glyphicon-edit" hover-class="hover-glyphicon" ng-click="edit(it.id);"></span>
+                            <span class="glyphicon glyphicon-remove" hover-class="hover-glyphicon" ng-click="deleteClock(it.id);"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <a class="btn-add-clock" href="/clock/#!/service">添加闹钟</a>
+        </div>
+    </div>
+    <div ng-show="editService" service-editform data="data"></div>
+    <div ng-show="editCustom" custom-editform data="data"></div>
+</div>

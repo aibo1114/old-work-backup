@@ -1,0 +1,13 @@
+.row
+    .col-xs-1.p0.text-right
+        if i != null
+            h3.primary.text-right= (i+1)
+    .col-xs-3.imgBox
+        !=f.img(img)
+    .col-xs-4.text-left
+        h4=name
+        p.small.gray 共有#{count}人玩过
+    .col-xs-4
+        a.btn.mb.primary(href=link) 马上玩
+    .col-xs-12.thin
+        hr

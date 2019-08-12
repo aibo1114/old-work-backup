@@ -1,0 +1,127 @@
+
+.sq-dialog-buttons {
+  display: none;
+}
+.sq-dialog-login .sq-dialog-titlebar{
+      box-shadow: none !important;
+}
+.toastbox{
+  position: absolute;
+  bottom: 0;
+  text-indent: 0px;
+  width: 440px;
+  height: 30px;
+  text-align: center;
+}
+.toastbox span{
+  display: inline-block;
+width: 142px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+    cursor: pointer;
+    background-color: #afd4ec;
+        color: #fff;
+}
+.toastbox .toastboxselect{
+color: #03679D;
+background-color: #ebf0fc;
+}
+.sq-dialog-client{
+  display: none;
+}
+.registeredtable{
+  width: 338px;
+      height: 270px;
+    margin: 0 auto;
+    color: #808080;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.registeredtable .formline label {
+    width: 56px;
+    display: inline-block;
+    text-align: right;
+}
+.registeredtable .txt {
+    display: inline-block !important;
+    *display:inline !important;
+    *zoom : 1;
+    width: 240px;
+    _width: 209px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d3d3d3;
+    padding: 0 5px;
+    margin-left: 8px;
+    text-align: left;
+}
+.registeredtable .not {
+    font-size: 12px;
+    color: #cccccc;
+    margin-left: 70px;
+}
+.registeredtable .code-regist {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px;
+    border: 1px solid #d3d3d3;
+    width: 180px;
+    margin-left: 8px;
+}
+.registeredtable .regist-img {
+    height: 40px;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 7px;
+}
+.registeredtable .rmline-reg {
+    width: 213px;
+    margin: 4px auto;
+    color: #8f8f8f;
+    font-size: 12px;
+}
+.registeredtable .bts {
+    margin-top: 10px;
+        text-align: center;
+}
+.registeredtable .zhuce {
+    display: inline-block;
+    width: 136px;
+    text-align: center;
+    height: 33px;
+    line-height: 33px;
+    background: #ff740d;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+.registeredtable .txt.ableColor {
+    border: 1px solid red;
+}
+.registeredtable .green {
+    color: #7CE218;
+    font-size: 12px;
+    margin-left: 70px;
+}
+.onlyshow{
+  background: #cccccc !important;
+}
+#yl-register{
+  display: none;
+}
+.a-bgcolorhack{
+  background-color: transparent;
+}
+.word_integral a:hover{
+  text-decoration: none;
+  color: #f0641e;
+ border-bottom: 1px solid #f0641e;
+}
+.error_msg{
+    font-size:12px;
+    color:#ffb700;
+    margin-left: 70px;
+}

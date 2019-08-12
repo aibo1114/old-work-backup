@@ -1,0 +1,9 @@
+!= f.img('sadfsf.jpg')
+h4 我的钱包
+.list-group
+    .list-group-item
+        .row
+            .col-xs-2!= f.icon('user')
+            .col-xs-6 x #{gold * 10}
+            .col-xs-4
+                != f.btn('&' + gold, null, null, null, true)

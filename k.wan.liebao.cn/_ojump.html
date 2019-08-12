@@ -1,0 +1,4 @@
+<script  type="text/javascript">
+document.domain='wan.liebao.cn';
+var gUrl=String(window.document.location.href);function getQueryStr(str){var rs=new RegExp("(^|)"+str+"=([^\&]*)(\&|$)","gi").exec(gUrl),tmp;if(tmp=rs){return tmp[2];}return"";}var s=getQueryStr("service");if(s){s=decodeURIComponent(s);var end=gUrl.indexOf("/",9);var prefix=gUrl.substring(0,end);if(s.indexOf(prefix)==0){if(window.opener!=null&&window.opener!=undefined){window.opener.top.location.replace(s);window.opener=null;window.close();}else{window.location.replace(s);}}else if(s.indexOf("https://login.ijinshan.com")==0){window.location.replace(s);}else{document.write("ERROR!");}};
+</script>

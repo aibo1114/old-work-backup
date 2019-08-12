@@ -1,0 +1,37 @@
+module.exports=[
+    title:'MOD'
+    num:607
+,
+    title:'讨论'
+    num:133
+,
+    title:'求助'
+    num:142
+,
+    title:'原创'
+    num:226
+,
+    title:'火星'
+    num:3371
+,
+    title:'推荐'
+    num:41
+,
+    title:'分享'
+    num:381
+,
+    title:'公告'
+    num:12
+,
+    title:'注意'
+    num:23
+,
+    title:'贴图'
+    num:32
+,
+    title:'活动'
+    num:201
+,
+    title:'资讯'
+    num:332
+]

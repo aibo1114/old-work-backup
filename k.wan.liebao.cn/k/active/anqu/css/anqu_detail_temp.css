@@ -1,0 +1,38 @@
+.anqu_middle{
+	margin:0 auto;
+}
+.anqu_inline_block{
+	display:inline-block;
+}
+.anqu_fl_rt{
+	float:right;
+}
+.anqu_container{
+	width:1180px;
+	margin-top:10px;
+}
+.left_login_block{
+	width:294px;
+	height:288px;
+	border:1px solid #e6e6e6;
+	float:left;
+}
+.right_block{
+	/*width:873px;*/
+	width:100%;
+	border-top:1px solid #e6e6e6;
+	margin-left:11px;
+}
+.right_list_content_pos{
+	width:96%;
+}
+.list_title{
+	width:100%;
+}
+.list_title_words{
+	font-size:20px;
+	color:#000000;
+	border-top:2px solid #3d9fed;
+	padding:5px;
+	font-weight:bold;
+}

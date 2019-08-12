@@ -1,0 +1,27 @@
+include ./_inc/mixin
+
+doctype html
+block script
+    - main = 'mob'
+    - mount = true
+    if mode
+        -libPath = 'http://127.0.0.1:8088/';
+html
+    head
+        include ./_inc/smeta
+
+        block meta
+
+        block head
+
+        style(type='text/css')
+            block style
+
+    - wt? 1 : wt = {};
+    body(data-wid= wt.appId, data-wcode= wt.code)
+        .container
+            #static.row
+                block content
+            #content.row
+
+    include ./_inc/ssub

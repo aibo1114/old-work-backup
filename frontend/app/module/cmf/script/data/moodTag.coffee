@@ -1,0 +1,1 @@
+module.exports = require '../../../_mod/group/script/data/moodTag'

@@ -1,0 +1,188 @@
+.nav {
+    width: 1200px;
+    height: 80px;
+    z-index: 100;
+    position: relative;
+    background: url('../images/logo0515.png') 57px no-repeat;
+    margin: 0 auto;
+}
+
+.cent, .navleft, .navright {
+    display: inline-block;
+}
+
+.cent, .navright {
+    padding-top: 28px;
+}
+
+.cent {
+    padding-left: 35px;
+}
+
+.centtext {
+    width: 83px;
+    padding: 8px 22px;
+    background: #59CEC5;
+    text-align: center;
+    border-radius: 20px;
+    color: #ffffff;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+.navleft {
+    padding-left: 135px;
+    padding-top: 20px;
+    float: left;
+}
+
+.navtext {
+    color: #F85812;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navcom {
+    font-size: 12px;
+    color: #ABABAB;
+}
+
+.navright {
+    float: right;
+}
+
+.navright a {
+    padding-left: 19px;
+    padding-right: 19px;
+    color: #666666;
+}
+
+.navright a:hover {
+    color: #F5794C;
+}
+
+.con_logo {
+    display: none;
+    margin: auto;
+}
+
+.logo1 {
+    display: block;
+}
+
+.logo2, .logo3, .logo4 {
+    display: none;
+}
+
+.logos2, .logos3, .logos4 {
+    display: block;
+}
+
+.logos2_2, .logos3_3, .logos4_4 {
+    display: none;
+}
+
+a {
+    border: none;
+}
+
+img {
+    border: none;
+}
+
+.footer ul {
+    position: absolute;
+    bottom: 105px;
+    left: 50%;
+    float: right;
+    width: 690px;
+    margin-left: -345px;
+    text-align: center;
+}
+
+.footer ul li {
+    width: 80px;
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer ul li img {
+    width: 100%;
+}
+
+.btlogo {
+    width: 80%;
+}
+
+.logos2, .logos3, .logos4 {
+    display: block;
+}
+
+.logos2_2, .logos3_3, .logos4_4 {
+    display: none;
+}
+
+.logos1 {
+    display: none;
+}
+
+.logos1_1 {
+    display: block;
+}
+
+.download {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 290px;
+    margin-left: -145px;
+}
+
+.download_p {
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+    margin-top: 10px;
+}
+
+.bt {
+    display: inline-block;
+    width: 290px;
+    background: #FE806B;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 55px;
+    color: #ffffff;
+    font-size: 28px;
+}
+
+.p_ {
+    display: inline-block;
+    position: relative;
+    top: 3px;
+    font-size: 18px;
+    padding-left: 3px;
+}
+
+.btcen {
+    padding-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #999999;
+}
+
+@media screen and (max-width: 1340px)and (min-width: 1366px ) {
+    .con_logo {
+        width: 600px;
+    }
+}
+
+@media screen and (max-width: 1367px) {
+    .con_logo {
+        width: 780px;
+    }
+}
+@media screen and (min-width: 1400px) {
+    .content{
+        margin-top: 60px;
+    }
+}

@@ -1,0 +1,13 @@
+if head
+    h3.head
+        strong= title
+
+if ctx._filter
+    .text-xs-center
+        != ctx._filter()
+
+#{tag || 'div'}(class= tagClass || 'refresh')
+    != _content
+
+if foot
+    .foot

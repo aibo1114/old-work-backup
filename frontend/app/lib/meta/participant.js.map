@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "participant.js",
+  "sourceRoot": "",
+  "sources": [
+    "participant.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,CAAC,CAAC,WAAF,GACI;IAAA,IAAA,EAAK,EAAL;;AADJ"
+}

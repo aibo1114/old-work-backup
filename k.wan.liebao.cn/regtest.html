@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<link href="https://login.ijinshan.com/webgame/css/loginreg1.2.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="https://login.ijinshan.com/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="https://login.ijinshan.com/js/login.js?v=2012090705"></script>
+<script type="text/javascript" src="https://login.ijinshan.com/webgame/js/analytics.min.js"></script>
+<style type="text/css">
+.logincon label,.logincon span{color:#fff;}
+.userbtn{margin-top:0;}
+.usrinpt{background:#fff;border:1px solid #691f84;}
+</style>
+<script type="text/javascript">
+$(function(){
+//文本输入框焦点和失去焦点效果
+	$(":input").focus(function(){
+	  if($(this).val() ==this.defaultValue){  
+		$(this).val("");           
+	  } 
+	}).blur(function(){
+	 if ($(this).val() == '') {
+		$(this).val(this.defaultValue);
+		}
+	});
+});
+
+
+</script>
+
+<script type="text/javascript">
+  function login(){
+	submit();
+	return false;
+  }
+ function reg(){
+	toRegister('http://i.liebao.cn/jump.php?act=register&source=webgame');
+	return false;
+  }
+var vk = window.location.search;
+var vklen=vk.lastIndexOf("vkgamename=");
+function datatrace(n){
+	if(vklen>0){
+		var datastr=vk.lastIndexOf("service");
+		var vkgamename = vk.substring(vklen+11,datastr-1); 
+		if(n==1){
+			var vkstr=$("#qqlogin").attr("data-trace");
+			var strstart = vkstr.substring(0,vkstr.lastIndexOf("gamename")+9);
+			var strend = "|w:loginqqlogin";
+			$("#qqlogin").attr("data-trace",strstart+vkgamename+strend);
+		}
+		else{
+			var vkstr=$("#loginbtn").attr("data-trace");
+			var strstart = vkstr.substring(0,vkstr.lastIndexOf("gamename")+9);
+			var strend = "|w:loginbtn" ;
+			$("#loginbtn").attr("data-trace",strstart+vkgamename+strend);
+		}
+	}
+}
+</script>
+
+
+</head>
+<body>
+    <div class="form logincon">
+        <!--  用户登录内容  -->
+        <div class="notice" id="info_note"></div>
+        <div class="item">
+        	<label class="title">帐&emsp;&emsp;号:</label>
+        	<input type="text" id="unm" tabindex="1" name="unm" class="usrinpt" value="用户邮箱/手机号">
+            <span>输入邮箱/手机/通行证</span>
+        </div>
+        <div class="item">
+        	<label class="title">密&emsp;&emsp;码:</label>
+            <input type="password" id="pwd" tabindex="2" name="pwd" class="usrinpt" value="输入密码" />
+            <span>输入密码</span>
+        </div>
+        <div class="item ver" id="__vc" style="display:none;">
+        	<label class="title">验 证 码:</label>
+            <input type="text" id="vercode" tabindex="3" name="vercode" class="usrinpt" />
+            <img onclick="javascript:chgVerImg();" tabindex="-1" title="单击图片可以更换注册码" src="" id="verimg">
+            <span>输入验证码</span>
+        </div>
+        <div style="display:none;" class="item">
+        	<a title="忘记密码" target="_blank" href="http://i.liebao.cn/jump.php?act=forget&amp;source=webgame">忘记密码？</a>
+            <input type="checkbox" checked="" name="rm" id="rm"><span>下次自动登录</span>
+        </div>
+		<!--  用户登录按钮  -->
+		<div class="userbtn">
+			<a class="loginbtn __trace__" type="button" tabindex="4" id="loginbtn" onclick="datatrace(2);return login();" data-trace="151010,900,,,gamename:common_default6|w:loginbtn"></a>
+			<div class="qqLogin">
+				<a tabindex="-1" title="使用QQ帐号登录" class="qqLoginBtnLong __trace__" id="qqlogin" onclick="datatrace(1);" href="javascript:qqLogin('webgameqq','http://wan.liebao.cn/u.php?a=dologin&amp;redirect_info=aHR0cDovL3dhbi5pamluc2hhbi5jb20vdi8/YT1sb2dpbndlYmdhbWUmZz0xMCZzPTEy');" data-trace="151010,900,,,gamename:common_default6|w:loginqqlogin"></a>
+			 </div>
+		</div>
+    </div>
+</body>
+</html>

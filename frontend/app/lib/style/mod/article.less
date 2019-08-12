@@ -1,0 +1,161 @@
+
+.article {
+  .brief {
+    margin: 20px 0;
+    padding: 15px 20px;
+    border: 1px solid #EAEAEA;
+    background: #EFEFEF;
+    border-radius: 5px;
+    strong {
+      margin-right: 10px;
+    }
+  }
+  //
+  //img {
+  //  width: 100%;
+  //}
+  ._img {
+    margin-right: auto;
+    margin-left: auto;
+    //background-color: #fff;
+    .transition(all 0.2s ease-in-out);
+  }
+  .ptps{
+    margin-right: -(@grid-gutter-width/2);
+    a{
+      margin-bottom: (@grid-gutter-width/2);
+    }
+  }
+}
+
+.biText {
+  .head, .center, .strong {
+    font-weight: bold;
+  }
+  .head, .center {
+    text-align: center;
+  }
+  .head {
+    font-size: 1.3em;
+    line-height: 1.6em;
+    margin-bottom: 20px;
+  }
+  .center {
+    font-size: 1.1em;
+    line-height: 1.6em;
+  }
+}
+
+.meta {
+  font-size: 14px;
+  //margin-top: 10px;
+  table-layout: fixed;
+  word-break: break-all;
+  word-wrap: break-word;
+  strong {
+    color: #333333;
+  }
+  a {
+    color: white;
+    margin-right: 10px;
+    &:link, &:visited {
+      color: #999999;
+    }
+    &:hover {
+      color: #f0f8ff;
+    }
+  }
+  dt, dd {
+    display: inline-block;;
+    line-height: 25px;
+    padding: 0 0.5em;
+    box-shadow: 2px 2px 3px #888;
+  }
+  dt {
+    border-radius: 5px 0 0 5px;
+    background-color: #CCCCCC;
+    color: black;
+    text-shadow: 0 1px 1px #fff;
+    i {
+      margin-top: 3px;
+    }
+  }
+  dd {
+    margin: 0 0.5em 0 0;
+    border-radius: 0 5px 5px 0;
+    background-color: #777;
+    color: white;
+    text-shadow: 0 1px 1px #000;
+    font-weight: bold;
+    a {
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.article-content {
+  text-align: center;
+  line-height: 28px;
+  margin-bottom: 20px;
+
+  blockquote {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  p, blockquote {
+    line-height: 26px;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  ul, ol {
+    list-style-position: outside;
+    text-align: left;
+    margin-bottom: 15px;
+    padding-left: 20px;
+  }
+  ul {
+    list-style-type: disc;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+  li {
+    line-height: 25px;
+    margin-bottom: 0.5em;
+    list-style: disc;
+  }
+  .markImg {
+    text-align: center;
+  }
+  blockquote {
+    h3, h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.copyright {
+  background: #EFEFEF;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: smaller;
+  margin: 20px 0;
+  strong {
+    float: left;
+    height: 30px;
+    width: 30px;
+    line-height: 25px;
+    border-radius: 25px;
+    border: 3px solid #999;
+    padding-left: 5px;
+    font-size: 20px;
+    margin: 2px 5px;
+    color: #999;
+  }
+  p {
+    margin: 0;
+  }
+}
+

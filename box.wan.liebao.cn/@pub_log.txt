@@ -1,0 +1,23 @@
+20170616-pkgImgUrl modify
+20170619 lucky models
+20170621 allgame_img:cqsjwyb:1095
+20170623 msg modify: contentLink & readStatus
+20170623 adv modify: delete CSS3 media & use js judge (cause respondJs cannot discern Height)
+
+20170623 msg ie8 scroll
+20170623 cdn cahce~~~
+20170626 dftImg & gidSer
+20170626 games: cqz & gs
+20170630 website change download link~
+20170703 gift gifts random~
+20170714 allGame API updates
+20170721 pkg modify
+20170727 v1.1~
+20170728 curTamp
+20170801 btn position
+20170808 fix fe bugs & change vipAPI domain
+20170809 a few UI detail changes & change website links
+20170814 add myyh 1100 seach
+20170814 add myyh 1100 search~
+20170822 v1.2
+20170825 recommend games (delete comments) & change imgName

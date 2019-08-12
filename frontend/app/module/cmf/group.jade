@@ -1,0 +1,22 @@
+extends ./inc/wt
+
+block style
+    :less(minify=true)
+        .member {
+            display: none;
+        }
+block content
+    .article
+        .col-md-8.main
+            - task = null
+            include ../_inc/crumb
+            include ../_mod/group/exTmpl
+        .col-md-4.side
+block st
+    :coffee(bare=true,minify=true)
+        cf.regFlow(_gd)
+        wt.setWtJs(null, true) if wt
+        cf.afterWxReady = ->
+            _.delay ->
+                wt.setShare $('title').text(), location.href, ($('img').attr('bb-src')||$('img').attr('src')), $('h2 small').text()
+            , 1000

@@ -1,0 +1,18 @@
+extends /../main
+
+block script
+    - main = 'wt'
+    - mount = true
+    - noCache = true
+    if mode
+        -libPath = 'http://127.0.0.1:8088/';
+
+block style
+    :less(minify=true)
+
+block ctn
+    - wt? 1 : wt = {};
+    body(data-wid= wt.appId data-wcode= wt.code class=index + '_')
+        #content
+        #static(class=index)
+            block content

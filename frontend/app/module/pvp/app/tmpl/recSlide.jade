@@ -1,0 +1,6 @@
+.carousel-inner
+    each it,i in data
+        .item
+            for tt in it
+                != f.tmpl('round', tt)
+

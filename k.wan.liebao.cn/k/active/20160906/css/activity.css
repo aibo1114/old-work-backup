@@ -1,0 +1,128 @@
+a{
+	text-decoration:none;
+}
+.container{
+	width:100%;
+	background:#291948;
+	margin:0 auto;
+}
+.banner{
+	width:100%;
+	height:607px;
+	background:url(../image/banner.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.game_zone{
+	width:100%;
+	height:746px;
+	background:url(../image/recommend.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+}
+.middle_layout{
+	width:1000px;
+	margin:0 auto;
+	position:relative;
+}
+.recommend_block{
+	width:978px;
+	height:479px;
+	margin:0 auto;
+	background:url(../image/recommend_game.jpg);
+	background-repeat:no-repeat;
+	position:relative;
+	top:150px;
+}
+.recommend_btn{
+	display:block;
+	position:relative;
+	margin:0 auto;
+	width:266px;
+	height:93px;
+	background:url(../image/rec_btn.png);
+	background-repeat:no-repeat;
+	bottom:50px;
+}
+.recommend_btn:hover{
+	background-position:0 -99px;
+}
+.more_game{
+	width:100%;
+}
+.game_zone_block{
+	width:480px;
+	height:388px;
+	margin:10px;
+	display:inline-block;
+	position:relative;
+}
+.p1{
+	background:url(../image/p1.jpg);
+	background-repeat:no-repeat;
+}
+.p2{
+	background:url(../image/p2.jpg);
+	background-repeat:no-repeat;
+}
+.p3{
+	background:url(../image/p3.jpg);
+	background-repeat:no-repeat;
+}
+.p4{
+	background:url(../image/p4.jpg);
+	background-repeat:no-repeat;
+}
+.start_btn{
+	display:inline-block;
+	width:156px;
+	height:64px;
+	background:url(../image/start_btn.png);
+	background-repeat:no-repeat;
+	position:absolute;
+	float:left;
+	bottom:10px;
+	left:5px;
+}
+.start_btn:hover{
+	background-position:0 -64px;
+}
+.download_btn{
+	width:156px;
+	height:64px;
+	background:url(../image/download_btn.png);
+	background-repeat:no-repeat;
+	display:inline-block;
+	float:right;
+	position:absolute;
+	bottom:10px;
+	right:5px;
+}
+.download_btn:hover{
+	background-position:0 -64px;
+}
+.click_area_rec{
+	display:inline-block;
+	width:978px;
+	height:443px;
+	margin-top:36px;
+}
+.click_area_more{
+	display:inline-block;
+	width:480px;
+	height:301px;
+}
+.national_icon{
+	width:116px;
+	height:126px;
+	position:absolute;
+	top:-136px;
+}
+.footer{min-width:1000px;background:#404040;padding-top:10px;margin-top:10px;box-shadow:0 2px 4px #666}
+.footer-c{width:1000px;margin:0 auto;color:#999;text-align:center;font:400 12px/26px SimSun}
+.footer-link-wrap{border-bottom:2px solid #31c8ba}
+.footer-link{margin:0 15px;color:#999;transition:color .1s ease-in-out}
+.footer-link:hover{color:#666}
+.footer-dline{font-family:Arial}
+.footer-dline .footer-link{color:#f90}
+.down_rights{color:#999;}

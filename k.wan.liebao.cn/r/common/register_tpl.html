@@ -1,0 +1,165 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+    <style type="text/css">
+        .sheet_form_qqnew,.sheet_form_wx {
+            display: inline-block;
+            position: absolute;
+            left: 260px;
+            top: 11px;
+            width: 30px;
+            height: 30px;
+            background: none !important;
+            outline: none
+        }
+        .sheet_form_qqnew,#qqlogin {
+            outline:none !important;
+            border:none !important;
+        }
+        .sheet_form_wx {
+            left: 305px;
+            top: 11px;
+            *top:17px;
+        }
+        .sheet_form_qqnew img {width:30px;}
+        .sheet_form_wx img {width:30px;}
+
+    </style>
+
+    <script type="text/javascript">
+        
+        var Util = {
+            getQueryString: function(param) {
+                if (location.href.indexOf('?') === -1 || location.href.indexOf(param + '=' ) === -1) {
+                    return '';
+                }
+
+                var queryString = location.href.substring(location.href.indexOf('?') + 1);
+                if (queryString.indexOf('#') !== -1) {
+                    queryString = queryString.substring(0, queryString.indexOf('#'));
+                }
+
+                var parameters = queryString.split('&');
+
+                var pos, paraName, paraValue;
+                for (var i = 0; i < parameters.length; i++) {
+                    pos = parameters[i].indexOf('=');
+                    if (pos === -1) { continue; }
+
+                    paraName = parameters[i].substring(0, pos);
+                    paraValue = parameters[i].substring(pos + 1);
+
+                    if (paraName === param) {
+                        return paraValue.replace(/\+/g, ' ');
+                    }
+                }
+                return '';
+            },
+            loadCss: function(file, path) { 
+                var cssTag = document.getElementById('loadCss'); 
+                var head = document.getElementsByTagName('head').item(0); 
+                if (cssTag) head.removeChild(cssTag); 
+                css = document.createElement('link'); 
+                css.href = path + file + '.css';
+                css.rel = 'stylesheet'; 
+                css.type = 'text/css'; 
+                css.id = 'loadCss'; 
+                head.appendChild(css); 
+            },
+            toHtml: function(str) {
+                str.replace('&', "&amp;")
+                    .replace('"', "&quot;")
+                    .replace("'", "&#39;")
+                    .replace('>', "&gt;")
+                    .replace('<', "&lt;");
+                return str;
+            }
+        };
+
+        // css
+        var css_param = Util.toHtml(Util.getQueryString('style'));
+        var btn_param = decodeURIComponent(Util.getQueryString('btn'));
+        var qqbtn_param = decodeURIComponent(Util.getQueryString('qqbtn'));
+        var kind_param = decodeURIComponent(Util.getQueryString('kind'));
+        var service_param = decodeURIComponent(Util.toHtml((Util.getQueryString('service'))));
+
+
+        var _LOCATION = 'https://login.ijinshan.com/webgame/w/' + (kind_param || '37style') + '/reg/';
+        
+        if (css_param === '') css_param = 'default';
+        if (btn_param === '') btn_param = 'default.gif';
+        if (service_param === '') service_param = Util.toHtml('http://wan.liebao.cn');
+        //if (qqbtn_param === '') qqbtn_param = 'qqlogin.gif';
+
+        Util.loadCss(css_param, _LOCATION);
+    </script>
+</head>
+<body>
+    <form>
+        <ul class="sheet_form">
+            <li>
+                <label for="passport" class="lb lb_passport">用户名：</label>
+                <input type="text" name="passport" id="passport" class="text" placeholder="请输入用户名" tabindex="1" />
+                <p class="msg singleline" id="passport_msg"></p>
+            </li>
+            <li>
+                <label for="password" class="lb lb_password">登录密码：</label>
+                <input type="password" name="password" id="password" class="text" placeholder="输入登录密码" tabindex="2" />
+                <p class="msg" id="password_msg"></p>
+            </li>
+            <li>
+                <label for="repassword" class="lb lb_repassword">重复密码：</label>
+                <input type="password" name="repassword" id="repassword" class="text" placeholder="重复登录密码" tabindex="3" />
+                <p class="msg" id="repassword_msg"></p>
+            </li>`
+            <li class="btnarea">
+                <a href="javascript:void(0);" class="sheet_form_reg" hidefocus="true">
+                    <img src="" alt="" class="sheet_form_reg_regbtn" id="reg_btn" tabindex="4" hidefocus="true" />
+                </a>
+                <!--<a href="javascript:void(0);" class="sheet_form_qq" hidefocus="true">-->
+                    <!--<img src="" alt="" class="sheet_form_qq_qqbtn" id="qqlogin" tabindex="5" hidefocus="true" />-->
+                <!--</a>-->
+
+                <a href="javascript:qqLogin('webgameqq');" class="sheet_form_qqnew" hidefocus="true">
+                    <img src="http://k.wan.liebao.cn/k/active/wcLogin/images/q.png" alt="" id="qqlogin" tabindex="5" hidefocus="true" />
+                </a>
+                <a href="javascript:void(0);" id="wxBtn" class="sheet_form_wx" hidefocus="true">
+                    <img src="http://k.wan.liebao.cn/k/active/wcLogin/images/w.png" alt="" />
+                </a>
+            </li>
+        </ul>
+    </form>
+    <input type="hidden" name="service" id="service" value="{$service}" />
+
+    <script type="text/javascript">
+        var wxbtn=document.getElementById('wxBtn');
+        document.getElementById('reg_btn').src = Util.toHtml(_LOCATION + 'images/' + btn_param);
+        document.getElementById('service').value = service_param;
+        //document.getElementById('qqlogin').src = Util.toHtml(_LOCATION + 'images/' + qqbtn_param);
+
+        evtCore(wxbtn, 'click', function(e){
+            //e.preventDefault();
+            e.preventDefault ?  e.preventDefault() : e.returnValue = false;
+            cbWin= window.open('http://api.wan.liebao.cn/account/1/wx/redirect?type=qrlogin&ref=http://wan.liebao.cn/user/wc_tar.html','','top=0,left=0,width=800,height=520');
+        });
+
+        function evtCore (ele, evt, fn) {
+            return ele.attachEvent ? ele.attachEvent('on' + evt, function(e){ fn.call(ele, e); }) : ele.addEventListener(evt, fn, false);
+        }
+    </script>
+    <script type="text/javascript" src="http://lib.kimg.cn/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://cdn.popo.wan.ijinshan.com/i/reg/script/register_tpl.min.js?t=201303201301"></script>
+    <script type="text/javascript">
+
+    //.lb is pic and png-24
+    var ispngtxt = Util.toHtml(Util.getQueryString('ispng')) || 0,
+        ie6js = '<!--[if IE 6]><script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/belatedPNG.js"></script><script type="text/javascript">setTimeout(function(){DD_belatedPNG.fix(".lb,.text,.btnarea img");},0)</script><![endif]-->';
+        if (ispngtxt) {
+            $("body").append(ie6js);
+        };
+    </script>
+</body>
+</html>

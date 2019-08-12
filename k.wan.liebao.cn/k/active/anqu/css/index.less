@@ -1,0 +1,135 @@
+@import "pc";
+
+//1
+.mod-web.game {
+  padding-left:20px;
+}
+.mod-web.game .hd-web {
+  .bg('icon_17.png',0,8px,40px);
+}
+.mod-web.notice .hd-web {
+  .bg('icon_19.png',0,8px,40px);
+}
+.hd-web {
+  .lh(48px);
+  .font(18px,#333);
+  position:relative;
+}
+.more-hd-web {
+  .abs(@t:0,@r:5px);
+  .font(12px,#666);
+}
+
+//2
+.media-web {
+  .bFl(196px);
+  margin-left:9px;
+  box-shadow: 2px 2px 4px #f1f1f1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#f1f1f1')";
+  &.first {
+    margin-left:0;
+  }
+}
+.obj-media {
+  position:relative;
+  .bWh(196px,164px);
+  img {
+    width:196px;
+    overflow:hidden;
+  }
+}
+.tip-obj-media {
+  .abs(@b:0,@l:0);
+  .bWh(186px,28px);
+  .lh(28px);
+  background:rgba(0,0,0,.3);
+  padding-right:10px;
+  display:none;
+  //filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4c000000,endColorstr=#4c000000);
+}
+.link-tip-media {
+  .font(12px,#fff);
+  text-decoration:underline;
+  margin:0 4px;
+  float:right;
+}
+
+.hd-media {
+  .clear();
+  padding:0 8px 0 14px;
+}
+.title-hd-media {
+  .ibFl(@h:40px);
+  .font(14px,#333);
+}
+.enter-hd-media {
+  .ibFr(@h:40px);
+  .font(12px,#3d9fed);
+}
+
+//3
+.l-notice-web {
+  padding:7px 0;
+  background:#f5f5f5;
+}
+.li-notice-web {
+  .lh(30px);
+}
+.link-notice-web {
+  display:block;
+  padding-right:15px;
+  .bg('arrow_03.png',18px,9px,30px);
+  .font(14px,#666);
+  .overflow();
+  &:hover {
+    .bg('arrow_06.png',18px,9px,30px);
+    .font(14px,#3d9fed);
+  }
+}
+
+//4
+.ft-notice-web {
+  .lh(40px);
+  .font(16px,#333);
+  .bg('icon_24.png',42px,5px,74px);
+  box-shadow: 1px 1px 4px #f1f1f1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color='#f1f1f1')";
+}
+
+
+//5
+.banner {
+  width:100%;
+  position:relative;
+  .overflow();
+}
+.li-banner {
+  display:none;
+  img {
+    width:100%;
+  }
+  //&:nth-child(1){
+  //  display:block;
+  //}
+}
+
+.l-btn-banner {
+  .abs(@b:280px,@l:74.5%);
+  .clear();
+}
+.li-btn-banner {
+  .bWh(25px,11px);
+  .bg('btn_05.png');
+  float:left;
+  margin-right:4px;
+  cursor:pointer;
+  &.active {
+    .bg('btn_03.png');
+  }
+}
+
+
+
+
+
+

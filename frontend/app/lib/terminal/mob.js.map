@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "mob.js",
+  "sourceRoot": "",
+  "sources": [
+    "mob.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,OAAA,CAAQ,cAAR;;EACA,OAAA,CAAQ,aAAR;;EAEA,OAAA,CAAQ,eAAR;;EAEA,OAAA,CAAQ,iBAAR;;EACA,OAAA,CAAQ,mBAAR;;EAEA,OAAA,CAAQ,mBAAR;;EACA,OAAA,CAAQ,cAAR;;EAEA,OAAA,CAAQ,wBAAR;;EACA,OAAA,CAAQ,yBAAR;;EAEA,OAAA,CAAQ,wBAAR;;EACA,OAAA,CAAQ,wBAAR;AAfA"
+}

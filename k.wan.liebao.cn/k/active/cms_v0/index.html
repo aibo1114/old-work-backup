@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章管理</title>
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/cms.css" />
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">游戏</a>
+                    <a href="#" class="list-group-item">目录</a>
+                    <a href="#" class="list-group-item">资源</a>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="panel panel-primary js-content active">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">游戏</h4>
+                        <button class="btn btn-default add" id="gameAdd">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <input type="hidden" id="gameTri" data-target="#addGame" data-toggle="modal" />
+                    </div>
+                    <table id="gameList" class="table table-bordered table-condensed text-center table-hover"></table>
+                </div>
+
+                <div class="panel panel-primary js-content">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">目录</h4>
+                        <button class="btn btn-default add" id="contentAdd">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <input type="hidden" id="contentTri" data-target="#addContent" data-toggle="modal" />
+                    </div>
+                    <div class="panel-body">
+                        <form action="" class="navbar-form navbar-left">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="s-content-gid" placeholder="游戏id" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="s-content-cid" placeholder="目录id" />
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="s-content-btn">搜索</button>
+                        </form>
+                    </div>
+                    <table id="dirList" class="table table-bordered table-condensed text-center"></table>
+                </div>
+
+                <div class="panel panel-primary js-content">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">资源</h4>
+                        <button class="btn btn-default add" id="resourceAdd">
+                            <span class="glyphicon glyphicon-plus"></span>
+                        </button>
+                        <input type="hidden" id="resourceTri" data-target="#addResource" data-toggle="modal" />
+                    </div>
+                    <table id="resList" class="table table-bordered table-condensed text-center"></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--modal star-->
+    <div class="modal fade" id="addGame" tabindex="-1" role="dialog" aria-labelledby=addGameLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="addGameLabel">新增游戏</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="gameForm" action="" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="g-gid" class="col-md-2 control-label">游戏id</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="g-gid" placeholder="游戏id">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="g-gname" class="col-md-2 control-label">游戏名称</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="g-gname" placeholder="游戏名称">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="g-gpath" class="col-md-2 control-label">发布路径</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="g-gpath" placeholder="发布路径">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="formGbtn">新增</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addContent" tabindex="-1" role="dialog" aria-labelledby="addContentLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="addContentLabel">新增目录</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="contentForm" action="" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="c-gid" class="col-md-2 control-label">所属游戏id</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="c-gid" placeholder="所属游戏id">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-fcid" class="col-md-2 control-label">父目录id</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="c-fcid" placeholder="父目录id">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-cid" class="col-md-2 control-label">目录id	</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="c-cid" placeholder="目录id">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-cname" class="col-md-2 control-label">目录名</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="c-cname" placeholder="目录名">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-tname" class="col-md-2 control-label">目录模版名称</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="c-tname" placeholder="目录模版名称">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-stname" class="col-md-2 control-label">子目录模版名称</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="c-stname" placeholder="子目录模版名称">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="formCbtn">新增</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addResource" tabindex="-1" role="dialog" aria-labelledby="addResourceLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title" id="addResourceLabel">新增资源</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="resourceForm" action="" class="form-horizontal">
+                        <div class="form-group">
+                            <label for="sid" class="col-md-2 control-label">资源id</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="sid" placeholder="资源id">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="s-gid" class="col-md-2 control-label">所属游戏id</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="s-gid" placeholder="所属游戏id">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="s-fcid" class="col-md-2 control-label">父目录id</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="s-fcid" placeholder="父目录id">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="spath" class="col-md-2 control-label">资源路径</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="spath" placeholder="资源路径">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="s-author" class="col-md-2 control-label">作者</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="s-author" placeholder="作者">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="s-icon" class="col-md-2 control-label">图标</label>
+                            <div class="col-md-10">
+                                <div class="edui-default" id="edui1_iframeupload">
+                                    <form id="edui_form_xit8oqi0j" target="edui_iframe_xit8oqi0j" method="POST" enctype="multipart/form-data" action="http://pg.kisops.com/php/controller.php?action=uploadimage" style="">
+                                        <input id="edui_input_xit8oqi0j" type="file" accept="image/*" name="upfile" style="" />
+                                    </form>
+                                    <iframe id="edui_iframe_xit8oqi0j" name="edui_iframe_xit8oqi0j" style="display:none;"></iframe>
+                                </div>
+                                <input type="hidden" value="" id="sIconHidden" />
+                                <input type="text" class="form-control" id="s-icon" placeholder="图标" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="s-title" class="col-md-2 control-label">标题</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="s-title" placeholder="标题">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="s-desc" class="col-md-2 control-label">描述</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="s-desc" placeholder="描述">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <!--<label class="col-md-2 control-label">内容</label>-->
+                            <label for="s-content" class="col-md-2 control-label">内容</label>
+                            <div class="col-md-10" id="editor">
+                                <script id="s-content" name="s-content" type="text/plain" style="height:640px;">内容</script>
+                                <!--<input type="text" class="form-control" id="s-content" placeholder="内容">-->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="s-time" class="col-md-2 control-label">时间</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="s-time" placeholder="时间">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="s-other" class="col-md-2 control-label">其他</label>
+                            <div class="col-md-10">
+                                <input type="text" class="form-control" id="s-other" placeholder="其他">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="formRbtn">新增</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--modal end-->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="js/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript">
+        var ue = UE.getEditor('s-content');
+    </script>
+    <script src="js/cms.js"></script>
+</body>
+</html>

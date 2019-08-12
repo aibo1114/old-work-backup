@@ -1,0 +1,52 @@
+.ticket-div {
+  padding-top: 1em;
+  background-color: #fff;
+}
+.ticket-div .ticket-desc {
+  background-color: #F5F5F5;
+  text-align: left;
+  padding: 15px;
+  margin: 0 1.5em;
+  box-shadow: inset 0 0 0.6rem rgba(0, 0, 0, 0.25);
+  border-radius: .5rem;
+}
+.ticket {
+  padding-left: 1.5em;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-bottom: 10px;
+}
+.ticket li {
+  min-width: 5.5em;
+  display: inline-block;
+  background-color: #c14040;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin-right: 0.3em;
+  opacity: 0.4;
+  box-shadow: 0 0 0px gray;
+}
+.ticket li.active {
+  border: 2px solid #c14040;
+  opacity: 1;
+}
+.ticket .name {
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  margin: 0;
+  padding-bottom: 0.2em;
+}
+.ticket .price {
+  color: #fff;
+  font-size: 1em;
+  text-align: center;
+  font-weight: bolder;
+  padding-top: 0.2em;
+  margin: 0em;
+}
+.ticket li.passed,
+.ticket li.active.passed {
+  opacity: 0.5;
+}

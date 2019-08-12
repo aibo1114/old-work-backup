@@ -1,0 +1,10 @@
+.row
+    .col-xs-2.p-r-0
+        != f.userPic(c, user)
+    .col-xs-10
+        h5.m-b-0= user.username
+            if subTitle
+                small.er.text-faded.pull-xs-right.m-t-h= subTitle
+            br
+            if user.statement
+            small.er.text-faded= user.statement

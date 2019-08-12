@@ -1,0 +1,6 @@
+<ul ng-show="$ctrl.pageShow" class="pagination pagination-sm">
+    <li ng-click="$ctrl.sendUp()" class="up"><a href="">&laquo;</a></li>
+    <li ng-repeat="it in $ctrl.num" ng-click="$ctrl.sendNum(it)" class="num {{$index == 0 ? 'active': ''}} "><a href="javascript:void(0);">{{it}}</a></li>
+    <li ng-click="$ctrl.sendDown($event)" class="down"><a href="">&raquo;</a></li>
+</ul>
+<p class="pull-right">总计<i class="text-primary">&nbsp;{{$ctrl.total}}&nbsp;</i>条</p>

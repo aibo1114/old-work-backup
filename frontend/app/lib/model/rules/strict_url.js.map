@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "strict_url.js",
+  "sourceRoot": "",
+  "sources": [
+    "strict_url.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,OAAP,GAAiB,SAAC,CAAD,EAAI,CAAJ;WACb,CAAA,IAAM,CAAC,qqCAAqqC,CAAC,IAAtqC,CAA2qC,CAA3qC;EADM;AAAjB"
+}

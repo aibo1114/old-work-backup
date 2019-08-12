@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>美女互动，19禁开放性网页游戏！</title>
+<link href="http://img.wan.ijinshan.com/topic/sgyy/import/default/css/layout1.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+document.domain='wan.ijinshan.com';
+</script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/jquery.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/analytics.min.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/topic/sgyy/import/default/js/flashimport.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/topic/sgyy/import/default/js/layout.js"></script>
+<script type="text/javascript">
+WebApp.analytics.trace('151010', '900', '', '', 'gamename:common_default6_pv_page_start|w:pv_start'); 
+function addFavorite(sURL, sTitle){
+	if(sURL == undefined || sURL == null){
+		sURL = window.location.href;
+	}
+	if(sTitle == undefined || sTitle == null){
+		sTitle = window.document.title;
+	}
+	try{
+		window.external.addFavorite(sURL, sTitle);
+	}
+	catch (e){
+		try{
+			window.sidebar.addPanel(sTitle, sURL, "");
+		}
+		catch (e){
+			alert("加入收藏失败，请使用Ctrl+D进行添加");
+		}
+	}
+} 
+function openDiv(){
+	$("#openDiv").show();
+}
+</script>
+</head>
+<!--[if lte IE 6]>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/belatedPNG.js"></script>
+    <script type="text/javascript">
+      DD_belatedPNG.fix('.tabs,.loginon,.infoTxt');
+    </script>
+<![endif]-->
+<!--[if lte IE 7]>
+    <div style="height:42px;"></div>
+<![endif]-->
+<body>
+<!-- 头部导航start -->
+<!--#include virtual="/k/common/commpage/header.html"-->
+<!-- 头部导航end -->
+<!--  注册页主要内容  -->
+<div class="main">
+  	<div id="openDiv" style="display:none;">
+		<div class="userbg" style="z-index:11">
+			<!--  登录、注册切换  -->
+			<ul class="tabs">
+				<li class="__trace__" data-trace="151010,900,,,gamename:common_default6|w:regtab"></li>
+				<li class="__trace__" data-trace="151010,900,,,gamename:common_default6|w:logintab"></li>
+			</ul>
+			<div class="tabcon">
+				<!-- 用户注册  -->
+				<div class="regcon" id="regsiter">
+					<iframe name="content_frame" allowtransparency="true" style="background-color=transparent"  marginwidth="0" marginheight="0" height="320" width="480" scrolling="no" src="http://wan.ijinshan.com/u.php?a=reg&regtype=5&tpl=commondefault5&style=default&regsource_key=common_default6&redirect=http%3A%2F%2Fwan.ijinshan.com%2Fu.php%3Fa%3Ddologin%26redirect_info%3DaHR0cDovL3dhbi5pamluc2hhbi5jb20vdi8/YT1sb2dpbndlYmdhbWUmZz04JnM9MjA&vkgamename=common_default6" frameborder="0"></iframe>
+				</div>
+				<!--  用户登录  -->
+				<div class="logcon" id="login" style="display:none;">
+					<iframe class="iframeBefore" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" height="320" width="480" allowtransparency="yes"  style="background-color=transparent"  src="https://login.ijinshan.com/?source=webgame&service=http://wan.ijinshan.com/u.php%3Fa%3Ddologin%26redirect_info%3DaHR0cDovL3dhbi5pamluc2hhbi5jb20vdi8/YT1sb2dpbndlYmdhbWUmZz04JnM9MjA&lp=https%3a%2f%2flogin.ijinshan.com%2fwebgame%2fcommondefault3%2flogin.html%3fvkgamename%3dcommon_default6&if=1"></iframe>
+				</div>
+			</div>
+		</div>
+		<!--  flash  -->
+		<div class="flashcon" id="regFlash" style="z-index:10;">
+		</div>
+	</div>
+    <!--  flash  -->
+	<div class="flashcon" id="flashBox">
+    </div>
+</div>
+</body>
+<script>
+var sofocus = new SWFObject("http://img.wan.ijinshan.com/topic/sgyy/import/default/swf/wrapper.swf", "flash_focus", "1000px", "600px", "9.0.28", "#FFFFFF"); 
+ sofocus.addParam("allowNetworking", "all"); 
+ sofocus.addParam("allowScriptAccess", "always"); 
+ sofocus.addParam("allowFullScreen", "true"); 
+ sofocus.addParam("scale", "noscale");
+ sofocus.addParam("wmode", "transparent");
+ sofocus.write("flashBox"); 
+var sofocus = new SWFObject("http://img.wan.ijinshan.com/topic/sgyy/import/default/swf/reg1.swf", "flash_focus", "1000px", "600px", "9.0.28", "#FFFFFF"); 
+ sofocus.addParam("allowNetworking", "all"); 
+ sofocus.addParam("allowScriptAccess", "always"); 
+ sofocus.addParam("allowFullScreen", "true"); 
+ sofocus.addParam("scale", "noscale");
+ sofocus.addParam("wmode", "transparent");
+ sofocus.write("regFlash"); 
+</script>
+<div style="display:none;"><script type="text/javascript" src="http://tajs.qq.com/stats?sId=21900979" charset="UTF-8"></script></div>
+<script type="text/javascript">
+WebApp.analytics.trace('151010', '900', '', '', 'gamename:common_default6_pv_page_end|w:pv_end'); 
+</script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/script/lib/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://img.wan.ijinshan.com/global/reg/js/reg_init_cookies.js"></script>
+</html>

@@ -1,0 +1,25 @@
+table.resTB.table.table-bordered
+    if type
+        tr
+            th 问题类型
+            td= type
+    tr
+        th 工单编号
+        td= id
+    tr
+        th 处理状态
+        td= status
+    tr
+        th 处理结果
+        td
+            != comment
+            if type == '盗号找回' && status == '已处理' && display
+                br
+                a(href= f.navUrl('lostAdditional')) 还需要找回装备物品？点这里
+
+    if status == '已处理'
+        tr
+            th 其他问题联系
+            td
+                a(target='_blank' href='http://wan.liebao.cn/action/redirect_kf.php') 在线客服
+

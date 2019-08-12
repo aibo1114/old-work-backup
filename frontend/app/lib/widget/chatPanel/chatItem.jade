@@ -1,0 +1,16 @@
+if user._id != window.user.id
+    .col-xs-2.p-l-0
+        != f.userPic(c, user)
+    .col-xs-10.p-x-0
+        .arrowLeft
+        .arrowLeftBorder
+        .alert.alert-info.text-xs-left.p-a-h(class=type)!= content
+
+else if user._id == window.user.id
+    .col-xs-10.text-xs-right.col-xs-offset-2.p-x-0
+        .arrowRight
+        .arrowRightBorder
+        .alert.alert-success.text-xs-left.p-a-h(class=type)!= content
+else
+    .text-xs-center.m-b-1
+        .label.label-default.p-a-h= text

@@ -1,0 +1,87 @@
+mixin catItem(cat)
+    -var iconCls=''
+    -var code=cat.code
+
+    if code=='movie'
+        -iconCls='hd-video'
+    if code=='reaching'
+        -iconCls='heart'
+    if code=='redeem'
+        -iconCls='glass'
+    if code=='skill'
+        -iconCls='eye-open'
+    if code=='course'
+        -iconCls='inbox'
+
+    if main=='main'
+        li.li-lnav-app
+            span(class='glyphicon glyphicon-#{iconCls}')
+            a(href='entityList?entity=#{cat.type}&cat=#{cat.code}')= cat.title
+    else
+        button(class='btn btn-#{iconCls}',type='button')
+            span(class='glyphicon glyphicon-#{iconCls}')
+            a(href='entityList?entity=#{cat.type}&cat=#{cat.code}')= cat.title
+extends ./inc/main
+block content
+    if main=='main'
+        .row
+            .col-md-8
+                .panel-app
+                    .panel-heading
+                        include ../_inc/crumb
+                    .panel-body
+                        .l-post-app
+                            each it in items
+                                li.li-post-app
+                                    span.poster-li-post
+                                        a(href='#{_e}/#{it._id}',target='_blank')!=f.imgItem(it,c,'head')
+                                    .summary-li-post
+                                        span.author= it.author
+                                        span.time= it.time
+                                    h3.title-li-post: a(href='#{_e}/#{it._id}',target='_blank')= it.title
+                                    p.brief-li-post: a(href='#{_e}/#{it._id}',target='_blank')= it.brief
+                    .pabnel-footer
+                        include ../_inc/nextPage
+            .col-md-4.box-bar-fix
+                +appBlock('分类导航')(class='opacity')
+                    .l-lnav-app
+                        each it in pCats
+                            +catItem(it)
+                        each it in cCats
+                            +catItem(it)
+                +appBlock('推荐视频')(class='star-bar-fix')
+                    each it in recommendVideo
+                        +appThumbs(it, it.title, it.ref.brief, it.href)
+    else
+        //+appBlock('分类导航')(class='opacity')
+        //    .l-lnav-app
+        .catItem
+            each it in pCats
+                +catItem(it)
+            each it in cCats
+                +catItem(it)
+        .boxList
+            each it in items
+                +mobItem(it)
+                //a(href='#{it.href}').media
+                //    !=f.imgItem(it,c,'head','markImg')
+                //    h4= it.title
+                //    .author= it.author
+                //    p= it.brief
+        +appBlock('推荐视频')
+            .boxList
+                each it in recommendVideo
+                    a(href='#{it.href}').media
+                        !=f.imgItem(it, c, 'head', 'markImg')
+                        h4= it.title
+                        .author= it.ref.author
+                        p= it.ref.brief
+
+//mixin appThumbs(imgIt,title,txt,href)
+//    if !href
+//        -href='javascript:void(0);'
+//    .thumbs-app&attributes(attributes)
+//        a(href='#{href}', target='_blank')!= f.imgItem(imgIt, c, 'head')
+//        .caption
+//            h3.title: a(href='#{href}', target='_blank')= title
+//            p: a(href='#{href}', target='_blank')= txt

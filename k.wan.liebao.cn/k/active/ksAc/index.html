@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>killShot-activity</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<style type="text/css">
+			.container {
+				background:url(images/bg.jpg) no-repeat 0 0;
+				background-position:center 0;
+				width:100%;
+			}
+			.content {
+				width:1280px;
+				padding:208px 0 150px;
+				margin:auto;
+			}
+			.content:after {
+				content:'.';
+				display:block;
+				height:0;
+				overflow:hidden;
+				clear:both;
+			}
+			.l-content {
+				width:512px;
+				float:left;
+				padding-top:190px;
+			}
+			.r-content {
+				width:768px;
+				float:right;
+			}
+
+			/*right*/
+			.title-page,.subtitle-page,.logo {
+				text-indent:-9999px;
+			}
+			.title-page {
+				width:738px;
+				height:372px;
+				background:url(images/title_03.png) no-repeat 0 0;
+			}
+			.subtitle-page {
+				width:580px;
+				height:71px;
+				background:url(images/subTitle_07.png) no-repeat 0 0;
+				margin:68px 0 0 136px;
+			}
+			.logo {
+				width:597px;
+				height:184px;
+				background:url(images/logo_07.png) no-repeat 0 0;
+				margin-left:125px;
+			}
+
+			/*left*/
+			.trigger-player {
+				display:block;
+				width:213px;
+				height:143px;
+				margin-left:59px;
+				background:url(images/player_03.png) no-repeat 0 0;
+				cursor:pointer;
+			}
+			.l-btn {
+				margin:18px 0 0 50px;
+			}
+			.li-btn {
+				width:223px;
+				height:73px;
+				margin-bottom:18px;
+				position:relative;
+			}
+			.link-btn {
+				display:block;
+				text-indent:-9999px;
+				width:223px;
+				height:73px;
+			}
+			.tcode-li-btn {
+				display:block;
+				position:absolute;
+				z-index:2;
+				top:-62px;
+				left:232px;
+				width:147px;
+				height:149px;
+				padding:20px 20px 20px 40px;
+				background:url(images/bg-tcode_08.png) no-repeat 0 0;
+				display:none;
+			}
+			.tcode-li-btn img {
+				width:147px;
+				height:149px;
+			}
+
+			.website {
+				background:url(images/btns_03.png) no-repeat 0 0;
+			}
+			.ios {
+				background:url(images/btns_06.png) no-repeat 0 0;
+			}
+			.andriod {
+				background:url(images/btns_08.png) no-repeat 0 0;
+			}
+			.wechat {
+				background:url(images/btns_10.png) no-repeat 0 0;
+			}
+
+			/*player*/
+			.mask-player {
+				position:absolute;
+				z-index:9998;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				background:#000;
+				opacity:.9;
+				display:none;
+			}
+			.videoBox {
+				position:fixed;
+				z-index:9999;
+				top:120px;
+				width:640px;
+				height:360px;
+				background:#fff;
+				left:50%;
+				margin-left:-320px;
+				box-shadow:3px 3px 40px #666;
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="content">
+				<div class="l-content">
+					<span class="trigger-player"></span>
+					<ul class="l-btn">
+						<li class="li-btn website">
+							<a href="http://ks.wan.liebao.cn/p/" class="link-btn">进入官网</a>
+						</li>
+						<li class="li-btn ios">
+							<span class="tcode-li-btn"><img src="images/tCode_ios.jpg" alt="" /></span>
+							<a href="https://itunes.apple.com/us/app/zhi-ming-ju-jikill-shot-bravo/id1099019563?l=zh&ls=1&mt=8" class="link-btn">IOS下载</a>
+						</li>
+						<li class="li-btn andriod">
+							<span class="tcode-li-btn"><img src="images/tCode_android.jpg" alt="" /></span>
+							<a href="http://dl.aliyun.game.youku.com/1462873146_20160506XXXXKillShotBravo.apk" class="link-btn">安卓下载</a>
+						</li>
+						<li class="li-btn wechat">
+							<span class="tcode-li-btn"><img src="images/tCode_weChat.jpg" alt="" /></span>
+							<a href="javascript:void(0);" class="link-btn">官方微信</a>
+						</li>
+					</ul>
+				</div>
+				<div class="r-content">
+					<h2 class="title-page">行对于死亡，我更令你恐惧</h2>
+					<h3 class="subtitle-page">狙击手游崛起FPS不再无脑开枪</h3>
+					<h1 class="logo">致命狙击</h1>
+				</div>
+			</div>
+		</div>
+		<div class="mask-player"></div>
+		<div class="videoBox"></div>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript">
+			$('.li-btn').hover(function(){
+				$('.li-btn').find('.tcode-li-btn').hide();
+				$(this).children('.tcode-li-btn').show();
+			},function(){
+				$(this).children('.tcode-li-btn').hide();
+			});
+
+			$('.trigger-player').click(function(){
+				var h=Math.max($(document).height(),$('.container').height());
+				$('.mask-player').height(h).show();
+
+				var video='<embed style="position:absolute; left:0; top:0; z-index:99999;" id="video" src="http://download.wan.liebao.cn/media/header.swf" width="640" height="360" type="application/x-shockwave-flash" wmode="transparent" quality="high" controls="controls"></embed>';
+            	$('.videoBox').append(video).show();
+			});
+
+			$('.mask-player').click(function(){
+				$(this).hide();
+            	$('.videoBox').hide();
+				$('.videoBox').html('');
+			});
+		</script>
+	</body>
+</html>

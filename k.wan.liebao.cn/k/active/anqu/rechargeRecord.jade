@@ -1,0 +1,37 @@
+extends inc/main
+
+block style
+    link(rel='stylesheet',type='text/css',href='http://static.web.anqu.com/resource/999/css/index.css')
+block script
+    script(type='text/javascript').
+        var baseUrl='http://api.web.anqu.com/';
+        $.ajax({
+            url: baseUrl + 'account/api/1/islogin',
+            type: 'get',
+            dataType: 'jsonp',
+            success: function (data) {
+                if (data.ret != '1') {
+                   // dlg.show();
+                    return;
+                }
+                getRecordList();
+            }
+        });
+
+    //script(type='text/javascript',src='js/index.js')
+block content
+    div.yl-record
+        a.recodeWei(href="" target="_blank")
+            span.recodeWei 当前位置：充值中心&gt;充值记录
+        table.record-tb
+            caption 我的充值记录
+            thead
+                tr
+                    th 帐号
+                    th 充值游戏
+                    th 充值金额
+                    th 充值订单号
+                    th 充值状态
+                    th 充值时间
+            tbody
+

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIP活动-活动第二弹</title>
+    <link type="text/css" rel="stylesheet" href="http://image.wan.liebao.cn/www/css/base.css" />
+    <link type="text/css" rel="stylesheet" href="css/page.css" />
+    <!--[if IE 6]>
+    <link type="text/css" rel="stylesheet" href="css/ie6.css" />
+    <![endif]-->
+</head>
+<body>
+    <div class="header-vctive">
+        <div class="ct-header-vctive">
+            <h1 class="logo-vctive"><a target="_blank" href="http://wan.liebao.cn">金山猎豹游戏中心</a></h1>
+            <ul class="l-tools-vctive">
+                <li><a target="_blank" href="http://wan.liebao.cn">平台首页</a></li>
+                <li><a id="collect" href="javascript:void(0);">收藏</a></li>
+            </ul>
+            <div class="user-vctive" id="userBox">
+                <p the-id="guestNode" class="txt-status-vctive"><a the-id="login" href="javascript:void(0);">登录</a><span>/</span><a target="_blank" href="http://wan.liebao.cn/user/register.html?bu=http%3A%2F%2Fk.wan.liebao.cn/k/active/vctive/second%2F">注册</a></p>
+                <p the-id="userNode" class="txt-status-vctive">欢迎您，<span id="username"></span><a href="http://wan.liebao.cn/action/logout.php?bu=http%3A%2F%2Fk.wan.liebao.cn/k/active/vctive/second%2F">【退出】</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="container-vctive">
+        <div class="banner">
+            <span class="blank-banner"><img src="images/bg_02.jpg" alt="" /></span>
+            <img src="images/banner_02.jpg" alt="" />
+        </div>
+        <div class="main">
+            <span class="ball ball-1"></span>
+            <span class="ball ball-2"></span>
+            <span class="ball ball-3"></span>
+            <span class="ball ball-4"></span>
+            <span class="ball ball-5"></span>
+            <span class="ball ball-6"></span>
+            <span class="ball ball-7"></span>
+            <h3 the-id="guestNode" class="chance-vctive none">请<span the-id="login" class="part login">登录</span>以查看您的抽奖机会</h3>
+            <h3 the-id="userNode" class="chance-vctive none">您还有<span id="num" class="part"></span>次抽奖机会</h3>
+            <div id="rule" class="mod-vctive">
+                <div class="hd-vctive">
+                    <h3 class="title-hd-vctive title-rule-vctive">活动规则</h3>
+                </div>
+                <div class="bd-vctive">
+                    <div class="panel-vctive panel-1-vctive">
+                        <div class="panel-body panel-1-body">
+                            <div class="mod-score">
+                                <div class="hd-score">
+                                    <h4 class="title-hd-score">购买VIP</h4>
+                                    <h4 class="title-hd-score">获得积分</h4>
+                                    <h4 class="title-hd-score">操作</h4>
+                                </div>
+                                <div class="bd-score">
+                                    <ul class="l-bd-score"></ul>
+                                </div>
+                            </div>
+                            <div class="raw-exchange">
+                                <div class="left-raw-exchange">
+                                    <div class="title-left-exchange">当<span class="part">·</span>前<span class="part">·</span>积<span class="part">·</span>分</div>
+                                    <div id="score" class="show-left-exchange"></div>
+                                </div>
+                                <div class="right-raw-exchange">
+                                    <a class="btn-exchange" href="http://my.wan.liebao.cn" target="_blank">立即兑换</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-vctive panel-2-vctive">
+                        <div class="panel-body panel-2-body">
+                            <ul class="l-rule">
+                                <li class="li-rule one-rule">
+                                    <div class="title-rule">
+                                        <div class="abs-tip-title none">
+                                            <span class="arrow-tip-abs"></span>
+                                            <p class="text-tip-title no-indent"><span class="eg">例：</span>玩家A活动第一天消费30元单次购买3个月VIP获得30X2=60积分；活动第二天消费60元单次购买6个月VIP获得60X3=180积分；活动第三天消费130元单次购买13个月VIP获得130X8=1040积分。之后不再购买VIP，活动期间共计购买VIP 22个月，获得1280积分。</p>
+                                            <p class="text-tip-title">玩家B活动第一天直接消费240元单次购买24个月VIP获得240X10=2400，活动期间共计购买VIP 24个月，获得2400积分。</p>
+                                        </div>
+                                        <p>单次购买VIP将获得多倍商城积分</p>
+                                        <span class="eg-title-rule"></span>
+                                    </div>
+                                    <h6 class="subtitle-rule">单次购买不同数量的VIP将获得不同的积分倍率：</h6>
+                                    <ul class="l-it-rule">
+                                        <li class="li-it-rule">单次购买1~3月VIP获得2倍积分</li>
+                                        <li class="li-it-rule">单次购买4~6月VIP获得3倍积分</li>
+                                        <li class="li-it-rule">单次购买7~12月VIP获得5倍积分</li>
+                                        <li class="li-it-rule">单次购买13~23月VIP获得8倍积分</li>
+                                        <li class="li-it-rule">单次购买24月VIP获得10倍积分</li>
+                                    </ul>
+                                </li>
+                                <li class="li-rule two-rule">
+                                    <h5 class="title-rule">累计购买VIP每满 10元</h5>
+                                    <h6 class="subtitle-rule">活动期间内累计购买VIP每满10元（1个月）</h6>
+                                    <p class="text-rule">可获得一次开启普通宝箱机会，累计购买VIP总额超过10元的倍数时会获得对应普通宝箱开启机会，活动期间内普通宝箱开启机会累计上限为24次。</p>
+                                </li>
+                                <li class="li-rule three-rule">
+                                    <div class="title-rule">
+                                        <div class="abs-tip-title r72 none">
+                                            <span class="arrow-tip-abs"></span>
+                                            <p class="text-tip-title no-indent"><span class="eg">例：</span>玩家A活动第一天消费60元购买6个月VIP获得1次抽奖资格；活动第二天消费80元购买8个月VIP获得1次抽奖资格；活动第三天消费110元单次购买11个月VIP获得1次抽奖资格。之后不再购买VIP，活动期间共计购买VIP 22个月，获得3次抽奖机会。</p>
+                                            <p class="text-tip-title">玩家B活动第一天直接消费240元购买24个月VIP获得4次抽奖资格，活动期间共计购买VIP 24个月，获得4次抽奖机会。</p>
+                                        </div>
+                                        <p>累计购买VIP每满 60元</p>
+                                        <span class="eg-title-rule"></span>
+                                    </div>
+                                    <h6 class="subtitle-rule">活动期间内累计购买VIP每满60元（6个月）</h6>
+                                    <p class="text-rule">可获得一次超值升级宝箱 开启机会，100%中奖，每日限量，先到先得！超过60元未满120元按照60元计算，即累计购买VIP总额超过60元的倍数时会获得对应升级宝箱 开启机会，活动期间内升级宝箱 开启机会累计上限为4次。</p>
+                                </li>
+                                <li class="li-rule four-rule">
+                                    <h5 class="title-rule">活动结束后会在已参与宝箱开启的玩家中随机抽取5名获得实物大奖。</h5>
+                                </li>
+                                <li class="li-rule five-rule">
+                                    <h5 class="title-rule">如有不明之处请<a href="http://wan.liebao.cn/action/redirect_kf.php" target="_blank" class="link-exchange">咨询客服</a>。</h5>
+                                    <!-- the-id="login" -->
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div id="lottery" class="mod-vctive">
+                <div class="hd-vctive">
+                    <h3 class="title-hd-vctive title-lottery-vctive">立即抽奖</h3>
+                </div>
+                <div class="bd-vctive">
+                    <div class="panel-vctive panel-3-vctive">
+                        <div class="panel-body panel-3-body">
+                            <div class="line-panel-3"></div>
+                            <div class="abs-record">
+                                <div class="clear"></div>
+                                <button class="btn-record">获奖记录</button>
+                                <div class="box-record">
+                                    <ul class="l-record"></ul>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                            <div class="mod-lottery">
+                                <div class="hd-lottery">
+                                    <h4 class="title-hd-lottery">普<span class="part">·</span>通<span class="part">·</span>宝<span class="part">·</span>箱</h4>
+                                    <h5 the-id="guestNode" class="subtitle-hd-lottery none"><span class="part login" the-id="login">登录</span>后查看开启机会</h5>
+                                    <h5 the-id="userNode" class="subtitle-hd-lottery none">还有<span id="nNum" class="part"></span>次开启机会</h5>
+                                    <h6 class="text-hd-lottery">每开通 1个月 VIP开启一次（可累积）</h6>
+                                </div>
+                                <div class="bd-lottery lottery-normal">
+                                    <div class="mod-wining-lottery">
+                                        <div class="abs-wining-lottery">
+                                            <ul class="l-abs-wining">
+                                                <li class="li-abs-wining">实物宝箱抽取机会1次：5%</li>
+                                                <li class="li-abs-wining">5元充值优惠券：50%</li>
+                                                <li class="li-abs-wining">10元充值优惠券：25%</li>
+                                                <li class="li-abs-wining">15元充值优惠券：3%</li>
+                                                <li class="li-abs-wining">5%充值优惠券：5%</li>
+                                                <li class="li-abs-wining">10%充值优惠券：1.5%</li>
+                                                <li class="li-abs-wining">15%充值优惠券：0.5%</li>
+                                                <li class="li-abs-wining">谢谢惠顾：10%</li>
+                                                <li class="clear"></li>
+                                            </ul>
+                                        </div>
+                                        <span class="btn-wining-lottery">中奖概率</span>
+                                    </div>
+                                    <span class="prize-bd-lottery prize-1">升级宝箱抽奖机会</span>
+                                    <span class="prize-bd-lottery prize-2">定额充值优惠券</span>
+                                    <span class="prize-bd-lottery prize-3">百分比充值优惠券</span>
+                                    <span the-tri="dialog" the-hock="d-1-sm" class="link-bd-lottery">更多</span>
+                                    <div class="chest-lottery">宝箱</div>
+                                    <button class="btn-chest-lottery general">立即开启</button>
+
+                                </div>
+                            </div>
+                            <div class="mod-lottery">
+                                <div class="hd-lottery">
+                                    <h4 class="title-hd-lottery">升<span class="part">·</span>级<span class="part">·</span>宝<span class="part">·</span>箱</h4>
+                                    <h5 the-id="guestNode" class="subtitle-hd-lottery none"><span class="part login" the-id="login">登录</span>后查看开启机会</h5>
+                                    <h5 the-id="userNode" class="subtitle-hd-lottery none">还有<span id="sNum" class="part"></span>次开启机会</h5>
+                                    <h6 class="text-hd-lottery">每开通满 6个月 VIP开启一次（可累积）</h6>
+                                </div>
+                                <div class="bd-lottery lottery-luxury">
+                                    <p class="tip-wining-lottery">所有实物100%中奖！</p>
+                                    <span class="prize-bd-lottery prize-1">北通阿修罗游戏手柄</span>
+                                    <span class="prize-bd-lottery prize-2">TP-LINK无线路由器</span>
+                                    <span class="prize-bd-lottery prize-3">小熊咖啡机</span>
+                                    <span the-tri="dialog" the-hock="d-1-lg" class="link-bd-lottery">更多</span>
+                                    <div class="chest-lottery">宝箱</div>
+                                    <button class="btn-chest-lottery luxury">立即开启</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="lucky" class="mod-vctive">
+                <div class="hd-vctive">
+                    <h3 class="title-hd-vctive title-lucky-vctive">幸运之星</h3>
+                </div>
+                <div class="bd-vctive">
+                    <ul class="l-lucky">
+                        <li class="li-lucky">
+                            <div class="prize-li-lucky"><img src="images/prize_13.png" alt="" /></div>
+                            <div class="user-li-lucky user-1-lucky"></div>
+                        </li>
+                        <li class="li-lucky">
+                            <div class="prize-li-lucky"><img src="images/prize_16.png" alt="" /></div>
+                            <div class="user-li-lucky user-2-lucky"></div>
+                        </li>
+                        <li class="li-lucky">
+                            <div class="prize-li-lucky"><img src="images/prize_18.png" alt="" /></div>
+                            <div class="user-li-lucky user-3-lucky"></div>
+                        </li>
+                        <li class="li-lucky">
+                            <div class="prize-li-lucky"><img src="images/prize_20.png" alt="" /></div>
+                            <div class="user-li-lucky user-4-lucky"></div>
+                        </li>
+                        <li class="li-lucky last-lucky">
+                            <div class="prize-li-lucky"><img src="images/prize_22.png" alt="" /></div>
+                            <div class="user-li-lucky user-5-lucky"></div>
+                        </li>
+                        <li class="clear"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="adv-next">
+                <span class="l-dec-adv"></span>
+                <span class="r-dec-adv"></span>
+                <p>后续活动即将来袭；好礼相送，敬请期待！</p>
+            </div>
+        </div>
+    </div>
+    <ul class="l-navfix">
+        <li class="li-navfix to-top">回到顶部</li>
+        <li class="li-navfix"><a href="#rule" class="link-navfix to-rule">活动规则</a></li>
+        <li class="li-navfix"><a href="#lottery" class="link-navfix to-lottery">立即抽奖</a></li>
+        <li class="li-navfix"><a href="#lucky" class="link-navfix to-lucky">幸运之星</a></li>
+        <li class="li-navfix"><a href="http://vip.wan.liebao.cn/" target="_blank" class="link-navfix to-vip">开通VIP</a></li>
+    </ul>
+    <div class="mask"></div>
+    <div the-id="nChest" class="dialog d-1-sm">
+        <span class="fork-d fork-d-1">X</span>
+        <h4 class="title-d-1">普通宝箱宝物大揭秘</h4>
+        <ul class="l-d1-sm">
+            <li class="li-d1-sm">升级宝箱抽奖机会</li>
+            <li class="li-d1-sm">5%充值优惠券</li>
+            <li class="li-d1-sm">5元充值优惠券</li>
+            <li class="li-d1-sm">10%充值优惠券</li>
+            <li class="li-d1-sm">10元充值优惠券</li>
+            <li class="li-d1-sm">15%充值优惠券</li>
+            <li class="li-d1-sm">15元充值优惠券</li>
+            <li class="clear"></li>
+        </ul>
+    </div>
+    <div the-id="sChest" class="dialog d-1-lg">
+        <span class="fork-d fork-d-1">X</span>
+        <h4 class="title-d-1">升级宝箱宝物大揭秘</h4>
+        <ul class="l-d1-lg">
+                <li class="li-d1-lg">荣事达（Royalstar）RKJ91 电烧烤盘 家用多功能无烟电烤架 电烤盘</li>
+                <li class="li-d1-lg">北通（BETOP）BTP-2185 阿修罗TE PC&PS3&安卓 无线 震动 智能游戏手柄</li>
+                <li class="li-d1-lg">小熊（Bear)电热饭盒 加热饭盒 双层真空 DFH-S2123</li>
+                <li class="li-d1-lg">小熊（bear）DSL-A20J1烤面包机多士炉 带防尘盖外置式烤架</li>
+                <li class="li-d1-lg">奥克斯（AUX） AS-819(红） 家用榨汁机 汁渣分离</li>
+                <li class="li-d1-lg">尚烤佳吊床加宽加厚彩虹吊床秋千床木杆帆布吊床野营露宿秋千200*150cm</li>
+                <li class="li-d1-lg">冰豹（ROCCAT）Apuri 巨蝎桌面助理集线器 USB HUB 黑色</li>
+                <li class="li-d1-lg">悠乐朋（Ulecamp）摇粒绒野餐垫 加厚防水防潮垫帐篷垫子野炊垫200*150cm 咖啡格KC-05CF</li>
+                <li class="li-d1-lg">小熊（Bear）KFJ-A07V1 咖啡机 滴漏式全自动家用0.7L</li>
+                <li class="li-d1-lg">红双喜DHS E-MX202-2羽毛球拍2支装已穿线</li>
+                <li class="li-d1-lg">小米（MI）智能体重秤 家用健康秤 精准秤</li>
+                <li class="li-d1-lg">SKG 烤箱 家用电烤箱多功能迷你型12L KX1701</li>
+                <li class="li-d1-lg">小熊(Bear)JDQ-A01A1 鸡蛋杯 早餐蛋卷机 热狗机 煎蛋煮蛋器</li>
+                <li class="li-d1-lg">小熊（Bear） DGJ-C601 家用蛋糕机 浅绿色</li>
+                <li class="li-d1-lg">洛克ROCK 智能桌面U站 多口USB充电器头快速通用手机多功能旅行插头 六口充电器-黄白色</li>
+                <li class="li-d1-lg">奥义瑜伽 6mmTPE环保瑜伽垫 加长防滑健身垫 附带背包 深紫加长183cm</li>
+                <li class="li-d1-lg">金士顿（Kingston）DTCNY16/32G 十二生肖之 猴年限量纪念版 USB3.1 32GB U盘</li>
+                <li class="li-d1-lg">简丹 JIANDAN 施华洛世奇元素锆石925银项链简项链 晶莹白</li>
+                <li class="li-d1-lg">天堂伞 （UPF50+）双层面料创意三折太阳伞晴雨伞31807E S款</li>
+                <li class="li-d1-lg">皓顿（HAUTTON）ZDK19 皮带男士牛皮自动扣商务休闲男款腰带百搭裤带 金色扣</li>
+                <li class="li-d1-lg">雷瓦（RIWA）Z4-1 防烫齿梳设计液晶温控卷发器直发梳 蓬松发梳</li>
+                <li class="li-d1-lg">NGDS 新游N1pro手机游戏手柄 蓝牙/无线手柄 (自有游戏大厅和模拟器) 支持</li>
+                <li class="li-d1-lg">iOS/Android/Windows 双马达震动版</li>
+                <li class="li-d1-lg">TP-LINK TL-WR886N 450M无线路由器</li>
+                <li class="li-d1-lg">Neutron 音乐蘑菇蓝牙音箱</li>
+                <li class="li-d1-lg">小熊（Bear) 煎蛋器蒸蛋器 迷你不沾锅电煎蛋锅 煎蛋机多功能煎饼煎煮蛋器 JDQ-C3011</li>
+                <li class="li-d1-lg">天堂伞 （UPF50+）全遮光黑胶三折小黑伞太阳伞晴雨伞31806E兰色</li>
+                <li class="li-d1-lg">卡姿兰（Carslan）大眼晴零触感眼线笔0.55g(防水不晕染眼线笔 眼线液笔 彩妆）</li>
+                <li class="li-d1-lg">Humidifier 小熊加湿器</li>
+                <li class="li-d1-lg">小米手环</li>
+                <li class="li-d1-lg">小鸟刀</li>
+                <li class="li-d1-lg">金士顿U盘 金色32G</li>
+                <li class="li-d1-lg">双鱼 乒乓球拍套装 横拍两拍三球 有拍套</li>
+                <li class="li-d1-lg">诚悦运动健身器材磨砂浸塑哑铃4公斤 CY-099粉色 （二只装 单只2公斤）</li>
+                <li class="li-d1-lg">陶瓷动物杯</li>
+                <li class="li-d1-lg">小米小蜜蜂支架</li>
+                <li class="li-d1-lg">迷你卷发器</li>
+                <li class="li-d1-lg">爱国者 10400毫安 充电宝</li>
+                <li class="li-d1-lg">微景观小夜灯</li>
+                <li class="li-d1-lg">apking 耳机</li>
+                <li class="li-d1-lg">美逸懒人手机支架</li>
+                <li class="li-d1-lg">绿联手机支架</li>
+                <li class="li-d1-lg">exco鼠标垫（有手托）</li>
+                <li class="li-d1-lg">罗技m275无线鼠标</li>
+                <li class="li-d1-lg">more金澈耳机</li>
+                <li class="li-d1-lg">小米电源10000毫安</li>
+                <li class="li-d1-lg">优哈优哈手提蓝色</li>
+                <li class="li-d1-lg">50元移动充值卡</li>
+                <li class="li-d1-lg">100元移动充值卡</li>
+            </ul>
+    </div>
+    <div the-id="prizes" class="dialog d-2">
+        <span class="fork-d fork-d-2">X</span>
+        <div class="hd-d-2">恭喜你！</div>
+        <div class="bd-d-2">
+            <h4 class="title-d-2">获得<span the-id="prizeName" class="part"></span></h4>
+            <a target="_blank" href="javascript:void(0);" class="btn-d btn-d-2 fork-d"></a>
+        </div>
+    </div>
+    <div the-id="goods" class="dialog d-2">
+        <span class="fork-d fork-d-2">X</span>
+        <div class="hd-d-2">恭喜你！</div>
+        <div class="bd-d-2">
+            <h4 class="title-d-2 title-d-goods">获得<span the-id="prizeName" class="part"></span></h4>
+            <p class="text-d-2"></p>
+            <button class="btn-d btn-d-2 btn-address">收货信息</button>
+        </div>
+    </div>
+    <div the-id="failed" class="dialog d-2">
+        <span class="fork-d fork-d-2">X</span>
+        <div class="hd-d-failed">差一点哦~</div>
+        <div class="bd-d-2">
+            <h4 class="title-d-2">别气馁，再接再厉！</h4>
+            <button class="btn-d btn-d-2 fork-d">再来一次</button>
+        </div>
+    </div>
+    <div the-id="none" class="dialog d-2">
+        <span class="fork-d fork-d-2">X</span>
+        <div class="hd-d-none">好遗憾！</div>
+        <div class="bd-d-2">
+            <h4 class="title-d-2 title-d-none">今天宝物都被抽走了<br />明天早点来吧～</h4>
+            <button class="btn-d btn-d-2 fork-d">确定</button>
+        </div>
+    </div>
+    <div the-id="address" class="dialog d-3">
+        <span class="fork-d fork-d-3">X</span>
+        <div class="hd-d-3">收货信息</div>
+        <div class="bd-d-3">
+            <div class="tip-d-3">
+                <span class="risk">*</span>
+                <p>活动结束后信息不可更改！<br />为了奖品能 尽快送到您手中，请填写真实有效的收货信息</p>
+            </div>
+            <ul class="l-d-3">
+                <li class="li-d-3">
+                    <label for="reciver" class="label-d-3">收货人：</label>
+                    <input the-id="editAnode" id="reciver" class="ipt-d-3 none" type="text" />
+                    <p the-id="checkAnode" id="reciverTxt" class="txt-d-3 none"></p>
+                </li>
+                <li class="li-d-3">
+                    <label for="contact" class="label-d-3">联系方式：</label>
+                    <input the-id="editAnode" id="contact" class="ipt-d-3 none" type="text" />
+                    <p the-id="checkAnode" id="contactTxt" class="txt-d-3 none"></p>
+                </li>
+                <li class="li-d-3">
+                    <label for="addr" class="label-d-3">收货地址：</label>
+                    <textarea the-id="editAnode" id="addr" class="txtarea-d-3 none" rows="5"></textarea>
+                    <p the-id="checkAnode" id="addrTxt" class="txt-d-3 none"></p>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+            <button the-id="editAnode" id="saveAddr" class="btn-d-3 none">保存</button>
+            <button the-id="checkAnode" id="editAddr" class="btn-d-3 none">修改</button>
+        </div>
+    </div>
+    <script type="text/javascript" src='http://img.wan.ijinshan.com/vip/js/jquery.1.8.3.min.js'></script>
+    <script type="text/javascript" src='http://wan.liebao.cn/action/user_info.php?rt=5'></script>
+    <script type="text/javascript" src="http://image.wan.liebao.cn/www/js/lb.platform.base.js"></script>
+    <script type="text/javascript" src="http://k.wan.liebao.cn/k/active/vctive/lib/js/jquery.nicescroll.min.js"></script>
+    <script type="text/javascript" src="js/page.js"></script>
+    <script type="text/javascript" src="js/ui.js"></script>
+    <!--[if IE 6]><script type="text/javascript" src="http://k.wan.liebao.cn/k/active/vctive/lib/js/DD_belatedPNG_0.0.8a-min.js"></script><![endif]-->
+    <!--[if IE 6]><script type="text/javascript">DD_belatedPNG.fix('.line-panel-3,.btn-record,.logo-vctive,.ball,.title-hd-vctive,.l-navfix,.chest-lottery,.prize-bd-lottery,.link-bd-lottery,.adv-next,.l-dec-adv,.r-dec-adv,.show-left-exchange,.btn-exchange,.li-rule,.eg-title-rule,.title-d-1,.title-d-2,.title-d-3,.fork-d,.btn-d,.btn-d-3,.hd-d-failed,.hd-d-none,.hd-d-2,.hd-d-3');</script><![endif]-->
+</body>
+</html>

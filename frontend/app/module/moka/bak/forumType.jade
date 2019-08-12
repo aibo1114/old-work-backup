@@ -1,0 +1,78 @@
+extends inc/main
+
+block style
+    :less(minify=true)
+        .panel {
+            .panel-heading {
+                position: relative;
+            }
+            .btn {
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+        }
+
+        .table {
+            th, td {
+                text-align: center;
+                vertical-align: middle !important;
+                &:first-child{
+                    text-align: left;
+                }
+            }
+            th {
+                padding: 8px 10px !important;
+                background: #fcf8e3;
+            }
+        }
+
+        .nav-pills {
+            li a {
+                padding: 5px 10px;
+                font-size: 12px;
+            }
+        }
+block content
+    .panel.panel-default
+        .panel-heading
+            h5 全部主题
+            a.btn.btn-primary 发帖
+        .panel-body
+            ul.nav.nav-pills
+                li.active
+                    a 全部
+                        span.badge 3330
+                each it in labels
+                    li
+                        a= it.title
+                            span.badge= it.num
+        table(align="center").table.table-condensed.table-hover
+            tr
+                th 主题
+                th 作者
+                th 回复
+                th 查看
+                th 最后发表
+            each it in posts
+                tr
+                    td
+                        != f.icon('file')
+                        a 【分类】
+                        != f.link(it)
+                    td
+                        strong= it.author
+                        | &nbsp;
+                        = it.pubTime
+                    td
+                        = it.reply
+                    td
+                        = it.check
+                    td
+                        = it.lastReplyer
+                        = it.lastReplyerTime
+
+block st
+    :coffee(bare=true,minify=true)

@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<!-- test -->
+<html>
+<head>
+<script type="text/javascript">
+var timer1;
+var timer2;
+var cfg;
+var isZhuxian = true;
+var isBossDone = false;
+var isNeedCoin = false;
+var isInitZhuxian = true;
+var isInitChumo = true;
+
+function getSpecialCount(strSource) {
+  //统计字符串中包含{}或{xxXX}的个数
+	var j=0;
+	for(i=0;i<strSource.length;i++)
+	{
+	if (strSource.substr(i, 1)=="|")
+	   j+=1;
+	}
+	return j
+}
+
+function xingjinum()
+{
+	callCApi("usedict", "{\"num\":0}");
+	var ret = callCApi("findimageex", "{\"text\":\"星级.bmp\", \"color\":\"000000\"}");
+	var num = getSpecialCount(ret.imgstr);
+	return num+1;
+}
+
+function guanbi()
+{
+	callCApi("clickimage", "{\"text\":\"关闭.bmp\", \"color\":\"000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":7, \"indexy\":7}");
+}
+
+function bossjiangli()
+{
+	callCApi("usedict", "{\"num\":0}");
+	var ret = callCApi("clicktext", "{\"text\":\"领取奖励\", \"color\":\"ffe5c1-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":40, \"indexy\":10}");
+}
+
+function jieshou()
+{
+	callCApi("usedict", "{\"num\":0}");
+	callCApi("clicktext", "{\"text\":\"接受任务\", \"color\":\"ffe5c1-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+}
+
+function wancheng()
+{
+	callCApi("usedict", "{\"num\":0}");
+    callCApi("clicktext", "{\"text\":\"完成任务\", \"color\":\"ffe5c1-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+}
+
+function isRunChumo()
+{
+	if(!cfg.autocm)
+	{
+		return false;	
+	}
+	callCApi("usedict", "{\"num\":0}");
+    var ret = callCApi("findtext", "{\"text\":\"剩余任务次数\", \"color\":\"b8a085-050505\"}");
+	if(ret.isSuccess)
+	{
+		var l=ret.indexx-2, t=ret.indexy-2, r=ret.indexx+100, b=ret.indexy+36;
+		ret = callCApi("findstr", "{\"text\":\"0\", \"color\":\"fe0000-000000\",\"left\":"+l+",\"top\":"+t+",\"right\":"+r+",\"bottom\":"+b+"}");
+		if(ret.isSuccess)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+
+function isRunZhuxian()
+{
+	if(!cfg.autozx || !isZhuxian)
+	{
+		return false;	
+	}
+	callCApi("usedict", "{\"num\":0}");
+    var ret = callCApi("findtext", "{\"text\":\"未知探索\", \"color\":\"f8b551-050505\"}");
+	if(ret.isSuccess)
+	{
+		callCApi("usedict", "{\"num\":1}");
+		ret = callCApi("findtext", "{\"text\":\"进入未知\", \"color\":\"ffe42c-050505\"}");
+		if(ret.isSuccess)
+		{
+			callCApi("clickimage", "{\"text\":\"关闭.bmp\", \"color\":\"000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":7, \"indexy\":7}");
+		}
+		return false;
+	}
+	return true;
+}
+
+function chumo()
+{
+	if(!isRunChumo())
+	{
+		clearInterval(timer2);
+		callCApi("quit", "");
+		return;
+	}
+	
+	callCApi("usedict", "{\"num\":0}");
+	if(isInitChumo)
+	{
+		var ret;
+		ret = callCApi("findtext", "{\"text\":\"经验功勋\", \"color\":\"ffff00-050505\"}");
+		if(ret.isSuccess)
+		{
+			var l=ret.indexx-12, t=ret.indexy-2, r=ret.indexx+200, b=ret.indexy+36;
+			ret = callCApi("clicktext", "{\"text\":\"自动传\", \"color\":\"00cc33-050505\",\"left\":"+l+",\"top\":"+t+",\"right\":"+r+",\"bottom\":"+b+", \"indexx\":10, \"indexy\":8}");
+		}
+		isInitChumo = false;
+	}
+	
+	var youjian = callCApi("clickimage", "{\"text\":\"邮件.bmp|邮件2.bmp\", \"color\":\"000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":10, \"indexy\":5}");
+	if(youjian.isSuccess)
+	{
+		setTimeout("guanbi()", 300);
+	}
+	var ret = callCApi("findtext", "{\"text\":\"经验功勋\", \"color\":\"ffff00-050505\"}");
+	if(ret.isSuccess)
+	{
+		var l=ret.indexx-12,t=ret.indexy-2,r=ret.indexx+200,b=ret.indexy+36;
+		callCApi("clicktext", "{\"text\":\"找除魔使者\", \"color\":\"dce0cb-050505\",\"left\":"+l+",\"top\":"+t+",\"right\":"+r+",\"bottom\":"+b+", \"indexx\":145, \"indexy\":7}");
+		callCApi("clicktext", "{\"text\":\"除魔使者\", \"color\":\"00cc33-050505\",\"left\":"+l+",\"top\":"+t+",\"right\":"+r+",\"bottom\":"+b+", \"indexx\":72, \"indexy\":7}");
+	}
+	
+    ret = callCApi("findtext", "{\"text\":\"金币不足\", \"color\":\"ff0000-000000\"}");
+	if(ret.isSuccess)
+	{
+		isNeedCoin = true;
+	}
+	if(isNeedCoin || cfg.cmdata.bsnum == 1)
+	{
+		ret = callCApi("clicktext", "{\"text\":\"免费领取奖励\", \"color\":\"00ffff-050505|00ff00-000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":40, \"indexy\":10}");
+	}
+	else if(cfg.cmdata.bsnum == 2)
+	{
+		ret = callCApi("clicktext", "{\"text\":\"2倍奖励\", \"color\":\"00ffff-050505|00ff00-000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":40, \"indexy\":10}");
+	}
+	else
+	{
+		ret = callCApi("clicktext", "{\"text\":\"3倍奖励\", \"color\":\"00ffff-050505|00ff00-000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":40, \"indexy\":10}");
+	}
+	var num = xingjinum();
+	if(num<cfg.cmdata.xj && !isNeedCoin)
+	{
+		callCApi("clicktext", "{\"text\":\"刷新星级\", \"color\":\"00ffff-050505|00ff00-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":40, \"indexy\":10}");
+	}
+	else
+	{
+		callCApi("clicktext", "{\"text\":\"接受任务\", \"color\":\"ffe5c1-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+		callCApi("clicktext", "{\"text\":\"继续任务\", \"color\":\"ffe5c1-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+	}
+    callCApi("clicktext", "{\"text\":\"免费回城\", \"color\":\"fff6d2-050505|fff7d3-050505|fff3cf-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+    callCApi("clicktext", "{\"text\":\"立即传送\", \"color\":\"ffe5c1-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+    callCApi("clicktext", "{\"text\":\"立即传送到目标身边\", \"color\":\"dce0cb-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":150, \"indexy\":-50}");
+}
+
+function zhuxian()
+{
+	if(!isRunZhuxian())
+	{
+		clearInterval(timer1);
+		timer2=setInterval("chumo()" , 1500);
+		return;
+	}
+	callCApi("usedict", "{\"num\":0}");
+    callCApi("clicktext", "{\"text\":\"完成任务\", \"color\":\"ffe5c1-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+	
+	if(isInitZhuxian)
+	{
+		var ret;
+		ret = callCApi("findtext", "{\"text\":\"主线\", \"color\":\"ffff00-050505\"}");
+		if(ret.isSuccess)
+		{
+			var l=ret.indexx-12, t=ret.indexy-2, r=ret.indexx+200, b=ret.indexy+36;
+			ret = callCApi("clicktext", "{\"text\":\"自动传\", \"color\":\"00cc33-050505\",\"left\":"+l+",\"top\":"+t+",\"right\":"+r+",\"bottom\":"+b+", \"indexx\":10, \"indexy\":8}");
+		}
+		isInitZhuxian = false;
+	}
+	var youjian = callCApi("clickimage", "{\"text\":\"邮件.bmp|邮件2.bmp\", \"color\":\"000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":10, \"indexy\":5}");
+	if(youjian.isSuccess)
+	{
+		setTimeout("guanbi()", 300);
+	}
+	callCApi("clickimage", "{\"text\":\"领取奖励.bmp\", \"color\":\"000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":45, \"indexy\":18}");
+    callCApi("clickimage", "{\"text\":\"立即装备.bmp\", \"color\":\"000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":45, \"indexy\":18}");
+    callCApi("clickimage", "{\"text\":\"开始旅途.bmp\", \"color\":\"000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":45, \"indexy\":18}");
+    callCApi("clicktext", "{\"text\":\"免费回城\", \"color\":\"fff3cf-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+    callCApi("clicktext", "{\"text\":\"立即传送\", \"color\":\"ffe5c1-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+	var ret;
+    ret = callCApi("findtext", "{\"text\":\"主线\", \"color\":\"ffff00-050505\"}");
+	if(ret.isSuccess)
+	{
+		var l=ret.indexx-12, t=ret.indexy-2, r=ret.indexx+200, b=ret.indexy+36;
+		ret = callCApi("findstr", "{\"text\":\"完成\", \"color\":\"ffff00-050505|00cc33-050505\",\"left\":"+l+",\"top\":"+t+",\"right\":"+r+",\"bottom\":"+b+"}");
+		if(ret.isSuccess)
+		{
+			ret = callCApi("clicktext", "{\"text\":\"自动传\", \"color\":\"00cc33-050505\",\"left\":"+l+",\"top\":"+t+",\"right\":"+r+",\"bottom\":"+b+", \"indexx\":10, \"indexy\":8}");
+		}
+	}
+	
+    callCApi("clicktext", "{\"text\":\"立即传送到目标身边\", \"color\":\"dce0cb-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":150, \"indexy\":-50}");
+    callCApi("clickimage", "{\"text\":\"选择强化装备.bmp\", \"color\":\"000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":-70, \"indexy\":25}");
+	
+    ret = callCApi("findtext", "{\"text\":\"金币不足\", \"color\":\"ff0000-000000\"}");
+	if(ret.isSuccess)
+	{
+		isNeedCoin = true;
+	}
+	if(isNeedCoin)
+	{
+		ret = callCApi("clicktext", "{\"text\":\"免费领取奖励\", \"color\":\"00ffff-050505|00ff00-000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":40, \"indexy\":10}");
+	}
+	else
+	{
+		ret = callCApi("clicktext", "{\"text\":\"3倍奖励\", \"color\":\"00ffff-050505|00ff00-000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":40, \"indexy\":10}");
+	}
+	var num = xingjinum();
+	if(num<cfg.cmdata.xj && !isNeedCoin)
+	{
+		callCApi("clicktext", "{\"text\":\"刷新星级\", \"color\":\"00ffff-050505|00ff00-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":40, \"indexy\":10}");
+	}
+	else
+	{
+		callCApi("clicktext", "{\"text\":\"接受任务\", \"color\":\"ffe5c1-000000\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":10}");
+	}
+    ret = callCApi("findtext", "{\"text\":\"领取奖励\", \"color\":\"ffe5c1-050505\"}");
+	if(ret.isSuccess && !isBossDone)
+	{
+		isBossDone = true;
+		setTimeout("bossjiangli()" , 20000);
+	}
+    callCApi("clicktext", "{\"text\":\"激战\", \"color\":\"00cc33-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":10, \"indexy\":10}");
+    ret = callCApi("clicktext", "{\"text\":\"个人\", \"color\":\"655b4a-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":10, \"indexy\":10}");
+	var j = 0;
+	if(ret.isSuccess)
+	{
+		while(j<5)
+		{
+			ret = callCApi("clicktext", "{\"text\":\"前往\", \"color\":\"ffe5c1-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":0, \"indexy\":0}");
+			if(ret.isSuccess)
+			{
+				break;
+			}
+			j++;
+		}
+		if(j==5)
+		{
+			isZhuxian = false;
+		}
+	}
+	
+    ret = callCApi("findtext", "{\"text\":\"自动挂机\", \"color\":\"cfad24-050505|ffe42c-050505\"}");
+	if (ret.isSuccess)
+	{
+		callCApi("keydown", "{\"char\":\"z\"}");
+	}
+	
+    callCApi("clicktext", "{\"text\":\"自动寻路\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":200, \"indexy\":10}");
+    callCApi("clicktext", "{\"text\":\"自动寻路\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":245, \"indexy\":10}");
+	
+	callCApi("usedict", "{\"num\":1}");
+    ret = callCApi("findtext", "{\"text\":\"关闭\", \"color\":\"ffe42c-050505\"}");
+	if(ret.isSuccess)
+	{
+		var l=ret.indexx-140, t=ret.indexy-10, r=ret.indexx-90, b=ret.indexy+40;
+		callCApi("clickimage", "{\"text\":\"关闭.bmp\", \"color\":\"000000\",\"left\":"+l+",\"top\":"+t+",\"right\":"+r+",\"bottom\":"+b+", \"indexx\":7, \"indexy\":7}");
+	}
+    callCApi("clicktext", "{\"text\":\"选择强化装备\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":-80, \"indexy\":10}");
+    callCApi("clicktext", "{\"text\":\"马上强化装备\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":-80, \"indexy\":10}");
+    callCApi("clicktext", "{\"text\":\"关闭强化面板\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":-80, \"indexy\":10}");
+    ret = callCApi("findtext", "{\"text\":\"点击回收装备\", \"color\":\"ffe42c-050505\"}");
+	if(ret.isSuccess)
+	{
+		var l=ret.indexx-200, t=ret.indexy, r=ret.indexx-50, b=ret.indexy+30;
+		callCApi("usedict", "{\"num\":0}");
+		callCApi("clicktext", "{\"text\":\"回收全部装备\", \"color\":\"00cc33-050505\",\"left\":"+l+",\"top\":"+t+",\"right\":"+r+",\"bottom\":"+b+", \"indexx\":50, \"indexy\":7}");
+		callCApi("usedict", "{\"num\":1}");
+	}
+    callCApi("clicktext", "{\"text\":\"打开随身商店\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":-80, \"indexy\":10}");
+    callCApi("clicktext", "{\"text\":\"打开激战BOSS\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":252, \"indexy\":10}");
+    callCApi("clicktext", "{\"text\":\"选择个人BOSS\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":46, \"indexy\":86}");
+    callCApi("clicktext", "{\"text\":\"进入BOSS副本\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":46, \"indexy\":-70}");
+    callCApi("clicktext", "{\"text\":\"立即传送\", \"color\":\"ffe42c-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":165, \"indexy\":10}");
+    ret = callCApi("findtext", "{\"text\":\"购买5包药\", \"color\":\"ffe42c-050505|00ff33-050505\"}");
+	while (ret.isSuccess)
+	{
+		ret = callCApi("clicktext", "{\"text\":\"购买\", \"color\":\"ffe42c-050505|00ff33-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":-100, \"indexy\":10}");
+	}
+	
+    ret = callCApi("findtext", "{\"text\":\"打开切换攻击模式\", \"color\":\"ffe42c-050505|00ff33-050505\"}");
+	if (ret.isSuccess)
+	{
+		callCApi("usedict", "{\"num\":0}");
+		callCApi("clicktext", "{\"text\":\"和平\", \"color\":\"90ff00-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":7}");
+		callCApi("usedict", "{\"num\":1}");
+	}
+	ret = callCApi("findtext", "{\"text\":\"切换全体模式\", \"color\":\"ffe42c-050505|00ff33-050505\"}");
+	if(ret.isSuccess)
+	{
+		callCApi("usedict", "{\"num\":0}");
+		callCApi("clicktext", "{\"text\":\"全体\", \"color\":\"c7a60a-050505\",\"left\":0,\"top\":0,\"right\":2000,\"bottom\":2000, \"indexx\":15, \"indexy\":7}");
+	}
+}
+
+function _strToJson(str){
+    var json = eval('(' + str + ')');
+    return json;
+}
+
+function callCApi (n,p){
+    var parm=p || '';
+    var res;
+    if( !window.external ) return false;
+    try  {
+        res = _strToJson( window.external.call("kieframe", n, parm) );
+        return res;
+    } catch(err) {
+        alert('页面需要在特定环境使用');
+        return {isSuccess:0};
+    }
+}
+
+function runDelay()
+{
+    var ret = callCApi("initdata", "");
+	cfg = _strToJson(ret.data);
+	timer1=setInterval("zhuxian()" , 1500);
+}
+
+function load()
+{
+	callCApi("setdict", "{\"num\":0, \"name\":\"字库.txt\"}");
+	callCApi("setdict", "{\"num\":1, \"name\":\"tip字体.txt\"}");
+	runDelay();
+}
+load();
+</script>
+</head>
+<body >
+</body>
+
+</html>

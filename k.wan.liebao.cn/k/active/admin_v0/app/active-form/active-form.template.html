@@ -1,0 +1,172 @@
+<div class="panel panel-info">
+    <div class="panel-heading">{{$ctrl.title}}</div>
+    <form ng-submit="$ctrl.sendActive()">
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">厂商ID</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" ng-model="$ctrl.active.SupplierID" placeholder="请填写数字" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">厂商名称</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" ng-model="$ctrl.active.SupplierName" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">广告</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" ng-model="$ctrl.active.Advertisement" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">活动ID</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" ng-model="$ctrl.active.ActivityID" placeholder="请填写数字" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">游戏ID</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" ng-model="$ctrl.active.GameID" placeholder="请填写数字" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">开始区服</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="number" ng-model="$ctrl.active.BeginServer" min="1" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">结束区服</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="number" ng-model="$ctrl.active.EndServer" min="{{$ctrl.active.BeginServer}}" required />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">状态</label>
+                <div class="col-xs-10">
+                    <select class="form-control" name="" id="" ng-model="$ctrl.active.State">
+                        <option value="0">不可用</option>
+                        <option value="1">可用</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">开始时间</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="datetime-local" required="required" ng-model="$ctrl.active.BeginTime" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">结束时间</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="datetime-local" required="required" ng-model="$ctrl.active.EndTime" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" class="control-label col-xs-2">备注</label>
+                <div class="col-xs-10">
+                    <input class="form-control" type="text" ng-model="$ctrl.active.Remark" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-xs-2" for="">统计配置</label>
+                <div class="col-xs-10">
+                    <div class="row mb10" ng-repeat="it in $ctrl.active.Detail">
+                        <div class="col-xs-3">
+                            <div class="input-group">
+                                <span class="input-group-addon">游戏等级</span>
+                                <input type="number" min="1" class="form-control" ng-model="it.Level" />
+                            </div>
+                        </div>
+                        <div class="col-xs-3">
+                            <div class="input-group">
+                                <span class="input-group-addon">返现金额</span>
+                                <input type="number" min="1" class="form-control" ng-model="it.Money" />
+                            </div>
+                        </div>
+                        <div class="col-xs-5">
+                            <div class="input-group">
+                                <span class="input-group-addon">备注</span>
+                                <input class="form-control" ng-model="it.Remark" />
+                            </div>
+                        </div>
+                        <div class="col-xs-1">
+                            <div class="btn btn-default" ng-click="$ctrl.deleteItem(it)">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn btn-primary" ng-click="$ctrl.addItem()">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="panel panel-default">-->
+            <!--<div class="panel-heading">-->
+                <!--<i class="panel-title">统计配置</i>-->
+            <!--</div>-->
+            <!--<div class="panel-body">-->
+                <!--<div class="form form-inline">-->
+                    <!--<div class="form-group pr15">-->
+                        <!--<label for="">ID:</label>-->
+                        <!--<input class="form-control w90" type="number" ng-model="$ctrl.detailId" />-->
+                    <!--</div>-->
+                    <!--<div class="form-group pr15">-->
+                        <!--<label for="">统计ID:</label>-->
+                        <!--<input class="form-control w90" type="number" ng-model="$ctrl.detailDid" />-->
+                    <!--</div>-->
+                    <!--<div class="form-group pr15">-->
+                        <!--<label for="">游戏等级:</label>-->
+                        <!--<input class="form-control w90" type="number" ng-model="$ctrl.detailL" />-->
+                    <!--</div>-->
+                    <!--<div class="form-group pr15">-->
+                        <!--<label for="">返现金额:</label>-->
+                        <!--<input class="form-control w90" type="number" ng-model="$ctrl.detailM" />-->
+                    <!--</div>-->
+                    <!--<div class="form-group pr15">-->
+                        <!--<label for="">备注:</label>-->
+                        <!--<input class="form-control" type="text" ng-model="$ctrl.detailR" />-->
+                    <!--</div>-->
+                    <!--<div class="btn btn-default" ng-click="$ctrl.addDetail()">-->
+                        <!--<span class="glyphicon glyphicon-plus"></span>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<table class="table table-bordered table-striped">-->
+                <!--<tr>-->
+                    <!--<th nowrap="nowrap">ID</th>-->
+                    <!--<th nowrap="nowrap">统计ID</th>-->
+                    <!--<th nowrap="nowrap">游戏等级</th>-->
+                    <!--<th nowrap="nowrap">返现金额</th>-->
+                    <!--<th nowrap="nowrap">备注</th>-->
+                    <!--<th width="60"></th>-->
+                <!--</tr>-->
+                <!--<tr ng-repeat="it in $ctrl.active.Detail">-->
+                    <!--<td>{{it.ID}}</td>-->
+                    <!--<td>{{it.DetailID}}</td>-->
+                    <!--<td>{{it.Level}}</td>-->
+                    <!--<td>{{it.Money}}</td>-->
+                    <!--<td>{{it.Remark}}</td>-->
+                    <!--<td width="60">-->
+                        <!--<span class="glyphicon glyphicon-remove-circle removeItem" ng-click="$ctrl.deleteRow(it)"></span>-->
+                    <!--</td>-->
+                <!--</tr>-->
+            <!--</table>-->
+        <!--</div>-->
+    </div>
+    <div class="panel-footer">
+        <div class="form-group">
+            <div class="col-xs-10 col-xs-push-2">
+                <button class="btn btn-primary btn-lg save">保存</button>
+                <span class="btn btn-default btn-lg cancel" ng-click="$ctrl.goBack()">返回</span>
+            </div>
+        </div>
+    </div>
+    </form>
+</div>

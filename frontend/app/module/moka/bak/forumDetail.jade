@@ -1,0 +1,717 @@
+extends inc/main
+block style
+   :less(minify=true)
+      .btn-forum {
+         padding: 8px 40px 8px 30px;
+         background: #6fafed;
+         border: 1px solid #9bbfdf;
+         border-radius: 4px;
+         box-shadow: -1px 1px 1px #d0dae6;
+         color: #fff;
+         font-size: 18px;
+         .glyphicon {
+            top: 3px;
+            margin-right: 6px;
+            font-size: 22px;
+         }
+         &:hover {
+            color: #fff;
+         }
+      }
+      .path-forum {
+         .row {
+            &:nth-child(2) {
+               margin-top:20px;
+            }
+         }
+         .input-group-addon {
+            top: 0 !important;
+            cursor: pointer;
+         }
+         .btn-forum {
+            margin: 0 10px;
+            padding-left:20px;
+            padding-right:20px;
+            &:first-child {
+               margin-left:0;
+            }
+            .txt {
+               font-size:20px;
+            }
+         }
+         .mod-pagination {
+            margin-top: 15px;
+         }
+      }
+      .content-forum {
+         margin-top:15px;
+         .main {
+            border:1px solid #e1e1e1;
+         }
+         .sidebar {
+            margin-right:-30px;
+            .nav-pills {
+               padding: 15px 0;
+               border: 1px solid #e1e1e1;
+               border-right: none;
+               position: relative;
+               &:before {
+                  content: '';
+                  display: block;
+                  position: absolute;
+                  top: 25%;
+                  left: 50%;
+                  height: 50%;
+                  width: 1px;
+                  margin-left:1px;
+                  background: #e1e1e1;
+               }
+               li {
+                  width:50%;
+                  margin:0;
+                  float:left;
+                  text-align:center;
+                  color:#666;
+                  .badge {
+                     color:#900;
+                     background:none;
+                     font-weight:normal;
+                     padding:0;
+                     margin: 0 0 0 4px;
+                  }
+               }
+            }
+            .thumbnail-forum {
+               border:1px solid #e1e1e1;
+               border-radius:0;
+               border-right:none;
+               margin-top:15px;
+               padding-bottom:40px;
+               .name {
+                  font-weight: bold;
+                  margin:15px 0;
+                  text-align:center;
+                  color:#900;
+               }
+               .thumbnail {
+                  border:none;
+                  border-top:1px dashed #e1e1e1;
+                  box-shadow:none;
+                  margin:0 15px;
+                  img {
+                     width:60%;
+                     margin:10px auto;
+                  }
+                  .caption {
+                     padding:0;
+                     border-top:1px solid #eee;
+                     h5 {
+                        font-weight:bold;
+                        text-align:center;
+                        .glyphicon {
+                           color:#900;
+                           padding-right: 6px;
+                           font-weight: normal;
+                           top: 2px;
+                        }
+                     }
+                     .list-inline {
+                        margin: 0;
+                        padding: 0;
+                     }
+                     .l-info {
+                        padding-bottom:5px;
+                        text-align:center;
+                        li {
+                           font-size:12px;
+                           h6 {
+                              margin:5px 0;
+                           }
+                           span {
+                              color:#005eac;
+                           }
+                        }
+                     }
+                     .l-action {
+                        width:100%;
+                        li {
+                           width:50%;
+                           text-align:center;
+                        }
+                        .glyphicon {
+                           top:2px;
+                           margin:0;
+                           margin-right:4px;
+                           &.glyphicon-envelope {
+                              color:#005eac;
+                           }
+                           &.glyphicon-heart-empty {
+                              color:#900;
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+
+         .panel-article {
+            box-shadow:none;
+            margin-bottom:0;
+            .panel-heading,.panel-body,.panel-footer {
+               padding:20px 30px;
+            }
+            .panel-heading {
+               position: relative;
+               .row {
+                  &:nth-child(2) {
+                     margin-top:8px;
+                  }
+               }
+               .title {
+                  margin:0;
+                  line-height:45px;
+                  font-size:20px;
+                  color:#000;
+                  .copy-link {
+                     padding-left:20px;
+                     font-size:14px;
+                     color:#999;
+                  }
+               }
+               .btn-group {
+                  margin-top:18px;
+                  float:right;
+                  .btn {
+                     &:first-child {
+                        margin-right:6px;
+                     }
+                     &:last-child {
+                        margin-left:6px;
+                     }
+                     padding:0;
+                     border:none;
+                     background:none;
+                     box-shadow:none;
+                  }
+                  .glyphicon {
+                     color:#999;
+                  }
+               }
+               .subtitle {
+                  font-size:12px;
+                  color:#333;
+                  margin-top:0;
+                  .glyphicon {
+                     color:#8a6d3b;
+                     padding-right:4px;
+                  }
+               }
+               .through {
+                  float:right;
+                  .form-control {
+                     width:56px;
+                     height:21px;
+                     line-height:21px;
+                     border-radius:0;
+                     font-size:12px;
+                     margin:0 8px;
+                     text-align:center;
+                  }
+                  label {
+                     font-weight:normal;
+                     color:#333;
+                  }
+                  .glyphicon {
+                     top:3px;
+                     color:#005eac;
+                  }
+               }
+            }
+
+            .panel-body {
+               margin:0 25px;
+               padding:10px 15px 0;
+               border-top:1px dashed #e1e1e1;
+               .info {
+                  margin:5px 0 5px;
+                  text-align:center;
+                  color:#999;
+                  font-size:12px;
+               }
+               .text {
+                  text-indent:2em;
+                  line-height:28px;
+                  font-size:18px;
+                  color:#333;
+               }
+               .img {
+                  width:100%;
+                  padding:10px 25px 30px;
+               }
+            }
+
+            .panel-footer {
+               padding-top:5px;
+               padding-bottom:0;
+               background:none;
+               border:none;
+               text-align:center;
+               .btn-collect {
+                  float:none;
+                  display: inline-block;
+                  margin: 20px auto 0;
+                  padding: 10px 20px;
+                  background: #31b0d5;
+                  color: #f1f1f1;
+                  border-radius: 6px;
+                  font-size: 14px;
+                  .glyphicon {
+                     top: 2px;
+                     padding-right: 4px;
+                  }
+               }
+               .sticky {
+                  font-size:14px;
+                  text-align:center;
+                  color:#999;
+               }
+               .mod-vote {
+                  margin:120px 80px 0;
+                  .table {
+                     margin:0;
+                     tr {
+                        border-top: 1px dashed #e1e1e1;
+                        border-bottom: 1px dashed #e1e1e1;
+                     }
+                     th, td {
+                        height: 36px;
+                        line-height: 36px;
+                        border: none;
+                        text-align: center;
+                        font-weight: normal;
+                        font-size: 14px;
+                        color: #999;
+                        img {
+                           height: 36px;
+                        }
+                        span {
+                           padding: 0 4px;
+                           color: #900;
+                           font-weight: bold;
+                        }
+                     }
+                  }
+                  .checkmore {
+                     padding-left:30px;
+                     height:60px;
+                     line-height:60px;
+                     border-bottom:1px dashed #e1e1e1;
+                     text-align:left;
+                     a {
+                        font-size:14px;
+                        color: #005eac;
+                     }
+                  }
+                  .ft-vote {
+                     text-align:center;
+                     .l-handle {
+                        padding:10px 0 25px;
+                        &:after {
+                           content:'';
+                           display:block;
+                           height:0;
+                           overflow:hidden;
+                           clear:both;
+                        }
+                        li {
+                           display: inline-block;
+                           cursor: pointer;
+                           padding:0 15px;
+                           color: #999;
+                           .glyphicon {
+                              top: 2px;
+                              padding-right: 4px;
+                              color: #8a6d3b;
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+      .msgboard-forum {
+         .content-msgboard-forum {
+            margin:15px 0;
+         }
+         .right-msgboard-forum {
+            border: 1px solid #e1e1e1;
+            min-height: 297px;
+            .panel-msg {
+               box-shadow: none;
+               .panel-heading {
+                  padding:0;
+                  margin:0 25px;
+                  border-bottom:1px dashed #e1e1e1;
+                  h4 {
+                     padding: 10px 0;
+                     font-size: 12px;
+                     color: #333;
+                     .glyphicon {
+                        padding-right: 6px;
+                        color: #3c763d;
+                     }
+                     a {
+                        color: #333;
+                     }
+                  }
+               }
+               .panel-body {
+                  padding:15px 40px;
+                  p {
+                     color:#333;
+                     font-size:16px;
+                  }
+               }
+               .panel-footer {
+                  background: none;
+                  border: none;
+               }
+            }
+         }
+         .left-msgboard-forum {
+            margin-right: -31px;
+            border: 1px solid #e1e1e1;
+            h4.name {
+               border-bottom: 1px dashed #e1e1e1;
+               margin: 0 15px;
+               padding: 12px 0;
+               text-align: center;
+               font-weight: bold;
+               font-size: 14px;
+               color: #900;
+            }
+            .thumbnail {
+               border: none;
+               box-shadow: none;
+               margin-bottom: 0;
+               img {
+                  width: 60%;
+                  margin: 8px auto 0;
+               }
+               .caption {
+                  h5 {
+                     border-top: 1px solid #eee;
+                     margin-top: 0;
+                     padding-top: 5px;
+                     font-weight: bold;
+                     text-align: center;
+                     color: #999;
+                     font-size: 14px;
+                     .glyphicon {
+                        padding-right: 4px;
+                        font-weight: normal;
+                        color: #900;
+                     }
+                  }
+                  .l-info {
+                     margin:0;
+                     padding-top: 10px;
+                     padding-bottom: 0;
+                     text-align: center;
+                     li {
+                        padding: 0 10px;
+                        font-size: 12px;
+                        span {
+                           color: #005eac;
+                        }
+                        h4 {
+                           margin: 2px 0 4px;
+                           font-size: 12px;
+                           color: #333;
+                        }
+                     }
+                  }
+                  .l-handle {
+                     margin: 0;
+                     text-align: center;
+                     li {
+                        padding: 0;
+                        margin: 0 5px;
+                        color: #999;
+                        cursor: pointer;
+                        .glyphicon {
+                           top: 2px;
+                           padding-right: 4px;
+                        }
+                        .glyphicon-envelope {
+                           color: #005eac;
+                        }
+                        .glyphicon-heart-empty {
+                           color: #900;
+                        }
+                     }
+                  }
+               }
+            }
+         }
+         .btm-msgboard-forum {
+            .pagination {
+               margin-top: 17px !important;
+            }
+         }
+      }
+      .reply-forum {
+         margin-top: 15px;
+         .richtext {
+            width: 100%;
+            height: 210px;
+            border: 1px solid #e1e1e1;
+         }
+         .btm-reply-forum {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            .btn-group {
+               margin-left: 20px;
+            }
+            .rule {
+               margin-top: 10px;
+               font-size: 16px;
+               color: #999;
+            }
+         }
+      }
+      /*path*/
+      .breadcrumb {
+         margin:0;
+         padding-left:0;
+         background:none;
+         color:#999;
+         li {
+            &:before {
+               content:'>' !important;
+            }
+            &:first-child {
+               &:before {
+                  content: '' !important;
+               }
+            }
+         }
+         a {
+            color:#999;
+         }
+         .glyphicon {
+            top:2px;
+            padding-right:5px;
+         }
+      }
+
+block content
+   .path-forum
+      .row
+         .col-md-4
+            ol.breadcrumb
+               li
+                  span.glyphicon.glyphicon-home
+                  a(href="") 论坛首页
+               li: a(href="") VIP专区
+               li: a.active(href="") 聊天技巧
+         .col-md-3.pull-right
+            .input-group
+               .input-group-btn
+                  button.btn.btn-default 帖子
+                  button.btn.btn-default.dropdown-toggle(type="button",data-toggle="dropdown")
+                     span.caret
+                  ul.dropdown-menu
+                     li: a(href="") a
+                     li: a(href="") b
+                     li: a(href="") c
+                     li: a(href="") d
+               input.form-control
+               span.input-group-addon.glyphicon.glyphicon-search
+               //span.input-group-addon
+                  button.btn.btn-default(type="button")
+      .row
+         .col-md-4
+            a.btn.btn-forum(href="")
+               span.glyphicon.glyphicon-edit
+               span.txt 发帖
+            a.btn.btn-forum(href="")
+               span.glyphicon.glyphicon-edit
+               span.txt 回复
+         .col-md-8
+            nav.mod-pagination
+               ul.pagination.pagination-sm.pull-right
+                  li.disabled
+                     a(href="javascript:void(0);",aria-hidden="true",aria-label="Previous") &laquo;
+                  li.active
+                     a(href="javascript:void(0);") 1
+                  li
+                     a(href="javascript:void(0);") 2
+                  li
+                     a(href="javascript:void(0);",aria-hidden="true",aria-label="Next") &raquo;
+   .content-forum
+      .row
+         .col-md-2
+            .sidebar
+               ul.nav.nav-pills
+                  li 查看：
+                     span.badge 32200
+                  li 回复：
+                     span.badge 583
+               .thumbnail-forum
+                  h4.name 小魔卡
+                  .thumbnail
+                     img(src="#{resPath}/poster_fU_11.jpg")
+                     .caption
+                        h5
+                           span.glyphicon.glyphicon-bookmark
+                           |论坛元老
+                        ul.list-inline.l-info
+                           li
+                              span 128
+                              h6 主题
+                           li
+                              span 3万
+                              h6 帖子
+                           li
+                              span 5万
+                              h6 积分
+                        ul.list-inline.l-action
+                           li
+                              span.glyphicon.glyphicon-envelope
+                              |发信息
+                           li
+                              span.glyphicon.glyphicon-heart-empty
+                              |加好友
+         .col-md-10
+            .main
+               .panel.panel-article
+                  .panel-heading
+                     .row
+                        .col-md-10
+                           h3.title [PUA约会技巧] 怎么邀约，让女生不会拒绝你，并且有良好的互动
+                              a.copy-link [复制链接]
+                        .col-md-2.pull-right
+                           .btn-group
+                              button.btn.btn-default(type="button")
+                                 span.glyphicon.glyphicon-arrow-left
+                              button.btn.btn-default(type="button")
+                                 span.glyphicon.glyphicon-arrow-right
+                     .row
+                        .col-md-8
+                           h4.subtitle
+                              span.glyphicon.glyphicon-user
+                              span 发表于 2015-9-11 20:11 来自手机 | 只看该作者
+                        .col-md-4
+                           .form-inline.through
+                              label 电梯直达
+                              input.form-control(type="text",maxlength=4)
+                              span.glyphicon.glyphicon-sort
+                     span.topIcon
+                  .panel-body
+                     p.info 本帖最后由&nbsp;&nbsp;小魔卡&nbsp;于&nbsp;&nbsp;2015-10-25&nbsp;19:26&nbsp;编辑
+                     .img
+                        img.img-responsive(src="#{resPath}/1q4fog38p.jpg",alt="")
+                     p.text 所谓技巧，这个东西从字面上理解就是操作方法，而且是有别于一般方法的，相对效率比较高的方法才能谓之技巧。那么有些同学问道：约会技巧在感情中能起到什么作用？我想答案也就不言自明了。约会技巧在感情中能起到：“发动机，催化剂，指南针”的作用。我们经常听到“熟能生巧，巧夺天工，能工巧匠，花言巧语”等等。凡是带“巧”字的就是做的优秀的，超凡的，高效的，艺术性的。那么我们学习PUA，Pick Up Artist最重要的就是一个艺术。
+                  .panel-footer
+                     p.sticky 本主题由&nbsp;&nbsp;恋爱能量管理员&nbsp;于&nbsp;2015-10-25&nbsp;11:11&nbsp;置顶
+                     button.btn.btn-collect(type="button")
+                        span.glyphicon.glyphicon-star
+                        span 收藏1520
+                     .mod-vote
+                        .bd-vote
+                           table.table
+                              tr
+                                 th 评分人数
+                                    span 10
+                                 th 金钱
+                                    span +9
+                                 th 理由
+                              -for(var i=0;i<3;i++)
+                                 tr
+                                    td: img(src="#{resPath}/poster_vU_07.jpg")
+                                    td: span +1
+                                    td 很给力！
+                           .checkmore: a(href="javascript:void(0);") 查看全部评分
+
+                        .ft-vote
+                           ul.l-handle.list-inline
+                              li.pull-left
+                                 span.glyphicon.glyphicon-comment
+                                 span 回复
+                              li.pull-right 举报
+
+   .msgboard-forum
+      .content-msgboard-forum
+         .row
+            .col-md-2
+               .left-msgboard-forum
+                  h4.name 小恶魔
+                  .thumbnail
+                     img(src="#{resPath}/poster_fU_11.jpg")
+                     .caption
+                        h5
+                           span.glyphicon.glyphicon-bookmark
+                           |恋爱小兵
+                        ul.list-inline.l-info
+                           li
+                              span 128
+                              h4 主题
+                           li
+                              span 3万
+                              h4 帖子
+                           li
+                              span 5万
+                              h4 积分
+                        ul.list-inline.l-handle
+                           li
+                              p
+                                 span.glyphicon.glyphicon-envelope
+                                 |发信息
+                           li
+                              p
+                                 span.glyphicon.glyphicon-heart-empty
+                                 |加好友
+            .col-md-10
+               .right-msgboard-forum
+                  .panel.panel-msg
+                     .panel-heading
+                        h4
+                           span.glyphicon.glyphicon-user
+                           span 发表于 2015-9-11 20:11 来自手机 |&nbsp;
+                              a(href="javascript:void(0);") 只看该作者
+                     .panel-body
+                        p 太赞了
+      .btm-msgboard-forum
+         .row
+            .col-md-4
+               a.btn.btn-forum(href="")
+                  span.glyphicon.glyphicon-edit
+                  span 发帖
+            .col-md-8
+               .richText
+               nav.pull-right
+                  ul.pagination.pagination-sm
+                     li.disabled
+                        a(href="javascript:void(0);",aria-hidden="true",aria-label="Previous") &laquo;
+                     li.active
+                        a(href="javascript:void(0);") 1
+                     li
+                        a(href="javascript:void(0);") 2
+                     li
+                        a(href="javascript:void(0);",aria-hidden="true",aria-label="Next") &raquo;
+   .reply-forum
+      .richtext
+      .row.btm-reply-forum
+         .col-md-8
+            a.btn.btn-forum(href="") 发表回复
+            .btn-group(data-toggle="buttons")
+               label.btn.btn-default
+                  input(type="checkbox",autocomplete="off")
+                  span 回帖后跳转到最后一页
+         .col-md-4
+            a.text-right.pull-right.rule(href="") 本版积分规则
+block st
+   :coffee(bare=true,minify=true)

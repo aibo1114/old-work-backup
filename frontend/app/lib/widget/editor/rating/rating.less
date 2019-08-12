@@ -1,0 +1,77 @@
+@baseUrl: '../../../../res/';
+
+@star30: url("@{baseUrl}img/stars30.png");
+
+.ratingBox {
+  label {
+    line-height: 30px;
+    text-align: right;
+    margin: 0;
+  }
+  .row {
+    margin-bottom: 15px;
+  }
+}
+
+.rater-star {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  height: 30px;
+  background: @star30 repeat-x left top;
+  overflow: hidden;
+  li {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-indent: -10000px;
+    height: 30px;
+    background: @star30 repeat-x -100% -100%;
+    &.current {
+      background-position: left center;
+      display: list-item;
+    }
+    .memo {
+      margin-top: -20px;
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+}
+.rateable {
+  li {
+    &:hover {
+      background-position: left bottom;
+      cursor: pointer;
+    }
+  }
+}
+//
+//.rater-star {
+//  position: relative;
+//  list-style: none;
+//  padding: 0;
+//  height: 30px;
+//  background: @star30 repeat-x left top;
+//  li {
+//    position: absolute;
+//    top: 0;
+//    left: 0;
+//    text-indent: -10000px;
+//    height: 30px;
+//    background: @star30 repeat-x -100% -100%;
+//    &.current {
+//      background-position: left center;
+//      display: list-item;
+//    }
+//    &:hover {
+//      background-position: left bottom;
+//      cursor: pointer;
+//    }
+//    .memo {
+//      margin-top: -20px;
+//      text-align: right;
+//      white-space: nowrap;
+//    }
+//  }
+//}

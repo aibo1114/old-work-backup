@@ -1,0 +1,80 @@
+<div ng-controller="customEditor" class="content-form">
+    <p class="tip-content-form">{{errTip}}</p>
+    <ul class="l-content-form">
+        <li class="li-content-form">
+            <label class="label-content-form">闹钟名称：</label>
+            <input class="control-content-form" focus-class="focus-content-form" type="text" ng-model="title" ng-focus="errTip='' " placeholder="自定义闹钟" />
+        </li>
+        <li class="li-content-form">
+            <label class="label-content-form">周期：</label>
+            <div class="sim-control-form lg" style="z-index:3;">
+                <div ng-click="switchDate();" class="screen-sim" ng-class="{'active-screen-sim':dstatus,'pl0':date!='仅一次'}">{{date}}<span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                <ul ng-if="dstatus" class="l-sim l-sim-lg scrollbar-inner btn-constant-scroll" jquery-scrollbar>
+                    <li class="li-sim" hover-class="hvr-sim" ng-click="setOnce(); ">仅一次</li>
+                    <li class="li-sim li-c-dft">
+                        <h4 class="title-li-sim">重复：</h4>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="date" ng-click="checkDate('Sunday');" ng-checked="dateArr.indexOf('Sunday')!=-1"  /> 星期日
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="date" ng-click="checkDate('Monday');" ng-checked="dateArr.indexOf('Monday')!=-1"  /> 星期一
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="date" ng-click="checkDate('Tuesday');" ng-checked="dateArr.indexOf('Tuesday')!=-1"  /> 星期二
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="date" ng-click="checkDate('Wednesday');" ng-checked="dateArr.indexOf('Wednesday')!=-1"  /> 星期三
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="date" ng-click="checkDate('Thursday');" ng-checked="dateArr.indexOf('Thursday')!=-1"  /> 星期四
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="date" ng-click="checkDate('Friday');" ng-checked="dateArr.indexOf('Friday')!=-1"  /> 星期五
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="date" ng-click="checkDate('Saturday');" ng-checked="dateArr.indexOf('Saturday')!=-1"  /> 星期六
+                            </label>
+                        </div>
+                        <button class="btn btn-sm btn-primary" ng-click="switchDate();">确定</button>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="li-content-form">
+            <label class="label-content-form">提醒时间：</label>
+            <div class="sim-control-form short mr4">
+                <div ng-click="switchTime('h');"  class="screen-sim" ng-class="{'active-screen-sim':hstatus}">{{hh}}<span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                <ul ng-if="hstatus" class="l-sim short scrollbar-inner btn-constant-scroll" jquery-scrollbar>
+                    <li class="li-sim" ng-repeat="it in hhIts" hover-class="hvr-sim" ng-click="selectTime(it,'h');">{{it}}</li>
+                </ul>
+            </div>
+            <div class="sim-control-form short">
+                <div ng-click="switchTime('m');" class="screen-sim" ng-class="{'active-screen-sim':mstatus}">{{mm}}<span class="glyphicon glyphicon-triangle-bottom"></span></div>
+                <ul ng-if="mstatus" class="l-sim short scrollbar-inner btn-constant-scroll" jquery-scrollbar>
+                    <li class="li-sim" ng-repeat="it in mmIts" hover-class="hvr-sim" ng-click="selectTime(it,'m');">{{it}}</li>
+                </ul>
+            </div>
+        </li>
+        <li class="li-content-form last">
+            <label class="label-content-form">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：</label>
+            <input class="control-content-form" focus-class="focus-content-form" type="text" ng-model="desc" placeholder="请输入备注信息" />
+        </li>
+    </ul>
+    <div class="ft-content-form" ng-controller="customSubmit">
+        <a class="back-content-form" href="/clock">返回</a>
+        <button class="btn-content-form" ng-click="submit();">确认{{rst}}</button>
+    </div>
+</div>

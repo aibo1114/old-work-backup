@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>汽车详情列表</title>
+<link rel="stylesheet" href="../css/carChoose.css">
+</head>
+<body>
+<!-- 代码部分begin -->
+<div class="wrap">
+  <div class="tab_slid">
+    <div class="tabs">
+       
+    </div>
+  </div>
+  
+    <div class="swiper-container">
+        <div class="swiper-wrapper">    
+      </div>
+   </div>
+
+    
+</div>
+<div class="mask">
+  </div>
+<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+<script src="../js/iscroll-lite.js"></script>
+<script src="../js/idangerous.swiper.min.js"></script>
+<script type="text/javascript" src="../js/car.js"></script>
+<script>
+$(function(){
+ cars.getCarList();
+})
+</script>
+ <script>
+// var arr=[];
+// var yearArr=[];
+// console.log(data.data.length);
+// for(var i=0;i<data.data.length;i++){
+// //  
+// //console.log(data.data[i].brandName);
+// // str2=;
+// // console.log(str2);
+// console.log(data.data[i].CarGroup.CarList.length);
+//   for(var j=0;j<data.data[i].CarGroup.CarList.length;j++){
+//     //console.log(data.data[i].CarGroup.CarList[j].Year);
+//     arr.push(data.data[i].CarGroup.CarList[j].Year);
+//     yearArr.push();
+   
+//   }
+  
+//   // str2='<p>'+data.data[i].brandName+'</p>'+str;
+//   // $('.sort_box').append(str2);
+// }
+
+// Array.prototype.unique = function(){
+//  var res = [];
+//  var json = {};
+//  for(var i = 0; i < this.length; i++){
+//   if(!json[this[i]]){
+//    res.push(this[i]);
+//    json[this[i]] = 1;
+//   }
+//  }
+//  return res;
+// }
+// console.log(arr.sort().unique());
+// arr=arr.sort().unique();
+// var alink='';
+// var aTab='';
+// for(var n=arr.length-1;n>=0;n--){
+//   //class="active"
+//   alink+='<a href="#" hidefocus="true">'+arr[n]+'款</a>';
+//   aTab+='<div class="swiper-slide" id="tab'+arr[n]+'">'+
+//         '<div class="content-slide">'+
+//         '<div class="sort_letter" id="A">1.4L/110kW涡轮增压</div>'+
+//         '<div class="sort_list" masterid="92"><div class="num_name">1.4L/110kW涡轮增压</div></div>'+
+//         '</div>'+
+//         '</div>'
+//   for(var i=0;i<data.data.length;i++){
+// //  
+// //console.log(data.data[i].brandName);
+// // str2=;
+// // console.log(str2);
+// console.log(data.data[i].CarGroup.CarList.length);
+//   for(var j=0;j<data.data[i].CarGroup.CarList.length;j++){
+//     if(data.data[i].CarGroup.CarList[j].Year==arr[n]){
+     
+//       yearArr.push(data.data[i].CarGroup.CarList[j]);
+//     }
+   
+//   }
+  
+// }
+// }
+// console.log(yearArr);
+// $('.tabs').append(alink);
+// $('.swiper-wrapper').append(aTab);
+// $('.tabs a').eq(0).addClass('active');
+// $('.swiper-wrapper .swiper-slide').eq(0).addClass('swiper-slide-visible swiper-slide-active');
+// //tab切换
+// var tabsSwiper = new Swiper('.swiper-container',{
+//   speed:500,
+//   onSlideChangeStart: function(){
+//     $(".tabs .active").removeClass('active');
+//     $(".tabs a").eq(tabsSwiper.activeIndex).addClass('active');
+//   }
+// });
+
+// $(".tabs a").on('tap',function(e){
+//   e.preventDefault()
+//   $(".tabs .active").removeClass('active');
+//   $(this).addClass('active');
+//   tabsSwiper.swipeTo($(this).index());
+// });
+
+// $(".tabs a").click(function(e){
+//   e.preventDefault();
+// });
+// // $('.tabs a').on('touchmove',function(e){
+// //   e.preventDefault();
+// //   alert('1111');
+// // })
+// //左右
+// var liWidth = 100;
+//   var x = $('.tabs a').length;
+//   $('.tabs').css('width',liWidth*x);
+//   var myScroll = new IScroll('.tab_slid',{
+//       eventPassthrough: true, scrollX: true, scrollY: false, preventDefault: false,tap:true
+//   });
+ </script>
+<!-- 代码部分end -->
+</body>
+</html>

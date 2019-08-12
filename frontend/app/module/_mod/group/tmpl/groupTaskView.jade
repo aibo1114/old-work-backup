@@ -1,0 +1,93 @@
+include  ./mixin
+
+.article.p-a-1.bkfff
+    h2.text-xs-center.m-y-h
+        strong= title
+        br
+        small.er.text-faded= subTitle
+
+    if hasBack
+        .btnLeft
+            !=f.icon('chevron-left',null,null,null, 'onclick="cf.slider.slidePage()"')
+
+    if hasEdit
+        .btnRight
+            != f.icon('edit editIt')
+
+    hr.m-b-1
+
+    if refFile && refFile.head && refFile.head.length
+        .row(style='margin-bottom:-1.5rem')
+            .col-xs-10.col-xs-offset-1
+                != f.imgItem(locals, c, null, 'img-thumbnail',null,null,false)
+
+    if cat == 'task'
+        if trans
+            +h4(task.title,'bookmark')
+            if content
+                blockquote.blockquote
+                    .text-faded!= content.toMd()
+                    != trans.toMd()
+                    if group.ref
+                        footer.blockquote-footer= group.ref.title
+            .lead.bg-faded.p-y-1.clearfix
+                .col-xs-1
+                    span.yh “
+                .col-xs-11
+                    = why
+        else if content
+            +h4('读书总结','bookmark')
+            .clearfix!= content.toMd()
+    else if content
+        .clearfix!= content.toMd()
+
+    if user
+        +h4('分享人/Author','user')
+        .bg-faded.p-y-1
+            .row
+                .col-xs-4.col-xs-offset-4.m-b-1
+                    != f.userPic(c, user, 'img-circle img-fluid img-thumbnail',false)
+            .text-xs-center
+                p.m-b-h.lead.text-bold= user.username
+                if intro.length
+                    if i18.iCat('industry')
+                        - intro[0] = i18.iCat('industry')[intro[0]]
+                    p.m-b-h 【#{intro.join(' - ')}】
+                if statement
+                    p=statement
+
+    .moodTagsBox(style='display:none')
+        +h4('态度标签/Tags','tags')
+
+        .bg-faded.p-y-1
+            .moodTags.text-xs-center
+            .text-xs-center.jBtns
+
+    .text-xs-center.m-y-3.dBtns
+
+    if question
+        +h4('话题/Topic','comment')
+        .row
+            .col-xs-2
+                != f.userPic(c, user, 'img-circle img-fluid m-t-h', false)
+
+            .col-xs-10.p-l-0
+                .arrowLeft
+                .arrowLeftBorder
+                .alert.alert-info.p-a-1.lead= question
+        .reply
+
+    if group && group.ref
+        +h4('阅读书目','book')
+        .text-xs-center.m-b-h
+            strong= group.ref.title
+            .text-faded 高效能人的7个习惯
+        .row.m-b-h
+            .col-xs-8.col-xs-offset-2
+                != f.imgItem(group.ref, c, null, 'img-thumbnail')
+        .m-l-1
+            = group.ref.description
+
+
+
+

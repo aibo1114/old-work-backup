@@ -1,0 +1,147 @@
+@import "../mod/article";
+
+.article {
+  line-height: 28px;
+  h2 {
+    font-size: 26px;
+    small {
+      margin-left: 15px;
+    }
+    div {
+      font-size: 20px;
+    }
+    .cat {
+      font-size: 20px;
+    }
+  }
+  h3 {
+    color: orangered;
+    border-left: 4px solid orangered;
+    padding-left: 10px;
+    line-height: 22px;
+    margin: 25px 0 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+    ul {
+      font-size: 14px;
+    }
+  }
+  h3.panel-title {
+    margin: 0;
+  }
+  h4 {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    small {
+      margin-left: 15px;
+    }
+  }
+  hr {
+    margin: 10px 0 !important;
+  }
+  .event-name {
+    small {
+      margin-left: 20px;
+    }
+  }
+
+  .actSlide {
+    background: rgba(255, 255, 255, 0.9);
+    .clearfix();
+  }
+  .mainInfo {
+    padding: 20px auto;
+    overflow: hidden;
+    .intro {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      overflow-y: scroll;
+    }
+  }
+  figure{
+    img {
+      max-width: 480px;
+    }
+  }
+  p {
+    img, embed {
+      width: 100%;
+    }
+  }
+
+  video {
+    width: 100%;
+  }
+
+  .ratingBox {
+    margin: 10px 0;
+  }
+
+  .venue {
+    p {
+      font-size: 16px;
+    }
+    i {
+      margin: 0 10px;
+      font-size: 18px;
+      color: orangered;
+    }
+  }
+  .share {
+    margin: 10px;
+    height: 30px;
+    #func {
+      float: left;
+      a {
+        margin-right: 5px;
+        background: #EFEFEF;
+        padding: 4px 10px;
+        border: 1px solid #999;
+        border-radius: 6px;
+        i {
+          margin: 4px 4px 0 0;
+        }
+        &:hover {
+          background-color: #edae26;
+        }
+      }
+    }
+    #bdshare {
+      float: right;
+    }
+  }
+}
+
+.panel-default {
+  border: 0;
+  .list-group-item {
+    border-left: 0;
+    border-right: 0;
+  }
+}
+
+.boxList {
+  list-style: none;
+  .imgSide {
+    max-height: 110px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  h3 {
+    color: orangered;
+    .text-overflow();
+    text-align: left;
+    font-weight: bold;
+    font-size: 18px;
+    padding-bottom: 5px;
+    a {
+      margin-right: 5px;
+    }
+  }
+  .media {
+    margin-bottom: 25px;
+  }
+}

@@ -1,0 +1,11 @@
+.btn-group
+    if btn
+        != btn
+    else
+        a.btn(class="btn-#{style}" key=btns[0].key style="padding-right:0.1rem")=btns[0].title
+    a.btn.dropdown-toggle(class="btn-#{style}" data-toggle='dropdown')
+        != f.icon('chevron-down')
+    if btns
+        .dropdown-menu
+            each it in btns
+                a.dropdown-item(href=it.href key=it.key)= it.title

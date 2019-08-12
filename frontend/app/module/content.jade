@@ -1,0 +1,15 @@
+extends /inc/main
+block content
+    .article
+        .col-md-8
+            include /../_inc/crumb
+            h2.event-name= title
+            hr.thin
+            .article-content
+                != content
+        .col-md-4
+            if contentList
+                .row
+                    +panel('相关内容')
+                        .list-group
+                            +media(contentList)

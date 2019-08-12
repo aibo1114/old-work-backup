@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <title>vip活动</title>
+        <!-- <link href="http://wan.liebao.cn/favicon.ico" type="image/x-icon" rel="icon" /> -->
+        <link type="text/css" rel="stylesheet" href="http://image.wan.liebao.cn/www/css/base.css" />
+        <!--<link type="text/css" rel="stylesheet" href="http://k.wan.liebao.cn/k/active/vipActive/css/base.css" /> http://k.wan.liebao.cn/k/active/vipActive/-->
+        <link type="text/css" rel="stylesheet" href="css/page.css" />
+        <!--[if IE 6]>
+        <style type="text/css">
+            .btn-float-active {
+                _position: absolute;
+                _top:expression(offsetParent.scrollTop+268);
+                _left:expression(offsetParent.scrollRight+100);
+            }
+        </style>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="header-active">
+            <div class="ct-header-active">
+                <h1 class="logo-active"><a target="_blank" href="http://wan.liebao.cn">金山猎豹游戏中心</a></h1>
+                <ul class="l-tools-active">
+                    <li><a target="_blank" href="http://wan.liebao.cn">平台首页</a></li>
+                    <li><a id="collect" href="javascript:void(0);">收藏</a></li>
+                </ul>
+                <div class="user-active" id="userBox">
+                    <p id="unLoginStatus" class="txt-status-active"><a id="loginBtn" href="javascript:void(0);">登录</a><span>/</span><a target="_blank" href="http://wan.liebao.cn/user/register.html?bu=http%3A%2F%2Fk.wan.liebao.cn/k/active/vipActive/index.html%2F">注册</a></p>
+                    <p id="loginStatus" class="txt-status-active">欢迎您，<span id="username"></span><a id="logoutBtn" href="http://wan.liebao.cn/action/logout.php?bu=http%3A%2F%2Fk.wan.liebao.cn/k/active/vipActive%2F">【退出】</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="container-active">
+            <div class="top-main-active">
+            	<div class="top-main-rule"><div class="top-main-rule-img"><a href="#activeRule"><img src="images/vip_rule.png" alt=""></a></div></div>
+                <div class="mod-intro-active">
+                    <div id="lotteryNumLogin" class="hd-intro-active">您还有<span class="num-intro" the-id="rNum">0</span>次抽奖机会</div>
+                    <div id="lotteryNumUnlogin" class="hd-intro-active">请登录以查看您的抽奖机会！</div>
+                    <div class="bd-intro-active">
+                        <h3 id="activeRule" class="title-bd-intro title-active">活动规则</h3>
+                        <ul class="l-bd-intro">
+                            <li class="one li-bd-intro">
+                                <p class="txt-l-intro">活动时间：2017年6月5日00:00-2017年6月14日24:00;</p>
+                            </li>
+                            <li class="two li-bd-intro">
+                                <p class="txt-l-intro">活动期间内，单笔充值每满100元可获得一次抽奖资格，超过100元未满200元按照100元计算，即每笔总额超过100元的倍数时会获得对应抽奖资格，<br />活动期间内每日充值所获抽奖资格累计上限为5次;</p>
+                            </li>
+                            <li class="three li-bd-intro">
+                                <p class="txt-l-intro">活动结束前达成对应任务要求（包含活动开启时已完成的任务要求）可以获得一次抽奖资格，每个任务只能完成一次，此任务所获抽奖资格不算在每日充值所获5次抽奖资格限制内，具体任务如下:</p>
+                                <ul class="l-task-active">
+                                    <!--<li class="li-task-active done"><span class="icon-done-task">已完成</span>少年群侠传首充</li>-->
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>少年群侠传首充</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>少年群侠传55级</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>蓝月传奇首充</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>蓝月传奇70级</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>传奇霸业首充</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>传奇霸业60级</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>大天使之剑首充</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>大天使之剑120级</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>盗墓笔记首充</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>武神赵子龙首充</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>剑雨江湖首充</li>
+                                    <li class="li-task-active"><span class="icon-done-task">已完成</span>青云志首充</li>
+                                    <li class="clear"></li>
+                                </ul>
+                            </li>
+                            <li class="four li-bd-intro">
+                                <p class="txt-l-intro">活动开始前和活动期间完成游戏首充任务会获得抽奖机会，活动结束后将不再获得;</p>
+                            </li>
+                            <li class="five li-bd-intro">
+                                <p class="txt-l-intro">虚拟奖品实时发放，实物奖品需要中奖后填写收货信息且活动结束后不可修改，奖品会在活动结束后7个工作日内发放;</p>
+                            </li>
+                            <li class="six li-bd-intro">
+                                <p class="txt-l-intro">如有细节不明之处请<a target="_blank" href="http://wan.liebao.cn/action/redirect_kf.php">咨询客服</a> 。</p>
+                                <!--  the-id="cService" -->
+                            </li>
+                        </ul>
+                        <a class="btn-intro-active" href="#hocker">马上去抽奖</a>
+                    </div>
+                </div>
+            </div>
+            <div class="middle-main-active">
+                <div class="mod-lottery">
+                    <div class="hd-lottery">
+                        <ul class="l-tip-lottery">
+                            <li class="li-tip-lottery">
+                                <span class="dec-tip-lottery dec-left"></span>
+                                <span class="dec-tip-lottery dec-right"></span>
+                                <a href="#activeRule" class="txt-tip-lottery">活动规则</a>
+                            </li>
+                            <li id="pRecord" class="li-tip-lottery">
+                                <div class="box-record" id="recordBox">
+                                    <ul class="l-record-lottery"></ul>
+                                </div>
+                                <span class="dec-tip-lottery dec-left"></span>
+                                <span class="dec-tip-lottery dec-right"></span>
+                                <a href="javascript:void(0);" class="txt-tip-lottery">获奖记录</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bd-lottery">
+                        <div class="content-bd-lottery">
+                            <div class="bdrl-bd-lotter"></div>
+                            <div class="main-bd-lottery">
+                                <div class="mod-btns-lottery">
+                                    <div class="bd-btns-lottery">
+                                        <ul id="hocker" class="l-btns-lottery">
+                                            <li class="li-btns-lottery one"></li>
+                                            <li class="li-btns-lottery two"></li>
+                                            <li class="li-btns-lottery three"></li>
+                                            <li class="li-btns-lottery four"></li>
+                                        </ul>
+                                    </div>
+                                    <div class="ft-btns-lottery">
+                                        <p class="txt-btns-lottery">您还有<span the-id="rNum" class="num-lottery">0</span>次抽奖机会！</p>
+                                    </div>
+                                </div>
+                                <div class="mod-prize-lottery">
+                                    <div class="hd-prize-lottery">
+                                        <h3 class="title-active title-prize-lottery">奖品列表</h3>
+                                    </div>
+                                    <div class="bd-prize-lottery">
+                                        <div class="top-prize-lottery">
+                                            <ul class="l-prize-lottery fl">
+                                                <li class="li-prize-lottery"><img src="images/img_prize_34.jpg" alt=""></li>
+                                                <li class="li-prize-lottery"><img src="images/img_prize_35.jpg" alt=""></li>
+                                            </ul>
+                                            <div class="center-prize-lottery"><img src="images/img_prize_vip_03.jpg" alt=""></div>
+                                            <ul class="l-prize-lottery fr">
+                                                <li class="li-prize-lottery"><img src="images/img_prize_36.jpg" alt=""></li>
+                                                <li class="li-prize-lottery"><img src="images/img_prize_37.jpg" alt=""></li>
+                                            </ul>
+                                            <div class="clear"></div>
+                                        </div>
+
+                                        <ul class="l-goods-lottery">
+                                            <li class="li-goods-lottery"><img src="images/img_prize_43.jpg" alt=""></li>
+                                            <li class="li-goods-lottery"><img src="images/img_prize_45.jpg" alt=""></li>
+                                            <li class="li-goods-lottery"><img src="images/img_prize_47.jpg" alt=""></li>
+                                            <li class="li-goods-lottery"><img src="images/img_prize_49.jpg" alt=""></li>
+                                            <li class="li-goods-lottery rowlast"><img src="images/img_prize_51.jpg" alt=""></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mod-wining-lottery">
+                                    <div class="abs-wining-lottery">
+                                        <ul class="l-abs-wining">
+                                            <li class="li-abs-wining">VIP体验（一周）：30%</li>
+                                            <li class="li-abs-wining">5%充值优惠券：10%</li>
+                                            <li class="li-abs-wining">10%充值优惠券：5%</li>
+                                            <li class="li-abs-wining">15%充值优惠券：0.5%</li>
+                                            <li class="li-abs-wining">5元充值优惠券：15%</li>
+                                            <li class="li-abs-wining">10元充值优惠券：10%</li>
+                                            <li class="li-abs-wining">20元充值优惠券：5%</li>
+                                            <li class="li-abs-wining">小米电源10000毫安：5%</li>
+                                            <li class="li-abs-wining">小鸟刀：5%</li>
+                                            <li class="li-abs-wining">金士顿U盘 32G：2%</li>
+                                            <li class="li-abs-wining">陶瓷动物杯：5%</li>
+                                            <li class="li-abs-wining">50元移动充值卡：4%</li>
+                                            <li class="li-abs-wining">100元移动充值卡：2%</li>
+                                            <li class="li-abs-wining">TP-LINK TL-WR886N 450M无线路由器：1.5%</li>
+                                            <li class="clear"></li>
+                                        </ul>
+                                    </div>
+                                    <span class="btn-wining-lottery">中奖概率</span>
+                                </div>
+                            </div>
+                            <div class="bdrr-bd-lotter"></div>
+                        </div>
+                        <div class="bdrb-bd-lottery"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="btm-main-active"></div>
+        </div>
+        <div class="footer-active">
+            <div class="ct-footer-active">
+                <ul class="l-footer-active">
+                    <li><a target="_blank" href="http://wan.liebao.cn/game_list.html">游戏中心</a></li>
+                    <li><a target="_blank" href="http://wan.liebao.cn/user/?kstag=changeuserinfo">账号安全</a></li>
+                    <li><a target="_blank" href="http://wan.liebao.cn/action/redirect_kf.php">客服中心</a></li>
+                    <!-- the-id="cService"-->
+                    <li class="last"><a target="_blank" href="http://i.wan.liebao.cn/jz/jiazhang.htm">家长监控</a></li>
+                </ul>
+                <p class="txt-footer-active">
+                    <span class="part-sm">抵制不良游戏</span>
+                    <span class="part-sm">拒绝盗版游戏</span>
+                    <span class="part-sm">注意自我保护</span>
+                    <span class="part-sm">谨防受骗上当</span>
+                    <span class="part-sm">适度游戏益脑</span>
+                    <span class="part-sm">沉迷游戏伤身</span>
+                    <span class="part-sm">合理安排时间</span>
+                    <span class="part-sm">享受健康生活</span>
+                </p>
+                <p class="txt-footer-active">
+                    <a target="_blank" href="http://image.wan.liebao.cn/game/static/images/www.jpg" class="part-md">京网文[2016]0672-054号</a>
+                    <a target="_blank" href="http://image.wan.liebao.cn/game/static/images/icp.jpg" class="part-md">京ICP证120823</a>
+                </p>
+                <p class="txt-footer-active">
+                    <span class="part-lg">COPYRIGHT&nbsp;©2012</span>
+                    <a target="_blank" href="http://wan.liebao.cn/" class="part-lg">WAN.LIEBAO.CN</a>
+                    <span class="part-lg">.&nbsp;ALL RIGHTS RESERVED.</span>
+                </p>
+            </div>
+        </div>
+        <div class="mask-dialog-active none"></div>
+        <div the-prize="1" class="dialog-get-active dialog none">
+            <div class="hd-dialog-get">恭喜你</div>
+            <div class="bd-dialog-get">
+                <span class="fork-dialog-active"></span>
+                <h4 class="title-dialog-get">获得<span the-id="prizeName" class="stress pl10"></span></h4>
+                <p class="txt-dialog-get">已生效请尽快体验！</p>
+                <p class="txt-dialog-get">“豹会员”隆重推出多项特权服务，</p>
+                <p class="txt-dialog-get">点击导航栏上的“豹会员”即可体验。</p>
+                <ul class="btns-dialog-get">
+                    <li class="btn-dialog-get left-dialog-btn"><a href="http://vip.wan.liebao.cn/" target="_blank">去体验</a></li>
+                    <li class="btn-dialog-get right-dialog-btn">再抽一次</li>
+                </ul>
+            </div>
+        </div>
+        <div the-prize="3" class="dialog-get-active dialog none">
+            <div class="hd-dialog-get">恭喜你</div>
+            <div class="bd-dialog-get">
+                <span class="fork-dialog-active"></span>
+                <h4 class="title-dialog-get">获得<span the-id="prizeName" class="stress pl10"></span></h4>
+                <p class="txt-dialog-get">优惠券可在充值时使用</p>
+                <p class="txt-dialog-get">额外赠送充值金额的<span the-id="prizeNum"></span>%</p>
+                <ul class="btns-dialog-get">
+                    <li class="btn-dialog-get left-dialog-btn"><a href="http://wan.liebao.cn/pay" target="_blank">去使用</a></li>
+                    <li class="btn-dialog-get right-dialog-btn">再抽一次</li>
+                </ul>
+            </div>
+        </div>
+        <div the-prize="4" class="dialog-get-active dialog none">
+            <div class="hd-dialog-get">恭喜你</div>
+            <div class="bd-dialog-get">
+                <span class="fork-dialog-active"></span>
+                <h4 class="title-dialog-get">获得<span the-id="prizeName" class="stress pl10"></span></h4>
+                <p class="txt-dialog-get">积分加速券仅限充值时使用</p>
+                <p class="txt-dialog-get">充值满100元，额外赠送<span the-id="prizeNum"></span>元</p>
+                <ul class="btns-dialog-get">
+                    <li class="btn-dialog-get left-dialog-btn"><a href="http://wan.liebao.cn/pay" target="_blank">去使用</a></li>
+                    <li class="btn-dialog-get right-dialog-btn">再抽一次</li>
+                </ul>
+            </div>
+        </div>
+        <div the-prize="2" class="dialog-get-active dialog none">
+            <div class="hd-dialog-get">恭喜你</div>
+            <div class="bd-dialog-get">
+                <span class="fork-dialog-active"></span>
+                <h4 class="title-dialog-get title-notxt-get">获得<span the-id="prizeName" class="stress pl10"></span></h4>
+                <ul class="btns-dialog-get">
+                    <li id="checkCard" class="btn-dialog-get left-dialog-btn"><a target="_blank" href="http://wan.liebao.cn/action/redirect_kf.php">联系客服</a></li>
+                    <!--  the-id="cService" -->
+                    <li class="btn-dialog-get right-dialog-btn">再抽一次</li>
+                </ul>
+            </div>
+        </div>
+        <div the-prize="5"class="dialog-get-active dialog none">
+            <div class="hd-dialog-get">恭喜你</div>
+            <div class="bd-dialog-get">
+                <span class="fork-dialog-active"></span>
+                <h4 class="title-dialog-get">获得<span the-id="prizeName" class="stress pl10"></span></h4>
+                <p class="txt-dialog-get">请填写收货信息</p>
+                <p class="txt-dialog-get">活动结束后7个工作日内发放</p>
+                <ul class="btns-dialog-get">
+                    <li the-id="addrBtn" class="btn-dialog-get left-dialog-btn">收货地址</li>
+                    <li class="btn-dialog-get right-dialog-btn">再抽一次</li>
+                </ul>
+            </div>
+        </div>
+        <div id="saveAddr" class="dialog-simple-active dialog none">
+            <div class="hd-dialog-simple hd-dialog-receive">收货信息</div>
+            <div class="bd-dialog-simple">
+                <span class="fork-dialog-active"></span>
+                <div class="tip-dialog-simple">
+                    <span class="risk">*</span>
+                    <p class="text">活动结束后信息不可更改！<br />为了奖品能 尽快送到您手中，请填写真实有效的收货信息</p>
+                </div>
+                <ul class="l-form-dialog">
+                    <li class="li-form-dialog">
+                        <label for="receiver" class="label-form-dialog">收货人：</label>
+                        <input type="text" id="receiver" class="ipt-form-dialog" />
+                        <!--<p class="txt-form-dialog"></p>-->
+                        <div class="clear"></div>
+                    </li>
+                    <li class="li-form-dialog">
+                        <label for="contact" class="label-form-dialog">联系方式：</label>
+                        <input type="text" id="contact" class="ipt-form-dialog" />
+                        <!--<p class="txt-form-dialog"></p>-->
+                        <div class="clear"></div>
+                    </li>
+                    <li class="li-form-dialog">
+                        <label for="address" class="label-form-dialog">收货地址：</label>
+                        <textarea id="address" class="textarea-form-dialog"></textarea>
+                        <!--<p class="txt-form-dialog"></p>-->
+                        <div class="clear"></div>
+                    </li>
+                    <li class="clear"></li>
+                </ul>
+                <div class="box-btn-receive">
+                    <span id="saveInfo" class="btn-single-dialog">保存</span>
+                </div>
+            </div>
+        </div>
+        <div id="getAddr" class="dialog-simple-active dialog none">
+            <div class="hd-dialog-simple hd-dialog-receive">收货信息</div>
+            <div class="bd-dialog-simple">
+                <span class="fork-dialog-active"></span>
+                <div class="tip-dialog-simple">
+                    <span class="risk">*</span>
+                    <p class="text">活动结束后信息不可更改！<br />为了奖品能 尽快送到您手中，请填写真实有效的收货信息</p>
+                </div>
+                <ul class="l-form-dialog">
+                    <li class="li-form-dialog">
+                        <label for="receiver" class="label-form-dialog">收货人：</label>
+                        <p class="txt-form-dialog" id="receiverName"></p>
+                        <div class="clear"></div>
+                    </li>
+                    <li class="li-form-dialog">
+                        <label for="contact" class="label-form-dialog">联系方式：</label>
+                        <p class="txt-form-dialog" id="receiverContact"></p>
+                        <div class="clear"></div>
+                    </li>
+                    <li class="li-form-dialog">
+                        <label for="address" class="label-form-dialog">收货地址：</label>
+                        <p class="txt-form-dialog" id="receiverAddress"></p>
+                        <div class="clear"></div>
+                    </li>
+                    <li class="clear"></li>
+                </ul>
+                <div class="box-btn-receive">
+                    <span id="modifyInfo" class="btn-couple-dialog left-couple-dialog">修改</span>
+                    <span class="btn-couple-dialog right-couple-dialog close-dialog">确定</span>
+                </div>
+            </div>
+        </div>
+        <div class="dialog-sm-simple dialog none">
+            <div class="hd-sm-simple">卡号密码</div>
+            <div class="bd-sm-simple">
+                <span class="fork-dialog-active"></span>
+                <ul class="l-psd-dialog"></ul>
+            </div>
+        </div>
+        <!--<input type="hidden" the-id="prizeId" />-->
+        <a href="http://vip.wan.liebao.cn" target="_blank" class="btn-float-active"></a>
+        <script type="text/javascript" src='http://img.wan.ijinshan.com/vip/js/jquery.1.8.3.min.js'></script>
+        <script type="text/javascript" src='http://wan.liebao.cn/action/user_info.php?rt=5'></script>
+        <script type="text/javascript" src="http://image.wan.liebao.cn/www/js/lb.platform.base.js"></script>
+        <script type="text/javascript" src="http://k.wan.liebao.cn/k/active/vipActive/js/jquery.nicescroll.min.js"></script>
+        <!--[if IE 6]><script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"></script><![endif]-->
+        <script type="text/javascript" src="http://k.wan.liebao.cn/k/active/vipActive/js/user.js"></script>
+        <!--[if IE 6]><script type="text/javascript">DD_belatedPNG.fix('.logo-active,.btn-float-active,.title-active,.li-bd-intro,.btn-intro-active,.hd-lottery,.dec-left,.dec-right,.li-btns-lottery,.bdrl-bd-lotter,.bdrr-bd-lotter,.bdrb-bd-lottery,.middle-main-active,.hd-dialog-get,.btn-dialog-get,.fork-dialog-active,.hd-dialog-receive,.hd-sm-simple');</script><![endif]-->
+    </body>
+</html>

@@ -1,0 +1,20 @@
+include ./inc/mixins
+div(ng-controller='package')
+    +mod('盒子专属礼包','gift')
+        .content-package
+            span.btn-getted-package(ng-click='showGettd();') 已领取礼包
+            ul.l-package
+                li.li-package(ng-repeat='it in gifts',ng-class='{"rowlast-package":($index+1)%3==0 }')
+                    .media-li-package(ng-mouseenter='showContent(hasDialog,it);'): img(ng-src='{{it.image_url}}')
+                    //.media-li-package(ng-mouseenter='showContent(hasDialog,it);'): img(ng-src='http://box.wan.liebao.cn/modules/yxhz/images/pkgs/{{it.game_id}}.png')
+                    .caption-li-package
+                        .abs-li-package(ng-if='it.contentOpen && !hasDialog',ng-mouseleave='it.contentOpen=false')
+                            h4.title-abs-package 激活方式：
+                            p.text-abs-package {{it.activate_info}}
+                            h4.title-abs-package 礼包内容：
+                            p.text-abs-package {{it.content}}
+                        h4.name-li-package {{it.game_name}}
+                        button.btn-li-package(ng-if='it.get_gift==0', g-id='{{it.game_id}}',ng-click='takeGift(it,$event);', ng-disabled='hasDialog', hover-class='hover-li-package') 立即领取
+                        span.btn-li-package.grey-btn-package(ng-if='it.get_gift==1') 已领取
+            a.btn-more-package(href='http://wan.liebao.cn/gift',target='_blank') 点击领取更多游戏礼包
+    div(gift-record, list='list', evts='evts', open='open')

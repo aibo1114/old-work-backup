@@ -1,0 +1,11 @@
+module.exports=[
+    title:'内容1'
+    subtitle:'test'
+    content:'test'
+    row:10
+,
+    title:'内容2'
+    subtitle:'test2'
+    content:'test'
+    row:9
+]

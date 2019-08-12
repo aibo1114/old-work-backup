@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "codeMap.js",
+  "sourceRoot": "",
+  "sources": [
+    "codeMap.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,OAAP,GAAiB;IACb;MAAA,MAAA,EAAQ,MAAR;MACA,MAAA,EAAQ,WADR;MAEA,OAAA,EAAS,eAFT;KADa;;AAAjB"
+}

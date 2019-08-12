@@ -1,0 +1,23 @@
+.panel-footer(ng-show='$ctrl.pageopt.show')
+    .list-pagination
+        //ul.pagination.pagination-sm(ng-init='$ctrl.setSection();')
+        ul.pagination.pagination-sm
+
+            li(ng-click='$ctrl.goFirst()', ng-if='$ctrl.num!= 1'): a(href='javascript:void(0);') 首页
+
+            li(ng-click='$ctrl.prev()', ng-class="{'disabled':$ctrl.num==1}"): a(href='javascript:void(0);') 上一页
+
+            li(ng-repeat='it in $ctrl.pageopt.curSection', ng-class="{'active':it==$ctrl.num}", ng-click='$ctrl.numFn(it);'): a(ng-bind='it', href='javascript:void(0);')
+
+            li(ng-click='$ctrl.next()', ng-class="{'disabled':$ctrl.num==$ctrl.pageopt.pages}"): a(href='javascript:void(0);') 下一页
+
+            li(ng-click='$ctrl.goLast($event)', ng-if='$ctrl.num!= $ctrl.pageopt.pages'): a(href='javascript(0);') 最后一页
+
+    .go-pagination
+        form(ng-submit='$ctrl.goJump();')
+            em.plc 跳转至
+            input.form-control(type='number', ng-model='$ctrl.jumpNum', max='{{$ctrl.pageopt.pages}}', min='1', required='required')
+            em.unit 页
+            button.btn.btn-primary.btn-sm GO
+    .txt-pagination
+        small.text-xs 当前第<em class="text-primary">&nbsp;&nbsp;{{$ctrl.num}}&nbsp;&nbsp;</em>页，共{{$ctrl.pageopt.pages}}页；&nbsp;&nbsp;&nbsp;&nbsp;总计<em class="text-primary">{{$ctrl.pageopt.total}}</em>条数据

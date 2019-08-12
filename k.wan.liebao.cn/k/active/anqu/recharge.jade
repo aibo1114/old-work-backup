@@ -1,0 +1,109 @@
+extends charge
+
+block style_charge
+    link(rel='stylesheet',type='text/css',href='http://static.web.anqu.com/resource/999/css/recharge.css')
+    link(rel='stylesheet',type='text/css',href='http://static.web.anqu.com/resource/999/css/charge_suc.css')
+    link(rel='stylesheet',type='text/css',href='http://static.web.anqu.com/resource/999/css/charge_fail.css')
+
+block script_charge
+
+block content_charge
+    .content-tab-recharge.active
+        -var amount=[10,20,30,50,100,200,300,500,800,1000,2000,3000]
+        ul.l-btn-recharge
+            li.li-btn-recharge
+                a.link-btn-recharge(the-id='gameBtn',href='javascript:void(0);') 选择充值游戏
+                span.tip-btn-recharge(the-id='gameTip') 请选择要充值的游戏
+                .box-btn-recharge.gameBox(the-id='gameBox')
+                    .hd-box-recharge 全部游戏
+                    .bd-box-recharge
+            li.li-btn-recharge
+                a.link-btn-recharge(the-id='serverBtn',href='javascript:void(0);') 选择游戏服务器
+                span.tip-btn-recharge(the-id='serverTip') 请选择游戏服务器
+                .box-btn-recharge.serverBox(the-id='serverBox')
+                    .hd-box-recharge 全部服务器
+                    .bd-box-recharge
+        //p.notice-recharge 请选择充值金额<span>首次可透支余额为10元</span>
+        ul.l-amount-recharge
+            each it,i in amount
+                if i==0
+                    li.li-amount-recharge.active.first(the-id='costItem',cost='#{it}') #{it}元
+                else
+                    li.li-amount-recharge(the-id='costItem',cost='#{it}') #{it}元
+
+        .group-amount-recharge
+            input.input-amount-recharge(the-id='costIpt',type='text',placeholder='其他金额')
+            p.tip-input-recharge （请输入10-5000之间的任意整数）
+        p.tip-amount-recharge （<span the-id="sO">10</span>元人民币兑换《<span the-id="tipGname"></span>》<span the-id="sT">100</span>钻石及<span the-id="sO">10</span>平台积分奖励）
+        .wc-pay-replace
+            span.confirm-btn-recharge#payBtn 确认支付
+            //p.notice-btm-recharge
+                | <span>温馨提示</span><br />1.先玩后付可以激活的游戏币，7日内进行还款即可，还款还请登录<a target="_blank" href="javascript:void(0);">http://mo9.com.cn</a><br />2.首次使用可透支额度为10元，信用额度会逐步提高。<br />3.如果您再充值过程中遇到任何问题，请联系<a target="_blank" href="javascript:void(0);">在线客服</a>
+    .content-tab-recharge
+        -var amount=[10,20,30,50,100,200,300,500,800,1000,2000,3000,5000,10000,20000]
+        ul.l-btn-recharge
+            li.li-btn-recharge
+                a.link-btn-recharge(the-id='gameBtn',href='javascript:void(0);') 选择充值游戏
+                span.tip-btn-recharge(the-id='gameTip') 请选择要充值的游戏
+                .box-btn-recharge.gameBox(the-id='gameBox')
+                    .hd-box-recharge 全部游戏
+                    .bd-box-recharge
+            li.li-btn-recharge
+                a.link-btn-recharge(the-id='serverBtn',href='javascript:void(0);') 选择游戏服务器
+                span.tip-btn-recharge(the-id='serverTip') 请选择游戏服务器
+                .box-btn-recharge.serverBox(the-id='serverBox')
+                    .hd-box-recharge 全部服务器
+                    .bd-box-recharge
+        //p.notice-recharge 请选择充值金额<span>首次可透支余额为10元</span>
+        ul.l-amount-recharge
+            each it,i in amount
+                if i == 0
+                    li.li-amount-recharge.active.first(the-id='costItem',cost='#{it}') #{it}元
+                else
+                    li.li-amount-recharge(the-id='costItem',cost='#{it}') #{it}元
+        p.tip-amount-recharge.ali （<span the-id="sO">10</span>元人民币兑换《<span the-id="tipGname"></span>》<span the-id="sT">100</span>钻石及<span the-id="sO">10</span>平台积分奖励）
+        .ali-pay-replace
+            span.icon-ali-recahrge
+    #tCodeBox
+    .content-recharge.success
+        .charge_title
+            span 充值成功！
+        .charge_info
+            .charge_account 充值账号：<p id="chargeAccount"></p>
+            .charge_game 充值游戏：<p id="chargeGame"></p>（<p id="chargeServer"></p>）
+            .charge_money 充值金额：<p id="chargeMoney"></p>元
+            .contact
+                a(href='javascript:void(0);',class='contact_service',target='_blank') 联系客服
+        .charge_bottom_info
+            .charge_btn
+                .keep_charging
+                    a(href='javascript:void(0);',the-id='chargeContinue') 继续充值
+                .back_index
+                    a(href='javascript:void(0);',the-id='chargeContinue') 返回首页
+            include inc/charge_claimation
+    .content-recharge
+        .charge_title
+            span 对不起，充值失败！
+        .charge_info
+            p.failure_report 您还可以<a href='#' class='contact_service' target='_blank'>联系客服</a>
+        .charge_bottom_info
+            .charge_btn
+                .keep_charging
+                    a(href='#',target='_self',the-id='chargeContinue') 继续充值
+                .back_index
+                    a(href='#',target='_self') 返回首页
+            include inc/charge_claimation
+block sub
+    -var dTxt=['您尚未在该游戏服务器内创建角色','不能进行充值！']
+    mixin dialog (title,bdTitle,txt,btnTxt)
+        .dialog&attributes(attributes)
+            .hd-dialog
+                h3.title-dialog= title
+                span.fork-dialog X
+            .bd-dialog
+                h4.title-bd-dialog= bdTitle
+                each it in txt
+                    p.text-bd-dialog= it
+                span.btn-dialog= btnTxt
+    .mask-dialog
+    +dialog('充值订单确认','对不起',dTxt,'返回修改')(class='js-d-role')

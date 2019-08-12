@@ -1,0 +1,26 @@
+<?php
+$data = array(
+	'code'=>1,
+	'msg'=>'ok',
+	'data'=>array(),
+);
+$types = array(
+	1 => '角色扮演',
+	2 => '战争策略',
+	3 => '体育竞技',
+	4 => '悠闲娱乐',
+	5 => '经营管理',
+);
+$id = 803;
+$temp = array();
+foreach ($cates[$id] as $article) {
+	$temp[] = array(
+		'gid'=>$article['field1'],
+		'game_name'=>$article['field2'],
+		'game_type'=>isset($types[$article['field3']]) ? $types[$article['field3']] : '其它',
+		'url'=>$article['field4'],
+		'img_url'=>$article['field5'],
+	);
+}
+$data['data'] = $temp;
+echo json_encode($data);

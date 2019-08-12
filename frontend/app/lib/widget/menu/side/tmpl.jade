@@ -1,0 +1,21 @@
+mixin panel(title)
+    .panel&attributes(attributes)
+        .panel-heading
+            h3.panel-title= title
+        if block
+            block
+        else
+            .panel-body
+
+.row
+    #side.col-md-3
+        +panel('用户信息').uInfo.panel-default
+            .panel-body
+                != f.tmpl('userInfo', user.attributes, true)
+
+        +panel('功能导航').panel-default
+            nav.uMenu
+                ul.nav.nav-pills.nav-stacked
+                    each it in user.menu || []
+                        != f.menuItem(it)
+    #main.col-md-9

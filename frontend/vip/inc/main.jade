@@ -1,0 +1,126 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        title 豹会员
+        link(href="http://wan.liebao.cn/favicon.ico",type="image/x-icon" rel="icon")
+        link(href="http://wan.liebao.cn/favicon.ico",type="image/x-icon" rel="shortcut icon")
+        link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/base.css')
+        link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/common.css')
+        block css
+    body
+        block variable
+        -var nCls='li-nav'
+        -var mCls='li-nav'
+        -var pCls='li-nav'
+        -var sCls='li-nav'
+        -var hCls='li-nav'
+        case curPage
+            when 'index' : -nCls+=' current'
+            when 'member' : -mCls+=' current'
+            when 'privilege' : -pCls+=' current'
+            when 'system' : -sCls+=' current'
+            when 'helper' : -hCls+=' current'
+
+        mixin navItem(cls,title,hf)
+            li(class='#{cls}')&attributes(attributes)
+                a.link-nav(href='#{hf}')= title
+
+        .container
+            .header.png_bg
+                .content-header
+                    h1.logo
+                        a(href='/'): img(src='http://img.wan.ijinshan.com/vip/images/logo_02.png')
+                    ul.l-nav
+                        +navItem(nCls,'首页','/')
+                        +navItem(mCls,'我的豹会员','/member.html')(the-id='memberNav')
+                        +navItem(pCls,'特权服务','/privilege.html')
+                        +navItem(sCls,'成长体系','/system.html')
+                        +navItem(hCls,'帮助中心','/helpCenter.html')
+            block content
+            .footer
+                .content-footer
+                    ul.l-tp-footer
+                        li.li-tp-footer
+                            a.link-tp-footer(href='http://wan.liebao.cn/game_list.html',target='_blank') 游戏中心
+                        li.li-tp-footer
+                            a.link-tp-footer(href='http://wan.liebao.cn/user/?kstag=changeuserinfo',target='_blank') 账号安全
+                        li.li-tp-footer
+                            a.link-tp-footer(href='http://wan.liebao.cn/action/redirect_kf.php?gid=1001',target='_blank') 客服中心
+                        li.li-tp-footer
+                            a.link-tp-footer(href='http://i.wan.liebao.cn/jz/jiazhang.htm',target='_blank') 家长监控
+                    .clear
+                    ul.l-btm-footer
+                        li.li-btm-footer
+                            span.link-btm-footer 抵制不良游戏
+                        li.li-btm-footer
+                            span.link-btm-footer 拒绝盗版游戏
+                        li.li-btm-footer
+                            span.link-btm-footer 注意自我保护
+                        li.li-btm-footer
+                            span.link-btm-footer 谨防受骗上当
+                        li.li-btm-footer
+                            span.link-btm-footer 适度游戏益脑
+                        li.li-btm-footer
+                            span.link-btm-footer 沉迷游戏伤身
+                        li.li-btm-footer
+                            span.link-btm-footer 合理安排时间
+                        li.li-btm-footer
+                            span.link-btm-footer 享受健康生活
+                    .clear
+                    p.txt-cp <a target='_blank' href='http://image.wan.liebao.cn/game/static/images/www.jpg'>京网文[2016]0672-054号</a>　<a target='_blank' href='http://image.wan.liebao.cn/game/static/images/icp.jpg'>京ICP证120823</a>
+                    ul.l-cp
+                        li.li-cp
+                            span.link-cp COPYRIGHT ©2012
+                        li.li-cp
+                            a.link-cp.hot(href='http://wan.liebao.cn',target='_blank') WAN.LIEBAO.CN
+                        li.li-cp
+                            span.link-cp . ALL RIGHTS RESERVED.
+        block dialog
+        script(type='text/javascript',src='http://img.wan.ijinshan.com/vip/js/jquery.1.8.3.min.js')
+        script(type='text/javascript',src='http://wan.liebao.cn/action/user_info.php?rt=5')
+        script(type='text/javascript',src='http://img.wan.ijinshan.com/thirdpart/lucky/Helper/Login/1.0.1/Login.min.js?t=201410311102')
+        script(type='text/javascript',src='http://img.wan.ijinshan.com/thirdpart/header/1.0.0/header_login.js?t=201410311102')
+        script(type='text/javascript',src='http://img.wan.ijinshan.com/vip/js/DD_belatedPNG_0.0.8a-min.js')
+        script(type='text/javascript').
+            $.ajaxSetup({
+                cache:false
+            });
+
+            String.prototype.replaceAll = function (reallyDo, replaceWith, ignoreCase) {
+                if (!RegExp.prototype.isPrototypeOf(reallyDo)) {
+                    return this.replace(new RegExp(reallyDo, (ignoreCase ? "gi" : "g")), replaceWith);
+                } else {
+                    return this.replace(reallyDo, replaceWith);
+                }
+            };
+            (function(){
+                var hrefStr=window.location.host+window.location.pathname,
+                    outStr;
+
+                window.location.pathname=='/member.html' ? outStr='http://wan.liebao.cn/action/logout.php?bu=http%3A%2F%2F'+window.location.host+'/unMember.html' : outStr='http://wan.liebao.cn/action/logout.php?bu=http%3A%2F%2F'+hrefStr;
+                $('[the-id=logout]').attr('href',outStr);
+
+                $.ajax({
+                    url: 'http://vip.wan.liebao.cn/vip/user/api/info',
+                    type: 'get',
+                    dataType: 'jsonp',
+                    async: false,
+                    success: function (res) {
+                        var ret=res.ret;
+                        //14003
+                        if(ret!=1){
+                            $('[the-id=memberNav] a').attr('href','/unMember.html');
+                        }else{
+                            if(res.data.status!=1){
+                                $('[the-id=memberNav] a').attr('href','/unMember.html');
+                            }else{
+                                $('[the-id=memberNav] a').attr('href','/member.html');
+                            }
+
+                        }
+                    }
+                });
+            })();
+        block js
+

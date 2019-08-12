@@ -1,0 +1,44 @@
+
+.scrollBox {
+  .viewport {
+    overflow: hidden;
+    position: relative;
+    .overview {
+      list-style: none;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  .scrollbar {
+    position: absolute;
+    right: 8px;
+    width: 4px;
+    .track {
+      display: none;
+      background-color: #D8EEFD;
+      height: 100%;
+      width: 4px;
+      position: relative;
+      padding: 0 1px;
+      .thumb {
+        position: absolute;
+        height: 20px;
+        width: 4px;
+        cursor: pointer;
+        overflow: hidden;
+        background-color: #003D5D;
+        top: 0;
+        .end {
+          background-color: #003D5D;
+          overflow: hidden;
+          height: 4px;
+          width: 13px;
+        }
+      }
+    }
+  }
+  .disable {
+    display: none;
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "h5.js",
+  "sourceRoot": "",
+  "sources": [
+    "h5.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,OAAA,CAAQ,iBAAR;;EACA,OAAA,CAAQ,mBAAR;;EAEA,OAAA,CAAQ,cAAR;;EACA,OAAA,CAAQ,aAAR;;EACA,OAAA,CAAQ,gBAAR;;EACA,OAAA,CAAQ,eAAR;;EACA,OAAA,CAAQ,mBAAR;;EACA,OAAA,CAAQ,cAAR;;EACA,OAAA,CAAQ,wBAAR;;EACA,OAAA,CAAQ,+BAAR;AAVA"
+}

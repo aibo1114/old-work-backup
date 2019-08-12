@@ -1,0 +1,74 @@
+extends ../../main
+include ../../_inc/mixin
+
+block ctn
+    body
+        .header
+            h1.logo: a(href='/')
+                img(src='#{resPath}images/logo_03.jpg')
+            span.tcode: img(src='#{resPath}images/tcode_05.jpg')
+        .container
+            .nav
+                ul.l-nav
+                    li.li-nav
+                        a.link-nav(href='javascript:void(0);') Home
+                    li.li-nav
+                        a.link-nav(href='javascript:void(0);') Studio
+                    li.li-nav
+                        a.link-nav(href='javascript:void(0);') Teams
+                    li.li-nav
+                        a.link-nav(href='javascript:void(0);') Events
+                    li.li-nav
+                        a.link-nav(href='javascript:void(0);') Photo Gallery/Videos
+                    li.li-nav
+                        a.link-nav(href='javascript:void(0);') Merchandise
+                    li.li-nav
+                        a.link-nav(href='javascript:void(0);') Contact Us
+            block content
+        .footer
+            ul.l-footer
+                li.li-footer: a(href='javascript:void(0);') Pravcy terms
+                li.li-footer: a(href='javascript:void(0);') Contact us
+                li.li-footer: a(href='javascript:void(0);') Careers
+                li.li-footer: a(href='javascript:void(0);') About us
+            p.txt-footer
+                | Phoenix Dance Company<br />Address: No. 11 Jin Tong Xi Lu Yuanyang Guanghua International Building AB block B1 (opposite of the east side of "The Place", and below Costa Coffee),100022<br />Tel: + 86 ( 010 ) 85906102 / 85903310 罗芳 18210047645（中文） Jack +86 13910975179（English）<br /><a href='mailTo:phoenixdancechinal@gmail.com'>Email: phoenixdancechinal@gmail.com</a>
+        //
+            .headerWrapper(style='height: 80px')
+                nav.navbar.navbar-fixed-top
+                    header.container
+                        .row
+                            .col-xs-8.col-md-3.p0
+                                .navbar-header
+                                    h1.hidden=c.name
+                                    a(href='#')
+                                        img.img-responsive.logoImg.m-t-h(src= f.resPath(c, 'images/logo.png') style='width:100px;')
+                            .col-xs-4.p0
+                                +mobBtn('#mainNav')
+                            .col-md-5.col-xs-12.col-md-offset-1
+                                #mainNav.collapse.navbar-collapse
+                                    +nav(c.nav)#nav.nav.navbar-nav
+                            #topBar.col-md-3.text-right
+            .container
+                #content.row
+                #static.row(class=index)
+                    block content
+
+            .container
+                #footer.row.mt
+                    .col-md-6.intro
+                        p
+                            | 免费咨询电话
+                            br
+                            | 400-0688-153
+                            br
+                            a(target='_blank', href='www' + c.url)= c.url
+                            br
+                            | 备案号 #{c.record}
+                    .col-md-2.attention
+                        p
+                        +nav(c.foot).l-attention
+                    .col-md-2.share
+                        h5 关注我们
+                    .col-md-2.qrcode.text-center
+                        != f.imgItem(c, c, 'qrcode')

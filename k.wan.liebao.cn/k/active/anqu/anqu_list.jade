@@ -1,0 +1,20 @@
+extends anqu_detail_temp
+
+block detail_style
+    link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/999/css/anqu_list.css')
+block detail_script
+    script(type='text/javascript',src='js/anqu_list.js')
+block detail_content
+    mixin anqu_list(arr)
+        ul.anqu_news_list_content
+            each item in arr
+                li.li_anqu_content
+                    a(href='#{item.link}',title='#{item.title}',class='anqu_news_border anqu_inline_block anqu_news_style',target='_blank')
+                        span.anqu_news_icon.anqu_inline_block
+                        span.anqu_news_title=item.title
+                        span.anqu_news_time=item.time
+
+    -var anqu_news=[{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'},{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'},{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'},{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'},{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'},{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'},{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'},{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'},{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'},{title:'双线10服8月20日10点震撼开启',time:'08/15',link:'#'}]
+
+    .list_content
+        +anqu_list(anqu_news)

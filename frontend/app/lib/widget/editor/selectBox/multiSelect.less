@@ -1,0 +1,41 @@
+.multiSelect {
+  //margin: 15px -15px 0 0;
+  .msItem {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    max-height: 300px;
+    max-width: 300px;
+    overflow: hidden;
+    position: relative;
+    .btnCtn{
+      width: 100%;
+      position: absolute;
+      top:0;
+      padding: 3px 5px;
+      height: 30px;
+      display: none;
+      i{
+        text-align: center;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        line-height: 28px;
+        display: inline-block;
+        background: rgba(0,0,0, 0.5);
+        cursor: pointer;
+        color: white;
+      }
+    }
+    p {
+      position: absolute;
+      bottom: 0;
+      margin: 0;
+      padding: 3px 5px;
+      width: 200px;
+      height: 30px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+    }
+  }
+}

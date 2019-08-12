@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "tmplScript.js",
+  "sourceRoot": "",
+  "sources": [
+    "tmplScript.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,OAAP,GACI;IAAA,KAAA,EAAO,SAAC,GAAD,GAAA,CAAP;IAEA,KAAA,EAAO,SAAC,GAAD,EAAM,GAAN,EAAW,GAAX,GAAA,CAFP;;AADJ"
+}

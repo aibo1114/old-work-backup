@@ -1,0 +1,179 @@
+@code: 'customer';
+@domain: 'travel.com:3000';
+@baseUrl: 'http://t.@{domain}/res/';
+
+@import "../../../res/js/bootstrap/less/bootstrap.less";
+
+@import "../../../lib/style/lib/lib";
+@import "../../../lib/style/lib/widget";
+
+@import "../../../lib/style/mod/popMsg";
+
+
+@brand-danger: #F0641E;
+
+@font-family-base: 'Microsoft Yahei', "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+
+body {
+  background: #ececec;
+}
+ul.refresh{
+  padding: 0 !important;
+}
+
+#content {
+  margin: 10px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-top: 5px solid @brand-danger;
+}
+
+h3 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.news {
+  ul {
+    border-top: 1px solid @gray;
+    margin: 20px;
+    li {
+      a {
+        color: @gray-dark;
+        &:hover{
+          color: @brand-primary;
+        }
+      }
+
+      border-bottom: 1px dashed @gray;
+      line-height: 35px;
+    }
+  }
+}
+
+.btns {
+  a {
+    width: 400px;
+    height: 90px;
+    padding-top: 23px;
+    font-size: 26px;
+    line-height: 30px;
+    small {
+      font-size: 14px;
+    }
+  }
+}
+
+//.showIdBox, .showRecordBox {
+//  .clearfix;
+//  border: 1px solid #999;
+//  background-color: white;
+//  padding: 10px 0px;
+//}
+//.showIdBox{
+//  height: 390px;
+//}
+.recordItem {
+  height: 45px;
+}
+
+.showRecordBox {
+  .glyphicon-plus {
+    margin-left: 15px;
+  }
+  .add{
+    margin-bottom: 10px;
+  }
+}
+
+.imgBox {
+  position: relative;
+  img {
+    max-width: 430px;
+    max-height: 330px;
+    margin-bottom: 15px;
+  }
+  i {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+}
+//
+//.radioBox, .areaWt {
+//  float: left;
+//  margin-right: 15px;
+//}
+
+.help-block {
+  margin-top: 10px;
+}
+
+.resTB {
+  margin: auto;
+  width: 600px;
+  th {
+    width: 160px;
+    text-align: center;
+  }
+}
+
+.uploadBtn {
+  display: inline-block;
+  width: 105px;
+  padding: 7px 0;
+  text-align: center;
+  background: #880000;
+  border-bottom: 1px solid #DDD;
+  color: #FFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.uploadBtn:hover {
+  background: #CC0000;
+}
+
+.uploadBtn input {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 100px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.czb {
+  margin-left: -140px;
+
+}
+
+.yes, .no {
+  width: 80px;
+  margin-top: -8px;
+}
+
+.areaWt > select {
+  width: 121px;
+  margin-right: 10px;
+  float: left;
+}
+
+.radio label {
+  margin-right: 20px;
+}
+
+form {
+  .btnCtn {
+    .btn-primary {
+      float: right;
+    }
+  }
+  .radio  {
+    float: left;
+    margin-top: -8px !important;
+  }
+}
+.has-feedback .form-control {
+   padding-right: 25px;
+ }

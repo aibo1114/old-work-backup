@@ -1,0 +1,697 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei" ! important;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: none;
+    /*font-family: "Microsoft Yahei"*/
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input {
+    margin: 0;
+    padding: 0;
+    /*border: none;*/
+    outline: 0;
+    font-size: 100%;
+    /*font: inherit;*/
+    vertical-align: baseline;
+}
+
+html,
+body,
+form,
+fieldset,
+p,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    -webkit-text-size-adjust: none;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    font-family: arial, sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+ins,
+a {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+/*h5pay---打不开微信或者支付宝*/
+.pay_warp {
+    width: 100%;
+    height: 100%
+}
+
+.pay_warp .pay_header {
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    width: 100%;
+    background-color: #f0641e;
+}
+
+.pay_warp .pay_foropen {
+    margin-top: 30%;
+    font-size: 15px;
+    text-align: center;
+}
+
+.pay_warp .pay_foropen img {
+    width: 20%;
+}
+
+.pay_warp .pay_foropen .left_img {
+    margin-right: 20px
+}
+
+.pay_warp .pay_foropen p {
+    margin-top: 6%;
+}
+
+.pay_warp .pay_foropen span {
+    color: #f0641e;
+}
+
+/*pay*/
+.pay_detailInfo {
+    width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    padding-bottom: 2%;
+}
+
+.pay_detailInfo .pay_title {
+    border-bottom: 1px solid #b3b3b3;
+    padding: 20px 0;
+}
+
+.pay_detailInfo .pay_title h2 {
+    font-size: 20px;
+    color: #333333;
+    font-weight: bolder;
+}
+
+.pay_detailInfo .pay_title h5 {
+    font-size: 15px;
+    color: #808080;
+    padding-top: 5px;
+}
+
+.payList h3 {
+    color: #333333;
+    font-size: 19px;
+    height: 60px;
+    line-height: 60px;
+}
+
+.payList ul {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.payList ul li {
+    float: left;
+    width: 30%;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #333;
+    border: 1px solid #d3d3d3;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.payList ul .middle {
+    margin: 0 5%;
+}
+
+.payList ul .current {
+    background-color: #f0641e;
+    color: #fff;
+    border: 1px solid #f15000;
+}
+
+.payList h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+.payList h2 em {
+    font-size: 14px;
+    color: #999999;
+}
+
+.payList h2 span {
+    color: #f0641e;
+}
+
+.payList h4 {
+    color: #808080;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+.payBtn {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    color: #fff;
+    background-color: #19c475;
+    border: transparent;
+    border-radius: 5px;
+    margin-top: 2%;
+}
+
+.canNot {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    color: #fff;
+    background-color: #bdbdbd;
+    border: transparent;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+
+/*pay sud*/
+.pay_succ {
+    text-align: center;
+    /*display: none;*/
+}
+
+.pay_succ img {
+    width: 31%;
+    margin-top: 18%;
+}
+
+.pay_succ h1 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 900;
+}
+
+.pay_succ .paySudInfo {
+    font-size: 16px;
+    color: #808080;
+    line-height: 42px;
+    margin-top: 8%;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    border-bottom: none;
+    background-color: #fafafa;
+}
+
+.pay_succ .paySudInfo p {
+    height: 42px;
+    border-bottom: 1px solid #ccc;
+}
+
+.pay_succ .paySudInfo .p-title {
+    font-size: 20px;
+    color: #333;
+}
+
+.pay_succ .paySudInfo label {
+    width: 50%;
+    text-align: center;
+    display: inline-block;
+    border-right: 1px solid #e4e4e4;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.pay_succ .paySudInfo span {
+    width: 50%;
+    text-align: left;
+    display: inline-block;
+    padding-left: 23px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.pay_succ .paySudInfo span em {
+    color: #f0641e;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: #999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+    z-index: 1;
+    display: none;
+}
+
+.maskImg {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    margin-top: -90%;
+    z-index: 2;
+    display: none;
+}
+
+.cred {
+    text-align: center;
+    font-size: 14px;
+    color: #e60000;
+    margin-top: 5px;
+    display: none;
+}
+
+.pay_succ .pay-fail {
+    font-size: 18px;
+    color: #808080;
+    margin-top: 10px;
+    font-weight: normal;
+}
+
+.pay_active img {
+    width: 100%;
+}
+
+.pay_active {
+    position: relative;
+}
+
+.pay_active em {
+    /*display: inline-block;*/
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 0;
+    background: url('http://img.wan.ijinshan.com/pay2/online/images/gb.png') no-repeat;
+    background-size: 100%;
+}
+
+.active_rule {
+    width: 86%;
+    background-color: #fff;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    margin-left: -43%;
+    z-index: 2;
+    box-sizing: border-box;
+    /*padding: 0 15px;*/
+    border-radius: 5px;
+    font-size: 14px;
+    color: #808080;
+    /* height: 55%;
+     overflow-y: scroll;*/
+    display: none;
+}
+
+.active_rule h2 {
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 20px;
+    color: #333333;
+    font-weight: bold;
+    border-bottom: 1px solid #d3d3d3;
+}
+
+.active_rule_inner {
+    padding: 10px 15px;
+    height: 286px;
+    overflow-y: scroll;
+}
+
+.active_rule h4 {
+    font-size: 15px;
+    color: #333;
+}
+
+.active_rule em {
+    position: absolute;
+    width: 23px;
+    height: 23px;
+    top: 11px;
+    right: 5px;
+    background: url('http://img.wan.ijinshan.com/pay2/online/images/closeBtn.png') no-repeat;
+    background-size: 100%;
+}
+
+/*二期支付*/
+.paycustom {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #d3d3d3;
+    margin-bottom: 20px;
+}
+
+#paycustom_tab {
+    width: 30%;
+    box-sizing: border-box;
+    border: 1px solid #d3d3d3;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.paycustom span {
+    font-size: 12px;
+    color: #999999;
+}
+
+.pay_counpon {
+    position: relative;
+}
+
+.pay_counpon img {
+    width: 100%;
+}
+
+.pay_counpon .closeBtn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 0;
+    background: url('http://img.wan.ijinshan.com/pay2/online/images/gb_1.png') no-repeat;
+    background-size: 100%;
+    display: none;
+}
+
+.pay_counpon .coupon_common {
+    width: 100%;
+    padding: 0;
+    display: none;
+}
+
+.coupon_list {
+    position: fixed;
+    background-color: #f5f5f5;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    display: none;
+}
+
+.coupon_list h2 {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #4c4c4c;
+    margin: 0 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.coupon_common {
+    padding: 0 20px;
+    height: 60px;
+    box-sizing: border-box;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.coupon_common p {
+    float: left;
+    height: 60px;
+}
+
+.coupon_common .coupon_red {
+    background-color: #ff3434;
+    color: #fff;
+    width: 20%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    /*   height: 40px;*/
+    line-height: 60px;
+    text-align: center;
+}
+
+.coupon_common .coupon_detail {
+    width: 80%;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px #dedede;
+    /*height: 40px;*/
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.coupon_list ul {
+    margin-top: 10px;
+    height: 255px;
+    overflow-y: scroll;
+}
+
+.coupon_choose em {
+    position: absolute;
+    width: 35px;
+    height: 36px;
+    top: 20px;
+    right: 31px;
+    background: url('http://img.wan.ijinshan.com/pay2/online/images/ok.png') no-repeat;
+    background-size: 100%;
+}
+
+.coupon_detail .span_top {
+    color: #5c5c5c;
+}
+
+.coupon_detail .span_top b {
+    color: #eb0000;
+}
+
+.coupon_detail .span_bot {
+    font-size: 14px;
+    color: #999999;
+}
+
+.coupon_common .coupon_ccc.coupon_red {
+    background-color: #999999;
+}
+
+.coupon_list .close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 11px;
+    right: 20px;
+    background: url('http://img.wan.ijinshan.com/pay2/online/images/closeBtn.png') no-repeat;
+    background-size: 100%;
+}
+
+/*适配iphone5s*/
+@media screen and (max-width: 360px) {
+    /*当屏幕尺寸小于320px时，应用下面的CSS样式*/
+    .pay_warp .pay_header {
+        height: 50px;
+        line-height: 50px;
+        font-size: 20px;
+    }
+
+    .pay_detailInfo .pay_title h2 {
+        font-size: 16px;
+    }
+
+    .pay_detailInfo .pay_title h5 {
+        font-size: 13px;
+    }
+
+    .pay_detailInfo .pay_title {
+        padding: 14px 0;
+    }
+
+    .payList h3 {
+        font-size: 14px;
+        line-height: 40px;
+        height: 40px;
+    }
+
+    .payList ul li {
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+    }
+
+    .payList h2 {
+        font-size: 15px;
+    }
+
+    .payList h4 {
+        font-size: 12px;
+    }
+
+    .payBtn {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+
+    .pay_succ img {
+        width: 24%;
+        margin-top: 12%;
+    }
+
+    .pay_succ h1 {
+        font-size: 20px;
+    }
+
+    .pay_succ .paySudInfo .p-title {
+        font-size: 16px;
+    }
+
+    .pay_succ .paySudInfo p {
+        height: 35px;
+    }
+}

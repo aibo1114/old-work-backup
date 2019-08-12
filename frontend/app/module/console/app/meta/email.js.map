@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "email.js",
+  "sourceRoot": "",
+  "sources": [
+    "email.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,IAAI,CAAC,KAAL,GACI;IAAA,IAAA,EAAM,CACF,GAAA,CAAI,OAAJ,CADE,CAAN;IAGA,CAAA,EAAG,EAHH;;AADJ"
+}

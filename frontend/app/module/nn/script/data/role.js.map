@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "role.js",
+  "sourceRoot": "",
+  "sources": [
+    "role.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,OAAP,GAAiB;IACb;MAAA,KAAA,EAAO,OAAP;MACA,KAAA,EAAO,KADP;MAEA,IAAA,EAAM,CAFN;MAGA,QAAA,EAAU;QACN;UAAA,GAAA,EAAK,MAAL;UACA,GAAA,EAAK,GADL;SADM,EAIN;UAAA,GAAA,EAAK,MAAL;UACA,GAAA,EAAK,GADL;SAJM;OAHV;KADa;;AAAjB"
+}

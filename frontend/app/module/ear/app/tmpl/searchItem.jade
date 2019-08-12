@@ -1,0 +1,7 @@
+a.media.media_left(href='/#{_e}/#{_id}',target='_blank')
+    if refFile && refFile.slide
+        .media-left
+            != f.imgItem(locals, c, 'slide', 'media-object')
+    .media-body
+        h4.media-heading!= f.dStr(title)
+        p!= f.dStr(description, 24)

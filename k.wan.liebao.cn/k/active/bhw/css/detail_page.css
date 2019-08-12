@@ -1,0 +1,59 @@
+/*以下为详情页css*/
+.current_page{
+	font-size:14px;
+}
+.current_page em{
+	color:#2d7cff;
+}
+.current_page span{
+	line-height:28px;
+}
+/*以下为详情页正文css*/
+.main_text_content{
+	margin-right:13px;
+}
+.main_text_body{
+	_text-align:left;
+}
+.main_text_body p{
+
+	display:block;
+	font-size:14px;
+	color:#808080;
+	text-indent:2em;
+	line-height:32px;
+}
+.main_text_body img{
+	max-width:500px;
+	display:block;
+	margin:0 auto;
+}
+.main_text_title{
+	text-align:center;
+	margin-top:30px;
+}
+.main_title{
+	color:#1a1a1a;
+	font-weight:bold;
+	font-size:24px;
+}
+.main_text_info{
+	text-align:center;
+	margin-top:9px;
+	margin-bottom:21px;
+}
+.detail_info{
+	color:#808080;
+	font-size:12px;
+	margin:0 40px;
+}
+.detail_info a:hover{
+	color:#2d7cff;
+}
+.enlarge_and_no_indent{
+	display:block;
+	font-size:14px;
+	color:#808080;
+	line-height:32px;
+	font-weight:bold;
+}

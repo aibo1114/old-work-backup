@@ -1,0 +1,39 @@
+extends ../../main
+include ../../_inc/mixin
+
+block ctn
+    body(data-wid= wt.appId, data-wcode= wt.code)
+        .headerWrapper
+            nav.navbar.navbar-fixed-top
+                header.container
+                    .row
+                        .col-xs-8.col-md-3.p0
+                            .navbar-header
+                                h1.hidden=c.name
+                                a(href='#')
+                                    img.img-responsive.logoImg(src= f.resPath(c, 'images/title.png') style='margin:0;width:220px;')
+                        .col-xs-4.p0
+                            +mobBtn('#mainNav')
+                        .col-md-5.col-xs-12.col-md-offset-1
+                            #mainNav.collapse.navbar-collapse
+                                +nav(c.nav)#nav.nav.navbar-nav
+                        #topBar.col-md-3.text-right
+        if index == 'index'
+            #static
+                block content
+            .container
+                #content.row
+
+        else
+            .container
+                #content.row
+                #static.row(class=index)
+
+                    block content
+
+
+                    include footer.jade
+        section.sbtm
+            .container
+                p!= i18.ii('copyright', c.url, i18.ii('abbr'))
+

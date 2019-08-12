@@ -1,0 +1,58 @@
+extends /../main
+
+block script
+    - main = 'mob'
+    - mount = true
+    - noCache = true
+    if mode
+        -libPath = 'http://10.60.212.51:8088/';
+
+block meta
+    meta(http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src * 'unsafe-inline'; script-src * 'unsafe-inline'")
+
+block ctn
+    body
+        .mobView
+            .card
+                .clearfix.m-y-h
+                    .col-xs-11
+                        input.form-control.form-control-sm(placeholder='搜索属于你的问题')
+                    .col-xs-1.p-x-0
+                        != f.icon('plus', 'a', '', 'addIcon', 'href=' + f.navUrl('ask/add'))
+
+                .nav.nav-tabs.text-xs-center.idxTab
+                    each it,i in tabs
+                        a(data-toggle="tab" href="##{it.code}" class=i == 0 ? 'active' : null)=it.label
+
+                .tab-content
+                    #hot.tab-pane.active
+                        +slide(c, head.headItem)#indexHead
+                        .card-block
+                            .card-title.m-b-0
+                                | 新鲜的问题
+                                .pull-xs-right 更多...
+
+                        .list-group.list-group-flush.text-xs-left
+                            each it in question
+                                != f.tmpl(locals, 'idxQItem', it)
+
+                    #new.tab-pane
+                        .card-block
+                            h1 comming soon
+
+                    #reward.tab-pane
+                        .card-block
+                            h1 comming soon
+
+
+        script!=f.jsp('_gData', locals, 'price', 'cat')
+        script!=f.jsp('_gCat', locals, 'price', 'cat')
+
+block st
+    :coffee(bare=true,minify=true)
+        new cf.view.slide
+            el: '#indexHead'
+
+prepend js
+    script(src='./cordova.js')
+

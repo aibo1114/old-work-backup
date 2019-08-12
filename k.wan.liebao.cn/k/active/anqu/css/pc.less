@@ -1,0 +1,116 @@
+//variable
+@imgP:'http://static.web.anqu.com/resource/999/images';
+
+
+//block
+.bBanner(@h:auto,@c:#fff) {
+  width:100%;
+  height:@h;
+  background:@c;
+}
+.bCenter(@w:1170px){
+  width:@w;
+  margin:auto;
+  .clear();
+}
+.bWh(@w,@h){
+  display:block;
+  width:@w;
+  height:@h;
+}
+.bFl(@w){
+  display:block;
+  width:@w;
+  float:left;
+}
+.bFr(@w){
+  display:block;
+  width:@w;
+  float:right;
+}
+.ib(@w:auto,@h:auto,@tlc:false){
+  display:inline-block;
+  width:@w;
+  height:@h;
+  line-height:@h;
+}
+.ib(@w:auto,@h:auto,@tlc:false) when (@tlc) {
+  text-align:center;
+}
+.ibFl(@w:auto,@h:auto,@tlc:false){
+  display:inline-block;
+  float:left;
+  width:@w;
+  height:@h;
+  line-height:@h;
+}
+.ibFl(@w:auto,@h:auto,@tlc:false) when (@tlc) {
+  text-align:center;
+}
+.ibFr(@w:auto,@h:auto,@tlc:false){
+  display:inline-block;
+  float:right;
+  width:@w;
+  height:@h;
+  line-height:@h;
+}
+.ibFr(@w:auto,@h:auto,@tlc:false) when (@tlc) {
+  text-align:center;
+}
+
+.clear (){
+  &:after {
+    content:'';
+    display:block;
+    font-size:0;
+    width:0;
+    height:0;
+    overflow:hidden;
+    clear:both;
+  }
+}
+
+//particle
+.bg(@url,@l:0,@t:0,@pl:0){
+  padding-left:@pl;
+  background:url('@{imgP}/@{url}') no-repeat @l @t;
+}
+.bgNof(@url,@l,@t,@pl:0){
+  padding-left:@pl;
+  background:url('@{imgP}/@{url}') no-repeat @l @t;
+  text-indent:-9999px;
+}
+.font(@s:auto,@c:#333){
+  font-size:@s;
+  color:@c;
+}
+.lh(@h){
+  height:@h;
+  line-height:@h;
+}
+.opacity(@v,@c){
+  opacity:@v;
+  background:@c;
+}
+.abs(@z:2,@l:auto,@r:auto,@t:auto,@b:auto) {
+  position:absolute;
+  z-index:@z;
+  top:@t;
+  bottom:@b;
+  left:@l;
+  right:@r;
+}
+.fix(@z:2,@l:auto,@r:auto,@t:auto,@b:auto){
+  position:fixed;
+  _position:absolute;
+  *position:absolute;
+  z-index:@z;
+  top:@t;
+  bottom:@b;
+  left:@l;
+  right:@r;
+}
+.overflow(){
+  overflow:hidden;
+  text-overflow:ellipsis;
+}

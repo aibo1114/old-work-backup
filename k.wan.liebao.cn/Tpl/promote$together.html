@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>金山猎豹游戏中心</title>
+		<meta name="keywords" content="" />
+		<meta name="description" content="" />
+		<link rel="stylesheet" type="text/css" href="http://img.wan.ijinshan.com/website/css/common.css">
+		<link rel="stylesheet" type="text/css" href="http://img.wan.ijinshan.com/website/activity/css/2015/together.css?t={{$time}}">
+	</head>
+	<body>
+		<!--[if IE 6]>
+		<script src="http://img.wan.ijinshan.com/thirdpart/belatedPNG/0.0.8a/belatedPNG.js" ></script>
+		<script type="text/javascript">
+		/* EXAMPLE */
+		DD_belatedPNG.fix('.adpic img');
+		</script>
+
+		<![endif]-->
+		<div class="top-link">
+			<div class="top-con">
+	            <div class="title icon"><a target="_blank" href="http://wan.liebao.cn/">金山猎豹游戏中心</a></div>
+				<a href="http://wan.liebao.cn/?frm=tg-gw&referer=yxmsgd" target="_blank">猎豹游戏中心</a> | 
+				<a href="javascript:;" id="com_addfavorite">收藏本站</a>
+			</div>           
+		</div>
+		<div class="wrap together">
+			<!-- head start  -->
+			<div class="header">
+				<div class="nav">
+					<a href="http://wan.liebao.cn/?frm=tg-gw&referer=yxmsgd" target="_blank"  class="btn gamecenter">游戏中心</a> |
+					<a href="http://wan.liebao.cn/gift/?frm=tg-yxlb&referer=yxmsgd" target="_blank">游戏礼包</a> |
+					<a href="http://my.wan.liebao.cn/p/index.html?frm=tg-jfsc&referer=yxmsgd&source=jhy_jifenshop" target="_blank">积分商城</a> 
+				</div>
+				<div class="scroll icon">
+					<div class="scroll-wrap">
+                        <ivolist name="cates['1035']" id="vo">
+    						<a href="{{$vo.field2}}" target="_blank">{{$vo.field1}}</a>
+                        </ivolist>
+					</div>
+				</div>
+			</div>
+			<!-- head end  -->
+			<div class="container">
+				<div class="sidebar">
+					<!-- 用户登录 start -->
+					<div class="login">
+						<script type="text/javascript" src="http://img.wan.ijinshan.com/amd_modules/jquery/1.8.3/jquery.js"></script>
+						<script type="text/javascript" src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+						<script type="text/javascript" src="http://wan.liebao.cn/static/js/p.js"></script>
+						<script type="text/javascript" src="http://wan.liebao.cn/static/js/i-login.js"></script>
+					</div>
+					<div class="new-server">
+						<div class="hd">最新开服表</div>
+						<div class="bd">
+						</div>
+					</div>
+				</div>
+				<!-- main start  -->
+				<div class="main">
+					<div class="task">
+						<div class="hd">
+							<a href="http://my.wan.liebao.cn/tasklist.html?source=jhy_task" class="more" target="_blank">更多 +</a>
+							做任务得积分
+						</div>
+						<div class="bd">
+							<div class="item">
+							</div>
+							<div class="item">
+							</div>
+							<div class="item">
+							</div>
+						</div>
+					</div>
+					<div class="game recommend-game">
+						<div class="hd">
+                            <a href="http://wan.liebao.cn/?frm=tg-gw&referer=yxmsgd" class="more" target="_blank">全部&gt;&gt;</a>
+							<span class="icon">推荐游戏</span>
+							<span class="line"></span>
+						</div>
+						<div class="bd">
+                            <ivolist name="cates['1032']" id="vo" offset="0" length="3" key="k">
+                            	<div class="item">
+                            		<div class="box">
+	                                <a data-url="{{$vo.field2}}" class="img <iif condition='$k neq 3'>islogin</iif>" href="<iif condition='$k eq 3'>{{$vo.field2}}<ielse/>javascript:;</iif>" target="_blank">
+	                                    <img src="{{$vo.field1}}" />
+	                                </a>
+                            	<p class="txt">
+                                	<a data-url="{{$vo.field2}}" href="<iif condition='$k eq 3'>{{$vo.field2}}<ielse/>javascript:;</iif>" target="_blank" class="btn <iif condition='$k neq 3'>islogin</iif>"></a>
+                                	<span>{{$vo.field3}}</span>
+                                </p>
+                                </div>
+                                </div>
+                            </ivolist>
+						</div>
+					</div>
+					<div class="game hot-game">                        
+						<div class="hd">
+                            <a href="http://wan.liebao.cn/?frm=tg-gw&referer=yxmsgd" class="more" target="_blank">全部&gt;&gt;</a>
+							<span class="icon">热门游戏</span>
+							<span class="line"></span>
+						</div>
+						<div class="bd">
+                            <ivolist name="cates['1033']" id="vo" offset="0" length="6" key="k">
+                                <a data-url="{{$vo.field2}}" class="item <iif condition='$k neq 1'>islogin</iif>" href="<iif condition='$k eq 1'>{{$vo.field2}}<ielse/>javascript:;</iif>" target="_blank">
+                                    <span class="box"><img src="{{$vo.field1}}" /></span>
+                                </a>
+                            </ivolist>
+						</div>
+					</div>
+				</div>
+				<!-- main end  -->
+				<div class="clear"></div>
+			</div>
+			<!-- foot start  -->
+			<div class="footer"></div>
+			<!-- foot end  -->
+		</div>
+		<div class="sign-calendar">
+			<link type="text/css" rel="stylesheet" href="http://img.wan.ijinshan.com/website/shop_v1/style/calendar.css?t=201410151740" />
+			<div id="calendar">
+				<div class="hd">
+					<div class="tit">玩家签到</div>
+					<div class="show-date" id="show-date"></div>
+					<a href="javascript:;" class="close">close</a>
+				</div>
+				<div class="bd">
+					<div class="sign-pic"></div>
+					<div class="sign-date">
+					</div>
+				</div>
+				<div class="ft">
+					<div class="tit">签到积分规则</div>
+					<div class="con">
+						<p class="sign-rule">
+						</p>
+					</div>
+				</div>
+			    <div class="adpic">
+			    	<ivolist name="cates['998']" id="vo" offset="0" length="1">
+			    		<a id="adpic" class="trace" target="_blank" href="{{$vo.field2}}"><img src="{{$vo.field1}}" /></a>
+			        </ivolist>
+			    </div>
+
+			</div>			
+		</div>
+        <script type="text/javascript" src="http://img.wan.ijinshan.com/amd_modules/jquery/1.8.3/jquery.js"></script>
+        <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/header/1.0.0/header_liebao.js"></script>
+        <!--<script type="text/javascript" src="http://img.wan.ijinshan.com/website/activity/script/activity/together.js"></script>-->
+        <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/requirejs/2.1.11/require.js" data-main="http://img.wan.ijinshan.com/website/activity/js/together/built/together.js?t={{$time}}"></script>
+        
+        
+	</body>
+</html>

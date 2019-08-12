@@ -1,0 +1,242 @@
+extends ./inc/main
+block css
+    link(type='text/css',rel='stylesheet',href='http://img.wan.ijinshan.com/vip/css/index.css')
+block js
+    script(type='text/javascript').
+        (function(){
+            var winW=document.body.clientWidth;
+            var bannerW=$('.li-banner-index:visible img').width();
+            var timer=setInterval('imgLoop()',4000);
+            var bannerMl=(bannerW-winW)/2;
+            bannerMl='-'+bannerMl+'px';
+            if(bannerW>winW){
+                $('.li-banner-index img').css('margin-left',bannerMl);
+            }
+
+            $('.banner-index').mouseenter(function(){
+               clearInterval(timer);
+            }).mouseleave(function(){
+                timer=setInterval('imgLoop()',4000);
+            });
+
+            $('.btn-banner-index').click(function(){
+                var ndx=$(this).index();
+                $(this).addClass('currentbtn-banner-index').siblings('.btn-banner-index').removeClass('currentbtn-banner-index');
+                $('.li-banner-index:eq(' + ndx + ')').fadeIn().siblings('.li-banner-index').fadeOut();
+            });
+
+            /*login*/
+
+            if (!ks_user || ks_user.length == 0) {
+                $('#isLogin').remove();
+                $('#unLogin').show();
+            } else {
+                $('#isLogin').show();
+                $('#unLogin').remove();
+                fillUinfo(ks_user.showname);
+            }
+            DD_belatedPNG.fix('.png_bg');
+
+
+            $('[the-id=loginBtn]').click(function () {
+                Login.show();
+            });
+
+            $('.li-btn-login a,.speed-txt-login').click(function (e) {
+                if ($(this).parents('.li-btn-login').hasClass('disabled')) {
+                    e.preventDefault();
+                }
+            });
+
+            $('.speed-txt-login').click(function(e){
+                if ($(this).hasClass('disabled')) {
+                    e.preventDefault();
+                }
+            });
+
+            $('.li-btn-login').hover(function () {
+                if ($(this).hasClass('disabled')) {
+                    $(this).children('.tip-btn-disabled').show();
+                }
+            }, function () {
+                $(this).children('.tip-btn-disabled').hide();
+            });
+
+            function fillUinfo(username) {
+                $('#username').text(username);
+
+                $.ajax({
+                    url: 'http://vip.wan.liebao.cn/vip/user/api/info',
+                    type: 'get',
+                    dataType: 'jsonp',
+                    success: function (res) {
+                        var ret = res.ret;
+                        var data = res.data;
+                        var status =data.status;
+                        var obtainway=data.obtain_ways;
+                        var endTime=data.end_time.replaceAll('/','-');
+                        var pPercent;
+                        var percentV;
+                        var grouthLimit=parseInt( data.grouth_next_level_min )|| 'MAX';
+
+                        parseInt(data.grouth_next_level_min) ? pPercent=(parseInt(data.grouth)/parseInt(data.grouth_next_level_min))*100 : pPercent='100';
+                        percentV=pPercent+'%';
+                        if(ret!=1 || status==0){
+                            $('[the-id=accessDom]').remove();
+                            $('[the-id=accessBtns]').remove();
+                            $('.speed-txt-login').attr('href','/payOpen.html');
+                            $('.pbar-login').addClass('grey');
+                            $('#vIcon').css('background', 'url(http://img.wan.ijinshan.com/vip/images/logo_default.png)');
+                            return false;
+                        }
+                        obtainway == 2 || status==2 ? $('[the-id=accessBtns]').remove() : $('[the-id=unAcesnBtn]').remove();
+                        if(obtainway==2 || status==2){
+                            $('.speed-txt-login').attr('href','/payOpen.html');
+                        }
+
+                        $('#vIcon').css('background','url('+data.icon_address+')');
+                        $('.process-pbar-login').css('width',percentV);
+                        $('[the-id=unAcesnDom]').remove();
+
+                        $('#vLevel').text(data.level_display);
+                        $('#vProcess').text(data.grouth);
+                        $('#vLimit').text(grouthLimit);
+                        $('#vSpeed').text(data.grouth_speed);
+                        //$('#vIcon').css('background',data.icon_address);
+                        $('#vEndTime').text(endTime);
+                        if (data.is_max_role) {
+                            $('.li-btn-login.up').addClass('disabled');
+                            if(obtainway!=2 && status!=2){
+                                $('.speed-txt-login').addClass('disabled');
+                            }
+                        }
+                        if (data.is_max_time) {
+                            $('.li-btn-login.re').addClass('disabled');
+                        }
+
+                        /*
+                        if(data.role_id=='7'){
+                            $('.li-btn-login.re').addClass('mt70');
+                            $('.li-btn-login.up').remove();
+                        }
+                        */
+                    }
+                });
+            }
+        })();
+
+        function imgLoop() {
+            var lst = 3;
+            var ndx = $('.li-banner-index:visible').index();
+            ndx == lst ? ndx = 0 : ndx++
+            $('.li-banner-index:eq(' + ndx + ')').fadeIn().siblings('.li-banner-index').fadeOut();
+            $('.btn-banner-index:eq('+ndx+')').addClass('currentbtn-banner-index').siblings('.btn-banner-index').removeClass('currentbtn-banner-index');
+        }
+block variable
+    -var curPage='index'
+block content
+    .banner-index
+        ul.btns-banner-index
+            li.btn-banner-index.currentbtn-banner-index
+            li.btn-banner-index
+            li.btn-banner-index
+            li.btn-banner-index
+        ul.l-banner-index
+            li.li-banner-index: img(src='http://img.wan.ijinshan.com/vip/images/banner_03.jpg')
+            li.li-banner-index.none: img(src='http://img.wan.ijinshan.com/vip/images/banner_03.jpg')
+            li.li-banner-index.none: img(src='http://img.wan.ijinshan.com/vip/images/banner_03.jpg')
+            li.li-banner-index.none: img(src='http://img.wan.ijinshan.com/vip/images/banner_03.jpg')
+    .main
+        .login-vip.login-index.none.png_bg#isLogin
+            h4.welcome-login 欢迎你！
+            h3.name-login
+                span#username.username-login
+                span.icon-login#vIcon
+                a.logout-login(href='javascript:void(0);',the-id="logout") 【退出】
+            .txt-login V等级：<span id="vLevel">V0</span>（<span id="vProcess">0</span>/<span id="vLimit">0</span>)
+            .pbar-login
+                span.process-pbar-login
+            .txt-login <a class="speed-txt-login" href="/payUp.html">加速</a>成长速度：<span id="vSpeed">0</span>点/天
+            .txt-login(the-id='accessDom') 服务到期：<span id="vEndTime"></span>
+            .txt-login(the-id='unAcesnDom') 您还未开通“豹会员”
+            a.btn-access-login(href='/payOpen.html',the-id='unAcesnBtn') 开通豹会员
+            ul.l-btn-login(the-id='accessBtns')
+                li.li-btn-login.re
+                    p.tip-btn-disabled.none 您当前无剩余续费时长
+                    a(href='/payRe.html') 续费会员服务
+                li.li-btn-login.up
+                    p.tip-btn-disabled.none 您当前已是最高身份，无需升级
+                    a(href='payUp.html') 升级会员服务
+
+        .login-vip.login-index.none.png_bg#unLogin
+            a.btn-login.png_bg(href='javascript:void(0);',the-id='loginBtn') 用户登录
+            p.tip-login 还没有开通<span class="orange">豹会员</span>？你out了！
+            h4.title-intro-login 豹会员提供
+            ul.l-intro-login
+                li.li-intro-login 丰富优惠赠送
+                li.li-intro-login 超豪华大礼包
+                li.li-intro-login 尊享特权服务
+                li.li-intro-login 海量游戏特权
+                .clear
+            a.btn-access-login(href='javascript:void(0);',the-id='loginBtn') 开通豹会员
+
+        .mod-vip
+            .hd-vip
+                h3.title-hd-vip 平台特权
+            .bd-vip
+                ul.l-intro-index
+                    li.li-intro-index
+                        a.link-intro-index(href='/privilege.html')
+                            .poster-intro-index.coupon
+                            h3.title-intro-index 优惠劵特权
+                            p.text-title-index 优惠劵大放送<br />让你充值省！省！省！
+                    li.li-intro-index
+                        a.link-intro-index(href='/privilege.html')
+                            .poster-intro-index.identity
+                            h3.title-intro-index 身份特权
+                            p.text-title-index 尊贵专属身份标识<br />气质与颜值并存
+                    li.li-intro-index
+                        a.link-intro-index(href='/privilege.html')
+                            .poster-intro-index.birthday
+                            h3.title-intro-index 生日特权
+                            p.text-title-index 游戏礼包+平台礼包<br />Happy Birthday！
+                    li.li-intro-index.last
+                        a.link-intro-index(href='/privilege.html')
+                            .poster-intro-index.active
+                            h3.title-intro-index 活动特权
+                            p.text-title-index 精彩活动享不停<br />各种大礼等你来拿
+        .mod-vip
+            .hd-vip
+                h3.title-hd-vip 豹会员特权游戏
+                h4.intro-hd-vip 开通豹会员独享所有游戏特权
+            .bd-vip
+                ul.l-lg-index
+                    li.li-lg-index
+                        a.link-lg-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/lg_1.png')
+                    li.li-lg-index.even
+                        a.link-lg-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/lg_2.png')
+                    li.li-lg-index
+                        a.link-lg-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/lg_3.png')
+                    li.li-lg-index.even
+                        a.link-lg-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/lg_4.png')
+                    .clear
+                ul.l-sm-index
+                    li.li-sm-index
+                        a.link-sm-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/sm_1.png')
+                    li.li-sm-index
+                        a.link-sm-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/sm_2.png')
+                    li.li-sm-index
+                        a.link-sm-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/sm_3.png')
+                    li.li-sm-index.last
+                        a.link-sm-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/sm_4.png')
+                    li.li-sm-index
+                        a.link-sm-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/sm_5.png')
+                    li.li-sm-index
+                        a.link-sm-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/sm_6.png')
+                    li.li-sm-index
+                        a.link-sm-index(href='javascript:void(0);'): img(src='http://img.wan.ijinshan.com/vip/images/sm_7.png')
+                    li.li-sm-index.last
+                        a.link-sm-index(href='javascript:void(0);')
+                            span.more 更多游戏>>
+                    .clear
+

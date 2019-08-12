@@ -1,0 +1,842 @@
+body {
+    min-width: 1900px;
+}
+
+img {
+    border: none;
+}
+
+.content, .headers {
+    width: 1098px;
+    margin: 0 auto;
+}
+
+/*headers*/
+.header {
+    position: relative;
+    z-index: 999;
+    background: linear-gradient(#FFFFFF, #DEDEDE);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#FFFFFF, endColorstr=#DEDEDE);
+}
+
+.headers {
+    line-height: 60px;
+    height: 60px;
+}
+
+.user_register,.usercon{
+    display: none;
+}
+.headerLogo {
+    margin-top: 7px;
+    width: 202px;
+    height: 53px;
+    background: url("../images/headerLogo.png") no-repeat;
+    background-size: 90% 90%;
+    float: left;
+}
+
+.users {
+    float: right;
+}
+
+.user_register{
+    font-size: 12px;
+    margin-right: 30px;
+}
+.user_register a{
+    color: #4D4D4D;
+}
+.user_register a:hover{
+    color: red;
+}
+
+.users .on_a {
+    display: inline-block;
+    width: 86px;
+    height: 28px;
+    background: #FFC300;
+    color: #4D4D4D;
+    line-height: 28px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.users .useresc {
+    width: 65px;
+    height: 28px;
+    color: #4D4D4D;
+    display: inline-block;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    margin: 0 15px;
+    border: none;
+}
+
+.usercon, .username {
+    font-size: 12px;
+}
+
+/*END headers*/
+
+.back_logo {
+    width: 100%;
+    height: 2828px;
+    margin-top: -60px;
+}
+
+.play_time {
+    position: absolute;
+    top: 430px;
+    left: 430px;
+    width: 626px;
+    height: 56px;
+    line-height: 56px;
+}
+
+.play_times {
+    position: absolute;
+    left: 50%;
+    margin-left: -315px;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.play_time_logo {
+    width: 100%;
+}
+
+.game_time a {
+    position: absolute;
+    top: 560px;
+    left: 410px;
+}
+
+.count_down {
+    position: absolute;
+    top: 535px;
+    left: 643px;
+    font-size: 35px;
+    color: #ffffff;
+}
+
+.count_down1 {
+    position: absolute;
+    top: 50px;
+    left: 25px;
+    display: inline-block;
+    /*width: 140px;*/
+    /*height: 140px;*/
+    /*border-radius: 50%;*/
+    /*text-align: center;*/
+    /*line-height: 140px;*/
+}
+
+.count_down2 {
+    position: absolute;
+    top: 50px;
+    left: 160px;
+    /*width: 537px;*/
+    /*height: 60px;*/
+    /*border-radius: 15px;*/
+    /*text-align: right;*/
+    /*line-height: 60px;*/
+}
+
+/*content */
+.content {
+    position: absolute;
+    top: 745px;
+    left: 390px;
+    font-size: 13px;
+}
+
+/*content END*/
+
+/*content_reach */
+.content_reach {
+    position: relative;
+    top:0px;
+    height: 230px;
+}
+
+.reachText {
+    width: 1098px;
+    height: 62px;
+    line-height: 71px;
+    text-align: center;
+    background: url("../images/reachTextLogo.png") no-repeat;
+}
+.dqdj{
+	position:absolute;
+	top:5px;
+	width:250px;
+    color: red;
+	font-size:18px;
+    line-height:34px;
+	height:34px;
+	}
+.content_reach table {
+    width: 549px;
+    color: #EDAE38;
+    background: #2E1713;
+    border: 1px solid #5A2A1A;
+}
+
+.content_reach .content_tab1 {
+    float: left;
+    border-right: none;
+}
+
+.content_reach .content_tab2 {
+    float: right;
+    border-left: none;
+}
+
+.content_reach tr {
+    border-bottom: 1px solid #5A2A1A;
+}
+
+.content_tbody tr {
+    color: #FFEAE5;
+}
+
+.content td, .content th {
+    padding: 0 30px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.word_integral {
+    padding-left: 45px;
+    height: 40px;
+    line-height: 40px;
+    color: #FFEAE5;
+}
+
+.integral {
+    margin-right: 50px;
+}
+
+.credits_exchange {
+    font-size: 14px;
+    color: red;
+    border-bottom: 1px solid red;
+}
+
+.fetch1 {
+    display: inline-block;
+    background: red;
+    color: #F9B73A;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.fetch2 {
+    display: inline-block;
+    color: #DB9191;
+    background: #6D1D1D;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.fetch3 {
+    color: #A37166;
+    cursor:default;
+}
+
+/*content_reach END*/
+
+/*content_ranking*/
+.content_ranking {
+    position: relative;
+    top: 110px;
+}
+
+.rankingText {
+    width: 1098px;
+    height: 62px;
+    background: url("../images/reachTextLogo.png") no-repeat;
+}
+
+.rankingText img {
+    position: absolute;
+    top: 18px;
+    left: 50%;
+    margin-left: -95px;
+}
+
+.content_ranking table {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    background: linear-gradient(#3C1A14, #2F1913);
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#3C1A14, endColorstr=#2F1913);
+}
+
+.content_ranking th, .content_ranking td {
+    border: 1px solid #5A2A1A;
+}
+
+.content_ranking td {
+    height: 118px;
+    line-height: 118px;
+}
+
+.ranking_table {
+    color: #FFEAE5;
+}
+
+.Htext2 {
+    background: #311913;
+    color: #C78F30;
+}
+
+.content_integral {
+    float: right;
+}
+
+.hint {
+    position: absolute;
+    top: 787px;
+    color: #9C6956;
+}
+
+#four td {
+    line-height: 30px;
+}
+
+#four .four_td1 {
+    height: 320px;
+    line-height: 320px;
+}
+
+.lists p {
+    position: absolute;
+    width: 120px;
+    text-align: center;
+}
+
+.lists1 {
+    top: 450px;
+}
+
+.lists2 {
+    top: 480px;
+}
+
+.lists3 {
+    top: 510px;
+}
+
+.lists4 {
+    top: 540px;
+}
+
+.lists5 {
+    top: 570px;
+}
+
+.lists6 {
+    top: 600px;
+}
+
+.lists7 {
+    top: 630px;
+}
+
+.ranking_top span, .ranking_tow span, .ranking_three span, .ranking_four span {
+    padding-left: 30px;
+}
+
+.ranking_top .ranking_top1 {
+    position: relative;
+    top: -10px;
+    left: 10px;
+}
+
+.ranking_top2, .ranking_two2, .ranking_three2, .ranking_four2 {
+    position: absolute;
+    right: 45px;
+}
+
+.ranking_top3, .ranking_two3, .ranking_three3, .ranking_four3 {
+    position: absolute;
+    padding-top: 10px;
+    right: 388px;
+}
+
+.ranking_two .ranking_two1 {
+    position: relative;
+    top: -10px;
+    left: -34px;
+}
+
+.ranking_three .ranking_three1 {
+    position: relative;
+    top: -10px;
+    left: -43px;
+}
+
+.ranking_four .ranking_four1 {
+    position: relative;
+    top: -10px;
+    left: -111px;
+}
+
+.ranking_top {
+    background: url("../images/award1.png") no-repeat 55px;
+}
+
+.ranking_two {
+    background: url("../images/award2.png") no-repeat 25px;
+}
+
+.ranking_three {
+    background: url("../images/award3.png") no-repeat 66px;
+}
+
+.ranking_four {
+    background: url("../images/award4.png") no-repeat 20px;
+}
+.Htext1{
+    margin-top: -10px;
+}
+/*content_ranking END*/
+
+/*content_QR*/
+.content_QR {
+    position: relative;
+    top: 880px;
+}
+
+.content_QR .content_QRText {
+    width: 1098px;
+    height: 62px;
+    background: url("../images/reachTextLogo.png") no-repeat;
+}
+
+.content_QRText .QRText_logo {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    margin-left: -108px;
+}
+
+.QR {
+    font-size: 14px;
+    border: 1px solid #5A2A1A;
+    border-top:none ;
+    text-align: center;
+    color: #97817C;
+    position: absolute;
+    width: 1096px;
+    top: 63px;
+    padding-bottom: 15px;
+    background: #3D291B;
+    height: 300px;
+        background: #2F1813;
+}
+
+.QR .QR_text1 {
+    color: #F8B739;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+/*content_QR END*/
+
+/*content_rule*/
+.content_rule {
+    color: #FFEAE5;
+    position: relative;
+    top: 100px;
+    width: 1098px;
+    height: 230px;
+    border: 1px solid #5A2A1A;
+    background: #2E1713;
+}
+
+.rule {
+    text-align: center;
+    line-height: 40px;
+    position: absolute;
+    top: -20px;
+    left: 40px;
+    width: 160px;
+    height: 40px;
+    background: #5F352D;
+    font-size: 18px;
+}
+
+.rule_rgb1 {
+    color: #FFA067;
+}
+
+.rule_rgb2 {
+    color: #815545;
+}
+
+.content_rule p {
+    padding-left: 40px;
+    line-height: 25px;
+}
+
+.repeats {
+    margin-left: 65px;
+}
+
+/*content_rule END*/
+
+/*footer*/
+body .footer {
+    position: absolute;
+    top: 2640px;
+    color: #ffffff;
+    width: 100%;
+    min-width: 1900px;
+    text-align: center;
+    font-size: 12px;
+    height: 166px;
+    background: #040400;
+}
+
+.footer_1 span {
+    display: inline-block;
+    padding: 13px 33px;
+}
+
+.footer_2 span {
+    display: inline-block;
+    padding: 28px 8px 18px 8px;
+}
+
+.service{
+    color: #2E5EC7;
+}
+.x {
+    width: 895px;
+    border: 1px solid #592919;
+    margin: auto;
+}
+
+body .footer p span {
+    margin-left: 32px;
+}
+.brs{
+    padding: 0 20px;
+    }
+/*footer END*/
+
+/*elevator µçÌÝ*/
+.elevator .elevator_imgs {
+    position: fixed;
+    top: 335px;
+    left: 1500px;
+    z-index: 999;
+}
+
+.anchor {
+    position: fixed;
+    top: 385px;
+    left: 1514px;
+    width: 110px;
+    height: 260px;
+    background: #3F231D;
+    border: 2px solid #3F231D;
+}
+
+.anchor ul {
+    margin-top: 27px;
+}
+
+.anchor ul a {
+    display: block;
+    height: 45px;
+    width: 110px;
+    line-height: 45px;
+    color: #D0B9B4;
+}
+
+.anchor ul li {
+    text-align: center;
+    background: #583329;
+    border-bottom: 2px solid #3F231D;
+    font-size: 14px;
+}
+
+.nulls {
+    display: none;
+}
+.rule_p {
+    position: absolute;
+    top: 25px;
+}
+
+/*elevator µçÌÝ END*/
+
+@media screen and (max-width: 1366px) {
+    body {
+        min-width: 1348px;
+        background: #1C0A03;
+    }
+
+    .back_logo {
+        width: 100%;
+        height: 1980px;
+        margin-top: -40px;
+    }
+
+    .play_time_logo {
+        width: 70%;
+    }
+
+    .play_time {
+        top: 320px;
+        left: 315px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .play_times {
+        position: absolute;
+        left: 50%;
+        margin-left: -355px;
+        font-size: 16px;
+        color: #ffffff;
+    }
+
+    .start_game img {
+        width: 146px;
+    }
+
+    .game_time a {
+        top: 420px;
+        left: 300px;
+    }
+
+    .count_down {
+        top: 400px;
+        left: 465px;
+        font-size: 25px;
+    }
+
+    .count_down img{
+        width: 413px;
+    }
+
+    .count_down1 {
+        top: 35px;
+        left: 15px;
+        width: 100px;
+        height: 100px;
+    }
+
+    .count_down2 {
+        position: absolute;
+        top: 35px;
+        left: 115px;
+    }
+
+    .content {
+        top: 550px;
+        left: 280px;
+        font-size: 13px;
+    }
+
+    .lists p {
+        width: 80px;
+    }
+
+    .reachText {
+        width: 769px;
+        height: 44px;
+        line-height: 55px;
+        background: url("../images/reachTextLogo.png") no-repeat -150px;
+    }
+
+    .content_reach table {
+        width: 385px;
+    }
+
+    .content, .headers {
+        width: 770px;
+        margin: 0 auto;
+    }
+
+    .content td, .content th {
+        padding: 0;
+        padding-left: 15px;
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .rankingText {
+        width: 769px;
+        height: 44px;
+        background: url("../images/reachTextLogo.png") no-repeat -115px;
+    }
+
+    .rankingText img {
+        top: 12px;
+    }
+
+    .content_ranking table {
+        font-size: 12px;
+        top: 44px;
+        background: linear-gradient( #3D291B,#48291C);
+        filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#3D291B, endColorstr=#48291C);
+    }
+
+    .content_ranking td {
+        height: 118px;
+        line-height: 118px;
+        padding: 0 15px;
+    }
+
+    .content_ranking th {
+        padding: 0 15px;
+    }
+
+    .ranking_top {
+        background: url("../images/award1.png") no-repeat 40px;
+    }
+
+    .ranking_top .ranking_top1 {
+        position: relative;
+        top: -25px;
+        left: 57px;
+    }
+
+    .ranking_two .ranking_two1 {
+        top: -22px;
+        left: 20px;
+    }
+
+    .ranking_two {
+        background: url("../images/award2.png") no-repeat 10px;
+    }
+
+    .ranking_three {
+        background: url(../images/award3.png) no-repeat 55px;
+    }
+
+    .ranking_three .ranking_three1 {
+        top: -22px;
+        left: 10px;
+    }
+
+    .ranking_four .ranking_four1 {
+        top: -22px;
+        left: -29px;
+    }
+
+    .ranking_top3, .ranking_two3, .ranking_three3 {
+        right: 248px;
+    }
+
+    .ranking_four3 {
+        right: 235px;
+    }
+
+    .ranking_top span, .ranking_tow span, .ranking_three span, .ranking_four span {
+        padding-top: 5px;
+    }
+
+    .content_QR .content_QRText {
+        width: 769px;
+        height: 44px;
+        background: url("../images/reachTextLogo.png") no-repeat -145px;
+    }
+
+    .content_QRText .QRText_logo {
+        top: 10px;
+    }
+
+    .QR .QR_text1 {
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        margin-left: -265px;
+    }
+
+    .QR img {
+        margin-top: 50px;
+    }
+
+    .QR {
+    width: 767px;
+    top: 45px;
+    background: #3D291B;
+    height: 265px;
+    background: #2F1813;
+    }
+
+    .content_rule {
+        width: 768px;
+        font-size: 12px;
+    }
+
+
+    body .footer {
+        min-width: 1348px;
+        top: 2340px;
+    }
+    .footer_1{
+        margin-top: 15px;
+    }
+    .hint {
+        top: 770px;
+    }
+
+    .elevator .elevator_imgs {
+        top: 210px;
+        left: 1060px;
+        z-index: 123;
+    }
+
+    .anchor {
+        top: 260px;
+        left: 1080px;
+        width: 100px;
+        z-index: 122;
+    }
+
+    .anchor ul a {
+        display: block;
+        height: 45px;
+        width: 100px;
+    }
+
+    .nulls {
+        display: inline;
+    }
+
+    .footer_2 span {
+        display: inline-block;
+        padding: 10px 8px 10px 8px;
+    }
+    .word_integral {
+        padding-left: 25px;
+    }
+    .footer_1{
+        margin-top: 20px;
+    }
+    .headerLogo {
+        background-size: 85% 85%;
+    }
+    .repeats {
+        margin-left: 60px;
+    }
+    .Htext1{
+        margin-top: -15px;
+    }
+}

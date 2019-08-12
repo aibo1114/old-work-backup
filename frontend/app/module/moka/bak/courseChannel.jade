@@ -1,0 +1,131 @@
+extends ./inc/main
+block style
+    :less(minify=true)
+        .mod-banner {
+            position:relative;
+            .hd-mod-banner {
+                position:absolute;
+                z-index:2;
+                background:rgba(85,80,81,.8);
+                top:50%;
+                left:2px;
+                padding:40px 80px;
+                margin-top:-80px;
+                text-align:center;
+                h3 {
+                    color:#f6e808;
+                    font-size:2em;
+                }
+                h4 {
+                    color:#949494;
+                    font-size:1.6em;
+                    font-weight:normal;
+                }
+                .dec {
+                    display:block;
+                    position:absolute;
+                    z-index:3;
+                    width:20px;
+                    height:100%;
+                    background:rgba(85,80,81,.8);
+                    left:-22px;
+                    top:0;
+                    &:before {
+                        content:'';
+                        display:block;
+                        position:absolute;
+                        top:-20px;
+                        left:0;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 0 20px 20px;
+                        border-color: transparent transparent #352d2f transparent;
+                    }
+                    &:after {
+                        content: '';
+                        display: block;
+                        position: absolute;
+                        bottom: -20px;
+                        left: 0;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 20px 20px 0;
+                        border-color: transparent #352d2f transparent transparent;
+                    }
+                }
+
+            }
+        }
+
+        .panel-course {
+            margin:30px 0 0 0;
+            border:none;
+            box-shadow:none;
+            padding:0;
+            .panel-body {
+                padding:0;
+                .table {
+                    margin:0;
+                    th {
+                        background:#f0f0f0;
+                    }
+                    td {
+                        background:#fff;
+                    }
+                    th,td {
+                        vertical-align:middle;
+                        border: 1px solid #bf9225;
+                        padding:20px 8px;
+                        text-align:center;
+                        font-size:1em;
+                        color:#2a2a2a;
+                    }
+                }
+            }
+            .panel-footer {
+                background:none;
+                border:none;
+                margin:0;
+                padding:30px 0 60px;
+                .btn {
+                    display:block;
+                    width:18%;
+                    margin:auto;
+                    font-size:1.4em;
+                    letter-spacing:1px;
+                    line-height:2.4em;
+                    color:#fff;
+                    background:linear-gradient(to bottom, #f47ba3, #f05c78);
+                }
+            }
+        }
+block content
+    .row
+        .col-md-12
+            .mod-banner
+                .hd-mod-banner
+                    h3= course.title
+                    h4= course.subTitle
+                    span.dec
+                .bd-mod-banner
+                    img.img-responsive(src='#{resPath}/#{course.refFile.head[0]}')
+    .row
+        .col-md-12
+            .panel.panel-course
+                .panel-body
+                    if course.courseContent
+                        table.table.table-striped
+                            tr
+                                th 课时
+                                th 课程目录
+                                th 费用/授课方式
+                            each it,i in course.courseContent
+                                tr
+                                    td 第#{it.row}课时
+                                    td= it.title
+                                    if i==0
+                                        td(rowspan='#{course.courseContent.length}') #{course.price}元&nbsp;/&nbsp;线上授课
+                .panel-footer
+                    a(href='javascript:void(0);').btn.btn-moka-1 立即购买

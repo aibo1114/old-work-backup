@@ -1,0 +1,99 @@
+include ../../_inc/mixin
+extends ../../main
+
+mixin appBlock(title)
+    .panel-app.block&attributes(attributes)
+        .panel-heading
+            h3.panel-title= title
+        .panel-body
+            if block
+                block
+mixin appThumbs(imgIt,title,txt,href)
+    if !href
+        -href='javascript:void(0);'
+    .thumbs-app&attributes(attributes)
+        a(href='#{href}', target='_blank')!= f.imgItem(imgIt, c, 'head')
+        .caption
+            h3.title: a(href='#{href}', target='_blank')= title
+            p: a(href='#{href}', target='_blank')= txt
+mixin appThumb(obj)
+    if obj
+        .thumb-app
+            a(href='#{obj.href}')
+                != f.imgItem(obj, c, 'head')
+            .caption
+                h3.title: a(href='#{obj.href}')= obj.title
+                p= obj.txt
+mixin simlarPost(obj)
+    .thumbs-app&attributes(attributes)
+        a(href='/post/#{obj._id}',target='_blank')!= f.imgItem(obj, c, 'head')
+        .caption
+            h3.title: a(href='/post/#{obj._id}',target='_blank')= obj.title
+            p: a(href='/post/#{obj._id}',target='_blank')= obj.brief
+
+//mob
+mixin mobItem(obj)
+    a(href='#{_e}/#{obj._id}').media
+        !=f.imgItem(obj, c, 'head', 'markImg')
+        h4= obj.title
+        .author= obj.author
+        p= obj.brief
+
+block ctn
+    body
+        header
+            .container
+                nav.nav.navbar-default
+                    .container-fluid
+                        .navbar-header
+                        .collapse.navbar-collapse
+                            ul.nav.navbar-nav
+                                each it,i in c.nav
+                                    -var itemCls=''
+                                    -if(index==it.code){ itemCls='active' }
+                                    li(class='#{itemCls}'): a(href="#{it.href}")= it.label
+                            #topBar
+        .container
+            #static
+                block content
+            .container
+                #content
+        footer
+            .top
+                .container
+                    .row
+                        .col-md-8
+                            p= introduction
+                            p= idea
+                        .col-md-4
+            .btm
+                .container
+                    p!= copyright
+
+block commonjs
+    :coffee(bare=true,minify=true)
+        window.onload = ->
+            if $('.box-bar-fix')[0] != undefined
+                boxTop = parseInt($('.box-bar-fix').offset().top)
+
+                boxLeft = parseInt($('.box-bar-fix').offset().left)
+
+                starTop = parseInt($('.star-bar-fix').offset().top)
+
+                w=parseInt($('.star-bar-fix').width())+30
+
+
+                $(window).scroll ->
+                    sT = parseInt($(window).scrollTop())
+                    t=starTop-boxTop
+                    l=boxLeft+'px'
+
+                    if sT >= t
+                        $('.box-bar-fix').addClass('box-bar-fixed').css
+                            'top':'-'+t+'px'
+                            'left':l
+                            'width':w
+                    else
+                        $('.box-bar-fix').removeClass('box-bar-fixed').css
+                            'top': 0
+                            'left':0

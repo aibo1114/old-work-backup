@@ -1,0 +1,67 @@
+-var td1 = ['icon_v1_15','icon_v1_17','icon_v1_19','icon_v1_21','icon_v1_23','icon_v1_25','icon_v1_27','icon_v1_29','icon_v1_31','icon_v1_33']
+-var td2 = ['icon_v1_45','icon_v1_46','icon_v1_47','icon_v1_48','icon_v1_49','icon_v1_50','icon_v1_51','icon_v1_52','icon_v1_53','icon_v1_54']
+-var td3 = ['icon_v1_65','icon_v1_66','icon_v1_67','icon_v1_68','icon_v1_69','icon_v1_70','icon_v1_71','icon_v1_72','icon_v1_73','icon_v1_74']
+-var td4 = ['10元','30元','100元','200元','20%折扣','10元','30元','100元','200元','20%折扣']
+.mod-vip
+    .hd-vip
+        h3.title-hd-vip 平台特权
+    .bd-vip
+        table.table-all-pri(align='center',border='0',cellspacing="0",cellpadding="0")
+            tr
+                th.th-grey(width=134,bgcolor='#b3b3b3') V会员身份
+                th.th-yellow(colspan=5,bgcolor='#ffbb63') 黄金会员
+                th.th-blue(colspan=5,bgcolor='#7fd7ff') 铂金会员
+                th.th-grey(width=94,bgcolor='#b3b3b3') 详情
+            tr
+                td(bgcolor='#fafafa',style='font-size:16px;') 特权名称
+                for it in td1
+                    td: img(src='http://img.wan.ijinshan.com/vip/images/#{it}.png')
+                td
+                    // a(href='javascript:void(0);') 查看
+            tr
+                td(bgcolor='#fafafa',style='font-size:16px;') 月费身份标识
+                for it in td2
+                    td: img(src='http://img.wan.ijinshan.com/vip/images/#{it}.png')
+                td: a.identy-check(the-id='check-d',href='javascript:void(0);') 查看
+            tr
+                td(bgcolor='#fafafa',style='font-size:16px;') 年费身份标识
+                for it in td3
+                    td: img(src='http://img.wan.ijinshan.com/vip/images/#{it}.png')
+                td: a.identy-check(the-id='check-d',href='javascript:void(0);') 查看
+            tr
+                td(rowspan=2,bgcolor='#fafafa',style='font-size:16px;') 优惠券赠送
+                for it in td4
+                    td= it
+                td(rowspan=2): a.coupon-check(the-id='check-d',href='javascript:void(0);') 查看
+            tr
+                td(colspan=5) <span class="hot">2张</span>/每月
+                td(colspan=5) <span class="primary">3张</span>/每月
+            tr
+                td(bgcolor='#fafafa',style='font-size:16px;') 月费生日礼包
+                td(colspan=5) <span class="hot">5%</span>折扣优惠券+游戏大礼包
+                td(colspan=5) <span class="hot">10%</span>折扣优惠券+游戏大礼包
+                td: a.birPackage-check(the-id='check-d',href='javascript:void(0);') 查看
+            tr
+                td(bgcolor='#fafafa',style='font-size:16px;') 年费生日礼包
+                td(colspan=5) <span class="primary">10%</span>折扣优惠券+游戏大礼包
+                td(colspan=5) <span class="primary">15%</span>折扣优惠券+游戏大礼包
+                td: a.birPackage-check(the-id='check-d',href='javascript:void(0);') 查看
+.mod-vip
+    .hd-vip
+        h3.title-hd-vip 游戏特权
+    .bd-vip
+        .imgBox.large.img-hover: img(src='http://img.wan.ijinshan.com/vip/images/pirA_3.png')
+.mod-vip
+    .hd-vip
+        h3.title-hd-vip 活动特权
+    .bd-vip
+        .imgBox.large.img-hover: img(src='http://img.wan.ijinshan.com/vip/images/pirA_3.png')
+.clear
+.upgrade-v
+    a.link-btn-open(href='/payOpen.html') 开通会员服务
+    ul.l-btn-upgrade.none
+        li.li-btn-upgrade: a.link-btn-upgrade.continue(href='/payRe.html') 续费会员服务
+        li.li-btn-upgrade: a.link-btn-upgrade.up(href='/payUp.html') 升级会员服务
+    img(src='http://img.wan.ijinshan.com/vip/images/priA_4.png')
+
+

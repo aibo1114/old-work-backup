@@ -1,0 +1,68 @@
+@imgP:'http://static.web.anqu.com/resource/1000/images';
+
+//stable
+.clear (){
+  &:after {
+    content:'';
+    display:block;
+    font-size:0;
+    width:0;
+    height:0;
+    overflow:hidden;
+    clear:both;
+  }
+}
+
+.lh(@h){
+  height:@h;
+  line-height:@h;
+}
+.h(@h){
+  height:@h;
+}
+
+.bg(@url,@l:0,@t:0){
+  background:url('@{imgP}/@{url}') no-repeat @l @t;
+}
+
+.font(@s:auto,@c:#333){
+  font-size:@s;
+  color:@c;
+}
+
+.lh(@h){
+  height:@h;
+  line-height:@h;
+}
+
+.abs(@z:2,@l:auto,@r:auto,@t:auto,@b:auto) {
+  position:absolute;
+  z-index:@z;
+  top:@t;
+  bottom:@b;
+  left:@l;
+  right:@r;
+}
+
+.fix(@z:2,@l:auto,@r:auto,@t:auto,@b:auto){
+  position:fixed;
+  _position:absolute;
+  *position:absolute;
+  z-index:@z;
+  top:@t;
+  bottom:@b;
+  left:@l;
+  right:@r;
+}
+
+//可调整
+.overflow(){
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.block(@w,@h){
+  display:block;
+  width:@w;
+  height:@h;
+}

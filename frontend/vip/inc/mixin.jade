@@ -1,0 +1,81 @@
+//pay
+mixin item(title)
+    li.li-form-pay
+        label.label-form-pay&attributes(attributes)= title
+        .group-form-pay
+            if block
+                block
+        .clear
+
+mixin item2(title)
+    li.li-form-pay&attributes(attributes)
+        label.label-form-pay= title
+        .group-form-pay
+            if block
+                block
+        .clear
+
+mixin card()
+    .card-form-pay&attributes(attributes)
+        .arrow-card-pay
+        .top-card-pay
+            .icon-card-pay
+                //if (imgName)
+                    img(src='http://img.wan.ijinshan.com/vip/images/#{imgName}.png')
+            .summar-card-pay
+                .role-summary-card(the-id="role")
+                .price-summary-card RMB：<span class="red" the-id="price"></span>
+        .btm-card-pay
+            p.tip-card-pay 成长速度：<span the-id="speed" class="orange">20点/天</span>；&nbsp;<span the-id="gift" class="orange"></span>
+
+//member
+mixin memberItem(title,text)
+    li.li-bd-banner&attributes(attributes)
+        span.poster-li-banner
+        h4.title-li-banner= title
+        p.text-li-banner= text
+
+mixin mUnlogin
+    .mod-unloginn&attributes(attributes)
+        .hd-unlogin 账号登录
+        .bd-unlogin
+            a.btn-login-unlogin(id='loginBtn',href='javascript:void(0);') 登录
+            a.btn-regis-unlogin(href='http://wan.liebao.cn/user/register.html?bu=http%3A%2F%2Fvip.wan.liebao.cn%2FunMember.html',target='_blank') 免费注册
+
+mixin mLogin
+    .mod-login&attributes(attributes)
+        .hd-login
+            span.name-login#username
+            span.icon-login
+            a.logout-login(href='javascript:void(0);',the-id='logout') 【退出】
+        .bd-login
+            if block
+                block
+
+mixin mMod(title)
+    .mod-m
+        .hd-m= title
+        .bd-m
+            if block
+                block
+
+mixin cardItem
+    .voucher-card-m&attributes(attributes)
+        h3.title-voucher-m
+        ul.l-voucher-m
+
+mixin cardMod(title)
+    .mod-card-m
+        .hd-card-m= title
+        .bd-card-m
+            if block
+                block
+
+mixin platformItem()
+    li.li-platform-m&attributes(attributes)
+        .mod-platform-m
+            .hd-platform-m
+                span.icon-platform-m
+            .bd-platform-m
+                if block
+                    block

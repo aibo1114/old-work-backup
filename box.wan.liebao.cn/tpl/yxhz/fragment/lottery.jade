@@ -1,0 +1,17 @@
+div(ng-controller='lottery')
+    .mod-lottery
+        .left-lottery
+            div(lottery)
+        .right-lottery
+            .mod-lucky
+                .hd-lucky
+                    h4.title-hd-lucky 超级幸运星
+                .bd-lucky
+                    .scrollbox-lucky(ng-controller='lucky')
+                        ul.l-bd-lucky
+                            div(slide-follow, dataset ='lucky', speed='speed')
+                .ft-lucky
+                    ul.l-ft-lucky
+                        li.li-ft-lucky: button(ng-click='openRule();',ng-disabled='hasDialog') 活动规则
+                        li.li-ft-lucky: button(ng-click='openPrize();',ng-disabled='hasDialog') 我的奖品
+                    button(class='btn-ft-lucky',hover-class='hvrbtn-ft-lucky',ng-click='switchTab("tpl/yxhz/fragment/tasks.html");') 获得更多积分

@@ -1,0 +1,8 @@
+.voteItem
+    !=f.imgItem(locals, c, null, null, null, true)
+    //img(onclick='cf.showPic(this)' src='images/1.jpg' width='100%')
+    .cover
+    .sub
+        = title
+        .checkbox(sid=_id)
+            img.img-responsive(src=f.resPath(c,'images/arrow_03.png'))

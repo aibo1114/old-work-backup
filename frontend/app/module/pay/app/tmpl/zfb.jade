@@ -1,0 +1,31 @@
+//h1= title
+//!= f.a('链接', '#yb')
+//each item in items
+//    li=item.label
+.main
+      // cost list
+      h4.pay-stit 请选择充值金额
+      ul#costlist.pay-list.clearfix
+          each m in money
+                li.pay-list-li.w20.tplcache_14672833350328475
+                  input.pay-list-radio.cost-radio(value="#{m.count}",id='bank_ali-cost-#{m.count}', type='radio', name='cost', data-cost='#{m.count}', data-type='#{m.type}')
+                  label.cost-a(for='bank_ali-cost-#{m.count}')=m.count+m.unit
+            li#costlist-custom-li.pay-list-li.w100(style='')
+                input#cost-custom.pay-list-radio.cost-radio(type='radio', name='cost', data-cost='0', data-type='bank_ali')
+                label.cost-a(for='cost-custom') 其它
+                input#cost-custom-text.pay-list-text(type='text', name='cost-custom-text', value='', maxlength='')
+                label.cost-a(for='cost-custom-text') 元（请输入10至100000之间的任意整数）
+p#pay_tip.pay-tip
+    // bonuse
+    #fanli.fanli(style='display: block;')
+    // bank list
+    h4#banklisttit.pay-stit(style='') 请选择银行
+    ul#banklist.pay-list.ie-width.clearfix(style='')
+        each b in bank
+            li.pay-list-li.w25.tplcache_14672833350424202
+                input.pay-list-radio(value="#{b.bankid}",id='bank_ali-bank-#{b.bankid}',type='radio', name='bank', data-bankid='#{b.bankid}', data-type='#{b.type}')
+                label.bank-icon(for='bank_ali-bank-#{b.bankid}',class='bank-icon-#{b.bankid}')=b.bankName
+
+    // pay button
+    a#paybtn.paybtn(href='javascript:;') 立即支付
+    #bottom_tip.pay-tip

@@ -1,0 +1,49 @@
+{
+  "ret":1,
+  "data":[
+    {
+      "ID": 100,
+      "ActivityID": "",
+      "SupplierID": "100",
+      "SupplierName": "7u",
+      "Advertisement": "24qbjx",
+      "GameID": "1065",
+      "BeginServer": 316,
+      "EndServer": 319,
+      "State": "1",
+      "BeginTime": "2016-09-25 10:00:00",
+      "EndTime": "2016-11-24 10:00:00",
+      "Remark": "this is a remark"
+    }
+  ,
+    {
+      "ID": 101,
+      "ActivityID": "",
+      "SupplierID": "100",
+      "SupplierName": "7u",
+      "Advertisement": "24qbjx",
+      "GameID": "1065",
+      "BeginServer": 316,
+      "EndServer": 319,
+      "State": "1",
+      "BeginTime": "2016-09-25 10:00:00",
+      "EndTime": "2016-11-24 10:00:00",
+      "Remark": "this is a remark"
+    }
+  ,
+    {
+      "ID": 102,
+      "ActivityID": "",
+      "SupplierID": "100",
+      "SupplierName": "7u",
+      "Advertisement": "24qbjx",
+      "GameID": "1065",
+      "BeginServer": 316,
+      "EndServer": 319,
+      "State": "1",
+      "BeginTime": "2016-09-25 10:00:00",
+      "EndTime": "2016-11-24 10:00:00",
+      "Remark": "this is a remark"
+    }
+  ]
+}

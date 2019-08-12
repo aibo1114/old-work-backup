@@ -1,0 +1,200 @@
+.uploadBtn {
+  display: inline-block;
+  width: 105px;
+  padding: 7px 0;
+  text-align: center;
+  background: #880000;
+  border-bottom: 1px solid #DDD;
+  color: #FFF;
+  position: relative;
+  overflow: hidden;
+  margin-right: 20px;
+  &:hover {
+    background: #CC0000;
+  }
+  input {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 100px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+
+.uploader {
+  .qq-upload-button {
+    margin-right: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+  }
+}
+
+//.media {
+//  position: relative !important;
+//}
+
+.media.active {
+  img {
+    border: 5px solid red !important;
+  }
+}
+
+.s-btn {
+  background: none repeat scroll 0 0 rgba(255, 255, 255, 0.5);
+  padding: 8px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.xFile {
+  &.doc {
+    .media {
+      line-height: 30px;
+      margin: 10px 20px;
+      clear: both;
+      border-bottom: 1px dashed;
+      text-align: left;
+    }
+  }
+  &.img {
+    .media {
+      display: inline-block;
+      min-height: 80px;
+      //&:first-child {
+      //  margin-left: 0.5em;
+      //}
+      img {
+        width: 150px;
+      }
+    }
+  }
+  .media {
+    position: relative;
+    overflow: hidden;
+    margin: 0 0.5em 0.5em 0;
+  }
+}
+
+.media {
+  .f-btn, .s-btn {
+    display: none;
+  }
+  &:hover {
+    .f-btn, .s-btn {
+      display: block;
+    }
+  }
+  &:first-child {
+    .mLeft {
+      display: none;
+    }
+  }
+  &:last-child {
+    .mRight {
+      display: none;
+    }
+  }
+}
+
+#filePick, #_imgTab {
+  .modal-header {
+    position: relative;
+  }
+}
+
+//file Mgm console
+.xImg {
+  padding-left: 10px;
+  .toolbar {
+    margin-top: 10px;
+    .filter {
+      float: right;
+      margin-top: -40px;
+    }
+  }
+  .tabs {
+    padding: 10px 0;
+  }
+  .media {
+    display: inline-block;
+    margin-right: 10px;
+    position: relative;
+  }
+  img {
+    width: 150px;
+    height: 100px;
+  }
+}
+
+//
+//.xFile {
+//  &.doc {
+//    .media {
+//      line-height: 30px;
+//      margin: 10px 20px;
+//      clear: both;
+//      border-bottom: 1px dashed;
+//      text-align: left;
+//    }
+//  }
+//  &.img {
+//    .media {
+//      position: relative;
+//      width: 100%;
+//      //display: inline-block;
+//      //&:first-child {
+//      //  margin-left: 0.5em;
+//      //}
+//    }
+//  }
+//  .media {
+//    position: relative;
+//    overflow: hidden;
+//    margin: 0 0.5em 0.5em 0;
+//  }
+//  .current, .active {
+//    border-color: red;
+//  }
+//  .alert {
+//    clear: both;
+//    padding: 0;
+//    margin-bottom: 10px;
+//  }
+//  .foot {
+//    margin-top: 15px;
+//    padding-top: 15px;
+//  }
+//
+//  .qq-upload-button {
+//    margin-right: 15px;
+//    display: inline-block;
+//  }
+//
+//  .uBtn {
+//    overflow: visible;
+//    margin-right: 15px;
+//    width: 105px;
+//    float: left;
+//    display: inline-block;
+//    &.modelBtn {
+//      float: left;
+//    }
+//  }
+//
+//  .resList {
+//    float: left;
+//    width: 100%;
+//    margin-top: 10px;
+//    li {
+//      height: 25px;
+//      overflow: hidden;
+//      width: 95%;
+//      clear: both;
+//      border-bottom: 1px dashed;
+//    }
+//  }
+//}

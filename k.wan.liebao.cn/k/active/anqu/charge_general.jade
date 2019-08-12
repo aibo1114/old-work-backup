@@ -1,0 +1,17 @@
+extends inc/main
+
+block style_charge_general
+    link(type='text/css',rel='stylesheet',href='http://static.web.anqu.com/resource/999/css/charge_general.css')
+    block style_charge_success
+    block style_charge_failure
+block script_charge_general
+    script(type='text/javascript',src='http://static.web.anqu.com/resource/999/js/charge_tab.js')
+block content_charge_general
+    .charge_container_general
+        .left_tabs
+            .tab_blocks
+                a(href='javascript:void(0);',class='tab tab_arrow') 微信扫一扫
+                a(href='javascript:void(0);',class='tab') 支付宝扫一扫
+        .right_main_contents
+            block content_charge_success
+            block content_charge_failure

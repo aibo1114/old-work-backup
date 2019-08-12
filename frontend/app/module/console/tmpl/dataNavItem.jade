@@ -1,0 +1,15 @@
+each t in locals
+    if t.data
+        strong.list-group-item.text-danger
+            = iim('m_' + t.key, 'data')
+            .pull-right
+                != f.icon('minus')
+                //!= f.icon('plus')
+        each it in t.data
+            a.list-group-item(href= it.href)
+                = label || ii(it.key)
+                != f.icon('chevron-right')
+    else
+        a.list-group-item(href= t.href)
+            = label || ii(t.key)
+            != f.icon('chevron-right')

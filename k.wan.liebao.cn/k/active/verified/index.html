@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>实名认证</title>
+        <link rel="stylesheet" type="text/css" href="verified.css" />
+    </head>
+    <body>
+        <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript">
+            document.domain = 'wan.liebao.cn';
+            var p=getQueryString("panel");
+            function getQueryString(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+                var r = window.location.search.substr(1).match(reg);
+                if (r != null) return decodeURI(r[2]); return null;
+            }
+            var verified= new Verified(function () {
+                //cb:
+                window.parent.passChecking();
+            });
+            switch (p){
+                case 'phone':
+                    verified.renderUI(1);
+                    break;
+                case 'realName':
+                    verified.renderUI(2);
+                    break;
+                case 's_realName':
+                    verified.renderUI();
+                    break;
+                default:
+                    //verified.renderUI(2);
+                    break;
+            }
+            /*
+            function initHeight() {
+                if (window.top != window.self) {
+                    var height = $(document.body).height();
+                    parent.document.getElementById('idCheckIframe').style.height = height + 'px';
+                }
+            }
+            $('body').on("resize", initHeight);
+            */
+            console.log('test0319')
+        </script>
+    </body>
+</html>

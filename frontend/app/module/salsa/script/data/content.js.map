@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "content.js",
+  "sourceRoot": "",
+  "sources": [
+    "content.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,MAAM,CAAC,OAAP,GAAe;IACX;MAAA,KAAA,EAAM,MAAN;MACA,QAAA,EAAS,MADT;MAEA,OAAA,EAAQ,MAFR;MAGA,GAAA,EAAI,EAHJ;KADW,EAMX;MAAA,KAAA,EAAM,MAAN;MACA,QAAA,EAAS,OADT;MAEA,OAAA,EAAQ,MAFR;MAGA,GAAA,EAAI,CAHJ;KANW;;AAAf"
+}

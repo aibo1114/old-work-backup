@@ -1,0 +1,20 @@
+if res.length > 1
+    ul.pagination(class= cls)
+        each it in res
+            li
+                a= it.num
+
+span.total 共 #{count} 条
+
+if res.length > 1
+    .totalNum
+        select.form-control.input-sm
+            option 10
+            option 15
+            option 20
+            option 50
+            option 100
+            option 200
+            option 500
+        | /
+        span= count || 10

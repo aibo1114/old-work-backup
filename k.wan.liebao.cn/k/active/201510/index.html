@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>微信充值送好礼，女神带你玩转商城</title>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/jquery/1.8.2/jquery.min.js?t=201410311102"></script>
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/window.css"/>
+    <style>
+        .mod-adv {
+            width:100%;
+        }
+        .content {
+            width:1000px;
+            margin:auto;
+            position:relative;
+        }
+        .footer {
+            width:100%;
+            padding:120px 0 126px;
+            background:#2e0e1b;
+        }
+        .footer p {
+            line-height:28px;
+            text-align:center;
+            font-size:14px;
+            color:#f6af5c;
+        }
+        .footer p a {
+            color:#f6af5c;
+            text-decoration: underline;
+            padding:0 5px;
+        }
+        .hd-mod-adv {
+            position:relative;
+            overflow: hidden;
+        }
+        .btn {
+            cursor:pointer;
+        }
+        .mod-adv-1 {
+            background:url(images/top_01.jpg) no-repeat 0 0;
+            padding-bottom:90px;
+            overflow:hidden;
+        }
+        .mod-adv-2 {
+            background:url(images/bg-2_03.jpg) 0 0;
+            overflow:hidden;
+            padding-bottom:33px;
+        }
+        .mod-adv-3 {
+            background: url(images/bg-3_26.jpg) 0 0;
+            padding-bottom:24px;
+        }
+        .mod-adv-4 {
+            height:146px;
+            background:#220813;
+        }
+        .mod-adv-5 {
+            background:url(images/bg-3_26.jpg) 0 0;
+            padding:30px 0 41px;
+        }
+        .mod-adv-6 {
+            background:url(images/bg-2_03.jpg) 0 0;
+            overflow:hidden;
+        }
+        .mod-adv-1 a {
+            display:inline-block;
+            margin:20px 0 0 24px;
+            text-decoration:underline;
+            color:#fff;
+            font-size:14px;
+        }
+        .mod-adv-1 h3 {
+            width:199px;
+            height:48px;
+            margin:82px 0 0 54px;
+            background:url(images/txt-poster_03.png) no-repeat 0 0;
+            text-indent: -9999px;
+        }
+        .mod-adv-1 h2 {
+            width:412px;
+            height:255px;
+            margin:17px 0 0 53px;
+            background:url(images/txt-poster_06.png) no-repeat 0 0;
+            text-indent: -9999px;
+        }
+        .mod-adv-1 p {
+            width:405px;
+            height:33px;
+            margin:17px 0 0 56px;
+            background:url(images/txt-poster_10.png) no-repeat 0 0;
+            text-indent: -9999px;
+        }
+        .mod-adv-1 .poster {
+            display: block;
+            position:absolute;
+            top:0;
+            right:-222px;
+            width:714px;
+            height:583px;
+            background:url(images/poster_02.png) no-repeat 0 0;
+        }
+        .light-top,.light-bottom {
+            display: block;
+            width:1000px;
+            height:135px;
+            position:absolute;
+            z-index:9;
+            left:0;
+        }
+        .mod-adv-2 .light-top {
+            background: url(images/light_03.png) no-repeat 0 0;
+            top:0;
+        }
+        .mod-adv-2 .light-bottom {
+            background: url(images/light_06.png) no-repeat 0 0;
+            bottom:-33px;
+        }
+        .mod-adv-2 h2 {
+            background:url(images/gogogo_09.png) no-repeat 0 0;
+            width:491px;
+            height:36px;
+            margin:64px 0 0 37px;
+            text-indent:-9999px;
+        }
+        .mod-adv-2 .hd-mod-adv {
+            padding-bottom:22px;
+        }
+        .mod-adv-2 ul {
+            text-indent:-9999px;
+            margin-top:30px;
+            height:226px;
+        }
+        .mod-adv-2 li {
+            width:225px;
+            height:226px;
+            margin:0 12px;
+            *margin:0 10px;
+            float:left;
+        }
+        .nth-child-1 {
+            background:url(images/item_14.png) no-repeat 0 0;
+        }
+        .nth-child-2 {
+            background:url(images/item_16.png) no-repeat 0 0;
+        }
+        .nth-child-3 {
+            background:url(images/item_18.png) no-repeat 0 0;
+        }
+        .nth-child-4 {
+            background:url(images/item_20.png) no-repeat 0 0;
+        }
+        .mod-adv-2 p {
+            margin-left:47px;
+            line-height:36px;
+            font-size:14px;
+            color:#ffb65f;
+            position:relative;
+            z-index:9;
+        }
+        .mod-adv-2 p span {
+            color:#ffe402;
+            text-decoration:underline;
+        }
+        .mod-adv-2 p a {
+            color:#ffe402;
+            text-decoration:underline;
+            position:relative;
+            z-index:10;
+        }
+
+        .mod-adv-2 .btn {
+            position:absolute;
+            top:47px;
+            right:40px;
+            display:block;
+            width:222px;
+            height:76px;
+            background:url(images/rechange_06.png) no-repeat 0 0;
+            text-indent:-9999px;
+            z-index:10;
+        }
+        .mod-adv-3 .hd-mod-adv {
+            height:103px;
+        }
+        .mod-adv-3 .title {
+            width:296px;
+            height:49px;
+            text-indent: -9999px;
+            margin:54px 0 0 38px;
+            float:left;
+            background:url(images/spike_29.png) no-repeat 0 0;
+        }
+        .mod-adv-3 .record {
+            display: inline-block;
+            font-size:16px;
+            color:#d19252;
+            text-decoration:underline;
+            margin:69px 0 0 28px;
+            float:left;
+            cursor:pointer;
+        }
+        .mod-adv-3 ul {
+            height:178px;
+            margin:70px 13px 0;
+            text-indent:-9999px;
+        }
+        .mod-adv-3 li {
+            width:282px;
+            height:178px;
+            float:left;
+            margin:0 13px;
+        }
+        .mod-adv-3 .nth-child-1 {
+            background:url(images/item2_33.jpg) no-repeat 0 0;
+        }
+        .mod-adv-3 .nth-child-2 {
+            background:url(images/item2_35.jpg) no-repeat 0 0;
+        }
+        .mod-adv-3 .nth-child-3 {
+            background:url(images/item2_37.jpg) no-repeat 0 0;
+        }
+        .mod-adv-3 h4 {
+            font-size:24px;
+            font-weight: bold;
+            color:#ffb65f;
+            margin:60px 0 0 40px;
+        }
+
+        .mod-adv-4 .btn {
+            position:absolute;
+            display: block;
+            width:222px;
+            height:76px;
+            top:33px;
+            right:40px;
+            text-indent: -9999px;
+            background: url(images/btn-spkie_43.png) no-repeat 0 0;
+        }
+        .mod-adv-5 p {
+            font-size:14px;
+            color:#ffb65f;
+            line-height:33px;
+        }
+        .mod-adv-6 .content {
+            overflow:hidden;
+        }
+        .mod-adv-6 h3 {
+            text-indent: -9999px;
+            background: url(images/discount_47.png) no-repeat 0 0;
+            width:516px;
+            height:40px;
+            margin:74px 0 0 36px;
+        }
+        .mod-adv-6 p {
+            color:#ffb65f;
+            font-size:14px;
+            line-height:24px;
+            margin: 14px 0 0 36px;
+        }
+        .mod-adv-6 .btn {
+            position: absolute;
+            top:74px;
+            right:40px;
+            display: block;
+            width:332px;
+            height:76px;
+            text-indent: -9999px;
+            background: url(images/enterShop_50.png) no-repeat 0 0;
+        }
+        .mod-adv-6 ul {
+            margin:70px 20px 0;
+            text-indent: -9999px;
+        }
+        .mod-adv-6 li {
+            width:200px;
+            height:243px;
+            float:left;
+            margin:0 20px 46px;
+        }
+        .mod-adv-6 .nth-child-1 {
+            background:url(images/prize_54.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-2 {
+            background:url(images/prize_56.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-3 {
+            background:url(images/prize_58.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-4 {
+            background:url(images/prize_60.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-5 {
+            background:url(images/prize_66.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-6 {
+            background:url(images/prize_67.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-7 {
+            background:url(images/prize_68.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-8 {
+            background:url(images/prize_69.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-9 {
+            background:url(images/prize_74.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-10 {
+            background:url(images/prize_76.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-11 {
+            background:url(images/prize_78.png) no-repeat 0 0;
+        }
+        .mod-adv-6 .nth-child-12 {
+            background:url(images/prize_80.png) no-repeat 0 0;
+        }
+
+        .countDown {
+            padding-left:40px;
+            color:#fff;
+            font-size:46px;
+            display:inline-block;
+            float:left;
+            height:146px;
+            line-height:146px;
+            letter-spacing: 3px;
+        }
+
+        .pt18 {
+            padding-top:18px;
+        }
+        .p {
+            text-indent:2em;
+        }
+        .p-double {
+            text-indent: 4em;
+        }
+    </style>
+</head>
+<body>
+    <div class="mod-adv mod-adv-1">
+        <div class="content">
+            <a href="http://my.wan.liebao.cn" class="link">返回积分商城</a>
+            <h3 class="png_ie6">温情十月</h3>
+            <h2 class="png_ie6">女神带你玩转商城</h2>
+            <p class="png_ie6">2015年10月23日00:00至2015年10月25日23:59</p>
+            <span class="poster png_ie6"></span>
+        </div>
+    </div>
+    <div class="mod-adv mod-adv-2">
+        <div class="content">
+            <span class="light-top png_ie6"></span>
+            <span class="light-bottom png_ie6"></span>
+            <div class="hd-mod-adv">
+                <h2 class="png_ie6">微信充值积分加速GOGOGO</h2>
+                <a href="http://wan.liebao.cn/pay" target="_blank" class="btn png_ie6">我要充值</a>
+            </div>
+            <ul>
+                <li class="nth-child-1 png_ie6">
+                    <h4>单笔充值</h4>
+                    <h3>100-999元</h3>
+                    <p>获得2倍积分</p>
+                </li>
+                <li class="nth-child-2 png_ie6">
+                    <h4>单笔充值</h4>
+                    <h3>1000-2999元</h3>
+                    <p>获得3倍积分</p>
+                </li>
+                <li class="nth-child-3 png_ie6">
+                    <h4>单笔充值</h4>
+                    <h3>3000-4999元</h3>
+                    <p>获得5倍积分</p>
+                </li>
+                <li class="nth-child-4 png_ie6">
+                    <h4>单笔充值</h4>
+                    <h3>5000元</h3>
+                    <p>获得10倍积分</p>
+                </li>
+            </ul>
+            <p class="text-intro pt18">活动说明：</p>
+            <p class="text-intro">1. 积分是金山猎豹游戏中心积分商城中兑换物品的一种虚拟货币，每充值1元可自动获得1积分，人民币和积分的获得比例是1:1。</p>
+            <p class="text-intro">2. 活动期间内，使用“微信扫一扫”方式单笔充值相应金额均可获得对应比例的多倍积分。单笔充值金额越高，翻倍越多，最高10倍积分喔~</p>
+            <p class="text-intro p">例：活动期间内，玩家使用“微信扫一扫”充值5000元通过活动对应充值区间可获得10倍积分，即总获得50000积分。</p>
+            <p class="text-intro p-double">(温馨提示：充值5000元需要在选择充值金额时选择其他，然后手动输入5000)</p>
+            <p class="text-intro">3. 获得积分商城的积分可在“<a href="http://my.wan.liebao.cn/record.html"  target="_blank">积分商城-兑换记录</a>”中查看明细。</p>
+        </div>
+    </div>
+    <div class="mod-adv mod-adv-3">
+        <div class="content">
+            <div class="hd-mod-adv">
+                <h3 class="title png_ie6">整点秒杀充值卡</h3>
+                <span class="record js-record">我的中奖记录</span>
+            </div>
+            <ul>
+                <li class="nth-child-1 png_ie6">
+                    <h3>中国移动</h3>
+                    <p>20元</p>
+                    <h5>充值卡</h5>
+                </li>
+                <li class="nth-child-2 png_ie6">
+                    <h3>中国移动</h3>
+                    <p>30元</p>
+                    <h5>充值卡</h5>
+                </li>
+                <li class="nth-child-3 png_ie6">
+                    <h3>中国移动</h3>
+                    <p>50元</p>
+                    <h5>充值卡</h5>
+                </li>
+            </ul>
+            <h4>距离下次秒杀</h4>
+        </div>
+    </div>
+    <div class="mod-adv mod-adv-4">
+        <div class="content">
+            <p class="countDown" id="countDown"></p>
+            <span class="btn png_ie6 js-spike">我要秒杀</span>
+        </div>
+    </div>
+    <div class="mod-adv mod-adv-5">
+        <div class="content">
+            <p class="text-intro">活动说明：</p>
+            <p class="text-intro">1、活动期间内，每天12：00可通过活动页面抢兑20元、30元、50元手机充值卡，每次发放35张，其中20元20张、30元10张、50元5张。</p>
+            <p class="text-intro">2、每轮抢兑需消耗20000积分，点击“我要秒杀”按钮后将随机获得35张充值卡中的一张，抢兑成功后联系在线客服领取。每轮抢兑限购一张。</p>
+            <p class="text-intro">3、每轮活动限时10分钟，若充值卡剩余数量为0将提前结束当前时间段的抢购活动。</p>
+        </div>
+    </div>
+    <div class="mod-adv mod-adv-6">
+        <div class="content">
+            <div class="hd-mod-adv">
+                <a href="http://my.wan.liebao.cn/shoplist.html?type=0#&type=1" target="_blank" class="btn png_ie6">点击进入商城兑换</a>
+                <h3>商城嗨翻天，全场实物8折出售</h3>
+                <p>活动期间内，金山猎豹游戏中心积分商城所有实物物品将以8折优惠价格出售。</p>
+            </div>
+            <ul>
+                <li class="nth-child-1 png_ie6">
+                    <span class="img"></span>
+                    <h5>PM2.5 空气净化器</h5>
+                    <p class="text-intro">八折后：217600</p>
+                </li>
+                <li class="nth-child-2 png_ie6">
+                    <span class="img"></span>
+                    <h5>博朗（BRAUN）电动剃须刀</h5>
+                    <p class="text-intro">所需积分：250000</p>
+                    <p class="text-intro">八折后：200000</p>
+                </li>
+                <li class="nth-child-3 png_ie6">
+                    <span class="img"></span>
+                    <h5>点点看视频玩具车</h5>
+                    <p class="text-intro">所需积分：200000</p>
+                    <p class="text-intro">八折后：160000</p>
+                </li>
+                <li class="nth-child-4 png_ie6">
+                    <span class="img"></span>
+                    <h5>雷蛇（Razer）游戏键鼠套装</h5>
+                    <p class="text-intro">所需积分：114500</p>
+                    <p class="text-intro">八折后：91600</p>
+                </li>
+                <li class="nth-child-5 png_ie6">
+                    <span class="img"></span>
+                    <h5>罗技 K400r 无线触控键盘</h5>
+                    <p class="text-intro">所需积分：90000</p>
+                    <p class="text-intro">八折后：72000</p>
+                </li>
+                <li class="nth-child-6 png_ie6">
+                    <span class="img"></span>
+                    <h5>雷蛇 金环蛇 Krait 游戏鼠标</h5>
+                    <p class="text-intro">所需积分：90000</p>
+                    <p class="text-intro">八折后：72000</p>
+                </li>
+                <li class="nth-child-7 png_ie6">
+                    <span class="img"></span>
+                    <h5>小米手环</h5>
+                    <p class="text-intro">所需积分：65000</p>
+                    <p class="text-intro">八折后：52000</p>
+                </li>
+                <li class="nth-child-8 png_ie6">
+                    <span class="img"></span>
+                    <h5>金士顿 32G USB3.0高速U盘</h5>
+                    <p class="text-intro">所需积分：60000</p>
+                    <p class="text-intro">八折后：48000</p>
+                </li>
+                <li class="nth-child-9 png_ie6">
+                    <span class="img"></span>
+                    <h5>猎小豹玩偶</h5>
+                    <p class="text-intro">所需积分：49500</p>
+                    <p class="text-intro">八折后：39600</p>
+                </li>
+                <li class="nth-child-10 png_ie6">
+                    <span class="img"></span>
+                    <h5>猎豹抱枕</h5>
+                    <p class="text-intro">所需积分：50000</p>
+                    <p class="text-intro">八折后：40000</p>
+                </li>
+                <li class="nth-child-11 png_ie6">
+                    <span class="img"></span>
+                    <h5>猎豹极速Wi-Fi</h5>
+                    <p class="text-intro">所需积分：25000</p>
+                    <p class="text-intro">八折后：20000</p>
+                </li>
+                <li class="nth-child-12 png_ie6">
+                    <span class="img"></span>
+                    <h5>猎豹马克杯</h5>
+                    <p class="text-intro">所需积分：15000</p>
+                    <p class="text-intro">八折后：12000</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="content">
+            <p>活动说明：</p>
+            <p>活动期间内，金山猎豹游戏中心积分商城除礼包和充值卡、京东E卡外所有实物物品将以8折优惠价格劲爆出售，玩家可使用手中现有的积分兑换各种心仪已久的实物物品。</p>
+            <p>本次活动最终解释权归金山猎豹运营团队所有，如有疑问请联系<a href="http://wan.liebao.cn/action/redirect_kf.php" target="_blank">在线客服</a>咨询</p>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/lucky/Helper/Login/1.0.1/Login.min.js?t=201410311102"></script>
+    <script type="text/javascript" src="http://img.wan.ijinshan.com/thirdpart/header/1.0.0/header_login.js?t=201410311102"></script>
+    <script type="text/javascript" src="js/widget.js"></script>
+    <script type="text/javascript" src="js/window.js"></script>
+    <!--[if IE 6]>
+    <script type="text/javascript" src="js/DD_belatedPNG.min.js"></script>
+    <![endif]-->
+    <!--[if IE 6]>
+    <script type="text/javascript">
+        $(function() {
+            DD_belatedPNG.fix('.png_ie6');
+        });
+    </script>
+    <![endif]-->
+    <script type="text/javascript" src="js/trigger.js"></script>
+</body>
+</html>

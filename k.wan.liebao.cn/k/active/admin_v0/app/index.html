@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>安趣管理后台</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+
+  </head>
+  <body ng-app="adminApp">
+    <cms-head></cms-head>
+    <div class="container-fluid" ng-cloak>
+
+      <div class="row login" ng-if="!isUserAuth">
+        <login></login>
+      </div>
+
+      <div class="row content" ng-if="isUserAuth">
+      <!--<div class="row content">-->
+        <div class="col-md-2">
+          <d-menu></d-menu>
+        </div>
+        <div class="col-md-10">
+          <div ng-view=""></div>
+          <!--<ui-view></ui-view>-->
+        </div>
+      </div>
+    </div>
+
+    <info-alert ng-show="eleShow"></info-alert>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <!--<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>-->
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="login/login.module.js"></script>
+    <script src="login/login.component.js"></script>
+    <script src="cms-head/cms-head.module.js"></script>
+    <script src="cms-head/cms-head.component.js"></script>
+    <script src="d-menu/d-menu.module.js"></script>
+    <script src="d-menu/d-menu.component.js"></script>
+    <script src="info-alert/info-alert.module.js"></script>
+    <script src="info-alert/info-alert.component.js"></script>
+    <script src="page-nation/page-nation.module.js"></script>
+    <script src="page-nation/page-nation.component.js"></script>
+    <script src="provider-list/provider-list.module.js"></script>
+    <script src="provider-list/provider-list.component.js"></script>
+    <script src="active-list/active-list.module.js"></script>
+    <script src="active-list/active-list.component.js"></script>
+    <script src="order-list/order-list.module.js"></script>
+    <script src="order-list/order-list.component.js"></script>
+    <script src="provider-form/provider-form.module.js"></script>
+    <script src="provider-form/provider-add.component.js"></script>
+    <script src="provider-form/provider-edit.component.js"></script>
+    <script src="active-form/active-form.module.js"></script>
+    <script src="active-form/active-add.component.js"></script>
+    <script src="active-form/active-edit.component.js"></script>
+    <script src="statistics/statistics.module.js"></script>
+    <script src="statistics/statistics.component.js"></script>
+  </body>
+</html>

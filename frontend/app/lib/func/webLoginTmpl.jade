@@ -1,0 +1,19 @@
+
+.col-md-8
+    //img.img-responsive(src= f.resPath(c, 'images/' + pic))
+.col-md-4.logReg
+    #logReg
+    .link.mt10
+        if pic == 'login.png'
+            | 还没有账号？
+            a.spot(href= f.navUrl('reg')) 免费注册
+        else
+            | 已有账号？
+            a.spot(href= f.navUrl('login')) 立即登录
+
+    //#loginPart.form-group.hidden
+    //    //label 记住账号
+    //    //    input(type='checkbox')
+    //    //| &nbsp;
+    //    label 下次自动登录
+    //        input(type='checkbox')

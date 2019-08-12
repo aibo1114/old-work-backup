@@ -1,0 +1,296 @@
+body,div,h1,h2,h3,h4,h5,h6,p,ul,li,a,button,input {
+    margin:0;
+    padding:0;
+}
+h1,h2,h3,h4,h5,h6 {font-weight: normal;}
+ul,li { list-style: none;}
+a {text-decoration: none;}
+button,input {
+    display: block;
+    background: none;
+    outline:none;
+    border:none;
+}
+
+/*common*/
+.mask-window-wl {
+    position:absolute;
+    z-index:998;
+    top:0;
+    left:0;
+    background:#000;
+    opacity: .3;
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+    width:100%;
+}
+.window-wl {
+    /*position:absolute;*/
+    position:fixed;
+    *position: absolute;
+    z-index:999;
+    top:200px;
+    /*top:0;*/
+    left:50%;
+    width:502px;
+    /*height:478px;*/
+    margin-left:-251px;
+    padding-bottom:10px;
+    background: #f8f8f8;
+}
+
+/*header*/
+.hd-window-wl {
+    padding:26px 0 15px;
+    height:40px;
+    position:relative;
+}
+.fork-window-wl {
+    position:absolute;
+    display: block;
+    right:18px;
+    top:22px;
+    width:22px;
+    height:22px;
+    font-size:22px;
+    color:#ccc;
+    cursor: pointer;
+}
+.title-window-wl {
+    text-align: center;
+    line-height:40px;
+    font-size:24px;
+    color:#1a1a1a;
+}
+
+.tip-window-wl {
+    height:34px;
+    line-height:34px;
+    text-align: center;
+    font-size:14px;
+    color:#808080;
+}
+
+/*form*/
+.form-window-wl {}
+.errtip-window-wl {
+    height:26px;
+    line-height:26px;
+    text-align: center;
+    font-size:14px;
+    color:#eb0000;
+}
+.l-form-wl {
+    /*padding-top:26px;*/
+}
+.li-form-wl {
+    padding-bottom:10px;
+    height:40px;
+    position:relative;
+}
+.err-form-wl {
+    position:absolute;
+    z-index:1000;
+    top:40px;
+    left:117px;
+    height:25px;
+    padding-left:4px;
+    line-height:25px;
+    font-size:12px;
+    color:#f00;
+}
+.pb25 {
+    padding-bottom:25px;
+}
+.li-form-wl label {
+    width:105px;
+    height:40px;
+    float:left;
+    line-height:40px;
+    text-align: right;
+    padding-right:12px;
+}
+.ipt-form-wl {
+    width:296px;
+    height:38px;
+    float: left;
+    padding:0 15px;
+    border:1px solid #e0e0e0;
+    line-height:38px;
+    background:#fff;
+}
+.focus-form-wl {
+    border:1px solid #ff9259;
+    box-shadow: 0 0 2px #ff9259;
+}
+.li-smipt-wl .ipt-form-wl {
+    width:174px;
+    margin-right:10px;
+}
+.verified-li-wl {
+    width:110px;
+    height:38px;
+    float: left;
+    border:1px solid #e0e0e0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.links-form-wl {
+    height:18px;
+    padding:2px 58px 0 117px;
+}
+.links-form-wl:after {
+    content:'.';
+    display: block;
+    height:0;
+    overflow:hidden;
+    clear:both;
+}
+.forget-links-wl,.deny-links-wl {
+    display: inline-block;
+    cursor: pointer;
+    font-size:14px;
+    text-decoration: underline;
+}
+.forget-links-wl {
+    float: left;
+    color:#1929ff;
+}
+.deny-links-wl {
+    float: right;
+    color:#808080;
+}
+
+.content-btn-wl {
+    padding:24px 58px 28px 117px;
+    height:50px;
+}
+.register-btn-wl {
+    padding:6px 58px 10px 117px;
+}
+.content-btn-wl:after {
+    content:'.';
+    display: block;
+    height:0;
+    overflow: hidden;
+    clear: both;
+}
+.btn-window-wl,.link-tencent-wl {
+    display: block;
+    float: left;
+    cursor: pointer;
+}
+.btn-window-wl {
+    background:#ff6615;
+    color:#fff;
+    width:214px;
+    height:48px;
+    border-radius: 8px;
+    line-height: 48px;
+    text-align: center;
+    font-size:18px;
+    margin-top:1px;
+}
+.link-tencent-wl {
+    width:50px;
+    height:50px;
+    text-indent: -9999px;
+    overflow: hidden;
+    margin-left:38px;
+    background: url(http://k.wan.liebao.cn/k/active/wcLogin/images/icon-tct_03.png) no-repeat 0 0;
+}
+
+.register-btn-wl .btn-window-wl {
+    width:268px;
+}
+
+/*footer*/
+.ft-window-fl {
+    width:392px;
+    height:60px;
+    margin:auto;
+    padding:0 10px;
+    border-top:1px solid #e0e0e0;
+}
+.tip-regis-wl,.aisle-regis-wl,.aisle-login-wl {
+    display: inline-block;
+    height:60px;
+    line-height:60px;
+    font-size:14px;
+}
+.tip-regis-wl {
+    float: left;
+    color:#808080;
+}
+.aisle-regis-wl {
+    float: right;
+    color:#ff6615;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.aisle-login-wl {
+    float: right;
+    color:#1a19ff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/*deny && fail*/
+.txt-deny-wl {
+    width:271px;
+    height:70px;
+    padding:60px 0 0 86px;
+    margin:auto;
+    background:url(http://k.wan.liebao.cn/k/active/wcLogin/images/exclam_03.png) no-repeat 0 54px;
+    line-height:19px;
+    font-size:16px;
+    color:#1a1a1a;
+}
+.l-btn-wltip {
+    width:357px;
+    margin:30px auto 0;
+    padding-bottom:24px;
+    height:48px;
+}
+.li-btn-wltip {
+    width:154px;
+    height:46px;
+    float: left;
+    border-radius:8px;
+    text-align: center;
+    line-height: 46px;
+    font-size:18px;
+    cursor: pointer;
+}
+.back-btn-wltip {
+    border:1px solid #ff6615;
+    background: #ff6615;
+    color:#fff;
+    margin-right:28px;
+}
+.close-btn-wltip {
+    border:1px solid #ff6615;
+    background:#fff;
+    color:#ff6615;
+}
+
+.title-fail-wl {
+    width:110px;
+    height:56px;
+    margin:auto;
+    padding:34px 0 0 70px;
+    line-height:56px;
+    font-size:22px;
+    color:#1a1a1a;
+    background:url(http://k.wan.liebao.cn/k/active/wcLogin/images/exclam_sm_03.png) no-repeat 0 34px;
+}
+.txt-fail-wl,.txt-played-wl {
+    margin-top:14px;
+    line-height:19px;
+    text-align: center;
+    font-size: 16px;
+    color:#4c4c4c;
+}
+.txt-played-wl { padding: 0 80px; }
+.txt-remind-wl { color:#e50000; }

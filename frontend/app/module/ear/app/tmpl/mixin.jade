@@ -1,0 +1,65 @@
+mixin label(name,label,val,lw,iw)
+    .form-group
+        label.control-label(class= lw || 'col-xs-7 pr0')= label
+        .text-right(class= iw || 'col-xs-5 pl0')
+            if block
+                block
+            else
+                .form-control-static(name=name)!= val
+
+mixin input(name,label,lw,iw,type,ph)
+    .form-group
+        if label
+            label.control-label(class= lw)= label
+        div(class=iw data-name=name)
+            if block
+                block
+            else
+                input(name=name type=type || 'text' class='form-control' placeholder=ph)
+
+mixin select(name,iw)
+    select.form-control(name=name class=iw)
+        block
+
+mixin date(name,label,lw,iw)
+    +input(name,label,lw,iw)
+        .form-inline.clearfix
+            +select('month','col-xs-2')
+                option Mon
+                - _nd = 1
+                while _nd < 13
+                    option= _nd++
+            +select('date','col-xs-2')
+                option Day
+                - _nd = new Date().lastDayOfMonth().getDate()
+                while _nd > 0
+                    option= _nd--
+            +select('fullYear','col-xs-2')
+                option Year
+                - _ny = 0
+                while _ny < 20
+                    option= 2015 - _ny++
+
+
+            +select('hours','col-xs-2')
+                - _nh = 0
+                while _nh < 24
+                    option= (_nh < 10 ? '0' : '') + _nh++
+
+            .form-control-static.pull-left(style='margin-right: 4px;') :
+
+            +select('minutes','col-xs-2 m0')
+                - _nh = 0
+                while _nh < 60
+                    option= (_nh < 10 ? '0' : '') + _nh
+                    - _nh += 5
+
+mixin panel-heading(title)
+    .panel-heading(style='padding-bottom:0')
+        h3(style='text-align:left;;margin-bottom:10px;')
+            span Tour
+            != f.icon('share-alt')
+            = title
+            .pull-right
+                != f.icon('menu-down')
+

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>clock app</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+        <!--<link rel="stylesheet" href="css/style.css" />-->
+        <!--<link rel="stylesheet" href="css/prettify.css" />-->
+        <link rel="stylesheet" href="css/jquery.scrollbar.css" />
+        <link rel="stylesheet" href="css/clock.css" />
+        <!--[if IE 8]>
+            <style type="text/css">
+                .scroll-wrapper {
+                    padding:0 0 16px 0 !important;
+                }
+                .scroll-wrapper > .scroll-content {
+                    overflow-x: hidden !important;
+                }
+            </style>
+        <![endif]-->
+        <script src="../ie8/respond.js"></script>
+    </head>
+    <body ng-app="clock">
+        <div ng-view=""></div>
+        <script src="http://wan.liebao.cn/action/user_info.php?rt=5"></script>
+
+        <!--<script src="js/prettify.js"></script>-->
+        <script src="../bower_components/jquery/jquery.min.js"></script>
+        <script src="../bower_components/angular/angular.min.js"></script>
+        <script src="js/jquery.scrollbar.min.js"></script>
+        <script type="text/javascript">
+            if(!Array.indexOf) {
+                Array.prototype.indexOf = function(obj) {
+                    for(var i=0; i<this.length; i++){
+                        if(this[i]==obj) return i;
+                    }
+                    return -1;
+                }
+            }
+            Array.prototype.remove = function(val) {
+                var index = this.indexOf(val);
+                if (index > -1) {
+                    this.splice(index, 1);
+                }
+            };
+
+//            var ua = navigator.userAgent.toLowerCase();
+//            var rMsie = /(msie\s|trident.*rv:)([\w.]+)/;
+//            var match = rMsie.exec(ua);
+//
+//            alert('用户代理:  '+ua);
+//            if (match!=null) {
+//                var uaObj={ browser : "IE", version : match[2] || "0" };
+//                alert('browser: '+uaObj.browser);
+//                alert('version: '+uaObj.version);
+//            }
+        </script>
+        <script src="../ie8/angular-route.min.js"></script>
+        <script src="../bower_components/moment/min/moment.min.js"></script>
+        <!--<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>-->
+        <script src="app.js"></script>
+        <script src="config.js"></script>
+        <script src="fetch.js"></script>
+        <script src="timeData.js"></script>
+        <script src="directive.js"></script>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "wt.js",
+  "sourceRoot": "",
+  "sources": [
+    "wt.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,OAAA,CAAQ,OAAR;AAAA"
+}

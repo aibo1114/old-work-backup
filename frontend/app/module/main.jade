@@ -1,0 +1,23 @@
+include ./_inc/mixin
+
+doctype html
+block script
+    - main = mob?'mob':'main'
+    - mount = true
+    if mode
+        -libPath = 'http://127.0.0.1:8088/';
+
+html
+    head
+        include ./_inc/smeta
+
+        block meta
+
+        block head
+
+        style(type='text/css')
+            block style
+
+    block ctn
+
+    include ./_inc/ssub

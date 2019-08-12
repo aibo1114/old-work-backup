@@ -1,0 +1,95 @@
+.comments {
+  margin-top: 10px;
+}
+.comments .newOne {
+  position: absolute;
+  right: 10px;
+  margin-top: -36px;
+}
+.comments .media {
+  border-bottom: 1px solid #efefef;
+}
+.comments .media:last-child {
+  border: 0;
+}
+.comment {
+  width: 100%;
+  border-left: 4px solid #32cd32;
+  padding-bottom: 1em;
+}
+.comment .comment {
+  width: auto;
+  border-left: 4px solid #32cd32;
+  padding-bottom: 0.5em;
+}
+.comment table {
+  margin-top: 0;
+  margin-bottom: 0.8em;
+}
+.comment table td {
+  vertical-align: top;
+}
+.comment .comment-avatar {
+  width: 55px;
+  padding-left: 5px;
+}
+.comment .comment-avatar img {
+  width: 40px;
+}
+.comment .comment-body {
+  background-color: #F5F5F5;
+  border: 1px solid #DCDCDC;
+  display: block;
+  border-radius: 5px;
+  vertical-align: top;
+  position: relative;
+}
+.comment .comment-top {
+  font-size: 12px;
+  margin: 0.5em;
+}
+.comment .comment-top strong {
+  margin: 0 0.5em;
+}
+.comment .comment-point {
+  font: bold 45px Arial;
+  color: #DCDCDC;
+  float: right;
+}
+.comment .comment-content {
+  width: 100%;
+  color: #000;
+  font-size: 14px;
+}
+.comment .comment-bottom {
+  height: 1.5em;
+  margin: 0.5em 0.5em 0;
+  overflow: hidden;
+  text-align: right;
+}
+.comment .comment-bottom a {
+  margin-left: 10px;
+  text-indent: -1000px;
+}
+.comment .comment-bottom:hover {
+  text-decoration: underline;
+}
+.comment > .comment {
+  margin-left: 25px;
+  border-left: 4px solid #ff7f50;
+}
+.comment > .comment > .comment {
+  margin-left: 25px;
+  border-left: 4px solid #6495ed;
+}
+.comment > .comment > .comment > .comment {
+  margin-left: 25px;
+  border-left: 4px solid #9932cc;
+}
+.comment > .comment > .comment > .comment > .comment {
+  border-left: 4px solid #b22222;
+}
+.comment > .comment > .comment > .comment > .comment > .comment {
+  border-left: 0;
+  margin: -10px 0 0;
+}

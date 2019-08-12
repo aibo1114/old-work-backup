@@ -1,0 +1,69 @@
+form .has-error {
+  position: relative;
+}
+form .has-error .tooltip-inner {
+  max-width: 500px;
+  background: rgba(255, 0, 0, 0.6);
+  font-weight: bold;
+  padding: 4px 8px;
+}
+form .has-error .tooltip-arrow {
+  border-top-color: rgba(255, 0, 0, 0.6) !important;
+}
+form .form-group label.col-xs-12 {
+  text-align: left !important;
+}
+form .form-group > [data-cid] {
+  position: relative;
+}
+form .form-group p.form-control-static {
+  text-align: left;
+}
+form .form-group .checkbox label,
+form .form-group .radio label {
+  display: block;
+}
+form .form-group .checkbox .radio-inline,
+form .form-group .radio .radio-inline,
+form .form-group .checkbox .checkbox-inline,
+form .form-group .radio .checkbox-inline {
+  display: inline-block;
+  margin-right: 12px;
+  padding-top: 3px;
+  margin-left: 0 !important;
+}
+form .rightBox {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  border-left: 1px solid #EFEFEF;
+  padding: 10px 0 10px 40px;
+  height: 100%;
+  width: 220px;
+}
+form .asterisk {
+  width: 0;
+  color: red;
+  font-weight: bold;
+  position: absolute;
+  top: 0.5em;
+  right: 10px;
+}
+form .tooltip-inner {
+  box-shadow: 0 1px 5px #999999;
+}
+form .panel {
+  margin-bottom: 0;
+}
+.form-inline .form-group {
+  margin-right: 20px;
+}
+.form-inline .form-group label {
+  margin-top: 6px;
+}
+.form-inline .form-group > * {
+  float: left;
+}
+.form-inline .btnCtn {
+  float: right;
+}

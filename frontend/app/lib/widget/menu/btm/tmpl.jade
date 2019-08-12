@@ -1,0 +1,7 @@
+.btmMenu.navbar.navbar-fixed-bottom.text-xs-center.nav-pills
+    if menus
+        each it in menus
+            .nav-item(style='width:#{100 / menus.length}%')
+                a.nav-link(href=it.href class=it.code onclick=it.act)
+                    !=f.icon(it.icon)
+                    div= it.label

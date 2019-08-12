@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset="utf-8" http-equiv="Content-type" content="text/html"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>安趣</title><link type="text/css" rel="stylesheet" href="http://static.web.anqu.com/resource/999/css/base.css"><link type="text/css" rel="stylesheet" href="http://static.web.anqu.com/resource/999/css/common.css"><link type="text/css" rel="stylesheet" href="http://static.web.anqu.com/resource/999/css/login.css"><link rel="stylesheet" type="text/css" href="http://static.web.anqu.com/resource/999/css/index.css"><!--block style_charge_general--></head><body><div id="topline"><div class="topline"><ul class="l-tools"><!--li.li-tools.setIndex a.link-tools(href='#',onclick="SetHome(this,'http://k.wan.liebao.cn/k/active/tj/index.html')设为首页--><!--li.li-tools.collect 收藏本站--><!--li.li-tools.desktop 放到桌面--><li class="li-tools setIndex"><a href="#" onclick="SetHome(this,'http://k.wan.liebao.cn/k/active/tj/index.html');" class="link-tools">设为首页</a></li><li class="li-tools collect"><a href="javascript:void(0);" class="link-tools">收藏本站</a></li><li class="li-tools desktop"><a id="wan_setdesk" href="/shortcut.php" rel="nofollow" target="_self" data-position="{&amp;quot;e2&amp;quot;:&amp;quot;ptdbdh&amp;quot;,&amp;quot;e3&amp;quot;:&amp;quot;ptdbdh-3&amp;quot;}" class="link-tools">放到桌面</a></li></ul></div></div><div id="header"><div class="header"><h1 class="logo"><a href="javascript:void(0)">安趣</a></h1><ul class="l-nav"><li class="li-nav"><a href="javascript:void(0);" class="link-nav">平台首页</a></li><li class="li-nav"><a href="javascript:void(0);" class="link-nav">游戏中心</a></li><li class="li-nav"><a href="javascript:void(0);" class="link-nav">充值中心</a></li><li class="li-nav grey"><a href="javascript:void(0);" class="link-nav">游戏论坛</a></li></ul><p class="user"><img id="anquLogin" src="images/logoL.png"><!--|欢迎您：
+span.name-user#usernmae janjiao0128
+a.logout-user#logout(href='javascript:void(0);') [退出]--></p></div></div><div class="yl-record"><a href="" target="_blank" class="recodeWei"><span class="recodeWei">当前位置：充值中心&gt;充值记录</span></a><table class="record-tb"><caption>我的充值记录</caption><thead><tr><th>帐号</th><th>充值游戏</th><th>充值金额</th><th>充值订单号</th><th>充值状态</th><th>充值时间</th></tr></thead><tbody></tbody></table></div><!--block content_charge_general--><div id="footer"><div class="footer"><ul class="l-footer"><!--li.li-footer: a.link-footer.first(href='javascript:void(0);') 官方微博--><!--li.li-footer: a.link-footer(href='javascript:void(0);') 权利声明--><li class="li-footer"><a href="javascript:void(0);" class="link-footer first">游戏中心</a></li><!--li.li-footer: a.link-footer(href='javascript:void(0);') 申请收录--><li class="li-footer"><a href="javascript:void(0);" class="link-footer">商务合作</a></li><li class="li-footer"><a href="javascript:void(0);" class="link-footer">客服中心</a></li><!--li.li-footer: a.link-footer(href='javascript:void(0);') 非法反馈--></ul><p class="text-footer">抵制不良游戏　拒绝盗版游戏　注意自我保护　谨防受骗上当　适度游戏益脑　沉迷游戏伤身　合理安排时间　享受健康生活</p><p class="text-footer"><span class="part">软著登字第1172119号</span><span class="part">新广出审[2016]1341号</span><span class="part">文网游备字</span></p><p class="text-footer">Copyright 2012-2016 anqu.com All rights reserved 北京安趣科技股份有限公司</p></div></div><script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/jquery-1.8.0.min.js"></script><script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/md5.js"></script><script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/user.js"></script><script type="text/javascript" src="http://static.web.anqu.com/resource/999/js/index.js"></script><script type="text/javascript">var _hmt = _hmt || [];
+(function () {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?47daa93cb0ec88fca1eb5a272fe0be49";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();</script><script type="text/javascript">var baseUrl='http://api.web.anqu.com/';
+$.ajax({
+    url: baseUrl + 'account/api/1/islogin',
+    type: 'get',
+    dataType: 'jsonp',
+    success: function (data) {
+        if (data.ret != '1') {
+           // dlg.show();
+            return;
+        }
+        getRecordList();
+    }
+});
+</script><!--script(type='text/javascript',src='js/index.js')--></body></html>

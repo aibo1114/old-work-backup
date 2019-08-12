@@ -1,0 +1,160 @@
+#_pEditor {
+  > .subObj {
+    border: 0 !important;
+    margin-left: -30px;
+  }
+}
+
+.pEditorElem {
+  text-align: left;
+  margin-bottom: 5px;
+  min-height: 25px;
+  .form-control-static {
+    float: left;
+    //width: 50px;
+    width: 25%;
+    font-weight: bold;
+    text-align: right !important;
+    margin-right: 20px;
+  }
+  .pEditorElem {
+    border-bottom: 0;
+  }
+  &.array {
+    position: relative;
+    border-right: 0;
+    border-left: 0;
+    min-width: 340px;
+  }
+  &.object {
+    position: relative;
+    > .subObj {
+    }
+  }
+  &.array, &.object {
+    margin: 0;
+    > label {
+      height: 30px;
+      text-align: left;
+      background: #EFEFEF;
+      display: block;
+      width: 100%;
+      cursor: pointer;
+      > i {
+        margin: 5px;
+        margin-top: 3px;
+        float: left;
+      }
+    }
+  }
+  label {
+    width: 100px;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+  }
+  input, select {
+    display: inline-block;
+    width: 350px;
+    margin-right: 10px;
+    height: 30px;
+  }
+  .subArray, .subObj {
+    border-left: 1px solid #666;
+  }
+  .subArray {
+    min-width: 250px;
+    clear: both;
+    .arrayItem {
+      height: 40px;
+      label {
+        width: 40px;
+        text-align: center;
+        float: none;
+      }
+      > .subObj {
+        margin-left: 30px;
+      }
+    }
+    > i {
+      margin-left: 9px;
+    }
+  }
+  .subObj {
+    min-width: 390px;
+    clear: both;
+    .pEditorElem {
+      clear: both;
+      margin-left: 30px;
+      min-width: 335px;
+    }
+    > i {
+      margin-left: 45px;
+    }
+  }
+  .fbtn {
+    position: absolute;
+    right: 3px;
+    top: 4px;
+    i {
+      margin-left: 8px;
+    }
+  }
+  .arrayItem.object {
+    position: relative;
+    height: auto;
+  }
+  .addPanel {
+    position: absolute;
+    z-index: 100;
+    background: white;
+    border: 2px solid #999;
+    padding: 2px;
+    li {
+      font-size: 11px;
+      height: 20px;
+      &:hover {
+        background-color: #1F57A9;
+      }
+    }
+  }
+}
+
+.propEditor {
+  text-align: left;
+  span {
+    float: left;
+  }
+  .eo {
+    > span {
+      width: 100%;
+      display: block;
+      height: 30px;
+    }
+    > div {
+      margin: 0 20px;
+    }
+  }
+  .ep {
+    > span {
+      width: 80px;
+      margin: 0 20px;
+      display: inline-block;
+    }
+  }
+  > div {
+    width: 100%;
+    margin-bottom: 8px;
+    min-height: 30px;
+    > div {
+      display: none;
+    }
+  }
+}
+
+.subObj {
+  overflow: hidden;
+}
+
+#resMain .pEditorElem {
+  background: white;
+}

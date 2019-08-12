@@ -1,0 +1,32 @@
+extends ../main
+block variable
+    -var gname='神仙劫';
+    -var alias='sxj';
+    -var nav= [{t:'游戏豪礼',id:'gifts'}, {t:'专属称号',id:'title'}, {t:'属性光环',id:'halo'}, {t:'更多特权',id:'lead'}];
+    -var game=[  {  tt:'v1',content:['装备升星石' , '精石礼包' , '1000铜钱']}, {tt:'v2',content:['装备升星石' , '精石礼包' , '1000铜钱']}, {tt:'v3',content:['装备升星石' , '精石礼包' , '1000铜钱', '复活石']}, {tt:'v4',content:['装备升星石' , '精石礼包' , '1000铜钱', '复活石']}, {tt:'v5',content:['装备升星石' , '精石礼包' , '1000铜钱', '复活石']}  ];
+    -var daily={  v1:'1000铜钱', v2:'1000铜钱', v3:'晶石礼包', v4:'装备升星', v5:'复活石'  }
+
+block content
+    +fixNav(nav)
+
+    +panel('游戏豪礼','豹会员每日领取多种礼包奖励','1')(class='first-panel-gp',id='gifts')
+        +gifts('特权礼包')(class='first-gifts-gp')
+            +tab(game,'game')
+        +gifts('每日礼包')
+            +table(daily,'daily',true)
+
+    +panel('专属称号','豹会员为您提供游戏内独特显示','2')(id='title')
+        img.img-panel-gp(src='images/img-1.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('属性光环','所有区服展示您的属性光环','3')(id='halo')
+        img.img-panel-gp(src='images/img-2.jpg')
+        +receiveBtn(the-id='receiveBtn')
+
+    +panel('更多特权','豹会员平为您提供更多特权，助您乘风破浪','4')(id='lead')
+        +moreList
+
+    +panel('如何获得特权？','只需三步，即可开通','5')(class='six-panel-gp')
+        +leadList
+        +openBtn
+

@@ -1,0 +1,19 @@
+extends charge
+
+block style_charge
+    link(rel='stylesheet',type='text/css',href='http://static.web.anqu.com/resource/999/css/charge_fail.css')
+
+block script_charge
+
+block content_charge
+    .charge_title
+        span 对不起，充值失败！
+    .charge_info
+        p.failure_report 您还可以<a href='#' class='contact_service' target='_blank'>联系客服</a>
+    .charge_bottom_info
+        .charge_btn
+            .keep_charging
+                a(href='#',target='_self') 继续充值
+            .back_index
+                a(href='#',target='_self') 返回首页
+        include inc/charge_claimation

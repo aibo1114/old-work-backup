@@ -1,0 +1,8 @@
+.list-group-item.p-x-0&attributes(prop)
+    .col-xs-1
+    .col-xs-6.p-l-0.text-xs-left
+        != label
+    .col-xs-5.text-xs-right.p-l-0.text-faded
+        != f.flt(locals, code, val)
+        unless noIcon
+            != f.icon('chevron-right m-l-h')

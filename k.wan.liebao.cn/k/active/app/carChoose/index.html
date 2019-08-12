@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="auth" content="WuSong"/>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0">
+    <title>选择车型</title>
+    <link href="../css/carChoose.css" rel="stylesheet"/>
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/iscroll-lite.js"></script>
+    <script src="../js/doT.min.js"></script>
+</head>
+<body>
+
+<script id="J_temp" type="text/x-dot-template">
+    {{~it :x:index}}
+    <div class="section section{{=index}}">
+    <ul>
+        {{~x[1] :y:index1}}
+        <li data-x="{{=x[0]}}" data-y="{{=y[0]}}">
+            <img src="../img/cars/{{=index+1}}/{{=index1+1}}.png"/>
+            <p>{{=y[0]}}</p>
+            <i class="selected"></i>
+        </li>
+        {{~}}
+    </ul>
+        <div class="top">
+            <img class="car-logo" height="20" src="../img/carLogo/{{=index+1}}.png"/>
+            <h1>{{=x[0]}}</h1>
+        </div>
+</div>
+    {{~}}
+</script>
+
+
+<script src="../js/carChoose.js"></script>
+</body>
+</html>

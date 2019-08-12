@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "h5_ft_login.js",
+  "sourceRoot": "",
+  "sources": [
+    "h5_ft_login.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;EAAA,OAAA,CAAQ,yBAAR;;EACA,OAAA,CAAQ,wBAAR;;EACA,OAAA,CAAQ,sBAAR;AAFA"
+}
